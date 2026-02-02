@@ -1,0 +1,22 @@
+# robots.txt para exigetuseguro.cl
+
+# Permitir a todos los bots acceder al sitio
+User-agent: *
+Allow: /
+
+# Bloquear acceso a archivos administrativos o privados (si los tuvieras)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Indicar la ubicación del sitemap
+Sitemap: https://www.exigetuseguro.cl/sitemap.xml
+
+# Rastreo específico para bots principales
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Tiempo de rastreo (crawl-delay) - opcional
+# Crawl-delay: 10

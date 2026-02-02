@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!-- Página principal -->
+  <url>
+    <loc>https://www.exigetuseguro.cl/</loc>
+    <lastmod>2025-02-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Sección de Servicios -->
+  <url>
+    <loc>https://www.exigetuseguro.cl/#servicios</loc>
+    <lastmod>2025-02-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Sección de Honorarios -->
+  <url>
+    <loc>https://www.exigetuseguro.cl/#honorarios</loc>
+    <lastmod>2025-02-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Sección de Blog -->
+  <url>
+    <loc>https://www.exigetuseguro.cl/#blog</loc>
+    <lastmod>2025-02-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Sección Sobre Nosotros -->
+  <url>
+    <loc>https://www.exigetuseguro.cl/#nosotros</loc>
+    <lastmod>2025-02-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Sección IA Legal -->
+  <url>
+    <loc>https://www.exigetuseguro.cl/#ia</loc>
+    <lastmod>2025-02-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- IA Platform (subdominio) -->
+  <url>
+    <loc>https://ia.exigetuseguro.cl/</loc>
+    <lastmod>2025-02-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Política de Privacidad (cuando la crees) -->
+  <url>
+    <loc>https://www.exigetuseguro.cl/privacidad</loc>
+    <lastmod>2025-02-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <!-- Términos y Condiciones (cuando la crees) -->
+  <url>
+    <loc>https://www.exigetuseguro.cl/terminos</loc>
+    <lastmod>2025-02-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+</urlset>
