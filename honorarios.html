@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Honorarios y Servicios | Exige Tu Seguro</title>
+<meta name="description" content="Conoce nuestros valores, servicios y modalidades de pago. Transparencia total en honorarios de abogados especialistas en seguros."/>
+<meta name="robots" content="index, follow"/>
+<link href="https://www.exigetuseguro.cl/honorarios" rel="canonical"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+
+<style>
+:root {
+  --color-primary: #0A3D62;
+  --color-secondary: #3695BF;
+  --color-accent: #34A853;
+  --color-dark: #0f1419;
+  --color-gray-light: #8b92a7;
+  --color-bg: #f8fafc;
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --border-radius: 16px;
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-bg);
+  color: var(--color-dark);
+  line-height: 1.8;
+}
+
+header {
+  background: white;
+  padding: 1.5rem 2rem;
+  box-shadow: var(--shadow-md);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.logo span {
+  color: var(--color-accent);
+}
+
+.btn-home {
+  background: var(--color-accent);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-home:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(52, 168, 83, 0.2);
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+h1 {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+.date {
+  color: var(--color-gray-light);
+  margin-bottom: 3rem;
+  font-size: 0.95rem;
+}
+
+.content {
+  background: white;
+  padding: 3rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-md);
+}
+
+h2 {
+  font-family: var(--font-heading);
+  color: var(--color-primary);
+  font-size: 1.8rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-family: var(--font-heading);
+  color: var(--color-secondary);
+  font-size: 1.3rem;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+p {
+  margin-bottom: 1.25rem;
+  color: var(--color-dark);
+}
+
+ul, ol {
+  margin-left: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+li {
+  margin-bottom: 0.75rem;
+}
+
+strong {
+  color: var(--color-primary);
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.highlight-box {
+  background: linear-gradient(135deg, rgba(10, 61, 98, 0.05) 0%, rgba(54, 149, 191, 0.05) 100%);
+  border-left: 4px solid var(--color-accent);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 2rem 0;
+}
+
+.warning-box {
+  background: linear-gradient(135deg, rgba(255, 193, 7, 0.05) 0%, rgba(255, 152, 0, 0.05) 100%);
+  border-left: 4px solid #FFC107;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 2rem 0;
+}
+
+.pricing-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.pricing-table th {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  color: white;
+  padding: 1.25rem;
+  text-align: left;
+  font-family: var(--font-heading);
+  font-weight: 600;
+}
+
+.pricing-table td {
+  padding: 1.25rem;
+  border-bottom: 1px solid #e8f4f8;
+}
+
+.pricing-table tr:last-child td {
+  border-bottom: none;
+}
+
+.pricing-table tr:hover {
+  background: #f8fafc;
+}
+
+.service-icon {
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+  color: var(--color-accent);
+}
+
+.price-highlight {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.benefit-card {
+  background: linear-gradient(135deg, rgba(52, 168, 83, 0.05) 0%, rgba(52, 168, 83, 0.02) 100%);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 2px solid rgba(52, 168, 83, 0.1);
+  text-align: center;
+}
+
+.benefit-card i {
+  font-size: 2.5rem;
+  color: var(--color-accent);
+  margin-bottom: 1rem;
+}
+
+.benefit-card h4 {
+  font-family: var(--font-heading);
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.contact-section {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  margin: 3rem 0;
+}
+
+.contact-section h3 {
+  color: white;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.contact-section p {
+  margin-bottom: 1.5rem;
+  opacity: 0.95;
+}
+
+.contact-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.contact-btn {
+  background: white;
+  color: var(--color-primary);
+  padding: 0.875rem 1.75rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.contact-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+}
+
+footer {
+  background: var(--color-primary);
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 4rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 2rem 1rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  .content {
+    padding: 2rem 1.5rem;
+  }
+  
+  .pricing-table {
+    font-size: 0.9rem;
+  }
+  
+  .pricing-table th,
+  .pricing-table td {
+    padding: 1rem;
+  }
+  
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .contact-buttons {
+    flex-direction: column;
+  }
+  
+  .contact-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+</style>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <a href="/" class="logo">exigetuseguro<span>.cl</span></a>
+      <a href="/" class="btn-home"><i class="fas fa-home"></i> Volver al Inicio</a>
+    </div>
+  </header>
+
+  <div class="container">
+    <h1>Honorarios y Servicios Legales</h1>
+    <p class="date">Actualizado: Febrero 2025</p>
+
+    <div class="content">
+      <div class="highlight-box">
+        <h3 style="margin-top: 0;"><i class="fas fa-info-circle"></i> ¿Qué Ofrecemos?</h3>
+        <p>En <strong>EXIGETUSEGURO.CL</strong>, nos especializamos en ofrecer servicios de asesoría y asistencia legal en casos de siniestros de seguros en general, y particularmente en el ámbito vehicular, en atención a la elevada incidencia de siniestros en esta área.</p>
+        <p>Nuestro propósito es ofrecer a nuestros clientes la serenidad y el respaldo necesarios para afrontar situaciones de pérdida total o parcial de sus vehículos, así como discrepancias en los montos indemnizatorios y otros aspectos vinculados a siniestros.</p>
+        <p>Además, reconocemos la necesidad de ofrecer un servicio completo que trascienda la mera atención. Por esta razón, disponemos de recursos en nuestro sitio web que ayudan a nuestros clientes a entender mejor sus derechos.</p>
+      </div>
+
+      <h2><i class="fas fa-exclamation-triangle"></i> Consideraciones Iniciales</h2>
+      <div class="warning-box">
+        <p><strong>Es fundamental que evalúe la conveniencia de nuestros servicios legales</strong> consciente del riesgo inherente de no obtener los resultados deseados.</p>
+        <p>Deberá evaluar la conveniencia de abonar honorarios por nuestros servicios, comprendiendo que existe un riesgo inherente en todo proceso legal.</p>
+        <p>Nuestro compromiso es ofrecerle un servicio <strong>transparente y de calidad</strong>, donde cada paso del proceso será debidamente documentado y analizado.</p>
+      </div>
+
+      <h2><i class="fas fa-dollar-sign"></i> Estructura de Honorarios</h2>
+      <p>Nuestra estructura de honorarios está diseñada para ser transparente y justa, asegurando que nuestros clientes reciban el mejor servicio legal sin sorpresas. Trabajamos principalmente bajo tres modalidades:</p>
+
+      <h3>1. Honorarios Fijos</h3>
+      <p>Para ciertos servicios o etapas del proceso, podemos acordar un monto fijo. Esta opción brinda certeza sobre el costo total del servicio desde el inicio.</p>
+      <p><strong>Ventaja:</strong> Conoces exactamente cuánto pagarás desde el principio, sin sorpresas.</p>
+
+      <h3>2. Cuota Litis (Porcentaje sobre el Éxito)</h3>
+      <p>En muchos casos de litigios de seguros, trabajamos con una estructura de cuota litis, que es un porcentaje acordado sobre el monto de la indemnización o beneficio que el cliente obtiene gracias a nuestra gestión.</p>
+      <p><strong>Ventaja:</strong> Esta modalidad alinea nuestros intereses con los de nuestros clientes, ya que nuestros honorarios están directamente vinculados al éxito de su caso.</p>
+      <div class="highlight-box">
+        <p><strong>Importante:</strong> Si no obtenemos un resultado favorable, el cliente no incurre en costos de honorarios por nuestra representación legal.</p>
+      </div>
+
+      <h3>3. Valores Fijos por Servicio</h3>
+      <p>En numerosas ocasiones, no es necesario recurrir al litigio para dirimir el asunto, logrando un resultado favorable a través de la vía administrativa. Asimismo, ofrecemos informes detallados para analizar su caso antes de proceder.</p>
+
+      <h2><i class="fas fa-list-ul"></i> Tabla de Servicios y Precios</h2>
+      
+      <table class="pricing-table">
+        <thead>
+          <tr>
+            <th>Servicio</th>
+            <th>Descripción</th>
+            <th>Costo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="service-icon"><i class="fas fa-file-alt"></i></span><strong>Informe de análisis previo</strong></td>
+            <td>Incluye análisis de la cobertura, normativa aplicable y posibilidades de éxito</td>
+            <td><span class="price-highlight">$35.000</span></td>
+          </tr>
+          <tr>
+            <td><span class="service-icon"><i class="fas fa-balance-scale"></i></span><strong>Impugnación por pérdida total o parcial</strong><br><small>(monto entre $1.000.000 y $20.000.000)</small></td>
+            <td>Por robo, daños, o pérdida total del vehículo asegurado</td>
+            <td><span class="price-highlight">$100.000</span> + 10% de la indemnización obtenida</td>
+          </tr>
+          <tr>
+            <td><span class="service-icon"><i class="fas fa-gavel"></i></span><strong>Impugnación por pérdida total o parcial</strong><br><small>(sobre $20.000.000)</small></td>
+            <td>Casos similares al anterior, con montos mayores</td>
+            <td><span class="price-highlight">$150.000</span> + 10% de la indemnización</td>
+          </tr>
+          <tr>
+            <td><span class="service-icon"><i class="fas fa-chart-line"></i></span><strong>Impugnación por diferencia en indemnización</strong><br><small>(monto bajo $1.000.000)</small></td>
+            <td>Reclamos por montos menores a lo ofrecido por la aseguradora</td>
+            <td><span class="price-highlight">$50.000</span> + 10% de la diferencia lograda</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2><i class="fas fa-check-circle"></i> Nuestros Compromisos</h2>
+      
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <i class="fas fa-search"></i>
+          <h4>Transparencia Total</h4>
+          <p>Te explicaremos con claridad los riesgos y probabilidades de éxito</p>
+        </div>
+        
+        <div class="benefit-card">
+          <i class="fas fa-hand-holding-usd"></i>
+          <h4>Honorarios Justos</h4>
+          <p>Nuestros honorarios son transparentes y proporcionales al resultado</p>
+        </div>
+        
+        <div class="benefit-card">
+          <i class="fas fa-clipboard-list"></i>
+          <h4>Documentación Completa</h4>
+          <p>Cada paso será documentado, informado y discutido contigo</p>
+        </div>
+      </div>
+
+      <h2><i class="fas fa-lightbulb"></i> Nuestras Recomendaciones</h2>
+      <ul>
+        <li><strong>Si aún no has gestionado nada:</strong> Comienza con el informe de análisis previo. Este te dará una visión clara y realista de tus opciones.</li>
+        <li><strong>Entrega toda la documentación relevante desde el inicio:</strong> Esto nos permite ser más eficaces y ágiles.</li>
+        <li><strong>Mantén una comunicación constante:</strong> Resolver tus dudas a tiempo puede marcar la diferencia en el resultado.</li>
+      </ul>
+
+      <h2><i class="fas fa-question-circle"></i> Preguntas Frecuentes</h2>
+      
+      <h3>¿Cuánto demora el proceso?</h3>
+      <p>Cada caso es distinto, pero una asesoría inicial se entrega en menos de 5 días hábiles. Procesos judiciales pueden demorar más, pero siempre te mantendremos informado.</p>
+      
+      <h3>¿Puedo hablar con ustedes antes de contratar?</h3>
+      <p>¡Por supuesto! Escríbenos por WhatsApp o llámanos. Estamos para ayudarte a tomar una buena decisión.</p>
+      
+      <h3>¿Qué pasa si no ganan el caso?</h3>
+      <p>En la modalidad de cuota litis, si no obtenemos un resultado favorable, no pagas honorarios por nuestra representación legal. Solo pagarías los costos fijos acordados previamente, si los hubiera.</p>
+      
+      <h3>¿Incluyen los gastos judiciales?</h3>
+      <p>Los gastos judiciales (como tasas de tribunales, notarías, etc.) se informan previamente y son adicionales a nuestros honorarios profesionales.</p>
+
+      <div class="contact-section">
+        <h3><i class="fas fa-phone-alt"></i> ¿Listo para Defender tus Derechos?</h3>
+        <p>Contáctanos ahora para una consulta inicial gratuita. Estamos aquí para ayudarte.</p>
+        <div class="contact-buttons">
+          <a href="https://wa.me/56979939868" class="contact-btn" target="_blank">
+            <i class="fab fa-whatsapp"></i> WhatsApp: +56 9 7993 9868
+          </a>
+          <a href="mailto:contacto@exigetuseguro.cl" class="contact-btn">
+            <i class="fas fa-envelope"></i> contacto@exigetuseguro.cl
+          </a>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <p style="margin: 0; text-align: center;"><strong><i class="fas fa-heart"></i> Gracias por confiar en nosotros</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Exige Tu Seguro - Todos los derechos reservados</p>
+  </footer>
+</body>
+</html>
