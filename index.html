@@ -63,8 +63,40 @@
 <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
 <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png">
 
-<!-- Schema.org JSON-LD para Local Business - VERSIÓN FINAL CORREGIDA -->
-
+<!-- Schema.org ÚNICO para LegalService - SIN DUPLICADOS -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LegalService",
+  "name": "Exige Tu Seguro",
+  "image": "https://www.exigetuseguro.cl/logo.jpg",
+  "@id": "https://www.exigetuseguro.cl",
+  "url": "https://www.exigetuseguro.cl",
+  "telephone": "+56979939868",
+  "email": "contacto@exigetuseguro.cl",
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -33.4489,
+    "longitude": -70.6693
+  },
+  "priceRange": "$$",
+  "areaServed": [
+    {
+      "@type": "Country",
+      "name": "Chile"
+    },
+    {
+      "@type": "State",
+      "name": "Región Metropolitana"
+    }
+  ],
+  "sameAs": [
+    "https://www.facebook.com/exigetuseguro.cl",
+    "https://www.instagram.com/exigetuseguro.cl/",
+    "https://www.linkedin.com/company/exige-tu-seguro/"
+  ]
+}
+</script>
 
 <!-- Schema.org para Servicios -->
 <script type="application/ld+json">
@@ -161,59 +193,6 @@
       "text": "La indisputabilidad establece que después de 2 años desde la contratación del seguro, la aseguradora no puede anular la póliza por omisiones, salvo casos de dolo o fraude."
     }
   }]
-}
-</script>
-
-<!-- Schema.org Organization -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LegalService",
-  "name": "Exige Tu Seguro",
-  "image": "https://www.exigetuseguro.cl/logo.jpg",
-  "@id": "https://www.exigetuseguro.cl",
-  "url": "https://www.exigetuseguro.cl",
-  "telephone": "+56979939868",
-  "email": "contacto@exigetuseguro.cl",
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": -33.4489,
-    "longitude": -70.6693
-  },
-  "priceRange": "$$",
-  "areaServed": [
-    {
-      "@type": "Country",
-      "name": "Chile"
-    },
-    {
-      "@type": "State",
-      "name": "Región Metropolitana"
-    }
-  ],
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Servicios Legales Online",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Consultoría Legal Online",
-          "serviceType": "Asesoría en Seguros",
-          "provider": {
-            "@type": "LegalService",
-            "name": "Exige Tu Seguro"
-          }
-        }
-      }
-    ]
-  },
-  "sameAs": [
-    "https://www.facebook.com/exigetuseguro.cl",
-    "https://www.instagram.com/exigetuseguro.cl/",
-    "https://www.linkedin.com/company/exige-tu-seguro/"
-  ]
 }
 </script>
 
