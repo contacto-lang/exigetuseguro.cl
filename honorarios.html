@@ -32,13 +32,16 @@
 
 body {
   font-family: var(--font-body);
-  background: var(--color-bg);
+  background: linear-gradient(rgba(248, 250, 252, 0.75), rgba(248, 250, 252, 0.75)), 
+              url('https://i.postimg.cc/G2k4nBFS/476531221-1063690762468539-6084965534244979362-n.jpg') center/cover fixed;
   color: var(--color-dark);
   line-height: 1.8;
+  min-height: 100vh;
 }
 
 header {
-  background: white;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
   padding: 1.5rem 2rem;
   box-shadow: var(--shadow-md);
   position: sticky;
@@ -104,10 +107,11 @@ h1 {
 }
 
 .content {
-  background: white;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(12px);
   padding: 3rem;
   border-radius: var(--border-radius);
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
 }
 
 h2 {
@@ -296,6 +300,10 @@ footer {
 }
 
 @media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+  }
+  
   .container {
     padding: 2rem 1rem;
   }
@@ -460,20 +468,11 @@ footer {
           <a href="https://wa.me/56979939868" class="contact-btn" target="_blank">
             <i class="fab fa-whatsapp"></i> WhatsApp: +56 9 7993 9868
           </a>
-          <a href="mailto:contacto@exigetuseguro.cl" class="contact-btn">
-            <i class="fas fa-envelope"></i> contacto@exigetuseguro.cl
+          <a href="/cdn-cgi/l/email-protection#63000c0d170200170c23061b0a0406171610060416110c4d000f" class="contact-btn">
+            <i class="fas fa-envelope"></i> <span class="__cf_email__" data-cfemail="cfaca0a1bbaeacbba08faab7a6a8aabbbabcaaa8babda0e1aca3">[email&#160;protected]</span>
           </a>
         </div>
       </div>
 
       <div class="highlight-box">
-        <p style="margin: 0; text-align: center;"><strong><i class="fas fa-heart"></i> Gracias por confiar en nosotros</strong></p>
-      </div>
-    </div>
-  </div>
-
-  <footer>
-    <p>&copy; 2025 Exige Tu Seguro - Todos los derechos reservados</p>
-  </footer>
-</body>
-</html>
+        <p style="margin: 0; text-align: center;"><strong><i class="fas fa-heart"></i> Gracias por confiar en nosotros</strong><
