@@ -208,16 +208,46 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": "LegalService",
   "name": "Exige Tu Seguro",
+  "image": "https://www.exigetuseguro.cl/logo.jpg",
+  "@id": "https://www.exigetuseguro.cl",
   "url": "https://www.exigetuseguro.cl",
-  "logo": "https://www.exigetuseguro.cl/logo.jpg",
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+56979939868",
-    "contactType": "customer service",
-    "areaServed": "CL",
-    "availableLanguage": "Spanish"
+  "telephone": "+56979939868",
+  "email": "contacto@exigetuseguro.cl",
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -33.4489,
+    "longitude": -70.6693
+  },
+  "priceRange": "$$",
+  "areaServed": [
+    {
+      "@type": "Country",
+      "name": "Chile"
+    },
+    {
+      "@type": "State",
+      "name": "Región Metropolitana"
+    }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Servicios Legales Online",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Consultoría Legal Online",
+          "serviceType": "Asesoría en Seguros",
+          "provider": {
+            "@type": "LegalService",
+            "name": "Exige Tu Seguro"
+          }
+        }
+      }
+    ]
   },
   "sameAs": [
     "https://www.facebook.com/exigetuseguro.cl",
@@ -1456,7 +1486,7 @@ footer {
         </div>
       </div>
       
-      <div class="hero-stats" itemscope itemtype="https://schema.org/AggregateRating">
+      <div class="hero-stats">
         <div style="text-align: center;">
           <div style="width: 60px; height: 60px; background: var(--gradient-accent); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
             <i class="fas fa-handshake" style="font-size: 1.5rem;"></i>
