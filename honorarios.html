@@ -55,6 +55,8 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .logo {
@@ -80,6 +82,7 @@ header {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
+  white-space: nowrap;
 }
 
 .btn-home:hover {
@@ -98,6 +101,7 @@ h1 {
   font-size: 2.5rem;
   color: var(--color-primary);
   margin-bottom: 1rem;
+  line-height: 1.2;
 }
 
 .date {
@@ -120,6 +124,7 @@ h2 {
   font-size: 1.8rem;
   margin-top: 2.5rem;
   margin-bottom: 1rem;
+  line-height: 1.3;
 }
 
 h3 {
@@ -128,6 +133,7 @@ h3 {
   font-size: 1.3rem;
   margin-top: 2rem;
   margin-bottom: 0.75rem;
+  line-height: 1.3;
 }
 
 p {
@@ -245,24 +251,29 @@ a:hover {
   margin-bottom: 0.5rem;
 }
 
+/* MEJORAS EN EL BANNER DE CONTACTO */
 .contact-section {
   background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
   color: white;
-  padding: 2rem;
-  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  border-radius: 16px;
   text-align: center;
   margin: 3rem 0;
+  box-shadow: 0 8px 24px rgba(10, 61, 98, 0.3);
 }
 
 .contact-section h3 {
   color: white;
   margin-top: 0;
   margin-bottom: 1rem;
+  font-size: 1.5rem;
 }
 
-.contact-section p {
+.contact-section > p {
   margin-bottom: 1.5rem;
   opacity: 0.95;
+  font-size: 1.05rem;
+  color: white;
 }
 
 .contact-buttons {
@@ -270,25 +281,45 @@ a:hover {
   gap: 1rem;
   justify-content: center;
   flex-wrap: wrap;
+  align-items: stretch;
 }
 
 .contact-btn {
   background: white;
   color: var(--color-primary);
-  padding: 0.875rem 1.75rem;
-  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
   text-decoration: none;
   font-weight: 600;
   transition: all 0.3s ease;
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  justify-content: center;
+  gap: 0.75rem;
+  min-height: 56px;
+  flex: 1 1 auto;
+  min-width: 200px;
+  max-width: 100%;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.contact-btn i {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.contact-btn span {
+  word-break: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .contact-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   text-decoration: none;
+  background: #f8f9fa;
 }
 
 footer {
@@ -299,9 +330,27 @@ footer {
   margin-top: 4rem;
 }
 
+/* MEJORAS RESPONSIVE PARA MÓVIL */
 @media (max-width: 768px) {
   body {
     background-attachment: scroll;
+  }
+
+  header {
+    padding: 1rem 1.5rem;
+  }
+
+  .header-container {
+    justify-content: center;
+  }
+
+  .logo {
+    font-size: 1.3rem;
+  }
+
+  .btn-home {
+    padding: 0.65rem 1.25rem;
+    font-size: 0.9rem;
   }
   
   .container {
@@ -309,33 +358,174 @@ footer {
   }
   
   h1 {
-    font-size: 2rem;
+    font-size: 1.75rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
   }
   
   .content {
-    padding: 2rem 1.5rem;
+    padding: 2rem 1.25rem;
+    border-radius: 12px;
+  }
+
+  .highlight-box,
+  .warning-box {
+    padding: 1.25rem;
+    margin: 1.5rem 0;
   }
   
+  /* Mejoras en tabla de precios para móvil */
   .pricing-table {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
   
-  .pricing-table th,
+  .pricing-table thead {
+    display: none;
+  }
+
+  .pricing-table,
+  .pricing-table tbody,
+  .pricing-table tr,
+  .pricing-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .pricing-table tr {
+    margin-bottom: 1.5rem;
+    border: 1px solid #e8f4f8;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+
   .pricing-table td {
     padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e8f4f8;
+    position: relative;
+  }
+
+  .pricing-table td:last-child {
+    border-bottom: none;
+  }
+
+  .pricing-table td:first-child {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    color: white;
+    font-weight: 600;
+    padding: 1.25rem 1rem;
+  }
+
+  .pricing-table td:first-child strong {
+    color: white;
+  }
+
+  .price-highlight {
+    font-size: 1.2rem;
   }
   
   .benefits-grid {
     grid-template-columns: 1fr;
+    gap: 1rem;
   }
-  
+
+  .benefit-card {
+    padding: 1.25rem;
+  }
+
+  .benefit-card i {
+    font-size: 2rem;
+  }
+
+  /* MEJORAS ESPECÍFICAS DEL BANNER DE CONTACTO EN MÓVIL */
+  .contact-section {
+    padding: 2rem 1.25rem;
+    margin: 2rem 0;
+    border-radius: 12px;
+  }
+
+  .contact-section h3 {
+    font-size: 1.3rem;
+  }
+
+  .contact-section > p {
+    font-size: 0.95rem;
+  }
+
   .contact-buttons {
     flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
   }
   
   .contact-btn {
     width: 100%;
-    justify-content: center;
+    min-width: 100%;
+    padding: 1rem;
+    font-size: 0.95rem;
+    flex-direction: column;
+    gap: 0.5rem;
+    min-height: auto;
+  }
+
+  .contact-btn i {
+    font-size: 1.5rem;
+  }
+
+  .contact-btn span {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  ul, ol {
+    margin-left: 1.25rem;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+  }
+
+  footer {
+    padding: 1.5rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Mejoras adicionales para pantallas muy pequeñas */
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  .content {
+    padding: 1.5rem 1rem;
+  }
+
+  .service-icon {
+    font-size: 1.25rem;
+  }
+
+  .contact-btn {
+    padding: 0.875rem;
+    font-size: 0.9rem;
   }
 }
 </style>
@@ -466,13 +656,25 @@ footer {
         <p>Contáctanos ahora para una consulta inicial gratuita. Estamos aquí para ayudarte.</p>
         <div class="contact-buttons">
           <a href="https://wa.me/56979939868" class="contact-btn" target="_blank">
-            <i class="fab fa-whatsapp"></i> WhatsApp: +56 9 7993 9868
+            <i class="fab fa-whatsapp"></i>
+            <span>+56 9 7993 9868</span>
           </a>
-          <a href="/cdn-cgi/l/email-protection#63000c0d170200170c23061b0a0406171610060416110c4d000f" class="contact-btn">
-            <i class="fas fa-envelope"></i> <span class="__cf_email__" data-cfemail="cfaca0a1bbaeacbba08faab7a6a8aabbbabcaaa8babda0e1aca3">[email&#160;protected]</span>
+          <a href="mailto:contacto@exigetuseguro.cl" class="contact-btn">
+            <i class="fas fa-envelope"></i>
+            <span>contacto@exigetuseguro.cl</span>
           </a>
         </div>
       </div>
 
       <div class="highlight-box">
-        <p style="margin: 0; text-align: center;"><strong><i class="fas fa-heart"></i> Gracias por confiar en nosotros</strong><
+        <p style="margin: 0; text-align: center;"><strong><i class="fas fa-heart"></i> Gracias por confiar en nosotros</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 ExigeTuSeguro.cl - Todos los derechos reservados</p>
+    <p>Abogados especialistas en seguros</p>
+  </footer>
+</body>
+</html>
