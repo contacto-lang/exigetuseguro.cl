@@ -1,0 +1,1802 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Conoce tu Póliza de Seguro | Guía Completa Chile 2025</title>
+<meta name="description" content="Guía completa sobre pólizas de seguro en Chile. Aprende sobre legislación, tipos de seguros, partes de una póliza, tus derechos según CMF y SERNAC."/>
+<meta name="robots" content="index, follow"/>
+<link href="https://www.exigetuseguro.cl/conoce-tu-poliza" rel="canonical"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+
+<style>
+:root {
+  --color-primary: #0A3D62;
+  --color-secondary: #3695BF;
+  --color-accent: #34A853;
+  --color-warning: #F59E0B;
+  --color-danger: #EF4444;
+  --color-dark: #0f1419;
+  --color-gray: #6b7280;
+  --color-gray-light: #e5e7eb;
+  --color-white: #ffffff;
+  --color-bg: #f9fafb;
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --border-radius: 12px;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+  --shadow-lg: 0 8px 24px rgba(0,0,0,0.12);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-bg);
+  color: var(--color-dark);
+  line-height: 1.7;
+}
+
+header {
+  background: var(--color-white);
+  padding: 1.5rem 2rem;
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid var(--color-gray-light);
+}
+
+.header-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.logo {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.logo span {
+  color: var(--color-accent);
+}
+
+.btn-home {
+  background: var(--color-accent);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.btn-home:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(52, 168, 83, 0.2);
+}
+
+/* HERO MEJORADO CON IMAGEN DE FONDO Y COLOR GRISÁCEO */
+.hero {
+  background: linear-gradient(rgba(248, 250, 252, 0.95), rgba(241, 245, 249, 0.97)), 
+              url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1600&q=80') center/cover;
+  color: var(--color-dark);
+  padding: 5rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 3px solid var(--color-accent);
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.3)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,138.7C960,139,1056,117,1152,106.7C1248,96,1344,96,1392,96L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+  background-size: cover;
+  opacity: 0.5;
+}
+
+.hero-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-family: var(--font-heading);
+  font-size: 3.25rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+  color: var(--color-primary);
+  line-height: 1.2;
+}
+
+.hero-lead {
+  font-size: 1.35rem;
+  opacity: 0.85;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+  color: var(--color-gray);
+  font-weight: 500;
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.stat-box {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  border: 2px solid rgba(52, 168, 83, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.stat-box h3 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin-bottom: 0.5rem;
+}
+
+.stat-box p {
+  opacity: 0.9;
+  font-size: 0.95rem;
+  color: var(--color-dark);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.toc {
+  background: var(--color-white);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+  margin-bottom: 4rem;
+  border-left: 4px solid var(--color-accent);
+}
+
+.toc h2 {
+  font-family: var(--font-heading);
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.toc-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  list-style: none;
+}
+
+.toc-list li a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: var(--color-bg);
+  border-radius: 8px;
+  color: var(--color-dark);
+  text-decoration: none;
+  transition: var(--transition);
+  border: 1px solid transparent;
+}
+
+.toc-list li a:hover {
+  background: var(--color-white);
+  border-color: var(--color-accent);
+  transform: translateX(4px);
+  box-shadow: var(--shadow-sm);
+}
+
+.toc-list li a i {
+  color: var(--color-accent);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.section {
+  background: var(--color-white);
+  border-radius: var(--border-radius);
+  padding: 3rem;
+  box-shadow: var(--shadow-md);
+  margin-bottom: 3rem;
+  scroll-margin-top: 100px;
+}
+
+.section h2 {
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 3px solid var(--color-accent);
+  padding-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.section h2 i {
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.section h3 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--color-secondary);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.section p {
+  color: var(--color-gray);
+  margin-bottom: 1.25rem;
+  line-height: 1.8;
+}
+
+.section ul, .section ol {
+  margin-left: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.section li {
+  color: var(--color-gray);
+  margin-bottom: 0.75rem;
+  line-height: 1.7;
+}
+
+.highlight-box {
+  background: linear-gradient(135deg, rgba(52, 168, 83, 0.08), rgba(52, 168, 83, 0.04));
+  border-left: 4px solid var(--color-accent);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 2rem 0;
+}
+
+.highlight-box h4 {
+  font-family: var(--font-heading);
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.highlight-box h4 i {
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.warning-box {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.08), rgba(245, 158, 11, 0.04));
+  border-left: 4px solid var(--color-warning);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 2rem 0;
+}
+
+.warning-box h4 {
+  font-family: var(--font-heading);
+  color: #92400e;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.warning-box h4 i {
+  color: var(--color-warning);
+  flex-shrink: 0;
+}
+
+.danger-box {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.08), rgba(239, 68, 68, 0.04));
+  border-left: 4px solid var(--color-danger);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 2rem 0;
+}
+
+.danger-box h4 {
+  font-family: var(--font-heading);
+  color: #991b1b;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.danger-box h4 i {
+  color: var(--color-danger);
+  flex-shrink: 0;
+}
+
+.info-box {
+  background: linear-gradient(135deg, rgba(10, 61, 98, 0.08), rgba(54, 149, 191, 0.04));
+  border-left: 4px solid var(--color-secondary);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 2rem 0;
+}
+
+.info-box h4 {
+  font-family: var(--font-heading);
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.info-box h4 i {
+  color: var(--color-secondary);
+  flex-shrink: 0;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.card {
+  background: var(--color-bg);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  border: 2px solid transparent;
+  transition: var(--transition);
+}
+
+.card:hover {
+  border-color: var(--color-accent);
+  background: var(--color-white);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+.card h4 {
+  font-family: var(--font-heading);
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.card h4 i {
+  color: var(--color-accent);
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.card p {
+  color: var(--color-gray);
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.definition-list {
+  list-style: none;
+  margin-left: 0;
+}
+
+.definition-list li {
+  padding: 1.25rem;
+  background: var(--color-bg);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  border-left: 3px solid var(--color-accent);
+}
+
+.definition-list li strong {
+  color: var(--color-primary);
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1.05rem;
+}
+
+.table-container {
+  overflow-x: auto;
+  margin: 2rem 0;
+  -webkit-overflow-scrolling: touch;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--color-white);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+thead {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  color: white;
+}
+
+th {
+  padding: 1.25rem;
+  text-align: left;
+  font-family: var(--font-heading);
+  font-weight: 600;
+}
+
+td {
+  padding: 1.25rem;
+  border-bottom: 1px solid var(--color-gray-light);
+  color: var(--color-gray);
+}
+
+tbody tr:hover {
+  background: var(--color-bg);
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+  margin: 2rem 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--color-accent);
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 2rem;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -2.6rem;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  background: var(--color-accent);
+  border-radius: 50%;
+  border: 4px solid var(--color-white);
+  box-shadow: 0 0 0 4px var(--color-bg);
+}
+
+.timeline-item h4 {
+  font-family: var(--font-heading);
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.timeline-item p {
+  color: var(--color-gray);
+  margin: 0;
+}
+
+.cta-section {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  color: white;
+  padding: 3rem;
+  border-radius: var(--border-radius);
+  text-align: center;
+  margin-top: 4rem;
+  box-shadow: var(--shadow-lg);
+}
+
+.cta-section h2 {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: white;
+  border: none;
+  padding: 0;
+  display: block;
+}
+
+.cta-section p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+  color: white;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+.btn-white {
+  background: white;
+  color: var(--color-primary);
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-width: 200px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.btn-white i {
+  flex-shrink: 0;
+}
+
+.btn-white:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+footer {
+  background: var(--color-primary);
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 4rem;
+}
+
+/* ===== MEJORAS RESPONSIVE MÓVIL ===== */
+@media (max-width: 968px) {
+  header {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .header-container {
+    justify-content: center;
+  }
+
+  .logo {
+    font-size: 1.3rem;
+  }
+
+  .btn-home {
+    padding: 0.65rem 1.25rem;
+    font-size: 0.9rem;
+  }
+
+  .hero {
+    padding: 4rem 1.5rem;
+    background-attachment: scroll;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  .hero-lead {
+    font-size: 1.05rem;
+    line-height: 1.5;
+  }
+
+  .hero-stats {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin-top: 2.5rem;
+  }
+
+  .stat-box {
+    padding: 1.25rem;
+  }
+
+  .stat-box h3 {
+    font-size: 2rem;
+  }
+
+  .container {
+    padding: 3rem 1.5rem;
+  }
+
+  .section {
+    padding: 2rem 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .section h2 {
+    font-size: 1.75rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .section h3 {
+    font-size: 1.3rem;
+  }
+
+  .toc {
+    padding: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .toc h2 {
+    font-size: 1.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .toc-list {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .toc-list li a {
+    padding: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .card {
+    padding: 1.5rem;
+  }
+
+  .card h4 {
+    font-size: 1.1rem;
+  }
+
+  .table-container {
+    font-size: 0.85rem;
+    border-radius: 8px;
+  }
+
+  table {
+    min-width: 600px;
+  }
+
+  th, td {
+    padding: 0.875rem;
+  }
+
+  .timeline {
+    padding-left: 1.5rem;
+  }
+
+  .timeline-item {
+    padding-left: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .timeline-item::before {
+    left: -2.35rem;
+    width: 16px;
+    height: 16px;
+  }
+
+  .timeline-item h4 {
+    font-size: 1.05rem;
+  }
+
+  .definition-list li {
+    padding: 1rem;
+  }
+
+  .highlight-box,
+  .warning-box,
+  .danger-box,
+  .info-box {
+    padding: 1.25rem;
+    margin: 1.5rem 0;
+  }
+
+  .highlight-box h4,
+  .warning-box h4,
+  .danger-box h4,
+  .info-box h4 {
+    font-size: 1.05rem;
+  }
+
+  .cta-section {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .cta-section h2 {
+    font-size: 1.75rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .btn-white {
+    width: 100%;
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  header {
+    padding: 1rem 1.25rem;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  .btn-home {
+    padding: 0.625rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .hero {
+    padding: 3rem 1.25rem;
+  }
+
+  .hero h1 {
+    font-size: 1.65rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  .hero-lead {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .hero-stats {
+    margin-top: 2rem;
+    gap: 1rem;
+  }
+
+  .stat-box {
+    padding: 1rem;
+  }
+
+  .stat-box h3 {
+    font-size: 1.75rem;
+  }
+
+  .stat-box p {
+    font-size: 0.875rem;
+  }
+
+  .container {
+    padding: 2rem 1.25rem;
+  }
+
+  .section {
+    padding: 1.5rem 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  .section h2 {
+    font-size: 1.4rem;
+    padding-bottom: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .section h2 i {
+    font-size: 1.25rem;
+  }
+
+  .section h3 {
+    font-size: 1.15rem;
+    margin-top: 1.5rem;
+  }
+
+  .section p {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+
+  .section ul,
+  .section ol {
+    margin-left: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .section li {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .toc {
+    padding: 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  .toc h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+
+  .toc-list {
+    gap: 0.5rem;
+  }
+
+  .toc-list li a {
+    padding: 0.875rem;
+    font-size: 0.9rem;
+  }
+
+  .toc-list li a i {
+    font-size: 1rem;
+  }
+
+  .card-grid {
+    gap: 1rem;
+  }
+
+  .card {
+    padding: 1.25rem;
+  }
+
+  .card h4 {
+    font-size: 1.05rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .card h4 i {
+    font-size: 1.25rem;
+  }
+
+  .card p {
+    font-size: 0.9rem;
+  }
+
+  .definition-list li {
+    padding: 0.875rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .definition-list li strong {
+    font-size: 1rem;
+  }
+
+  .table-container {
+    font-size: 0.8rem;
+    margin: 1.5rem -1.25rem;
+    padding: 0 1.25rem;
+  }
+
+  table {
+    min-width: 550px;
+  }
+
+  th {
+    padding: 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  td {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+  }
+
+  .timeline {
+    padding-left: 1.25rem;
+  }
+
+  .timeline::before {
+    width: 2px;
+  }
+
+  .timeline-item {
+    padding-left: 1.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .timeline-item::before {
+    left: -2.125rem;
+    width: 14px;
+    height: 14px;
+    border: 3px solid var(--color-white);
+  }
+
+  .timeline-item h4 {
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .timeline-item p {
+    font-size: 0.9rem;
+  }
+
+  .highlight-box,
+  .warning-box,
+  .danger-box,
+  .info-box {
+    padding: 1rem;
+    margin: 1.25rem 0;
+    border-left-width: 3px;
+  }
+
+  .highlight-box h4,
+  .warning-box h4,
+  .danger-box h4,
+  .info-box h4 {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .highlight-box h4 i,
+  .warning-box h4 i,
+  .danger-box h4 i,
+  .info-box h4 i {
+    font-size: 1rem;
+  }
+
+  .highlight-box p,
+  .warning-box p,
+  .danger-box p,
+  .info-box p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .highlight-box ul,
+  .warning-box ul,
+  .danger-box ul,
+  .info-box ul {
+    margin-left: 1rem;
+  }
+
+  .highlight-box li,
+  .warning-box li,
+  .danger-box li,
+  .info-box li {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .cta-section {
+    padding: 2rem 1.25rem;
+    margin-top: 2rem;
+  }
+
+  .cta-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .cta-section p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .btn-white {
+    padding: 0.875rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  footer {
+    padding: 1.5rem 1.25rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.45rem;
+  }
+
+  .hero-lead {
+    font-size: 0.9rem;
+  }
+
+  .stat-box h3 {
+    font-size: 1.5rem;
+  }
+
+  .stat-box p {
+    font-size: 0.8rem;
+  }
+
+  .section {
+    padding: 1.25rem 1rem;
+  }
+
+  .section h2 {
+    font-size: 1.25rem;
+  }
+
+  .section h3 {
+    font-size: 1.05rem;
+  }
+
+  .toc {
+    padding: 1rem;
+  }
+
+  .toc h2 {
+    font-size: 1.2rem;
+  }
+
+  .toc-list li a {
+    font-size: 0.85rem;
+    padding: 0.75rem;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  .card h4 {
+    font-size: 1rem;
+  }
+
+  .table-container {
+    margin: 1.5rem -1rem;
+    padding: 0 1rem;
+  }
+
+  .timeline-item h4 {
+    font-size: 0.95rem;
+  }
+
+  .timeline-item p {
+    font-size: 0.85rem;
+  }
+
+  .cta-section h2 {
+    font-size: 1.35rem;
+  }
+
+  .btn-white {
+    font-size: 0.85rem;
+    padding: 0.75rem 1.25rem;
+  }
+}
+</style>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <a href="/" class="logo">exigetuseguro<span>.cl</span></a>
+      <a href="/" class="btn-home"><i class="fas fa-home"></i> Volver al Inicio</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-container">
+      <h1>Conoce tu Póliza de Seguro</h1>
+      <p class="hero-lead">Guía completa sobre seguros en Chile: legislación, tipos, cláusulas y tus derechos como asegurado según CMF y SERNAC</p>
+      
+      <div class="hero-stats">
+        <div class="stat-box">
+          <h3><i class="fas fa-book"></i></h3>
+          <p>Código de Comercio Libro II Título VIII</p>
+        </div>
+        <div class="stat-box">
+          <h3><i class="fas fa-shield-alt"></i></h3>
+          <p>Regulado por CMF y SVS</p>
+        </div>
+        <div class="stat-box">
+          <h3><i class="fas fa-balance-scale"></i></h3>
+          <p>Tus derechos protegidos por ley</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <!-- Tabla de Contenidos -->
+    <nav class="toc">
+      <h2><i class="fas fa-list"></i> Tabla de Contenidos</h2>
+      <ul class="toc-list">
+        <li><a href="#que-es"><i class="fas fa-question-circle"></i> ¿Qué es una Póliza?</a></li>
+        <li><a href="#legislacion"><i class="fas fa-gavel"></i> Legislación Chilena</a></li>
+        <li><a href="#partes"><i class="fas fa-file-contract"></i> Partes de una Póliza</a></li>
+        <li><a href="#tipos"><i class="fas fa-list-alt"></i> Tipos de Seguros</a></li>
+        <li><a href="#clausulas"><i class="fas fa-file-signature"></i> Cláusulas Importantes</a></li>
+        <li><a href="#derechos"><i class="fas fa-user-shield"></i> Tus Derechos</a></li>
+        <li><a href="#obligaciones"><i class="fas fa-tasks"></i> Obligaciones</a></li>
+        <li><a href="#siniestro"><i class="fas fa-exclamation-triangle"></i> Proceso de Siniestro</a></li>
+        <li><a href="#cmf"><i class="fas fa-landmark"></i> Regulación CMF</a></li>
+        <li><a href="#errores"><i class="fas fa-times-circle"></i> Errores Comunes</a></li>
+      </ul>
+    </nav>
+
+    <!-- ¿Qué es una Póliza? -->
+    <section id="que-es" class="section">
+      <h2><i class="fas fa-question-circle"></i> ¿Qué es una Póliza de Seguro?</h2>
+      
+      <p>Una póliza de seguro es un <strong>contrato bilateral</strong> mediante el cual una compañía aseguradora se compromete, a cambio del pago de una prima, a indemnizar al asegurado o beneficiario en caso de que ocurra un evento específico (siniestro) cubierto por el contrato.</p>
+
+      <div class="highlight-box">
+        <h4><i class="fas fa-book-open"></i> Definición Legal</h4>
+        <p>Según el <strong>Artículo 512 del Código de Comercio chileno</strong>: "El seguro es un contrato bilateral, condicional y aleatorio por el cual una persona natural o jurídica toma sobre sí por un determinado tiempo todos o alguno de los riesgos de pérdida o deterioro que corren ciertos objetos pertenecientes a otra persona, obligándose, mediante una retribución convenida, a indemnizarle la pérdida o cualquier otro daño estimable que sufran los objetos asegurados."</p>
+      </div>
+
+      <h3>Características Fundamentales</h3>
+      <div class="card-grid">
+        <div class="card">
+          <h4><i class="fas fa-handshake"></i> Bilateral</h4>
+          <p>Genera obligaciones para ambas partes: el asegurado paga la prima y la aseguradora asume el riesgo.</p>
+        </div>
+        <div class="card">
+          <h4><i class="fas fa-question"></i> Condicional</h4>
+          <p>La obligación de indemnizar está sujeta a que ocurra el siniestro especificado en la póliza.</p>
+        </div>
+        <div class="card">
+          <h4><i class="fas fa-dice"></i> Aleatorio</h4>
+          <p>Existe incertidumbre sobre si ocurrirá el evento asegurado y cuándo sucederá.</p>
+        </div>
+        <div class="card">
+          <h4><i class="fas fa-file-signature"></i> Solemne</h4>
+          <p>Debe constar por escrito en una póliza. No basta el acuerdo verbal.</p>
+        </div>
+        <div class="card">
+          <h4><i class="fas fa-balance-scale"></i> De Buena Fe</h4>
+          <p>Requiere máxima honestidad y transparencia de ambas partes.</p>
+        </div>
+        <div class="card">
+          <h4><i class="fas fa-shield-alt"></i> De Adhesión</h4>
+          <p>Generalmente, las condiciones son predefinidas por la aseguradora.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Legislación -->
+    <section id="legislacion" class="section">
+      <h2><i class="fas fa-gavel"></i> Marco Legal en Chile</h2>
+
+      <p>El contrato de seguro en Chile está regulado por múltiples normativas que protegen tanto a asegurados como aseguradoras:</p>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Normativa</th>
+              <th>Ámbito de Regulación</th>
+              <th>Artículos Clave</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Código de Comercio</strong></td>
+              <td>Regula el contrato de seguro en general</td>
+              <td>Artículos 512-570</td>
+            </tr>
+            <tr>
+              <td><strong>DFL N° 251 (1931)</strong></td>
+              <td>Compañías de seguros, reaseguros y corredoras</td>
+              <td>Todo el cuerpo legal</td>
+            </tr>
+            <tr>
+              <td><strong>Ley N° 20.667</strong></td>
+              <td>Tipifica delito de fraude en seguros</td>
+              <td>Artículo 470 N° 10 Código Penal</td>
+            </tr>
+            <tr>
+              <td><strong>Decreto Supremo 1.055</strong></td>
+              <td>Liquidación de siniestros</td>
+              <td>Artículos 26-27</td>
+            </tr>
+            <tr>
+              <td><strong>Ley N° 21.398 (CMF)</strong></td>
+              <td>Creación de la Comisión para el Mercado Financiero</td>
+              <td>Fiscalización del mercado</td>
+            </tr>
+            <tr>
+              <td><strong>Ley N° 19.496 (SERNAC)</strong></td>
+              <td>Protección de derechos del consumidor</td>
+              <td>Artículos sobre seguros</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="info-box">
+        <h4><i class="fas fa-university"></i> Rol de la CMF</h4>
+        <p>La Comisión para el Mercado Financiero (CMF) es el organismo fiscalizador del mercado de seguros en Chile. Supervisa a las compañías aseguradoras, corredoras de seguros y liquidadores. Recibe reclamos de asegurados y puede sancionar a las empresas que no cumplan la normativa.</p>
+      </div>
+
+      <div class="info-box">
+        <h4><i class="fas fa-shield-alt"></i> Rol del SERNAC</h4>
+        <p>El Servicio Nacional del Consumidor (SERNAC) protege los derechos de los consumidores, incluyendo a los asegurados. Puedes presentar reclamos cuando consideres que la aseguradora ha vulnerado tus derechos como consumidor.</p>
+      </div>
+    </section>
+
+    <!-- Partes de una Póliza -->
+    <section id="partes" class="section">
+      <h2><i class="fas fa-file-contract"></i> Partes de una Póliza de Seguro</h2>
+
+      <p>Una póliza de seguro completa debe contener las siguientes secciones según la legislación chilena:</p>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <h4>1. Carátula o Portada</h4>
+          <p>Resumen ejecutivo con datos clave: número de póliza, asegurado, vigencia, suma asegurada, prima y tipo de seguro.</p>
+        </div>
+
+        <div class="timeline-item">
+          <h4>2. Condiciones Generales</h4>
+          <p>Reglas aplicables a todos los contratos de ese tipo de seguro. Incluyen definiciones, coberturas básicas, exclusiones generales, obligaciones de las partes y procedimientos.</p>
+        </div>
+
+        <div class="timeline-item">
+          <h4>3. Condiciones Particulares</h4>
+          <p>Cláusulas específicas de tu contrato individual: datos personales, bien asegurado, coberturas contratadas, deducibles, suma asegurada específica y vigencia exacta.</p>
+        </div>
+
+        <div class="timeline-item">
+          <h4>4. Anexos y Endosos</h4>
+          <p>Modificaciones, ampliaciones o restricciones realizadas después de la emisión inicial de la póliza.</p>
+        </div>
+
+        <div class="timeline-item">
+          <h4>5. Cláusulas Adicionales</h4>
+          <p>Coberturas opcionales contratadas: asistencia en viaje, reemplazo de vehículo, gastos médicos adicionales, etc.</p>
+        </div>
+      </div>
+
+      <div class="warning-box">
+        <h4><i class="fas fa-exclamation-triangle"></i> Importante: Lee TODO el Documento</h4>
+        <p>Muchos asegurados solo leen la carátula y firman. <strong>Las condiciones generales contienen las exclusiones y limitaciones</strong> que pueden hacer que tu siniestro no sea cubierto. Es fundamental leer y entender TODO el documento antes de contratar.</p>
+      </div>
+
+      <h3>Información Mínima Obligatoria (Art. 517 Código de Comercio)</h3>
+      <ul class="definition-list">
+        <li>
+          <strong>Nombres y domicilios de las partes</strong>
+          Identificación completa del asegurado, aseguradora y beneficiarios.
+        </li>
+        <li>
+          <strong>Naturaleza de los riesgos</strong>
+          Descripción clara de qué eventos están cubiertos.
+        </li>
+        <li>
+          <strong>Designación del objeto asegurado</strong>
+          Identificación precisa del bien o persona asegurada.
+        </li>
+        <li>
+          <strong>Suma asegurada o alcance de cobertura</strong>
+          Monto máximo que la aseguradora pagará en caso de siniestro.
+        </li>
+        <li>
+          <strong>Prima o precio del seguro</strong>
+          Costo del seguro y forma de pago.
+        </li>
+        <li>
+          <strong>Fecha de inicio y término</strong>
+          Período exacto de vigencia de la cobertura.
+        </li>
+        <li>
+          <strong>Demás pactos acordados</strong>
+          Cualquier condición especial pactada entre las partes.
+        </li>
+      </ul>
+    </section>
+
+    <!-- Tipos de Seguros -->
+    <section id="tipos" class="section">
+      <h2><i class="fas fa-list-alt"></i> Tipos de Seguros en Chile</h2>
+
+      <p>En Chile existe una amplia variedad de seguros. Los más comunes son:</p>
+
+      <h3>Seguros de Personas</h3>
+      <div class="card-grid">
+        <div class="card">
+          <h4><i class="fas fa-heartbeat"></i> Seguro de Vida</h4>
+          <p>Cubre fallecimiento o invalidez total y permanente. Puede incluir cobertura por enfermedades graves.</p>
+        </div>
+        <div class="card">
+          <h4><i class="fas fa-hospital"></i> Seguro de Salud</h4>
+          <p>Complementario a Isapre o Fonasa. Cubre gastos médicos, hospitalarios y procedimientos específicos.</p>
+        </div>
+        <div class="card">
+          <h4><i class="fas fa-briefcase-medical"></i> Seguro de Accidentes Personales</h4>
+          <p>Indemnización por lesiones o muerte accidental. No cubre enfermedades.</p>
+        </div>
+        <div class="card">
+          <h4><i class="fas fa-plane"></i> Seguro de Viaje</h4>
+          <p>Cobertura internacional: asistencia médica, cancelación de vuelos, pérdida de equipaje.</p>
+        </div>
+      </div>
+
+      <h3>Seguros de Bienes (Patrimoniales)</h3>
+      <div class="card-grid">
+        <div class="card">
+          <h4><i class="fas fa-car"></i> Seguro Automotriz</h4>
+          <p>SOAP (obligatorio) y seguros voluntarios: terceros, robo, incendio, todo riesgo.</p>
+        </div>
+        <div class="card">
+          <h4><i class="fas fa-home"></i> Seguro de Hogar</h4>
+          <p>Incendio, terremoto, robo, responsabilidad civil, daños a contenidos.</p>
+        </div>
+        <div class="card">
+          <h4><i class="fas fa-fire"></i> Seguro de Incendio</h4>
+          <p>Cobertura específica para daños por fuego en inmuebles comerciales o residenciales.</p>
+        </div>
+        <div class="card">
+          <h4><i class="fas fa-shipping-fast"></i> Seguro de Transporte</h4>
+          <p>Cubre mercancías durante su transporte terrestre, marítimo o aéreo.</p>
+        </div>
+      </div>
+
+      <h3>Seguros Empresariales</h3>
+      <div class="card-grid">
+        <div class="card">
+          <h4><i class="fas fa-building"></i> Seguro de Responsabilidad Civil</h4>
+          <p>Protege contra reclamos de terceros por daños causados en el ejercicio de actividades profesionales o comerciales.</p>
+        </div>
+        <div class="card">
+          <h4><i class="fas fa-hard-hat"></i> Seguro de Construcción</h4>
+          <p>Todo riesgo para proyectos de construcción: daños materiales, responsabilidad civil, equipos.</p>
+        </div>
+        <div class="card">
+          <h4><i class="fas fa-user-tie"></i> Seguro de Vida Colectivo</h4>
+          <p>Póliza grupal para empleados de una empresa. Incluye invalidez y enfermedades graves.</p>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <h4><i class="fas fa-lightbulb"></i> Consejo de Experto</h4>
+        <p>Antes de contratar cualquier seguro, compara al menos 3 cotizaciones de diferentes aseguradoras. Las coberturas pueden variar significativamente entre compañías, aunque el nombre del producto sea similar.</p>
+      </div>
+    </section>
+
+    <!-- Cláusulas Importantes -->
+    <section id="clausulas" class="section">
+      <h2><i class="fas fa-file-signature"></i> Cláusulas y Conceptos Clave</h2>
+
+      <h3>Términos que Debes Conocer</h3>
+      <ul class="definition-list">
+        <li>
+          <strong>Prima</strong>
+          Precio que pagas por el seguro. Puede ser única, anual o fraccionada (mensual, trimestral).
+        </li>
+        <li>
+          <strong>Suma Asegurada</strong>
+          Monto máximo que la aseguradora pagará en caso de siniestro. También llamado "capital asegurado".
+        </li>
+        <li>
+          <strong>Deducible</strong>
+          Cantidad que TÚ pagas de tu bolsillo antes de que la aseguradora comience a indemnizar. Ejemplo: deducible $200.000 en seguro de auto.
+        </li>
+        <li>
+          <strong>Coaseguro</strong>
+          Porcentaje del siniestro que asumes tú. Ejemplo: coaseguro 20% significa que pagas el 20% del daño y la aseguradora el 80%.
+        </li>
+        <li>
+          <strong>Franquicia</strong>
+          Cantidad o porcentaje del seguro que queda sin cobertura. Similar al deducible pero aplicado de forma diferente según el contrato.
+        </li>
+        <li>
+          <strong>Carencia</strong>
+          Período desde la contratación durante el cual ciertas coberturas aún no están activas. Común en seguros de salud.
+        </li>
+        <li>
+          <strong>Valor de Reposición</strong>
+          La aseguradora paga el costo de reemplazar el bien por uno nuevo, sin considerar depreciación.
+        </li>
+        <li>
+          <strong>Valor Real o Depreciado</strong>
+          Se descuenta el desgaste y antigüedad del bien al momento del siniestro.
+        </li>
+        <li>
+          <strong>Indisputabilidad (Seguros de Vida)</strong>
+          Después de 2 años, la aseguradora no puede anular la póliza por omisiones del asegurado, excepto por dolo.
+        </li>
+        <li>
+          <strong>Beneficiario</strong>
+          Persona designada para recibir la indemnización en caso de fallecimiento del asegurado (en seguros de vida).
+        </li>
+      </ul>
+
+      <h3>Cláusulas de Exclusión Comunes</h3>
+      <div class="danger-box">
+        <h4><i class="fas fa-ban"></i> Lee las Exclusiones Cuidadosamente</h4>
+        <p>Las exclusiones son situaciones en las que la aseguradora NO pagará, aunque ocurra un siniestro. Estas varían según el tipo de seguro:</p>
+      </div>
+
+      <div class="card-grid">
+        <div class="card">
+          <h4><i class="fas fa-times-circle"></i> Seguros de Vida</h4>
+          <p><strong>Exclusiones típicas:</strong> Suicidio en los primeros 2 años, guerra, actos dolosos, práctica de deportes extremos no declarados.</p>
+        </div>
+        <div class="card">
+          <h4><i class="fas fa-times-circle"></i> Seguros de Auto</h4>
+          <p><strong>Exclusiones típicas:</strong> Conducir bajo efectos del alcohol, conductor sin licencia, uso no autorizado del vehículo, desgaste natural.</p>
+        </div>
+        <div class="card">
+          <h4><i class="fas fa-times-circle"></i> Seguros de Hogar</h4>
+          <p><strong>Exclusiones típicas:</strong> Daños por falta de mantención, guerra, actos de terrorismo, inundaciones (a menos que se contrate cobertura específica).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Derechos del Asegurado -->
+    <section id="derechos" class="section">
+      <h2><i class="fas fa-user-shield"></i> Tus Derechos como Asegurado</h2>
+
+      <p>La legislación chilena protege a los asegurados con una serie de derechos fundamentales:</p>
+
+      <div class="card-grid">
+        <div class="card">
+          <h4><i class="fas fa-info-circle"></i> Derecho a la Información</h4>
+          <p>La aseguradora debe entregarte información clara, veraz y oportuna sobre coberturas, exclusiones, costos y condiciones del contrato.</p>
+        </div>
+        <div class="card">
+          <h4><i class="fas fa-file-contract"></i> Recibir la Póliza</h4>
+          <p>Tienes derecho a recibir la póliza completa en un plazo máximo de 5 días hábiles desde la contratación.</p>
+        </div>
+        <div class="card">
+          <h4><i class="fas fa-undo"></i> Retracto (10 días)</h4>
+          <p>Puedes arrepentirte y anular el contrato dentro de los 10 días siguientes a su perfeccionamiento, recuperando la prima pagada.</p>
+        </div>
+        <div class="card">
+          <h4><i class="fas fa-balance-scale"></i> Interpretación a tu Favor</h4>
+          <p>En caso de ambigüedad o cláusulas poco claras, la interpretación debe favorecer al asegurado (Artículo 1566 Código Civil).</p>
+        </div>
+        <div class="card">
+          <h4><i class="fas fa-clock"></i> Plazos de Respuesta</h4>
+          <p>La aseguradora tiene plazos legales para responder tus solicitudes y pagar indemnizaciones (6 días hábiles en general).</p>
+        </div>
+        <div class="card">
+          <h4><i class="fas fa-exclamation-triangle"></i> Reclamar ante CMF y SERNAC</h4>
+          <p>Puedes presentar reclamos ante organismos fiscalizadores si consideras que tus derechos han sido vulnerados.</p>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <h4><i class="fas fa-gavel"></i> Principio de Buena Fe (Art. 1546 Código Civil)</h4>
+        <p>"Los contratos deben ejecutarse de buena fe, y por consiguiente obligan no sólo a lo que en ellos se expresa, sino a todas las cosas que emanan precisamente de la naturaleza de la obligación, o que por la ley o la costumbre pertenecen a ella."</p>
+        <p style="margin-top: 1rem;"><strong>Esto significa:</strong> La aseguradora no puede usar tecnicismos o trampas para negarse a pagar un siniestro que claramente debería estar cubierto.</p>
+      </div>
+    </section>
+
+    <!-- Obligaciones -->
+    <section id="obligaciones" class="section">
+      <h2><i class="fas fa-tasks"></i> Obligaciones del Asegurado</h2>
+
+      <p>Así como tienes derechos, también tienes obligaciones que cumplir. El incumplimiento puede llevar al rechazo del siniestro:</p>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <h4>1. Declarar el Riesgo Correctamente</h4>
+          <p>Al contratar, debes proporcionar información <strong>veraz, completa y exacta</strong> sobre el objeto asegurado y los riesgos. Omitir datos importantes puede dar lugar a la anulación de la póliza.</p>
+        </div>
+
+        <div class="timeline-item">
+          <h4>2. Pagar la Prima a Tiempo</h4>
+          <p>El contrato solo está vigente si la prima ha sido pagada. Algunos seguros tienen un período de gracia, pero es tu responsabilidad pagar dentro de los plazos.</p>
+        </div>
+
+        <div class="timeline-item">
+          <h4>3. Mantener el Bien Asegurado</h4>
+          <p>Debes cuidar y mantener el bien asegurado con la diligencia de un "buen padre de familia". No puedes exponerlo intencionalmente a riesgos innecesarios.</p>
+        </div>
+
+        <div class="timeline-item">
+          <h4>4. Avisar Cambios Relevantes</h4>
+          <p>Si cambian las circunstancias del riesgo (ej: cambio de uso del vehículo, modificaciones al inmueble), debes notificar a la aseguradora.</p>
+        </div>
+
+        <div class="timeline-item">
+          <h4>5. Notificar el Siniestro Inmediatamente</h4>
+          <p>En caso de siniestro, debes avisar a la aseguradora <strong>lo antes posible</strong>. Los retrasos injustificados pueden afectar tu indemnización.</p>
+        </div>
+
+        <div class="timeline-item">
+          <h4>6. Minimizar Daños</h4>
+          <p>Debes tomar medidas razonables para evitar que el daño se agrave después del siniestro.</p>
+        </div>
+
+        <div class="timeline-item">
+          <h4>7. Colaborar en la Investigación</h4>
+          <p>Proporciona toda la documentación y evidencia necesaria para que la aseguradora pueda liquidar el siniestro.</p>
+        </div>
+
+        <div class="timeline-item">
+          <h4>8. No Simular ni Exagerar</h4>
+          <p>Presentar información falsa o exagerar daños constituye <strong>fraude al seguro</strong>, tipificado como delito desde 2013 (Ley 20.667).</p>
+        </div>
+      </div>
+
+      <div class="danger-box">
+        <h4><i class="fas fa-exclamation-triangle"></i> Fraude al Seguro es Delito</h4>
+        <p>La Ley N° 20.667 tipificó el fraude al seguro como delito en el Código Penal (Art. 470 N° 10). Las conductas penadas incluyen:</p>
+        <ul style="margin-top: 1rem; margin-left: 1.5rem;">
+          <li>Simular la existencia de un siniestro</li>
+          <li>Provocarlo intencionalmente</li>
+          <li>Presentarlo con circunstancias falsas</li>
+          <li>Ocultar el bien asegurado</li>
+          <li>Aumentar fraudulentamente las pérdidas</li>
+        </ul>
+        <p style="margin-top: 1rem;"><strong>Pena:</strong> Presidio menor en sus grados medio a máximo (541 días a 5 años) y multa.</p>
+      </div>
+    </section>
+
+    <!-- Proceso de Siniestro -->
+    <section id="siniestro" class="section">
+      <h2><i class="fas fa-exclamation-triangle"></i> Proceso Después de un Siniestro</h2>
+
+      <p>Cuando ocurre un siniestro, es fundamental seguir el proceso correcto para asegurar que tu reclamo sea procesado adecuadamente:</p>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <h4>Paso 1: Aviso Inmediato (0-48 horas)</h4>
+          <p>Contacta a tu aseguradora <strong>lo antes posible</strong>. La mayoría tienen líneas de emergencia 24/7. Informa: qué pasó, cuándo, dónde, circunstancias del siniestro.</p>
+        </div>
+
+        <div class="timeline-item">
+          <h4>Paso 2: Denuncia Policial (si corresponde)</h4>
+          <p>En casos de robo, hurto, accidentes de tránsito con lesionados o daños a terceros, debes hacer la denuncia ante Carabineros o PDI. El parte policial es requisito obligatorio.</p>
+        </div>
+
+        <div class="timeline-item">
+          <h4>Paso 3: Documentación (1-5 días)</h4>
+          <p>Reúne y entrega a la aseguradora: fotos del daño, facturas, comprobantes, informes médicos, parte policial, testigos, cualquier evidencia relevante.</p>
+        </div>
+
+        <div class="timeline-item">
+          <h4>Paso 4: Visita del Liquidador (5-15 días)</h4>
+          <p>La aseguradora designará un liquidador independiente o usará liquidación interna. El liquidador inspeccionará el daño, evaluará la cobertura y determinará el monto a indemnizar.</p>
+        </div>
+
+        <div class="timeline-item">
+          <h4>Paso 5: Informe de Liquidación (10-30 días)</h4>
+          <p>El liquidador emite un informe técnico. <strong>Tienes 10 días hábiles para impugnarlo</strong> si no estás de acuerdo (20 días si la prima >200 UF).</p>
+        </div>
+
+        <div class="timeline-item">
+          <h4>Paso 6: Pago de Indemnización (6 días)</h4>
+          <p>Una vez aceptado el informe (o resueltas las impugnaciones), la aseguradora tiene <strong>6 días hábiles</strong> para pagar la indemnización.</p>
+        </div>
+      </div>
+
+      <div class="warning-box">
+        <h4><i class="fas fa-clock"></i> Plazos Legales Importantes</h4>
+        <ul style="margin-top: 1rem; margin-left: 1.5rem;">
+          <li><strong>Emisión del informe de liquidación:</strong> 30 días hábiles desde el aviso del siniestro (puede extenderse en casos complejos)</li>
+          <li><strong>Impugnación del informe:</strong> 10 días hábiles desde su recepción (20 días si prima >200 UF)</li>
+          <li><strong>Respuesta a impugnación:</strong> 6 días hábiles (12 días si prima >200 UF)</li>
+          <li><strong>Pago de indemnización:</strong> 6 días hábiles desde la aprobación</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Regulación CMF -->
+    <section id="cmf" class="section">
+      <h2><i class="fas fa-landmark"></i> Regulación y Fiscalización (CMF)</h2>
+
+      <p>La Comisión para el Mercado Financiero (CMF) es el organismo encargado de fiscalizar a las compañías de seguros en Chile.</p>
+
+      <h3>Facultades de la CMF</h3>
+      <div class="card-grid">
+        <div class="card">
+          <h4><i class="fas fa-search"></i> Supervisión</h4>
+          <p>Verifica que las aseguradoras cumplan con la normativa vigente y mantengan solvencia financiera adecuada.</p>
+        </div>
+        <div class="card">
+          <h4><i class="fas fa-balance-scale"></i> Recepción de Reclamos</h4>
+          <p>Los asegurados pueden presentar reclamos cuando consideren que sus derechos han sido vulnerados.</p>
+        </div>
+        <div class="card">
+          <h4><i class="fas fa-gavel"></i> Sanción</h4>
+          <p>Puede sancionar a aseguradoras que incumplan la ley con multas, censuras o incluso revocación de autorización.</p>
+        </div>
+        <div class="card">
+          <h4><i class="fas fa-book"></i> Normativa</h4>
+          <p>Emite normas de carácter general para el funcionamiento del mercado de seguros.</p>
+        </div>
+      </div>
+
+      <h3>Cómo Presentar un Reclamo ante la CMF</h3>
+      <div class="timeline">
+        <div class="timeline-item">
+          <h4>1. Intenta resolver con la aseguradora primero</h4>
+          <p>La CMF generalmente requiere que hayas intentado solucionar el problema directamente con la compañía.</p>
+        </div>
+
+        <div class="timeline-item">
+          <h4>2. Ingresa a www.cmfchile.cl</h4>
+          <p>Utiliza la plataforma de atención ciudadana con tu Clave Única.</p>
+        </div>
+
+        <div class="timeline-item">
+          <h4>3. Completa el formulario de reclamo</h4>
+          <p>Detalla claramente el problema, adjunta documentación de respaldo (póliza, correspondencia, rechazos, etc.).</p>
+        </div>
+
+        <div class="timeline-item">
+          <h4>4. La CMF solicita informe a la aseguradora</h4>
+          <p>La compañía tiene un plazo para responder y justificar su actuación.</p>
+        </div>
+
+        <div class="timeline-item">
+          <h4>5. Resolución del reclamo</h4>
+          <p>La CMF emite una resolución. Si bien no es vinculante, las aseguradoras generalmente acatan las instrucciones del regulador.</p>
+        </div>
+      </div>
+
+      <div class="info-box">
+        <h4><i class="fas fa-info-circle"></i> Importante: Reclamo CMF vs. Acción Legal</h4>
+        <p>Un reclamo ante la CMF <strong>no es una demanda judicial</strong>. La CMF fiscaliza el cumplimiento normativo, pero no puede ordenar el pago de indemnizaciones. Para eso, necesitas acción legal (mediación, arbitraje o tribunales).</p>
+        <p style="margin-top: 1rem;">Sin embargo, un informe favorable de la CMF puede ser evidencia valiosa en un posterior litigio.</p>
+      </div>
+    </section>
+
+    <!-- Errores Comunes -->
+    <section id="errores" class="section">
+      <h2><i class="fas fa-times-circle"></i> Errores Comunes al Contratar un Seguro</h2>
+
+      <p>Evita estos errores frecuentes que pueden costarte caro:</p>
+
+      <div class="card-grid">
+        <div class="card">
+          <h4><i class="fas fa-file-alt"></i> No Leer la Póliza Completa</h4>
+          <p>El error más común. Muchos solo leen la carátula y firman sin revisar las condiciones generales donde están las exclusiones importantes.</p>
+        </div>
+
+        <div class="card">
+          <h4><i class="fas fa-user-secret"></i> Ocultar Información Relevante</h4>
+          <p>Omitir enfermedades preexistentes, siniestros anteriores o uso del vehículo puede llevar a la anulación de la póliza cuando más la necesitas.</p>
+        </div>
+
+        <div class="card">
+          <h4><i class="fas fa-dollar-sign"></i> Elegir por Precio Solamente</h4>
+          <p>El seguro más barato no siempre es el mejor. Compara coberturas, exclusiones, servicio al cliente y solvencia de la aseguradora.</p>
+        </div>
+
+        <div class="card">
+          <h4><i class="fas fa-shield-alt"></i> Subestimar la Suma Asegurada</h4>
+          <p>Asegurar por menos del valor real te dejará desprotegido. En seguros de hogar, asegura el valor de reposición, no el valor depreciado.</p>
+        </div>
+
+        <div class="card">
+          <h4><i class="fas fa-calendar-times"></i> Dejar Vencer la Póliza</h4>
+          <p>Si tu seguro vence y no lo renuevas, quedas sin cobertura. Un siniestro durante ese período no será indemnizado.</p>
+        </div>
+
+        <div class="card">
+          <h4><i class="fas fa-user-edit"></i> No Actualizar Beneficiarios</h4>
+          <p>En seguros de vida, revisa y actualiza tus beneficiarios periódicamente (divorcios, nacimientos, fallecimientos).</p>
+        </div>
+
+        <div class="card">
+          <h4><i class="fas fa-bell-slash"></i> No Avisar Cambios</h4>
+          <p>Cambios en el uso del vehículo, domicilio, o actividad profesional deben ser notificados a la aseguradora.</p>
+        </div>
+
+        <div class="card">
+          <h4><i class="fas fa-question-circle"></i> No Preguntar lo que No Entiendes</h4>
+          <p>Si una cláusula no está clara, pregunta. Es mejor aclarar dudas antes de firmar que descubrir problemas después del siniestro.</p>
+        </div>
+
+        <div class="card">
+          <h4><i class="fas fa-copy"></i> Duplicar Coberturas Innecesarias</h4>
+          <p>Algunos seguros pueden superponerse (ej: seguro de la tarjeta de crédito y seguro de viaje). Revisa para no pagar dos veces por lo mismo.</p>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <h4><i class="fas fa-lightbulb"></i> Consejo Final: Asesórate Profesionalmente</h4>
+        <p>Si tienes dudas sobre tu póliza, coberturas o un rechazo de siniestro, consulta con un abogado especialista en seguros. La inversión en asesoría legal puede ahorrarte miles de dólares y años de disputas.</p>
+        <p style="margin-top: 1rem;"><strong>En Exige Tu Seguro</strong> ofrecemos primera consulta gratuita para evaluar tu caso.</p>
+      </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="cta-section">
+      <h2><i class="fas fa-question-circle"></i> ¿Tienes Dudas sobre tu Póliza?</h2>
+      <p>Nuestros abogados especialistas pueden revisar tu póliza, explicarte tus derechos y defenderte ante rechazos injustos.</p>
+      <div class="cta-buttons">
+        <a href="/contacto" class="btn-white">
+          <i class="fas fa-calendar"></i> <span>Agendar Consulta Gratuita</span>
+        </a>
+        <a href="https://wa.me/56979939868?text=Hola,%20necesito%20ayuda%20para%20entender%20mi%20póliza" class="btn-white" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-whatsapp"></i> <span>Consultar por WhatsApp</span>
+        </a>
+        <a href="/recursos" class="btn-white">
+          <i class="fas fa-download"></i> <span>Descargar Recursos Gratuitos</span>
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Exige Tu Seguro - Todos los derechos reservados</p>
+    <p style="margin-top: 0.5rem;">Abogados especialistas en seguros en Chile</p>
+  </footer>
+
+  <script>
+    // Smooth scroll para los enlaces de navegación
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Highlight de sección activa al hacer scroll
+    const sections = document.querySelectorAll('.section');
+    const tocLinks = document.querySelectorAll('.toc-list a');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (scrollY >= (sectionTop - 150)) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      tocLinks.forEach(link => {
+        link.style.fontWeight = '400';
+        link.style.color = 'var(--color-dark)';
+        if (link.getAttribute('href') === `#${current}`) {
+          link.style.fontWeight = '600';
+          link.style.color = 'var(--color-accent)';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
