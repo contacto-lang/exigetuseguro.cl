@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Blog Legal sobre Seguros en Chile | Exige Tu Seguro</title>
+<meta name="description" content="Artículos especializados sobre seguros en Chile. Aprende sobre tus derechos, reclamaciones, litigios y casos reales. Información legal actualizada por abogados expertos."/>
+<meta name="robots" content="index, follow"/>
+<link href="https://www.exigetuseguro.cl/blog" rel="canonical"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://www.exigetuseguro.cl/blog"/>
+<meta property="og:title" content="Blog Legal sobre Seguros en Chile | Exige Tu Seguro"/>
+<meta property="og:description" content="Artículos especializados sobre seguros, derechos del asegurado, reclamaciones y litigios en Chile"/>
+<meta property="og:image" content="https://www.exigetuseguro.cl/images/blog-og.jpg"/>
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image"/>
+<meta property="twitter:url" content="https://www.exigetuseguro.cl/blog"/>
+<meta property="twitter:title" content="Blog Legal sobre Seguros en Chile | Exige Tu Seguro"/>
+<meta property="twitter:description" content="Artículos especializados sobre seguros, derechos del asegurado, reclamaciones y litigios en Chile"/>
+<meta property="twitter:image" content="https://www.exigetuseguro.cl/images/blog-twitter.jpg"/>
+
+<!-- Schema.org -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "Blog Legal sobre Seguros - Exige Tu Seguro",
+  "description": "Artículos especializados sobre seguros en Chile, derechos del asegurado y litigios",
+  "url": "https://www.exigetuseguro.cl/blog",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Exige Tu Seguro",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.exigetuseguro.cl/images/logo.png"
+    }
+  }
+}
+</script>
+
+<style>
+:root {
+  --color-primary: #0A3D62;
+  --color-secondary: #3695BF;
+  --color-accent: #34A853;
+  --color-warning: #F59E0B;
+  --color-danger: #EF4444;
+  --color-dark: #0f1419;
+  --color-gray: #6b7280;
+  --color-gray-light: #e5e7eb;
+  --color-white: #ffffff;
+  --color-bg: #f9fafb;
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --border-radius: 12px;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+  --shadow-lg: 0 8px 24px rgba(0,0,0,0.12);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-bg);
+  color: var(--color-dark);
+  line-height: 1.7;
+}
+
+header {
+  background: var(--color-white);
+  padding: 1.5rem 2rem;
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid var(--color-gray-light);
+}
+
+.header-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.logo {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.logo span {
+  color: var(--color-accent);
+}
+
+.btn-home {
+  background: var(--color-accent);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.btn-home:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(52, 168, 83, 0.2);
+}
+
+.hero {
+  background: linear-gradient(rgba(248, 250, 252, 0.95), rgba(241, 245, 249, 0.97)), 
+              url('https://images.unsplash.com/photo-1505664194779-8beaceb93744?w=1600&q=80') center/cover;
+  color: var(--color-dark);
+  padding: 5rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 3px solid var(--color-accent);
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.3)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,138.7C960,139,1056,117,1152,106.7C1248,96,1344,96,1392,96L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+  background-size: cover;
+  opacity: 0.5;
+}
+
+.hero-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-family: var(--font-heading);
+  font-size: 3.25rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+  color: var(--color-primary);
+  line-height: 1.2;
+}
+
+.hero-lead {
+  font-size: 1.35rem;
+  opacity: 0.85;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+  color: var(--color-gray);
+  font-weight: 500;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.blog-card {
+  background: var(--color-white);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  border: 2px solid transparent;
+  position: relative;
+}
+
+.blog-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 2px;
+  background: linear-gradient(135deg, var(--color-accent), var(--color-secondary));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 40px rgba(52, 168, 83, 0.15);
+}
+
+.blog-card:hover::before {
+  opacity: 1;
+}
+
+.blog-image {
+  height: 220px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.blog-card:hover .blog-image {
+  transform: scale(1.08);
+  transition: transform 0.4s ease;
+}
+
+.blog-tag {
+  position: absolute;
+  top: 1.25rem;
+  left: 1.25rem;
+  background: linear-gradient(135deg, var(--color-accent), #4CAF50);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 25px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(52, 168, 83, 0.3);
+  backdrop-filter: blur(10px);
+  z-index: 2;
+}
+
+.blog-content {
+  padding: 2rem 2rem 1.5rem;
+}
+
+.blog-content h3 {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+  line-height: 1.4;
+  transition: color 0.3s ease;
+}
+
+.blog-card:hover .blog-content h3 {
+  color: var(--color-secondary);
+}
+
+.blog-content p {
+  color: var(--color-gray);
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+.read-more {
+  color: var(--color-accent);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.read-more i {
+  transition: transform 0.3s ease;
+}
+
+.blog-card:hover .read-more {
+  gap: 0.75rem;
+}
+
+.blog-card:hover .read-more i {
+  transform: translateX(5px);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  z-index: 2000;
+  overflow-y: auto;
+}
+
+.modal.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.modal-content {
+  background: white;
+  max-width: 900px;
+  width: 100%;
+  border-radius: var(--border-radius);
+  padding: 3rem;
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-size: 2rem;
+  color: var(--color-gray);
+  cursor: pointer;
+  background: none;
+  border: none;
+  transition: var(--transition);
+}
+
+.modal-close:hover {
+  color: var(--color-dark);
+  transform: rotate(90deg);
+}
+
+.modal-content h2 {
+  font-family: var(--font-heading);
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  line-height: 1.3;
+}
+
+.modal-content h3 {
+  font-family: var(--font-heading);
+  color: var(--color-secondary);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.modal-content h4 {
+  font-family: var(--font-heading);
+  color: var(--color-primary);
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.2rem;
+}
+
+.modal-content p {
+  color: var(--color-gray);
+  margin-bottom: 1.25rem;
+  line-height: 1.8;
+}
+
+.modal-content ul, .modal-content ol {
+  margin-left: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.modal-content li {
+  color: var(--color-gray);
+  margin-bottom: 0.75rem;
+  line-height: 1.7;
+}
+
+.modal-content strong {
+  color: var(--color-primary);
+}
+
+.modal-content a {
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.modal-content a:hover {
+  text-decoration: underline;
+}
+
+.modal-content blockquote {
+  border-left: 4px solid var(--color-accent);
+  padding-left: 1.5rem;
+  margin: 2rem 0;
+  font-style: italic;
+  color: var(--color-gray);
+  background: var(--color-bg);
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+}
+
+.cta-section {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  color: white;
+  padding: 3rem;
+  border-radius: var(--border-radius);
+  text-align: center;
+  margin-top: 4rem;
+  box-shadow: var(--shadow-lg);
+}
+
+.cta-section h2 {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.cta-section p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-white {
+  background: white;
+  color: var(--color-primary);
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 200px;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.btn-white:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+footer {
+  background: var(--color-primary);
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 4rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 968px) {
+  .hero {
+    padding: 4rem 1.5rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero-lead {
+    font-size: 1.05rem;
+  }
+
+  .container {
+    padding: 3rem 1.5rem;
+  }
+
+  .blog-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .modal-content {
+    padding: 2rem 1.5rem;
+    margin: 1rem;
+  }
+
+  .modal-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .cta-section {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+  }
+
+  .btn-white {
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding: 3rem 1.25rem;
+  }
+
+  .hero h1 {
+    font-size: 1.65rem;
+  }
+
+  .hero-lead {
+    font-size: 0.95rem;
+  }
+
+  .container {
+    padding: 2rem 1.25rem;
+  }
+
+  .blog-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .blog-image {
+    height: 180px;
+  }
+
+  .blog-content {
+    padding: 1.5rem;
+  }
+
+  .blog-content h3 {
+    font-size: 1.15rem;
+  }
+
+  .modal-content {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .modal-content h2 {
+    font-size: 1.35rem;
+  }
+
+  .modal-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .cta-section {
+    padding: 2rem 1.25rem;
+  }
+
+  .cta-section h2 {
+    font-size: 1.5rem;
+  }
+}
+</style>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <a href="/" class="logo">exigetuseguro<span>.cl</span></a>
+      <a href="/" class="btn-home"><i class="fas fa-home"></i> Volver al Inicio</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-container">
+      <h1>Blog Legal sobre Seguros en Chile</h1>
+      <p class="hero-lead">Información actualizada sobre derecho de seguros, reclamaciones, litigios y tus derechos como asegurado. Artículos escritos por abogados especialistas.</p>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="blog-grid">
+      
+      <article class="blog-card" onclick="openBlogModal(0)">
+        <div class="blog-image" style="background-image: url('https://i.postimg.cc/G2k4nBFS/476531221-1063690762468539-6084965534244979362-n.jpg');">
+          <span class="blog-tag">Litigios</span>
+        </div>
+        <div class="blog-content">
+          <h3>Alternativas Legales ante la Negativa del Asegurador</h3>
+          <p>Descubre tus opciones legales cuando tu aseguradora se niega a cubrir un siniestro. Reclamos CMF, arbitraje y demandas.</p>
+          <span class="read-more">Leer más <i class="fas fa-arrow-right"></i></span>
+        </div>
+      </article>
+      
+      <article class="blog-card" onclick="openBlogModal(1)">
+        <div class="blog-image" style="background-image: url('https://i.postimg.cc/HnS2CPHx/laptop-3196481-640-min.jpg');">
+          <span class="blog-tag">Derechos</span>
+        </div>
+        <div class="blog-content">
+          <h3>Obligaciones del Asegurado y del Asegurador en Chile</h3>
+          <p>Comprende los deberes y derechos de ambas partes en un contrato de seguro según la ley chilena.</p>
+          <span class="read-more">Leer más <i class="fas fa-arrow-right"></i></span>
+        </div>
+      </article>
+      
+      <article class="blog-card" onclick="openBlogModal(2)">
+        <div class="blog-image" style="background-image: url('https://i.postimg.cc/ydgc2YxD/images-1.jpg');">
+          <span class="blog-tag">Seguros de Vida</span>
+        </div>
+        <div class="blog-content">
+          <h3>¿Qué es la Indisputabilidad en los Seguros de Vida?</h3>
+          <p>Un principio legal clave que protege a asegurados y beneficiarios después de 2 años de vigencia.</p>
+          <span class="read-more">Leer más <i class="fas fa-arrow-right"></i></span>
+        </div>
+      </article>
+      
+      <article class="blog-card" onclick="openBlogModal(3)">
+        <div class="blog-image" style="background-image: url('https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg');">
+          <span class="blog-tag">Guía Práctica</span>
+        </div>
+        <div class="blog-content">
+          <h3>¿Cómo Impugnar un Informe de Liquidación de Seguros?</h3>
+          <p>Guía paso a paso para asegurados sobre el proceso de impugnación efectiva ante rechazos injustos.</p>
+          <span class="read-more">Leer más <i class="fas fa-arrow-right"></i></span>
+        </div>
+      </article>
+      
+      <article class="blog-card" onclick="openBlogModal(4)">
+        <div class="blog-image" style="background-image: url('https://i.postimg.cc/qgfGRHPm/images.jpg');">
+          <span class="blog-tag">Fraude</span>
+        </div>
+        <div class="blog-content">
+          <h3>Fraude en los Seguros: Cómo Afecta tu Bolsillo</h3>
+          <p>El fraude en seguros aumenta las primas para todos. Conoce cómo identificarlo y prevenirlo.</p>
+          <span class="read-more">Leer más <i class="fas fa-arrow-right"></i></span>
+        </div>
+      </article>
+      
+      <article class="blog-card" onclick="openBlogModal(5)">
+        <div class="blog-image" style="background-image: url('https://i.postimg.cc/DyNLghmm/seguros-de-camionetas.jpg');">
+          <span class="blog-tag">Vehículos</span>
+        </div>
+        <div class="blog-content">
+          <h3>Todo sobre el Seguro Vehicular en Chile 2025</h3>
+          <p>Guía completa: SOAP, seguros voluntarios, coberturas y qué hacer si tu aseguradora no responde.</p>
+          <span class="read-more">Leer más <i class="fas fa-arrow-right"></i></span>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- CTA Final -->
+<section class="cta-section">
+  <h2><i class="fas fa-question-circle"></i> ¿Necesitas Asesoría Legal en Seguros?</h2>
+  <p>Nuestros abogados especialistas pueden ayudarte a defender tus derechos ante rechazos injustos de aseguradoras.</p>
+  <div class="cta-buttons">
+    <a href="https://exigetuseguro.cl/contacto" class="btn-white">
+      <i class="fas fa-calendar"></i> <span>Agendar Consulta Gratuita</span>
+    </a>
+        <a href="https://wa.me/56979939868?text=Hola,%20necesito%20ayuda%20con%20mi%20seguro" class="btn-white" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-whatsapp"></i> <span>Consultar por WhatsApp</span>
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <!-- Blog Modal -->
+  <div class="modal" id="blogModal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeBlogModal()">&times;</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Exige Tu Seguro - Todos los derechos reservados</p>
+    <p style="margin-top: 0.5rem;">Abogados especialistas en seguros en Chile</p>
+  </footer>
+
+  <script>
+    const blogContent = [
+      {
+        title: "Alternativas Legales ante la Negativa del Asegurador a Indemnizar",
+        content: `
+          <p>Los seguros son instrumentos esenciales para gestionar riesgos y proteger los intereses personales y comerciales. Sin embargo, cuando una compañía de seguros se niega a indemnizar o cubrir un siniestro, surgen dudas sobre las alternativas legales disponibles para los asegurados. En este artículo exploramos las opciones que tienen los asegurados para reclamar sus derechos, basándonos en el Código de Comercio, la CMF y otros mecanismos de resolución de disputas.</p>
+<h3>Reclamo ante la CMF (Comisión para el Mercado Financiero)</h3>
+<p>Si la respuesta de la aseguradora no es satisfactoria, tienes la opción de presentar un reclamo ante la CMF. Este organismo cuenta con una plataforma de atención ciudadana en línea, donde puedes ingresar tu solicitud utilizando tu Clave Única del Registro Civil. También es posible realizar el trámite de forma presencial o enviarlo por correo físico.</p>
+<h3>La Regulación del Código de Comercio</h3>
+<p>El Código de Comercio establece que cualquier controversia relacionada con la validez, interpretación o cumplimiento de un contrato de seguro debe ser resuelta por un árbitro, elegido de común acuerdo entre las partes. Si no se alcanza un acuerdo, el tribunal ordinario designará al árbitro.</p>
+<p>Si las partes no logran ponerse de acuerdo sobre el árbitro, la justicia ordinaria designará a un árbitro mixto, quien se encargará de la tramitación y dictará una sentencia. Un aspecto clave de esta legislación es que no se puede pactar el nombre del árbitro de antemano en el contrato, garantizando la imparcialidad en la resolución del conflicto.</p>
+<p>En casos donde el monto del siniestro sea inferior a 10.000 unidades de fomento (UF), el asegurado puede optar por presentar su reclamo ante un tribunal ordinario, lo que proporciona un acceso más ágil y directo a la justicia.</p>
+<h3>El Procedimiento Aplicable</h3>
+<p>El artículo 543 del Código de Comercio también establece que las disputas deben seguir un procedimiento declarativo, adaptado a la cuantía del conflicto. Dependiendo del monto en juego, se aplicará un juicio de mayor o menor cuantía. Si el litigio se resuelve a través de arbitraje, las partes podrán pactar las reglas del procedimiento, aunque deben respetar ciertos trámites mínimos, como la presentación de pruebas y la audiencia de las partes.</p>
+<h3>Pruebas</h3>
+<p>El artículo 543 del Código de Comercio establece la <strong>libertad probatoria</strong>. Este artículo amplía las posibilidades de presentar pruebas en un juicio, permitiendo que las partes presenten diferentes tipos de evidencias más allá de las convencionales, lo que branca mayor flexibilidad a la hora de defender sus derechos.</p>
+<p>Además, los tribunales ordinarios o arbitrales tienen amplias facultades para admitir pruebas y valorar su pertinencia, lo que mejora la equidad en la resolución de los conflictos.</p>
+<h3>Si tienes un problema con tu aseguradora, <a href="https://wa.me/56979939868">contáctanos</a>.</h3>
+        `
+      },
+      {
+        title: "Obligaciones del Asegurado y del Asegurador",
+        content: `
+          <p>El contrato de seguro es un acuerdo bilateral que genera compromisos para ambas partes: el asegurado y el asegurador. A continuación, exploraremos las principales obligaciones que cada uno debe cumplir para garantizar una relación clara y equitativa.</p>
+<h2>Obligaciones del Asegurado</h2>
+<ul>
+<li><strong>Declarar las circunstancias del riesgo:</strong> Al contratar una póliza, el asegurado debe proporcionar información veraz y completa sobre el objeto asegurado y los riesgos asociados. Esto permite al asegurador evaluar adecuadamente la cobertura.</li>
+<li><strong>Informar sobre otros seguros:</strong> Si el asegurado tiene otras pólizas que cubren el mismo objeto, debe notificarlo al asegurador. Esto es clave para evitar conflictos al momento de liquidar un siniestro.</li>
+<li><strong>Pagar la prima pactada:</strong> El asegurado debe cumplir con el pago de la prima en los tiempos y formas acordados en el contrato.</li>
+<li><strong>Prevenir riesgos:</strong> Es responsabilidad del asegurado tomar medidas razonables para evitar siniestros, actuando con la diligencia de un "buen padre de familia". En caso de emergencia, los gastos incurridos para prevenir un daño inminente pueden ser reembolsados por el asegurador, siempre que no excedan la suma asegurada.</li>
+<li><strong>Notificar siniestros:</strong> Ante cualquier hecho que pueda constituir un siniestro, el asegurado debe informar al asegurador lo antes posible, proporcionando detalles claros y verídicos sobre el incidente.</li>
+<li><strong>Acreditar el siniestro:</strong> Una vez ocurrido un siniestro, el asegurado debe probar su existencia y aportar toda la información requerida sobre sus circunstancias y consecuencias.</li>
+</ul>
+<h2>Obligaciones del Asegurador</h2>
+<ul>
+<li><strong>Entregar la póliza:</strong> El asegurador debe proporcionar al asegurado la póliza o un certificado de cobertura en un plazo no mayor a cinco días hábiles desde la formalización del contrato.</li>
+<li><strong>Asesorar al asegurado:</strong> Si el contrato no fue intermediado por un corredor, el asegurador debe ofrecer asesoría sobre las condiciones del contrato, las coberturas más adecuadas y cualquier modificación durante su vigencia.</li>
+<li><strong>Indemnizar siniestros:</strong> El asegurador tiene la obligación de pagar las indemnizaciones correspondientes según los términos establecidos en la póliza. Esto incluye el reembolso de gastos razonables incurridos por el asegurado para prevenir o minimizar daños.</li>
+</ul>
+        `
+      },
+      {
+        title: "¿Qué es la Indisputabilidad en los Seguros y Por Qué es Importante?",
+        content: `
+         <p>Cuando se contrata un seguro de vida, existen diversas cláusulas que protegen tanto al asegurado como a la aseguradora. Una de las más relevantes es la <strong>indisputabilidad</strong>, un principio clave que garantiza tranquilidad y seguridad al asegurado tras un determinado periodo de tiempo. En este artículo, exploraremos qué es la indisputabilidad, cómo funciona en Chile y cuáles son sus limitaciones.</p>
+<h4>¿Qué es la Indisputabilidad?</h4>
+<p>La indisputabilidad, regulada por el <strong>Artículo 592 del Código de Comercio chileno</strong>, establece que, una vez transcurridos dos años desde la contratación del seguro, la aseguradora no puede anular la póliza o negarse a pagar basándose en omisiones o inexactitudes en las declaraciones del asegurado al momento de firmar el contrato. Esto significa que, tras este período, el asegurado y sus beneficiarios tienen mayor protección frente a disputas.</p>
+<h4>¿Cómo Protege al Asegurado?</h4>
+<p>Antes de alcanzar el plazo de indisputabilidad, las aseguradoras pueden rescindir la póliza si detectan que el asegurado proporcionó información incompleta o inexacta, incluso de manera no intencional. Sin embargo, una vez superados los dos años, la póliza se vuelve "indiscutible" excepto en casos de dolo.</p>
+<p>Por ejemplo:</p>
+<ul>
+<li>Si un asegurado omite accidentalmente informar una condición médica preexistente y pasan más de dos años sin que la aseguradora lo descubra, esta no podrá utilizar dicha omisión como motivo para anular la póliza o rechazar un pago.</li>
+</ul>
+<p>Esto proporciona un nivel de certidumbre tanto al asegurado como a sus beneficiarios, quienes pueden confiar en que la cobertura estará disponible en caso de un siniestro.</p>
+<h4>Excepciones al Principio de Indisputabilidad</h4>
+<p>Aunque la indisputabilidad protege a los asegurados, existen situaciones específicas en las que la aseguradora puede disputar una póliza incluso después de los dos años:</p>
+<ul>
+<li><strong>Declaraciones Dolosas:</strong> Si se demuestra que el asegurado actuó con dolo (intención de engañar), la aseguradora puede impugnar la póliza.</li>
+<li><strong>Fraude:</strong> La presentación de documentos falsos o la manipulación de información también invalidan la protección que otorga la indisputabilidad.</li>
+</ul>
+<p>En estos casos, la aseguradora podrá tomar acciones legales o rescindir el contrato, incluso después de que haya pasado el periodo de indisputabilidad.</p>
+<h4>Beneficios para los Asegurados</h4>
+<ul>
+<li><strong>Tranquilidad:</strong> Reduce el riesgo de que una aseguradora se niegue a pagar una indemnización por errores involuntarios en las declaraciones iniciales.</li>
+<li><strong>Seguridad para los beneficiarios:</strong> Garantiza que los beneficiarios recibirán la prestación convenida, salvo excepciones extremas.</li>
+<li><strong>Fortalecimiento de la confianza:</strong> Promueve relaciones de confianza entre aseguradoras y asegurados, fomentando un mercado de seguros más transparente y equitativo.</li>
+</ul>
+<h4>Conclusión</h4>
+<p>El principio de indisputabilidad es una herramienta poderosa que protege los derechos de los asegurados en Chile. Entender su alcance y sus límites es esencial al momento de contratar un seguro de vida. Recuerda siempre proporcionar información veraz y completa al contratar cualquier tipo de seguro, para evitar problemas futuros y garantizar que tanto tú como tus seres queridos estén protegidos en los momentos más críticos.</p>
+        `
+      },
+      {
+        title: "¿Cómo Impugnar un Informe de Liquidación? Guía para Asegurados",
+        content: `
+          <p>Los informes de liquidación pueden contener errores, interpretaciones dudosas o incluso decisiones injustas. Por eso, es importante saber cómo impugnar un informe de manera efectiva.</p>
+<p>Cuando enfrentamos la liquidación de un siniestro, todos esperamos que el informe refleje fielmente los daños sufridos y respete las condiciones de nuestra póliza. Sin embargo, no siempre es así. Los informes de liquidación pueden contener errores, interpretaciones dudosas o incluso decisiones injustas. Por eso, es importante saber cómo impugnar un informe de manera efectiva.</p>
+<h2>¿Qué es un informe de liquidación?</h2>
+<p>Es un documento elaborado por el liquidador o la aseguradora que detalla aspectos clave relacionados con el siniestro:</p>
+<ul>
+<li>Los hechos relacionados con el siniestro.</li>
+<li>La evaluación de los daños.</li>
+<li>La procedencia o no de las coberturas contratadas.</li>
+<li>El monto de la indemnización, si corresponde.</li>
+</ul>
+<p>Además, de acuerdo al DS 1.055 de la CMF, este informe debe contener, a lo menos, la siguiente información:</p>
+<ul>
+<li>Individualización de la liquidación correspondiente, conforme a su registro.</li>
+<li>Individualización de los contratantes y beneficiarios del seguro e intermediarios del mismo, en su caso.</li>
+<li>Individualización de la póliza y de sus principales menciones y características.</li>
+<li>Relación del siniestro y determinación de los daños.</li>
+<li>Opinión técnica fundada sobre la procedencia de cada cobertura y determinación de la pérdida y de la indemnización si procede, señalando el valor real del bien siniestrado y explicando el procedimiento, como así también los criterios y parámetros específicos empleados. Esta opinión debe efectuarse en términos claros y simples, que permitan una adecuada comprensión por parte del asegurado, considerando para ello el tipo de cobertura contratada y la naturaleza del siniestro objeto de la liquidación. Asimismo, y en caso de no corresponder pago, el informe de liquidación debe contener una opinión clara y precisa respecto del monto rechazado, individualizando cada tipo de cobertura rechazada y su justificación.</li>
+<li>Constancia de las gestiones realizadas y transcripción de los informes técnicos requeridos o considerados en la liquidación.</li>
+<li>Indicación de la existencia de recupero y salvatajes que procedieren con estimación de su valor.</li>
+<li>Transcripción íntegra de los artículos 26 y 27 del DS 1.055.</li>
+</ul>
+<p>Este informe es crucial para el asegurado, ya que establece la base de cualquier compensación económica tras un siniestro.</p>
+<h2>Razones para impugnar un informe de liquidación</h2>
+<p>Existen varias situaciones en las que un informe de liquidación puede ser impugnado:</p>
+<ul>
+<li><strong>Negativa de cobertura:</strong> Si el informe concluye que el siniestro no está cubierto sin fundamentos claros.</li>
+<li><strong>Errores en el cálculo:</strong> Si los montos indemnizatorios no reflejan los daños reales.</li>
+<li><strong>Incumplimiento de plazos:</strong> Si la aseguradora o el liquidador exceden los tiempos legales establecidos para emitir el informe.</li>
+<li><strong>Interpretaciones incorrectas de la póliza:</strong> Cuando las cláusulas son mal aplicadas o ambiguas.</li>
+</ul>
+<h2>Pasos para impugnar un informe de liquidación</h2>
+<ol>
+<li><strong>Revisar el informe detalladamente:</strong> Antes de presentar una impugnación, es esencial revisar cuidadosamente el contenido del informe, comparándolo con las condiciones de tu póliza y los hechos del siniestro.</li>
+<li><strong>Presentar la impugnación por escrito:</strong>
+<ul>
+<li>Dirige tu solicitud al liquidador o a la aseguradora en caso que la liquidación sea practicada directamente por el asegurador.</li>
+<li>Especifica claramente las razones de tu impugnación.</li>
+<li>Adjunta documentación de respaldo.</li>
+</ul>
+</li>
+<li><strong>Plazos legales:</strong>
+<ul>
+<li>En general, dispones de <strong>10 días hábiles</strong> desde la recepción del informe para presentar una impugnación.</li>
+<li>Para pólizas con primas superiores a 200 UF, este plazo se extiende a <strong>20 días hábiles</strong>.</li>
+</ul>
+</li>
+<li><strong>Respuesta a la impugnación:</strong> El liquidador o la aseguradora debe responder dentro de <strong>6 días hábiles</strong> para pólizas estándar y <strong>12 días hábiles</strong> para pólizas mayores a 200 UF.</li>
+<li><strong>Pago de la indemnización:</strong> La indemnización debe ser pagada dentro de los 6 días siguientes de notificada la resolución de la compañía de seguros respecto de la procedencia del pago de la indemnización. La compañía también debe informar la forma y el plazo para el pago de la indemnización.</li>
+<li><strong>Buscar mediación o arbitraje:</strong> Si la respuesta no es satisfactoria, puedes optar por un proceso de mediación, arbitraje o incluso acudir a la justicia ordinaria, dependiendo de las condiciones de tu póliza.</li>
+</ol>
+<h2>Aspectos legales clave</h2>
+<ul>
+<li><strong>Derecho a información clara:</strong> El liquidador, o la aseguradora en su caso, está obligada a emitir informes comprensibles y justificados.</li>
+<li><strong>Carga de la prueba:</strong> Según la normativa chilena, la aseguradora debe demostrar que existen hechos para denegar o limitar la indemnización.</li>
+<li><strong>Presunción a favor del asegurado:</strong> En caso de dudas sobre la interpretación de la póliza, se debe favorecer al asegurado.</li>
+</ul>
+<h2>Consejos prácticos para asegurados</h2>
+<ul>
+<li><strong>Consulta a un abogado especializado:</strong> Un experto puede ayudarte a evaluar el informe y guiarte en el proceso de impugnación.</li>
+<li><strong>Mantén toda la documentación:</strong> Conserva copias de la póliza, correspondencia y evidencias del siniestro.</li>
+<li><strong>Actúa con prontitud:</strong> Los plazos para impugnar son estrictos, por lo que es importante actuar rápidamente.</li>
+</ul>
+<p>Impugnar un informe de liquidación puede parecer un proceso complejo, pero conocer tus derechos y los pasos adecuados puede marcar la diferencia. En <em>Exige Tu Seguro</em>, estamos comprometidos con la defensa de tus intereses y te ofrecemos el respaldo necesario para enfrentar cualquier desafío legal relacionado con tus seguros.</p>
+<h3>Documento de interés, <a href="https://www.cmfchile.cl/portal/principal/613/articles-14717_doc_pdf.pdf">Decreto Supremo N° 1055 de 2012, del Ministerio de Hacienda</a>.</h3>
+        `
+      },
+      {
+        title: "Fraude en los seguros: cómo afecta tu bolsillo y por qué combatirlo es tarea de todos",
+        content: `
+          <p><strong>¿Sabías que 1 de cada 4 siniestros sospechosos puede ser fraudulento?</strong></p>
+<p>El fraude en seguros no solo perjudica a las compañías aseguradoras. <strong>También afecta directamente a los asegurados honestos</strong>, como tú, que ven cómo aumentan las primas o se endurecen los procesos para cobrar indemnizaciones legítimas.</p>
+<p>En este artículo te explicamos <strong>qué es el fraude al seguro</strong>, cómo está regulado en Chile, y por qué es tan importante <strong>denunciarlo y prevenirlo</strong>.</p>
+<h2>🔍 ¿Qué se considera fraude en el mundo del seguro?</h2>
+<p>El fraude de seguros se da cuando alguien, ya sea un asegurado, intermediario o tercero:</p>
+<ul>
+<li>Finge un siniestro que nunca ocurrió.</li>
+<li>Exagera los daños reales para obtener una mayor compensación.</li>
+<li>Presenta información falsa.</li>
+<li>Oculta el bien asegurado intencionalmente.</li>
+<li>Provoca el siniestro de manera dolosa para cobrar el seguro.</li>
+</ul>
+<p>Incluso existen casos más complejos, como personas que <strong>crean empresas ficticias o identidades falsas</strong> para estafar a aseguradoras.</p>
+<h2>⚖️ ¿Qué dice la ley chilena?</h2>
+<p>En Chile, el fraude al seguro se encuentra regulado desde 2013 gracias a la <strong>Ley N° 20.667</strong>, que incorporó este delito al Código Penal.</p>
+<p><strong>Desde entonces, el fraude de seguros se considera un delito autónomo</strong>, con penas específicas, y no solo una estafa genérica.</p>
+<blockquote>
+    Artículo 470 Nº 10 del Código Penal: "Maliciosamente simulen la existencia de un siniestro, lo provoquen intencionalmente, lo presenten con circunstancias falsas, oculten el bien asegurado o aumenten fraudulentamente las pérdidas."
+</blockquote>
+<p>Es decir, ya no basta con anular el contrato: <strong>ahora también se pueden aplicar sanciones penales</strong>.</p>
+<h2>⚠️ ¿Por qué deberías preocuparte tú?</h2>
+<ul>
+<li>Las aseguradoras ajustan sus precios para cubrir estas pérdidas.</li>
+<li>Se endurecen las políticas de pago y los tiempos de evaluación.</li>
+<li>Aumenta la desconfianza general hacia el sistema asegurador.</li>
+</ul>
+<p><strong>Combatir el fraude beneficia a todos</strong>, ya que ayuda a mantener primas razonables y procesos más ágiles para quienes sí actúan con honestidad.</p>
+<h2>🤝 ¿Cómo ayudar a prevenirlo?</h2>
+<ol>
+<li><strong>Informa:</strong> Si sospechas de un fraude, repórtalo.</li>
+<li><strong>Educa:</strong> Ayuda a otros a entender lo grave que es y sus consecuencias.</li>
+<li><strong>Colabora:</strong> Denunciar no es ser "sapo", es proteger un sistema que todos usamos.</li>
+</ol>
+<h2>🏆 Caso real: Cuando el fraude termina en condena</h2>
+<p>En Estados Unidos, Martin Frankel orquestó un fraude multimillonario creando identidades y empresas falsas para cobrar seguros. Fue condenado en 2004. Aunque parece lejano, en Chile también existen casos de asegurados que simulan incendios o alteran pruebas.</p>
+<p>Estos casos muestran que la persecución penal del fraude no solo es posible, sino necesaria. Y también muestran que <strong>hay que actuar con total honestidad en todo el proceso asegurador</strong>.</p>
+<h2>☎️ ¿Tienes dudas? Conversemos</h2>
+<p>Contáctanos para una asesoría inicial:</p>
+<ul>
+<li>WhatsApp: <strong>+56 97993 9868</strong></li>
+<li>Email: <strong>contacto@exigetuseguro.cl</strong></li>
+</ul>
+        `
+      },
+      {
+        title: "Todo lo que debes saber sobre el seguro vehicular en Chile",
+        content: `
+         <p>🚗 Descubre cómo funciona el seguro automotriz, qué tipos existen y qué hacer si tu aseguradora no responde como esperabas.</p>
+<h2>🔒 ¿Qué tipos de seguros vehiculares existen en Chile?</h2>
+<p>En Chile, el único seguro obligatorio por ley es el <strong>SOAP (Seguro Obligatorio de Accidentes Personales)</strong>. Este cubre lesiones o fallecimientos en accidentes de tránsito, sin importar quién tuvo la culpa.</p>
+<p>Además, existen seguros voluntarios que puedes contratar:</p>
+<ul>
+<li><strong>Seguro contra daños a terceros:</strong> cubre los perjuicios que causes a otros vehículos o personas.</li>
+<li><strong>Seguro contra robo o pérdida total:</strong> protege en caso de robo o daños que inutilicen el vehículo.</li>
+<li><strong>Seguro todo riesgo:</strong> cobertura amplia, incluyendo daños propios, terceros, robos y más.</li>
+</ul>
+<p>Es fundamental revisar las condiciones de la póliza antes de contratar.</p>
+<h2>⚠️ ¿Qué pasa si la aseguradora no quiere pagar?</h2>
+<p>Muchas veces, las compañías de seguros rechazan siniestros por diversas razones, como:</p>
+<ul>
+<li>Omisión de información relevante al contratar.</li>
+<li>Conducir bajo efectos del alcohol.</li>
+<li>Incumplimiento de condiciones contractuales.</li>
+</ul>
+<p>Sin embargo, <strong>no todos los rechazos son válidos</strong>. Las aseguradoras deben actuar de buena fe y explicar claramente sus decisiones. Si no estás de acuerdo, puedes reclamar y exigir tus derechos.</p>
+<h2>🧾 ¿Qué debe contener una póliza?</h2>
+<p>La póliza es un contrato regulado por la ley, y debe incluir:</p>
+<ul>
+<li>Condiciones generales y particulares.</li>
+<li>Exclusiones (lo que no cubre).</li>
+<li>Obligaciones del asegurado y la aseguradora.</li>
+<li>Procedimientos en caso de siniestro.</li>
+</ul>
+<p>Muchos asegurados no revisan estos documentos en detalle, lo que puede generar problemas más adelante.</p>
+<h2>🛡️ Tus derechos como asegurado</h2>
+<p>Como consumidor tienes derecho a:</p>
+<ul>
+<li>Información clara y veraz sobre tu cobertura.</li>
+<li>Reclamar ante la <strong>Comisión para el Mercado Financiero (CMF)</strong>.</li>
+<li>Recibir la indemnización en los plazos establecidos por ley.</li>
+<li>Recurrir a mecanismos legales si tu aseguradora no cumple.</li>
+</ul>
+<h2>🧑‍⚖️ ¿Qué hacer si tienes un problema con tu seguro?</h2>
+<p>Si tu compañía de seguros rechaza tu siniestro o te ofrece una indemnización injusta, en <strong>Exige Tu Seguro</strong> podemos ayudarte. Nuestro equipo de abogados especialistas en seguros analiza tu caso y defiende tus derechos frente a la aseguradora.</p>
+<p>No dejes pasar la oportunidad de hacer valer lo que te corresponde.</p>
+<h2>📞 ¿Necesitas ayuda con tu seguro vehicular?</h2>
+<p>En <strong>Exige Tu Seguro</strong> estamos para ayudarte. Si tu aseguradora no ha cumplido o tienes dudas sobre tu cobertura, contáctanos.</p>
+<p><a href="https://wa.me/56979939868" target="_blank">👉 Haz clic aquí para recibir asesoría legal</a></p>
+        `
+      }
+    ];
+
+    function openBlogModal(index) {
+      const modal = document.getElementById('blogModal');
+      const modalBody = document.getElementById('modalBody');
+      const article = blogContent[index];
+      
+      modalBody.innerHTML = `
+        <h2>${article.title}</h2>
+        <div style="color: var(--color-dark); line-height: 1.8;">
+          ${article.content}
+        </div>
+      `;
+      
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeBlogModal() {
+      const modal = document.getElementById('blogModal');
+      modal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    document.getElementById('blogModal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeBlogModal();
+      }
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeBlogModal();
+      }
+    });
+  </script>
+</body>
+</html>
