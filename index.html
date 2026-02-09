@@ -1214,52 +1214,7 @@ footer {
   }
 }
 
-.modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.8);
-  z-index: 2000;
-  overflow-y: auto;
-}
 
-.modal.active {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
-}
-
-.modal-content {
-  background: white;
-  max-width: 900px;
-  width: 100%;
-  border-radius: var(--border-radius);
-  padding: 3rem;
-  position: relative;
-  max-height: 90vh;
-  overflow-y: auto;
-}
-
-.modal-close {
-  position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  font-size: 2rem;
-  color: var(--color-gray-light);
-  cursor: pointer;
-  background: none;
-  border: none;
-  transition: var(--transition);
-}
-
-.modal-close:hover {
-  color: var(--color-dark);
-  transform: rotate(90deg);
-}
 
 /* BARRA LATERAL WHATSAPP */
 .whatsapp-sidebar {
@@ -1312,6 +1267,32 @@ footer {
     font-size: 20px;
   }
 }
+
+/* Estilos para las cards de recursos */
+.blog-card a {
+  display: block;
+  height: 100%;
+}
+
+.blog-card:hover {
+  transform: translateY(-10px) scale(1.03);
+}
+
+.blog-card > div > div:last-child {
+  transition: var(--transition);
+}
+
+.blog-card:hover > div > div:last-child {
+  transform: scale(1.05);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 968px) {
+  .blog-card {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
 </style>
 </head>
 <body>
@@ -1355,7 +1336,6 @@ footer {
       <nav class="nav-desktop" role="navigation" aria-label="Navegación principal" itemscope itemtype="https://schema.org/SiteNavigationElement">
         <a href="#servicios" itemprop="url"><span itemprop="name">Servicios</span></a>
         <a href="#honorarios" itemprop="url"><span itemprop="name">Honorarios</span></a>
-        <a href="#blog" itemprop="url"><span itemprop="name">Blog</span></a>
         <a href="#nosotros" itemprop="url"><span itemprop="name">Nosotros</span></a>
         <a href="#contacto" itemprop="url"><span itemprop="name">Contacto</span></a>
       </nav>
@@ -1379,7 +1359,6 @@ footer {
   <nav class="mobile-nav" id="mobileNav" role="navigation" aria-label="Navegación móvil">
     <a href="#servicios" onclick="toggleMobileNav()">Servicios</a>
     <a href="#honorarios" onclick="toggleMobileNav()">Honorarios</a>
-    <a href="#blog" onclick="toggleMobileNav()">Blog</a>
     <a href="#nosotros" onclick="toggleMobileNav()">Nosotros</a>
     <a href="#Contacto" onclick="toggleMobileNav()">Contacto</a>
     <a href="#agenda" onclick="toggleMobileNav()">Agendar Cita</a>
@@ -1389,17 +1368,16 @@ footer {
   <!-- Hero Section -->
   <section class="hero" id="hero" itemscope itemtype="https://schema.org/Service">
     <div class="hero-container">
-      <div class="hero-content">
-        <div class="ai-badge">
-          <i class="fas fa-robot"></i>
-          <span>Potenciado con IA</span>
-        </div>
+     <div class="hero-content">
+  <div class="ai-badge">
+    <i class="fas fa-shield-alt"></i>
+    <span>Asesoría Profesional</span>
+  </div>
         <h1 itemprop="name">
           Abogados Especialistas en <span class="highlight">Seguros</span>
         </h1>
         <p itemprop="description">
-          Defendemos tus derechos frente a las aseguradoras con tecnología de inteligencia artificial y experiencia legal comprobada. 
-          Análisis automático de pólizas, impugnación de rechazos y representación legal experta.
+          Defendemos tus derechos ante las aseguradoras con metodología probada y experiencia sólida. Análisis técnico de pólizas, estrategia legal personalizada y representación comprometida con tus intereses.
         </p>
         <div class="hero-features">
           <div class="feature-item">
@@ -1510,6 +1488,49 @@ footer {
     </div>
   </section>
 
+ <!-- Agenda Section -->
+  <section class="services" id="agenda" style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%), url('https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=1920'); background-size: cover; background-position: center; background-attachment: fixed;">
+    <div class="section-container">
+      <div class="section-header">
+        <h2>Agenda tu Cita con Abogado Especialista en Seguros</h2>
+        <p>Primera consulta gratuita - Sin compromisos - Atención personalizada</p>
+      </div>
+      
+      <div style="max-width: 800px; margin: 0 auto;">
+        <div style="background: linear-gradient(135deg, #0A3D62 0%, #3695BF 100%); color: white; padding: 3rem; border-radius: var(--border-radius); margin-bottom: 3rem; text-align: center;">
+          <h3 style="font-family: var(--font-heading); font-size: 2rem; margin-bottom: 1rem;">Hablemos sobre tu caso de seguros</h3>
+          <p style="font-size: 1.1rem; opacity: 0.95; margin-bottom: 2rem;">
+            Los problemas con aseguradoras pueden ser estresantes. Agenda una cita por videoconferencia 
+            y recibe la orientación legal experta que necesitas para defender tus derechos.
+          </p>
+          
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+            <div>
+              <i class="fas fa-comments" style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--color-accent);"></i>
+              <p style="margin: 0;">Explica tu situación sin presiones</p>
+            </div>
+            <div>
+              <i class="fas fa-lightbulb" style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--color-accent);"></i>
+              <p style="margin: 0;">Recibe orientación legal experta</p>
+            </div>
+            <div>
+              <i class="fas fa-route" style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--color-accent);"></i>
+              <p style="margin: 0;">Define los pasos legales a seguir</p>
+            </div>
+          </div>
+          
+          <div style="background: rgba(255,255,255,0.2); padding: 1.5rem; border-radius: 12px; display: inline-block;">
+            <p style="font-size: 1.3rem; font-weight: 700; margin: 0;">Primera Consulta Legal: <span style="color: var(--color-accent);">GRATUITA</span></p>
+          </div>
+        </div>
+        
+        <!-- Calendly Widget -->
+        <div class="calendly-inline-widget" data-url="https://calendly.com/rescamus/60min?hide_event_type_details=1&hide_gdpr_banner=1" style="min-width:320px;height:700px; border-radius: var(--border-radius); overflow: hidden; box-shadow: var(--shadow-lg);"></div>
+        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+      </div>
+    </div>
+  </section>
+
   <!-- Honorarios Section -->
   <section class="services" id="honorarios" style="background: linear-gradient(135deg, rgba(10, 61, 98, 0.92) 0%, rgba(54, 149, 191, 0.92) 100%), url('https://images.pexels.com/photos/6863332/pexels-photo-6863332.jpeg?auto=compress&cs=tinysrgb&w=1920'); background-size: cover; background-position: center; background-attachment: fixed;">
     <div class="section-container">
@@ -1552,83 +1573,79 @@ footer {
     </div>
   </section>
 
-  <!-- Blog Section -->
-  <section class="blog" id="blog">
-    <div class="section-container">
-      <div class="section-header">
-        <h2>Blog Legal sobre Seguros en Chile</h2>
-        <p>Información actualizada sobre derecho de seguros, reclamaciones y tus derechos como asegurado</p>
-      </div>
+ <!-- Recursos Section -->
+<section class="blog" id="blog">
+  <div class="section-container">
+    <div class="section-header">
+      <h2>Recursos para Asegurados</h2>
+      <p>Herramientas y conocimiento para defender tus derechos como asegurado en Chile</p>
+    </div>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 3rem; max-width: 1000px; margin: 0 auto;">
       
-      <div class="blog-grid">
-        <article class="blog-card" onclick="openBlogModal(0)" itemscope itemtype="https://schema.org/BlogPosting">
-          <div class="blog-image" style="background-image: url('https://i.postimg.cc/G2k4nBFS/476531221-1063690762468539-6084965534244979362-n.jpg');">
-            <span class="blog-tag">Litigios</span>
+      <!-- Card Blog -->
+      <a href="https://exigetuseguro.cl/blog" style="text-decoration: none;">
+        <div class="blog-card" style="height: 100%; background: linear-gradient(135deg, rgba(10, 61, 98, 0.95) 0%, rgba(54, 149, 191, 0.95) 100%), url('https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg'); background-size: cover; background-position: center;">
+          <div style="padding: 3rem; text-align: center; color: white; height: 100%; display: flex; flex-direction: column; justify-content: center;">
+            <div style="width: 80px; height: 80px; background: var(--gradient-accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; box-shadow: var(--shadow-glow);">
+              <i class="fas fa-book-open" style="font-size: 2.5rem;"></i>
+            </div>
+            <h3 style="font-family: var(--font-heading); font-size: 2rem; margin-bottom: 1rem; color: white;">Blog Legal</h3>
+            <p style="font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.95; line-height: 1.7;">
+              Artículos especializados sobre seguros, tus derechos, reclamaciones y casos reales. Conocimiento legal al alcance de todos.
+            </p>
+            <div style="display: inline-flex; align-items: center; gap: 0.75rem; background: var(--color-accent); padding: 1rem 2rem; border-radius: 50px; font-weight: 600; font-size: 1.1rem; margin: 0 auto; box-shadow: var(--shadow-md); transition: var(--transition);">
+              <span>Ir al Blog</span>
+              <i class="fas fa-arrow-right"></i>
+            </div>
           </div>
-          <div class="blog-content">
-            <h3 itemprop="headline">Alternativas Legales ante la Negativa del Asegurador</h3>
-            <p itemprop="description">Descubre tus opciones legales cuando tu aseguradora se niega a cubrir un siniestro. Reclamos CMF, arbitraje y demandas.</p>
-            <span class="read-more">Leer más <i class="fas fa-arrow-right"></i></span>
+        </div>
+      </a>
+
+      <!-- Card Conoce tu Póliza -->
+      <a href="https://exigetuseguro.cl/conoce-tu-poliza" style="text-decoration: none;">
+        <div class="blog-card" style="height: 100%; background: linear-gradient(135deg, rgba(52, 168, 83, 0.95) 0%, rgba(76, 175, 80, 0.95) 100%), url('https://images.pexels.com/photos/5668772/pexels-photo-5668772.jpeg'); background-size: cover; background-position: center;">
+          <div style="padding: 3rem; text-align: center; color: white; height: 100%; display: flex; flex-direction: column; justify-content: center;">
+            <div style="width: 80px; height: 80px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; box-shadow: var(--shadow-glow); backdrop-filter: blur(10px);">
+              <i class="fas fa-file-contract" style="font-size: 2.5rem;"></i>
+            </div>
+            <h3 style="font-family: var(--font-heading); font-size: 2rem; margin-bottom: 1rem; color: white;">Conoce Tu Póliza</h3>
+            <p style="font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.95; line-height: 1.7;">
+              Aprende a leer y entender tu póliza de seguros. Identifica coberturas, exclusiones y tus derechos de forma clara y sencilla.
+            </p>
+            <div style="display: inline-flex; align-items: center; gap: 0.75rem; background: white; color: var(--color-accent); padding: 1rem 2rem; border-radius: 50px; font-weight: 600; font-size: 1.1rem; margin: 0 auto; box-shadow: var(--shadow-md); transition: var(--transition);">
+              <span>Explorar Guía</span>
+              <i class="fas fa-arrow-right"></i>
+            </div>
           </div>
-        </article>
-        
-        <article class="blog-card" onclick="openBlogModal(1)" itemscope itemtype="https://schema.org/BlogPosting">
-          <div class="blog-image" style="background-image: url('https://i.postimg.cc/HnS2CPHx/laptop-3196481-640-min.jpg');">
-            <span class="blog-tag">Derechos</span>
-          </div>
-          <div class="blog-content">
-            <h3 itemprop="headline">Obligaciones del Asegurado y del Asegurador en Chile</h3>
-            <p itemprop="description">Comprende los deberes y derechos de ambas partes en un contrato de seguro según la ley chilena.</p>
-            <span class="read-more">Leer más <i class="fas fa-arrow-right"></i></span>
-          </div>
-        </article>
-        
-        <article class="blog-card" onclick="openBlogModal(2)" itemscope itemtype="https://schema.org/BlogPosting">
-          <div class="blog-image" style="background-image: url('https://i.postimg.cc/ydgc2YxD/images-1.jpg');">
-            <span class="blog-tag">Seguros de Vida</span>
-          </div>
-          <div class="blog-content">
-            <h3 itemprop="headline">¿Qué es la Indisputabilidad en los Seguros de Vida?</h3>
-            <p itemprop="description">Un principio legal clave que protege a asegurados y beneficiarios después de 2 años de vigencia.</p>
-            <span class="read-more">Leer más <i class="fas fa-arrow-right"></i></span>
-          </div>
-        </article>
-        
-        <article class="blog-card" onclick="openBlogModal(3)" itemscope itemtype="https://schema.org/BlogPosting">
-          <div class="blog-image" style="background-image: url('https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg');">
-            <span class="blog-tag">Guía Práctica</span>
-          </div>
-          <div class="blog-content">
-            <h3 itemprop="headline">¿Cómo Impugnar un Informe de Liquidación de Seguros?</h3>
-            <p itemprop="description">Guía paso a paso para asegurados sobre el proceso de impugnación efectiva ante rechazos injustos.</p>
-            <span class="read-more">Leer más <i class="fas fa-arrow-right"></i></span>
-          </div>
-        </article>
-        
-        <article class="blog-card" onclick="openBlogModal(4)" itemscope itemtype="https://schema.org/BlogPosting">
-          <div class="blog-image" style="background-image: url('https://i.postimg.cc/qgfGRHPm/images.jpg');">
-            <span class="blog-tag">Fraude</span>
-          </div>
-          <div class="blog-content">
-            <h3 itemprop="headline">Fraude en los Seguros: Cómo Afecta tu Bolsillo</h3>
-            <p itemprop="description">El fraude en seguros aumenta las primas para todos. Conoce cómo identificarlo y prevenirlo.</p>
-            <span class="read-more">Leer más <i class="fas fa-arrow-right"></i></span>
-          </div>
-        </article>
-        
-        <article class="blog-card" onclick="openBlogModal(5)" itemscope itemtype="https://schema.org/BlogPosting">
-          <div class="blog-image" style="background-image: url('https://i.postimg.cc/DyNLghmm/seguros-de-camionetas.jpg');">
-            <span class="blog-tag">Vehículos</span>
-          </div>
-          <div class="blog-content">
-            <h3 itemprop="headline">Todo sobre el Seguro Vehicular en Chile 2025</h3>
-            <p itemprop="description">Guía completa: SOAP, seguros voluntarios, coberturas y qué hacer si tu aseguradora no responde.</p>
-            <span class="read-more">Leer más <i class="fas fa-arrow-right"></i></span>
-          </div>
-        </article>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- Opcional: Sección de highlights rápidos debajo -->
+    <div style="margin-top: 4rem; padding: 2rem; background: rgba(10, 61, 98, 0.05); border-radius: var(--border-radius); border-left: 4px solid var(--color-accent);">
+      <h4 style="font-family: var(--font-heading); color: var(--color-primary); margin-bottom: 1.5rem; text-align: center;">
+        <i class="fas fa-lightbulb"></i> ¿Sabías que...?
+      </h4>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+        <div style="text-align: center;">
+          <i class="fas fa-shield-alt" style="font-size: 2rem; color: var(--color-accent); margin-bottom: 0.5rem;"></i>
+          <p style="color: var(--color-gray-light); font-size: 0.95rem;">Tienes derecho a impugnar rechazos de seguros injustos</p>
+        </div>
+        <div style="text-align: center;">
+          <i class="fas fa-clock" style="font-size: 2rem; color: var(--color-accent); margin-bottom: 0.5rem;"></i>
+          <p style="color: var(--color-gray-light); font-size: 0.95rem;">Las aseguradoras tienen plazos legales para responder</p>
+        </div>
+        <div style="text-align: center;">
+          <i class="fas fa-balance-scale" style="font-size: 2rem; color: var(--color-accent); margin-bottom: 0.5rem;"></i>
+          <p style="color: var(--color-gray-light); font-size: 0.95rem;">La ley protege al asegurado en caso de dudas</p>
+        </div>
       </div>
     </div>
-  </section>
+
+  </div>
+</section>
 
   <!-- Sobre Nosotros Section -->
   <section class="ai-section" id="nosotros">
@@ -1700,48 +1717,7 @@ footer {
     </div>
   </section>
 
-  <!-- Agenda Section -->
-  <section class="services" id="agenda" style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%), url('https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=1920'); background-size: cover; background-position: center; background-attachment: fixed;">
-    <div class="section-container">
-      <div class="section-header">
-        <h2>Agenda tu Cita con Abogado Especialista en Seguros</h2>
-        <p>Primera consulta gratuita - Sin compromisos - Atención personalizada</p>
-      </div>
-      
-      <div style="max-width: 800px; margin: 0 auto;">
-        <div style="background: linear-gradient(135deg, #0A3D62 0%, #3695BF 100%); color: white; padding: 3rem; border-radius: var(--border-radius); margin-bottom: 3rem; text-align: center;">
-          <h3 style="font-family: var(--font-heading); font-size: 2rem; margin-bottom: 1rem;">Hablemos sobre tu caso de seguros</h3>
-          <p style="font-size: 1.1rem; opacity: 0.95; margin-bottom: 2rem;">
-            Los problemas con aseguradoras pueden ser estresantes. Agenda una cita por videoconferencia 
-            y recibe la orientación legal experta que necesitas para defender tus derechos.
-          </p>
-          
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
-            <div>
-              <i class="fas fa-comments" style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--color-accent);"></i>
-              <p style="margin: 0;">Explica tu situación sin presiones</p>
-            </div>
-            <div>
-              <i class="fas fa-lightbulb" style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--color-accent);"></i>
-              <p style="margin: 0;">Recibe orientación legal experta</p>
-            </div>
-            <div>
-              <i class="fas fa-route" style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--color-accent);"></i>
-              <p style="margin: 0;">Define los pasos legales a seguir</p>
-            </div>
-          </div>
-          
-          <div style="background: rgba(255,255,255,0.2); padding: 1.5rem; border-radius: 12px; display: inline-block;">
-            <p style="font-size: 1.3rem; font-weight: 700; margin: 0;">Primera Consulta Legal: <span style="color: var(--color-accent);">GRATUITA</span></p>
-          </div>
-        </div>
-        
-        <!-- Calendly Widget -->
-        <div class="calendly-inline-widget" data-url="https://calendly.com/rescamus/60min?hide_event_type_details=1&hide_gdpr_banner=1" style="min-width:320px;height:700px; border-radius: var(--border-radius); overflow: hidden; box-shadow: var(--shadow-lg);"></div>
-        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-      </div>
-    </div>
-  </section>
+ 
 
   <!-- IA Section -->
   <section class="ai-section" id="ia">
@@ -1905,13 +1881,7 @@ footer {
     </div>
   </footer>
 
-  <!-- Blog Modal -->
-  <div class="modal" id="blogModal" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
-    <div class="modal-content">
-      <button class="modal-close" onclick="closeBlogModal()" aria-label="Cerrar modal">&times;</button>
-      <div id="modalBody"></div>
-    </div>
-  </div>
+ 
 
   <!-- WhatsApp Sidebar -->
   <div class="whatsapp-sidebar">
@@ -1941,275 +1911,8 @@ footer {
       });
     });
 
-    const blogContent = [
-      {
-        title: "Alternativas Legales ante la Negativa del Asegurador a Indemnizar",
-        content: `
-          <p>Los seguros son instrumentos esenciales para gestionar riesgos y proteger los intereses personales y comerciales. Sin embargo, cuando una compañía de seguros se niega a indemnizar o cubrir un siniestro, surgen dudas sobre las alternativas legales disponibles para los asegurados. En este artículo exploramos las opciones que tienen los asegurados para reclamar sus derechos, basándonos en el Código de Comercio, la CMF y otros mecanismos de resolución de disputas.</p>
-<h3>Reclamo ante la CMF (Comisión para el Mercado Financiero)</h3>
-<p>Si la respuesta de la aseguradora no es satisfactoria, tienes la opción de presentar un reclamo ante la CMF. Este organismo cuenta con una plataforma de atención ciudadana en línea, donde puedes ingresar tu solicitud utilizando tu Clave Única del Registro Civil. También es posible realizar el trámite de forma presencial o enviarlo por correo físico.</p>
-<h3>La Regulación del Código de Comercio</h3>
-<p>El Código de Comercio establece que cualquier controversia relacionada con la validez, interpretación o cumplimiento de un contrato de seguro debe ser resuelta por un árbitro, elegido de común acuerdo entre las partes. Si no se alcanza un acuerdo, el tribunal ordinario designará al árbitro.</p>
-<p>Si las partes no logran ponerse de acuerdo sobre el árbitro, la justicia ordinaria designará a un árbitro mixto, quien se encargará de la tramitación y dictará una sentencia. Un aspecto clave de esta legislación es que no se puede pactar el nombre del árbitro de antemano en el contrato, garantizando la imparcialidad en la resolución del conflicto.</p>
-<p>En casos donde el monto del siniestro sea inferior a 10.000 unidades de fomento (UF), el asegurado puede optar por presentar su reclamo ante un tribunal ordinario, lo que proporciona un acceso más ágil y directo a la justicia.</p>
-<h3>El Procedimiento Aplicable</h3>
-<p>El artículo 543 del Código de Comercio también establece que las disputas deben seguir un procedimiento declarativo, adaptado a la cuantía del conflicto. Dependiendo del monto en juego, se aplicará un juicio de mayor o menor cuantía. Si el litigio se resuelve a través de arbitraje, las partes podrán pactar las reglas del procedimiento, aunque deben respetar ciertos trámites mínimos, como la presentación de pruebas y la audiencia de las partes.</p>
-<h3>Pruebas</h3>
-<p>El artículo 543 del Código de Comercio establece la <strong>libertad probatoria</strong>. Este artículo amplía las posibilidades de presentar pruebas en un juicio, permitiendo que las partes presenten diferentes tipos de evidencias más allá de las convencionales, lo que branca mayor flexibilidad a la hora de defender sus derechos.</p>
-<p>Además, los tribunales ordinarios o arbitrales tienen amplias facultades para admitir pruebas y valorar su pertinencia, lo que mejora la equidad en la resolución de los conflictos.</p>
-<h3>Si tienes un problema con tu aseguradora, <a href="https://wa.me/56979939868">contáctanos</a>.</h3>
-        `
-      },
-      {
-        title: "Obligaciones del Asegurado y del Asegurador",
-        content: `
-          <p>El contrato de seguro es un acuerdo bilateral que genera compromisos para ambas partes: el asegurado y el asegurador. A continuación, exploraremos las principales obligaciones que cada uno debe cumplir para garantizar una relación clara y equitativa.</p>
-<h2>Obligaciones del Asegurado</h2>
-<ul>
-<li><strong>Declarar las circunstancias del riesgo:</strong> Al contratar una póliza, el asegurado debe proporcionar información veraz y completa sobre el objeto asegurado y los riesgos asociados. Esto permite al asegurador evaluar adecuadamente la cobertura.</li>
-<li><strong>Informar sobre otros seguros:</strong> Si el asegurado tiene otras pólizas que cubren el mismo objeto, debe notificarlo al asegurador. Esto es clave para evitar conflictos al momento de liquidar un siniestro.</li>
-<li><strong>Pagar la prima pactada:</strong> El asegurado debe cumplir con el pago de la prima en los tiempos y formas acordados en el contrato.</li>
-<li><strong>Prevenir riesgos:</strong> Es responsabilidad del asegurado tomar medidas razonables para evitar siniestros, actuando con la diligencia de un "buen padre de familia". En caso de emergencia, los gastos incurridos para prevenir un daño inminente pueden ser reembolsados por el asegurador, siempre que no excedan la suma asegurada.</li>
-<li><strong>Notificar siniestros:</strong> Ante cualquier hecho que pueda constituir un siniestro, el asegurado debe informar al asegurador lo antes posible, proporcionando detalles claros y verídicos sobre el incidente.</li>
-<li><strong>Acreditar el siniestro:</strong> Una vez ocurrido un siniestro, el asegurado debe probar su existencia y aportar toda la información requerida sobre sus circunstancias y consecuencias.</li>
-</ul>
-<h2>Obligaciones del Asegurador</h2>
-<ul>
-<li><strong>Entregar la póliza:</strong> El asegurador debe proporcionar al asegurado la póliza o un certificado de cobertura en un plazo no mayor a cinco días hábiles desde la formalización del contrato.</li>
-<li><strong>Asesorar al asegurado:</strong> Si el contrato no fue intermediado por un corredor, el asegurador debe ofrecer asesoría sobre las condiciones del contrato, las coberturas más adecuadas y cualquier modificación durante su vigencia.</li>
-<li><strong>Indemnizar siniestros:</strong> El asegurador tiene la obligación de pagar las indemnizaciones correspondientes según los términos establecidos en la póliza. Esto incluye el reembolso de gastos razonables incurridos por el asegurado para prevenir o minimizar daños.</li>
-</ul>
-        `
-      },
-      {
-        title: "¿Qué es la Indisputabilidad en los Seguros y Por Qué es Importante?",
-        content: `
-         <p>Cuando se contrata un seguro de vida, existen diversas cláusulas que protegen tanto al asegurado como a la aseguradora. Una de las más relevantes es la <strong>indisputabilidad</strong>, un principio clave que garantiza tranquilidad y seguridad al asegurado tras un determinado periodo de tiempo. En este artículo, exploraremos qué es la indisputabilidad, cómo funciona en Chile y cuáles son sus limitaciones.</p>
-<h4>¿Qué es la Indisputabilidad?</h4>
-<p>La indisputabilidad, regulada por el <strong>Artículo 592 del Código de Comercio chileno</strong>, establece que, una vez transcurridos dos años desde la contratación del seguro, la aseguradora no puede anular la póliza o negarse a pagar basándose en omisiones o inexactitudes en las declaraciones del asegurado al momento de firmar el contrato. Esto significa que, tras este período, el asegurado y sus beneficiarios tienen mayor protección frente a disputas.</p>
-<h4>¿Cómo Protege al Asegurado?</h4>
-<p>Antes de alcanzar el plazo de indisputabilidad, las aseguradoras pueden rescindir la póliza si detectan que el asegurado proporcionó información incompleta o inexacta, incluso de manera no intencional. Sin embargo, una vez superados los dos años, la póliza se vuelve "indiscutible" excepto en casos de dolo.</p>
-<p>Por ejemplo:</p>
-<ul>
-<li>Si un asegurado omite accidentalmente informar una condición médica preexistente y pasan más de dos años sin que la aseguradora lo descubra, esta no podrá utilizar dicha omisión como motivo para anular la póliza o rechazar un pago.</li>
-</ul>
-<p>Esto proporciona un nivel de certidumbre tanto al asegurado como a sus beneficiarios, quienes pueden confiar en que la cobertura estará disponible en caso de un siniestro.</p>
-<h4>Excepciones al Principio de Indisputabilidad</h4>
-<p>Aunque la indisputabilidad protege a los asegurados, existen situaciones específicas en las que la aseguradora puede disputar una póliza incluso después de los dos años:</p>
-<ul>
-<li><strong>Declaraciones Dolosas:</strong> Si se demuestra que el asegurado actuó con dolo (intención de engañar), la aseguradora puede impugnar la póliza.</li>
-<li><strong>Fraude:</strong> La presentación de documentos falsos o la manipulación de información también invalidan la protección que otorga la indisputabilidad.</li>
-</ul>
-<p>En estos casos, la aseguradora podrá tomar acciones legales o rescindir el contrato, incluso después de que haya pasado el periodo de indisputabilidad.</p>
-<h4>Beneficios para los Asegurados</h4>
-<ul>
-<li><strong>Tranquilidad:</strong> Reduce el riesgo de que una aseguradora se niegue a pagar una indemnización por errores involuntarios en las declaraciones iniciales.</li>
-<li><strong>Seguridad para los beneficiarios:</strong> Garantiza que los beneficiarios recibirán la prestación convenida, salvo excepciones extremas.</li>
-<li><strong>Fortalecimiento de la confianza:</strong> Promueve relaciones de confianza entre aseguradoras y asegurados, fomentando un mercado de seguros más transparente y equitativo.</li>
-</ul>
-<h4>Conclusión</h4>
-<p>El principio de indisputabilidad es una herramienta poderosa que protege los derechos de los asegurados en Chile. Entender su alcance y sus límites es esencial al momento de contratar un seguro de vida. Recuerda siempre proporcionar información veraz y completa al contratar cualquier tipo de seguro, para evitar problemas futuros y garantizar que tanto tú como tus seres queridos estén protegidos en los momentos más críticos.</p>
-        `
-      },
-      {
-        title: "¿Cómo Impugnar un Informe de Liquidación? Guía para Asegurados",
-        content: `
-          <p>Los informes de liquidación pueden contener errores, interpretaciones dudosas o incluso decisiones injustas. Por eso, es importante saber cómo impugnar un informe de manera efectiva.</p>
-<p>Cuando enfrentamos la liquidación de un siniestro, todos esperamos que el informe refleje fielmente los daños sufridos y respete las condiciones de nuestra póliza. Sin embargo, no siempre es así. Los informes de liquidación pueden contener errores, interpretaciones dudosas o incluso decisiones injustas. Por eso, es importante saber cómo impugnar un informe de manera efectiva.</p>
-<h2>¿Qué es un informe de liquidación?</h2>
-<p>Es un documento elaborado por el liquidador o la aseguradora que detalla aspectos clave relacionados con el siniestro:</p>
-<ul>
-<li>Los hechos relacionados con el siniestro.</li>
-<li>La evaluación de los daños.</li>
-<li>La procedencia o no de las coberturas contratadas.</li>
-<li>El monto de la indemnización, si corresponde.</li>
-</ul>
-<p>Además, de acuerdo al DS 1.055 de la CMF, este informe debe contener, a lo menos, la siguiente información:</p>
-<ul>
-<li>Individualización de la liquidación correspondiente, conforme a su registro.</li>
-<li>Individualización de los contratantes y beneficiarios del seguro e intermediarios del mismo, en su caso.</li>
-<li>Individualización de la póliza y de sus principales menciones y características.</li>
-<li>Relación del siniestro y determinación de los daños.</li>
-<li>Opinión técnica fundada sobre la procedencia de cada cobertura y determinación de la pérdida y de la indemnización si procede, señalando el valor real del bien siniestrado y explicando el procedimiento, como así también los criterios y parámetros específicos empleados. Esta opinión debe efectuarse en términos claros y simples, que permitan una adecuada comprensión por parte del asegurado, considerando para ello el tipo de cobertura contratada y la naturaleza del siniestro objeto de la liquidación. Asimismo, y en caso de no corresponder pago, el informe de liquidación debe contener una opinión clara y precisa respecto del monto rechazado, individualizando cada tipo de cobertura rechazada y su justificación.</li>
-<li>Constancia de las gestiones realizadas y transcripción de los informes técnicos requeridos o considerados en la liquidación.</li>
-<li>Indicación de la existencia de recupero y salvatajes que procedieren con estimación de su valor.</li>
-<li>Transcripción íntegra de los artículos 26 y 27 del DS 1.055.</li>
-</ul>
-<p>Este informe es crucial para el asegurado, ya que establece la base de cualquier compensación económica tras un siniestro.</p>
-<h2>Razones para impugnar un informe de liquidación</h2>
-<p>Existen varias situaciones en las que un informe de liquidación puede ser impugnado:</p>
-<ul>
-<li><strong>Negativa de cobertura:</strong> Si el informe concluye que el siniestro no está cubierto sin fundamentos claros.</li>
-<li><strong>Errores en el cálculo:</strong> Si los montos indemnizatorios no reflejan los daños reales.</li>
-<li><strong>Incumplimiento de plazos:</strong> Si la aseguradora o el liquidador exceden los tiempos legales establecidos para emitir el informe.</li>
-<li><strong>Interpretaciones incorrectas de la póliza:</strong> Cuando las cláusulas son mal aplicadas o ambiguas.</li>
-</ul>
-<h2>Pasos para impugnar un informe de liquidación</h2>
-<ol>
-<li><strong>Revisar el informe detalladamente:</strong> Antes de presentar una impugnación, es esencial revisar cuidadosamente el contenido del informe, comparándolo con las condiciones de tu póliza y los hechos del siniestro.</li>
-<li><strong>Presentar la impugnación por escrito:</strong>
-<ul>
-<li>Dirige tu solicitud al liquidador o a la aseguradora en caso que la liquidación sea practicada directamente por el asegurador.</li>
-<li>Especifica claramente las razones de tu impugnación.</li>
-<li>Adjunta documentación de respaldo.</li>
-</ul>
-</li>
-<li><strong>Plazos legales:</strong>
-<ul>
-<li>En general, dispones de <strong>10 días hábiles</strong> desde la recepción del informe para presentar una impugnación.</li>
-<li>Para pólizas con primas superiores a 200 UF, este plazo se extiende a <strong>20 días hábiles</strong>.</li>
-</ul>
-</li>
-<li><strong>Respuesta a la impugnación:</strong> El liquidador o la aseguradora debe responder dentro de <strong>6 días hábiles</strong> para pólizas estándar y <strong>12 días hábiles</strong> para pólizas mayores a 200 UF.</li>
-<li><strong>Pago de la indemnización:</strong> La indemnización debe ser pagada dentro de los 6 días siguientes de notificada la resolución de la compañía de seguros respecto de la procedencia del pago de la indemnización. La compañía también debe informar la forma y el plazo para el pago de la indemnización.</li>
-<li><strong>Buscar mediación o arbitraje:</strong> Si la respuesta no es satisfactoria, puedes optar por un proceso de mediación, arbitraje o incluso acudir a la justicia ordinaria, dependiendo de las condiciones de tu póliza.</li>
-</ol>
-<h2>Aspectos legales clave</h2>
-<ul>
-<li><strong>Derecho a información clara:</strong> El liquidador, o la aseguradora en su caso, está obligada a emitir informes comprensibles y justificados.</li>
-<li><strong>Carga de la prueba:</strong> Según la normativa chilena, la aseguradora debe demostrar que existen hechos para denegar o limitar la indemnización.</li>
-<li><strong>Presunción a favor del asegurado:</strong> En caso de dudas sobre la interpretación de la póliza, se debe favorecer al asegurado.</li>
-</ul>
-<h2>Consejos prácticos para asegurados</h2>
-<ul>
-<li><strong>Consulta a un abogado especializado:</strong> Un experto puede ayudarte a evaluar el informe y guiarte en el proceso de impugnación.</li>
-<li><strong>Mantén toda la documentación:</strong> Conserva copias de la póliza, correspondencia y evidencias del siniestro.</li>
-<li><strong>Actúa con prontitud:</strong> Los plazos para impugnar son estrictos, por lo que es importante actuar rápidamente.</li>
-</ul>
-<p>Impugnar un informe de liquidación puede parecer un proceso complejo, pero conocer tus derechos y los pasos adecuados puede marcar la diferencia. En <em>Exige Tu Seguro</em>, estamos comprometidos con la defensa de tus intereses y te ofrecemos el respaldo necesario para enfrentar cualquier desafío legal relacionado con tus seguros.</p>
-<h3>Documento de interés, <a href="https://www.cmfchile.cl/portal/principal/613/articles-14717_doc_pdf.pdf">Decreto Supremo N° 1055 de 2012, del Ministerio de Hacienda</a>.</h3>
-        `
-      },
-      {
-        title: "Fraude en los seguros: cómo afecta tu bolsillo y por qué combatirlo es tarea de todos",
-        content: `
-          <p><strong>¿Sabías que 1 de cada 4 siniestros sospechosos puede ser fraudulento?</strong></p>
-<p>El fraude en seguros no solo perjudica a las compañías aseguradoras. <strong>También afecta directamente a los asegurados honestos</strong>, como tú, que ven cómo aumentan las primas o se endurecen los procesos para cobrar indemnizaciones legítimas.</p>
-<p>En este artículo te explicamos <strong>qué es el fraude al seguro</strong>, cómo está regulado en Chile, y por qué es tan importante <strong>denunciarlo y prevenirlo</strong>.</p>
-<h2>🔍 ¿Qué se considera fraude en el mundo del seguro?</h2>
-<p>El fraude de seguros se da cuando alguien, ya sea un asegurado, intermediario o tercero:</p>
-<ul>
-<li>Finge un siniestro que nunca ocurrió.</li>
-<li>Exagera los daños reales para obtener una mayor compensación.</li>
-<li>Presenta información falsa.</li>
-<li>Oculta el bien asegurado intencionalmente.</li>
-<li>Provoca el siniestro de manera dolosa para cobrar el seguro.</li>
-</ul>
-<p>Incluso existen casos más complejos, como personas que <strong>crean empresas ficticias o identidades falsas</strong> para estafar a aseguradoras.</p>
-<h2>⚖️ ¿Qué dice la ley chilena?</h2>
-<p>En Chile, el fraude al seguro se encuentra regulado desde 2013 gracias a la <strong>Ley N° 20.667</strong>, que incorporó este delito al Código Penal.</p>
-<p><strong>Desde entonces, el fraude de seguros se considera un delito autónomo</strong>, con penas específicas, y no solo una estafa genérica.</p>
-<blockquote>
-    Artículo 470 Nº 10 del Código Penal: "Maliciosamente simulen la existencia de un siniestro, lo provoquen intencionalmente, lo presenten con circunstancias falsas, oculten el bien asegurado o aumenten fraudulentamente las pérdidas."
-</blockquote>
-<p>Es decir, ya no basta con anular el contrato: <strong>ahora también se pueden aplicar sanciones penales</strong>.</p>
-<h2>⚠️ ¿Por qué deberías preocuparte tú?</h2>
-<ul>
-<li>Las aseguradoras ajustan sus precios para cubrir estas pérdidas.</li>
-<li>Se endurecen las políticas de pago y los tiempos de evaluación.</li>
-<li>Aumenta la desconfianza general hacia el sistema asegurador.</li>
-</ul>
-<p><strong>Combatir el fraude beneficia a todos</strong>, ya que ayuda a mantener primas razonables y procesos más ágiles para quienes sí actúan con honestidad.</p>
-<h2>🤝 ¿Cómo ayudar a prevenirlo?</h2>
-<ol>
-<li><strong>Informa:</strong> Si sospechas de un fraude, repórtalo.</li>
-<li><strong>Educa:</strong> Ayuda a otros a entender lo grave que es y sus consecuencias.</li>
-<li><strong>Colabora:</strong> Denunciar no es ser "sapo", es proteger un sistema que todos usamos.</li>
-</ol>
-<h2>🏆 Caso real: Cuando el fraude termina en condena</h2>
-<p>En Estados Unidos, Martin Frankel orquestó un fraude multimillonario creando identidades y empresas falsas para cobrar seguros. Fue condenado en 2004. Aunque parece lejano, en Chile también existen casos de asegurados que simulan incendios o alteran pruebas.</p>
-<p>Estos casos muestran que la persecución penal del fraude no solo es posible, sino necesaria. Y también muestran que <strong>hay que actuar con total honestidad en todo el proceso asegurador</strong>.</p>
-<h2>☎️ ¿Tienes dudas? Conversemos</h2>
-<p>Contáctanos para una asesoría inicial:</p>
-<ul>
-<li>WhatsApp: <strong>+56 97993 9868</strong></li>
-<li>Email: <strong>contacto@exigetuseguro.cl</strong></li>
-</ul>
-        `
-      },
-      {
-        title: "Todo lo que debes saber sobre el seguro vehicular en Chile",
-        content: `
-         <p>🚗 Descubre cómo funciona el seguro automotriz, qué tipos existen y qué hacer si tu aseguradora no responde como esperabas.</p>
-<h2>🔒 ¿Qué tipos de seguros vehiculares existen en Chile?</h2>
-<p>En Chile, el único seguro obligatorio por ley es el <strong>SOAP (Seguro Obligatorio de Accidentes Personales)</strong>. Este cubre lesiones o fallecimientos en accidentes de tránsito, sin importar quién tuvo la culpa.</p>
-<p>Además, existen seguros voluntarios que puedes contratar:</p>
-<ul>
-<li><strong>Seguro contra daños a terceros:</strong> cubre los perjuicios que causes a otros vehículos o personas.</li>
-<li><strong>Seguro contra robo o pérdida total:</strong> protege en caso de robo o daños que inutilicen el vehículo.</li>
-<li><strong>Seguro todo riesgo:</strong> cobertura amplia, incluyendo daños propios, terceros, robos y más.</li>
-</ul>
-<p>Es fundamental revisar las condiciones de la póliza antes de contratar.</p>
-<h2>⚠️ ¿Qué pasa si la aseguradora no quiere pagar?</h2>
-<p>Muchas veces, las compañías de seguros rechazan siniestros por diversas razones, como:</p>
-<ul>
-<li>Omisión de información relevante al contratar.</li>
-<li>Conducir bajo efectos del alcohol.</li>
-<li>Incumplimiento de condiciones contractuales.</li>
-</ul>
-<p>Sin embargo, <strong>no todos los rechazos son válidos</strong>. Las aseguradoras deben actuar de buena fe y explicar claramente sus decisiones. Si no estás de acuerdo, puedes reclamar y exigir tus derechos.</p>
-<h2>🧾 ¿Qué debe contener una póliza?</h2>
-<p>La póliza es un contrato regulado por la ley, y debe incluir:</p>
-<ul>
-<li>Condiciones generales y particulares.</li>
-<li>Exclusiones (lo que no cubre).</li>
-<li>Obligaciones del asegurado y la aseguradora.</li>
-<li>Procedimientos en caso de siniestro.</li>
-</ul>
-<p>Muchos asegurados no revisan estos documentos en detalle, lo que puede generar problemas más adelante.</p>
-<h2>🛡️ Tus derechos como asegurado</h2>
-<p>Como consumidor tienes derecho a:</p>
-<ul>
-<li>Información clara y veraz sobre tu cobertura.</li>
-<li>Reclamar ante la <strong>Comisión para el Mercado Financiero (CMF)</strong>.</li>
-<li>Recibir la indemnización en los plazos establecidos por ley.</li>
-<li>Recurrir a mecanismos legales si tu aseguradora no cumple.</li>
-</ul>
-<h2>🧑‍⚖️ ¿Qué hacer si tienes un problema con tu seguro?</h2>
-<p>Si tu compañía de seguros rechaza tu siniestro o te ofrece una indemnización injusta, en <strong>Exige Tu Seguro</strong> podemos ayudarte. Nuestro equipo de abogados especialistas en seguros analiza tu caso y defiende tus derechos frente a la aseguradora.</p>
-<p>No dejes pasar la oportunidad de hacer valer lo que te corresponde.</p>
-<h2>📞 ¿Necesitas ayuda con tu seguro vehicular?</h2>
-<p>En <strong>Exige Tu Seguro</strong> estamos para ayudarte. Si tu aseguradora no ha cumplido o tienes dudas sobre tu cobertura, contáctanos.</p>
-<p><a href="https://wa.me/56979939868" target="_blank">👉 Haz clic aquí para recibir asesoría legal</a></p>
-        `
-      }
-    ];
 
-    function openBlogModal(index) {
-      const modal = document.getElementById('blogModal');
-      const modalBody = document.getElementById('modalBody');
-      const article = blogContent[index];
-      
-      modalBody.innerHTML = `
-        <h2 id="modalTitle" style="font-family: var(--font-heading); color: var(--color-primary); margin-bottom: 1.5rem;">${article.title}</h2>
-        <div style="color: var(--color-dark); line-height: 1.8;">
-          ${article.content}
-        </div>
-      `;
-      
-      modal.classList.add('active');
-      modal.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
-    }
 
-    function closeBlogModal() {
-      const modal = document.getElementById('blogModal');
-      modal.classList.remove('active');
-      modal.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = 'auto';
-    }
-
-    document.getElementById('blogModal').addEventListener('click', function(e) {
-      if (e.target === this) {
-        closeBlogModal();
-      }
-    });
-
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        closeBlogModal();
-      }
-    });
 
     let lastScrollTop = 0;
     window.addEventListener('scroll', function() {
