@@ -33,7 +33,7 @@
   </url>
   <!-- Sección de Honorarios -->
   <url>
-    <loc>https://www.exigetuseguro.cl/#honorarios</loc>
+    <loc>https://www.exigetuseguro.cl/honorarios</loc>
     <lastmod>2026-02-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -81,3 +81,4 @@
     <priority>0.4</priority>
   </url>
 </urlset>
+
