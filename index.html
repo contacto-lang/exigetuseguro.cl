@@ -1611,6 +1611,9 @@ footer {
   </section>
 
  <!-- Recursos Section -->
+<!-- SECCIÓN CORREGIDA: Recursos para Asegurados -->
+<!-- Reemplaza toda la sección con id="blog" con este código -->
+
 <section class="blog" id="blog">
   <div class="section-container">
     <div class="section-header">
@@ -1618,20 +1621,21 @@ footer {
       <p>Herramientas y conocimiento para defender tus derechos como asegurado en Chile</p>
     </div>
     
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 3rem; max-width: 1000px; margin: 0 auto;">
+    <!-- Grid mejorado con mejor responsividad -->
+    <div class="recursos-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1000px; margin: 0 auto;">
       
       <!-- Card Blog -->
-      <a href="https://exigetuseguro.cl/blog" style="text-decoration: none;">
-        <div class="blog-card" style="height: 100%; background: linear-gradient(135deg, rgba(10, 61, 98, 0.95) 0%, rgba(54, 149, 191, 0.95) 100%), url('https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg'); background-size: cover; background-position: center;">
-          <div style="padding: 3rem; text-align: center; color: white; height: 100%; display: flex; flex-direction: column; justify-content: center;">
-            <div style="width: 80px; height: 80px; background: var(--gradient-accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; box-shadow: var(--shadow-glow);">
-              <i class="fas fa-book-open" style="font-size: 2.5rem;"></i>
+      <a href="https://exigetuseguro.cl/blog" style="text-decoration: none;" class="recurso-link">
+        <div class="blog-card recurso-card" style="height: 100%; background: linear-gradient(135deg, rgba(10, 61, 98, 0.95) 0%, rgba(54, 149, 191, 0.95) 100%), url('https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg'); background-size: cover; background-position: center;">
+          <div class="recurso-content" style="padding: 2.5rem; text-align: center; color: white; height: 100%; display: flex; flex-direction: column; justify-content: center; min-height: 400px;">
+            <div style="width: 70px; height: 70px; background: var(--gradient-accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; box-shadow: var(--shadow-glow);">
+              <i class="fas fa-book-open" style="font-size: 2rem;"></i>
             </div>
-            <h3 style="font-family: var(--font-heading); font-size: 2rem; margin-bottom: 1rem; color: white;">Blog Legal</h3>
-            <p style="font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.95; line-height: 1.7;">
+            <h3 style="font-family: var(--font-heading); font-size: 1.75rem; margin-bottom: 1rem; color: white;">Blog Legal</h3>
+            <p style="font-size: 1rem; margin-bottom: 1.5rem; opacity: 0.95; line-height: 1.6;">
               Artículos especializados sobre seguros, tus derechos, reclamaciones y casos reales. Conocimiento legal al alcance de todos.
             </p>
-            <div style="display: inline-flex; align-items: center; gap: 0.75rem; background: var(--color-accent); padding: 1rem 2rem; border-radius: 50px; font-weight: 600; font-size: 1.1rem; margin: 0 auto; box-shadow: var(--shadow-md); transition: var(--transition);">
+            <div style="display: inline-flex; align-items: center; gap: 0.6rem; background: var(--color-accent); padding: 0.875rem 1.5rem; border-radius: 50px; font-weight: 600; font-size: 1rem; margin: 0 auto; box-shadow: var(--shadow-md); transition: var(--transition);">
               <span>Ir al Blog</span>
               <i class="fas fa-arrow-right"></i>
             </div>
@@ -1640,17 +1644,17 @@ footer {
       </a>
 
       <!-- Card Conoce tu Póliza -->
-      <a href="https://exigetuseguro.cl/conoce-tu-poliza" style="text-decoration: none;">
-        <div class="blog-card" style="height: 100%; background: linear-gradient(135deg, rgba(52, 168, 83, 0.95) 0%, rgba(76, 175, 80, 0.95) 100%), url('https://images.pexels.com/photos/5668772/pexels-photo-5668772.jpeg'); background-size: cover; background-position: center;">
-          <div style="padding: 3rem; text-align: center; color: white; height: 100%; display: flex; flex-direction: column; justify-content: center;">
-            <div style="width: 80px; height: 80px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; box-shadow: var(--shadow-glow); backdrop-filter: blur(10px);">
-              <i class="fas fa-file-contract" style="font-size: 2.5rem;"></i>
+      <a href="https://exigetuseguro.cl/conoce-tu-poliza" style="text-decoration: none;" class="recurso-link">
+        <div class="blog-card recurso-card" style="height: 100%; background: linear-gradient(135deg, rgba(52, 168, 83, 0.95) 0%, rgba(76, 175, 80, 0.95) 100%), url('https://images.pexels.com/photos/5668772/pexels-photo-5668772.jpeg'); background-size: cover; background-position: center;">
+          <div class="recurso-content" style="padding: 2.5rem; text-align: center; color: white; height: 100%; display: flex; flex-direction: column; justify-content: center; min-height: 400px;">
+            <div style="width: 70px; height: 70px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; box-shadow: var(--shadow-glow); backdrop-filter: blur(10px);">
+              <i class="fas fa-file-contract" style="font-size: 2rem;"></i>
             </div>
-            <h3 style="font-family: var(--font-heading); font-size: 2rem; margin-bottom: 1rem; color: white;">Conoce Tu Póliza</h3>
-            <p style="font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.95; line-height: 1.7;">
+            <h3 style="font-family: var(--font-heading); font-size: 1.75rem; margin-bottom: 1rem; color: white;">Conoce Tu Póliza</h3>
+            <p style="font-size: 1rem; margin-bottom: 1.5rem; opacity: 0.95; line-height: 1.6;">
               Aprende a leer y entender tu póliza de seguros. Identifica coberturas, exclusiones y tus derechos de forma clara y sencilla.
             </p>
-            <div style="display: inline-flex; align-items: center; gap: 0.75rem; background: white; color: var(--color-accent); padding: 1rem 2rem; border-radius: 50px; font-weight: 600; font-size: 1.1rem; margin: 0 auto; box-shadow: var(--shadow-md); transition: var(--transition);">
+            <div style="display: inline-flex; align-items: center; gap: 0.6rem; background: white; color: var(--color-accent); padding: 0.875rem 1.5rem; border-radius: 50px; font-weight: 600; font-size: 1rem; margin: 0 auto; box-shadow: var(--shadow-md); transition: var(--transition);">
               <span>Explorar Guía</span>
               <i class="fas fa-arrow-right"></i>
             </div>
@@ -1660,12 +1664,12 @@ footer {
 
     </div>
 
-    <!-- Opcional: Sección de highlights rápidos debajo -->
-    <div style="margin-top: 4rem; padding: 2rem; background: rgba(10, 61, 98, 0.05); border-radius: var(--border-radius); border-left: 4px solid var(--color-accent);">
+    <!-- Sección de highlights rápidos -->
+    <div style="margin-top: 3rem; padding: 2rem; background: rgba(10, 61, 98, 0.05); border-radius: var(--border-radius); border-left: 4px solid var(--color-accent);">
       <h4 style="font-family: var(--font-heading); color: var(--color-primary); margin-bottom: 1.5rem; text-align: center;">
         <i class="fas fa-lightbulb"></i> ¿Sabías que...?
       </h4>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
         <div style="text-align: center;">
           <i class="fas fa-shield-alt" style="font-size: 2rem; color: var(--color-accent); margin-bottom: 0.5rem;"></i>
           <p style="color: var(--color-gray-light); font-size: 0.95rem;">Tienes derecho a impugnar rechazos de seguros injustos</p>
@@ -1683,6 +1687,137 @@ footer {
 
   </div>
 </section>
+
+<style>
+/* ESTILOS CORREGIDOS PARA LA SECCIÓN DE RECURSOS */
+
+/* Grid de recursos mejorado */
+.recursos-grid {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* Cards de recursos optimizadas */
+.recurso-card {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.recurso-link {
+  display: block;
+  width: 100%;
+}
+
+/* Hover mejorado */
+.recurso-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 12px 40px rgba(52, 168, 83, 0.2) !important;
+}
+
+/* Responsive mejorado */
+@media (max-width: 968px) {
+  .recursos-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    padding: 0 1rem;
+  }
+  
+  .recurso-card {
+    max-width: 600px !important;
+  }
+  
+  .recurso-content {
+    padding: 2rem !important;
+    min-height: 350px !important;
+  }
+  
+  .recurso-content h3 {
+    font-size: 1.5rem !important;
+  }
+  
+  .recurso-content p {
+    font-size: 0.95rem !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .recursos-grid {
+    padding: 0 0.5rem;
+  }
+  
+  .recurso-card {
+    max-width: 100% !important;
+  }
+  
+  .recurso-content {
+    padding: 1.5rem !important;
+    min-height: 320px !important;
+  }
+  
+  .recurso-content h3 {
+    font-size: 1.3rem !important;
+  }
+  
+  .recurso-content p {
+    font-size: 0.9rem !important;
+    margin-bottom: 1.25rem !important;
+  }
+  
+  .recurso-content > div:first-child {
+    width: 60px !important;
+    height: 60px !important;
+    margin-bottom: 1.25rem !important;
+  }
+  
+  .recurso-content > div:first-child i {
+    font-size: 1.75rem !important;
+  }
+  
+  .recurso-content > div:last-child {
+    padding: 0.75rem 1.25rem !important;
+    font-size: 0.9rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .recurso-content {
+    padding: 1.25rem !important;
+    min-height: 300px !important;
+  }
+  
+  .recurso-content h3 {
+    font-size: 1.2rem !important;
+  }
+  
+  .recurso-content p {
+    font-size: 0.85rem !important;
+  }
+}
+
+/* Deshabilitar animaciones en las cards de recursos */
+.blog-card.recurso-card {
+  animation: none !important;
+  transition-delay: 0s !important;
+}
+</style>
+
+<script>
+/* SCRIPT CORREGIDO - Agregar al final del documento, antes de cerrar </body> */
+
+// Asegurar que las cards de recursos NO sean afectadas por el observer
+document.addEventListener('DOMContentLoaded', function() {
+  // Forzar visibilidad inmediata de las cards de recursos
+  const recursoCards = document.querySelectorAll('.recurso-card');
+  recursoCards.forEach(card => {
+    card.style.opacity = '1';
+    card.style.transform = 'none';
+    card.style.transition = 'transform 0.3s ease, box-shadow 0.3s ease';
+  });
+});
+</script>
 
   <!-- Sobre Nosotros Section -->
 <section class="services" id="nosotros" style="background: linear-gradient(135deg, rgba(10, 61, 98, 0.92) 0%, rgba(54, 149, 191, 0.88) 100%), url('https://images.pexels.com/photos/5668772/pexels-photo-5668772.jpeg?auto=compress&cs=tinysrgb&w=1920'); background-size: cover; background-position: center;">
