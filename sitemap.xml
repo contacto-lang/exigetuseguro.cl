@@ -47,7 +47,7 @@
   </url>
   <!-- Sección de Blog -->
   <url>
-    <loc>https://www.exigetuseguro.cl/#blog</loc>
+    <loc>https://www.exigetuseguro.cl/blog</loc>
     <lastmod>2026-02-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -88,3 +88,4 @@
     <priority>0.4</priority>
   </url>
 </urlset>
+
