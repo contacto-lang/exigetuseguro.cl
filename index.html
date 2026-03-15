@@ -2116,8 +2116,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 PDF, JPG, PNG, DOCX — Máx. 10 MB por archivo
               </p>
             </div>
-            <input type="file" id="archivos" name="attachment" multiple accept=".pdf,.jpg,.jpeg,.png,.docx"
+            <input type="file" id="archivos" multiple accept=".pdf,.jpg,.jpeg,.png,.docx"
               style="display: none;" onchange="mostrarArchivos(this.files)">
+            <!-- Aquí se inyectan los inputs individuales por archivo -->
+            <div id="attachmentsContainer"></div>
             <div id="listaArchivos" style="margin-top: 0.75rem;"></div>
           </div>
 
@@ -2295,9 +2297,23 @@ document.addEventListener('DOMContentLoaded', function() {
 // ── Pegar estas funciones dentro del <script> que ya existe en tu HTML ──
 
 function mostrarArchivos(files) {
-  const lista = document.getElementById('listaArchivos');
-  lista.innerHTML = '';
+  const lista      = document.getElementById('listaArchivos');
+  const container  = document.getElementById('attachmentsContainer');
+  lista.innerHTML     = '';
+  container.innerHTML = '';
+
   Array.from(files).forEach(f => {
+    // Un input oculto por cada archivo, todos con name="attachment"
+    const dt = new DataTransfer();
+    dt.items.add(f);
+    const input = document.createElement('input');
+    input.type  = 'file';
+    input.name  = 'attachment';
+    input.style.display = 'none';
+    input.files = dt.files;
+    container.appendChild(input);
+
+    // Etiqueta visual
     const tag = document.createElement('div');
     tag.style.cssText = 'display:inline-flex;align-items:center;gap:0.4rem;background:rgba(52,168,83,0.2);border:1px solid rgba(52,168,83,0.4);color:white;padding:0.3rem 0.75rem;border-radius:20px;font-size:0.8rem;margin:0.25rem 0.25rem 0 0;';
     tag.innerHTML = `<i class="fas fa-file" style="color:var(--color-accent)"></i> ${f.name}`;
