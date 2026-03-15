@@ -2349,12 +2349,18 @@ function handleDrop(e) {
 }
 
 async function subirArchivo(file) {
+  // Obtener el servidor disponible de GoFile
+  const serverRes  = await fetch('https://api.gofile.io/servers');
+  const serverData = await serverRes.json();
+  const server     = serverData.data.servers[0].name;
+
   const formData = new FormData();
   formData.append('file', file);
-  const res  = await fetch('https://file.io/?expires=7d', { method: 'POST', body: formData });
+
+  const res  = await fetch(`https://${server}.gofile.io/uploadFile`, { method: 'POST', body: formData });
   const data = await res.json();
-  if (!data.success) throw new Error('Error subiendo ' + file.name);
-  return `${file.name}: ${data.link}`;
+  if (data.status !== 'ok') throw new Error('Error subiendo ' + file.name);
+  return `${file.name}: ${data.data.downloadPage}`;
 }
 
 async function validarConsulta(e) {
@@ -2407,6 +2413,7 @@ async function validarConsulta(e) {
   // Enviar el formulario
   document.getElementById('consultaForm').submit();
 }
+
   </script>
 </body>
 </html>
