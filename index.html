@@ -2032,7 +2032,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <label style="display: block; font-size: 0.85rem; font-weight: 600; color: rgba(255,255,255,0.85); margin-bottom: 0.4rem;">
               Nombre completo *
             </label>
-            <input type="text" id="nombre" required placeholder="Ej: Juan Pérez"
+            <input type="text" id="nombre" name="nombre" required placeholder="Ej: Juan Pérez"
               style="width: 100%; padding: 0.75rem 1rem; border-radius: 10px; border: 1px solid rgba(255,255,255,0.2);
                      background: rgba(255,255,255,0.1); color: white; font-size: 0.95rem; outline: none; transition: border-color 0.3s;"
               onfocus="this.style.borderColor='var(--color-accent)'"
@@ -2045,7 +2045,7 @@ document.addEventListener('DOMContentLoaded', function() {
               <label style="display: block; font-size: 0.85rem; font-weight: 600; color: rgba(255,255,255,0.85); margin-bottom: 0.4rem;">
                 Email *
               </label>
-              <input type="email" id="email" required placeholder="correo@ejemplo.cl"
+              <input type="email" id="email" name="email" required placeholder="correo@ejemplo.cl"
                 style="width: 100%; padding: 0.75rem 1rem; border-radius: 10px; border: 1px solid rgba(255,255,255,0.2);
                        background: rgba(255,255,255,0.1); color: white; font-size: 0.9rem; outline: none; transition: border-color 0.3s;"
                 onfocus="this.style.borderColor='var(--color-accent)'"
@@ -2055,7 +2055,7 @@ document.addEventListener('DOMContentLoaded', function() {
               <label style="display: block; font-size: 0.85rem; font-weight: 600; color: rgba(255,255,255,0.85); margin-bottom: 0.4rem;">
                 Teléfono
               </label>
-              <input type="tel" id="telefono" placeholder="+56 9 XXXX XXXX"
+              <input type="tel" id="telefono" name="telefono" placeholder="+56 9 XXXX XXXX"
                 style="width: 100%; padding: 0.75rem 1rem; border-radius: 10px; border: 1px solid rgba(255,255,255,0.2);
                        background: rgba(255,255,255,0.1); color: white; font-size: 0.9rem; outline: none; transition: border-color 0.3s;"
                 onfocus="this.style.borderColor='var(--color-accent)'"
@@ -2068,7 +2068,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <label style="display: block; font-size: 0.85rem; font-weight: 600; color: rgba(255,255,255,0.85); margin-bottom: 0.4rem;">
               Tipo de seguro
             </label>
-            <select id="tipoSeguro"
+            <select id="tipoSeguro" name="tipoSeguro"
               style="width: 100%; padding: 0.75rem 1rem; border-radius: 10px; border: 1px solid rgba(255,255,255,0.2);
                      background: rgba(30,40,60,0.9); color: white; font-size: 0.9rem; outline: none; transition: border-color 0.3s; cursor: pointer;"
               onfocus="this.style.borderColor='var(--color-accent)'"
@@ -2087,7 +2087,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <label style="display: block; font-size: 0.85rem; font-weight: 600; color: rgba(255,255,255,0.85); margin-bottom: 0.4rem;">
               Relato de los hechos *
             </label>
-            <textarea id="relato" required rows="4"
+            <textarea id="relato" name="relato" required rows="4"
               placeholder="Describe brevemente tu situación: ¿qué ocurrió?, ¿cuándo fue el siniestro?, ¿tu aseguradora rechazó el reclamo?..."
               style="width: 100%; padding: 0.75rem 1rem; border-radius: 10px; border: 1px solid rgba(255,255,255,0.2);
                      background: rgba(255,255,255,0.1); color: white; font-size: 0.9rem; outline: none;
@@ -2116,7 +2116,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 PDF, JPG, PNG, DOCX — Máx. 10 MB por archivo
               </p>
             </div>
-            <input type="file" id="archivos" name="archivo" multiple accept=".pdf,.jpg,.jpeg,.png,.docx"
+            <input type="file" id="archivos" name="attachment" multiple accept=".pdf,.jpg,.jpeg,.png,.docx"
               style="display: none;" onchange="mostrarArchivos(this.files)">
             <div id="listaArchivos" style="margin-top: 0.75rem;"></div>
           </div>
