@@ -1377,7 +1377,7 @@ footer {
         <a href="#servicios" itemprop="url"><span itemprop="name">Servicios</span></a>
         <a href="#honorarios" itemprop="url"><span itemprop="name">Honorarios</span></a>
         <a href="#nosotros" itemprop="url"><span itemprop="name">Nosotros</span></a>
-        <a href="#contacto" itemprop="url"><span itemprop="name">Contacto</span></a>
+        <a href="#contacto" itemprop="url"><span itemprop="name">Formulario</span></a>
       </nav>
       
       <div class="cta-buttons">
@@ -1400,7 +1400,7 @@ footer {
     <a href="#servicios" onclick="toggleMobileNav()">Servicios</a>
     <a href="#honorarios" onclick="toggleMobileNav()">Honorarios</a>
     <a href="#nosotros" onclick="toggleMobileNav()">Nosotros</a>
-    <a href="#Contacto" onclick="toggleMobileNav()">Contacto</a>
+    <a href="#Contacto" onclick="toggleMobileNav()">Formulario (sube tus archivos)</a>
     <a href="#agenda" onclick="toggleMobileNav()">Agendar Cita</a>
     <a href="https://wa.me/56979939868">Contactar por WhatsApp</a>
   </nav>
@@ -1422,7 +1422,7 @@ footer {
         <div class="hero-features">
           <div class="feature-item">
             <i class="fas fa-check-circle"></i>
-            <span>Análisis IA</span>
+            <span>Sube Tus Archivos</span>
           </div>
           <div class="feature-item">
             <i class="fas fa-check-circle"></i>
@@ -1434,8 +1434,8 @@ footer {
           </div>
         </div>
         <div class="cta-buttons">
-          <a href="#ia" class="btn-primary">
-            <i class="fas fa-robot"></i> Probar IA Gratis
+          <a href="#contacto" class="btn-primary">
+            <i class="fas fa-file-alt"></i> Formulario
           </a>
           <a href="#agenda" class="btn-secondary" style="background: rgba(255,255,255,0.2); border-color: white; color: white;">
             <i class="fas fa-calendar"></i> Primera Cita Gratis
@@ -1460,9 +1460,9 @@ footer {
 
         <div style="text-align: center;">
           <div style="width: 60px; height: 60px; background: var(--gradient-accent); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
-            <i class="fas fa-robot" style="font-size: 1.5rem;"></i>
+            <i class="fas fa-balance-scale" style="font-size: 1.5rem;"></i>
           </div>
-          <h4 style="margin-bottom: 0.5rem;">Innovación</h4>
+          <h4 style="margin-bottom: 0.5rem;">Justicia</h4>
         </div>
       </div>
     </div>
@@ -1479,10 +1479,10 @@ footer {
       <div class="services-grid">
         <article class="service-card" itemscope itemtype="https://schema.org/Service">
           <div class="service-icon">
-            <i class="fas fa-robot"></i>
+            <i class="fas fa-file-alt"></i>
           </div>
-          <h3 itemprop="name">Análisis IA de Pólizas</h3>
-          <p itemprop="description">Inteligencia artificial analiza tu póliza en segundos, identificando coberturas, exclusiones, cláusulas abusivas y derechos que desconocías. Servicio gratuito 24/7.</p>
+          <h3 itemprop="name">Formulario Web</h3>
+          <p itemprop="description">Cuéntanos lo que ocurrió y adjunta los documentos relevantes de tu caso: tu póliza de seguro, la carta de rechazo o cualquier comunicación con tu aseguradora. Con esa información podemos darte una orientación legal precisa desde el primer contacto.</p>
         </article>
         
         <article class="service-card" itemscope itemtype="https://schema.org/Service">
@@ -1833,10 +1833,9 @@ document.addEventListener('DOMContentLoaded', function() {
     <div style="max-width: 900px; margin: 0 auto;">
       <div style="background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); padding: 3rem; border-radius: var(--border-radius); border: 1px solid rgba(255,255,255,0.2); margin-bottom: 3rem; box-shadow: var(--shadow-lg);">
         <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem; color: var(--color-gray-light);">
-          Somos un estudio jurídico especializado en litigios de seguros en Chile, transformado en una 
-          <strong style="color: var(--color-accent);">legaltech de vanguardia</strong>. 
+          Somos un estudio jurídico especializado en litigios de seguros en Chile. 
           Nuestro equipo de abogados cuenta con amplia experiencia en la defensa de los derechos 
-          de los asegurados ante compañías de seguros, ahora potenciada con inteligencia artificial.
+          de los asegurados ante compañías de seguros.
         </p>
         
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
@@ -1864,13 +1863,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <p style="color: var(--color-gray-light); font-size: 0.9rem;">Comunicación clara y honesta siempre</p>
           </div>
           
-          <div style="text-align: center;">
-            <div style="width: 60px; height: 60px; background: var(--gradient-accent); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
-              <i class="fas fa-robot" style="font-size: 1.5rem; color: white;"></i>
-            </div>
-            <h4 style="margin-bottom: 0.5rem; color: var(--color-primary);">Innovación</h4>
-            <p style="color: var(--color-gray-light); font-size: 0.9rem;">Tecnología al servicio de la justicia</p>
-          </div>
+          
         </div>
       </div>
       
@@ -1894,71 +1887,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </section>
  
 
-  <!-- IA Section -->
-  <section class="ai-section" id="ia">
-    <div class="section-container">
-      <div class="ai-content">
-        <div>
-          <div class="ai-badge" style="background: rgba(52, 168, 83, 0.3);">
-            <i class="fas fa-brain"></i>
-            <span>Inteligencia Artificial Legal (piloto)</span>
-          </div>
-          <h2 style="font-family: var(--font-heading); font-size: 2.5rem; margin-bottom: 1.5rem;">
-            Análisis Inteligente de Pólizas y Rechazos
-          </h2>
-          <p style="font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.9;">
-            Nuestra plataforma de IA analiza tu póliza de seguro y cartas de rechazo en tiempo real, 
-            identificando errores, inconsistencias, cláusulas abusivas y oportunidades legales para tu defensa.
-          </p>
-          
-          <a href="https://ia.exigetuseguro.cl" class="btn-primary" style="display: inline-flex; margin-bottom: 2rem;">
-            <i class="fas fa-rocket"></i> Acceder a la IA Ahora
-          </a>
-          
-          <div class="ai-feature">
-            <i class="fas fa-search"></i>
-            <div>
-              <strong>Análisis Instantáneo</strong>
-              <p style="margin: 0; opacity: 0.8; font-size: 0.95rem;">Sube tu póliza o carta de rechazo y obtén un análisis legal detallado en segundos</p>
-            </div>
-          </div>
-          
-          <div class="ai-feature">
-            <i class="fas fa-balance-scale"></i>
-            <div>
-              <strong>Identificación de Derechos</strong>
-              <p style="margin: 0; opacity: 0.8; font-size: 0.95rem;">Descubre coberturas y beneficios que no sabías que tenías en tu seguro</p>
-            </div>
-          </div>
-          
-          <div class="ai-feature">
-            <i class="fas fa-exclamation-triangle"></i>
-            <div>
-              <strong>Detección de Cláusulas Abusivas</strong>
-              <p style="margin: 0; opacity: 0.8; font-size: 0.95rem;">Identifica términos ilegales o desventajosos en tu contrato de seguro</p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="ai-visual">
-          <div style="text-align: center;">
-            <i class="fas fa-robot" style="font-size: 5rem; color: var(--color-accent); margin-bottom: 2rem;"></i>
-            <h3 style="font-family: var(--font-heading); margin-bottom: 1rem;">Chat Legal Inteligente 24/7</h3>
-            <p style="opacity: 0.8; margin-bottom: 2rem;">Consulta en cualquier momento sobre tu póliza, rechazos de siniestros, tus derechos legales y próximos pasos.</p>
-            <div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 12px; text-align: left; margin-bottom: 1rem;">
-              <small style="opacity: 0.7;">Usuario:</small>
-              <p style="margin: 0.5rem 0;">¿Por qué rechazaron mi siniestro de seguro?</p>
-            </div>
-            <div style="background: rgba(52,168,83,0.2); padding: 1.5rem; border-radius: 12px; text-align: left;">
-              <small style="opacity: 0.7;">IA Legal:</small>
-              <p style="margin: 0.5rem 0;">Analizando tu carta de rechazo y póliza de seguro...</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
+ 
 <!-- Contacto Section -->
 <section class="ai-section" id="contacto" style="background: linear-gradient(135deg, rgba(26, 31, 46, 0.92) 0%, rgba(42, 49, 66, 0.92) 100%), url('https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg?auto=compress&cs=tinysrgb&w=1920'); background-size: cover; background-position: center;">
   <div class="section-container">
@@ -2182,8 +2111,8 @@ document.addEventListener('DOMContentLoaded', function() {
       <div class="footer-links">
         <h4>Servicios</h4>
         <ul>
-          <li><a href="#ia">IA Legal Seguros</a></li>
-          <li><a href="#servicios">Análisis de Pólizas</a></li>
+          
+          <li><a href="#contacto">Análisis caso-Sube tus archivos</a></li>
           <li><a href="#servicios">Impugnación de Rechazos</a></li>
           <li><a href="#servicios">Litigios de Seguros</a></li>
         </ul>
@@ -2203,6 +2132,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <h4>Contacto</h4>
         <ul>
           <li><a href="https://exigetuseguro.cl/contacto">Agendar Cita</a></li>
+          <li><a href="https://exigetuseguro.cl/contacto">Formulario</a></li>
           <li><a href="https://wa.me/56979939868">WhatsApp</a></li>
           <li><a href="mailto:contacto@exigetuseguro.cl">Email</a></li>
           <li><a href="https://exigetuseguro.cl/contacto">Contacto</a></li>
