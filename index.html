@@ -1386,6 +1386,56 @@ footer {
     transition-duration: 0.01ms !important;
   }
 }
+/* ── Servicios: tamaño reducido ── */
+#servicios .section-header h2 {
+  font-size: 1.9rem;
+}
+
+#servicios .section-header p {
+  font-size: 0.95rem;
+}
+
+#servicios .section-header {
+  margin-bottom: 2.5rem;
+}
+
+@media (max-width: 968px) {
+  #servicios .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  #servicios .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+#servicios .service-card {
+  padding: 1.75rem;
+}
+
+#servicios .service-icon {
+  width: 46px;
+  height: 46px;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+}
+
+#servicios .service-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.6rem;
+}
+
+#servicios .service-card p {
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+@media (min-width: 969px) {
+  .hero {
+    padding-top: 3rem;
+  }
+}
 </style>
 </head>
 <body>
