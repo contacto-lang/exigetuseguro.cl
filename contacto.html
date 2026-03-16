@@ -9,329 +9,799 @@
 <link href="https://www.exigetuseguro.cl/contacto" rel="canonical"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
 
 <style>
 :root {
-  --primary: #0A3D62;
-  --secondary: #3695BF;
-  --accent: #34A853;
-  --accent2: #4CAF50;
-  --dark: #0f1419;
-  --gray: #8b92a7;
-  --bg: #f8fafc;
-  --font-h: 'Space Grotesk', sans-serif;
-  --font-b: 'Inter', sans-serif;
-  --r: 16px;
-  --sh: 0 8px 32px rgba(0,0,0,0.12);
-  --tr: all 0.3s cubic-bezier(0.4,0,0.2,1);
+  --navy:       #0A3D62;
+  --navy-deep:  #072d48;
+  --navy-mid:   #0e4f7a;
+  --sky:        #3695BF;
+  --sky-light:  #e8f4fb;
+  --sky-pale:   #f0f8ff;
+  --green:      #2eaa50;
+  --green-light:#e8f7ee;
+  --green-mid:  #34A853;
+  --white:      #ffffff;
+  --off-white:  #f7fbff;
+  --gray-50:    #f4f7fa;
+  --gray-100:   #e8edf3;
+  --gray-200:   #cdd6e0;
+  --gray-400:   #8a9ab0;
+  --gray-600:   #4a5568;
+  --gray-800:   #1a2535;
+
+  --font-h: 'DM Serif Display', Georgia, serif;
+  --font-b: 'DM Sans', system-ui, sans-serif;
+  --sh-sm:  0 2px 8px rgba(10,61,98,.08);
+  --sh-md:  0 6px 24px rgba(10,61,98,.11);
+  --sh-lg:  0 16px 48px rgba(10,61,98,.14);
+  --sh-xl:  0 24px 64px rgba(10,61,98,.18);
+  --r:      14px;
+  --tr:     all 0.28s cubic-bezier(0.4,0,0.2,1);
 }
-* { margin:0; padding:0; box-sizing:border-box; }
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 
 body {
   font-family: var(--font-b);
-  background: linear-gradient(135deg,rgba(26,31,46,.96) 0%,rgba(42,49,66,.96) 100%),
-              url('https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg?auto=compress&cs=tinysrgb&w=1920') center/cover fixed;
-  color: white;
+  background: var(--off-white);
+  color: var(--gray-800);
   min-height: 100vh;
-  line-height: 1.6;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
 }
-@media(max-width:968px){ body{ background-attachment:scroll; } }
 
-/* ── HEADER ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: url('https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=1920') center/cover no-repeat;
+  opacity: 0.06;
+  z-index: 0;
+  pointer-events: none;
+}
+
+body > * { position: relative; z-index: 1; }
+
+/* ─── HEADER ─── */
 header {
-  background: rgba(255,255,255,.98);
-  backdrop-filter: blur(10px);
-  padding: 1rem 2rem;
-  position: sticky; top:0; z-index:1000;
-  box-shadow: 0 2px 12px rgba(0,0,0,.08);
+  background: var(--white);
+  border-bottom: 1px solid var(--gray-100);
+  padding: 0 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: var(--sh-sm);
 }
-.header-inner { max-width:1100px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; }
-.logo { font-family:var(--font-h); font-size:1.4rem; color:var(--primary); text-decoration:none; font-weight:700; }
-.logo span { color:var(--accent); }
+.header-inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  height: 68px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  font-family: var(--font-h);
+  font-size: 1.45rem;
+  color: var(--navy);
+  text-decoration: none;
+  letter-spacing: -0.3px;
+}
+.logo em { color: var(--green-mid); font-style: normal; }
 .btn-back {
-  background:var(--accent); color:white; padding:.6rem 1.25rem; border-radius:10px;
-  text-decoration:none; font-weight:600; font-size:.9rem;
-  display:inline-flex; align-items:center; gap:.5rem; transition:var(--tr);
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  color: var(--navy);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: .875rem;
+  padding: .55rem 1.1rem;
+  border: 1.5px solid var(--gray-200);
+  border-radius: 8px;
+  transition: var(--tr);
+  letter-spacing: .2px;
 }
-.btn-back:hover { transform:translateY(-2px); box-shadow:0 6px 18px rgba(52,168,83,.25); }
+.btn-back:hover {
+  border-color: var(--navy);
+  background: var(--sky-pale);
+  color: var(--navy-deep);
+}
+.btn-back i { font-size: .8rem; }
 
-/* ── HERO ── */
-.hero {
-  text-align:center;
-  padding: 4rem 2rem 2rem;
-  max-width: 1100px;
+/* ─── PAGE LAYOUT ─── */
+.page-wrapper {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 2rem 5rem;
+}
+
+/* ─── HERO STRIP ─── */
+.hero-strip {
+  padding: 3.5rem 0 2.5rem;
+  text-align: center;
+}
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  background: var(--green-light);
+  color: var(--green);
+  border: 1px solid rgba(46,170,80,.2);
+  padding: .35rem 1rem;
+  border-radius: 50px;
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: .6px;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+.hero-strip h1 {
+  font-family: var(--font-h);
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--navy-deep);
+  line-height: 1.15;
+  margin-bottom: .875rem;
+}
+.hero-strip h1 em {
+  font-style: italic;
+  color: var(--sky);
+}
+.hero-strip p {
+  font-size: 1.05rem;
+  color: var(--gray-600);
+  max-width: 520px;
   margin: 0 auto;
 }
-.hero h1 {
-  font-family:var(--font-h); font-size:2.75rem; font-weight:700;
-  margin-bottom:.75rem; line-height:1.2;
-}
-.hero h1 span { color:var(--accent); }
-.hero p { font-size:1.1rem; color:rgba(255,255,255,.8); max-width:560px; margin:0 auto 2.5rem; }
 
-/* ── OPTION CARDS ── */
-.options {
+/* ─── QUICK NAV TABS ─── */
+.quick-nav {
+  display: flex;
+  justify-content: center;
+  gap: .75rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+.qnav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .65rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: .9rem;
+  cursor: pointer;
+  transition: var(--tr);
+  border: 2px solid transparent;
+  text-decoration: none;
+}
+.qnav-primary {
+  background: var(--green-mid);
+  color: white;
+  box-shadow: 0 4px 16px rgba(52,168,83,.3);
+}
+.qnav-primary:hover {
+  background: var(--green);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(52,168,83,.38);
+}
+.qnav-secondary {
+  background: var(--white);
+  color: var(--navy);
+  border-color: var(--gray-200);
+  box-shadow: var(--sh-sm);
+}
+.qnav-secondary:hover {
+  border-color: var(--sky);
+  color: var(--sky);
+  background: var(--sky-pale);
+  transform: translateY(-2px);
+}
+
+/* ─── MAIN TWO-COL LAYOUT ─── */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+/* ─── LEFT PANEL ─── */
+.left-panel {
+  position: sticky;
+  top: 88px;
+}
+.left-card {
+  background: var(--navy);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--sh-xl);
+  position: relative;
+}
+
+/* Geometric decoration */
+.left-card::before {
+  content: '';
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 240px; height: 240px;
+  background: radial-gradient(circle, rgba(54,149,191,.18) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.left-card::after {
+  content: '';
+  position: absolute;
+  bottom: -40px; left: -40px;
+  width: 180px; height: 180px;
+  background: radial-gradient(circle, rgba(46,170,80,.12) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.left-top {
+  padding: 2.5rem 2.25rem 2rem;
+  position: relative;
+  z-index: 1;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.left-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  background: rgba(52,168,83,.2);
+  border: 1px solid rgba(52,168,83,.35);
+  color: #7ed99a;
+  padding: .3rem .85rem;
+  border-radius: 50px;
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+.left-top h2 {
+  font-family: var(--font-h);
+  font-size: 1.7rem;
+  color: var(--white);
+  line-height: 1.2;
+  margin-bottom: .75rem;
+}
+.left-top h2 em {
+  font-style: italic;
+  color: #7ad4f5;
+}
+.left-top > p {
+  font-size: .9rem;
+  color: rgba(255,255,255,.6);
+  line-height: 1.7;
+}
+
+/* Document items */
+.docs-section {
+  padding: 1.75rem 2.25rem;
+  position: relative;
+  z-index: 1;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.docs-label {
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.35);
+  margin-bottom: 1rem;
+}
+.doc-row {
+  display: flex;
+  align-items: flex-start;
+  gap: .875rem;
+  padding: .875rem 1rem;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 11px;
+  margin-bottom: .625rem;
+  transition: var(--tr);
+}
+.doc-row:last-child { margin-bottom: 0; }
+.doc-row:hover {
+  background: rgba(255,255,255,.09);
+  border-color: rgba(54,149,191,.3);
+}
+.doc-icon {
+  width: 34px; height: 34px;
+  background: rgba(52,168,83,.18);
+  border: 1px solid rgba(52,168,83,.25);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  font-size: .85rem;
+  color: #7ed99a;
+}
+.doc-row p   { font-size: .88rem; font-weight: 600; color: white; margin: 0 0 .15rem; }
+.doc-row small { font-size: .78rem; color: rgba(255,255,255,.4); line-height: 1.4; }
+
+/* Process steps */
+.steps-section {
+  padding: 1.75rem 2.25rem 2rem;
+  position: relative;
+  z-index: 1;
+}
+.step-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.1rem;
+}
+.step-row:last-child { margin-bottom: 0; }
+.step-num {
+  width: 28px; height: 28px;
+  background: var(--sky);
+  color: white;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: .78rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: .1rem;
+}
+.step-row p   { font-size: .88rem; font-weight: 600; color: white; margin: 0 0 .1rem; }
+.step-row small { font-size: .78rem; color: rgba(255,255,255,.45); }
+
+/* Contact strip at bottom of left panel */
+.left-contact {
+  padding: 1.25rem 2.25rem 1.75rem;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  gap: .75rem;
+}
+.lc-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .45rem;
+  padding: .7rem .875rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: .83rem;
+  font-weight: 600;
+  transition: var(--tr);
+}
+.lc-wa {
+  background: rgba(37,211,102,.14);
+  border: 1px solid rgba(37,211,102,.25);
+  color: #6fcf97;
+}
+.lc-wa:hover  { background: rgba(37,211,102,.24); color: #88daa8; }
+.lc-em {
+  background: rgba(54,149,191,.14);
+  border: 1px solid rgba(54,149,191,.25);
+  color: #7ad4f5;
+}
+.lc-em:hover  { background: rgba(54,149,191,.24); color: #a0dff7; }
+
+/* ─── RIGHT PANEL: FORM ─── */
+.right-panel { display: flex; flex-direction: column; gap: 1.75rem; }
+
+.form-card {
+  background: var(--white);
+  border-radius: 20px;
+  box-shadow: var(--sh-lg);
+  overflow: hidden;
+  border: 1px solid var(--gray-100);
+}
+.form-header {
+  padding: 1.75rem 2.25rem 1.5rem;
+  border-bottom: 1px solid var(--gray-100);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: linear-gradient(135deg, var(--sky-pale) 0%, var(--white) 100%);
+  position: relative;
+  overflow: hidden;
+}
+.form-header::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--green-mid) 0%, var(--sky) 100%);
+}
+.fh-icon {
+  width: 48px; height: 48px;
+  background: var(--navy);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  color: white; font-size: 1.15rem;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(10,61,98,.2);
+}
+.fh-icon i { color: white; }
+.form-header h2 {
+  font-family: var(--font-h);
+  font-size: 1.3rem;
+  color: var(--navy-deep);
+  margin-bottom: .15rem;
+}
+.form-header p { font-size: .85rem; color: var(--gray-400); }
+
+.form-body { padding: 2rem 2.25rem; }
+
+/* Fields */
+.fg { margin-bottom: 1.1rem; }
+.fg label {
+  display: block;
+  font-size: .78rem;
+  font-weight: 700;
+  color: var(--gray-600);
+  margin-bottom: .4rem;
+  letter-spacing: .4px;
+  text-transform: uppercase;
+}
+.fg label .req { color: var(--green-mid); margin-left: .15rem; }
+
+.fi {
+  width: 100%;
+  padding: .8rem 1rem;
+  border-radius: 10px;
+  border: 1.5px solid var(--gray-200);
+  background: var(--gray-50);
+  color: var(--gray-800);
+  font-size: .92rem;
+  font-family: var(--font-b);
+  outline: none;
+  transition: border-color .22s, background .22s, box-shadow .22s;
+  line-height: 1.5;
+}
+.fi::placeholder { color: var(--gray-400); }
+.fi:hover  { border-color: var(--gray-400); }
+.fi:focus  {
+  border-color: var(--sky);
+  background: var(--sky-pale);
+  box-shadow: 0 0 0 3px rgba(54,149,191,.1);
+}
+select.fi {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%238a9ab0' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right .875rem center;
+  padding-right: 2.5rem;
+  appearance: none;
+}
+textarea.fi { resize: vertical; min-height: 120px; }
+
+.frow {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.25rem;
-  max-width: 780px;
-  margin: 0 auto;
-}
-.option-card {
-  background: rgba(255,255,255,.07);
-  border: 2px solid rgba(255,255,255,.12);
-  border-radius: var(--r);
-  padding: 2rem 1.75rem;
-  text-align: center;
-  text-decoration: none;
-  color: white;
-  transition: var(--tr);
-  cursor: pointer;
-  display: flex; flex-direction:column; align-items:center; gap:.75rem;
-}
-.option-card:hover {
-  background: rgba(255,255,255,.13);
-  border-color: var(--accent);
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(52,168,83,.15);
-}
-.option-icon {
-  width:56px; height:56px; border-radius:14px;
-  background: linear-gradient(135deg,var(--accent),var(--accent2));
-  display:flex; align-items:center; justify-content:center;
-  font-size:1.5rem; color:white;
-  box-shadow: 0 4px 14px rgba(52,168,83,.3);
-}
-.option-card h3 { font-family:var(--font-h); font-size:1.15rem; font-weight:700; }
-.option-card p { font-size:.88rem; color:rgba(255,255,255,.65); margin:0; line-height:1.5; }
-.option-badge {
-  display:inline-block; background:rgba(52,168,83,.25); border:1px solid rgba(52,168,83,.5);
-  color:#6fcf97; font-size:.78rem; font-weight:600; padding:.25rem .75rem; border-radius:20px;
+  gap: .875rem;
 }
 
-/* ── DIVIDER ── */
-.divider {
-  display:flex; align-items:center; gap:1rem;
-  max-width:1100px; margin: 3.5rem auto 1rem;
-  padding: 0 2rem;
-}
-.divider::before, .divider::after {
-  content:''; flex:1; height:1px; background:rgba(255,255,255,.12);
-}
-.divider span { font-family:var(--font-h); font-size:.85rem; color:rgba(255,255,255,.4); white-space:nowrap; }
-
-/* ── SECCIONES ── */
-.page-body { max-width:1100px; margin:0 auto; padding:0 2rem 5rem; }
-
-.section-block {
-  background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.1);
-  border-radius: var(--r);
-  overflow: hidden;
-  margin-bottom: 2rem;
-}
-.section-label {
-  display:flex; align-items:center; gap:.75rem;
-  padding:1.25rem 2rem;
-  border-bottom: 1px solid rgba(255,255,255,.08);
-  background: rgba(255,255,255,.04);
-}
-.section-label .icon {
-  width:36px; height:36px; border-radius:10px;
-  background:linear-gradient(135deg,var(--accent),var(--accent2));
-  display:flex; align-items:center; justify-content:center; font-size:1rem;
-  flex-shrink:0;
-}
-.section-label h2 { font-family:var(--font-h); font-size:1.1rem; font-weight:700; }
-.section-label p { font-size:.85rem; color:rgba(255,255,255,.55); margin:0; }
-.section-body { padding:2rem; }
-
-/* ── CALENDLY ── */
-.calendly-wrap { border-radius:12px; overflow:hidden; background:white; }
-
-/* ── FORMULARIO ── */
-.form-cols { display:grid; grid-template-columns:1fr 1fr; gap:2rem; }
-
-.contact-info-col { display:flex; flex-direction:column; gap:1rem; }
-.ci-item {
-  display:flex; align-items:center; gap:1rem;
-  padding:1rem; background:rgba(255,255,255,.06);
-  border:1px solid rgba(255,255,255,.1); border-radius:12px;
-}
-.ci-item i { font-size:1.5rem; color:var(--accent); width:28px; text-align:center; flex-shrink:0; }
-.ci-item strong { display:block; font-size:.85rem; margin-bottom:.2rem; }
-.ci-item a { color:var(--accent); text-decoration:none; font-size:.95rem; }
-.ci-item span { color:rgba(255,255,255,.7); font-size:.9rem; }
-
-.guarantee {
-  background:rgba(52,168,83,.15); border:1px solid rgba(52,168,83,.3);
-  border-radius:12px; padding:1rem; text-align:center;
-  font-size:.9rem; color:rgba(255,255,255,.9); margin-top:auto;
-}
-
-/* FORM fields */
-.fg { margin-bottom:.85rem; }
-.fg label { display:block; font-size:.82rem; font-weight:600; color:rgba(255,255,255,.75); margin-bottom:.35rem; }
-.fi {
-  width:100%; padding:.7rem .9rem; border-radius:10px;
-  border:1px solid rgba(255,255,255,.18); background:rgba(255,255,255,.09);
-  color:white; font-size:.9rem; outline:none; transition:border-color .25s;
-  font-family:var(--font-b);
-}
-.fi::placeholder { color:rgba(255,255,255,.35); }
-.fi:focus { border-color:var(--accent); }
-select.fi { background:rgba(20,30,50,.9); cursor:pointer; }
-select.fi option { background:#1a2035; }
-textarea.fi { resize:vertical; }
-.frow { display:grid; grid-template-columns:1fr 1fr; gap:.75rem; }
-
+/* Drop zone */
 .dropzone {
-  border:2px dashed rgba(255,255,255,.2); border-radius:10px;
-  padding:1.1rem; text-align:center; cursor:pointer;
-  transition:border-color .25s; background:rgba(255,255,255,.04);
+  border: 2px dashed var(--gray-200);
+  border-radius: 11px;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: var(--tr);
+  background: var(--gray-50);
 }
-.dropzone:hover { border-color:var(--accent); }
-.dropzone i { font-size:1.5rem; color:var(--accent); display:block; margin-bottom:.35rem; }
-.dropzone p { font-size:.82rem; color:rgba(255,255,255,.6); margin:0; }
-.dropzone small { font-size:.75rem; color:rgba(255,255,255,.35); }
-#listaArchivos { margin-top:.6rem; display:flex; flex-wrap:wrap; gap:.4rem; }
-.ftag {
-  display:inline-flex; align-items:center; gap:.35rem;
-  background:rgba(52,168,83,.2); border:1px solid rgba(52,168,83,.35);
-  color:white; padding:.25rem .65rem; border-radius:16px; font-size:.78rem;
+.dropzone:hover {
+  border-color: var(--sky);
+  background: var(--sky-pale);
 }
-.ftag i { color:var(--accent); }
+.dropzone-icon {
+  width: 48px; height: 48px;
+  background: var(--sky-light);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto .75rem;
+  font-size: 1.3rem;
+  color: var(--sky);
+}
+.dropzone p { font-size: .88rem; color: var(--gray-600); margin-bottom: .25rem; font-weight: 500; }
+.dropzone p span { color: var(--sky); font-weight: 700; text-decoration: underline; }
+.dropzone small { font-size: .75rem; color: var(--gray-400); }
 
-.btn-send {
-  width:100%; padding:.85rem; background:linear-gradient(135deg,var(--accent),var(--accent2));
-  color:white; border:none; border-radius:10px; font-size:.95rem; font-weight:700;
-  cursor:pointer; transition:var(--tr); display:flex; align-items:center; justify-content:center; gap:.5rem;
-  margin-top:.25rem;
+#listaArchivos { margin-top: .75rem; display: flex; flex-wrap: wrap; gap: .4rem; }
+.ftag {
+  display: inline-flex; align-items: center; gap: .35rem;
+  background: var(--green-light); border: 1px solid rgba(52,168,83,.25);
+  color: var(--green); padding: .25rem .7rem; border-radius: 16px;
+  font-size: .78rem; font-weight: 600;
 }
-.btn-send:hover { transform:translateY(-2px); box-shadow:0 8px 20px rgba(52,168,83,.3); }
-.btn-send:disabled { opacity:.65; cursor:not-allowed; transform:none; }
+.ftag i { font-size: .7rem; }
+
+/* Trust bar */
+.trust-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  padding: .875rem 1.25rem;
+  background: var(--green-light);
+  border: 1px solid rgba(52,168,83,.18);
+  border-radius: 11px;
+  margin: 1.25rem 0 1.25rem;
+}
+.tb-item {
+  display: flex; align-items: center; gap: .4rem;
+  font-size: .78rem; font-weight: 600; color: #2a7a42;
+}
+.tb-item i { color: var(--green-mid); font-size: .8rem; }
+
+/* Submit button */
+.btn-send {
+  width: 100%;
+  padding: .95rem;
+  background: linear-gradient(135deg, var(--green-mid) 0%, var(--green) 100%);
+  color: white;
+  border: none;
+  border-radius: 11px;
+  font-size: .975rem;
+  font-weight: 700;
+  font-family: var(--font-b);
+  cursor: pointer;
+  transition: var(--tr);
+  display: flex; align-items: center; justify-content: center; gap: .55rem;
+  letter-spacing: .3px;
+  box-shadow: 0 6px 20px rgba(52,168,83,.28);
+}
+.btn-send:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(52,168,83,.38);
+}
+.btn-send:disabled { opacity: .65; cursor: not-allowed; transform: none; }
 
 .fstatus {
-  display:none; margin-top:.85rem; padding:.7rem 1rem;
-  border-radius:10px; font-size:.88rem; text-align:center;
+  display: none; margin-top: .875rem; padding: .75rem 1rem;
+  border-radius: 10px; font-size: .88rem; text-align: center; font-weight: 500;
 }
-.fstatus.error   { background:rgba(220,53,69,.2); border:1px solid rgba(220,53,69,.4); color:#ff8080; }
-.fstatus.loading { background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.15); color:rgba(255,255,255,.8); }
-.fstatus.success { background:rgba(52,168,83,.2); border:1px solid rgba(52,168,83,.4); color:#6fcf97; }
+.fstatus.error   { background: #fff0f0; border:1px solid #ffcdd2; color: #c0392b; }
+.fstatus.loading { background: var(--sky-pale); border:1px solid rgba(54,149,191,.25); color: var(--sky); }
+.fstatus.success { background: var(--green-light); border:1px solid rgba(52,168,83,.3); color: var(--green); }
 
-/* ── RESPONSIVE ── */
-@media(max-width:768px){
-  .hero h1 { font-size:2rem; }
-  .options { grid-template-columns:1fr; max-width:400px; }
-  .form-cols { grid-template-columns:1fr; }
-  .frow { grid-template-columns:1fr; }
-  .section-body { padding:1.5rem; }
-  .contact-info-col { margin-bottom:1rem; }
+/* ─── AGENDA ACCORDION ─── */
+.agenda-accordion {
+  background: var(--white);
+  border-radius: 16px;
+  border: 1px solid var(--gray-100);
+  box-shadow: var(--sh-md);
+  overflow: hidden;
 }
-@media(max-width:480px){
-  .hero { padding:3rem 1.25rem 1.5rem; }
-  .hero h1 { font-size:1.7rem; }
-  .page-body { padding:0 1.25rem 4rem; }
-  .section-label { padding:1rem 1.25rem; }
+.accordion-trigger {
+  width: 100%;
+  padding: 1.25rem 1.75rem;
+  background: var(--white);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  transition: var(--tr);
+}
+.accordion-trigger:hover { background: var(--gray-50); }
+.at-left {
+  display: flex; align-items: center; gap: .875rem;
+}
+.at-icon {
+  width: 38px; height: 38px;
+  background: var(--sky-light);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--sky); font-size: .95rem; flex-shrink: 0;
+}
+.at-left h3 { font-family: var(--font-h); font-size: 1.05rem; color: var(--navy-deep); margin-bottom: .1rem; }
+.at-left p  { font-size: .82rem; color: var(--gray-400); }
+.at-arrow {
+  color: var(--gray-400);
+  transition: transform .3s ease;
+  font-size: .875rem;
+  flex-shrink: 0;
+}
+.at-arrow.open { transform: rotate(180deg); color: var(--sky); }
+.accordion-body {
+  display: none;
+  padding: 0 1.75rem 1.75rem;
+  border-top: 1px solid var(--gray-100);
+}
+.accordion-body.open { display: block; }
+.calendly-wrap { border-radius: 10px; overflow: hidden; margin-top: 1.25rem; }
+
+/* ─── FOOTER ─── */
+footer {
+  background: var(--navy-deep);
+  text-align: center;
+  padding: 1.5rem 2rem;
+  color: rgba(255,255,255,.4);
+  font-size: .83rem;
+  margin-top: 3rem;
+  border-top: 1px solid rgba(255,255,255,.07);
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 1024px) {
+  .contact-grid {
+    grid-template-columns: 360px 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 860px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  .left-panel {
+    display: none; /* Solo form en móvil */
+  }
+  .left-panel.show-mobile { display: block; position: static; }
+}
+
+@media (max-width: 600px) {
+  .page-wrapper { padding: 0 1rem 4rem; }
+  .hero-strip { padding: 2.5rem 0 1.5rem; }
+  .form-body  { padding: 1.5rem 1.25rem; }
+  .form-header { padding: 1.25rem 1.5rem; }
+  .frow { grid-template-columns: 1fr; }
+  .left-contact { flex-direction: column; }
+  .btn-back {
+    font-size: .78rem;
+    padding: .4rem .7rem;
+    gap: .3rem;
+  }
+  .btn-back .btn-label { display: none; }
+}
+
+@media (max-width: 400px) {
+  .hero-strip h1 { font-size: 1.7rem; }
+  .trust-bar { gap: .75rem; }
 }
 </style>
 </head>
 <body>
 
-<!-- HEADER -->
+<!-- ─── HEADER ─── -->
 <header>
   <div class="header-inner">
-    <a href="/" class="logo">exigetuseguro<span>.cl</span></a>
-    <a href="/" class="btn-back"><i class="fas fa-arrow-left"></i> Volver al Inicio</a>
+    <a href="/" class="logo">exigetuseguro<em>.cl</em></a>
+    <a href="/" class="btn-back"><i class="fas fa-arrow-left"></i> <span class="btn-label">Volver al Inicio</span></a>
   </div>
 </header>
 
-<!-- HERO + CARDS -->
-<div class="hero">
-  <h1>¿Cómo podemos <span>ayudarte</span>?</h1>
-  <p>Elige la opción que mejor se adapte a tu situación. Primera consulta siempre gratuita.</p>
+<div class="page-wrapper">
 
-  <div class="options">
-    <div class="option-card" onclick="irA('agenda')">
-      <div class="option-icon"><i class="fas fa-calendar-check"></i></div>
-      <h3>Agendar una Cita</h3>
-      <p>Videoconferencia con un abogado especialista para evaluar tu caso.</p>
-      <span class="option-badge"><i class="fas fa-gift"></i> Gratis</span>
-    </div>
-    <div class="option-card" onclick="irA('formulario')">
-      <div class="option-icon"><i class="fas fa-file-alt"></i></div>
-      <h3>Enviar mi Caso</h3>
-      <p>Comparte tu póliza, carta de rechazo y relato. Te respondemos en 24 hrs.</p>
-      <span class="option-badge"><i class="fas fa-clock"></i> &lt; 24 hrs</span>
-    </div>
-  </div>
-</div>
-
-<!-- DIVIDER -->
-<div class="divider"><span>OPCIONES DE CONTACTO</span></div>
-
-<!-- SECCIONES -->
-<div class="page-body">
-
-  <!-- ── AGENDA ── -->
-  <div class="section-block" id="agenda">
-    <div class="section-label">
-      <div class="icon"><i class="fas fa-calendar-check"></i></div>
-      <div>
-        <h2>Agenda tu Cita</h2>
-        <p>Videoconferencia gratuita · Sin compromisos · Atención personalizada</p>
-      </div>
-    </div>
-    <div class="section-body">
-      <div class="calendly-wrap">
-        <div class="calendly-inline-widget"
-             data-url="https://calendly.com/rescamus/60min?hide_event_type_details=1&hide_gdpr_banner=1"
-             style="min-width:320px;height:660px;"></div>
-        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-      </div>
-    </div>
+  <!-- ─── HERO ─── -->
+  <div class="hero-strip">
+    
+    <h1>Defiende tus derechos<br>ante las <em>aseguradoras</em></h1>
+    <p>Cuéntanos tu caso, adjunta tus documentos y recibe orientación legal experta desde el primer contacto.</p>
   </div>
 
-  <!-- ── FORMULARIO ── -->
-  <div class="section-block" id="formulario">
-    <div class="section-label">
-      <div class="icon"><i class="fas fa-paper-plane"></i></div>
-      <div>
-        <h2>Envíanos tu Caso</h2>
-        <p>Adjunta tu póliza, carta de rechazo o cualquier documento relevante</p>
-      </div>
-    </div>
-    <div class="section-body">
-      <div class="form-cols">
+  <!-- ─── QUICK NAV ─── -->
+  <div class="quick-nav">
+    <a href="#formulario" class="qnav-btn qnav-primary" onclick="smoothTo('formulario',event)">
+      <i class="fas fa-paper-plane"></i> Enviar mi caso ahora
+    </a>
+    <a href="#agenda" class="qnav-btn qnav-secondary" onclick="toggleAgenda(event)">
+      <i class="fas fa-calendar-check"></i> Agendar una cita
+    </a>
+    <a href="https://wa.me/56979939868" target="_blank" class="qnav-btn qnav-secondary">
+      <i class="fab fa-whatsapp" style="color:#25D366;"></i> WhatsApp directo
+    </a>
+  </div>
 
-        <!-- Info contacto -->
-        <div class="contact-info-col">
-          <div class="ci-item">
-            <i class="fab fa-whatsapp"></i>
-            <div><strong>WhatsApp</strong><a href="https://wa.me/56979939868">+56 9 7993 9868</a></div>
+  <!-- ─── MAIN GRID ─── -->
+  <div class="contact-grid">
+
+    <!-- ═══ COLUMNA IZQUIERDA ═══ -->
+    <div class="left-panel" id="leftPanel">
+      <div class="left-card">
+
+        <div class="left-top">
+          
+          <h2>Analizamos tu caso y te <em>orientamos</em> gratis</h2>
+          <p>Completa el formulario y nuestro equipo revisará tu situación.</p>
+        </div>
+
+        <div class="docs-section">
+          <div class="docs-label">¿Qué documentos puedes adjuntar?</div>
+
+          <div class="doc-row">
+            <div class="doc-icon"><i class="fas fa-file-contract"></i></div>
+            <div>
+              <p>Póliza de seguro</p>
+              <small>El documento principal de tu cobertura contratada</small>
+            </div>
           </div>
-          <div class="ci-item">
-            <i class="fas fa-envelope"></i>
-            <div><strong>Email</strong><a href="mailto:contacto@exigetuseguro.cl">contacto@exigetuseguro.cl</a></div>
+          <div class="doc-row">
+            <div class="doc-icon"><i class="fas fa-times-circle"></i></div>
+            <div>
+              <p>Carta de rechazo</p>
+              <small>Si tu aseguradora rechazó o negó el siniestro</small>
+            </div>
           </div>
-          <div class="ci-item">
-            <i class="fas fa-map-marker-alt"></i>
-            <div><strong>Ubicación</strong><span>Santiago · Atendemos todo Chile</span></div>
+          <div class="doc-row">
+            <div class="doc-icon"><i class="fas fa-envelope-open-text"></i></div>
+            <div>
+              <p>Comunicaciones</p>
+              <small>Emails, cartas o notificaciones de la aseguradora</small>
+            </div>
           </div>
-          <div class="ci-item">
-            <i class="fas fa-clock"></i>
-            <div><strong>Horario</strong><span>Lun–Vie · 9:00 – 18:00 hrs</span></div>
-          </div>
-          <div class="guarantee">
-            <i class="fas fa-shield-alt" style="color:var(--accent);margin-right:.4rem;"></i>
-            Respuesta garantizada en menos de 24 horas
+          <div class="doc-row">
+            <div class="doc-icon"><i class="fas fa-camera"></i></div>
+            <div>
+              <p>Fotos del siniestro</p>
+              <small>Evidencia fotográfica de los daños o del accidente</small>
+            </div>
           </div>
         </div>
 
-        <!-- Form -->
-        <div>
+        <div class="steps-section">
+          <div class="docs-label">¿Cómo funciona?</div>
+          <div class="step-row">
+            <div class="step-num">1</div>
+            <div>
+              <p>Completa y envía el formulario</p>
+             
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-num">2</div>
+            <div>
+              <p>Revisamos tu caso en detalle</p>
+             
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-num">3</div>
+            <div>
+              <p>Recibes orientación legal</p>
+              
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-num">4</div>
+            <div>
+              <p>Definimos la estrategia legal</p>
+            
+            </div>
+          </div>
+        </div>
+
+        <div class="left-contact">
+          <a href="https://wa.me/56979939868" target="_blank" class="lc-btn lc-wa">
+            <i class="fab fa-whatsapp"></i> +56 9 7993 9868
+          </a>
+          <a href="mailto:contacto@exigetuseguro.cl" class="lc-btn lc-em">
+            <i class="fas fa-envelope"></i> Email
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ═══ COLUMNA DERECHA ═══ -->
+    <div class="right-panel">
+
+      <!-- FORMULARIO PRINCIPAL -->
+      <div class="form-card" id="formulario">
+        <div class="form-header">
+          <div class="fh-icon"><i class="fas fa-paper-plane"></i></div>
+          <div>
+            <h2>Envíanos tu consulta</h2>
+            <p>Completa los campos y adjunta tus documentos.</p>
+          </div>
+        </div>
+
+        <div class="form-body">
           <form id="consultaForm"
                 action="https://formsubmit.co/contacto@exigetuseguro.cl"
                 method="POST"
@@ -344,22 +814,28 @@ textarea.fi { resize:vertical; }
             <input type="hidden" name="_captcha" value="false">
             <input type="hidden" name="archivos_adjuntos" id="archivosUrl">
 
+            <!-- Nombre -->
             <div class="fg">
-              <label>Nombre completo *</label>
-              <input type="text" id="nombre" name="nombre" required placeholder="Ej: Juan Pérez" class="fi">
+              <label>Nombre completo <span class="req">*</span></label>
+              <input type="text" id="nombre" name="nombre" required
+                     placeholder="Ej: Juan Pérez González" class="fi">
             </div>
 
+            <!-- Email + Tel -->
             <div class="frow fg">
               <div>
-                <label>Email *</label>
-                <input type="email" id="email" name="email" required placeholder="correo@ejemplo.cl" class="fi">
+                <label>Email <span class="req">*</span></label>
+                <input type="email" id="email" name="email" required
+                       placeholder="correo@ejemplo.cl" class="fi">
               </div>
               <div>
                 <label>Teléfono</label>
-                <input type="tel" id="telefono" name="telefono" placeholder="+56 9 XXXX XXXX" class="fi">
+                <input type="tel" id="telefono" name="telefono"
+                       placeholder="+56 9 XXXX XXXX" class="fi">
               </div>
             </div>
 
+            <!-- Tipo -->
             <div class="fg">
               <label>Tipo de seguro</label>
               <select id="tipoSeguro" name="tipoSeguro" class="fi">
@@ -372,49 +848,99 @@ textarea.fi { resize:vertical; }
               </select>
             </div>
 
+            <!-- Relato -->
             <div class="fg">
-              <label>Relato de los hechos *</label>
-              <textarea id="relato" name="relato" required rows="4" class="fi"
-                placeholder="¿Qué ocurrió? ¿Cuándo fue el siniestro? ¿Tu aseguradora rechazó el reclamo?..."></textarea>
+              <label>Relato de los hechos <span class="req">*</span></label>
+              <textarea id="relato" name="relato" required class="fi"
+                placeholder="¿Qué ocurrió? ¿Cuándo fue el siniestro? ¿Tu aseguradora rechazó el reclamo? Cuéntanos con el detalle que puedas..."></textarea>
             </div>
 
+            <!-- Drop zone -->
             <div class="fg">
-              <label>Adjuntar documentos</label>
+              <label>Adjuntar documentos <span style="color:var(--gray-400);font-weight:400;text-transform:none;">(opcional, PDF · JPG · PNG · DOCX)</span></label>
               <div class="dropzone"
-                onclick="document.getElementById('archivos').click()"
-                ondragover="event.preventDefault();this.style.borderColor='var(--accent)'"
-                ondragleave="this.style.borderColor='rgba(255,255,255,0.2)'"
-                ondrop="handleDrop(event)">
-                <i class="fas fa-cloud-upload-alt"></i>
-                <p>Arrastra o <span style="color:var(--accent);font-weight:600;">haz clic para seleccionar</span></p>
-                <small>Póliza, carta de rechazo, fotos · PDF, JPG, PNG, DOCX</small>
+                   onclick="document.getElementById('archivos').click()"
+                   ondragover="event.preventDefault();this.classList.add('dz-active')"
+                   ondragleave="this.classList.remove('dz-active')"
+                   ondrop="handleDrop(event)">
+                <div class="dropzone-icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                <p>Arrastra archivos o <span>selecciona desde tu dispositivo</span></p>
+                <small>Máx. 10 MB por archivo</small>
               </div>
               <input type="file" id="archivos" multiple accept=".pdf,.jpg,.jpeg,.png,.docx"
-                style="display:none;" onchange="mostrarArchivos(this.files)">
+                     style="display:none;" onchange="mostrarArchivos(this.files)">
               <div id="listaArchivos"></div>
             </div>
 
+            <!-- Trust bar -->
+            <div class="trust-bar">
+              <div class="tb-item"><i class="fas fa-lock"></i> Datos protegidos</div>
+              <div class="tb-item"><i class="fas fa-check-circle"></i> Sin compromiso</div>
+              
+            </div>
+
             <button type="submit" id="btnEnviar" class="btn-send">
-              <i class="fas fa-paper-plane"></i> Enviar Consulta
+              <i class="fas fa-paper-plane"></i> Enviar mi consulta gratis
             </button>
             <div id="formStatus" class="fstatus"></div>
           </form>
         </div>
-
       </div>
-    </div>
-  </div>
 
-</div><!-- /page-body -->
+      <!-- AGENDA ACCORDION -->
+      <div class="agenda-accordion" id="agenda">
+        <button class="accordion-trigger" onclick="toggleAccordion()" id="accTrigger">
+          <div class="at-left">
+            <div class="at-icon"><i class="fas fa-calendar-check"></i></div>
+            <div>
+              <h3>Agendar una Cita con Abogado</h3>
+              <p>Videoconferencia gratuita · Sin compromiso · Atención personalizada</p>
+            </div>
+          </div>
+          <i class="fas fa-chevron-down at-arrow" id="accArrow"></i>
+        </button>
+        <div class="accordion-body" id="accBody">
+          <div class="calendly-wrap">
+            <div class="calendly-inline-widget"
+                 data-url="https://calendly.com/rescamus/60min?hide_event_type_details=1&hide_gdpr_banner=1"
+                 style="min-width:280px;height:660px;"></div>
+            <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+          </div>
+        </div>
+      </div>
 
-<footer style="background:rgba(10,13,25,.95);text-align:center;padding:1.75rem 2rem;border-top:1px solid rgba(255,255,255,.08);color:rgba(255,255,255,.5);font-size:.875rem;">
-  &copy; 2025 Exige Tu Seguro — Todos los derechos reservados
+    </div><!-- /right-panel -->
+  </div><!-- /contact-grid -->
+
+</div><!-- /page-wrapper -->
+
+<footer>
+  &copy; 2025 Exige Tu Seguro — Abogados Especialistas en Seguros Chile. Todos los derechos reservados.
 </footer>
 
 <script>
-function irA(id) {
-  document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'start' });
+/* ── Smooth scroll ── */
+function smoothTo(id, e) {
+  if (e) e.preventDefault();
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
+
+/* ── Toggle agenda accordion ── */
+function toggleAccordion() {
+  const body  = document.getElementById('accBody');
+  const arrow = document.getElementById('accArrow');
+  const open  = body.classList.toggle('open');
+  arrow.classList.toggle('open', open);
+  if (open) setTimeout(() => body.scrollIntoView({ behavior:'smooth', block:'nearest' }), 120);
+}
+function toggleAgenda(e) {
+  if (e) e.preventDefault();
+  toggleAccordion();
+  document.getElementById('agenda').scrollIntoView({ behavior:'smooth', block:'start' });
+}
+
+/* ── Files ── */
 function mostrarArchivos(files) {
   const lista = document.getElementById('listaArchivos');
   lista.innerHTML = '';
@@ -425,19 +951,19 @@ function mostrarArchivos(files) {
     lista.appendChild(t);
   });
 }
-
 function handleDrop(e) {
   e.preventDefault();
-  e.currentTarget.style.borderColor = 'rgba(255,255,255,0.2)';
+  e.currentTarget.classList.remove('dz-active');
   document.getElementById('archivos').files = e.dataTransfer.files;
   mostrarArchivos(e.dataTransfer.files);
 }
 
+/* ── Upload to GoFile ── */
 async function subirArchivo(file) {
-  const sr   = await fetch('https://api.gofile.io/servers');
-  const sd   = await sr.json();
-  const srv  = sd.data.servers[0].name;
-  const fd   = new FormData();
+  const sr  = await fetch('https://api.gofile.io/servers');
+  const sd  = await sr.json();
+  const srv = sd.data.servers[0].name;
+  const fd  = new FormData();
   fd.append('file', file);
   const res  = await fetch(`https://${srv}.gofile.io/uploadFile`, { method:'POST', body:fd });
   const data = await res.json();
@@ -445,6 +971,7 @@ async function subirArchivo(file) {
   return `${file.name}: ${data.data.downloadPage}`;
 }
 
+/* ── Submit ── */
 async function validarConsulta(e) {
   e.preventDefault();
   const nombre = document.getElementById('nombre').value.trim();
@@ -461,7 +988,7 @@ async function validarConsulta(e) {
   };
 
   if (!nombre || !email || !relato) {
-    show('error', '<i class="fas fa-exclamation-circle"></i> Por favor completa los campos obligatorios (*)');
+    show('error','<i class="fas fa-exclamation-circle"></i> Por favor completa los campos obligatorios marcados con *');
     return;
   }
 
@@ -469,22 +996,29 @@ async function validarConsulta(e) {
 
   if (files.length > 0) {
     btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Subiendo archivos...';
-    show('loading', `<i class="fas fa-spinner fa-spin"></i> Subiendo ${files.length} archivo(s)...`);
+    show('loading',`<i class="fas fa-spinner fa-spin"></i> Subiendo ${files.length} archivo(s)...`);
     try {
       const links = await Promise.all(Array.from(files).map(subirArchivo));
       document.getElementById('archivosUrl').value = links.join(' | ');
     } catch {
-      show('error', '<i class="fas fa-times-circle"></i> Error al subir archivos. Intenta de nuevo.');
+      show('error','<i class="fas fa-times-circle"></i> Error al subir archivos. Intenta de nuevo.');
       btn.disabled = false;
-      btn.innerHTML = '<i class="fas fa-paper-plane"></i> Enviar Consulta';
+      btn.innerHTML = '<i class="fas fa-paper-plane"></i> Enviar mi consulta gratis';
       return;
     }
   }
 
   btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
-  show('loading', '<i class="fas fa-spinner fa-spin"></i> Enviando consulta...');
+  show('loading','<i class="fas fa-spinner fa-spin"></i> Enviando consulta...');
   document.getElementById('consultaForm').submit();
 }
+
+/* ── Drag styling ── */
+document.addEventListener('DOMContentLoaded', () => {
+  const style = document.createElement('style');
+  style.textContent = `.dz-active { border-color: var(--sky) !important; background: var(--sky-pale) !important; }`;
+  document.head.appendChild(style);
+});
 </script>
 </body>
 </html>
