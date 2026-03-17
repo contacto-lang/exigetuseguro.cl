@@ -429,8 +429,10 @@ header {
   padding: 3rem 2rem 5rem;
   position: relative;
   overflow: hidden;
+  min-height: calc(100vh - 73px);
+  display: flex;
+  align-items: center;
 }
-
 .hero-container {
   max-width: 1400px;
   margin: 0 auto;
@@ -440,7 +442,9 @@ header {
   align-items: center;
   position: relative;
   z-index: 1;
+  width: 100%;   /* ← agrega solo esta línea */
 }
+
 
 .hero-content h1 {
   font-family: var(--font-heading);
