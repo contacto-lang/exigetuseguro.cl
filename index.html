@@ -257,36 +257,36 @@
 </script>
 
 <style>
+/* ============================================================
+   VARIABLES & BASE
+   ============================================================ */
 :root {
   --color-primary: #0A3D62;
   --color-primary-light: #1a5280;
   --color-secondary: #3695BF;
   --color-accent: #34A853;
+  --color-accent-light: #4abe6a;
   --color-dark: #0f1419;
   --color-gray-dark: #1a1f2e;
   --color-gray: #2a3142;
-  --color-gray-light: #8b92a7;
+  --color-gray-light: #64748b;
   --color-white: #ffffff;
   --color-bg: #f8fafc;
+  --color-bg-soft: #f0f7ff;
   --gradient-primary: linear-gradient(135deg, #0A3D62 0%, #3695BF 100%);
   --gradient-accent: linear-gradient(135deg, #34A853 0%, #4CAF50 100%);
   --font-heading: 'Space Grotesk', sans-serif;
   --font-body: 'Inter', sans-serif;
-  --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
-  --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
-  --shadow-lg: 0 8px 32px rgba(0,0,0,0.12);
-  --shadow-glow: 0 0 40px rgba(52, 168, 83, 0.15);
-  --border-radius: 16px;
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+  --shadow-md: 0 4px 20px rgba(0,0,0,0.10);
+  --shadow-lg: 0 8px 40px rgba(0,0,0,0.14);
+  --radius: 16px;
+  --radius-sm: 10px;
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-/* OPTIMIZACIÓN: Usar contain para aislar el rendering */
 body {
   font-family: var(--font-body);
   background: var(--color-bg);
@@ -295,17 +295,17 @@ body {
   overflow-x: hidden;
 }
 
-/* OPTIMIZACIÓN: Hardware acceleration para header fijo */
+/* ============================================================
+   HEADER
+   ============================================================ */
 header {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: blur(12px);
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
-  box-shadow: var(--shadow-sm);
-  border-bottom: 1px solid rgba(10, 61, 98, 0.1);
-  will-change: box-shadow;
+  box-shadow: 0 1px 0 rgba(10,61,98,0.08);
   transform: translateZ(0);
 }
 
@@ -325,11 +325,7 @@ header {
   cursor: pointer;
   flex-shrink: 0;
 }
-
-.logo-container svg {
-  height: 45px;
-  width: auto;
-}
+.logo-container svg { height: 45px; width: auto; }
 
 .nav-desktop {
   display: flex;
@@ -345,60 +341,18 @@ header {
   text-decoration: none;
   font-weight: 600;
   font-size: 0.95rem;
-  transition: var(--transition);
-  position: relative;
   padding: 0.625rem 1rem;
-  letter-spacing: 0.3px;
+  border-radius: 8px;
+  transition: var(--transition);
   white-space: nowrap;
-  border-radius: 8px;
 }
+.nav-desktop a:hover { background: rgba(10,61,98,0.06); color: var(--color-secondary); }
 
-.nav-desktop a::before {
-  content: '';
-  position: absolute;
-  bottom: 0.25rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 3px;
-  background: var(--gradient-accent);
-  transition: var(--transition);
-  border-radius: 3px;
-}
-
-.nav-desktop a::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(10, 61, 98, 0.05) 0%, rgba(54, 149, 191, 0.05) 100%);
-  border-radius: 8px;
-  opacity: 0;
-  transition: var(--transition);
-  z-index: -1;
-}
-
-.nav-desktop a:hover {
-  color: var(--color-secondary);
-}
-
-.nav-desktop a:hover::before {
-  width: 80%;
-}
-
-.nav-desktop a:hover::after {
-  opacity: 1;
-}
-
-.cta-buttons {
-  display: flex;
-  gap: 0.75rem;
-  align-items: center;
-  flex-shrink: 0;
-}
+.cta-buttons { display: flex; gap: 0.75rem; align-items: center; flex-shrink: 0; }
 
 .btn-primary, .btn-secondary {
   padding: 0.625rem 1.25rem;
-  border-radius: 10px;
+  border-radius: var(--radius-sm);
   font-weight: 600;
   text-decoration: none;
   transition: var(--transition);
@@ -408,31 +362,11 @@ header {
   gap: 0.5rem;
   white-space: nowrap;
   border: 2px solid transparent;
-  /* OPTIMIZACIÓN: will-change solo en hover */
 }
-
-.btn-primary {
-  background: var(--gradient-accent);
-  color: white;
-  box-shadow: var(--shadow-md);
-}
-
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-lg);
-  will-change: transform;
-}
-
-.btn-secondary {
-  background: transparent;
-  color: var(--color-primary);
-  border-color: var(--color-primary);
-}
-
-.btn-secondary:hover {
-  background: var(--color-primary);
-  color: white;
-}
+.btn-primary { background: var(--gradient-accent); color: white; box-shadow: var(--shadow-md); }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+.btn-secondary { background: transparent; color: var(--color-primary); border-color: var(--color-primary); }
+.btn-secondary:hover { background: var(--color-primary); color: white; }
 
 .hamburger {
   display: none;
@@ -442,7 +376,6 @@ header {
   border: none;
   background: none;
   padding: 0.5rem;
-  flex-shrink: 0;
 }
 
 .mobile-nav {
@@ -453,133 +386,49 @@ header {
   width: 100%;
   background: white;
   box-shadow: var(--shadow-lg);
-  padding: 1rem;
   z-index: 999;
-  max-height: calc(100vh - 73px);
-  overflow-y: auto;
-  transform: translateZ(0);
+  padding: 0.75rem;
+  border-top: 1px solid rgba(10,61,98,0.06);
 }
-
-.mobile-nav.active {
-  display: block;
-}
-
+.mobile-nav.active { display: block; }
 .mobile-nav a {
-  display: block;
-  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.9rem 1rem;
   color: var(--color-dark);
   text-decoration: none;
   font-weight: 500;
-  border-bottom: 1px solid var(--color-bg);
+  border-radius: 10px;
   transition: var(--transition);
+  font-size: 0.95rem;
+  margin-bottom: 0.15rem;
+}
+.mobile-nav a:hover { background: var(--color-bg-soft); color: var(--color-accent); }
+.mobile-nav a .nav-icon {
+  width: 32px;
+  height: 32px;
+  background: var(--color-bg-soft);
   border-radius: 8px;
-  margin-bottom: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  color: var(--color-primary);
+  flex-shrink: 0;
 }
 
-.mobile-nav a:hover {
-  background: var(--color-bg);
-  color: var(--color-accent);
-}
-
-@media (max-width: 1200px) {
-  .header-container {
-    padding: 0.875rem 1.5rem;
-    gap: 1.5rem;
-  }
-  
-  .nav-desktop {
-    gap: 0.25rem;
-    max-width: 500px;
-  }
-  
-  .nav-desktop a {
-    font-size: 0.9rem;
-    padding: 0.5rem 0.875rem;
-  }
-  
-  .btn-primary, .btn-secondary {
-    padding: 0.5rem 1rem;
-    font-size: 0.85rem;
-  }
-}
-
-@media (max-width: 968px) {
-  .header-container {
-    padding: 0.75rem 1.5rem;
-    gap: 1rem;
-  }
-  
-  .nav-desktop {
-    display: none;
-  }
-  
-  .cta-buttons {
-    display: none;
-  }
-  
-  .hamburger {
-    display: block;
-  }
-  
-  .logo-text-animated {
-    font-size: 1.5rem;
-  }
-  
-  .logo-text-animated span {
-    margin-top: -0.3rem;
-  }
-}
-
-@media (max-width: 640px) {
-  .header-container {
-    padding: 0.75rem 1rem;
-  }
-  
-  .logo-text-animated {
-    font-size: 1.2rem;
-  }
-  
-  .mobile-nav {
-    padding: 0.5rem;
-  }
-  
-  .mobile-nav a {
-    padding: 0.875rem;
-    font-size: 0.95rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .header-container {
-    padding: 0.625rem 1rem;
-  }
-}
-
-/* OPTIMIZACIÓN CRÍTICA: Reemplazar background-attachment: fixed con efecto estático */
+/* ============================================================
+   HERO — DESKTOP
+   ============================================================ */
 .hero {
-  margin-top: 80px;
-  background: linear-gradient(135deg, rgba(10, 61, 98, 0.50) 0%, rgba(54, 149, 191, 0.45) 100%), 
+  margin-top: 73px;
+  background: linear-gradient(135deg, rgba(10,61,98,0.52) 0%, rgba(54,149,191,0.46) 100%),
               url('https://images.pexels.com/photos/10155555/pexels-photo-10155555.jpeg') center/cover;
   color: white;
-  padding: 6rem 2rem;
+  padding: 3rem 2rem 5rem;
   position: relative;
   overflow: hidden;
-  /* REMOVIDO: background-attachment: fixed - causa lag en scroll */
-  background-position: center;
-  background-size: cover;
-}
-
-.hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 50%;
-  height: 100%;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.08)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,138.7C960,139,1056,117,1152,106.7C1248,96,1344,96,1392,96L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat;
-  background-size: cover;
-  opacity: 1;
-  pointer-events: none;
 }
 
 .hero-container {
@@ -600,188 +449,87 @@ header {
   margin-bottom: 1.5rem;
   line-height: 1.1;
 }
-
 .hero-content .highlight {
   color: var(--color-accent);
-  position: relative;
-  display: inline-block;
-  text-shadow: 
-    0 2px 8px rgba(0, 0, 0, 0.4),
-    0 0 15px rgba(52, 168, 83, 0.3);
-  font-weight: 700;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4), 0 0 20px rgba(52,168,83,0.4);
 }
-.hero-content p {
-  font-size: 1.25rem;
-  margin-bottom: 2rem;
-  opacity: 0.95;
-  line-height: 1.7;
-}
-
-.hero-features {
-  display: flex;
-  gap: 2rem;
-  margin-bottom: 2rem;
-}
-
-.feature-item {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.feature-item i {
-  font-size: 1.5rem;
-  color: var(--color-accent);
-}
+.hero-content p { font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.95; line-height: 1.7; }
 
 .hero-stats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-  background: rgba(255,255,255,0.06);
-  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.07);
+  backdrop-filter: blur(12px);
   padding: 2rem;
-  border-radius: var(--border-radius);
-  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,0.1);
 }
+/* Scroll arrow — hidden on desktop */
+.scroll-arrow { display: none; }
 
-.stat-item {
-  text-align: center;
-}
-
-.stat-number {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: var(--color-accent);
-  display: block;
-}
-
-.stat-label {
-  font-size: 0.9rem;
-  opacity: 0.9;
-}
-
-.ai-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: rgba(52, 168, 83, 0.2);
-  padding: 0.5rem 1rem;
-  border-radius: 50px;
-  margin-bottom: 1rem;
-  border: 1px solid rgba(52, 168, 83, 0.3);
-}
-
-.ai-badge i {
-  color: var(--color-accent);
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
-}
-
-/* OPTIMIZACIÓN: Imagen de fondo estática en lugar de fixed */
+/* ============================================================
+   SERVICES
+   ============================================================ */
 .services {
-  padding: 6rem 2rem;
+  padding: 5rem 2rem;
   background: white;
   position: relative;
 }
-
 .services::before {
   content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('https://images.pexels.com/photos/5668772/pexels-photo-5668772.jpeg?auto=compress&cs=tinysrgb&w=1920');
-  background-size: cover;
-  background-position: center;
-  /* REMOVIDO: background-attachment: fixed */
-  opacity: 0.15;
-  z-index: 0;
-  pointer-events: none;
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  background-image: url('https://images.pexels.com/photos/5668772/pexels-photo-5668772.jpeg');
+  background-size: cover; background-position: center;
+  opacity: 0.06; z-index: 0; pointer-events: none;
 }
 
-.section-container {
-  max-width: 1400px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 1;
-}
+.section-container { max-width: 1400px; margin: 0 auto; position: relative; z-index: 1; }
 
-.section-header {
-  text-align: center;
-  margin-bottom: 4rem;
-}
-
+.section-header { text-align: center; margin-bottom: 3.5rem; }
 .section-header h2 {
   font-family: var(--font-heading);
-  font-size: 2.5rem;
+  font-size: 2.4rem;
   color: var(--color-primary);
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
+.section-header p { color: var(--color-gray-light); font-size: 1.05rem; max-width: 680px; margin: 0 auto; }
 
-.section-header p {
-  color: var(--color-gray-light);
-  font-size: 1.1rem;
-  max-width: 700px;
-  margin: 0 auto;
-}
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
 
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-}
-
-/* OPTIMIZACIÓN: will-change solo en hover */
 .service-card {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  padding: 2.5rem;
-  border-radius: var(--border-radius);
-  border: 2px solid transparent;
+  background: white;
+  padding: 2.25rem;
+  border-radius: var(--radius);
+  border: 1.5px solid rgba(10,61,98,0.08);
   transition: var(--transition);
   cursor: pointer;
   box-shadow: var(--shadow-sm);
 }
-
 .service-card:hover {
   border-color: var(--color-accent);
-  transform: translateY(-5px);
+  transform: translateY(-4px);
   box-shadow: var(--shadow-lg);
-  background: white;
-  will-change: transform;
 }
-
 .service-icon {
-  width: 60px;
-  height: 60px;
+  width: 52px; height: 52px;
   background: var(--gradient-accent);
   border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  color: white;
-  margin-bottom: 1.5rem;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.25rem; color: white;
+  margin-bottom: 1.25rem;
 }
-
 .service-card h3 {
   font-family: var(--font-heading);
-  font-size: 1.4rem;
+  font-size: 1.15rem;
   color: var(--color-primary);
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
+.service-card p { color: var(--color-gray-light); font-size: 0.9rem; line-height: 1.65; }
 
-.service-card p {
-  color: var(--color-gray-light);
-  line-height: 1.7;
-}
-
+/* ============================================================
+   CONTACT / AI SECTION  (kept original dark style)
+   ============================================================ */
 .ai-section {
   padding: 6rem 2rem;
   background: var(--color-gray-dark);
@@ -790,686 +538,463 @@ header {
   overflow: hidden;
 }
 
-.ai-section::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  right: -20%;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(52,168,83,0.1) 0%, transparent 70%);
-  border-radius: 50%;
-  pointer-events: none;
-}
-
-.ai-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
-  position: relative;
-  z-index: 1;
-}
-
-.ai-visual {
-  background: rgba(255,255,255,0.05);
-  padding: 3rem;
-  border-radius: var(--border-radius);
-  border: 1px solid rgba(255,255,255,0.1);
-  backdrop-filter: blur(10px);
-}
-
-.ai-feature {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-  padding: 1.5rem;
-  background: rgba(255,255,255,0.05);
-  border-radius: 12px;
-  border-left: 3px solid var(--color-accent);
-}
-
-.ai-feature i {
-  font-size: 1.5rem;
-  color: var(--color-accent);
-}
-
-.blog {
-  padding: 6rem 2rem;
-  background: linear-gradient(135deg, #f8fafc 0%, #e8f4f8 100%);
+/* ============================================================
+   AGENDA — light & clean
+   ============================================================ */
+#agenda {
+  padding: 5rem 2rem;
+  background: var(--color-bg-soft);
   position: relative;
   overflow: hidden;
 }
-
-.blog::before {
+#agenda::before {
   content: '';
-  position: absolute;
-  top: -10%;
-  right: -10%;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(54, 149, 191, 0.08) 0%, transparent 70%);
-  border-radius: 50%;
-  z-index: 0;
-  pointer-events: none;
+  position: absolute; top: -80px; right: -80px;
+  width: 350px; height: 350px;
+  background: radial-gradient(circle, rgba(54,149,191,0.08) 0%, transparent 70%);
+  border-radius: 50%; pointer-events: none;
 }
 
-.blog::after {
-  content: '';
-  position: absolute;
-  bottom: -10%;
-  left: -10%;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(10, 61, 98, 0.06) 0%, transparent 70%);
-  border-radius: 50%;
-  z-index: 0;
-  pointer-events: none;
-}
-
-.blog-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2.5rem;
-  position: relative;
-  z-index: 1;
-}
-
-/* OPTIMIZACIÓN: Reducir número de transformaciones en blog-card */
-.blog-card {
+.agenda-card {
   background: white;
   border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-  border: 2px solid transparent;
+  padding: 2.5rem;
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(10,61,98,0.07);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.agenda-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+.agenda-feature-item {
+  padding: 1.25rem;
+  background: var(--color-bg-soft);
+  border-radius: 12px;
+  border: 1px solid rgba(10,61,98,0.07);
+}
+.agenda-feature-item i {
+  font-size: 1.75rem; color: var(--color-accent); display: block; margin-bottom: 0.6rem;
+}
+.agenda-feature-item p { color: var(--color-gray-light); font-size: 0.88rem; margin: 0; line-height: 1.5; }
+
+/* ============================================================
+   HONORARIOS — light, clean card
+   ============================================================ */
+#honorarios {
+  padding: 5rem 2rem;
+  background: white;
   position: relative;
+  overflow: hidden;
 }
-
-.blog-card::before {
+#honorarios .section-header h2 { color: white; }
+#honorarios .section-header p  { color: rgba(255,255,255,0.85); }
+#honorarios::after {
   content: '';
-  position: absolute;
-  inset: 0;
+  position: absolute; bottom: -60px; left: -60px;
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(52,168,83,0.07) 0%, transparent 70%);
+  border-radius: 50%; pointer-events: none;
+}
+
+.honorarios-card {
+  max-width: 780px;
+  margin: 0 auto;
+  background: white;
+  border: 1.5px solid rgba(10,61,98,0.09);
   border-radius: 20px;
-  padding: 2px;
-  background: linear-gradient(135deg, var(--color-accent), var(--color-secondary));
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+.honorarios-card-header {
+  background: var(--gradient-primary);
+  padding: 2rem 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  color: white;
+}
+.honorarios-card-header .h-icon {
+  width: 56px; height: 56px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem; flex-shrink: 0;
+}
+.honorarios-card-header h3 {
+  font-family: var(--font-heading); font-size: 1.35rem; margin: 0 0 0.2rem;
+}
+.honorarios-card-header p { font-size: 0.88rem; opacity: 0.8; margin: 0; }
+
+.honorarios-card-body { padding: 2.25rem 2.5rem; }
+
+.honorarios-points { list-style: none; margin-bottom: 2rem; }
+.honorarios-points li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.875rem;
+  padding: 0.875rem 0;
+  border-bottom: 1px solid rgba(10,61,98,0.06);
+  color: var(--color-gray-light);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.honorarios-points li:last-child { border-bottom: none; }
+.honorarios-points li .point-icon {
+  width: 28px; height: 28px;
+  background: rgba(52,168,83,0.12);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; margin-top: 0.1rem;
+}
+.honorarios-points li .point-icon i { color: var(--color-accent); font-size: 0.8rem; }
+
+.alert-box {
+  background: var(--color-bg-soft);
+  border: 1px solid rgba(10,61,98,0.1);
+  border-left: 4px solid var(--color-secondary);
+  border-radius: 10px;
+  padding: 1.1rem 1.25rem;
+  margin-bottom: 1.75rem;
+  color: var(--color-gray-light);
+  font-size: 0.9rem;
+  line-height: 1.65;
 }
 
-.blog-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 40px rgba(52, 168, 83, 0.15);
-  will-change: transform;
-}
-
-.blog-card:hover::before {
-  opacity: 1;
-}
-
-.blog-image {
-  height: 220px;
+/* ============================================================
+   BLOG / RECURSOS
+   ============================================================ */
+.blog {
+  padding: 5rem 2rem;
+  background: linear-gradient(135deg, rgba(248,250,252,0.94) 0%, rgba(224,242,254,0.94) 100%),
+              url('https://images.pexels.com/photos/5668772/pexels-photo-5668772.jpeg?auto=compress&cs=tinysrgb&w=1920');
   background-size: cover;
   background-position: center;
   position: relative;
   overflow: hidden;
-  transition: transform 0.4s ease;
+}
+.blog::before {
+  content: '';
+  position: absolute; top: -100px; right: -100px;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(54,149,191,0.07) 0%, transparent 70%);
+  border-radius: 50%; pointer-events: none;
 }
 
-.blog-card:hover .blog-image {
-  transform: scale(1.05);
+.recursos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-.blog-tag {
-  position: absolute;
-  top: 1.25rem;
-  left: 1.25rem;
-  background: var(--gradient-accent);
+.recurso-card {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+.recurso-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+
+.recurso-content {
+  padding: 2.5rem;
+  text-align: center;
   color: white;
-  padding: 0.6rem 1.2rem;
-  border-radius: 25px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  box-shadow: 0 4px 12px rgba(52, 168, 83, 0.3);
-  backdrop-filter: blur(10px);
-  z-index: 2;
+  min-height: 380px;
+  display: flex; flex-direction: column; justify-content: center;
 }
-
-.blog-content {
-  padding: 2rem 2rem 1.5rem;
+.recurso-icon {
+  width: 70px; height: 70px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-size: 2rem;
 }
-
-.blog-content h3 {
+.recurso-content h3 {
   font-family: var(--font-heading);
-  font-size: 1.35rem;
+  font-size: 1.65rem; margin-bottom: 1rem; color: white;
+}
+.recurso-content p { font-size: 0.95rem; margin-bottom: 1.5rem; opacity: 0.92; line-height: 1.65; }
+.recurso-link { text-decoration: none; display: block; }
+
+.sabia-box {
+  margin-top: 3rem;
+  padding: 2rem;
+  background: white;
+  border-radius: var(--radius);
+  border: 1px solid rgba(10,61,98,0.08);
+  box-shadow: var(--shadow-sm);
+}
+.sabia-box h4 {
+  font-family: var(--font-heading);
   color: var(--color-primary);
-  margin-bottom: 1rem;
-  line-height: 1.4;
-  transition: color 0.3s ease;
-}
-
-.blog-card:hover .blog-content h3 {
-  color: var(--color-secondary);
-}
-
-.blog-content p {
-  color: var(--color-gray-light);
   margin-bottom: 1.5rem;
-  line-height: 1.7;
-  font-size: 0.95rem;
+  text-align: center;
+  font-size: 1.05rem;
+}
+.sabia-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.25rem; }
+.sabia-item { text-align: center; padding: 1rem; }
+.sabia-item i { font-size: 1.75rem; color: var(--color-accent); margin-bottom: 0.5rem; display: block; }
+.sabia-item p { color: var(--color-gray-light); font-size: 0.88rem; line-height: 1.55; }
+
+/* ============================================================
+   NOSOTROS
+   ============================================================ */
+#nosotros {
+  padding: 5rem 2rem;
+  background: white;
+}
+#nosotros .section-header h2 { color: white; }
+#nosotros .section-header p  { color: rgba(255,255,255,0.85); }
+
+.nosotros-inner {
+  max-width: 860px;
+  margin: 0 auto;
 }
 
-.read-more {
-  color: var(--color-accent);
-  font-weight: 600;
-  display: inline-flex;
+.nosotros-card {
+  background: var(--color-bg-soft);
+  border: 1.5px solid rgba(10,61,98,0.08);
+  border-radius: 20px;
+  padding: 2.5rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-sm);
+}
+.nosotros-card > p {
+  font-size: 1.05rem; line-height: 1.8;
+  color: var(--color-gray-light);
+  margin-bottom: 2rem;
+}
+
+.nosotros-values {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+.value-item { text-align: center; }
+.value-icon {
+  width: 52px; height: 52px;
+  background: var(--gradient-accent);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 0.75rem;
+  font-size: 1.2rem; color: white;
+}
+.value-item h4 {
+  font-family: var(--font-heading);
+  color: var(--color-primary);
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+}
+.value-item p { color: var(--color-gray-light); font-size: 0.83rem; line-height: 1.5; }
+
+.team-card {
+  background: white;
+  border: 1.5px solid rgba(10,61,98,0.09);
+  border-radius: 20px;
+  padding: 2rem 2.5rem;
+  display: flex;
+  gap: 1.75rem;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 0.95rem;
-  transition: gap 0.3s ease;
-  padding: 0.5rem 0;
+  box-shadow: var(--shadow-sm);
 }
-
-.read-more i {
-  transition: transform 0.3s ease;
+.team-card img {
+  width: 110px; height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--color-accent);
+  flex-shrink: 0;
 }
-
-.blog-card:hover .read-more {
-  gap: 0.75rem;
+.team-card h3 {
+  font-family: var(--font-heading);
+  color: var(--color-primary);
+  font-size: 1.2rem;
+  margin-bottom: 0.3rem;
 }
+.team-card .team-role { color: var(--color-accent); font-weight: 600; font-size: 0.9rem; margin-bottom: 0.75rem; }
+.team-card p { color: var(--color-gray-light); font-size: 0.88rem; line-height: 1.65; }
 
-.blog-card:hover .read-more i {
-  transform: translateX(5px);
-}
-
+/* ============================================================
+   FOOTER
+   ============================================================ */
 footer {
-  background: var(--color-gray-dark);
+  background: #0f1e30;
   color: white;
   padding: 4rem 2rem 2rem;
 }
-
 .footer-content {
   max-width: 1400px;
-  margin: 0 auto;
+  margin: 0 auto 3rem;
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr;
   gap: 3rem;
-  margin-bottom: 3rem;
 }
+.footer-brand h3 { font-family: var(--font-heading); font-size: 1.4rem; margin-bottom: 0.875rem; }
+.footer-brand p { color: rgba(255,255,255,0.55); font-size: 0.9rem; line-height: 1.7; margin-bottom: 1.5rem; }
 
-.footer-brand h3 {
-  font-family: var(--font-heading);
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-.footer-brand p {
-  color: var(--color-gray-light);
-  margin-bottom: 1.5rem;
-}
-
-.social-links {
-  display: flex;
-  gap: 1rem;
-}
-
+.social-links { display: flex; gap: 0.75rem; }
 .social-links a {
-  width: 40px;
-  height: 40px;
-  background: rgba(255,255,255,0.1);
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  transition: var(--transition);
+  width: 38px; height: 38px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 9px;
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(255,255,255,0.7);
+  transition: var(--transition); font-size: 0.9rem;
 }
-
-.social-links a:hover {
-  background: var(--color-accent);
-  transform: translateY(-3px);
-  will-change: transform;
-}
+.social-links a:hover { background: var(--color-accent); color: white; transform: translateY(-2px); }
 
 .footer-links h4 {
   font-family: var(--font-heading);
-  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
-
-.footer-links ul {
-  list-style: none;
+/* Desktop: header is plain, body always visible, chevron hidden */
+.footer-links-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: default;
 }
-
-.footer-links ul li {
-  margin-bottom: 0.75rem;
-}
-
-.footer-links a {
-  color: var(--color-gray-light);
-  text-decoration: none;
-  transition: var(--transition);
-}
-
-.footer-links a:hover {
-  color: var(--color-accent);
-}
+.footer-chevron { display: none; }
+.footer-links-body { display: block; }
+.footer-links ul { list-style: none; }
+.footer-links ul li { margin-bottom: 0.6rem; }
+.footer-links a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.88rem; transition: var(--transition); }
+.footer-links a:hover { color: var(--color-accent); }
 
 .footer-bottom {
   max-width: 1400px;
   margin: 0 auto;
-  padding-top: 2rem;
-  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.07);
   text-align: center;
-  color: var(--color-gray-light);
+  color: rgba(255,255,255,0.35);
+  font-size: 0.85rem;
 }
 
-@media (max-width: 968px) {
-  .nav-desktop {
-    display: none;
-  }
-  
-  .hamburger {
-    display: block;
-  }
-  
-  .cta-buttons {
-    display: none;
-  }
-  
-  .logo-text-animated {
-    font-size: 1.5rem;
-  }
-  
-  .logo-text-animated span {
-    margin-top: -0.3rem;
-  }
-  
-  .hero {
-    padding: 4rem 1.5rem;
-    /* background-attachment ya está en scroll por defecto */
-  }
-  
-  .hero-container {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: 2rem;
-  }
-  
-  .hero-content h1 {
-    font-size: 2.2rem;
-    line-height: 1.2;
-  }
-  
-  .hero-content p {
-    font-size: 1.1rem;
-  }
-  
-  .hero-features {
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-  
-  .hero-stats {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-    padding: 1.5rem;
-  }
-  
-  .stat-number {
-    font-size: 2rem;
-  }
-  
-  .ai-content {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-  
-  .ai-content h2 {
-    font-size: 2rem !important;
-  }
-  
-  .footer-content {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-  
-  .blog-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .services-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .section-header h2 {
-    font-size: 2rem;
-  }
-  
-  .section-header p {
-    font-size: 1rem;
-  }
-  
-  .services {
-    padding: 4rem 1.5rem;
-  }
-  
-  .ai-section {
-    padding: 4rem 1.5rem;
-  }
-  
-  .blog {
-    padding: 4rem 1.5rem;
-  }
-  
-  .header-container {
-    padding: 1rem 1.5rem;
-  }
-}
-
-@media (max-width: 640px) {
-  .logo-text-animated {
-    font-size: 1.2rem;
-  }
-  
-  .hero {
-    padding: 3rem 1rem;
-  }
-  
-  .hero-content h1 {
-    font-size: 1.8rem;
-  }
-  
-  .hero-content p {
-    font-size: 1rem;
-  }
-  
-  .hero-stats {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-  
-  .hero-features {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .cta-buttons {
-    flex-direction: column;
-    width: 100%;
-  }
-  
-  .btn-primary, .btn-secondary {
-    width: 100%;
-    justify-content: center;
-  }
-  
-  .service-card {
-    padding: 2rem;
-  }
-  
-  .section-header h2 {
-    font-size: 1.8rem;
-  }
-  
-  .services {
-    padding: 3rem 1rem;
-  }
-  
-  .ai-section {
-    padding: 3rem 1rem;
-  }
-  
-  .blog {
-    padding: 3rem 1rem;
-  }
-  
-  .modal-content {
-    padding: 2rem;
-    margin: 1rem;
-  }
-  
-  .footer-content {
-    text-align: center;
-  }
-  
-  .social-links {
-    justify-content: center;
-  }
-  
-  .header-container {
-    padding: 0.75rem 1rem;
-  }
-  
-  .ai-feature {
-    flex-direction: column;
-    text-align: center;
-    padding: 1rem;
-  }
-  
-  .blog-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-  
-  .blog-card {
-    margin: 0 auto;
-    max-width: 400px;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-content h1 {
-    font-size: 1.6rem;
-  }
-  
-  .stat-number {
-    font-size: 1.8rem;
-  }
-  
-  .stat-label {
-    font-size: 0.85rem;
-  }
-  
-  .section-header h2 {
-    font-size: 1.6rem;
-  }
-  
-  .service-card h3 {
-    font-size: 1.2rem;
-  }
-  
-  .blog-content h3 {
-    font-size: 1.1rem;
-  }
-  
-  .ai-badge {
-    font-size: 0.85rem;
-    padding: 0.4rem 0.8rem;
-  }
-  
-  .mobile-nav a {
-    font-size: 1rem;
-    padding: 0.75rem;
-  }
-}
-
-/* BARRA LATERAL WHATSAPP */
+/* ============================================================
+   WHATSAPP FLOAT
+   ============================================================ */
 .whatsapp-sidebar {
   position: fixed;
-  right: 0;
-  top: 75%;
+  right: 0; top: 75%;
   transform: translateY(-50%) translateZ(0);
-  z-index: 999999;
+  z-index: 9999;
   display: none;
 }
-
 .whatsapp-sidebar a {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  background: #25D366;
-  color: white;
-  padding: 15px 20px;
+  display: flex; align-items: center; gap: 10px;
+  background: #25D366; color: white;
+  padding: 14px 18px;
   text-decoration: none;
   border-radius: 10px 0 0 10px;
-  box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: -2px 2px 12px rgba(0,0,0,0.2);
   transition: all 0.3s ease;
-  font-weight: 600;
-  font-size: 16px;
+  font-weight: 600; font-size: 15px;
+}
+.whatsapp-sidebar a:hover { background: #128C7E; padding-right: 22px; }
+.whatsapp-sidebar i { font-size: 22px; }
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.5; } }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes bounceArrow {
+  0%, 100% { transform: translateY(0); opacity: 0.9; }
+  50% { transform: translateY(8px); opacity: 0.5; }
 }
 
-.whatsapp-sidebar a:hover {
-  background: #128C7E;
-  padding-right: 25px;
-  box-shadow: -4px 4px 15px rgba(0, 0, 0, 0.3);
-  will-change: padding, box-shadow;
-}
-
-.whatsapp-sidebar i {
-  font-size: 24px;
-}
-
-@media (max-width: 968px) {
-  .whatsapp-sidebar {
-    display: block !important;
-  }
-}
-
-@media (max-width: 480px) {
-  .whatsapp-sidebar a {
-    font-size: 14px;
-    padding: 12px 15px;
-    gap: 8px;
-  }
-  .whatsapp-sidebar i {
-    font-size: 20px;
-  }
-}
-
-/* Estilos para las cards de recursos */
-.blog-card a {
-  display: block;
-  height: 100%;
-}
-
-/* OPTIMIZACIÓN: Simplificar animaciones de cards */
-@media (max-width: 968px) {
-  .blog-card {
-    max-width: 500px;
-    margin: 0 auto;
-  }
-}
-
-/* OPTIMIZACIÓN CRÍTICA: Lazy loading visual para imágenes */
-.lazy-bg {
-  background-size: cover;
-  background-position: center;
-  transition: opacity 0.3s ease;
-}
-
-.lazy-bg.loaded {
-  opacity: 1;
-}
-
-/* OPTIMIZACIÓN: Reducir animaciones en dispositivos de bajo rendimiento */
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
+  *, *::before, *::after {
     animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
 }
-/* ── Servicios: tamaño reducido ── */
-#servicios .section-header h2 {
-  font-size: 1.9rem;
-}
 
-#servicios .section-header p {
-  font-size: 0.95rem;
-}
-
-#servicios .section-header {
-  margin-bottom: 2.5rem;
+/* ============================================================
+   DESKTOP RESPONSIVE
+   ============================================================ */
+@media (max-width: 1200px) {
+  .header-container { padding: 0.875rem 1.5rem; gap: 1.5rem; }
+  .nav-desktop a { font-size: 0.9rem; padding: 0.5rem 0.75rem; }
 }
 
 @media (max-width: 968px) {
-  #servicios .services-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  .nav-desktop, .cta-buttons { display: none; }
+  .hamburger { display: block; }
+
+  .hero-container { grid-template-columns: 1fr; }
+  .hero-stats { grid-template-columns: repeat(3, 1fr); }
+  .nosotros-values { grid-template-columns: repeat(3, 1fr); }
+  .footer-content { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .whatsapp-sidebar { display: block; }
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 640px) {
-  #servicios .services-grid {
-    grid-template-columns: 1fr;
-  }
-}
-#servicios .service-card {
-  padding: 1.75rem;
+  .footer-content { grid-template-columns: 1fr; gap: 1.5rem; text-align: center; }
+  .social-links { justify-content: center; }
 }
 
-#servicios .service-icon {
-  width: 46px;
-  height: 46px;
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
-  border-radius: 10px;
-}
-
-#servicios .service-card h3 {
-  font-size: 1.1rem;
-  margin-bottom: 0.6rem;
-}
-
-#servicios .service-card p {
-  font-size: 0.875rem;
-  line-height: 1.6;
-}
-@media (min-width: 969px) {
-  .hero {
-    padding-top: 3rem;
-  }
-}
-
-</style>
-
-<style>
 /* ============================================================
-   MOBILE OVERRIDES — exigetuseguro.cl  (versión corregida)
-  
+   ██████████████████████████████████████
+   MOBILE REDESIGN — < 968px
+   ██████████████████████████████████████
    ============================================================ */
-
 @media (max-width: 968px) {
 
-  /* ── HERO ── */
+  /* ── HEADER mobile ── */
+  .header-container { padding: 0.75rem 1.25rem; }
+
+  /* ── HERO: full screen ── */
+  .hero {
+    margin-top: 0;
+    padding: 0;
+    min-height: 100svh;       /* full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+  }
+
+  /* top padding so content clears fixed header */
+  .hero-container {
+    padding: 6rem 1.5rem 5rem;
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 0;
+    align-items: center;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* hide stats panel on mobile */
   .hero-stats { display: none !important; }
 
-  .hero-container {
-    grid-template-columns: 1fr !important;
-    text-align: center;
-    gap: 1.5rem;
-  }
-
-  .hero { padding: 3rem 1.25rem 3.5rem; }
-
   .hero-content h1 {
-    font-size: 2rem;
-    line-height: 1.2;
+    font-size: clamp(2rem, 6vw, 2.8rem);
+    line-height: 1.15;
     margin-bottom: 1rem;
   }
-
   .hero-content p {
     font-size: 1rem;
-    margin-bottom: 1.5rem;
+    line-height: 1.7;
+    margin-bottom: 1.75rem;
     opacity: 0.9;
   }
 
+  /* CTA buttons stacked */
   .hero-content .cta-buttons {
     display: flex !important;
     flex-direction: column;
@@ -1477,631 +1002,482 @@ footer {
     gap: 0.875rem;
     width: 100%;
   }
-
   .hero-content .cta-buttons .btn-primary,
   .hero-content .cta-buttons .btn-secondary {
     width: 100%;
-    max-width: 320px;
+    max-width: 300px;
     justify-content: center;
-    padding: 0.875rem 1.5rem;
-    font-size: 1rem;
+    padding: 0.9rem 1.5rem;
+    font-size: 0.97rem;
     border-radius: 12px;
   }
 
-  .ai-badge { margin: 0 auto 1rem; }
-  .hero-features { display: none; }
-
+  /* ── SCROLL ARROW ── */
+  .scroll-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255,255,255,0.75);
+    cursor: pointer;
+    text-decoration: none;
+    z-index: 10;
+    animation: bounceArrow 2s ease-in-out infinite;
+  }
+  .scroll-arrow span {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    opacity: 0.75;
+  }
+  .scroll-arrow .arrow-rings {
+    display: flex; flex-direction: column; align-items: center; gap: 3px;
+  }
+  .scroll-arrow .arrow-rings i {
+    font-size: 1.1rem;
+    line-height: 1;
+    display: block;
+  }
+  .scroll-arrow .arrow-rings i:nth-child(1) { opacity: 0.4; }
+  .scroll-arrow .arrow-rings i:nth-child(2) { opacity: 0.7; }
+  .scroll-arrow .arrow-rings i:nth-child(3) { opacity: 1; }
 
   /* ── SERVICIOS: lista elegante ── */
-  #servicios { padding: 3rem 1.25rem; }
-
-  #servicios .section-header { margin-bottom: 1.75rem; }
-  #servicios .section-header h2 { font-size: 1.6rem; }
+  #servicios { padding: 3rem 1.25rem; background: white; }
+  #servicios .section-header { margin-bottom: 1.5rem; }
+  #servicios .section-header h2 { font-size: 1.5rem; }
+  #servicios .section-header p { font-size: 0.9rem; }
 
   #servicios .services-grid {
     display: flex !important;
     flex-direction: column;
     gap: 0 !important;
-    border: 1.5px solid rgba(10, 61, 98, 0.1);
+    border: 1.5px solid rgba(10,61,98,0.1);
     border-radius: 16px;
     overflow: hidden;
     background: white;
-    box-shadow: 0 4px 20px rgba(10, 61, 98, 0.08);
+    box-shadow: 0 4px 24px rgba(10,61,98,0.09);
   }
-
   #servicios .service-card {
-    background: white !important;
     border-radius: 0 !important;
     border: none !important;
-    border-bottom: 1px solid rgba(10, 61, 98, 0.07) !important;
+    border-bottom: 1px solid rgba(10,61,98,0.07) !important;
     box-shadow: none !important;
     padding: 1rem 1.25rem !important;
     display: flex !important;
     align-items: center;
     gap: 1rem;
+    background: white !important;
   }
-
-  #servicios .service-card:last-child {
-    border-bottom: none !important;
-  }
-
+  #servicios .service-card:last-child { border-bottom: none !important; }
   #servicios .service-card:hover {
-    background: #f0f8ff !important;
+    background: var(--color-bg-soft) !important;
     transform: none !important;
   }
-
   #servicios .service-icon {
-    width: 40px !important;
-    height: 40px !important;
+    width: 40px !important; height: 40px !important;
     min-width: 40px;
-    font-size: 1rem !important;
+    font-size: 0.95rem !important;
     margin-bottom: 0 !important;
     border-radius: 10px !important;
     flex-shrink: 0;
   }
-
   #servicios .service-card h3 {
-    font-size: 0.95rem !important;
+    font-size: 0.93rem !important;
     margin-bottom: 0 !important;
-    line-height: 1.3;
-    flex: 1;
+    flex: 1; line-height: 1.3;
+    color: var(--color-primary);
   }
-
-  #servicios .service-card p {
-    display: none !important;
-  }
-
-  /* Flecha usando span en vez de pseudo-elemento con unicode */
-  #servicios .service-card .service-arrow {
-    color: #34A853;
-    font-size: 0.75rem;
-    opacity: 0.7;
-    flex-shrink: 0;
-  }
-
-
-  /* ── CONTACTO: fondo blanco en móvil ── */
+  #servicios .service-card p { display: none !important; }
+  /* ── CONTACTO: keep dark form ── */
   #contacto {
-    background: linear-gradient(180deg, #f0f8ff 0%, #ffffff 100%) !important;
-    padding: 3rem 1.25rem !important;
+    padding: 3.5rem 1.25rem !important;
   }
-
   #contacto-grid {
     grid-template-columns: 1fr !important;
     gap: 0 !important;
   }
-
   #contacto-left { display: none !important; }
 
-  /* Tarjeta del form: fondo blanco */
-  #contacto-grid > div:last-child > div {
-    background: white !important;
-    border: 1.5px solid rgba(10, 61, 98, 0.1) !important;
-    border-radius: 20px !important;
-    box-shadow: 0 8px 32px rgba(10, 61, 98, 0.1) !important;
-    padding: 1.75rem !important;
-  }
-
-  /* Título y textos del form al color oscuro */
-  #contacto h2 {
-    color: #0A3D62 !important;
-    font-size: 1.6rem !important;
-    margin-bottom: 0.75rem;
-    text-align: center;
-  }
-
-  #contacto h3 { color: #0A3D62 !important; }
-
-  #contacto label { color: #4a5568 !important; }
-
-  #contacto input,
-  #contacto textarea,
-  #contacto select {
-    background: #f7fbff !important;
-    border-color: rgba(10, 61, 98, 0.18) !important;
-    color: #1a2535 !important;
-  }
-
-  #contacto input::placeholder,
-  #contacto textarea::placeholder { color: #a0aec0 !important; }
-
-  #contacto #dropZone {
-    background: #f7fbff !important;
-    border-color: rgba(10, 61, 98, 0.18) !important;
-  }
-
-  #contacto #dropZone p { color: #4a5568 !important; }
-
-  /* Trust row verde claro */
-  #contacto #btnEnviar + div,
-  #contacto form > div:nth-last-child(2) {
-    background: #e8f7ee !important;
-    border-color: rgba(52, 168, 83, 0.25) !important;
-    color: #2a7a42 !important;
-  }
-
-  /* Encabezado del form (ícono + título) */
-  #contacto-grid > div:last-child > div > div:first-child {
-    background: #f0f8ff;
-    border-radius: 12px;
-    padding: 0.875rem 1rem;
-    margin-bottom: 1.25rem;
-    border: 1px solid rgba(10, 61, 98, 0.08);
-  }
-
-  /* Párrafo descripción */
-  #contacto p { color: #4a5568 !important; }
-
-
-  /* ── AGENDA ── */
-  #agenda { padding: 3rem 1.25rem; }
+  /* ── AGENDA: clean white ── */
+  #agenda { padding: 3rem 1.25rem; background: var(--color-bg-soft); }
   #agenda .section-header h2 { font-size: 1.5rem; }
+  #agenda .section-header p { font-size: 0.9rem; }
 
+  .agenda-card { padding: 1.75rem 1.25rem; }
+  .agenda-features { grid-template-columns: 1fr; gap: 0.75rem; margin-bottom: 1.5rem; }
+  .agenda-feature-item {
+    display: flex; align-items: center; gap: 0.875rem;
+    padding: 0.875rem 1rem; text-align: left;
+  }
+  .agenda-feature-item i { font-size: 1.25rem; display: inline; margin-bottom: 0; flex-shrink: 0; }
+  .agenda-feature-item p { margin: 0; font-size: 0.9rem; }
 
-  /* ── HONORARIOS ── */
+  /* ── HONORARIOS: light card ── */
   #honorarios { padding: 3rem 1.25rem; }
+  #honorarios .section-header { margin-bottom: 1.5rem; }
+  #honorarios .section-header h2 { font-size: 1.5rem; }
+  #honorarios .section-header p { font-size: 0.9rem; }
 
+  .honorarios-card { border-radius: 16px; }
+  .honorarios-card-header { padding: 1.5rem; }
+  .honorarios-card-body { padding: 1.5rem; }
 
   /* ── BLOG / RECURSOS ── */
   .blog { padding: 3rem 1.25rem; }
-  .recursos-grid { grid-template-columns: 1fr !important; }
-  .recurso-content { min-height: 280px !important; padding: 2rem !important; }
+  .blog .section-header h2 { font-size: 1.5rem; }
+  .recursos-grid { grid-template-columns: 1fr !important; gap: 1.25rem !important; }
+  .recurso-content { min-height: 300px !important; padding: 2rem 1.5rem !important; }
+  .recurso-content h3 { font-size: 1.4rem !important; }
+  .recurso-icon { width: 60px !important; height: 60px !important; margin-bottom: 1.1rem !important; font-size: 1.6rem !important; }
 
+  .sabia-box { padding: 1.5rem; margin-top: 2rem; }
+  .sabia-grid { grid-template-columns: 1fr; gap: 0.75rem; }
+  .sabia-item {
+    display: flex; align-items: center; gap: 0.875rem;
+    padding: 0.875rem 1rem;
+    background: var(--color-bg-soft);
+    border-radius: 10px;
+    border: 1px solid rgba(10,61,98,0.07);
+    text-align: left;
+  }
+  .sabia-item i { font-size: 1.25rem; display: inline; margin-bottom: 0; flex-shrink: 0; }
+  .sabia-item p { margin: 0; font-size: 0.88rem; }
 
   /* ── NOSOTROS ── */
   #nosotros { padding: 3rem 1.25rem; }
+  #nosotros .section-header h2 { font-size: 1.5rem; }
+  #nosotros .section-header p { font-size: 0.9rem; }
 
-  #nosotros img { display: block; margin: 0 auto; }
-
-  #nosotros > .section-container > div > div:last-child {
-    flex-direction: column !important;
-    text-align: center;
+  .nosotros-card { padding: 1.5rem; }
+  .nosotros-card > p { font-size: 0.93rem; margin-bottom: 1.5rem; }
+  .nosotros-values { grid-template-columns: 1fr; gap: 0.75rem; }
+  .value-item {
+    display: flex; align-items: center; gap: 0.875rem;
+    text-align: left;
+    padding: 0.875rem;
+    background: white;
+    border-radius: 10px;
+    border: 1px solid rgba(10,61,98,0.07);
   }
+  .value-icon { margin: 0; flex-shrink: 0; width: 42px; height: 42px; }
+  .value-item h4 { margin-bottom: 0.15rem; font-size: 0.93rem; }
+  .value-item p { font-size: 0.82rem; }
 
-
-  /* ── FOOTER ── */
-  .footer-content {
-    grid-template-columns: 1fr !important;
-    gap: 1.5rem !important;
+  .team-card {
+    flex-direction: column;
     text-align: center;
+    padding: 1.75rem 1.25rem;
+    gap: 1.25rem;
   }
+  .team-card img { width: 90px; height: 90px; }
 
+  /* ── FOOTER mobile ── */
+  footer { padding: 2.5rem 1.25rem 1.5rem; }
+  .footer-content { grid-template-columns: 1fr !important; gap: 0 !important; text-align: center; }
+
+  .footer-brand { padding-bottom: 1.5rem; margin-bottom: 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.07); }
+  .footer-brand h3 { font-size: 1.2rem; }
+  .footer-brand p { font-size: 0.85rem; }
   .social-links { justify-content: center; }
 
-  .footer-links ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.25rem 1rem;
+  /* Footer links: accordion on mobile */
+  .footer-links { border-bottom: 1px solid rgba(255,255,255,0.07); }
+  .footer-links:last-child { border-bottom: none; }
+
+  .footer-links-header {
+    padding: 1rem 0;
+    cursor: pointer;
   }
+  .footer-links-header h4 { margin-bottom: 0; }
+  .footer-chevron { display: block; font-size: 0.78rem; color: rgba(255,255,255,0.5); transition: transform 0.25s ease; }
+  .footer-links-header.open .footer-chevron { transform: rotate(180deg); }
 
-  .footer-links ul li { margin-bottom: 0; }
+  .footer-links-body {
+    display: none;
+    padding-bottom: 1rem;
+  }
+  .footer-links-body.open { display: block; }
+  .footer-links ul { justify-content: center; }
+  .footer-links ul li { margin-bottom: 0.5rem; }
 
+  /* Whatsapp button */
+  .whatsapp-sidebar a { font-size: 14px; padding: 12px 16px; gap: 8px; }
+  .whatsapp-sidebar i { font-size: 20px; }
 }
 
+/* ── 480px ── */
 @media (max-width: 480px) {
-  .hero-content h1 { font-size: 1.7rem; }
-
+  .header-container { padding: 0.625rem 1rem; }
+  .hero-content h1 { font-size: 1.75rem; }
+  .hero-content p { font-size: 0.95rem; }
   .hero-content .cta-buttons .btn-primary,
   .hero-content .cta-buttons .btn-secondary { max-width: 100%; }
-
-  #servicios .service-card h3 { font-size: 0.88rem !important; }
-  #contacto h2 { font-size: 1.4rem !important; }
 }
-/* ── AGENDA: acordeón en móvil ── */
-@media (max-width: 968px) {
-
-  #agenda {
-    padding: 2rem 1.25rem;
-  }
-
-  #agenda .section-header {
-    display: none;
-  }
-
-  #agenda > .section-container > div {
-    max-width: 100% !important;
-  }
-
-  /* Ocultar el bloque explicativo (íconos + texto) */
-  #agenda > .section-container > div > div:first-child {
-    display: none !important;
-  }
-
-  /* Reemplazar con botón acordeón */
-  #agenda > .section-container > div > div:first-child + * {
-    margin-top: 0;
-  }
-
-  /* Calendly: oculto por defecto en móvil */
-  #agenda .calendly-inline-widget {
-    display: none;
-    margin-top: 1rem;
-  }
-
-  #agenda .calendly-inline-widget.abierto {
-    display: block;
-  }
-
-
-  /* ── HONORARIOS: versión compacta en móvil ── */
-
-  #honorarios {
-    padding: 2rem 1.25rem;
-  }
-
-  /* Ocultar texto largo */
-  #honorarios p:not(:first-of-type),
-  #honorarios > .section-container > div > div[style*="background: white"] {
-    display: none !important;
-  }
-
-  #honorarios > .section-container > div {
-    padding: 1.5rem !important;
-  }
-
-  /* Ocultar ícono grande */
-  #honorarios .fas.fa-file-invoice-dollar {
-    display: none;
-  }
-
-  /* Compactar el header del bloque */
-  #honorarios > .section-container > div > div:first-child {
-    margin-bottom: 1rem !important;
-  }
-
-}
-/* Ocultar el botón acordeón en desktop */
-.btn-acordeon-agenda { display: none; }
-@media (max-width: 968px) {
-  .btn-acordeon-agenda { display: flex; }
-}
-@media (max-width: 968px) {
-  #contacto .fas.fa-lock,
-  #contacto .fas.fa-check-circle {
-    color: #34A853 !important;
-  }
-
-  #contacto form > div[style*="rgba(52,168,83,0.07)"] div {
-    color: #0A3D62 !important;
-  }
-}
-
 </style>
-
 </head>
 <body>
-  <!-- Header -->
-  <header itemscope itemtype="https://schema.org/WPHeader" role="banner">
-    <div class="header-container">
-      
-      <div class="logo-container" onclick="window.location.href='#hero'" role="button" aria-label="Ir a inicio" itemprop="name" style="cursor:pointer;">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 80" style="height:50px;">
-          <style>
-            @keyframes slideFadeIn {
-              0% { opacity: 0; transform: translateY(-15px); }
-              60% { opacity: 1; transform: translateY(2px); }
-              100% { opacity: 1; transform: translateY(0); }
-            }
 
-            .logo-text {
-              font-family: 'Space Grotesk', sans-serif;
-              font-weight: 600;
-              font-size: 48px;
-              letter-spacing: -1px;
-              fill: #0A3D62;
-              opacity: 0;
-              animation: slideFadeIn 1.4s ease-out forwards;
-            }
+<!-- ======================================================
+     HEADER
+     ====================================================== -->
+<header role="banner">
+  <div class="header-container">
+    <div class="logo-container" onclick="window.location.href='#hero'" role="button" aria-label="Ir a inicio">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 80" style="height:48px;">
+        <style>
+          @keyframes slideFadeIn {
+            0% { opacity:0; transform:translateY(-12px); }
+            60% { opacity:1; transform:translateY(2px); }
+            100% { opacity:1; transform:translateY(0); }
+          }
+          .logo-text { font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:48px; letter-spacing:-1px; fill:#0A3D62; opacity:0; animation:slideFadeIn 1.4s ease-out forwards; }
+          .logo-dot { fill:#34A853; opacity:0; animation:slideFadeIn 1.4s ease-out forwards; animation-delay:0.9s; }
+        </style>
+        <text x="0" y="50" class="logo-text">exigetuseguro<tspan class="logo-dot">.cl</tspan></text>
+      </svg>
+    </div>
 
-            .logo-dot {
-              fill: #34A853;
-              opacity: 0;
-              animation: slideFadeIn 1.4s ease-out forwards;
-              animation-delay: 0.9s;
-            }
-          </style>
+    <nav class="nav-desktop" role="navigation" aria-label="Navegación principal">
+      <a href="#servicios">Servicios</a>
+      <a href="#honorarios">Honorarios</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#" onclick="smartScroll('contacto-mobile','contacto');return false;">Contacto</a>
+    </nav>
 
-          <text x="0" y="50" class="logo-text">
-            exigetuseguro<tspan class="logo-dot">.cl</tspan>
-          </text>
-        </svg>
-      </div>
+    <div class="cta-buttons">
+      <a href="https://exigetuseguro.cl/contacto" class="btn-secondary">
+        <i class="fas fa-file-alt"></i> Formulario
+      </a>
+      <a href="https://wa.me/56979939868" class="btn-primary">
+        <i class="fab fa-whatsapp"></i> Contactar
+      </a>
+    </div>
 
-      <nav class="nav-desktop" role="navigation" aria-label="Navegación principal" itemscope itemtype="https://schema.org/SiteNavigationElement">
-        <a href="#servicios" itemprop="url"><span itemprop="name">Servicios</span></a>
-        <a href="#honorarios" itemprop="url"><span itemprop="name">Honorarios</span></a>
-        <a href="#nosotros" itemprop="url"><span itemprop="name">Nosotros</span></a>
-        <a href="#contacto" itemprop="url"><span itemprop="name">Contacto</span></a>
-      </nav>
-      
+    <button class="hamburger" onclick="toggleMobileNav()" aria-label="Abrir menú">
+      <i class="fas fa-bars" id="hamburgerIcon"></i>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile Nav -->
+<nav class="mobile-nav" id="mobileNav" role="navigation" aria-label="Navegación móvil">
+  <a href="#servicios" onclick="closeMobileNav()">
+    <span class="nav-icon"><i class="fas fa-shield-alt"></i></span> Servicios
+  </a>
+  <a href="https://exigetuseguro.cl/contacto" onclick="closeMobileNav()">
+    <span class="nav-icon"><i class="fas fa-calendar"></i></span> Agendar Cita Gratis
+  </a>
+  <a href="#honorarios" onclick="closeMobileNav()">
+    <span class="nav-icon"><i class="fas fa-file-invoice-dollar"></i></span> Honorarios
+  </a>
+  <a href="#nosotros" onclick="closeMobileNav()">
+    <span class="nav-icon"><i class="fas fa-users"></i></span> Nosotros
+  </a>
+  <a href="#" onclick="smartScroll('contacto-mobile','contacto');closeMobileNav();return false;">
+    <span class="nav-icon"><i class="fas fa-file-alt"></i></span> Formulario
+  </a>
+  <a href="https://wa.me/56979939868" style="color:#25D366; font-weight:700;">
+    <span class="nav-icon" style="background:rgba(37,211,102,0.12);"><i class="fab fa-whatsapp" style="color:#25D366;"></i></span> WhatsApp
+  </a>
+</nav>
+
+<!-- ======================================================
+     HERO
+     ====================================================== -->
+<section class="hero" id="hero">
+  <div class="hero-container">
+    <div class="hero-content">
+      <h1>Abogados Especialistas en <span class="highlight">Seguros</span></h1>
+      <p>
+        Representación legal experta. Sube tu
+        <strong style="color:white; font-weight:700;">póliza o carta de rechazo</strong>
+        y recibe una <strong style="color:white; font-weight:700;">orientación legal</strong>.
+      </p>
       <div class="cta-buttons">
-        <a href="https://exigetuseguro.cl/contacto" class="btn-secondary" aria-label="Sube tus archivos">
-          <i class="fas fa-file-alt"></i> Formulario
+        <a href="#" onclick="smartScroll('contacto-mobile','contacto');return false;" class="btn-primary">
+          <i class="fas fa-file-alt"></i> Enviar Consulta
         </a>
-        <a href="https://wa.me/56979939868" class="btn-primary" aria-label="Contactar por WhatsApp">
-          <i class="fab fa-whatsapp"></i> Contactar
+        <a href="#" onclick="smartScroll('agenda-mobile','agenda');return false;" class="btn-secondary" style="background:rgba(255,255,255,0.15); border-color:rgba(255,255,255,0.6); color:white;">
+          <i class="fas fa-calendar"></i> Agendar Cita
         </a>
-      </div>
-      
-      <button class="hamburger" onclick="toggleMobileNav()" aria-label="Abrir menú de navegación">
-        <i class="fas fa-bars"></i>
-      </button>
-    </div>
-  </header>
-
-  <!-- Mobile Navigation -->
-  <nav class="mobile-nav" id="mobileNav" role="navigation" aria-label="Navegación móvil">
-    <a href="#servicios" onclick="toggleMobileNav()">Servicios</a>
-    <a href="#honorarios" onclick="toggleMobileNav()">Honorarios</a>
-    <a href="#nosotros" onclick="toggleMobileNav()">Nosotros</a>
-    <a href="https://exigetuseguro.cl/contacto" onclick="toggleMobileNav()">Formulario (sube tus archivos)</a>
-    <a href="#agenda" onclick="toggleMobileNav()">Agendar Cita</a>
-    <a href="https://wa.me/56979939868">Contactar por WhatsApp</a>
-  </nav>
-
-  <!-- Hero Section -->
-  <section class="hero" id="hero" itemscope itemtype="https://schema.org/Service">
-    <div class="hero-container">
-     <div class="hero-content">
- 
-        <h1 itemprop="name">
-          Abogados Especialistas en <span class="highlight">Seguros</span>
-        </h1>
-
-<p itemprop="description">
-  Representación legal experta en seguros. Sube tu 
-  <span style="color:white;font-weight:700;text-shadow:0 0 20px rgba(255,255,255,0.4);">póliza o carta de rechazo</span> 
- en nuestro formulario y recibe una 
-  <span style="color:white;font-weight:700;text-shadow:0 0 20px rgba(255,255,255,0.4);">orientación legal</span>.
-</p>
-        
-        <div class="hero-features">
-                    <div class="feature-item">
-            
-          </div>
-          <div class="feature-item">
-                      </div>
-        </div>
-        <div class="cta-buttons">
-          <a href="#contacto" class="btn-primary">
-            <i class="fas fa-file-alt"></i> Formulario
-          </a>
-          <a href="#agenda" class="btn-secondary" style="background: rgba(255,255,255,0.2); border-color: white; color: white;">
-            <i class="fas fa-calendar"></i> Primera Cita Gratis
-          </a>
-        </div>
-      </div>
-      
-      <div class="hero-stats">
-        <div style="text-align: center;">
-          <div style="width: 60px; height: 60px; background: var(--gradient-accent); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
-            <i class="fas fa-handshake" style="font-size: 1.5rem;"></i>
-          </div>
-          <h4 style="margin-bottom: 0.5rem;">Compromiso</h4>
-        </div>
-
-        <div style="text-align: center;">
-          <div style="width: 60px; height: 60px; background: var(--gradient-accent); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
-            <i class="fas fa-chart-line" style="font-size: 1.5rem;"></i>
-          </div>
-          <h4 style="margin-bottom: 0.5rem;">Transparencia</h4>
-        </div>
-
-        <div style="text-align: center;">
-          <div style="width: 60px; height: 60px; background: var(--gradient-accent); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
-            <i class="fas fa-balance-scale" style="font-size: 1.5rem;"></i>
-          </div>
-          <h4 style="margin-bottom: 0.5rem;">Justicia</h4>
-        </div>
-<!-- Email discreto — solo desktop -->
-<div style="grid-column:1/-1;text-align:center;margin-top:0.5rem;padding-top:1.25rem;border-top:1px solid rgba(255,255,255,0.12);display:flex;justify-content:center;align-items:center;gap:2rem;">
-
-  <a href="mailto:contacto@exigetuseguro.cl"
-     style="color:rgba(255,255,255,0.75);text-decoration:none;font-size:0.88rem;display:inline-flex;align-items:center;gap:0.5rem;transition:color 0.25s;white-space:nowrap;"
-     onmouseover="this.style.color='#34A853'"
-     onmouseout="this.style.color='rgba(255,255,255,0.75)'">
-    <i class="fas fa-envelope" style="color:#34A853;font-size:0.85rem;"></i>
-    contacto@exigetuseguro.cl
-  </a>
-
-  <a href="https://wa.me/56979939868"
-     target="_blank" rel="noopener noreferrer"
-     style="color:rgba(255,255,255,0.75);text-decoration:none;font-size:0.88rem;display:inline-flex;align-items:center;gap:0.5rem;transition:color 0.25s;white-space:nowrap;"
-     onmouseover="this.style.color='#25D366'"
-     onmouseout="this.style.color='rgba(255,255,255,0.75)'">
-    <i class="fab fa-whatsapp" style="color:#25D366;font-size:0.95rem;"></i>
-    +56 9 7993 9868
-  </a>
-
-</div>   
- </div>
-      </div>
-
-  </section>
-
-  <!-- Services Section -->
-  <section class="services" id="servicios">
-    <div class="section-container">
-      <div class="section-header">
-        <h2>Servicios Legales Especializados en Seguros</h2>
-       
-      </div>
-      
-      <div class="services-grid">
-        <article class="service-card" itemscope itemtype="https://schema.org/Service">
-          <div class="service-icon">
-            <i class="fas fa-file-alt"></i>
-          </div>
-          <h3 itemprop="name">Formulario Web</h3>
-          <p itemprop="description">Cuéntanos lo que ocurrió y adjunta los documentos relevantes de tu caso: tu póliza de seguro, la carta de rechazo o cualquier comunicación con tu aseguradora. Con esa información podemos darte una orientación legal precisa desde el primer contacto.</p>
-        </article>
-        
-        <article class="service-card" itemscope itemtype="https://schema.org/Service">
-          <div class="service-icon">
-            <i class="fas fa-file-contract"></i>
-          </div>
-          <h3 itemprop="name">Impugnación de Rechazos de Seguros</h3>
-          <p itemprop="description">Abogados especialistas en impugnar informes de liquidación injustos. Defendemos tu derecho a una indemnización justa ante aseguradoras.</p>
-        </article>
-        
-        <article class="service-card" itemscope itemtype="https://schema.org/Service">
-          <div class="service-icon">
-            <i class="fas fa-shield-alt"></i>
-          </div>
-          <h3 itemprop="name">Abogado Seguros de Vida Chile</h3>
-          <p itemprop="description">Representación legal experta en disputas de seguros de vida. Conocemos todas las estrategias de las aseguradoras y cómo contrarrestarlas.</p>
-        </article>
-        
-        <article class="service-card" itemscope itemtype="https://schema.org/Service">
-          <div class="service-icon">
-            <i class="fas fa-heartbeat"></i>
-          </div>
-          <h3 itemprop="name">Abogado Seguros de Salud</h3>
-          <p itemprop="description">Asesoría legal para obtener la cobertura médica que te corresponde según tu póliza de salud. Reclamos ante Isapres y seguros complementarios.</p>
-        </article>
-        
-        <article class="service-card" itemscope itemtype="https://schema.org/Service">
-          <div class="service-icon">
-            <i class="fas fa-fire"></i>
-          </div>
-          <h3 itemprop="name">Seguros de Incendio y Sismo</h3>
-          <p itemprop="description">Defensa legal especializada en siniestros por incendio, terremoto y coberturas adicionales de hogar. Recuperamos el valor real de tus pérdidas.</p>
-        </article>
-        
-        <article class="service-card" itemscope itemtype="https://schema.org/Service">
-          <div class="service-icon">
-            <i class="fas fa-car"></i>
-          </div>
-          <h3 itemprop="name">Abogado Seguros Vehiculares</h3>
-          <p itemprop="description">Expertos en reclamaciones de seguros automotrices en Chile. Accidentes, robos, daños a terceros y todo riesgo. Recuperamos tu inversión.</p>
-        </article>
       </div>
     </div>
-  </section>
 
-<!-- ===== REEMPLAZA TODA LA SECCIÓN id="contacto" CON ESTO ===== -->
+    <!-- Desktop stats panel -->
+    <div class="hero-stats">
+      <div style="text-align:center;">
+        <div style="width:56px;height:56px;background:var(--gradient-accent);border-radius:12px;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;">
+          <i class="fas fa-handshake" style="font-size:1.4rem;color:white;"></i>
+        </div>
+        <h4 style="margin-bottom:0.4rem;">Compromiso</h4>
+      </div>
+      <div style="text-align:center;">
+        <div style="width:56px;height:56px;background:var(--gradient-accent);border-radius:12px;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;">
+          <i class="fas fa-chart-line" style="font-size:1.4rem;color:white;"></i>
+        </div>
+        <h4 style="margin-bottom:0.4rem;">Transparencia</h4>
+      </div>
+      <div style="text-align:center;">
+        <div style="width:56px;height:56px;background:var(--gradient-accent);border-radius:12px;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;">
+          <i class="fas fa-balance-scale" style="font-size:1.4rem;color:white;"></i>
+        </div>
+        <h4 style="margin-bottom:0.4rem;">Justicia</h4>
+      </div>
+      <div style="grid-column:1/-1;text-align:center;margin-top:0.5rem;padding-top:1.25rem;border-top:1px solid rgba(255,255,255,0.12);display:flex;justify-content:center;align-items:center;gap:2rem;">
+        <a href="mailto:contacto@exigetuseguro.cl"
+           style="color:rgba(255,255,255,0.75);text-decoration:none;font-size:0.87rem;display:inline-flex;align-items:center;gap:0.5rem;"
+           onmouseover="this.style.color='#34A853'" onmouseout="this.style.color='rgba(255,255,255,0.75)'">
+          <i class="fas fa-envelope" style="color:#34A853;"></i> contacto@exigetuseguro.cl
+        </a>
+        <a href="https://wa.me/56979939868" target="_blank" rel="noopener"
+           style="color:rgba(255,255,255,0.75);text-decoration:none;font-size:0.87rem;display:inline-flex;align-items:center;gap:0.5rem;"
+           onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='rgba(255,255,255,0.75)'">
+          <i class="fab fa-whatsapp" style="color:#25D366;"></i> +56 9 7993 9868
+        </a>
+      </div>
+    </div>
+  </div>
 
-<section class="ai-section" id="contacto" style="
-  background: linear-gradient(135deg, rgba(10, 61, 98, 0.97) 0%, rgba(26, 31, 46, 0.97) 100%),
+  <!-- Scroll arrow (mobile only) -->
+  <a href="#servicios" class="scroll-arrow" aria-label="Ver servicios">
+    <span>Descubrir</span>
+    <div class="arrow-rings">
+      <i class="fas fa-chevron-down"></i>
+      <i class="fas fa-chevron-down"></i>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </a>
+</section>
+
+<!-- ======================================================
+     SERVICIOS
+     ====================================================== -->
+<section class="services" id="servicios">
+  <div class="section-container">
+    <div class="section-header">
+      <h2>Servicios Legales Especializados en Seguros</h2>
+    </div>
+    <div class="services-grid">
+
+      <article class="service-card">
+        <div class="service-icon"><i class="fas fa-file-alt"></i></div>
+        <h3>Formulario Web</h3>
+        <p>Cuéntanos lo que ocurrió y adjunta los documentos relevantes: póliza, carta de rechazo o cualquier comunicación con tu aseguradora.</p>
+
+      </article>
+
+      <article class="service-card">
+        <div class="service-icon"><i class="fas fa-file-contract"></i></div>
+        <h3>Impugnación de Rechazos de Seguros</h3>
+        <p>Abogados especialistas en impugnar rechazos injustos. Defendemos tu derecho a una indemnización justa ante aseguradoras.</p>
+
+      </article>
+
+      <article class="service-card">
+        <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
+        <h3>Abogado Seguros de Vida Chile</h3>
+        <p>Representación legal experta en disputas de seguros de vida. Conocemos todas las estrategias de las aseguradoras y cómo contrarrestarlas.</p>
+
+      </article>
+
+      <article class="service-card">
+        <div class="service-icon"><i class="fas fa-heartbeat"></i></div>
+        <h3>Abogado Seguros de Salud</h3>
+        <p>Asesoría legal para obtener la cobertura médica que te corresponde. Reclamos ante Isapres y seguros complementarios.</p>
+
+      </article>
+
+      <article class="service-card">
+        <div class="service-icon"><i class="fas fa-fire"></i></div>
+        <h3>Seguros de Incendio y Sismo</h3>
+        <p>Defensa legal especializada en siniestros por incendio, terremoto y coberturas adicionales de hogar. Recuperamos el valor real de tus pérdidas.</p>
+
+      </article>
+
+      <article class="service-card">
+        <div class="service-icon"><i class="fas fa-car"></i></div>
+        <h3>Abogado Seguros Vehiculares</h3>
+        <p>Expertos en reclamaciones de seguros automotrices. Accidentes, robos, daños a terceros y todo riesgo. Recuperamos tu inversión.</p>
+
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================
+     CONTACTO  (original dark style preserved)
+     ====================================================== -->
+<section class="ai-section desktop-only" id="contacto" style="
+  background: linear-gradient(135deg, rgba(10,61,98,0.97) 0%, rgba(26,31,46,0.97) 100%),
               url('https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg?auto=compress&cs=tinysrgb&w=1920');
-  background-size: cover;
-  background-position: center;
-  padding: 6rem 2rem;
-  position: relative;
-  overflow: hidden;
-">
+  background-size:cover; background-position:center;
+  padding:6rem 2rem; position:relative; overflow:hidden;">
 
-  <!-- Decorative background elements -->
   <div style="position:absolute;top:-100px;right:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(52,168,83,0.12) 0%,transparent 65%);border-radius:50%;pointer-events:none;"></div>
   <div style="position:absolute;bottom:-80px;left:-80px;width:400px;height:400px;background:radial-gradient(circle,rgba(54,149,191,0.10) 0%,transparent 65%);border-radius:50%;pointer-events:none;"></div>
 
   <div class="section-container" style="position:relative;z-index:1;">
-
-    <!-- Grid de 2 columnas -->
     <div id="contacto-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;max-width:1200px;margin:0 auto;">
 
-      <!-- ===== COLUMNA IZQUIERDA: Texto e instrucciones ===== -->
+      <!-- LEFT col -->
       <div id="contacto-left">
-
-        <!-- Badge -->
-        
-        <!-- Titular -->
         <h2 style="font-family:var(--font-heading);color:white;font-size:clamp(1.8rem,3vw,2.75rem);margin-bottom:1.25rem;line-height:1.15;">
-          Cuéntanos tu caso.<br>
-          
+          Cuéntanos tu caso.
         </h2>
-
         <p style="color:rgba(255,255,255,0.72);font-size:1rem;line-height:1.8;margin-bottom:2rem;">
-          Adjunta los documentos de tu caso y recibe orientación legal precisa desde el primer contacto. Nuestro equipo analiza tu situación y te indica cuáles son los mejores pasos a seguir.
+          Adjunta los documentos de tu caso y recibe orientación legal precisa. Nuestro equipo analiza tu situación y te indica cuáles son los mejores pasos a seguir.
         </p>
-
-        <!-- Qué puedes adjuntar -->
         <div style="margin-bottom:2rem;">
           <p style="color:rgba(255,255,255,0.5);font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:1rem;">¿Qué documentos puedes adjuntar?</p>
           <div style="display:flex;flex-direction:column;gap:0.75rem;">
             <div style="display:flex;align-items:center;gap:0.875rem;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:0.875rem 1.1rem;">
-              <div style="width:36px;height:36px;background:rgba(52,168,83,0.18);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                <i class="fas fa-file-contract" style="color:var(--color-accent);font-size:0.95rem;"></i>
-              </div>
-              <div>
-                <p style="color:white;font-size:0.9rem;font-weight:600;margin:0 0 0.1rem;">Póliza de seguro</p>
-                <p style="color:rgba(255,255,255,0.45);font-size:0.8rem;margin:0;">El documento principal de tu cobertura</p>
-              </div>
+              <div style="width:36px;height:36px;background:rgba(52,168,83,0.18);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-file-contract" style="color:var(--color-accent);font-size:0.95rem;"></i></div>
+              <div><p style="color:white;font-size:0.9rem;font-weight:600;margin:0 0 0.1rem;">Póliza de seguro</p><p style="color:rgba(255,255,255,0.45);font-size:0.8rem;margin:0;">El documento principal de tu cobertura</p></div>
             </div>
             <div style="display:flex;align-items:center;gap:0.875rem;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:0.875rem 1.1rem;">
-              <div style="width:36px;height:36px;background:rgba(52,168,83,0.18);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                <i class="fas fa-times-circle" style="color:var(--color-accent);font-size:0.95rem;"></i>
-              </div>
-              <div>
-                <p style="color:white;font-size:0.9rem;font-weight:600;margin:0 0 0.1rem;">Carta de rechazo</p>
-                <p style="color:rgba(255,255,255,0.45);font-size:0.8rem;margin:0;">Si tu aseguradora rechazó el siniestro</p>
-              </div>
+              <div style="width:36px;height:36px;background:rgba(52,168,83,0.18);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-times-circle" style="color:var(--color-accent);font-size:0.95rem;"></i></div>
+              <div><p style="color:white;font-size:0.9rem;font-weight:600;margin:0 0 0.1rem;">Carta de rechazo</p><p style="color:rgba(255,255,255,0.45);font-size:0.8rem;margin:0;">Si tu aseguradora rechazó el siniestro</p></div>
             </div>
             <div style="display:flex;align-items:center;gap:0.875rem;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:0.875rem 1.1rem;">
-              <div style="width:36px;height:36px;background:rgba(52,168,83,0.18);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                <i class="fas fa-envelope-open-text" style="color:var(--color-accent);font-size:0.95rem;"></i>
-              </div>
-              <div>
-                <p style="color:white;font-size:0.9rem;font-weight:600;margin:0 0 0.1rem;">Comunicaciones con la aseguradora</p>
-                <p style="color:rgba(255,255,255,0.45);font-size:0.8rem;margin:0;">Emails, cartas o notificaciones recibidas</p>
-              </div>
-            </div>
-            <div style="display:flex;align-items:center;gap:0.875rem;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:0.875rem 1.1rem;">
-              <div style="width:36px;height:36px;background:rgba(52,168,83,0.18);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                <i class="fas fa-camera" style="color:var(--color-accent);font-size:0.95rem;"></i>
-              </div>
-              <div>
-                <p style="color:white;font-size:0.9rem;font-weight:600;margin:0 0 0.1rem;">Fotos del siniestro</p>
-                <p style="color:rgba(255,255,255,0.45);font-size:0.8rem;margin:0;">Evidencia fotográfica de los daños</p>
-              </div>
+              <div style="width:36px;height:36px;background:rgba(52,168,83,0.18);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-camera" style="color:var(--color-accent);font-size:0.95rem;"></i></div>
+              <div><p style="color:white;font-size:0.9rem;font-weight:600;margin:0 0 0.1rem;">Fotos del siniestro</p><p style="color:rgba(255,255,255,0.45);font-size:0.8rem;margin:0;">Evidencia fotográfica de los daños</p></div>
             </div>
           </div>
         </div>
-
-        <!-- Contacto alternativo -->
         <div style="padding-top:1.75rem;border-top:1px solid rgba(255,255,255,0.1);">
           <p style="color:rgba(255,255,255,0.4);font-size:0.82rem;margin-bottom:0.875rem;">¿Prefieres contacto directo?</p>
           <div style="display:flex;flex-direction:column;gap:0.625rem;">
-            <a href="https://wa.me/56979939868" target="_blank" rel="noopener noreferrer"
-               style="display:inline-flex;align-items:center;gap:0.6rem;color:white;text-decoration:none;background:rgba(37,211,102,0.12);border:1px solid rgba(37,211,102,0.25);padding:0.65rem 1.1rem;border-radius:50px;font-size:0.88rem;font-weight:600;transition:all 0.25s;width:fit-content;"
-               onmouseover="this.style.background='rgba(37,211,102,0.22)'"
-               onmouseout="this.style.background='rgba(37,211,102,0.12)'">
-              <i class="fab fa-whatsapp" style="font-size:1.1rem;color:#25D366;"></i> +56 9 7993 9868
+            <a href="https://wa.me/56979939868" target="_blank" rel="noopener"
+               style="display:inline-flex;align-items:center;gap:0.6rem;color:white;text-decoration:none;background:rgba(37,211,102,0.12);border:1px solid rgba(37,211,102,0.25);padding:0.65rem 1.1rem;border-radius:50px;font-size:0.88rem;font-weight:600;width:fit-content;">
+              <i class="fab fa-whatsapp" style="color:#25D366;font-size:1.1rem;"></i> +56 9 7993 9868
             </a>
             <a href="mailto:contacto@exigetuseguro.cl"
-               style="display:inline-flex;align-items:center;gap:0.6rem;color:white;text-decoration:none;background:rgba(54,149,191,0.12);border:1px solid rgba(54,149,191,0.25);padding:0.65rem 1.1rem;border-radius:50px;font-size:0.88rem;font-weight:600;transition:all 0.25s;width:fit-content;"
-               onmouseover="this.style.background='rgba(54,149,191,0.22)'"
-               onmouseout="this.style.background='rgba(54,149,191,0.12)'">
+               style="display:inline-flex;align-items:center;gap:0.6rem;color:white;text-decoration:none;background:rgba(54,149,191,0.12);border:1px solid rgba(54,149,191,0.25);padding:0.65rem 1.1rem;border-radius:50px;font-size:0.88rem;font-weight:600;width:fit-content;">
               <i class="fas fa-envelope" style="color:var(--color-secondary);"></i> contacto@exigetuseguro.cl
             </a>
           </div>
         </div>
-
       </div>
 
-      <!-- ===== COLUMNA DERECHA: Formulario ===== -->
+      <!-- RIGHT col: form -->
       <div>
         <div style="background:rgba(255,255,255,0.06);backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.13);border-radius:24px;padding:2.5rem;box-shadow:0 24px 60px rgba(0,0,0,0.35);position:relative;overflow:hidden;">
-
-          <!-- Accent line top -->
           <div style="position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--color-accent) 0%,var(--color-secondary) 100%);border-radius:24px 24px 0 0;"></div>
-
           <div style="display:flex;align-items:center;gap:0.875rem;margin-bottom:1.75rem;">
-            <div style="width:44px;height:44px;background:var(--gradient-accent);border-radius:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <div style="width:44px;height:44px;background:var(--gradient-accent);border-radius:11px;display:flex;align-items:center;justify-content:center;">
               <i class="fas fa-paper-plane" style="color:white;font-size:1.1rem;"></i>
             </div>
-            <div>
-              <h3 style="font-family:var(--font-heading);color:white;font-size:1.2rem;margin:0 0 0.1rem;">Envíanos tu consulta</h3>
-                          </div>
+            <h3 style="font-family:var(--font-heading);color:white;font-size:1.2rem;margin:0;">Envíanos tu consulta</h3>
           </div>
 
-          <form id="consultaForm"
-                action="https://formsubmit.co/contacto@exigetuseguro.cl"
-                method="POST"
-                enctype="multipart/form-data"
-                onsubmit="return validarConsulta(event)">
-
+          <form id="consultaForm" action="https://formsubmit.co/contacto@exigetuseguro.cl" method="POST" enctype="multipart/form-data" onsubmit="return validarConsulta(event)">
             <input type="hidden" name="_subject" value="Nueva consulta legal - exigetuseguro.cl">
             <input type="hidden" name="_template" value="table">
             <input type="hidden" name="_next" value="https://www.exigetuseguro.cl/#contacto">
@@ -2112,36 +1488,32 @@ footer {
             <div style="margin-bottom:1rem;">
               <label style="display:block;font-size:0.78rem;font-weight:700;color:rgba(255,255,255,0.6);margin-bottom:0.35rem;text-transform:uppercase;letter-spacing:0.5px;">Nombre completo *</label>
               <input type="text" id="nombre" name="nombre" required placeholder="Ej: Juan Pérez"
-                style="width:100%;padding:0.8rem 1rem;border-radius:11px;border:1.5px solid rgba(255,255,255,0.14);background:rgba(255,255,255,0.08);color:white;font-size:0.92rem;outline:none;transition:border-color 0.25s,background 0.25s;font-family:var(--font-body);"
-                onfocus="this.style.borderColor='var(--color-accent)';this.style.background='rgba(52,168,83,0.08)'"
-                onblur="this.style.borderColor='rgba(255,255,255,0.14)';this.style.background='rgba(255,255,255,0.08)'">
+                style="width:100%;padding:0.8rem 1rem;border-radius:11px;border:1.5px solid rgba(255,255,255,0.14);background:rgba(255,255,255,0.08);color:white;font-size:0.92rem;outline:none;transition:border-color 0.25s;font-family:var(--font-body);"
+                onfocus="this.style.borderColor='var(--color-accent)'" onblur="this.style.borderColor='rgba(255,255,255,0.14)'">
             </div>
 
-            <!-- Email + Teléfono -->
+            <!-- Email + Tel -->
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.875rem;margin-bottom:1rem;">
               <div>
                 <label style="display:block;font-size:0.78rem;font-weight:700;color:rgba(255,255,255,0.6);margin-bottom:0.35rem;text-transform:uppercase;letter-spacing:0.5px;">Email *</label>
                 <input type="email" id="email" name="email" required placeholder="correo@ejemplo.cl"
-                  style="width:100%;padding:0.8rem 1rem;border-radius:11px;border:1.5px solid rgba(255,255,255,0.14);background:rgba(255,255,255,0.08);color:white;font-size:0.88rem;outline:none;transition:border-color 0.25s,background 0.25s;font-family:var(--font-body);"
-                  onfocus="this.style.borderColor='var(--color-accent)';this.style.background='rgba(52,168,83,0.08)'"
-                  onblur="this.style.borderColor='rgba(255,255,255,0.14)';this.style.background='rgba(255,255,255,0.08)'">
+                  style="width:100%;padding:0.8rem 1rem;border-radius:11px;border:1.5px solid rgba(255,255,255,0.14);background:rgba(255,255,255,0.08);color:white;font-size:0.88rem;outline:none;transition:border-color 0.25s;font-family:var(--font-body);"
+                  onfocus="this.style.borderColor='var(--color-accent)'" onblur="this.style.borderColor='rgba(255,255,255,0.14)'">
               </div>
               <div>
                 <label style="display:block;font-size:0.78rem;font-weight:700;color:rgba(255,255,255,0.6);margin-bottom:0.35rem;text-transform:uppercase;letter-spacing:0.5px;">Teléfono</label>
                 <input type="tel" id="telefono" name="telefono" placeholder="+56 9 XXXX XXXX"
-                  style="width:100%;padding:0.8rem 1rem;border-radius:11px;border:1.5px solid rgba(255,255,255,0.14);background:rgba(255,255,255,0.08);color:white;font-size:0.88rem;outline:none;transition:border-color 0.25s,background 0.25s;font-family:var(--font-body);"
-                  onfocus="this.style.borderColor='var(--color-accent)';this.style.background='rgba(52,168,83,0.08)'"
-                  onblur="this.style.borderColor='rgba(255,255,255,0.14)';this.style.background='rgba(255,255,255,0.08)'">
+                  style="width:100%;padding:0.8rem 1rem;border-radius:11px;border:1.5px solid rgba(255,255,255,0.14);background:rgba(255,255,255,0.08);color:white;font-size:0.88rem;outline:none;transition:border-color 0.25s;font-family:var(--font-body);"
+                  onfocus="this.style.borderColor='var(--color-accent)'" onblur="this.style.borderColor='rgba(255,255,255,0.14)'">
               </div>
             </div>
 
-            <!-- Tipo de seguro -->
+            <!-- Tipo seguro -->
             <div style="margin-bottom:1rem;">
               <label style="display:block;font-size:0.78rem;font-weight:700;color:rgba(255,255,255,0.6);margin-bottom:0.35rem;text-transform:uppercase;letter-spacing:0.5px;">Tipo de seguro</label>
               <select id="tipoSeguro" name="tipoSeguro"
                 style="width:100%;padding:0.8rem 1rem;border-radius:11px;border:1.5px solid rgba(255,255,255,0.14);background:rgba(20,32,55,0.92);color:white;font-size:0.88rem;outline:none;transition:border-color 0.25s;cursor:pointer;font-family:var(--font-body);"
-                onfocus="this.style.borderColor='var(--color-accent)'"
-                onblur="this.style.borderColor='rgba(255,255,255,0.14)'">
+                onfocus="this.style.borderColor='var(--color-accent)'" onblur="this.style.borderColor='rgba(255,255,255,0.14)'">
                 <option value="">Selecciona una opción</option>
                 <option value="vida">Seguro de Vida</option>
                 <option value="salud">Seguro de Salud</option>
@@ -2156,9 +1528,8 @@ footer {
               <label style="display:block;font-size:0.78rem;font-weight:700;color:rgba(255,255,255,0.6);margin-bottom:0.35rem;text-transform:uppercase;letter-spacing:0.5px;">Relato de los hechos *</label>
               <textarea id="relato" name="relato" required rows="4"
                 placeholder="Describe brevemente tu situación: ¿qué ocurrió?, ¿cuándo fue el siniestro?, ¿tu aseguradora rechazó el reclamo?..."
-                style="width:100%;padding:0.8rem 1rem;border-radius:11px;border:1.5px solid rgba(255,255,255,0.14);background:rgba(255,255,255,0.08);color:white;font-size:0.88rem;outline:none;transition:border-color 0.25s,background 0.25s;resize:vertical;font-family:var(--font-body);line-height:1.6;"
-                onfocus="this.style.borderColor='var(--color-accent)';this.style.background='rgba(52,168,83,0.08)'"
-                onblur="this.style.borderColor='rgba(255,255,255,0.14)';this.style.background='rgba(255,255,255,0.08)'"></textarea>
+                style="width:100%;padding:0.8rem 1rem;border-radius:11px;border:1.5px solid rgba(255,255,255,0.14);background:rgba(255,255,255,0.08);color:white;font-size:0.88rem;outline:none;transition:border-color 0.25s;resize:vertical;font-family:var(--font-body);line-height:1.6;"
+                onfocus="this.style.borderColor='var(--color-accent)'" onblur="this.style.borderColor='rgba(255,255,255,0.14)'"></textarea>
             </div>
 
             <!-- Drop zone -->
@@ -2166,24 +1537,22 @@ footer {
               <label style="display:block;font-size:0.78rem;font-weight:700;color:rgba(255,255,255,0.6);margin-bottom:0.35rem;text-transform:uppercase;letter-spacing:0.5px;">
                 Adjuntar documentos <span style="color:rgba(255,255,255,0.3);text-transform:none;font-weight:400;">(opcional)</span>
               </label>
-              <div id="dropZone"
-                onclick="document.getElementById('archivos').click()"
-                ondragover="event.preventDefault();this.style.borderColor='var(--color-accent)';this.style.background='rgba(52,168,83,0.08)'"
-                ondragleave="this.style.borderColor='rgba(255,255,255,0.16)';this.style.background='rgba(255,255,255,0.04)'"
+              <div id="dropZone" onclick="document.getElementById('archivos').click()"
+                ondragover="event.preventDefault();this.style.borderColor='var(--color-accent)'"
+                ondragleave="this.style.borderColor='rgba(255,255,255,0.16)'"
                 ondrop="handleDrop(event)"
-                style="border:2px dashed rgba(255,255,255,0.16);border-radius:12px;padding:1.25rem 1rem;text-align:center;cursor:pointer;transition:border-color 0.25s,background 0.25s;background:rgba(255,255,255,0.04);">
+                style="border:2px dashed rgba(255,255,255,0.16);border-radius:12px;padding:1.25rem;text-align:center;cursor:pointer;transition:border-color 0.25s;background:rgba(255,255,255,0.04);">
                 <i class="fas fa-cloud-upload-alt" style="font-size:1.5rem;color:var(--color-accent);display:block;margin-bottom:0.4rem;"></i>
                 <p style="color:rgba(255,255,255,0.75);font-size:0.85rem;margin:0 0 0.2rem;font-weight:600;">
                   Arrastra o <span style="color:var(--color-accent);text-decoration:underline;">selecciona archivos</span>
                 </p>
                 <p style="color:rgba(255,255,255,0.3);font-size:0.75rem;margin:0;">PDF, JPG, PNG, DOCX — Máx. 10 MB</p>
               </div>
-              <input type="file" id="archivos" multiple accept=".pdf,.jpg,.jpeg,.png,.docx"
-                style="display:none;" onchange="mostrarArchivos(this.files)">
+              <input type="file" id="archivos" multiple accept=".pdf,.jpg,.jpeg,.png,.docx" style="display:none;" onchange="mostrarArchivos(this.files)">
               <div id="listaArchivos" style="margin-top:0.6rem;"></div>
             </div>
 
-            <!-- Trust row -->
+            <!-- Trust -->
             <div style="display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap;margin-bottom:1.25rem;padding:0.875rem;background:rgba(52,168,83,0.07);border:1px solid rgba(52,168,83,0.16);border-radius:11px;">
               <div style="display:flex;align-items:center;gap:0.4rem;color:rgba(255,255,255,0.7);font-size:0.78rem;">
                 <i class="fas fa-lock" style="color:var(--color-accent);"></i> Datos protegidos
@@ -2191,14 +1560,11 @@ footer {
               <div style="display:flex;align-items:center;gap:0.4rem;color:rgba(255,255,255,0.7);font-size:0.78rem;">
                 <i class="fas fa-check-circle" style="color:var(--color-accent);"></i> Sin compromiso
               </div>
-              
             </div>
 
-            <!-- Botón -->
             <button type="submit" id="btnEnviar"
-              style="width:100%;padding:1rem;background:linear-gradient(135deg,#34A853 0%,#2d9147 100%);color:white;border:none;border-radius:13px;font-size:1rem;font-weight:700;cursor:pointer;transition:all 0.25s;display:flex;align-items:center;justify-content:center;gap:0.6rem;letter-spacing:0.3px;box-shadow:0 8px 24px rgba(52,168,83,0.35);"
-              onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 12px 32px rgba(52,168,83,0.45)'"
-              onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 8px 24px rgba(52,168,83,0.35)'">
+              style="width:100%;padding:1rem;background:linear-gradient(135deg,#34A853 0%,#2d9147 100%);color:white;border:none;border-radius:13px;font-size:1rem;font-weight:700;cursor:pointer;transition:all 0.25s;display:flex;align-items:center;justify-content:center;gap:0.6rem;box-shadow:0 8px 24px rgba(52,168,83,0.35);font-family:var(--font-body);"
+              onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
               <i class="fas fa-paper-plane"></i> Enviar mi consulta gratis
             </button>
 
@@ -2206,604 +1572,757 @@ footer {
           </form>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 
-<style>
-  /* Responsive: columna única en móvil, solo formulario */
-  @media (max-width: 968px) {
-    #contacto-grid {
-      grid-template-columns: 1fr !important;
-      gap: 0 !important;
-    }
-    #contacto-left {
-      display: none !important;
-    }
-  }
-  @media (max-width: 640px) {
-    #contacto {
-      padding: 4rem 1.25rem !important;
-    }
-  }
-</style>
-
- <!-- Agenda Section -->
-  <section class="services" id="agenda" style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%), url('https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=1920'); background-size: cover; background-position: center;">
-    <div class="section-container">
-      <div class="section-header">
-        <h2>Agenda tu Cita con Abogado Especialista en Seguros</h2>
-             </div>
-      
-      <div style="max-width: 800px; margin: 0 auto;">
-        <div style="background: linear-gradient(135deg, #0A3D62 0%, #3695BF 100%); color: white; padding: 3rem; border-radius: var(--border-radius); margin-bottom: 3rem; text-align: center;">
-          
-                    
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
-            <div>
-              <i class="fas fa-comments" style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--color-accent);"></i>
-              <p style="margin: 0;">Explica tu situación sin presiones</p>
-            </div>
-            <div>
-              <i class="fas fa-lightbulb" style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--color-accent);"></i>
-              <p style="margin: 0;">Recibe orientación legal experta</p>
-            </div>
-            <div>
-              <i class="fas fa-route" style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--color-accent);"></i>
-              <p style="margin: 0;">Define los pasos legales a seguir</p>
-            </div>
-          </div>
-          
-                  </div>
-        
-        <!-- Calendly Widget -->
-<!-- Botón acordeón agenda — solo visible en móvil -->
-<button onclick="toggleCalendly(this)"
- class="btn-acordeon-agenda"
-  style="width:100%;padding:1rem 1.25rem;background:linear-gradient(135deg,#0A3D62,#3695BF);color:white;border:none;border-radius:14px;font-size:1rem;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:space-between;box-shadow:0 6px 20px rgba(10,61,98,0.25);margin-bottom:0.5rem;">
-  <span style="display:flex;align-items:center;gap:0.75rem;">
-    <i class="fas fa-calendar-check"></i> Agendar Cita Gratuita
-  </span>
-  <i class="fas fa-chevron-down" style="transition:transform 0.3s;"></i>
-</button>
-        <div class="calendly-inline-widget" data-url="https://calendly.com/rescamus/60min?hide_event_type_details=1&hide_gdpr_banner=1" style="min-width:320px;height:700px; border-radius: var(--border-radius); overflow: hidden; box-shadow: var(--shadow-lg);"></div>
-        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<!-- MOBILE-ONLY: formulario blanco -->
+<section class="m-form-section mobile-only" id="contacto-mobile">
+  <div class="m-form-card">
+    <div class="m-form-header">
+      <div class="m-fh-icon"><i class="fas fa-paper-plane"></i></div>
+      <div>
+        <h2>Envíanos tu consulta</h2>
+        <p>Adjunta tus documentos y recibe orientación legal.</p>
       </div>
     </div>
-  </section>
+    <div class="m-form-body">
+      <form id="mConsultaForm"
+            action="https://formsubmit.co/contacto@exigetuseguro.cl"
+            method="POST"
+            enctype="multipart/form-data"
+            onsubmit="return mValidarConsulta(event)">
+        <input type="hidden" name="_subject" value="Nueva consulta legal - exigetuseguro.cl">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="https://www.exigetuseguro.cl/#contacto">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="archivos_adjuntos" id="mArchivosUrl">
 
-  <!-- Honorarios Section -->
-  <section class="services" id="honorarios" style="background: linear-gradient(135deg, rgba(10, 61, 98, 0.92) 0%, rgba(54, 149, 191, 0.92) 100%), url('https://images.pexels.com/photos/6863332/pexels-photo-6863332.jpeg?auto=compress&cs=tinysrgb&w=1920'); background-size: cover; background-position: center;">
-    <div class="section-container">
-      <div class="section-header" style="color: white;">
-        <h2 style="color: white;">Honorarios Abogados Seguros Chile</h2>
-        <p style="color: rgba(255,255,255,0.9);">Transparencia total en costos y compromisos desde el primer día</p>
-      </div>
-      
-      <div style="max-width: 800px; margin: 0 auto; background: rgba(255,255,255,0.98); padding: 3rem; border-radius: var(--border-radius); border-left: 4px solid var(--color-accent); box-shadow: var(--shadow-lg);">
-        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
-          <i class="fas fa-file-invoice-dollar" style="font-size: 3rem; color: var(--color-accent);"></i>
-          <div>
-            <h3 style="font-family: var(--font-heading); color: var(--color-primary); margin-bottom: 0.5rem;">¿Qué Ofrecemos?</h3>
-            <p style="color: var(--color-gray-light); margin: 0;">Servicio legal completo con recursos educativos incluidos</p>
+        <div class="m-fg">
+          <label>Nombre completo <span class="req">*</span></label>
+          <input type="text" id="mNombre" name="nombre" required placeholder="Ej: Juan Pérez" class="m-fi">
+        </div>
+
+        <div class="m-fg">
+          <label>Email <span class="req">*</span></label>
+          <input type="email" id="mEmail" name="email" required placeholder="correo@ejemplo.cl" class="m-fi">
+        </div>
+
+        <div class="m-fg">
+          <label>Teléfono</label>
+          <input type="tel" id="mTelefono" name="telefono" placeholder="+56 9 XXXX XXXX" class="m-fi">
+        </div>
+
+        <div class="m-fg">
+          <label>Tipo de seguro</label>
+          <select id="mTipoSeguro" name="tipoSeguro" class="m-fi">
+            <option value="">Selecciona una opción</option>
+            <option value="vida">Seguro de Vida</option>
+            <option value="salud">Seguro de Salud</option>
+            <option value="vehicular">Seguro Vehicular</option>
+            <option value="incendio">Incendio / Sismo / Hogar</option>
+            <option value="otro">Otro</option>
+          </select>
+        </div>
+
+        <div class="m-fg">
+          <label>Relato de los hechos <span class="req">*</span></label>
+          <textarea id="mRelato" name="relato" required class="m-fi"
+            placeholder="¿Qué ocurrió? ¿Cuándo fue el siniestro? ¿Tu aseguradora rechazó el reclamo?..."></textarea>
+        </div>
+
+        <div class="m-fg">
+          <label>Adjuntar documentos <span style="color:#a0aec0;font-weight:400;text-transform:none;">(opcional)</span></label>
+          <div class="m-dropzone"
+               onclick="document.getElementById('mArchivos').click()"
+               ondragover="event.preventDefault();this.style.borderColor='var(--color-secondary)'"
+               ondragleave="this.style.borderColor='rgba(10,61,98,0.18)'"
+               ondrop="mHandleDrop(event)">
+            <div class="m-dz-icon"><i class="fas fa-cloud-upload-alt"></i></div>
+            <p>Arrastra o <span>selecciona archivos</span></p>
+            <small>PDF, JPG, PNG, DOCX — Máx. 10 MB</small>
+          </div>
+          <input type="file" id="mArchivos" multiple accept=".pdf,.jpg,.jpeg,.png,.docx"
+                 style="display:none;" onchange="mMostrarArchivos(this.files)">
+          <div id="m-listaArchivos"></div>
+        </div>
+
+        <div class="m-trust-bar">
+          <div class="m-tb-item"><i class="fas fa-lock"></i> Datos protegidos</div>
+          <div class="m-tb-item"><i class="fas fa-check-circle"></i> Sin compromiso</div>
+        </div>
+
+        <button type="submit" id="mBtnEnviar" class="m-btn-send">
+          <i class="fas fa-paper-plane"></i> Enviar mi consulta gratis
+        </button>
+        <div id="mFormStatus" class="m-fstatus"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================
+     AGENDA
+     ====================================================== -->
+<section id="agenda" class="desktop-only" style="background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(248,250,252,0.95) 100%), url('https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=1920'); background-size:cover; background-position:center;">
+  <div class="section-container">
+    <div class="section-header">
+      <h2>Agenda tu Cita con un Abogado Especialista</h2>
+      <p>Primera consulta sin costo ni compromiso</p>
+    </div>
+
+    <div style="max-width:800px;margin:0 auto;">
+      <div class="agenda-card">
+        <div class="agenda-features">
+          <div class="agenda-feature-item">
+            <i class="fas fa-comments" style="color:var(--color-accent);"></i>
+            <p>Explica tu situación sin presiones</p>
+          </div>
+          <div class="agenda-feature-item">
+            <i class="fas fa-lightbulb" style="color:var(--color-accent);"></i>
+            <p>Recibe orientación legal experta</p>
+          </div>
+          <div class="agenda-feature-item">
+            <i class="fas fa-route" style="color:var(--color-accent);"></i>
+            <p>Define los pasos legales a seguir</p>
           </div>
         </div>
-        
-        <p style="margin-bottom: 1.5rem; line-height: 1.7;">
-          Ofrecemos un servicio integral que va más allá de la representación legal. 
-          Disponemos de recursos educativos en nuestro sitio web que ayudan a nuestros clientes 
-          a comprender mejor sus pólizas de seguro y derechos como asegurados.
-        </p>
-        
-        <div style="background: white; padding: 2rem; border-radius: 12px; margin-bottom: 2rem;">
-          <h4 style="color: var(--color-primary); margin-bottom: 1rem;">
-            <i class="fas fa-info-circle"></i> Consideraciones Importantes
-          </h4>
-          <p style="color: var(--color-gray-light); line-height: 1.7;">
-            Es fundamental que evalúe la conveniencia de nuestros servicios legales consciente del riesgo 
-            inherente de no obtener los resultados deseados. Nuestro compromiso es ofrecerle un 
-            servicio transparente donde cada paso del proceso legal será debidamente documentado y analizado.
-          </p>
+      </div>
+
+      <div class="calendly-inline-widget" data-url="https://calendly.com/rescamus/60min?hide_event_type_details=1&hide_gdpr_banner=1"
+        style="min-width:320px;height:700px;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-lg);"></div>
+      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    </div>
+  </div>
+</section>
+
+<!-- MOBILE-ONLY: acordeón agenda -->
+<section class="m-agenda-section mobile-only" id="agenda-mobile">
+  <div class="m-agenda-accordion">
+    <button class="m-acc-trigger" onclick="mToggleAgenda(this)">
+      <div class="m-acc-left">
+        <div class="m-acc-icon"><i class="fas fa-calendar-check"></i></div>
+        <div>
+          <h3>Agendar una Cita con Abogado</h3>
+          <p>Videollamada gratuita · Sin compromiso</p>
         </div>
-        
-        <a href="https://exigetuseguro.cl/honorarios" 
-           class="btn-primary" style="display: inline-flex; width: 100%; justify-content: center;">
+      </div>
+      <i class="fas fa-chevron-down m-acc-arrow"></i>
+    </button>
+    <div class="m-acc-body">
+      <div class="m-calendly-wrap">
+        <div class="calendly-inline-widget"
+             data-url="https://calendly.com/rescamus/60min?hide_event_type_details=1&hide_gdpr_banner=1"
+             style="min-width:280px;height:660px;"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================
+     HONORARIOS
+     ====================================================== -->
+<section id="honorarios" style="background: linear-gradient(135deg, rgba(10,61,98,0.92) 0%, rgba(54,149,191,0.92) 100%), url('https://images.pexels.com/photos/6863332/pexels-photo-6863332.jpeg?auto=compress&cs=tinysrgb&w=1920'); background-size:cover; background-position:center;">
+  <div class="section-container">
+    <div class="section-header">
+      <h2>Honorarios Abogados Seguros Chile</h2>
+      <p>Transparencia total en costos y compromisos desde el primer día</p>
+    </div>
+
+    <div class="honorarios-card">
+      <div class="honorarios-card-header">
+        <div class="h-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+        <div>
+          <h3>¿Qué Ofrecemos?</h3>
+          <p>Servicio legal completo con recursos educativos incluidos</p>
+        </div>
+      </div>
+      <div class="honorarios-card-body">
+                <ul class="honorarios-points">
+          <li>
+            <span class="point-icon"><i class="fas fa-check"></i></span>
+            Primera consulta completamente gratuita y sin compromiso
+          </li>
+          <li>
+            <span class="point-icon"><i class="fas fa-check"></i></span>
+            Honorarios transparentes informados antes de comprometerse
+          </li>
+          <li>
+            <span class="point-icon"><i class="fas fa-check"></i></span>
+            Cada paso del proceso legal debidamente documentado
+          </li>
+          <li>
+            <span class="point-icon"><i class="fas fa-check"></i></span>
+            Atendemos casos en todo Chile por videoconferencia
+          </li>
+        </ul>
+        <div class="alert-box">
+          <strong style="color:var(--color-primary);">Nota importante:</strong> Es fundamental que evalúe la conveniencia de nuestros servicios
+          legales consciente del riesgo inherente de no obtener los resultados deseados.
+        </div>
+        <a href="https://exigetuseguro.cl/honorarios" class="btn-primary" style="display:inline-flex;width:100%;justify-content:center;">
           <i class="fas fa-download"></i> Guía de Honorarios y Servicios
         </a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
- <!-- Recursos Section -->
-<!-- SECCIÓN CORREGIDA: Recursos para Asegurados -->
-<!-- Reemplaza toda la sección con id="blog" con este código -->
-
+<!-- ======================================================
+     RECURSOS / BLOG
+     ====================================================== -->
 <section class="blog" id="blog">
   <div class="section-container">
     <div class="section-header">
       <h2>Recursos para Asegurados</h2>
-      <p>Herramientas y conocimiento para defender tus derechos como asegurado en Chile</p>
+      <p>Herramientas y conocimiento para defender tus derechos</p>
     </div>
-    
-    <!-- Grid mejorado con mejor responsividad -->
-    <div class="recursos-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1000px; margin: 0 auto;">
-      
-      <!-- Card Blog -->
-      <a href="https://exigetuseguro.cl/blog" style="text-decoration: none;" class="recurso-link">
-        <div class="blog-card recurso-card" style="height: 100%; background: linear-gradient(135deg, rgba(10, 61, 98, 0.95) 0%, rgba(54, 149, 191, 0.95) 100%), url('https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg'); background-size: cover; background-position: center;">
-          <div class="recurso-content" style="padding: 2.5rem; text-align: center; color: white; height: 100%; display: flex; flex-direction: column; justify-content: center; min-height: 400px;">
-            <div style="width: 70px; height: 70px; background: var(--gradient-accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; box-shadow: var(--shadow-glow);">
-              <i class="fas fa-book-open" style="font-size: 2rem;"></i>
+
+    <div class="recursos-grid">
+      <a href="https://exigetuseguro.cl/blog" class="recurso-link">
+        <div class="recurso-card" style="background:linear-gradient(135deg,rgba(10,61,98,0.96) 0%,rgba(54,149,191,0.96) 100%),url('https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg');background-size:cover;background-position:center;">
+          <div class="recurso-content">
+            <div class="recurso-icon" style="background:var(--gradient-accent);">
+              <i class="fas fa-book-open"></i>
             </div>
-            <h3 style="font-family: var(--font-heading); font-size: 1.75rem; margin-bottom: 1rem; color: white;">Blog Legal</h3>
-            <p style="font-size: 1rem; margin-bottom: 1.5rem; opacity: 0.95; line-height: 1.6;">
-              Artículos especializados sobre seguros, tus derechos, reclamaciones y casos reales. Conocimiento legal al alcance de todos.
-            </p>
-            <div style="display: inline-flex; align-items: center; gap: 0.6rem; background: var(--color-accent); padding: 0.875rem 1.5rem; border-radius: 50px; font-weight: 600; font-size: 1rem; margin: 0 auto; box-shadow: var(--shadow-md); transition: var(--transition);">
-              <span>Ir al Blog</span>
-              <i class="fas fa-arrow-right"></i>
+            <h3>Blog Legal</h3>
+            <p>Artículos especializados sobre seguros, tus derechos, reclamaciones y casos reales.</p>
+            <div style="display:inline-flex;align-items:center;gap:0.6rem;background:var(--color-accent);padding:0.8rem 1.5rem;border-radius:50px;font-weight:600;font-size:0.95rem;margin:0 auto;">
+              Ir al Blog <i class="fas fa-arrow-right"></i>
             </div>
           </div>
         </div>
       </a>
 
-      <!-- Card Conoce tu Póliza -->
-      <a href="https://exigetuseguro.cl/conoce-tu-poliza" style="text-decoration: none;" class="recurso-link">
-        <div class="blog-card recurso-card" style="height: 100%; background: linear-gradient(135deg, rgba(52, 168, 83, 0.95) 0%, rgba(76, 175, 80, 0.95) 100%), url('https://images.pexels.com/photos/5668772/pexels-photo-5668772.jpeg'); background-size: cover; background-position: center;">
-          <div class="recurso-content" style="padding: 2.5rem; text-align: center; color: white; height: 100%; display: flex; flex-direction: column; justify-content: center; min-height: 400px;">
-            <div style="width: 70px; height: 70px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; box-shadow: var(--shadow-glow); backdrop-filter: blur(10px);">
-              <i class="fas fa-file-contract" style="font-size: 2rem;"></i>
+      <a href="https://exigetuseguro.cl/conoce-tu-poliza" class="recurso-link">
+        <div class="recurso-card" style="background:linear-gradient(135deg,rgba(52,168,83,0.96) 0%,rgba(76,175,80,0.96) 100%),url('https://images.pexels.com/photos/5668772/pexels-photo-5668772.jpeg');background-size:cover;background-position:center;">
+          <div class="recurso-content">
+            <div class="recurso-icon" style="background:rgba(255,255,255,0.18);backdrop-filter:blur(10px);">
+              <i class="fas fa-file-contract"></i>
             </div>
-            <h3 style="font-family: var(--font-heading); font-size: 1.75rem; margin-bottom: 1rem; color: white;">Conoce Tu Póliza</h3>
-            <p style="font-size: 1rem; margin-bottom: 1.5rem; opacity: 0.95; line-height: 1.6;">
-              Aprende a leer y entender tu póliza de seguros. Identifica coberturas, exclusiones y tus derechos de forma clara y sencilla.
-            </p>
-            <div style="display: inline-flex; align-items: center; gap: 0.6rem; background: white; color: var(--color-accent); padding: 0.875rem 1.5rem; border-radius: 50px; font-weight: 600; font-size: 1rem; margin: 0 auto; box-shadow: var(--shadow-md); transition: var(--transition);">
-              <span>Explorar Guía</span>
-              <i class="fas fa-arrow-right"></i>
+            <h3>Conoce Tu Póliza</h3>
+            <p>Identifica coberturas, exclusiones y tus derechos de forma clara y sencilla.</p>
+            <div style="display:inline-flex;align-items:center;gap:0.6rem;background:white;color:var(--color-accent);padding:0.8rem 1.5rem;border-radius:50px;font-weight:600;font-size:0.95rem;margin:0 auto;">
+              Explorar Guía <i class="fas fa-arrow-right"></i>
             </div>
           </div>
         </div>
       </a>
-
     </div>
 
-    <!-- Sección de highlights rápidos -->
-    <div style="margin-top: 3rem; padding: 2rem; background: rgba(10, 61, 98, 0.05); border-radius: var(--border-radius); border-left: 4px solid var(--color-accent);">
-      <h4 style="font-family: var(--font-heading); color: var(--color-primary); margin-bottom: 1.5rem; text-align: center;">
-        <i class="fas fa-lightbulb"></i> ¿Sabías que...?
-      </h4>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
-        <div style="text-align: center;">
-          <i class="fas fa-shield-alt" style="font-size: 2rem; color: var(--color-accent); margin-bottom: 0.5rem;"></i>
-          <p style="color: var(--color-gray-light); font-size: 0.95rem;">Tienes derecho a impugnar rechazos de seguros injustos</p>
+    <div class="sabia-box">
+      <h4><i class="fas fa-lightbulb" style="color:var(--color-accent);margin-right:0.5rem;"></i> ¿Sabías que...?</h4>
+      <div class="sabia-grid">
+        <div class="sabia-item">
+          <i class="fas fa-shield-alt" style="color:var(--color-accent);"></i>
+          <p>Tienes derecho a impugnar rechazos de seguros injustos</p>
         </div>
-        <div style="text-align: center;">
-          <i class="fas fa-clock" style="font-size: 2rem; color: var(--color-accent); margin-bottom: 0.5rem;"></i>
-          <p style="color: var(--color-gray-light); font-size: 0.95rem;">Las aseguradoras tienen plazos legales para responder</p>
+        <div class="sabia-item">
+          <i class="fas fa-clock" style="color:var(--color-accent);"></i>
+          <p>Las aseguradoras tienen plazos legales para responder</p>
         </div>
-        <div style="text-align: center;">
-          <i class="fas fa-balance-scale" style="font-size: 2rem; color: var(--color-accent); margin-bottom: 0.5rem;"></i>
-          <p style="color: var(--color-gray-light); font-size: 0.95rem;">La ley protege al asegurado en caso de dudas</p>
+        <div class="sabia-item">
+          <i class="fas fa-balance-scale" style="color:var(--color-accent);"></i>
+          <p>La ley protege al asegurado en caso de dudas</p>
         </div>
       </div>
     </div>
-
   </div>
 </section>
 
-<style>
-/* ESTILOS CORREGIDOS PARA LA SECCIÓN DE RECURSOS */
-
-/* Grid de recursos mejorado */
-.recursos-grid {
-  opacity: 1 !important;
-  transform: none !important;
-}
-
-/* Cards de recursos optimizadas */
-.recurso-card {
-  opacity: 1 !important;
-  transform: none !important;
-  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
-  max-width: 100%;
-  margin: 0 auto;
-}
-
-.recurso-link {
-  display: block;
-  width: 100%;
-}
-
-/* Hover mejorado */
-.recurso-card:hover {
-  transform: translateY(-5px) !important;
-  box-shadow: 0 12px 40px rgba(52, 168, 83, 0.2) !important;
-}
-
-/* Responsive mejorado */
-@media (max-width: 968px) {
-  .recursos-grid {
-    grid-template-columns: 1fr !important;
-    gap: 2rem !important;
-    padding: 0 1rem;
-  }
-  
-  .recurso-card {
-    max-width: 600px !important;
-  }
-  
-  .recurso-content {
-    padding: 2rem !important;
-    min-height: 350px !important;
-  }
-  
-  .recurso-content h3 {
-    font-size: 1.5rem !important;
-  }
-  
-  .recurso-content p {
-    font-size: 0.95rem !important;
-  }
-}
-
-@media (max-width: 640px) {
-  .recursos-grid {
-    padding: 0 0.5rem;
-  }
-  
-  .recurso-card {
-    max-width: 100% !important;
-  }
-  
-  .recurso-content {
-    padding: 1.5rem !important;
-    min-height: 320px !important;
-  }
-  
-  .recurso-content h3 {
-    font-size: 1.3rem !important;
-  }
-  
-  .recurso-content p {
-    font-size: 0.9rem !important;
-    margin-bottom: 1.25rem !important;
-  }
-  
-  .recurso-content > div:first-child {
-    width: 60px !important;
-    height: 60px !important;
-    margin-bottom: 1.25rem !important;
-  }
-  
-  .recurso-content > div:first-child i {
-    font-size: 1.75rem !important;
-  }
-  
-  .recurso-content > div:last-child {
-    padding: 0.75rem 1.25rem !important;
-    font-size: 0.9rem !important;
-  }
-}
-
-@media (max-width: 480px) {
-  .recurso-content {
-    padding: 1.25rem !important;
-    min-height: 300px !important;
-  }
-  
-  .recurso-content h3 {
-    font-size: 1.2rem !important;
-  }
-  
-  .recurso-content p {
-    font-size: 0.85rem !important;
-  }
-}
-
-/* Deshabilitar animaciones en las cards de recursos */
-.blog-card.recurso-card {
-  animation: none !important;
-  transition-delay: 0s !important;
-}
-</style>
-
-<script>
-/* SCRIPT CORREGIDO - Agregar al final del documento, antes de cerrar </body> */
-
-// Asegurar que las cards de recursos NO sean afectadas por el observer
-document.addEventListener('DOMContentLoaded', function() {
-  // Forzar visibilidad inmediata de las cards de recursos
-  const recursoCards = document.querySelectorAll('.recurso-card');
-  recursoCards.forEach(card => {
-    card.style.opacity = '1';
-    card.style.transform = 'none';
-    card.style.transition = 'transform 0.3s ease, box-shadow 0.3s ease';
-  });
-});
-</script>
-
-  <!-- Sobre Nosotros Section -->
-<section class="services" id="nosotros" style="background: linear-gradient(135deg, rgba(10, 61, 98, 0.92) 0%, rgba(54, 149, 191, 0.88) 100%), url('https://images.pexels.com/photos/5668772/pexels-photo-5668772.jpeg?auto=compress&cs=tinysrgb&w=1920'); background-size: cover; background-position: center;">
+<!-- ======================================================
+     NOSOTROS
+     ====================================================== -->
+<section id="nosotros" style="background: linear-gradient(135deg, rgba(10,61,98,0.92) 0%, rgba(54,149,191,0.88) 100%), url('https://images.pexels.com/photos/5668772/pexels-photo-5668772.jpeg?auto=compress&cs=tinysrgb&w=1920'); background-size:cover; background-position:center;">
   <div class="section-container">
-    <div class="section-header" style="color: white;">
-      <h2 style="color: white;">Sobre Nosotros - Abogados Seguros Santiago</h2>
-      <p style="color: rgba(255,255,255,0.9);">Experiencia legal comprobada + Innovación tecnológica</p>
-    </div>
-    
-    <div style="max-width: 900px; margin: 0 auto;">
-      <div style="background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); padding: 3rem; border-radius: var(--border-radius); border: 1px solid rgba(255,255,255,0.2); margin-bottom: 3rem; box-shadow: var(--shadow-lg);">
-        <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem; color: var(--color-gray-light);">
-          Somos un estudio jurídico especializado en litigios de seguros en Chile. 
-          Nuestro equipo de abogados cuenta con amplia experiencia en la defensa de los derechos 
-          de los asegurados ante compañías de seguros.
+    <div class="section-header">
+      <h2>Sobre Nosotros</h2>
+         </div>
+
+    <div class="nosotros-inner">
+      <div class="nosotros-card">
+        <p>
+          Somos un estudio jurídico especializado en litigios de seguros en Chile.
+          Nuestro equipo de abogados cuenta con amplia experiencia en la defensa de los
+          derechos de los asegurados ante compañías de seguros, con total compromiso,
+          transparencia y rigor profesional.
         </p>
-        
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
-          <div style="text-align: center;">
-            <div style="width: 60px; height: 60px; background: var(--gradient-accent); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
-              <i class="fas fa-balance-scale" style="font-size: 1.5rem; color: white;"></i>
+        <div class="nosotros-values">
+          <div class="value-item">
+            <div class="value-icon"><i class="fas fa-balance-scale"></i></div>
+            <div>
+              <h4>Justicia</h4>
+              <p>Luchamos por tus derechos con integridad profesional</p>
             </div>
-            <h4 style="margin-bottom: 0.5rem; color: var(--color-primary);">Justicia</h4>
-            <p style="color: var(--color-gray-light); font-size: 0.9rem;">Luchamos por tus derechos con integridad profesional</p>
           </div>
-          
-          <div style="text-align: center;">
-            <div style="width: 60px; height: 60px; background: var(--gradient-accent); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
-              <i class="fas fa-handshake" style="font-size: 1.5rem; color: white;"></i>
+          <div class="value-item">
+            <div class="value-icon"><i class="fas fa-handshake"></i></div>
+            <div>
+              <h4>Compromiso</h4>
+              <p>Dedicados a obtener los mejores resultados para ti</p>
             </div>
-            <h4 style="margin-bottom: 0.5rem; color: var(--color-primary);">Compromiso</h4>
-            <p style="color: var(--color-gray-light); font-size: 0.9rem;">Dedicados a obtener los mejores resultados</p>
           </div>
-          
-          <div style="text-align: center;">
-            <div style="width: 60px; height: 60px; background: var(--gradient-accent); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
-              <i class="fas fa-chart-line" style="font-size: 1.5rem; color: white;"></i>
+          <div class="value-item">
+            <div class="value-icon"><i class="fas fa-chart-line"></i></div>
+            <div>
+              <h4>Transparencia</h4>
+              <p>Comunicación clara y honesta en todo momento</p>
             </div>
-            <h4 style="margin-bottom: 0.5rem; color: var(--color-primary);">Transparencia</h4>
-            <p style="color: var(--color-gray-light); font-size: 0.9rem;">Comunicación clara y honesta siempre</p>
           </div>
-          
-          
         </div>
       </div>
-      
-      <div style="background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); padding: 2.5rem; border-radius: var(--border-radius); border: 1px solid rgba(255,255,255,0.2); display: flex; gap: 2rem; align-items: center; flex-wrap: wrap; box-shadow: var(--shadow-lg);" itemscope itemtype="https://schema.org/Person">
-        <img src="https://i.postimg.cc/DZndt4wj/Equipo-Presentaci-n1-Autoguardado.jpg" 
-             alt="Abogado Especialista en Seguros" 
-             itemprop="image"
-             loading="lazy"
-             style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 4px solid var(--color-accent);">
-        <div style="flex: 1; min-width: 250px;">
-          <h3 style="font-family: var(--font-heading); margin-bottom: 0.5rem; color: var(--color-primary);" itemprop="name">Raúl Santana</h3>
-          <p style="color: var(--color-accent); margin-bottom: 1rem; font-weight: 600;" itemprop="jobTitle">Fundador de exigetuseguro.cl | Abogado Especialista en Seguros</p>
-          <p style="color: var(--color-gray-light); line-height: 1.7;" itemprop="description">
-            Abogado, Licenciado en Derecho por la Universidad Andrés Bello. Diplomado en Derecho de Seguros 
-            Universidad de los Andes y la Escuela de Seguros de Chile.
+
+      <div class="team-card" itemscope itemtype="https://schema.org/Person">
+        <img src="https://i.postimg.cc/DZndt4wj/Equipo-Presentaci-n1-Autoguardado.jpg"
+             alt="Raúl Santana - Abogado Especialista en Seguros"
+             itemprop="image" loading="lazy">
+        <div>
+          <h3 itemprop="name">Raúl Santana</h3>
+          <p class="team-role" itemprop="jobTitle">Fundador de exigetuseguro.cl | Abogado Especialista en Seguros</p>
+          <p itemprop="description">
+            Abogado, Licenciado en Derecho por la Universidad Andrés Bello. Diplomado en
+            Derecho de Seguros por la Universidad de los Andes y la Escuela de Seguros de Chile.
           </p>
         </div>
       </div>
     </div>
   </div>
 </section>
- 
 
-
-
-  <!-- Footer -->
-  <footer itemscope itemtype="https://schema.org/WPFooter">
-    <div class="footer-content">
-      <div class="footer-brand">
-        <h3>EXIGETUSEGURO.CL</h3>
-        <p>Legaltech especializada en seguros. Tecnología e innovación al servicio de tus derechos como asegurado en Chile.</p>
-        <div class="social-links">
-          <a href="https://www.facebook.com/exigetuseguro.cl" aria-label="Facebook Exige Tu Seguro" rel="noopener noreferrer" target="_blank"><i class="fab fa-facebook"></i></a>
-          <a href="https://www.instagram.com/exigetuseguro.cl/" aria-label="Instagram Exige Tu Seguro" rel="noopener noreferrer" target="_blank"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.linkedin.com/company/exige-tu-seguro/" aria-label="LinkedIn Exige Tu Seguro" rel="noopener noreferrer" target="_blank"><i class="fab fa-linkedin"></i></a>
-        </div>
+<!-- ======================================================
+     FOOTER
+     ====================================================== -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-brand">
+      <h3>EXIGETUSEGURO.CL</h3>
+      <p>Legaltech especializada en seguros. Tecnología e innovación al servicio de tus derechos como asegurado en Chile.</p>
+      <div class="social-links">
+        <a href="https://www.facebook.com/exigetuseguro.cl" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/exigetuseguro.cl/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/company/exige-tu-seguro/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
       </div>
-      
-      <div class="footer-links">
-        <h4>Servicios</h4>
+    </div>
+
+    <div class="footer-links">
+      <div class="footer-links-header" onclick="toggleFooter(this)">
+        <h4>Servicios</h4><i class="fas fa-chevron-down footer-chevron"></i>
+      </div>
+      <div class="footer-links-body">
         <ul>
-          
-          <li><a href="#contacto">Análisis caso-Sube tus archivos</a></li>
+          <li><a href="#" onclick="smartScroll('contacto-mobile','contacto');return false;">Análisis caso – Sube tus archivos</a></li>
           <li><a href="#servicios">Impugnación de Rechazos</a></li>
           <li><a href="#servicios">Litigios de Seguros</a></li>
         </ul>
       </div>
-      
-      <div class="footer-links">
-        <h4>Empresa</h4>
+    </div>
+
+    <div class="footer-links">
+      <div class="footer-links-header" onclick="toggleFooter(this)">
+        <h4>Empresa</h4><i class="fas fa-chevron-down footer-chevron"></i>
+      </div>
+      <div class="footer-links-body">
         <ul>
           <li><a href="#nosotros">Sobre Nosotros</a></li>
-	  <li><a href="#honorarios">Honorarios</a></li>
-          <li><a href="https://www.exigetuseguro.cl/Terminos">Terminos</a></li>
+          <li><a href="#honorarios">Honorarios</a></li>
+          <li><a href="https://www.exigetuseguro.cl/Terminos">Términos</a></li>
           <li><a href="https://www.exigetuseguro.cl/privacidad">Privacidad</a></li>
         </ul>
       </div>
-      
-      <div class="footer-links">
-        <h4>Contacto</h4>
+    </div>
+
+    <div class="footer-links">
+      <div class="footer-links-header" onclick="toggleFooter(this)">
+        <h4>Contacto</h4><i class="fas fa-chevron-down footer-chevron"></i>
+      </div>
+      <div class="footer-links-body">
         <ul>
-          <li><a href="https://exigetuseguro.cl/contacto">Agendar Cita</a></li>
+          <li><a href="#" onclick="smartScroll('agenda-mobile','agenda');return false;">Agendar Cita</a></li>
           <li><a href="https://exigetuseguro.cl/contacto">Formulario</a></li>
           <li><a href="https://wa.me/56979939868">WhatsApp</a></li>
           <li><a href="mailto:contacto@exigetuseguro.cl">Email</a></li>
-          <li><a href="https://exigetuseguro.cl/contacto">Contacto</a></li>
         </ul>
       </div>
     </div>
-    
-    <div class="footer-bottom">
-      <p>&copy; 2025 Exige Tu Seguro - Abogados Especialistas en Seguros Chile. Todos los derechos reservados.</p>
-    </div>
-  </footer>
-
-  <!-- WhatsApp Sidebar -->
-  <div class="whatsapp-sidebar">
-    <a href="https://wa.me/56979939868?text=Hola,%20necesito%20asesoría%20legal%20sobre%20seguros" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
-      <i class="fab fa-whatsapp"></i>
-      <span>Contactar</span>
-    </a>
   </div>
 
-  <script>
-    // OPTIMIZACIÓN: Debouncing para scroll
-    let scrollTimeout;
-    let lastScrollTop = 0;
-    
-    function handleScroll() {
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      const header = document.querySelector('header');
-      
-      if (scrollTop > 50) {
-        header.style.boxShadow = 'var(--shadow-md)';
-      } else {
-        header.style.boxShadow = 'var(--shadow-sm)';
-      }
-      
-      lastScrollTop = scrollTop;
-    }
-    
-    // OPTIMIZACIÓN: Usar requestAnimationFrame para mejor performance
-    window.addEventListener('scroll', function() {
-      if (scrollTimeout) {
-        window.cancelAnimationFrame(scrollTimeout);
-      }
-      scrollTimeout = window.requestAnimationFrame(handleScroll);
-    }, { passive: true });
+  <div class="footer-bottom">
+    <p>&copy; 2025 Exige Tu Seguro — Abogados Especialistas en Seguros Chile. Todos los derechos reservados.</p>
+  </div>
+</footer>
 
-    function toggleMobileNav() {
-      const mobileNav = document.getElementById('mobileNav');
-      mobileNav.classList.toggle('active');
-    }
+<!-- WhatsApp Sidebar -->
+<div class="whatsapp-sidebar">
+  <a href="https://wa.me/56979939868?text=Hola,%20necesito%20asesoría%20legal%20sobre%20seguros" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+    <span>Contactar</span>
+  </a>
+</div>
 
-    // OPTIMIZACIÓN: Smooth scroll optimizado
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          const mobileNav = document.getElementById('mobileNav');
-          if (mobileNav.classList.contains('active')) {
-            mobileNav.classList.remove('active');
-          }
-        }
-      });
-    });
+<!-- ======================================================
+     SCRIPTS
+     ====================================================== -->
+<style>
+/* ── Utility: desktop / mobile only ── */
+.mobile-only { display: none; }
+@media (max-width: 968px) {
+  .desktop-only { display: none !important; }
+  .mobile-only  { display: block; }
+}
 
-    // OPTIMIZACIÓN: Intersection Observer optimizado con menos threshold
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
+/* ── Mobile: white form card ── */
+.m-form-section {
+  padding: 2.5rem 1.25rem 3rem;
+  background: var(--color-bg-soft);
+}
+.m-form-card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 6px 28px rgba(10,61,98,0.11);
+  border: 1px solid rgba(10,61,98,0.08);
+  overflow: hidden;
+}
+.m-form-header {
+  padding: 1.5rem 1.5rem 1.25rem;
+  border-bottom: 1px solid rgba(10,61,98,0.07);
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  background: linear-gradient(135deg, var(--color-bg-soft) 0%, white 100%);
+  position: relative;
+}
+.m-form-header::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-secondary) 100%);
+}
+.m-fh-icon {
+  width: 44px; height: 44px;
+  background: var(--color-primary);
+  border-radius: 11px;
+  display: flex; align-items: center; justify-content: center;
+  color: white; font-size: 1.05rem; flex-shrink: 0;
+}
+.m-form-header h2 {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  color: var(--color-primary);
+  margin: 0 0 0.15rem;
+}
+.m-form-header p { font-size: 0.82rem; color: var(--color-gray-light); margin: 0; }
 
-    const observer = new IntersectionObserver(function(entries) {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-          // Desconectar el observer después de la animación
-          observer.unobserve(entry.target);
-        }
-      });
-    }, observerOptions);
+.m-form-body { padding: 1.5rem; }
 
-    // OPTIMIZACIÓN: Solo observar elementos visibles inicialmente
-    window.addEventListener('load', function() {
-      const cards = document.querySelectorAll('.service-card, .blog-card');
-      cards.forEach((card, index) => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(30px)';
-        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        // Delay progresivo más sutil
-        card.style.transitionDelay = `${index * 0.05}s`;
-        observer.observe(card);
-      });
+.m-fg { margin-bottom: 1rem; }
+.m-fg label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #4a5568;
+  margin-bottom: 0.35rem;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+.m-fg label .req { color: var(--color-accent); margin-left: 0.15rem; }
+.m-fi {
+  width: 100%;
+  padding: 0.78rem 0.95rem;
+  border-radius: 10px;
+  border: 1.5px solid rgba(10,61,98,0.15);
+  background: var(--color-bg);
+  color: var(--color-dark);
+  font-size: 0.9rem;
+  font-family: var(--font-body);
+  outline: none;
+  transition: border-color 0.22s, background 0.22s, box-shadow 0.22s;
+  line-height: 1.5;
+  -webkit-appearance: none;
+}
+.m-fi::placeholder { color: #a0aec0; }
+.m-fi:focus {
+  border-color: var(--color-secondary);
+  background: var(--color-bg-soft);
+  box-shadow: 0 0 0 3px rgba(54,149,191,0.1);
+}
+select.m-fi {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%238a9ab0' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.875rem center;
+  background-color: var(--color-bg);
+  padding-right: 2.5rem;
+}
+textarea.m-fi { resize: vertical; min-height: 110px; }
 
-      const heroContent = document.querySelector('.hero-content');
-      if (heroContent) {
-        heroContent.style.animation = 'fadeIn 1s ease-out';
-      }
-    });
+.m-dropzone {
+  border: 2px dashed rgba(10,61,98,0.18);
+  border-radius: 11px;
+  padding: 1.35rem 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition);
+  background: var(--color-bg);
+}
+.m-dropzone:hover { border-color: var(--color-secondary); background: var(--color-bg-soft); }
+.m-dz-icon {
+  width: 44px; height: 44px;
+  background: rgba(54,149,191,0.1);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 0.65rem;
+  font-size: 1.2rem; color: var(--color-secondary);
+}
+.m-dropzone p { font-size: 0.85rem; color: #4a5568; margin-bottom: 0.2rem; font-weight: 500; }
+.m-dropzone p span { color: var(--color-secondary); font-weight: 700; text-decoration: underline; }
+.m-dropzone small { font-size: 0.73rem; color: #a0aec0; }
+#m-listaArchivos { margin-top: 0.65rem; display: flex; flex-wrap: wrap; gap: 0.35rem; }
+.m-ftag {
+  display: inline-flex; align-items: center; gap: 0.3rem;
+  background: rgba(52,168,83,0.1); border: 1px solid rgba(52,168,83,0.25);
+  color: var(--color-accent); padding: 0.2rem 0.6rem;
+  border-radius: 14px; font-size: 0.75rem; font-weight: 600;
+}
+.m-trust-bar {
+  display: flex; align-items: center; justify-content: center;
+  gap: 1rem; flex-wrap: wrap;
+  padding: 0.8rem 1rem;
+  background: rgba(52,168,83,0.07);
+  border: 1px solid rgba(52,168,83,0.16);
+  border-radius: 10px;
+  margin: 1rem 0;
+}
+.m-tb-item { display: flex; align-items: center; gap: 0.35rem; font-size: 0.76rem; font-weight: 600; color: #2a7a42; }
+.m-tb-item i { color: var(--color-accent); font-size: 0.78rem; }
+.m-btn-send {
+  width: 100%;
+  padding: 0.9rem;
+  background: linear-gradient(135deg, var(--color-accent) 0%, #2d9147 100%);
+  color: white; border: none; border-radius: 11px;
+  font-size: 0.95rem; font-weight: 700; font-family: var(--font-body);
+  cursor: pointer; transition: var(--transition);
+  display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+  box-shadow: 0 6px 20px rgba(52,168,83,0.28);
+  letter-spacing: 0.3px;
+}
+.m-btn-send:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(52,168,83,0.38); }
+.m-btn-send:disabled { opacity: 0.65; cursor: not-allowed; transform: none; }
+.m-fstatus {
+  display: none; margin-top: 0.8rem; padding: 0.7rem 1rem;
+  border-radius: 10px; font-size: 0.85rem; text-align: center; font-weight: 500;
+}
+.m-fstatus.error   { background: #fff0f0; border: 1px solid #ffcdd2; color: #c0392b; }
+.m-fstatus.loading { background: var(--color-bg-soft); border: 1px solid rgba(54,149,191,0.25); color: var(--color-secondary); }
 
-    // OPTIMIZACIÓN: Añadir animación de fadeIn solo una vez
-   const styleEl = document.createElement('style');
-styleEl.textContent = `
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-`;
-document.head.appendChild(styleEl);
+/* ── Mobile: agenda accordion ── */
+.m-agenda-section {
+  padding: 2.5rem 1.25rem 3rem;
+  background: white;
+}
+.m-agenda-accordion {
+  background: white;
+  border-radius: 16px;
+  border: 1.5px solid rgba(10,61,98,0.09);
+  box-shadow: 0 4px 20px rgba(10,61,98,0.08);
+  overflow: hidden;
+}
+.m-acc-trigger {
+  width: 100%;
+  padding: 1.25rem 1.5rem;
+  background: white;
+  border: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  transition: var(--transition);
+  font-family: var(--font-body);
+}
+.m-acc-trigger:hover { background: var(--color-bg-soft); }
+.m-acc-left { display: flex; align-items: center; gap: 0.875rem; }
+.m-acc-icon {
+  width: 40px; height: 40px;
+  background: rgba(54,149,191,0.1);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--color-secondary); font-size: 1rem; flex-shrink: 0;
+}
+.m-acc-left h3 {
+  font-family: var(--font-heading); font-size: 1rem;
+  color: var(--color-primary); margin-bottom: 0.1rem; text-align: left;
+}
+.m-acc-left p { font-size: 0.78rem; color: var(--color-gray-light); text-align: left; margin: 0; }
+.m-acc-arrow { color: var(--color-gray-light); transition: transform 0.3s ease; font-size: 0.82rem; flex-shrink: 0; }
+.m-acc-arrow.open { transform: rotate(180deg); color: var(--color-secondary); }
+.m-acc-body { display: none; border-top: 1px solid rgba(10,61,98,0.07); }
+.m-acc-body.open { display: block; }
+.m-calendly-wrap { padding: 1rem; }
+.m-calendly-wrap .calendly-inline-widget { border-radius: 10px; overflow: hidden; }
 
-// ── Pegar estas funciones dentro del <script> que ya existe en tu HTML ──
+</style>
 
-function mostrarArchivos(files) {
-  const lista      = document.getElementById('listaArchivos');
-  const container  = document.getElementById('attachmentsContainer');
-  lista.innerHTML     = '';
-  container.innerHTML = '';
-
+<script>
+/* ── Mobile form functions ── */
+function mMostrarArchivos(files) {
+  const lista = document.getElementById('m-listaArchivos');
+  lista.innerHTML = '';
   Array.from(files).forEach(f => {
-    // Un input oculto por cada archivo, todos con name="attachment"
-    const dt = new DataTransfer();
-    dt.items.add(f);
-    const input = document.createElement('input');
-    input.type  = 'file';
-    input.name  = 'attachment';
-    input.style.display = 'none';
-    input.files = dt.files;
-    container.appendChild(input);
-
-    // Etiqueta visual
-    const tag = document.createElement('div');
-    tag.style.cssText = 'display:inline-flex;align-items:center;gap:0.4rem;background:rgba(52,168,83,0.2);border:1px solid rgba(52,168,83,0.4);color:white;padding:0.3rem 0.75rem;border-radius:20px;font-size:0.8rem;margin:0.25rem 0.25rem 0 0;';
-    tag.innerHTML = `<i class="fas fa-file" style="color:var(--color-accent)"></i> ${f.name}`;
-    lista.appendChild(tag);
+    const t = document.createElement('div');
+    t.className = 'm-ftag';
+    t.innerHTML = `<i class="fas fa-file"></i>${f.name}`;
+    lista.appendChild(t);
   });
 }
-
-function handleDrop(e) {
+function mHandleDrop(e) {
   e.preventDefault();
-  document.getElementById('dropZone').style.borderColor = 'rgba(255,255,255,0.2)';
-  const input = document.getElementById('archivos');
-  input.files = e.dataTransfer.files;
-  mostrarArchivos(e.dataTransfer.files);
+  e.currentTarget.style.borderColor = 'rgba(10,61,98,0.18)';
+  document.getElementById('mArchivos').files = e.dataTransfer.files;
+  mMostrarArchivos(e.dataTransfer.files);
+}
+async function mValidarConsulta(e) {
+  e.preventDefault();
+  const nombre = document.getElementById('mNombre').value.trim();
+  const email  = document.getElementById('mEmail').value.trim();
+  const relato = document.getElementById('mRelato').value.trim();
+  const status = document.getElementById('mFormStatus');
+  const btn    = document.getElementById('mBtnEnviar');
+  const files  = document.getElementById('mArchivos').files;
+  const show = (cls, html) => {
+    status.className = `m-fstatus ${cls}`;
+    status.style.display = 'block';
+    status.innerHTML = html;
+  };
+  if (!nombre || !email || !relato) {
+    show('error', '<i class="fas fa-exclamation-circle"></i> Por favor completa los campos obligatorios (*)');
+    return false;
+  }
+  btn.disabled = true;
+  if (files.length > 0) {
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Subiendo archivos...';
+    show('loading', `<i class="fas fa-spinner fa-spin"></i> Subiendo ${files.length} archivo(s)...`);
+    try {
+      const links = await Promise.all(Array.from(files).map(subirArchivo));
+      document.getElementById('mArchivosUrl').value = links.join(' | ');
+    } catch {
+      show('error', '<i class="fas fa-times-circle"></i> Error al subir archivos. Intenta de nuevo.');
+      btn.disabled = false;
+      btn.innerHTML = '<i class="fas fa-paper-plane"></i> Enviar mi consulta gratis';
+      return false;
+    }
+  }
+  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+  show('loading', '<i class="fas fa-spinner fa-spin"></i> Enviando consulta...');
+  document.getElementById('mConsultaForm').submit();
+  return false;
 }
 
+/* ── Mobile agenda accordion ── */
+function mToggleAgenda(btn) {
+  const body  = btn.nextElementSibling;
+  const arrow = btn.querySelector('.m-acc-arrow');
+  const open  = body.classList.toggle('open');
+  arrow.classList.toggle('open', open);
+  if (open) setTimeout(() => body.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 120);
+}
+
+/* ── Smart scroll: mobile → mobile ID, desktop → desktop ID ── */
+function smartScroll(mobileId, desktopId) {
+  const isMobile = window.innerWidth <= 968;
+  const id = isMobile ? mobileId : desktopId;
+  const el = document.getElementById(id);
+  if (!el) return;
+  const block = (isMobile && mobileId === 'agenda-mobile') ? 'center' : 'start';
+  el.scrollIntoView({ behavior: 'smooth', block: block });
+}
+
+function toggleMobileNav() {
+  const nav = document.getElementById('mobileNav');
+  const icon = document.getElementById('hamburgerIcon');
+  const open = nav.classList.toggle('active');
+  icon.className = open ? 'fas fa-times' : 'fas fa-bars';
+}
+function closeMobileNav() {
+  document.getElementById('mobileNav').classList.remove('active');
+  document.getElementById('hamburgerIcon').className = 'fas fa-bars';
+}
+
+/* ── Smooth scroll ── */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      closeMobileNav();
+    }
+  });
+});
+
+/* ── Footer accordion (mobile) ── */
+function toggleFooter(header) {
+  const body = header.nextElementSibling;
+  const open = body.classList.toggle('open');
+  header.classList.toggle('open', open);
+}
+
+/* ── Scroll: header shadow ── */
+let rafId;
+window.addEventListener('scroll', () => {
+  if (rafId) cancelAnimationFrame(rafId);
+  rafId = requestAnimationFrame(() => {
+    document.querySelector('header').style.boxShadow =
+      window.scrollY > 40 ? '0 2px 20px rgba(10,61,98,0.1)' : '0 1px 0 rgba(10,61,98,0.08)';
+  });
+}, { passive: true });
+
+/* ── Scroll arrow: hide after scroll ── */
+window.addEventListener('scroll', () => {
+  const arrow = document.querySelector('.scroll-arrow');
+  if (arrow) arrow.style.opacity = window.scrollY > 80 ? '0' : '1';
+}, { passive: true });
+
+/* ── Intersection observer for cards ── */
+window.addEventListener('load', () => {
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.service-card, .recurso-card, .nosotros-card, .team-card, .honorarios-card, .agenda-card').forEach((el, i) => {
+    el.style.cssText += `opacity:0;transform:translateY(24px);transition:opacity 0.55s ease ${i * 0.06}s, transform 0.55s ease ${i * 0.06}s;`;
+    obs.observe(el);
+  });
+});
+
+/* ── Form: file upload & submit ── */
 function mostrarArchivos(files) {
   const lista = document.getElementById('listaArchivos');
   lista.innerHTML = '';
   Array.from(files).forEach(f => {
     const tag = document.createElement('div');
     tag.style.cssText = 'display:inline-flex;align-items:center;gap:0.4rem;background:rgba(52,168,83,0.2);border:1px solid rgba(52,168,83,0.4);color:white;padding:0.3rem 0.75rem;border-radius:20px;font-size:0.8rem;margin:0.25rem 0.25rem 0 0;';
-    tag.innerHTML = `<i class="fas fa-file" style="color:var(--color-accent)"></i> ${f.name}`;
+    tag.innerHTML = `<i class="fas fa-file" style="color:#34A853"></i> ${f.name}`;
     lista.appendChild(tag);
   });
 }
 
 function handleDrop(e) {
   e.preventDefault();
-  document.getElementById('dropZone').style.borderColor = 'rgba(255,255,255,0.2)';
+  document.getElementById('dropZone').style.borderColor = 'rgba(255,255,255,0.16)';
   const input = document.getElementById('archivos');
   input.files = e.dataTransfer.files;
   mostrarArchivos(e.dataTransfer.files);
 }
 
 async function subirArchivo(file) {
-  // Obtener el servidor disponible de GoFile
-  const serverRes  = await fetch('https://api.gofile.io/servers');
+  const serverRes = await fetch('https://api.gofile.io/servers');
   const serverData = await serverRes.json();
-  const server     = serverData.data.servers[0].name;
-
+  const server = serverData.data.servers[0].name;
   const formData = new FormData();
   formData.append('file', file);
-
-  const res  = await fetch(`https://${server}.gofile.io/uploadFile`, { method: 'POST', body: formData });
+  const res = await fetch(`https://${server}.gofile.io/uploadFile`, { method: 'POST', body: formData });
   const data = await res.json();
   if (data.status !== 'ok') throw new Error('Error subiendo ' + file.name);
   return `${file.name}: ${data.data.downloadPage}`;
@@ -2811,41 +2330,32 @@ async function subirArchivo(file) {
 
 async function validarConsulta(e) {
   e.preventDefault();
-
   const nombre = document.getElementById('nombre').value.trim();
-  const email  = document.getElementById('email').value.trim();
+  const email = document.getElementById('email').value.trim();
   const relato = document.getElementById('relato').value.trim();
   const status = document.getElementById('formStatus');
-  const btn    = document.getElementById('btnEnviar');
-  const files  = document.getElementById('archivos').files;
+  const btn = document.getElementById('btnEnviar');
+  const files = document.getElementById('archivos').files;
 
   if (!nombre || !email || !relato) {
-    status.style.display    = 'block';
-    status.style.background = 'rgba(220,53,69,0.2)';
-    status.style.border     = '1px solid rgba(220,53,69,0.4)';
-    status.style.color      = '#ff6b6b';
+    status.style.display = 'block';
+    status.style.cssText += 'background:rgba(220,53,69,0.2);border:1px solid rgba(220,53,69,0.4);color:#ff6b6b;';
     status.innerHTML = '<i class="fas fa-exclamation-circle"></i> Por favor completa los campos obligatorios (*)';
     return;
   }
 
   btn.disabled = true;
-  status.style.display    = 'block';
-  status.style.background = 'rgba(52,168,83,0.1)';
-  status.style.border     = '1px solid rgba(52,168,83,0.3)';
-  status.style.color      = 'white';
+  status.style.display = 'block';
+  status.style.cssText += 'background:rgba(52,168,83,0.1);border:1px solid rgba(52,168,83,0.3);color:white;';
 
-  // Subir archivos a file.io si hay alguno
   if (files.length > 0) {
     btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Subiendo archivos...';
     status.innerHTML = `<i class="fas fa-spinner fa-spin"></i> Subiendo ${files.length} archivo(s)...`;
-
     try {
       const links = await Promise.all(Array.from(files).map(subirArchivo));
       document.getElementById('archivosUrl').value = links.join(' | ');
     } catch (err) {
-      status.style.background = 'rgba(220,53,69,0.2)';
-      status.style.border     = '1px solid rgba(220,53,69,0.4)';
-      status.style.color      = '#ff6b6b';
+      status.style.cssText += 'background:rgba(220,53,69,0.2);border:1px solid rgba(220,53,69,0.4);color:#ff6b6b;';
       status.innerHTML = '<i class="fas fa-times-circle"></i> Error al subir archivos. Intenta de nuevo.';
       btn.disabled = false;
       btn.innerHTML = '<i class="fas fa-paper-plane"></i> Enviar Consulta';
@@ -2855,17 +2365,8 @@ async function validarConsulta(e) {
 
   btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando consulta...';
   status.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando consulta...';
-
-  // Enviar el formulario
   document.getElementById('consultaForm').submit();
 }
-function toggleCalendly(btn) {
-  const widget = btn.nextElementSibling;
-  const arrow  = btn.querySelector('.fa-chevron-down');
-  const abierto = widget.classList.toggle('abierto');
-  arrow.style.transform = abierto ? 'rotate(180deg)' : 'rotate(0deg)';
-}
-
-  </script>
+</script>
 </body>
 </html>
