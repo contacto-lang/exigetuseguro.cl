@@ -1436,7 +1436,339 @@ footer {
     padding-top: 3rem;
   }
 }
+
 </style>
+
+<style>
+/* ============================================================
+   MOBILE OVERRIDES — exigetuseguro.cl  (versión corregida)
+  
+   ============================================================ */
+
+@media (max-width: 968px) {
+
+  /* ── HERO ── */
+  .hero-stats { display: none !important; }
+
+  .hero-container {
+    grid-template-columns: 1fr !important;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .hero { padding: 3rem 1.25rem 3.5rem; }
+
+  .hero-content h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+  }
+
+  .hero-content .cta-buttons {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.875rem;
+    width: 100%;
+  }
+
+  .hero-content .cta-buttons .btn-primary,
+  .hero-content .cta-buttons .btn-secondary {
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+    padding: 0.875rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 12px;
+  }
+
+  .ai-badge { margin: 0 auto 1rem; }
+  .hero-features { display: none; }
+
+
+  /* ── SERVICIOS: lista elegante ── */
+  #servicios { padding: 3rem 1.25rem; }
+
+  #servicios .section-header { margin-bottom: 1.75rem; }
+  #servicios .section-header h2 { font-size: 1.6rem; }
+
+  #servicios .services-grid {
+    display: flex !important;
+    flex-direction: column;
+    gap: 0 !important;
+    border: 1.5px solid rgba(10, 61, 98, 0.1);
+    border-radius: 16px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 4px 20px rgba(10, 61, 98, 0.08);
+  }
+
+  #servicios .service-card {
+    background: white !important;
+    border-radius: 0 !important;
+    border: none !important;
+    border-bottom: 1px solid rgba(10, 61, 98, 0.07) !important;
+    box-shadow: none !important;
+    padding: 1rem 1.25rem !important;
+    display: flex !important;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  #servicios .service-card:last-child {
+    border-bottom: none !important;
+  }
+
+  #servicios .service-card:hover {
+    background: #f0f8ff !important;
+    transform: none !important;
+  }
+
+  #servicios .service-icon {
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px;
+    font-size: 1rem !important;
+    margin-bottom: 0 !important;
+    border-radius: 10px !important;
+    flex-shrink: 0;
+  }
+
+  #servicios .service-card h3 {
+    font-size: 0.95rem !important;
+    margin-bottom: 0 !important;
+    line-height: 1.3;
+    flex: 1;
+  }
+
+  #servicios .service-card p {
+    display: none !important;
+  }
+
+  /* Flecha usando span en vez de pseudo-elemento con unicode */
+  #servicios .service-card .service-arrow {
+    color: #34A853;
+    font-size: 0.75rem;
+    opacity: 0.7;
+    flex-shrink: 0;
+  }
+
+
+  /* ── CONTACTO: fondo blanco en móvil ── */
+  #contacto {
+    background: linear-gradient(180deg, #f0f8ff 0%, #ffffff 100%) !important;
+    padding: 3rem 1.25rem !important;
+  }
+
+  #contacto-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+  }
+
+  #contacto-left { display: none !important; }
+
+  /* Tarjeta del form: fondo blanco */
+  #contacto-grid > div:last-child > div {
+    background: white !important;
+    border: 1.5px solid rgba(10, 61, 98, 0.1) !important;
+    border-radius: 20px !important;
+    box-shadow: 0 8px 32px rgba(10, 61, 98, 0.1) !important;
+    padding: 1.75rem !important;
+  }
+
+  /* Título y textos del form al color oscuro */
+  #contacto h2 {
+    color: #0A3D62 !important;
+    font-size: 1.6rem !important;
+    margin-bottom: 0.75rem;
+    text-align: center;
+  }
+
+  #contacto h3 { color: #0A3D62 !important; }
+
+  #contacto label { color: #4a5568 !important; }
+
+  #contacto input,
+  #contacto textarea,
+  #contacto select {
+    background: #f7fbff !important;
+    border-color: rgba(10, 61, 98, 0.18) !important;
+    color: #1a2535 !important;
+  }
+
+  #contacto input::placeholder,
+  #contacto textarea::placeholder { color: #a0aec0 !important; }
+
+  #contacto #dropZone {
+    background: #f7fbff !important;
+    border-color: rgba(10, 61, 98, 0.18) !important;
+  }
+
+  #contacto #dropZone p { color: #4a5568 !important; }
+
+  /* Trust row verde claro */
+  #contacto #btnEnviar + div,
+  #contacto form > div:nth-last-child(2) {
+    background: #e8f7ee !important;
+    border-color: rgba(52, 168, 83, 0.25) !important;
+    color: #2a7a42 !important;
+  }
+
+  /* Encabezado del form (ícono + título) */
+  #contacto-grid > div:last-child > div > div:first-child {
+    background: #f0f8ff;
+    border-radius: 12px;
+    padding: 0.875rem 1rem;
+    margin-bottom: 1.25rem;
+    border: 1px solid rgba(10, 61, 98, 0.08);
+  }
+
+  /* Párrafo descripción */
+  #contacto p { color: #4a5568 !important; }
+
+
+  /* ── AGENDA ── */
+  #agenda { padding: 3rem 1.25rem; }
+  #agenda .section-header h2 { font-size: 1.5rem; }
+
+
+  /* ── HONORARIOS ── */
+  #honorarios { padding: 3rem 1.25rem; }
+
+
+  /* ── BLOG / RECURSOS ── */
+  .blog { padding: 3rem 1.25rem; }
+  .recursos-grid { grid-template-columns: 1fr !important; }
+  .recurso-content { min-height: 280px !important; padding: 2rem !important; }
+
+
+  /* ── NOSOTROS ── */
+  #nosotros { padding: 3rem 1.25rem; }
+
+  #nosotros img { display: block; margin: 0 auto; }
+
+  #nosotros > .section-container > div > div:last-child {
+    flex-direction: column !important;
+    text-align: center;
+  }
+
+
+  /* ── FOOTER ── */
+  .footer-content {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+    text-align: center;
+  }
+
+  .social-links { justify-content: center; }
+
+  .footer-links ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.25rem 1rem;
+  }
+
+  .footer-links ul li { margin-bottom: 0; }
+
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 { font-size: 1.7rem; }
+
+  .hero-content .cta-buttons .btn-primary,
+  .hero-content .cta-buttons .btn-secondary { max-width: 100%; }
+
+  #servicios .service-card h3 { font-size: 0.88rem !important; }
+  #contacto h2 { font-size: 1.4rem !important; }
+}
+/* ── AGENDA: acordeón en móvil ── */
+@media (max-width: 968px) {
+
+  #agenda {
+    padding: 2rem 1.25rem;
+  }
+
+  #agenda .section-header {
+    display: none;
+  }
+
+  #agenda > .section-container > div {
+    max-width: 100% !important;
+  }
+
+  /* Ocultar el bloque explicativo (íconos + texto) */
+  #agenda > .section-container > div > div:first-child {
+    display: none !important;
+  }
+
+  /* Reemplazar con botón acordeón */
+  #agenda > .section-container > div > div:first-child + * {
+    margin-top: 0;
+  }
+
+  /* Calendly: oculto por defecto en móvil */
+  #agenda .calendly-inline-widget {
+    display: none;
+    margin-top: 1rem;
+  }
+
+  #agenda .calendly-inline-widget.abierto {
+    display: block;
+  }
+
+
+  /* ── HONORARIOS: versión compacta en móvil ── */
+
+  #honorarios {
+    padding: 2rem 1.25rem;
+  }
+
+  /* Ocultar texto largo */
+  #honorarios p:not(:first-of-type),
+  #honorarios > .section-container > div > div[style*="background: white"] {
+    display: none !important;
+  }
+
+  #honorarios > .section-container > div {
+    padding: 1.5rem !important;
+  }
+
+  /* Ocultar ícono grande */
+  #honorarios .fas.fa-file-invoice-dollar {
+    display: none;
+  }
+
+  /* Compactar el header del bloque */
+  #honorarios > .section-container > div > div:first-child {
+    margin-bottom: 1rem !important;
+  }
+
+}
+/* Ocultar el botón acordeón en desktop */
+.btn-acordeon-agenda { display: none; }
+@media (max-width: 968px) {
+  .btn-acordeon-agenda { display: flex; }
+}
+@media (max-width: 968px) {
+  #contacto .fas.fa-lock,
+  #contacto .fas.fa-check-circle {
+    color: #34A853 !important;
+  }
+
+  #contacto form > div[style*="rgba(52,168,83,0.07)"] div {
+    color: #0A3D62 !important;
+  }
+}
+
+</style>
+
 </head>
 <body>
   <!-- Header -->
@@ -1734,8 +2066,7 @@ footer {
             </div>
             <div>
               <h3 style="font-family:var(--font-heading);color:white;font-size:1.2rem;margin:0 0 0.1rem;">Envíanos tu consulta</h3>
-              <p style="color:rgba(255,255,255,0.45);font-size:0.82rem;margin:0;">Respuesta garantizada en menos de 24 horas</p>
-            </div>
+                          </div>
           </div>
 
           <form id="consultaForm"
@@ -1876,17 +2207,12 @@ footer {
     <div class="section-container">
       <div class="section-header">
         <h2>Agenda tu Cita con Abogado Especialista en Seguros</h2>
-        <p>Primera consulta gratuita - Sin compromisos - Atención personalizada</p>
-      </div>
+             </div>
       
       <div style="max-width: 800px; margin: 0 auto;">
         <div style="background: linear-gradient(135deg, #0A3D62 0%, #3695BF 100%); color: white; padding: 3rem; border-radius: var(--border-radius); margin-bottom: 3rem; text-align: center;">
-          <h3 style="font-family: var(--font-heading); font-size: 2rem; margin-bottom: 1rem;">Hablemos sobre tu caso de seguros</h3>
-          <p style="font-size: 1.1rem; opacity: 0.95; margin-bottom: 2rem;">
-            Los problemas con aseguradoras pueden ser estresantes. Agenda una cita por videoconferencia 
-            y recibe la orientación legal experta que necesitas para defender tus derechos.
-          </p>
           
+                    
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
             <div>
               <i class="fas fa-comments" style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--color-accent);"></i>
@@ -1902,12 +2228,18 @@ footer {
             </div>
           </div>
           
-          <div style="background: rgba(255,255,255,0.2); padding: 1.5rem; border-radius: 12px; display: inline-block;">
-            <p style="font-size: 1.3rem; font-weight: 700; margin: 0;">Primera Consulta Legal: GRATUITA</p>
-          </div>
-        </div>
+                  </div>
         
         <!-- Calendly Widget -->
+<!-- Botón acordeón agenda — solo visible en móvil -->
+<button onclick="toggleCalendly(this)"
+ class="btn-acordeon-agenda"
+  style="width:100%;padding:1rem 1.25rem;background:linear-gradient(135deg,#0A3D62,#3695BF);color:white;border:none;border-radius:14px;font-size:1rem;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:space-between;box-shadow:0 6px 20px rgba(10,61,98,0.25);margin-bottom:0.5rem;">
+  <span style="display:flex;align-items:center;gap:0.75rem;">
+    <i class="fas fa-calendar-check"></i> Agendar Cita Gratuita
+  </span>
+  <i class="fas fa-chevron-down" style="transition:transform 0.3s;"></i>
+</button>
         <div class="calendly-inline-widget" data-url="https://calendly.com/rescamus/60min?hide_event_type_details=1&hide_gdpr_banner=1" style="min-width:320px;height:700px; border-radius: var(--border-radius); overflow: hidden; box-shadow: var(--shadow-lg);"></div>
         <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
       </div>
@@ -2372,19 +2704,14 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // OPTIMIZACIÓN: Añadir animación de fadeIn solo una vez
-    const styleSheet = document.styleSheets[0];
-    styleSheet.insertRule(`
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-    `, styleSheet.cssRules.length);
+   const styleEl = document.createElement('style');
+styleEl.textContent = `
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+`;
+document.head.appendChild(styleEl);
 
 // ── Pegar estas funciones dentro del <script> que ya existe en tu HTML ──
 
@@ -2504,6 +2831,12 @@ async function validarConsulta(e) {
 
   // Enviar el formulario
   document.getElementById('consultaForm').submit();
+}
+function toggleCalendly(btn) {
+  const widget = btn.nextElementSibling;
+  const arrow  = btn.querySelector('.fa-chevron-down');
+  const abierto = widget.classList.toggle('abierto');
+  arrow.style.transform = abierto ? 'rotate(180deg)' : 'rotate(0deg)';
 }
 
   </script>
