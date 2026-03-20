@@ -485,7 +485,7 @@ header {
   position: absolute; top: 0; left: 0; width: 100%; height: 100%;
   background-image: url('https://images.pexels.com/photos/5668772/pexels-photo-5668772.jpeg');
   background-size: cover; background-position: center;
-  opacity: 0.06; z-index: 0; pointer-events: none;
+  opacity: 0.25; z-index: 0; pointer-events: none;
 }
 
 .section-container { max-width: 1400px; margin: 0 auto; position: relative; z-index: 1; }
@@ -1668,7 +1668,7 @@ footer {
 <!-- ======================================================
      AGENDA
      ====================================================== -->
-<section id="agenda" class="desktop-only" style="background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(248,250,252,0.95) 100%), url('https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=1920'); background-size:cover; background-position:center;">
+<section id="agenda" class="desktop-only" style="background: linear-gradient(135deg, rgba(255,255,255,0.70) 0%, rgba(248,250,252,0.70) 100%), url('https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=1920'); background-size:cover; background-position:center;">
   <div class="section-container">
     <div class="section-header">
       <h2>Agenda tu Cita con un Abogado Especialista</h2>
@@ -1738,7 +1738,7 @@ footer {
         <div class="h-icon"><i class="fas fa-file-invoice-dollar"></i></div>
         <div>
           <h3>¿Qué Ofrecemos?</h3>
-          <p>Servicio legal completo con recursos educativos incluidos</p>
+          
         </div>
       </div>
       <div class="honorarios-card-body">
@@ -1755,11 +1755,7 @@ footer {
             <span class="point-icon"><i class="fas fa-check"></i></span>
             Cada paso del proceso legal debidamente documentado
           </li>
-          <li>
-            <span class="point-icon"><i class="fas fa-check"></i></span>
-            Atendemos casos en todo Chile por videoconferencia
-          </li>
-        </ul>
+                 </ul>
         <div class="alert-box">
           <strong style="color:var(--color-primary);">Nota importante:</strong> Es fundamental que evalúe la conveniencia de nuestros servicios
           legales consciente del riesgo inherente de no obtener los resultados deseados.
@@ -1784,7 +1780,7 @@ footer {
 
     <div class="recursos-grid">
       <a href="https://exigetuseguro.cl/blog" class="recurso-link">
-        <div class="recurso-card" style="background:linear-gradient(135deg,rgba(10,61,98,0.96) 0%,rgba(54,149,191,0.96) 100%),url('https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg');background-size:cover;background-position:center;">
+        <div class="recurso-card" style="background:linear-gradient(135deg,rgba(10,61,98,0.80) 0%,rgba(54,149,191,0.80) 100%),url('https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg');background-size:cover;background-position:center;">
           <div class="recurso-content">
             <div class="recurso-icon" style="background:var(--gradient-accent);">
               <i class="fas fa-book-open"></i>
@@ -2294,10 +2290,22 @@ window.addEventListener('load', () => {
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-  document.querySelectorAll('.service-card, .recurso-card, .nosotros-card, .team-card, .honorarios-card, .agenda-card').forEach((el, i) => {
-    el.style.cssText += `opacity:0;transform:translateY(24px);transition:opacity 0.55s ease ${i * 0.06}s, transform 0.55s ease ${i * 0.06}s;`;
+  const animGroups = [
+  '.services-grid .service-card',
+  '#honorarios .honorarios-card',
+  '.recursos-grid .recurso-card',
+  '.sabia-box .sabia-item',
+  '#nosotros .nosotros-card, #nosotros .team-card',
+  '#agenda .agenda-card',
+];
+
+animGroups.forEach(selector => {
+  document.querySelectorAll(selector).forEach((el, i) => {
+    const delay = Math.min(i * 0.08, 0.2); // reinicia en cada grupo, máximo 0.2s
+    el.style.cssText += `opacity:0;transform:translateY(20px);transition:opacity 0.45s ease ${delay}s, transform 0.45s ease ${delay}s;`;
     obs.observe(el);
   });
+});
 });
 
 /* ── Form: file upload & submit ── */
