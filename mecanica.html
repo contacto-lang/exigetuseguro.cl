@@ -209,6 +209,18 @@ body{font-family:'DM Sans',sans-serif;min-height:100vh;display:flex;align-items:
 .info-row:last-child{border-bottom:none;}
 .info-dot{width:7px;height:7px;background:var(--amber);border-radius:50%;flex-shrink:0;margin-top:4px;animation:blink 2s ease-in-out infinite;}
 .info-row p{font-size:.84rem;color:rgba(255,255,255,.6);line-height:1.4;}
+.lp-facts{padding:24px 28px;flex:1;display:flex;flex-direction:column;}
+.lp-facts-label{font-size:.7rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:16px;flex-shrink:0;}
+.fact-slider{flex:1;position:relative;overflow:hidden;}
+.fact-item{position:absolute;inset:0;display:flex;flex-direction:column;gap:14px;opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease;pointer-events:none;}
+.fact-item.active{opacity:1;transform:translateY(0);pointer-events:auto;}
+.fact-item.out{opacity:0;transform:translateY(-18px);}
+.fact-icon{width:42px;height:42px;background:rgba(245,158,11,.15);border:1px solid rgba(245,158,11,.25);border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fcd34d;font-size:1.1rem;flex-shrink:0;}
+.fact-item p{font-size:.88rem;color:rgba(255,255,255,.65);line-height:1.65;}
+.fact-item p strong{color:rgba(255,255,255,.95);font-weight:700;}
+.fact-dots{display:flex;gap:6px;justify-content:center;margin-top:16px;flex-shrink:0;}
+.fact-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.2);cursor:pointer;transition:all .3s;}
+.fact-dot.active{background:var(--amber);transform:scale(1.3);}
 .lp-footer{padding:16px 28px;border-top:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;}
 .lp-footer-badge{display:flex;align-items:center;gap:6px;background:rgba(245,158,11,.15);border:1px solid rgba(245,158,11,.25);color:#fcd34d;font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:700;padding:5px 12px;border-radius:50px;letter-spacing:.5px;text-transform:uppercase;}
 .lp-footer-badge .dot{width:6px;height:6px;background:var(--amber);border-radius:50%;animation:blink 1.4s ease-in-out infinite;}
@@ -288,24 +300,42 @@ body{font-family:'DM Sans',sans-serif;min-height:100vh;display:flex;align-items:
           <div class="btn-text">WhatsApp<small>Habla directamente con un abogado</small></div>
           <i class="fas fa-chevron-right btn-arrow"></i>
         </a>
-        <a href="https://exigetuseguro.cl/contacto#agenda" target="_blank" class="lp-btn lp-btn-cal">
-          <div class="btn-icon"><i class="fas fa-calendar-check"></i></div>
-          <div class="btn-text">Agendar cita gratis<small>Videollamada sin compromiso</small></div>
-          <i class="fas fa-chevron-right btn-arrow"></i>
-        </a>
-        <a href="https://exigetuseguro.cl/asistente" target="_blank" class="lp-btn lp-btn-seg">
-          <div class="btn-icon"><i class="fas fa-balance-scale"></i></div>
-          <div class="btn-text">Asistente Legal de Seguros<small>Consultas sobre rechazos y derechos</small></div>
-          <i class="fas fa-chevron-right btn-arrow"></i>
-        </a>
       </div>
-      <div class="lp-info">
-        <div class="lp-info-label">¿Por qué importa entender la mecánica?</div>
-        <div class="info-row"><div class="info-dot"></div><p>Muchos rechazos de seguros vehiculares se basan en que el daño es "uso y desgaste" — conocer los sistemas te permite evaluar si eso es correcto</p></div>
-        <div class="info-row"><div class="info-dot"></div><p>El liquidador debe fundar técnicamente cada rechazo. Si el informe no lo hace, es impugnable</p></div>
-        <div class="info-row"><div class="info-dot"></div><p>Entender la causa del daño es el primer paso para defenderte con argumentos sólidos</p></div>
+
+      <!-- ROTATING FACTS -->
+      <div class="lp-facts">
+        <div class="lp-facts-label">¿Por qué importa entender la mecánica?</div>
+        <div class="fact-slider">
+          <div class="fact-item active">
+            <div class="fact-icon"><i class="fas fa-tools"></i></div>
+            <p>Muchos rechazos de seguros vehiculares se basan en que el daño es <strong>"uso y desgaste"</strong> — conocer los sistemas te permite evaluar si ese argumento es técnicamente correcto.</p>
+          </div>
+          <div class="fact-item">
+            <div class="fact-icon"><i class="fas fa-gavel"></i></div>
+            <p>El liquidador está obligado por el <strong>DS 1.055</strong> a fundar técnicamente cada daño rechazado. Si el informe no lo hace, es impugnable ante la aseguradora.</p>
+          </div>
+          <div class="fact-item">
+            <div class="fact-icon"><i class="fas fa-search"></i></div>
+            <p>Un daño en múltiples sistemas simultáneamente es <strong>incompatible con el desgaste ordinario</strong> — apunta a un evento externo que el seguro debe cubrir.</p>
+          </div>
+          <div class="fact-item">
+            <div class="fact-icon"><i class="fas fa-clock"></i></div>
+            <p>Tienes <strong>10 días hábiles</strong> desde que recibes el informe del liquidador para impugnarlo. Entender el daño técnico es clave para tu argumentación.</p>
+          </div>
+          <div class="fact-item">
+            <div class="fact-icon"><i class="fas fa-balance-scale"></i></div>
+            <p>La carga de la prueba es de la <strong>aseguradora</strong>, no tuya. Ella debe demostrar que el daño no es consecuencia del siniestro declarado.</p>
+          </div>
+          <div class="fact-item">
+            <div class="fact-icon"><i class="fas fa-car-crash"></i></div>
+            <p>El presupuesto del <strong>taller oficial</strong> tiene peso técnico como evidencia. El liquidador no puede ignorarlo sin sustento pericial que lo contradiga.</p>
+          </div>
+        </div>
+        <div class="fact-dots" id="factDots"></div>
       </div>
-     
+      <div class="lp-footer">
+        <div class="lp-footer-badge"><span class="dot"></span><span>Consulta técnica gratuita</span></div>
+      </div>
     </div>
   </div>
 
@@ -337,7 +367,7 @@ body{font-family:'DM Sans',sans-serif;min-height:100vh;display:flex;align-items:
       </div>
       <div class="topbar-info">
         <h3>Asistente de Mecánica Automotriz</h3>
-        <p>Basado en Manual Masconducción · ExigeTuSeguro.cl</p>
+        <p>exigetuseguro.cl</p>
       </div>
       <div class="topbar-badge"><span class="dot"></span><span>En línea</span></div>
     </div>
@@ -578,6 +608,31 @@ function sendQR(btn) { respond(btn.textContent); }
 input.addEventListener('keydown', e => {
   if (e.key==='Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); }
 });
+
+// ── Rotating facts ──
+(function(){
+  const items = document.querySelectorAll('.fact-item');
+  const dotsEl = document.getElementById('factDots');
+  let current = 0;
+  // build dots
+  items.forEach((_,i) => {
+    const d = document.createElement('div');
+    d.className = 'fact-dot' + (i===0?' active':'');
+    d.onclick = () => goFact(i);
+    dotsEl.appendChild(d);
+  });
+  function goFact(next) {
+    const dots = dotsEl.querySelectorAll('.fact-dot');
+    items[current].classList.remove('active');
+    items[current].classList.add('out');
+    setTimeout(()=>items[current].classList.remove('out'), 500);
+    dots[current].classList.remove('active');
+    current = next;
+    items[current].classList.add('active');
+    dots[current].classList.add('active');
+  }
+  setInterval(()=> goFact((current+1) % items.length), 4500);
+})();
 
 setTimeout(() => {
   addBubble(`¡Hola! 🔧 Soy el asistente de <strong>mecánica automotriz</strong> de ExigeTuSeguro.cl.<br><br>Estoy aquí para orientarte sobre los sistemas de tu vehículo — cómo funcionan, qué puede fallar y cuáles son las causas técnicas de los daños.<br><br>Esta información es útil cuando una aseguradora rechaza un siniestro vehicular alegando "uso y desgaste". Entender la mecánica te ayuda a evaluar si ese argumento es técnicamente correcto.<br><br>¿Sobre qué sistema tienes dudas?`, 'bot');
