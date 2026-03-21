@@ -1,545 +1,1039 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-CL">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Asistente Legal · ExigeTuSeguro.cl</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SOAP 2026: Se Duplican Montos de Cobertura en Chile | Exige Tu Seguro</title>
+<meta name="description" content="Conoce los cambios del SOAP 2026 en Chile: coberturas duplicadas según Ley Jacinta N° 21.797, nuevos montos por muerte, invalidez y gastos médicos. Información actualizada por la CMF."/>
+<meta name="robots" content="index, follow"/>
+<meta name="author" content="contacto@exigetuseguro.cl"/>
+<link href="https://www.exigetuseguro.cl/noticias-soap" rel="canonical"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://www.exigetuseguro.cl/noticias-soap"/>
+<meta property="og:title" content="SOAP 2026: Se Duplican Montos de Cobertura en Chile - Ley Jacinta"/>
+<meta property="og:description" content="Nuevos montos del SOAP 2026: muerte 600 UF, invalidez total 600 UF, invalidez parcial 400 UF, gastos médicos 600 UF"/>
+<meta property="og:image" content="https://www.exigetuseguro.cl/images/soap-2026-og.jpg"/>
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image"/>
+<meta property="twitter:url" content="https://www.exigetuseguro.cl/noticias-soap"/>
+<meta property="twitter:title" content="SOAP 2026: Se Duplican Montos de Cobertura en Chile - Ley Jacinta"/>
+<meta property="twitter:description" content="Nuevos montos del SOAP 2026: muerte 600 UF, invalidez total 600 UF, invalidez parcial 400 UF, gastos médicos 600 UF"/>
+<meta property="twitter:image" content="https://www.exigetuseguro.cl/images/soap-2026-twitter.jpg"/>
+
+<!-- Schema.org Article -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "SOAP 2026: Se Duplican Montos de Cobertura por Accidentes de Tránsito en Chile",
+  "description": "La Ley Jacinta N° 21.797 establece importantes cambios en el SOAP 2026: coberturas duplicadas desde el 9 de febrero de 2026.",
+  "image": "https://www.exigetuseguro.cl/images/soap-2026-featured.jpg",
+  "author": {
+    "@type": "Organization",
+    "name": "Exige Tu Seguro",
+    "email": "contacto@exigetuseguro.cl",
+    "url": "https://www.exigetuseguro.cl"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Exige Tu Seguro",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.exigetuseguro.cl/images/logo.png"
+    }
+  },
+  "datePublished": "2026-02-11",
+  "dateModified": "2026-02-11",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.exigetuseguro.cl/noticias-soap"
+  }
+}
+</script>
+
+<!-- FAQ Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "¿Qué es el SOAP?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "El SOAP (Seguro Obligatorio de Accidentes Personales) es un seguro obligatorio que cubre a todas las personas que sufran lesiones o fallezcan en accidentes de tránsito causados por vehículos motorizados, independiente de quién tenga la culpa del accidente."
+    }
+  },{
+    "@type": "Question",
+    "name": "¿Cuáles son los nuevos montos del SOAP 2026?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "El SOAP 2026 duplica las coberturas para seguros contratados desde el 9 de febrero de 2026: muerte 600 UF (antes 300 UF), invalidez permanente total 600 UF (antes 300 UF), invalidez permanente parcial hasta 400 UF (antes 200 UF), y gastos médicos hasta 600 UF (antes 300 UF)."
+    }
+  },{
+    "@type": "Question",
+    "name": "¿Desde cuándo rigen los nuevos montos del SOAP?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "La Ley Jacinta fue publicada el 7 de febrero de 2026. Las nuevas coberturas se aplican a todos los seguros contratados a partir del 9 de febrero de 2026. Los seguros contratados antes mantienen las coberturas anteriores."
+    }
+  },{
+    "@type": "Question",
+    "name": "¿Quiénes están cubiertos por el SOAP?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "El SOAP cubre a todas las personas lesionadas o fallecidas en accidentes causados por vehículos motorizados: conductor, pasajeros, peatones y ciclistas, sin importar quién tuvo la culpa."
+    }
+  }]
+}
+</script>
 
 <style>
 :root {
-  --navy:  #0A3D62;
-  --sky:   #3695BF;
-  --green: #34A853;
-  --g2:    #2d9147;
-  --bg:    #eef2f7;
-  --white: #ffffff;
-  --gray:  #64748b;
+  --color-primary: #0A3D62;
+  --color-secondary: #3695BF;
+  --color-accent: #34A853;
+  --color-warning: #F59E0B;
+  --color-danger: #EF4444;
+  --color-dark: #0f1419;
+  --color-gray: #6b7280;
+  --color-gray-light: #e5e7eb;
+  --color-white: #ffffff;
+  --color-bg: #f9fafb;
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --border-radius: 12px;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+  --shadow-lg: 0 8px 24px rgba(0,0,0,0.12);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-* { margin:0; padding:0; box-sizing:border-box; }
-html, body { height:100%; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
-  font-family: 'DM Sans', sans-serif;
-  background: var(--bg);
-  min-height: 100vh;
+  font-family: var(--font-body);
+  background: var(--color-bg);
+  color: var(--color-dark);
+  line-height: 1.7;
+}
+
+header {
+  background: var(--color-white);
+  padding: 1.5rem 2rem;
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid var(--color-gray-light);
+}
+
+.header-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.logo {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.logo span {
+  color: var(--color-accent);
+}
+
+.btn-home {
+  background: var(--color-accent);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.btn-home:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(52, 168, 83, 0.2);
+}
+
+.hero {
+  background: linear-gradient(rgba(10, 61, 98, 0.92), rgba(54, 149, 191, 0.88)), 
+              url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=1600&q=80') center/cover;
+  color: white;
+  padding: 5rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 4px solid var(--color-accent);
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.1)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,138.7C960,139,1056,117,1152,106.7C1248,96,1344,96,1392,96L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+  background-size: cover;
+  opacity: 0.8;
+}
+
+.hero-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.news-badge {
+  display: inline-block;
+  background: var(--color-accent);
+  color: white;
+  padding: 0.5rem 1.25rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 12px rgba(52, 168, 83, 0.3);
+}
+
+.hero h1 {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.hero-meta {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px 20px;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+  font-size: 0.95rem;
+  opacity: 0.95;
 }
 
-/* ── animated icon ── */
-.i-rot  { transform-origin:22px 22px; animation: iRot 8s linear infinite; }
-.i-puls { transform-origin:22px 22px; animation: iPuls 3s ease-in-out infinite; }
-.i-orb  { animation: iOrb 2s ease-in-out infinite; }
-
-@keyframes iRot  { to { transform:rotate(360deg); } }
-@keyframes iPuls { 0%,100%{transform:scale(1);opacity:1;} 50%{transform:scale(1.08);opacity:.8;} }
-@keyframes iOrb  { 0%,100%{opacity:1;} 50%{opacity:.25;} }
-
-/* ── card ── */
-.chat-card {
-  width: 100%;
-  max-width: 700px;
-  height: min(800px, calc(100vh - 48px));
-  background: var(--white);
-  border-radius: 24px;
-  box-shadow: 0 20px 64px rgba(10,61,98,.15);
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-}
-
-/* ── topbar ── */
-.topbar {
-  padding: 18px 24px;
-  background: linear-gradient(135deg, var(--navy) 0%, var(--sky) 100%);
+.hero-meta-item {
   display: flex;
   align-items: center;
-  gap: 14px;
-  flex-shrink: 0;
+  gap: 0.5rem;
 }
 
-/* animated SVG icon replacing the avatar */
-.topbar-icon { flex-shrink: 0; }
-
-.topbar-info { flex: 1; }
-.topbar-info h3 {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 1rem; font-weight: 600;
-  color: white; margin-bottom: 2px;
+.hero-meta-item i {
+  color: var(--color-accent);
 }
-.topbar-info p { font-size: .75rem; color: rgba(255,255,255,.6); }
 
-.topbar-badge {
-  display: flex; align-items: center; gap: 6px;
-  background: rgba(52,168,83,.2);
-  border: 1px solid rgba(52,168,83,.35);
-  color: #a8ffca;
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: .67rem; font-weight: 700;
-  padding: 5px 11px; border-radius: 50px;
-  letter-spacing: .5px; text-transform: uppercase;
-  white-space: nowrap; flex-shrink: 0;
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
 }
-.topbar-badge .dot {
-  width: 6px; height: 6px; background: var(--green);
-  border-radius: 50%;
-  animation: blink 1.4s ease-in-out infinite;
-}
-@keyframes blink { 0%,100%{opacity:1;} 50%{opacity:.15;} }
 
-/* ── messages ── */
-.chat-messages {
-  flex: 1;
-  overflow-y: auto;
-  padding: 28px 26px 20px;
+.article-content {
+  background: var(--color-white);
+  border-radius: var(--border-radius);
+  padding: 3rem;
+  box-shadow: var(--shadow-md);
+  margin-bottom: 3rem;
+}
+
+.article-intro {
+  font-size: 1.2rem;
+  color: var(--color-gray);
+  font-weight: 500;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, rgba(52, 168, 83, 0.08), rgba(52, 168, 83, 0.04));
+  border-left: 4px solid var(--color-accent);
+  border-radius: 8px;
+}
+
+.article-content h2 {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  color: var(--color-primary);
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 3px solid var(--color-accent);
+}
+
+.article-content h3 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--color-secondary);
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.article-content h4 {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  color: var(--color-primary);
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.article-content p {
+  color: var(--color-gray);
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+.article-content ul, .article-content ol {
+  margin-left: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.article-content li {
+  color: var(--color-gray);
+  margin-bottom: 0.75rem;
+  line-height: 1.7;
+}
+
+.article-content strong {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.highlight-box {
+  background: linear-gradient(135deg, rgba(52, 168, 83, 0.08), rgba(52, 168, 83, 0.04));
+  border-left: 4px solid var(--color-accent);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 2rem 0;
+}
+
+.highlight-box h4 {
+  font-family: var(--font-heading);
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+  margin-top: 0;
   display: flex;
-  flex-direction: column;
-  gap: 18px;
-  scroll-behavior: smooth;
-  background: #f7f9fc;
-}
-.chat-messages::-webkit-scrollbar { width: 4px; }
-.chat-messages::-webkit-scrollbar-thumb { background: rgba(10,61,98,.12); border-radius: 4px; }
-
-/* ── bubbles ── */
-.bwrap { display:flex; align-items:flex-end; gap:10px; }
-.bwrap.user { flex-direction:row-reverse; }
-
-.bav {
-  width:30px; height:30px; border-radius:50%;
-  display:flex; align-items:center; justify-content:center;
-  font-size:.72rem; flex-shrink:0; margin-bottom:2px;
-}
-.bav.bot  { background:linear-gradient(135deg,var(--navy),var(--sky)); color:white; }
-.bav.user { background:var(--green); color:white; }
-
-.bubble {
-  max-width: 73%;
-  padding: 13px 17px;
-  border-radius: 20px;
-  font-size: .93rem;
-  line-height: 1.65;
-  animation: pop .22s cubic-bezier(.34,1.56,.64,1);
-}
-@keyframes pop {
-  from { opacity:0; transform:scale(.88) translateY(10px); }
-  to   { opacity:1; transform:scale(1) translateY(0); }
+  align-items: center;
+  gap: 0.5rem;
 }
 
-.bubble.bot {
-  background: var(--white);
-  color: #1e293b;
-  border-bottom-left-radius: 5px;
-  box-shadow: 0 2px 10px rgba(10,61,98,.08);
+.highlight-box h4 i {
+  color: var(--color-accent);
 }
-.bubble.user {
-  background: linear-gradient(135deg,var(--navy),var(--sky));
+
+.info-box {
+  background: linear-gradient(135deg, rgba(10, 61, 98, 0.08), rgba(54, 149, 191, 0.04));
+  border-left: 4px solid var(--color-secondary);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 2rem 0;
+}
+
+.info-box h4 {
+  font-family: var(--font-heading);
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.info-box h4 i {
+  color: var(--color-secondary);
+}
+
+.warning-box {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.08), rgba(245, 158, 11, 0.04));
+  border-left: 4px solid var(--color-warning);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 2rem 0;
+}
+
+.warning-box h4 {
+  font-family: var(--font-heading);
+  color: #92400e;
+  margin-bottom: 1rem;
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.warning-box h4 i {
+  color: var(--color-warning);
+}
+
+.comparison-table {
+  overflow-x: auto;
+  margin: 2rem 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--color-white);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+thead {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
   color: white;
-  border-bottom-right-radius: 5px;
-}
-.bubble a { color:var(--green); text-decoration:underline; font-weight:600; }
-.bubble.user a { color:#a8ffca; }
-.bubble strong { font-weight:700; }
-.bubble .tag {
-  display:inline-block;
-  background:rgba(52,168,83,.12); color:var(--g2);
-  font-size:.73rem; font-weight:700;
-  padding:2px 9px; border-radius:8px; margin:3px 3px 0 0;
 }
 
-/* typing */
-.typing { display:flex; align-items:center; gap:5px; padding:12px 16px; }
-.typing span {
-  width:7px; height:7px; background:#cbd5e1;
-  border-radius:50%; animation:bounce .9s infinite;
+th {
+  padding: 1.25rem;
+  text-align: left;
+  font-family: var(--font-heading);
+  font-weight: 600;
 }
-.typing span:nth-child(2) { animation-delay:.18s; }
-.typing span:nth-child(3) { animation-delay:.36s; }
-@keyframes bounce { 0%,80%,100%{transform:translateY(0);} 40%{transform:translateY(-7px);} }
 
-/* ── quick replies ── */
-.quickreplies {
-  display:flex; flex-wrap:wrap; gap:8px;
-  padding:14px 26px 16px;
-  flex-shrink:0;
-  background:#f7f9fc;
-  border-top:1px solid rgba(10,61,98,.05);
+td {
+  padding: 1.25rem;
+  border-bottom: 1px solid var(--color-gray-light);
+  color: var(--color-gray);
 }
-.quickreplies:empty { padding:0; border-top:none; }
 
-.qr-btn {
-  padding:8px 16px;
-  background:var(--white);
-  border:1.5px solid rgba(10,61,98,.13);
-  border-radius:50px;
-  font-family:'DM Sans',sans-serif;
-  font-size:.83rem; font-weight:500; color:var(--navy);
-  cursor:pointer; transition:all .18s; white-space:nowrap;
-  box-shadow:0 1px 4px rgba(10,61,98,.06);
+tbody tr:hover {
+  background: var(--color-bg);
 }
-.qr-btn:hover {
-  background:var(--navy); color:white;
-  border-color:var(--navy); transform:translateY(-2px);
-  box-shadow:0 5px 14px rgba(10,61,98,.18);
-}
-.qr-btn:active { transform:translateY(0); }
 
-/* ── input bar ── */
-.inputbar {
-  padding:14px 20px;
-  border-top:1px solid rgba(10,61,98,.07);
-  display:flex; gap:10px; align-items:center;
-  flex-shrink:0; background:white;
+tbody tr:last-child td {
+  border-bottom: none;
 }
-.chat-input {
-  flex:1; padding:12px 20px;
-  border:1.5px solid rgba(10,61,98,.12);
-  border-radius:50px;
-  font-family:'DM Sans',sans-serif;
-  font-size:.93rem; color:#1e293b;
-  outline:none; transition:all .2s; background:#f7f9fc;
-}
-.chat-input:focus {
-  border-color:var(--sky); background:white;
-  box-shadow:0 0 0 3px rgba(54,149,191,.1);
-}
-.chat-input::placeholder { color:#b0bec5; }
 
-.send-btn {
-  width:46px; height:46px;
-  background:linear-gradient(135deg,var(--green),var(--g2));
-  border:none; border-radius:50%; color:white; font-size:1rem;
-  cursor:pointer; transition:all .2s; flex-shrink:0;
-  display:flex; align-items:center; justify-content:center;
-  box-shadow:0 4px 16px rgba(52,168,83,.35);
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
 }
-.send-btn:hover { transform:scale(1.08); box-shadow:0 7px 22px rgba(52,168,83,.45); }
-.send-btn:active { transform:scale(.97); }
 
-/* ══════════════════
-   MOBILE ≤ 600px
-   ══════════════════ */
-@media (max-width:600px) {
-  body { padding:0; background:white; align-items:stretch; justify-content:flex-start; }
+.stat-card {
+  background: linear-gradient(135deg, rgba(52, 168, 83, 0.1), rgba(52, 168, 83, 0.05));
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  text-align: center;
+  border: 2px solid rgba(52, 168, 83, 0.2);
+}
 
-  .chat-card {
-    max-width:100%; border-radius:0; box-shadow:none;
-    height:100svh;
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  display: block;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-heading);
+}
+
+.stat-label {
+  color: var(--color-gray);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.source-box {
+  background: var(--color-bg);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  margin-top: 3rem;
+  border: 1px solid var(--color-gray-light);
+}
+
+.source-box h4 {
+  font-family: var(--font-heading);
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.source-box ul {
+  list-style: none;
+  margin: 0;
+}
+
+.source-box li {
+  margin-bottom: 0.75rem;
+}
+
+.source-box a {
+  color: var(--color-secondary);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: var(--transition);
+}
+
+.source-box a:hover {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+.source-box a i {
+  font-size: 0.9rem;
+}
+
+.cta-section {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  color: white;
+  padding: 3rem;
+  border-radius: var(--border-radius);
+  text-align: center;
+  margin-top: 4rem;
+  box-shadow: var(--shadow-lg);
+}
+
+.cta-section h2 {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.cta-section p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-white {
+  background: white;
+  color: var(--color-primary);
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 200px;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.btn-white:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+footer {
+  background: var(--color-primary);
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 4rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 968px) {
+  .hero {
+    padding: 4rem 1.5rem;
   }
 
-  .topbar { padding:13px 16px; gap:10px; }
-  .topbar-info h3 { font-size:.9rem; }
-  .topbar-info p  { font-size:.71rem; }
-  .topbar-badge span:not(.dot) { display:none; }
-  .topbar-badge { padding:5px 9px; }
-
-  .chat-messages { padding:18px 14px 12px; gap:14px; }
-
-  .bubble { max-width:84%; font-size:.89rem; padding:11px 14px; }
-  .bav    { width:27px; height:27px; font-size:.67rem; }
-
-  .quickreplies {
-    flex-wrap:nowrap; overflow-x:auto;
-    -webkit-overflow-scrolling:touch; scrollbar-width:none;
-    padding:10px 14px 12px; gap:7px;
+  .hero h1 {
+    font-size: 2rem;
   }
-  .quickreplies::-webkit-scrollbar { display:none; }
-  .qr-btn { flex-shrink:0; font-size:.79rem; padding:7px 13px; }
 
-  .inputbar { padding:10px 12px; gap:8px; }
-  .chat-input { font-size:.88rem; padding:10px 16px; }
-  .send-btn   { width:42px; height:42px; }
+  .hero-meta {
+    gap: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .container {
+    padding: 3rem 1.5rem;
+  }
+
+  .article-content {
+    padding: 2rem 1.5rem;
+  }
+
+  .article-content h2 {
+    font-size: 1.75rem;
+  }
+
+  .article-content h3 {
+    font-size: 1.3rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-section {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+  }
+
+  .btn-white {
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding: 3rem 1.25rem;
+  }
+
+  .hero h1 {
+    font-size: 1.65rem;
+  }
+
+  .news-badge {
+    font-size: 0.85rem;
+    padding: 0.4rem 1rem;
+  }
+
+  .container {
+    padding: 2rem 1.25rem;
+  }
+
+  .article-content {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .article-intro {
+    font-size: 1.05rem;
+    padding: 1.25rem;
+  }
+
+  .article-content h2 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .article-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .article-content p {
+    font-size: 1rem;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+  }
+
+  .comparison-table {
+    font-size: 0.85rem;
+  }
+
+  table {
+    min-width: 600px;
+  }
+
+  th, td {
+    padding: 0.875rem;
+  }
+
+  .cta-section {
+    padding: 2rem 1.25rem;
+  }
+
+  .cta-section h2 {
+    font-size: 1.5rem;
+  }
 }
 </style>
 </head>
 <body>
-
-<div class="chat-card">
-
-  <!-- TOPBAR: animated icon + title + badge -->
-  <div class="topbar">
-
-    <!-- Animated logo icon (replaces balance scale) -->
-    <div class="topbar-icon">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" width="44" height="44">
-        <defs>
-          <linearGradient id="tgBg" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" style="stop-color:rgba(255,255,255,0.2)"/>
-            <stop offset="100%" style="stop-color:rgba(255,255,255,0.05)"/>
-          </linearGradient>
-          <filter id="tgGlow">
-            <feGaussianBlur stdDeviation="1" result="b"/>
-            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-          </filter>
-        </defs>
-        <!-- orbit -->
-        <g class="i-rot" style="transform-origin:22px 22px">
-          <circle cx="22" cy="22" r="19" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
-          <circle cx="22" cy="3"  r="1.4" fill="#34A853" class="i-orb"/>
-          <circle cx="41" cy="22" r="1.4" fill="#34A853" class="i-orb" style="animation-delay:.5s"/>
-          <circle cx="22" cy="41" r="1.4" fill="#34A853" class="i-orb" style="animation-delay:1s"/>
-          <circle cx="3"  cy="22" r="1.4" fill="#34A853" class="i-orb" style="animation-delay:1.5s"/>
-        </g>
-        <!-- hex -->
-        <g class="i-puls" style="transform-origin:22px 22px">
-          <path d="M22 9 L31 14.5 L31 25.5 L22 31 L13 25.5 L13 14.5 Z" fill="url(#tgBg)"/>
-          <path d="M22 9 L31 14.5 L31 25.5 L22 31 L13 25.5 L13 14.5 Z" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.4"/>
-        </g>
-        <!-- doc lines -->
-        <line x1="15" y1="16" x2="20" y2="16" stroke="rgba(255,255,255,0.7)" stroke-width="1.2" stroke-linecap="round"/>
-        <line x1="15" y1="20" x2="22" y2="20" stroke="rgba(255,255,255,0.7)" stroke-width="1.2" stroke-linecap="round"/>
-        <line x1="15" y1="24" x2="21" y2="24" stroke="rgba(255,255,255,0.7)" stroke-width="1.2" stroke-linecap="round"/>
-        <!-- scale -->
-        <line x1="26" y1="16" x2="26" y2="21" stroke="#34A853" stroke-width="1" stroke-linecap="round"/>
-        <rect x="24.5" y="20.5" width="3" height="1" rx=".4" fill="#34A853"/>
-        <line x1="23" y1="16" x2="29" y2="16" stroke="#34A853" stroke-width="1" stroke-linecap="round"/>
-        <line x1="24" y1="16" x2="24" y2="17.8" stroke="#34A853" stroke-width=".7"/>
-        <path d="M22.5 17.8 L22.5 19.2 L25.5 19.2 L25.5 17.8 Z" fill="none" stroke="#34A853" stroke-width=".6"/>
-        <line x1="28" y1="16" x2="28" y2="17.8" stroke="#34A853" stroke-width=".7"/>
-        <path d="M26.5 17.8 L26.5 19.2 L29.5 19.2 L29.5 17.8 Z" fill="none" stroke="#34A853" stroke-width=".6"/>
-        <circle cx="26" cy="16" r=".7" fill="#34A853" filter="url(#tgGlow)"/>
-      </svg>
+  <header>
+    <div class="header-container">
+      <a href="/" class="logo">exigetuseguro<span>.cl</span></a>
+      <a href="/" class="btn-home"><i class="fas fa-home"></i> Volver al Inicio</a>
     </div>
+  </header>
 
-    <div class="topbar-info">
-      <h3>Asistente Legal · Seguros Chile</h3>
-      <p>Responde consultas frecuentes sobre seguros</p>
+  <section class="hero">
+    <div class="hero-container">
+      <span class="news-badge"><i class="fas fa-newspaper"></i> Noticia Actualizada 2026</span>
+      <h1>SOAP 2026: Se Duplican los Montos de Cobertura por Accidentes de Tránsito</h1>
+      <div class="hero-meta">
+        <div class="hero-meta-item">
+          <i class="fas fa-calendar-alt"></i>
+          <span>11 de Febrero, 2026</span>
+        </div>
+        <div class="hero-meta-item">
+          <i class="fas fa-user"></i>
+          <span>Por contacto@exigetuseguro.cl</span>
+        </div>
+        <div class="hero-meta-item">
+          <i class="fas fa-clock"></i>
+          <span>Lectura: 7 min</span>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <div class="topbar-badge">
-      <span class="dot"></span>
-      <span>En línea</span>
-    </div>
+  <div class="container">
+    <article class="article-content">
+      
+      <div class="article-intro">
+        <strong>Importante:</strong> La Ley Jacinta (Ley N° 21.797) fue publicada en el Diario Oficial el 7 de febrero de 2026, entrando en vigencia inmediatamente. Las nuevas pólizas del SOAP con coberturas duplicadas se aplican a todos los seguros contratados <strong>a partir del 9 de febrero de 2026</strong>, brindando mayor protección financiera a las víctimas de accidentes de tránsito en todo Chile.
+      </div>
+
+      <h2><i class="fas fa-info-circle"></i> ¿Qué es el SOAP?</h2>
+      
+      <p>El <strong>Seguro Obligatorio de Accidentes Personales (SOAP)</strong> es un seguro regulado por la Ley N° 18.490 que cubre a todas las personas que sufran lesiones corporales o fallezcan a consecuencia de accidentes causados por vehículos motorizados en Chile.</p>
+
+      <div class="highlight-box">
+        <h4><i class="fas fa-shield-alt"></i> Característica Fundamental</h4>
+        <p>El SOAP cubre <strong>sin importar quién tuvo la culpa del accidente</strong>. Esto significa que tanto conductores como pasajeros, peatones y ciclistas están protegidos, independientemente de la responsabilidad en el siniestro.</p>
+      </div>
+
+      <h3>¿A quiénes cubre el SOAP?</h3>
+      <p>El SOAP protege a las personas que resulten lesionadas o fallezcan en un accidente de tránsito en que participe un vehículo asegurado:</p>
+      <ul>
+        <li><strong>Conductor del vehículo:</strong> La persona que conduce el vehículo involucrado en el accidente</li>
+        <li><strong>Pasajeros:</strong> Todas las personas que viajan dentro del vehículo</li>
+        <li><strong>Peatones:</strong> Personas que transitan a pie y son atropelladas o lesionadas</li>
+        <li><strong>Ciclistas:</strong> Personas que circulan en bicicleta y resultan afectadas por el accidente</li>
+        <li><strong>Motociclistas:</strong> Conductores y pasajeros de motocicletas involucrados en el accidente</li>
+      </ul>
+
+      <h2><i class="fas fa-landmark"></i> La Ley Jacinta: Origen de los Cambios</h2>
+
+      
+
+      <h3>¿Por qué era necesario actualizar el SOAP?</h3>
+      <p>Antes de la Ley Jacinta, los montos del SOAP <strong>se habían mantenido estancados durante años</strong>. Durante ese período:</p>
+      <ul>
+        <li>La inflación acumulada había aumentado significativamente</li>
+        <li>Los costos de atención médica y hospitalaria aumentaron considerablemente</li>
+        <li>Las familias de las víctimas quedaban desprotegidas económicamente</li>
+        <li>Existía una brecha enorme entre las coberturas y las necesidades reales</li>
+        <li>Las indemnizaciones no reflejaban el costo real de los tratamientos y rehabilitación</li>
+      </ul>
+
+     
+      <h2><i class="fas fa-chart-line"></i> Cambios en los Montos del SOAP 2026</h2>
+
+      <p>A través de la Ley Jacinta, los montos de cobertura del SOAP se <strong>duplicaron para todos los seguros contratados a partir del 9 de febrero de 2026</strong>, representando el aumento más significativo en la historia de este seguro obligatorio.</p>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span class="stat-number"><i class="fas fa-arrow-up"></i> 100%</span>
+          <span class="stat-label">Aumento en Coberturas</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">600 UF</span>
+          <span class="stat-label">Máximo por Muerte</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">600 UF</span>
+          <span class="stat-label">Invalidez Total</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">600 UF</span>
+          <span class="stat-label">Gastos Médicos</span>
+        </div>
+      </div>
+
+      <h3>Tabla Comparativa: SOAP Anterior vs SOAP 2026</h3>
+
+      <div class="comparison-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Tipo de Cobertura</th>
+              <th>SOAP Anterior<br/>(antes del 9/02/2026)</th>
+              <th>SOAP 2026<br/>(desde el 9/02/2026)</th>
+              <th>Aumento</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Muerte</strong></td>
+              <td>Hasta 300 UF</td>
+              <td>Hasta 600 UF</td>
+              <td style="color: var(--color-accent); font-weight: 600;">+100%</td>
+            </tr>
+            <tr>
+              <td><strong>Invalidez Permanente Total</strong></td>
+              <td>Hasta 300 UF</td>
+              <td>Hasta 600 UF</td>
+              <td style="color: var(--color-accent); font-weight: 600;">+100%</td>
+            </tr>
+            <tr>
+              <td><strong>Invalidez Permanente Parcial</strong></td>
+              <td>Hasta 200 UF</td>
+              <td>Hasta 400 UF</td>
+              <td style="color: var(--color-accent); font-weight: 600;">+100%</td>
+            </tr>
+            <tr>
+              <td><strong>Gastos Médicos y Hospitalarios</strong></td>
+              <td>Hasta 300 UF</td>
+              <td>Hasta 600 UF</td>
+              <td style="color: var(--color-accent); font-weight: 600;">+100%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="info-box">
+        <h4><i class="fas fa-calculator"></i> Valor Referencial</h4>
+        <p>Considerando el valor de la UF al 11 de febrero de 2026 (aproximadamente $37.800), las coberturas máximas equivalen a:</p>
+        <ul style="margin-top: 1rem; margin-left: 1.5rem;">
+          <li><strong>Muerte:</strong> Hasta $22.680.000 (600 UF)</li>
+          <li><strong>Invalidez Permanente Total:</strong> Hasta $22.680.000 (600 UF)</li>
+          <li><strong>Invalidez Permanente Parcial:</strong> Hasta $15.120.000 (400 UF)</li>
+          <li><strong>Gastos Médicos y Hospitalarios:</strong> Hasta $22.680.000 (600 UF)</li>
+        </ul>
+        <p style="margin-top: 1rem;"><em>Nota: Los valores en pesos son referenciales y varían según el valor de la UF del día.</em></p>
+      </div>
+
+      <div class="warning-box">
+        <h4><i class="fas fa-exclamation-triangle"></i> Importante: Coexistencia de Pólizas</h4>
+        <p>Los seguros contratados <strong>antes del 9 de febrero de 2026</strong> mantienen las coberturas originales (300 UF muerte, 300 UF invalidez total, 200 UF invalidez parcial, 300 UF gastos médicos) y los plazos de pago de 10 días hábiles por fallecimiento.</p>
+        <p style="margin-top: 1rem;">Los seguros contratados <strong>a partir del 9 de febrero de 2026</strong> tienen las nuevas coberturas duplicadas y plazos de pago de 7 días hábiles por fallecimiento.</p>
+        <p style="margin-top: 1rem;">Ambos tipos de pólizas coexistirán hasta <strong>marzo de 2027</strong>, cuando todas las pólizas ya tendrán las nuevas coberturas.</p>
+      </div>
+
+      <h2><i class="fas fa-heartbeat"></i> Coberturas Detalladas del SOAP 2026</h2>
+
+      <h3>1. Muerte (Hasta 600 UF)</h3>
+      <p>En caso de fallecimiento de la víctima como consecuencia del accidente, el SOAP indemniza a los beneficiarios legales con hasta 600 UF. Esta cobertura se distribuye según el orden de prelación establecido por ley:</p>
+      <ol>
+        <li>El cónyuge sobreviviente</li>
+        <li>Los hijos menores de edad</li>
+        <li>Los hijos mayores de edad</li>
+        <li>Los padres</li>
+        <li>La madre de los hijos de filiación no matrimonial del fallecido</li>
+        <li>A falta de las personas antes indicadas, la indemnización corresponderá a quien acredite la calidad de heredero</li>
+      </ol>
+
+      <div class="info-box">
+        <h4><i class="fas fa-info-circle"></i> Conviviente Civil</h4>
+        <p>El conviviente civil sobreviviente sólo podrá recibir la indemnización como heredero, en el evento que no exista ninguno de los primeros 4 beneficiarios mencionados arriba.</p>
+      </div>
+
+      <h3>2. Invalidez Permanente Total (Hasta 600 UF)</h3>
+      <p>Cuando el accidente provoca una invalidez permanente total (66% o más de incapacidad), la indemnización puede alcanzar hasta 600 UF. El monto específico depende del porcentaje de invalidez determinado por evaluación médica.</p>
+
+      <h3>3. Invalidez Permanente Parcial (Hasta 400 UF)</h3>
+      <p>Para casos de invalidez permanente parcial (menos de 66% de incapacidad), la cobertura alcanza hasta 400 UF. El monto se determina proporcionalmente según el grado de invalidez certificado médicamente.</p>
+
+      <div class="highlight-box">
+        <h4><i class="fas fa-stethoscope"></i> Evaluación Médica</h4>
+        <p>La determinación del porcentaje de invalidez es realizada por una comisión médica especializada según los criterios establecidos en el Manual de Evaluación y Calificación de la Invalidez de la Ley 16.744.</p>
+        <p style="margin-top: 1rem;"><strong>Importante:</strong> Las indemnizaciones por muerte, incapacidad permanente total e incapacidad permanente parcial <strong>no son acumulables</strong>.</p>
+      </div>
+
+      <h3>4. Gastos Médicos y Hospitalarios (Hasta 600 UF)</h3>
+      <p>El SOAP cubre los gastos médicos necesarios para la atención de las lesiones causadas por el accidente, con un tope de nivel 03 M.L.E. FONASA:</p>
+      <ul>
+        <li><strong>Atención prehospitalaria:</strong> Primeros auxilios en el lugar del accidente</li>
+        <li><strong>Transporte sanitario:</strong> Ambulancia terrestre o aérea cuando sea médicamente necesario</li>
+        <li><strong>Hospitalización:</strong> Internación y estadía hospitalaria</li>
+        <li><strong>Atención médica y quirúrgica:</strong> Consultas, exámenes y cirugías</li>
+        <li><strong>Atención dental:</strong> Tratamientos dentales derivados del accidente</li>
+        <li><strong>Prótesis e implantes:</strong> Dispositivos médicos necesarios para la recuperación</li>
+        <li><strong>Gastos farmacéuticos:</strong> Medicamentos recetados</li>
+        <li><strong>Rehabilitación:</strong> Terapias físicas, kinesiológicas y ocupacionales</li>
+      </ul>
+
+      <div class="info-box">
+        <h4><i class="fas fa-heartbeat"></i> Preferencia del SOAP</h4>
+        <p>El seguro SOAP tiene <strong>preferencia frente a cualquier otra prestación</strong> cubierta por una ISAPRE, FONASA u otro seguro complementario de salud o accidente. Esto significa que primero se debe utilizar el SOAP antes de recurrir a otros seguros.</p>
+      </div>
+
+      <h2><i class="fas fa-file-alt"></i> ¿Cómo Hacer un Reclamo al SOAP?</h2>
+
+      <p>Para activar la cobertura del SOAP después de un accidente de tránsito, sigue estos pasos:</p>
+
+      <h4>1. Concurrir a un Servicio de Urgencia</h4>
+      <p>Acude inmediatamente a un servicio de urgencia para ser atendido por las lesiones físicas, <strong>especificando que se trata de un accidente de tránsito</strong>. Conserva todos los documentos médicos, recetas y comprobantes de gastos.</p>
+
+      <h4>2. Realizar la Denuncia del Accidente</h4>
+      <p>Deja inmediata constancia en Carabineros de Chile o PDI. <strong>Es fundamental conocer y registrar la patente del vehículo involucrado</strong>, ya que sin este dato no será posible identificar la compañía aseguradora.</p>
+
+      <h4>3. Solicitar Certificado del Tribunal o Ministerio Público</h4>
+      <p>Solicita el certificado otorgado por el Tribunal competente o el Ministerio Público, en el cual se consignen los datos del accidente de tránsito, de acuerdo al parte enviado al tribunal competente.</p>
+
+      <h4>4. Identificar la Compañía de Seguros</h4>
+      <p>Identifica qué compañía de seguros tiene el SOAP del vehículo involucrado. Puedes consultarlo en:</p>
+      <ul>
+        <li>Sitio web de la CMF: <a href="https://www.cmfchile.cl" target="_blank">www.cmfchile.cl</a></li>
+        <li>Portal del Registro Civil - Certificado de Anotaciones Vigentes en el Registro Nacional de Vehículos Motorizados</li>
+        <li>Dirección de Tránsito de la Municipalidad que otorgó el Permiso de Circulación</li>
+      </ul>
+
+      <h4>5. Denunciar el Siniestro ante la Aseguradora</h4>
+      <p>El conductor o propietario del vehículo asegurado o sus representantes estarán obligados a dar <strong>aviso escrito a la aseguradora dentro de 30 días</strong>, contados desde que tenga noticia del accidente, salvo caso de impedimento debidamente justificado.</p>
+
+      <h4>6. Presenta la Documentación</h4>
+      <p>Reúne y entrega los siguientes documentos a la aseguradora:</p>
+      <ul>
+        <li>Certificado del accidente de tránsito otorgado por Carabineros de Chile</li>
+        <li>Certificado de defunción de la víctima (en caso de muerte)</li>
+        <li>Documentos que acrediten legalmente la calidad de beneficiario del seguro</li>
+        <li>Certificado que acredite la naturaleza y grado de incapacidad (en caso de invalidez)</li>
+        <li>Comprobantes que acrediten el valor o el precio de la atención médica, recuperación y rehabilitación (facturas, boletas, bonos)</li>
+        <li>Cédula de identidad</li>
+      </ul>
+
+      <h4>7. Plazos de Pago por parte de la Aseguradora</h4>
+      <p>Una vez presentados los documentos exigidos, la aseguradora deberá pagar:</p>
+      <ul>
+        <li><strong>Indemnización por fallecimiento:</strong> 7 días hábiles (para seguros contratados desde el 9/02/2026) o 10 días hábiles (para seguros contratados antes del 9/02/2026)</li>
+        <li><strong>Otras indemnizaciones:</strong> 10 días hábiles desde la presentación de los antecedentes</li>
+      </ul>
+
+      <div class="warning-box">
+        <h4><i class="fas fa-exclamation-triangle"></i> Importante: Plazos para Reclamar</h4>
+        <p><strong>Plazos de prescripción:</strong></p>
+        <ul style="margin-top: 1rem; margin-left: 1.5rem;">
+          <li>Las acciones para perseguir el pago de indemnizaciones prescriben en el plazo de <strong>1 año contado desde la fecha en que ocurrió el accidente</strong></li>
+          <li>O <strong>a partir de la muerte de la víctima</strong>, siempre que aquélla haya sucedido dentro del año siguiente al mismo accidente</li>
+          <li>Para indemnizaciones por incapacidad permanente, el plazo de 1 año se cuenta <strong>desde la fecha de emisión del certificado médico</strong>, el cual no podrá presentarse luego de 2 años desde la fecha del accidente</li>
+        </ul>
+        <p style="margin-top: 1rem;"><strong>Pasados estos plazos, pierdes el derecho a la indemnización.</strong></p>
+      </div>
+
+      
+      
+
+      <h2><i class="fas fa-balance-scale"></i> Marco Legal del SOAP</h2>
+
+      <p>El SOAP está regulado por:</p>
+      <ul>
+        <li><strong>Ley N° 21.797 "Ley Jacinta" (2026):</strong> Publicada en el Diario Oficial el 7 de febrero de 2026, duplica los montos de cobertura del SOAP para seguros contratados desde el 9 de febrero de 2026 y establece nuevos requisitos para conductores</li>
+        <li><strong>Ley N° 18.490:</strong> Regula el Seguro Obligatorio de Accidentes Personales causados por vehículos motorizados</li>
+        <li><strong>Ley de Tránsito (Ley N° 18.290):</strong> Establece la obligatoriedad del seguro para todos los vehículos motorizados</li>
+        <li><strong>DFL N° 251:</strong> Regula las compañías de seguros y reaseguros en Chile</li>
+        <li><strong>Circular N° 2131 de la CMF:</strong> Imparte instrucciones sobre atención de clientes y tramitación de consultas y reclamos</li>
+      </ul>
+
+      <h3>Fiscalización y Reclamos</h3>
+      <p>La Comisión para el Mercado Financiero (CMF) fiscaliza el cumplimiento de las aseguradoras. Si tienes problemas con tu reclamo puedes:</p>
+      <ul>
+        <li>Presentar un reclamo ante la CMF: <a href="https://www.cmfchile.cl" target="_blank">www.cmfchile.cl</a></li>
+        <li>Contactar al SERNAC para temas de protección al consumidor</li>
+        <li>Solicitar mediación o arbitraje según lo establezca tu póliza</li>
+        <li>Consultar con la Comisión Nacional de Seguridad de Tránsito (CONASET)</li>
+      </ul>
+
+      
+      
+
+      
+
+      <div class="source-box">
+        <h4><i class="fas fa-link"></i> Fuentes Oficiales y Legislación</h4>
+        <ul>
+          <li>
+            <a href="https://www.bcn.cl/leychile/navegar?idNorma=29893" target="_blank" rel="noopener noreferrer">
+              <i class="fas fa-external-link-alt"></i>
+              Ley N° 18.490 - Seguro Obligatorio de Accidentes Personales
+            </a>
+          </li>
+          <li>
+            <a href="https://www.bcn.cl/leychile/" target="_blank" rel="noopener noreferrer">
+              <i class="fas fa-external-link-alt"></i>
+              Ley N° 21.797 "Ley Jacinta" - Biblioteca del Congreso Nacional
+            </a>
+          </li>
+          <li>
+            <a href="https://www.cmfchile.cl/portal/prensa/615/w3-article-103526.html" target="_blank" rel="noopener noreferrer">
+              <i class="fas fa-external-link-alt"></i>
+              CMF - Comunicado Oficial sobre el SOAP 2026 (12/02/2026)
+            </a>
+          </li>
+          <li>
+            <a href="https://www.cmfeduca.cl/educa/621/w3-propertyvalue-565.html" target="_blank" rel="noopener noreferrer">
+              <i class="fas fa-external-link-alt"></i>
+              CMF Educa - Información Detallada sobre el SOAP
+            </a>
+          </li>
+          <li>
+            <a href="https://www.cmfchile.cl/portal/principal/613/w3-article-20321.html" target="_blank" rel="noopener noreferrer">
+              <i class="fas fa-external-link-alt"></i>
+              CMF - Consulta de Precios del SOAP (actualizado semanalmente)
+            </a>
+          </li>
+          <li>
+            <a href="https://www.gob.cl/noticias/ley-jacinta-comienza-aplicacion-progresiva-cobertura-soap-exigencias-licencias-conducir/" target="_blank" rel="noopener noreferrer">
+              <i class="fas fa-external-link-alt"></i>
+              Gobierno de Chile - Información Oficial Ley Jacinta
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </article>
+
+    <!-- CTA Final -->
+    <section class="cta-section">
+      <h2><i class="fas fa-gavel"></i> ¿Problemas con tu Reclamo del SOAP?</h2>
+      <p>Si tu aseguradora rechazó o retrasó tu reclamo del SOAP, nuestros abogados especialistas pueden ayudarte a defender tus derechos y obtener la indemnización que te corresponde bajo las nuevas coberturas de la Ley Jacinta.</p>
+      <div class="cta-buttons">
+        <a href="https://exigetuseguro.cl/contacto" class="btn-white">
+          <i class="fas fa-calendar"></i> <span>Consulta Gratuita</span>
+        </a>
+        <a href="https://wa.me/56979939868?text=Hola,%20necesito%20ayuda%20con%20mi%20reclamo%20del%20SOAP" class="btn-white" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-whatsapp"></i> <span>WhatsApp Directo</span>
+        </a>
+      </div>
+    </section>
   </div>
 
-  <!-- MESSAGES -->
-  <div class="chat-messages" id="chatMessages"></div>
+  <footer>
+    <p>&copy; 2026 Exige Tu Seguro - Todos los derechos reservados</p>
+    <p style="margin-top: 0.5rem;">Abogados especialistas en seguros en Chile</p>
+  </footer>
 
-  <!-- QUICK REPLIES -->
-  <div class="quickreplies" id="quickReplies">
-    <button class="qr-btn" onclick="sendQR(this)">Rechazaron mi seguro</button>
-    <button class="qr-btn" onclick="sendQR(this)">Subir mis documentos</button>
-    <button class="qr-btn" onclick="sendQR(this)">Plazos para reclamar</button>
-    <button class="qr-btn" onclick="sendQR(this)">SOAP 2026</button>
-    <button class="qr-btn" onclick="sendQR(this)">¿Qué es la CMF?</button>
-    <button class="qr-btn" onclick="sendQR(this)">Hablar con un abogado</button>
-  </div>
-
-  <!-- INPUT -->
-  <div class="inputbar">
-    <input class="chat-input" id="chatInput" placeholder="Escribe tu consulta…" autocomplete="off">
-    <button class="send-btn" onclick="sendMessage()">
-      <i class="fas fa-paper-plane"></i>
-    </button>
-  </div>
-
-</div>
-
-<script>
-const KB = [
-  /* ── SALUDO ── */
-  {
-    keys: ['hola','buenas','buenos días','buenas tardes','buenas noches','hey','saludos'],
-    answer: `¡Hola! 👋 Soy el asistente virtual de <strong>ExigeTuSeguro.cl</strong>.\n\nEstoy aquí para orientarte sobre tus derechos como asegurado en Chile: rechazos, impugnaciones, plazos legales, SOAP y mucho más.\n\n¿En qué te puedo ayudar hoy?`,
-    qr: ['Rechazaron mi seguro','Subir mis documentos','Hablar con un abogado']
-  },
-
-  /* ── RECHAZO / NEGATIVA ── */
-  {
-    keys: ['rechaz','negaron','denegaron','no pagaron','no me pagan','siniestro rechaz','niegan','negativa'],
-    answer: `Si tu aseguradora rechazó tu siniestro, tienes opciones legales concretas:\n\n<strong>Vía 1 · Reclamo ante la aseguradora</strong>\nEscrito formal citando el Código de Comercio. La aseguradora debe responder en los plazos establecidos.\n\n<strong>Vía 2 · CMF</strong>\nPuedes reclamar ante la Comisión para el Mercado Financiero (Ley N° 21.000) en <a href="https://www.cmfchile.cl" target="_blank">cmfchile.cl</a>.\n\n<strong>Vía 3 · Arbitraje o demanda judicial</strong>\nSegún el Art. 543 del Código de Comercio, las controversias de seguros se resuelven ante árbitro. Para montos menores a 10.000 UF puedes optar por tribunal ordinario.\n\nRecuerda: la ley presume que el siniestro está cubierto — <strong>es la aseguradora quien debe probar lo contrario</strong>.\n\n📋 Sube tu póliza o carta de rechazo para que nuestro equipo evalúe tu caso:\n👉 <a href="https://exigetuseguro.cl/contacto" target="_blank">exigetuseguro.cl/contacto</a>`,
-    qr: ['Impugnar liquidación','Subir mis documentos','¿Qué es la CMF?','Hablar con un abogado']
-  },
-
-  /* ── IMPUGNAR / LIQUIDACIÓN ── */
-  {
-    keys: ['impugnar','impugnación','liquidación','liquidacion','liquidador','informe liquidac','DS 1055','ds1055'],
-    answer: `El proceso de impugnación de un informe de liquidación está regulado por el <strong>DS 1.055</strong>:\n\n<strong>Plazos para impugnar (desde que recibes el informe):</strong>\n• Pólizas normales → <strong>10 días hábiles</strong>\n• Pólizas con prima superior a 200 UF → <strong>20 días hábiles</strong>\n\n<strong>Respuesta del liquidador:</strong>\n• Pólizas normales → 6 días hábiles\n• Pólizas &gt;200 UF → 12 días hábiles\n\n<strong>Pago de la indemnización:</strong>\nUna vez resuelta la impugnación, la aseguradora tiene <strong>6 días hábiles</strong> para pagarte.\n\nEl informe debe contener opinión técnica fundada sobre cada cobertura rechazada. Si no es así, es impugnable.\n\n📋 <a href="https://exigetuseguro.cl/contacto" target="_blank">exigetuseguro.cl/contacto</a>`,
-    qr: ['Subir mis documentos','Rechazaron mi seguro','Hablar con un abogado']
-  },
-
-  /* ── PLAZOS ── */
-  {
-    keys: ['plazo','prescripci','cuánto tiempo','cuanto tiempo','fecha límite','vence','vencer','tiempo para reclamar'],
-    answer: `Los plazos legales clave en seguros en Chile son:\n\n<strong>Prescripción general</strong> → <strong>4 años</strong> desde que la obligación se hizo exigible (Art. 541 Código de Comercio).\n\n<strong>Notificar el siniestro</strong> → Lo antes posible. Cada póliza puede fijar plazos internos breves (algunos de 3–5 días).\n\n<strong>Impugnar informe de liquidación</strong> → 10 días hábiles (o 20 si prima &gt;200 UF).\n\n<strong>Pago de indemnización</strong> → 6 días hábiles desde aprobada la liquidación.\n\n<strong>SOAP (fallecimiento)</strong> → 7 días hábiles para seguros desde el 9/02/2026; 10 días hábiles para pólizas anteriores.\n\n⏰ Mientras más rápido actúes, más fácil es reunir pruebas.\n\n📋 <a href="https://exigetuseguro.cl/contacto" target="_blank">exigetuseguro.cl/contacto</a>`,
-    qr: ['Impugnar liquidación','Rechazaron mi seguro','Hablar con un abogado']
-  },
-
-  /* ── CMF ── */
-  {
-    keys: ['cmf','comisión para el mercado','comision mercado financiero','regulador','supervisor seguros'],
-    answer: `La <strong>Comisión para el Mercado Financiero (CMF)</strong>, creada por la Ley N° 21.000, es el organismo que regula y supervisa a todas las compañías de seguros en Chile. Reemplazó a la antigua SVS.\n\nPuedes presentar un reclamo ante la CMF si:\n• Tu aseguradora rechaza tu siniestro injustamente.\n• No responde en los plazos legales.\n• Detectas prácticas abusivas.\n\n⚠️ <strong>Importante:</strong> La CMF fiscaliza y puede sancionar a las aseguradoras, pero no ordena pagos directamente. Para exigir el pago necesitas además la vía judicial o arbitral (Art. 543 Código de Comercio).\n\nAun así, un pronunciamiento favorable de la CMF es evidencia valiosa en cualquier litigio posterior.\n\nWeb oficial: <a href="https://www.cmfchile.cl" target="_blank">cmfchile.cl</a>`,
-    qr: ['Subir mis documentos','Rechazaron mi seguro','Hablar con un abogado']
-  },
-
-  /* ── INDISPUTABILIDAD ── */
-  {
-    keys: ['indisputabilidad','indisputable','dos años','2 años vigencia','art 592','artículo 592'],
-    answer: `La <strong>indisputabilidad</strong> es una protección clave en los seguros de vida, regulada por el <strong>Art. 592 del Código de Comercio</strong>.\n\n¿Qué significa? Una vez transcurridos <strong>2 años</strong> desde la contratación, la aseguradora <strong>no puede anular la póliza</strong> ni negarse a pagar alegando que omitiste información al contratar — ni siquiera si esa omisión fue involuntaria.\n\n<strong>Excepciones:</strong> Solo aplica si existe <strong>dolo comprobado</strong> (intención de engañar) o fraude.\n\nEjemplo práctico: si olvidaste declarar una condición médica y tu póliza tiene más de 2 años, la aseguradora no puede usar eso para rechazarte.\n\n📋 ¿Te rechazaron un seguro de vida? Cuéntanos:\n👉 <a href="https://exigetuseguro.cl/contacto" target="_blank">exigetuseguro.cl/contacto</a>`,
-    qr: ['Seguro de vida','Subir mis documentos','Hablar con un abogado']
-  },
-
-  /* ── SEGURO DE VIDA ── */
-  {
-    keys: ['vida','seguro de vida','fallecimiento','muerte','beneficiario','desgravamen','invalidez'],
-    answer: `Los seguros de vida tienen protecciones especiales en Chile:\n\n<span class="tag">Indisputabilidad</span> Después de 2 años, la aseguradora no puede anular la póliza por omisiones (salvo dolo). Art. 592 Código de Comercio.\n\n<span class="tag">Preexistencias</span> Solo se pueden rechazar si la condición fue <strong>diagnosticada Y conocida</strong> por el asegurado al contratar.\n\n<span class="tag">Carga de la prueba</span> Es la aseguradora quien debe demostrar que existe causa para denegar — no tú.\n\n<span class="tag">Beneficiarios</span> El orden legal de cobro es: cónyuge, hijos menores, hijos mayores, padres — y el conviviente civil solo si no existe ninguno de los anteriores.\n\n📋 Sube tu póliza o carta de rechazo:\n👉 <a href="https://exigetuseguro.cl/contacto" target="_blank">exigetuseguro.cl/contacto</a>`,
-    qr: ['Indisputabilidad','Subir mis documentos','Hablar con un abogado']
-  },
-
-  /* ── SALUD / ISAPRE ── */
-  {
-    keys: ['salud','isapre','médic','hospital','clínica','enfermedad','preexistencia'],
-    answer: `En seguros de salud, el motivo más frecuente de rechazo son las <strong>preexistencias</strong>.\n\nLo que dice la ley (Art. 590-592 Código de Comercio): una preexistencia solo es válida como causal de rechazo si la condición fue <strong>diagnosticada Y conocida por el asegurado</strong> al momento de contratar.\n\nSi te rechazan por una enfermedad que desconocías, es muy probable que sea impugnable.\n\nTambién aplica a coberturas complementarias de Isapres y seguros privados de salud.\n\n📋 Cuéntanos tu caso:\n👉 <a href="https://exigetuseguro.cl/contacto" target="_blank">exigetuseguro.cl/contacto</a>`,
-    qr: ['Subir mis documentos','Rechazaron mi seguro','Hablar con un abogado']
-  },
-
-  /* ── VEHICULAR ── */
-  {
-    keys: ['vehiculo','vehicular','auto','accidente','choque','robo auto','seguro auto','todo riesgo','terceros'],
-    answer: `Los seguros vehiculares tienen motivos de rechazo frecuentes — y muchos son impugnables:\n\n• <strong>Exclusión por "culpa grave"</strong> mal fundamentada.\n• Tasación del vehículo muy por debajo de su valor real.\n• Incumplimiento de plazos de notificación por causas ajenas al asegurado.\n• Cláusulas ambiguas (que la ley obliga a interpretar a tu favor).\n\nTipos de seguros en Chile:\n<span class="tag">SOAP</span> Obligatorio. Cubre lesiones a personas en accidentes.\n<span class="tag">Terceros</span> Cubre daños que causes a otros vehículos o personas.\n<span class="tag">Todo Riesgo</span> Cobertura amplia: daños propios, robos, terceros.\n\n📋 <a href="https://exigetuseguro.cl/contacto" target="_blank">exigetuseguro.cl/contacto</a>`,
-    qr: ['SOAP 2026','Subir mis documentos','Hablar con un abogado']
-  },
-
-  /* ── SOAP 2026 ── */
-  {
-    keys: ['soap','seguro obligatorio','accidente tránsito','accidente de tránsito','ley jacinta','ley 21797','atropello'],
-    answer: `El <strong>SOAP (Seguro Obligatorio de Accidentes Personales)</strong> cubre a todas las víctimas de accidentes de tránsito — conductor, pasajeros, peatones y ciclistas — <strong>sin importar quién tuvo la culpa</strong>.\n\n📌 <strong>Nuevos montos SOAP desde el 9 de febrero de 2026</strong> (Ley Jacinta N° 21.797):\n\n<span class="tag">Muerte</span> Hasta 600 UF (antes 300 UF)\n<span class="tag">Invalidez total</span> Hasta 600 UF (antes 300 UF)\n<span class="tag">Invalidez parcial</span> Hasta 400 UF (antes 200 UF)\n<span class="tag">Gastos médicos</span> Hasta 600 UF (antes 300 UF)\n\n⚠️ Las pólizas contratadas <strong>antes del 9/02/2026</strong> mantienen los montos anteriores. Las nuevas coberturas aplican solo a pólizas contratadas desde esa fecha.\n\n<strong>Plazo de pago:</strong> 7 días hábiles por fallecimiento (pólizas nuevas) o 10 días hábiles (pólizas anteriores).\n\n📋 ¿Problemas con tu reclamo del SOAP?\n👉 <a href="https://exigetuseguro.cl/contacto" target="_blank">exigetuseguro.cl/contacto</a>`,
-    qr: ['Hablar con un abogado','Subir mis documentos','Plazos para reclamar']
-  },
-
-  /* ── INCENDIO / SISMO / HOGAR ── */
-  {
-    keys: ['incendio','sismo','terremoto','hogar','daño','inundación','robo hogar'],
-    answer: `Para siniestros de incendio, sismo o daños al hogar, actúa así:\n\n<strong>1.</strong> Notifica a tu aseguradora <strong>lo antes posible</strong>.\n<strong>2.</strong> <strong>No repares los daños</strong> antes de la inspección del liquidador.\n<strong>3.</strong> Documenta todo: fotos, videos con fecha, boletas de gastos.\n<strong>4.</strong> Guarda <strong>toda la correspondencia</strong> con la aseguradora.\n\nSi el monto de la tasación es muy inferior al daño real, tienes derecho a impugnar el informe de liquidación dentro de <strong>10 días hábiles</strong> (DS 1.055).\n\n📋 Sube tus documentos y relato del caso:\n👉 <a href="https://exigetuseguro.cl/contacto" target="_blank">exigetuseguro.cl/contacto</a>`,
-    qr: ['Impugnar liquidación','Subir mis documentos','Hablar con un abogado']
-  },
-
-  /* ── PÓLIZA / COBERTURAS ── */
-  {
-    keys: ['poliza','póliza','contrato seguro','cobertura','que cubre','qué cubre','exclusion','exclusión','deducible','franquicia','suma asegurada'],
-    answer: `La póliza es el contrato que define tus derechos. Lo que debes saber:\n\n<span class="tag">Coberturas</span> Qué riesgos están incluidos. Debes recibirla en máximo <strong>5 días hábiles</strong> desde la contratación (Art. 519 Código de Comercio).\n\n<span class="tag">Exclusiones</span> Lo que NO cubre. Deben ser claras y específicas — las ambiguas se interpretan <strong>a tu favor</strong> (Art. 542).\n\n<span class="tag">Deducible</span> Monto que siempre pagas tú antes que la aseguradora cubra el resto.\n\n<span class="tag">Franquicia</span> Distinto al deducible: la aseguradora paga todo si el daño supera el umbral pactado.\n\n<span class="tag">Suma asegurada</span> Monto máximo a indemnizar.\n\n⚠️ Importante: ninguna cláusula puede ser menos favorable que lo que establece la ley (Art. 542 Código de Comercio).\n\n📋 ¿Tienes dudas sobre tu póliza? La revisamos:\n👉 <a href="https://exigetuseguro.cl/contacto" target="_blank">exigetuseguro.cl/contacto</a>`,
-    qr: ['Subir mis documentos','Rechazaron mi seguro','Hablar con un abogado']
-  },
-
-  /* ── FRAUDE ── */
-  {
-    keys: ['fraude','fraude seguro','simular siniestro','declaración falsa','ley 20667','art 470'],
-    answer: `El fraude al seguro es un <strong>delito penal en Chile</strong> desde 2013, tipificado en el Art. 470 N° 10 del Código Penal (incorporado por la Ley N° 20.667).\n\nSe considera fraude:\n• Simular un siniestro que no ocurrió.\n• Provocarlo intencionalmente.\n• Presentarlo con circunstancias falsas.\n• Ocultar el bien asegurado.\n• Exagerar fraudulentamente las pérdidas.\n\nLas penas varían según el monto defraudado (Art. 467 Código Penal).\n\n⚠️ El fraude no solo es ilegal — también encarece las primas para todos los asegurados honestos.\n\nSi sospechas de una práctica abusiva <strong>por parte de la aseguradora</strong>, eso es distinto y puedes reclamar ante la CMF.`,
-    qr: ['¿Qué es la CMF?','Hablar con un abogado','Subir mis documentos']
-  },
-
-  /* ── OBLIGACIONES DEL ASEGURADO ── */
-  {
-    keys: ['obligaciones','deber','deberes','qué debo hacer','qué tengo que hacer','requisito'],
-    answer: `Como asegurado en Chile, tienes estas obligaciones principales (Código de Comercio):\n\n<strong>Al contratar:</strong> Declarar verazmente el riesgo (Art. 524 N°1). Ocultar información relevante puede anular la póliza.\n\n<strong>Durante la vigencia:</strong> Pagar la prima a tiempo. Si no pagas, la póliza termina a los 15 días de la comunicación del asegurador (Art. 528).\n\n<strong>Al ocurrir el siniestro:</strong> Avisar a la aseguradora lo antes posible, minimizar los daños y colaborar con la investigación.\n\n<strong>Prohibido:</strong> Simular, exagerar daños o presentar documentos falsos — es fraude y delito penal (Ley N° 20.667).\n\n📋 ¿Tienes dudas sobre tu caso?\n👉 <a href="https://exigetuseguro.cl/contacto" target="_blank">exigetuseguro.cl/contacto</a>`,
-    qr: ['Rechazaron mi seguro','Hablar con un abogado','Subir mis documentos']
-  },
-
-  /* ── SUBIR DOCUMENTOS ── */
-  {
-    keys: ['subir','adjuntar','documentos','archivo','formulario','enviar caso','relato','carta rechazo','carta de rechazo','enviar póliza'],
-    answer: `Puedes enviarnos tu caso completo —<strong>póliza, carta de rechazo, fotos u otros documentos</strong>— a través de nuestro formulario:\n\n👉 <a href="https://exigetuseguro.cl/contacto" target="_blank"><strong>exigetuseguro.cl/contacto</strong></a>\n\nEn el formulario también puedes escribir el <strong>relato de los hechos</strong> para que nuestro equipo entienda tu situación desde el primer momento.\n\nEl análisis inicial es <strong>100% gratuito</strong> y sin compromiso. ✅`,
-    qr: ['Hablar con un abogado','Rechazaron mi seguro','¿Qué es la CMF?']
-  },
-
-  /* ── CONTACTO / ABOGADO ── */
-  {
-    keys: ['abogado','asesoría','asesoria','consulta','ayuda','contacto','whatsapp','llamar','precio','costo','honorario','gratis','primera consulta','agendar'],
-    answer: `Nuestra <strong>primera consulta es completamente gratuita</strong> y sin compromiso. 🎉\n\n📋 <a href="https://exigetuseguro.cl/contacto" target="_blank">Formulario · exigetuseguro.cl/contacto</a> — sube tu póliza o carta de rechazo\n📱 <a href="https://wa.me/56979939868" target="_blank">WhatsApp · +56 9 7993 9868</a>\n📧 <a href="mailto:contacto@exigetuseguro.cl">contacto@exigetuseguro.cl</a>\n\nAtendemos en todo Chile por videollamada, WhatsApp o email. Sin importar en qué región te encuentres.`,
-    qr: ['Subir mis documentos','Rechazaron mi seguro','SOAP 2026']
-  },
-
-  /* ── GRACIAS ── */
-  {
-    keys: ['gracias','muchas gracias','thanks','genial','perfecto','excelente','muy útil'],
-    answer: `¡Con gusto! 😊 Recuerda que puedes enviarnos tus documentos cuando quieras:\n\n📋 <a href="https://exigetuseguro.cl/contacto" target="_blank">exigetuseguro.cl/contacto</a>\n📱 <a href="https://wa.me/56979939868" target="_blank">WhatsApp · +56 9 7993 9868</a>\n\nPrimera consulta <strong>100% gratuita</strong>.`,
-    qr: ['Subir mis documentos','Hablar con un abogado']
-  }
-];
-
-const FALLBACK = `Entiendo tu consulta. Para una orientación más precisa, contáctanos directamente:\n\n📋 <a href="https://exigetuseguro.cl/contacto" target="_blank">exigetuseguro.cl/contacto</a>\n📱 <a href="https://wa.me/56979939868" target="_blank">WhatsApp · +56 9 7993 9868</a>\n\nLa <strong>primera consulta es gratuita</strong> y sin compromiso.`;
-
-function findAnswer(text) {
-  const q = text.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
-  let best = null, top = 0;
-  for (const item of KB) {
-    let s = 0;
-    for (const k of item.keys)
-      if (q.includes(k.normalize('NFD').replace(/[\u0300-\u036f]/g,''))) s++;
-    if (s > top) { top = s; best = item; }
-  }
-  return top > 0 ? best : null;
-}
-
-const msgs  = document.getElementById('chatMessages');
-const qrEl  = document.getElementById('quickReplies');
-const input = document.getElementById('chatInput');
-
-function addBubble(html, type) {
-  const wrap = document.createElement('div'); wrap.className = `bwrap ${type}`;
-  const av   = document.createElement('div'); av.className   = `bav ${type}`;
-  av.innerHTML = type === 'bot' ? '<i class="fas fa-balance-scale"></i>' : '<i class="fas fa-user"></i>';
-  const bub  = document.createElement('div'); bub.className  = `bubble ${type}`;
-  bub.innerHTML = html;
-  wrap.appendChild(av); wrap.appendChild(bub);
-  msgs.appendChild(wrap); msgs.scrollTop = msgs.scrollHeight;
-}
-
-function showTyping() {
-  const wrap = document.createElement('div'); wrap.className = 'bwrap bot'; wrap.id = 'tw';
-  const av   = document.createElement('div'); av.className   = 'bav bot';
-  av.innerHTML = '<i class="fas fa-balance-scale"></i>';
-  const bub  = document.createElement('div'); bub.className  = 'bubble bot typing';
-  bub.innerHTML = '<span></span><span></span><span></span>';
-  wrap.appendChild(av); wrap.appendChild(bub);
-  msgs.appendChild(wrap); msgs.scrollTop = msgs.scrollHeight;
-}
-
-function removeTyping() { const t = document.getElementById('tw'); if(t) t.remove(); }
-
-function setQR(list) {
-  qrEl.innerHTML = '';
-  (list||[]).forEach(l => {
-    const b = document.createElement('button');
-    b.className = 'qr-btn'; b.textContent = l;
-    b.onclick = () => respond(l);
-    qrEl.appendChild(b);
-  });
-}
-
-function respond(text) {
-  addBubble(text.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'), 'user');
-  setQR([]);
-  showTyping();
-  setTimeout(() => {
-    removeTyping();
-    const f = findAnswer(text);
-    if (f) { addBubble(f.answer,'bot'); setQR(f.qr); }
-    else   { addBubble(FALLBACK,'bot'); setQR(['Subir mis documentos','Hablar con un abogado']); }
-  }, 900 + Math.random()*400);
-}
-
-function sendMessage() {
-  const t = input.value.trim(); if(!t) return;
-  input.value = ''; respond(t);
-}
-
-function sendQR(btn) { respond(btn.textContent); }
-
-input.addEventListener('keydown', e => {
-  if (e.key==='Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); }
-});
-
-setTimeout(() => {
-  addBubble(`¡Hola! 👋 Soy el asistente virtual de <strong>ExigeTuSeguro.cl</strong>.<br><br>Puedo orientarte sobre tus derechos como asegurado en Chile: rechazos, plazos, coberturas, impugnaciones y más.<br><br>¿En qué te puedo ayudar?`, 'bot');
-}, 400);
-</script>
+  <script>
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
 </body>
 </html>
