@@ -1171,29 +1171,47 @@ async function validarConsulta(e) {
   };
 
   if (!nombre || !email || !relato) {
-    show('error','<i class="fas fa-exclamation-circle"></i> Por favor completa los campos obligatorios marcados con *');
+    show('error', '<i class="fas fa-exclamation-circle"></i> Por favor completa los campos obligatorios marcados con *');
     return;
   }
 
   btn.disabled = true;
+  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
 
   if (files.length > 0) {
-    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Subiendo archivos...';
-    show('loading',`<i class="fas fa-spinner fa-spin"></i> Subiendo ${files.length} archivo(s)...`);
+    show('loading', `<i class="fas fa-spinner fa-spin"></i> Subiendo ${files.length} archivo(s)...`);
     try {
       const links = await Promise.all(Array.from(files).map(subirArchivo));
       document.getElementById('archivosUrl').value = links.join(' | ');
     } catch {
-      show('error','<i class="fas fa-times-circle"></i> Error al subir archivos. Intenta de nuevo.');
+      show('error', '<i class="fas fa-times-circle"></i> Error al subir archivos. Intenta de nuevo.');
       btn.disabled = false;
       btn.innerHTML = '<i class="fas fa-paper-plane"></i> Enviar mi consulta gratis';
       return;
     }
   }
 
-  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
-  show('loading','<i class="fas fa-spinner fa-spin"></i> Enviando consulta...');
-  document.getElementById('consultaForm').submit();
+  try {
+    const formData = new FormData(document.getElementById('consultaForm'));
+    const res = await fetch('https://formsubmit.co/ajax/contacto@exigetuseguro.cl', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: formData
+    });
+    const data = await res.json();
+    if (data.success === 'true' || data.success === true) {
+      show('success', '<i class="fas fa-check-circle"></i> ¡Consulta enviada! Te contactaremos a la brevedad.');
+      document.getElementById('consultaForm').reset();
+      document.getElementById('listaArchivos').innerHTML = '';
+    } else {
+      throw new Error('error');
+    }
+  } catch {
+    show('error', '<i class="fas fa-times-circle"></i> Error al enviar. Escríbenos directo a contacto@exigetuseguro.cl');
+  }
+
+  btn.disabled = false;
+  btn.innerHTML = '<i class="fas fa-paper-plane"></i> Enviar mi consulta gratis';
 }
 
 /* ── Drag styling ── */
