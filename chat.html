@@ -324,11 +324,12 @@ body {
 
   <!-- QUICK REPLIES -->
   <div class="quickreplies" id="quickReplies">
-    <button class="qr-btn" onclick="sendQR(this)">¿Rechazaron mi seguro?</button>
+    <button class="qr-btn" onclick="sendQR(this)">Rechazaron mi seguro</button>
     <button class="qr-btn" onclick="sendQR(this)">Subir mis documentos</button>
     <button class="qr-btn" onclick="sendQR(this)">Plazos para reclamar</button>
-    <button class="qr-btn" onclick="sendQR(this)">¿Qué es la CMF?</button>
+    <button class="qr-btn" onclick="sendQR(this)">SOAP 2026</button>
     <button class="qr-btn" onclick="sendQR(this)">Hablar con un abogado</button>
+    <button class="qr-btn" onclick="sendQR(this)">Costos de los servicios legales</button>
   </div>
 
   <!-- INPUT -->
@@ -343,70 +344,149 @@ body {
 
 <script>
 const KB = [
-  {
-    keys: ['rechaz','negaron','denegaron','no pagaron','no me pagan','siniestro rechaz'],
-    answer: `Si tu aseguradora rechazó tu siniestro, tienes derecho a impugnar esa decisión. Los pasos habituales son:\n\n<strong>1. Reclamo formal a la aseguradora</strong> — tienen 30 días para responder.\n<strong>2. Reclamo ante la CMF</strong> — si la respuesta es insatisfactoria.\n<strong>3. Demanda judicial</strong> — cuando las vías anteriores no resultan.\n\nRecuerda que la ley presume que el siniestro está cubierto; es la aseguradora quien debe probar lo contrario (Art. 530-531 Código de Comercio).\n\n📋 Para que nuestro equipo revise tu caso, puedes <strong>subir tu póliza o carta de rechazo</strong> en:\n👉 <a href="https://exigetuseguro.cl/contacto" target="_blank">exigetuseguro.cl/contacto</a>`,
-    qr: ['Subir mis documentos','Hablar con un abogado','¿Qué es la CMF?']
-  },
-  {
-    keys: ['plazo','prescripci','cuánto tiempo','cuanto tiempo','fecha límite','vence','vencer'],
-    answer: `En Chile el plazo general para reclamar por un contrato de seguro es de <strong>4 años</strong> desde que la obligación se hizo exigible (Art. 541 Código de Comercio).\n\nSin embargo, cada póliza puede tener plazos internos más breves para <strong>notificar el siniestro</strong> (a veces 3–5 días).\n\n⏰ Mientras más rápido actúes, más fácil es reunir pruebas.\n\nCuéntanos tu caso en:\n👉 <a href="https://exigetuseguro.cl/contacto" target="_blank">exigetuseguro.cl/contacto</a>`,
-    qr: ['Subir mis documentos','¿Rechazaron mi seguro?','Hablar con un abogado']
-  },
-  {
-    keys: ['cmf','comisión para el mercado','comision mercado financiero','regulador','supervisor'],
-    answer: `La <strong>Comisión para el Mercado Financiero (CMF)</strong> regula y supervisa a todas las compañías de seguros en Chile.\n\nPuedes presentar un reclamo ante la CMF si:\n• Tu aseguradora no responde en los plazos legales.\n• Consideras que el rechazo fue injusto.\n• Detectas prácticas abusivas.\n\nLa CMF puede instar a la aseguradora a reconsiderar, pero para una condena existe la vía judicial. 💡\n\nWeb oficial: <a href="https://www.cmfchile.cl" target="_blank">cmfchile.cl</a>`,
-    qr: ['Subir mis documentos','¿Rechazaron mi seguro?','Hablar con un abogado']
-  },
-  {
-    keys: ['vida','seguro de vida','fallecimiento','muerte','beneficiario','desgravamen'],
-    answer: `Los seguros de vida tienen una protección especial en Chile: la <strong>indisputabilidad</strong>.\n\nSi tu póliza tiene más de <strong>2 años</strong> de vigencia, la aseguradora no puede anularla alegando omisiones en la declaración de salud (salvo dolo comprobado).\n\nFundamentos más comunes de impugnación:\n<span class="tag">Indisputabilidad</span> <span class="tag">Preexistencias</span> <span class="tag">Carga probatoria</span>\n\n📋 Sube tu póliza o carta de rechazo para que la revisemos:\n👉 <a href="https://exigetuseguro.cl/contacto" target="_blank">exigetuseguro.cl/contacto</a>`,
-    qr: ['Subir mis documentos','Hablar con un abogado','¿Rechazaron mi seguro?']
-  },
-  {
-    keys: ['salud','isapre','médic','hospital','clínica','enfermedad','preexistencia'],
-    answer: `En seguros de salud, las aseguradoras suelen rechazar por <strong>preexistencias</strong>. Sin embargo, la ley exige que la preexistencia haya sido <strong>diagnosticada Y conocida por el asegurado</strong> al momento de contratar.\n\nSi te rechazan por una condición que desconocías, es muy probable que sea impugnable. También aplica para coberturas complementarias de Isapres.\n\n📋 Cuéntanos tu caso en:\n👉 <a href="https://exigetuseguro.cl/contacto" target="_blank">exigetuseguro.cl/contacto</a>`,
-    qr: ['Subir mis documentos','¿Rechazaron mi seguro?','Hablar con un abogado']
-  },
-  {
-    keys: ['vehiculo','vehicular','auto','car','accidente','choque','robo auto','seguro auto'],
-    answer: `Los seguros vehiculares son de los más reclamados en Chile. Motivos de rechazo frecuentes —y más impugnables—:\n\n• <strong>Exclusión por "culpa grave"</strong> mal fundamentada.\n• Tasación inferior al valor real del vehículo.\n• Incumplimiento de plazos por causas ajenas al asegurado.\n• Cláusulas de exclusión ambiguas.\n\nEn caso de duda, la ley ordena interpretar siempre a favor del asegurado.\n\n📋 <a href="https://exigetuseguro.cl/contacto" target="_blank">exigetuseguro.cl/contacto</a>`,
-    qr: ['Subir mis documentos','¿Rechazaron mi seguro?','Hablar con un abogado']
-  },
-  {
-    keys: ['incendio','sismo','terremoto','hogar','daño','destrucción','inundación'],
-    answer: `Para siniestros de incendio, sismo o daños al hogar:\n\n<strong>1.</strong> Notifica el siniestro a tu aseguradora lo antes posible.\n<strong>2.</strong> No repares los daños antes de la inspección del liquidador.\n<strong>3.</strong> Documenta todo con fotos y videos con fecha.\n<strong>4.</strong> Guarda todas las boletas de gastos relacionados.\n\nSi la tasación es muy inferior a lo esperado, también es impugnable.\n\n📋 <a href="https://exigetuseguro.cl/contacto" target="_blank">exigetuseguro.cl/contacto</a>`,
-    qr: ['Subir mis documentos','¿Rechazaron mi seguro?','Hablar con un abogado']
-  },
-  {
-    keys: ['poliza','póliza','contrato','cobertura','que cubre','qué cubre','exclusion','exclusión'],
-    answer: `La póliza es el contrato que define tus derechos. Puntos clave:\n\n<span class="tag">Coberturas</span> ¿Qué riesgos están incluidos?\n<span class="tag">Exclusiones</span> Deben ser claras; las ambiguas se interpretan a tu favor.\n<span class="tag">Suma asegurada</span> El monto máximo que te pueden pagar.\n<span class="tag">Deducible</span> Lo que tú absorbes antes que pague el seguro.\n\n📋 Súbela y la revisamos:\n👉 <a href="https://exigetuseguro.cl/contacto" target="_blank">exigetuseguro.cl/contacto</a>`,
-    qr: ['Subir mis documentos','Hablar con un abogado','¿Qué es la CMF?']
-  },
-  {
-    keys: ['subir','adjuntar','documentos','archivo','formulario','enviar caso','relato','carta rechazo','carta de rechazo'],
-    answer: `Puedes enviarnos tu caso completo —<strong>póliza, carta de rechazo, fotos u otros documentos</strong>— a través de nuestro formulario:\n\n👉 <a href="https://exigetuseguro.cl/contacto" target="_blank"><strong>exigetuseguro.cl/contacto</strong></a>\n\nTambién puedes escribir el <strong>relato de los hechos</strong> para que nuestro equipo entienda tu situación desde el primer momento.\n\nEl análisis inicial es <strong>100% gratuito</strong> y sin compromiso. ✅`,
-    qr: ['Hablar con un abogado','¿Rechazaron mi seguro?','¿Qué es la CMF?']
-  },
-  {
-    keys: ['abogado','asesoría','asesoria','consulta','ayuda','contacto','whatsapp','llamar','precio','costo','honorario','gratis','primera consulta'],
-    answer: `Nuestra <strong>primera consulta es completamente gratuita</strong> y sin compromiso. 🎉\n\n📋 <a href="https://exigetuseguro.cl/contacto" target="_blank">Formulario · exigetuseguro.cl/contacto</a>\n📱 <a href="https://wa.me/56979939868" target="_blank">WhatsApp · +56 9 7993 9868</a>\n📧 <a href="mailto:contacto@exigetuseguro.cl">contacto@exigetuseguro.cl</a>\n\nAtendemos en todo Chile por videollamada, WhatsApp o email.`,
-    qr: ['Subir mis documentos','¿Rechazaron mi seguro?','¿Qué es la CMF?']
-  },
+  /* ── SALUDO ── */
   {
     keys: ['hola','buenas','buenos días','buenas tardes','buenas noches','hey','saludos'],
-    answer: `¡Hola! 👋 Soy el asistente virtual de <strong>ExigeTuSeguro.cl</strong>.\n\nEstoy aquí para orientarte sobre tus derechos como asegurado en Chile: rechazos, plazos, coberturas, impugnaciones y más.\n\n¿En qué te puedo ayudar hoy?`,
-    qr: ['¿Rechazaron mi seguro?','Subir mis documentos','Hablar con un abogado']
+    answer: `¡Hola! 👋 Soy el asistente virtual de <strong>ExigeTuSeguro.cl</strong>.\n\nEstoy aquí para orientarte sobre tus derechos como asegurado en Chile: rechazos, impugnaciones, plazos legales, SOAP y mucho más.\n\n¿En qué te puedo ayudar hoy?`,
+    qr: ['Rechazaron mi seguro','Subir mis documentos','Hablar con un abogado']
   },
+
+  /* ── RECHAZO / NEGATIVA ── */
   {
-    keys: ['gracias','muchas gracias','thanks','genial','perfecto','excelente'],
+    keys: ['rechaz','negaron','denegaron','no pagaron','no me pagan','siniestro rechaz','niegan','negativa'],
+    answer: `Si tu aseguradora rechazó tu siniestro, tienes opciones legales concretas:\n\n<strong>Vía 1 · Reclamo ante la aseguradora</strong>\nEscrito formal citando el Código de Comercio. La aseguradora debe responder en los plazos establecidos.\n\n<strong>Vía 2 · CMF</strong>\nPuedes reclamar ante la Comisión para el Mercado Financiero (Ley N° 21.000) en <a href="https://www.cmfchile.cl" target="_blank">cmfchile.cl</a>.\n\n<strong>Vía 3 · Arbitraje o demanda judicial</strong>\nSegún el Art. 543 del Código de Comercio, las controversias de seguros se resuelven ante árbitro. Para montos menores a 10.000 UF puedes optar por tribunal ordinario.\n\nRecuerda: la ley presume que el siniestro está cubierto — <strong>es la aseguradora quien debe probar lo contrario</strong>.\n\n📋 Sube tu póliza o carta de rechazo para que nuestro equipo evalúe tu caso:\n👉 <a href="https://exigetuseguro.cl/contacto" target="_blank">exigetuseguro.cl/contacto</a>`,
+    qr: ['Impugnar liquidación','Subir mis documentos','¿Qué es la CMF?','Hablar con un abogado']
+  },
+
+  /* ── IMPUGNAR / LIQUIDACIÓN ── */
+  {
+    keys: ['impugnar','impugnación','liquidación','liquidacion','liquidador','informe liquidac','DS 1055','ds1055'],
+    answer: `El proceso de impugnación de un informe de liquidación está regulado por el <strong>DS 1.055</strong>:\n\n<strong>Plazos para impugnar (desde que recibes el informe):</strong>\n• Pólizas normales → <strong>10 días hábiles</strong>\n• Pólizas con prima superior a 200 UF → <strong>20 días hábiles</strong>\n\n<strong>Respuesta del liquidador:</strong>\n• Pólizas normales → 6 días hábiles\n• Pólizas &gt;200 UF → 12 días hábiles\n\n<strong>Pago de la indemnización:</strong>\nUna vez resuelta la impugnación, la aseguradora tiene <strong>6 días hábiles</strong> para pagarte.\n\nEl informe debe contener opinión técnica fundada sobre cada cobertura rechazada. Si no es así, es impugnable.\n\n📋 <a href="https://exigetuseguro.cl/contacto" target="_blank">exigetuseguro.cl/contacto</a>`,
+    qr: ['Subir mis documentos','Rechazaron mi seguro','Hablar con un abogado']
+  },
+
+  /* ── PLAZOS ── */
+  {
+    keys: ['plazo','prescripci','cuánto tiempo','cuanto tiempo','fecha límite','vence','vencer','tiempo para reclamar'],
+    answer: `Los plazos legales clave en seguros en Chile son:\n\n<strong>Prescripción general</strong> → <strong>4 años</strong> desde que la obligación se hizo exigible (Art. 541 Código de Comercio).\n\n<strong>Notificar el siniestro</strong> → Lo antes posible. Cada póliza puede fijar plazos internos breves (algunos de 3–5 días).\n\n<strong>Impugnar informe de liquidación</strong> → 10 días hábiles (o 20 si prima &gt;200 UF).\n\n<strong>Pago de indemnización</strong> → 6 días hábiles desde aprobada la liquidación.\n\n<strong>SOAP (fallecimiento)</strong> → 7 días hábiles para seguros desde el 9/02/2026; 10 días hábiles para pólizas anteriores.\n\n⏰ Mientras más rápido actúes, más fácil es reunir pruebas.\n\n📋 <a href="https://exigetuseguro.cl/contacto" target="_blank">exigetuseguro.cl/contacto</a>`,
+    qr: ['Impugnar liquidación','Rechazaron mi seguro','Hablar con un abogado']
+  },
+
+  /* ── CMF ── */
+  {
+    keys: ['cmf','comisión para el mercado','comision mercado financiero','regulador','supervisor seguros'],
+    answer: `La <strong>Comisión para el Mercado Financiero (CMF)</strong>, creada por la Ley N° 21.000, es el organismo que regula y supervisa a todas las compañías de seguros en Chile. Reemplazó a la antigua SVS.\n\nPuedes presentar un reclamo ante la CMF si:\n• Tu aseguradora rechaza tu siniestro injustamente.\n• No responde en los plazos legales.\n• Detectas prácticas abusivas.\n\n⚠️ <strong>Importante:</strong> La CMF fiscaliza y puede sancionar a las aseguradoras, pero no ordena pagos directamente. Para exigir el pago necesitas además la vía judicial o arbitral (Art. 543 Código de Comercio).\n\nAun así, un pronunciamiento favorable de la CMF es evidencia valiosa en cualquier litigio posterior.\n\nWeb oficial: <a href="https://www.cmfchile.cl" target="_blank">cmfchile.cl</a>`,
+    qr: ['Subir mis documentos','Rechazaron mi seguro','Hablar con un abogado']
+  },
+
+  /* ── INDISPUTABILIDAD ── */
+  {
+    keys: ['indisputabilidad','indisputable','dos años','2 años vigencia','art 592','artículo 592'],
+    answer: `La <strong>indisputabilidad</strong> es una protección clave en los seguros de vida, regulada por el <strong>Art. 592 del Código de Comercio</strong>.\n\n¿Qué significa? Una vez transcurridos <strong>2 años</strong> desde la contratación, la aseguradora <strong>no puede anular la póliza</strong> ni negarse a pagar alegando que omitiste información al contratar — ni siquiera si esa omisión fue involuntaria.\n\n<strong>Excepciones:</strong> Solo aplica si existe <strong>dolo comprobado</strong> (intención de engañar) o fraude.\n\nEjemplo práctico: si olvidaste declarar una condición médica y tu póliza tiene más de 2 años, la aseguradora no puede usar eso para rechazarte.\n\n📋 ¿Te rechazaron un seguro de vida? Cuéntanos:\n👉 <a href="https://exigetuseguro.cl/contacto" target="_blank">exigetuseguro.cl/contacto</a>`,
+    qr: ['Seguro de vida','Subir mis documentos','Hablar con un abogado']
+  },
+
+  /* ── SEGURO DE VIDA ── */
+  {
+    keys: ['vida','seguro de vida','fallecimiento','muerte','beneficiario','desgravamen','invalidez'],
+    answer: `Los seguros de vida tienen protecciones especiales en Chile:\n\n<span class="tag">Indisputabilidad</span> Después de 2 años, la aseguradora no puede anular la póliza por omisiones (salvo dolo). Art. 592 Código de Comercio.\n\n<span class="tag">Preexistencias</span> Solo se pueden rechazar si la condición fue <strong>diagnosticada Y conocida</strong> por el asegurado al contratar.\n\n<span class="tag">Carga de la prueba</span> Es la aseguradora quien debe demostrar que existe causa para denegar — no tú.\n\n<span class="tag">Beneficiarios</span> El orden legal de cobro es: cónyuge, hijos menores, hijos mayores, padres — y el conviviente civil solo si no existe ninguno de los anteriores.\n\n📋 Sube tu póliza o carta de rechazo:\n👉 <a href="https://exigetuseguro.cl/contacto" target="_blank">exigetuseguro.cl/contacto</a>`,
+    qr: ['Indisputabilidad','Subir mis documentos','Hablar con un abogado']
+  },
+
+  /* ── SALUD / ISAPRE ── */
+  {
+    keys: ['salud','isapre','médic','hospital','clínica','enfermedad','preexistencia'],
+    answer: `En seguros de salud, el motivo más frecuente de rechazo son las <strong>preexistencias</strong>.\n\nLo que dice la ley (Art. 590-592 Código de Comercio): una preexistencia solo es válida como causal de rechazo si la condición fue <strong>diagnosticada Y conocida por el asegurado</strong> al momento de contratar.\n\nSi te rechazan por una enfermedad que desconocías, es muy probable que sea impugnable.\n\nTambién aplica a coberturas complementarias de Isapres y seguros privados de salud.\n\n📋 Cuéntanos tu caso:\n👉 <a href="https://exigetuseguro.cl/contacto" target="_blank">exigetuseguro.cl/contacto</a>`,
+    qr: ['Subir mis documentos','Rechazaron mi seguro','Hablar con un abogado']
+  },
+
+  /* ── VEHICULAR ── */
+  {
+    keys: ['vehiculo','vehicular','auto','accidente','choque','robo auto','seguro auto','todo riesgo','terceros'],
+    answer: `Los seguros vehiculares tienen motivos de rechazo frecuentes — y muchos son impugnables:\n\n• <strong>Exclusión por "culpa grave"</strong> mal fundamentada.\n• Tasación del vehículo muy por debajo de su valor real.\n• Incumplimiento de plazos de notificación por causas ajenas al asegurado.\n• Cláusulas ambiguas (que la ley obliga a interpretar a tu favor).\n\nTipos de seguros en Chile:\n<span class="tag">SOAP</span> Obligatorio. Cubre lesiones a personas en accidentes.\n<span class="tag">Terceros</span> Cubre daños que causes a otros vehículos o personas.\n<span class="tag">Todo Riesgo</span> Cobertura amplia: daños propios, robos, terceros.\n\n📋 <a href="https://exigetuseguro.cl/contacto" target="_blank">exigetuseguro.cl/contacto</a>`,
+    qr: ['SOAP 2026','Subir mis documentos','Hablar con un abogado']
+  },
+
+  /* ── SOAP 2026 ── */
+  {
+    keys: ['soap','seguro obligatorio','accidente tránsito','accidente de tránsito','ley jacinta','ley 21797','atropello'],
+    answer: `El <strong>SOAP (Seguro Obligatorio de Accidentes Personales)</strong> cubre a todas las víctimas de accidentes de tránsito — conductor, pasajeros, peatones y ciclistas — <strong>sin importar quién tuvo la culpa</strong>.\n\n📌 <strong>Nuevos montos SOAP desde el 9 de febrero de 2026</strong> (Ley Jacinta N° 21.797):\n\n<span class="tag">Muerte</span> Hasta 600 UF (antes 300 UF)\n<span class="tag">Invalidez total</span> Hasta 600 UF (antes 300 UF)\n<span class="tag">Invalidez parcial</span> Hasta 400 UF (antes 200 UF)\n<span class="tag">Gastos médicos</span> Hasta 600 UF (antes 300 UF)\n\n⚠️ Las pólizas contratadas <strong>antes del 9/02/2026</strong> mantienen los montos anteriores. Las nuevas coberturas aplican solo a pólizas contratadas desde esa fecha.\n\n<strong>Plazo de pago:</strong> 7 días hábiles por fallecimiento (pólizas nuevas) o 10 días hábiles (pólizas anteriores).\n\n📋 ¿Problemas con tu reclamo del SOAP?\n👉 <a href="https://exigetuseguro.cl/contacto" target="_blank">exigetuseguro.cl/contacto</a>`,
+    qr: ['Hablar con un abogado','Subir mis documentos','Plazos para reclamar']
+  },
+
+  /* ── INCENDIO / SISMO / HOGAR ── */
+  {
+    keys: ['incendio','sismo','terremoto','hogar','daño','inundación','robo hogar'],
+    answer: `Para siniestros de incendio, sismo o daños al hogar, actúa así:\n\n<strong>1.</strong> Notifica a tu aseguradora <strong>lo antes posible</strong>.\n<strong>2.</strong> <strong>No repares los daños</strong> antes de la inspección del liquidador.\n<strong>3.</strong> Documenta todo: fotos, videos con fecha, boletas de gastos.\n<strong>4.</strong> Guarda <strong>toda la correspondencia</strong> con la aseguradora.\n\nSi el monto de la tasación es muy inferior al daño real, tienes derecho a impugnar el informe de liquidación dentro de <strong>10 días hábiles</strong> (DS 1.055).\n\n📋 Sube tus documentos y relato del caso:\n👉 <a href="https://exigetuseguro.cl/contacto" target="_blank">exigetuseguro.cl/contacto</a>`,
+    qr: ['Impugnar liquidación','Subir mis documentos','Hablar con un abogado']
+  },
+
+  /* ── PÓLIZA / COBERTURAS ── */
+  {
+    keys: ['poliza','póliza','contrato seguro','cobertura','que cubre','qué cubre','exclusion','exclusión','deducible','franquicia','suma asegurada'],
+    answer: `La póliza es el contrato que define tus derechos. Lo que debes saber:\n\n<span class="tag">Coberturas</span> Qué riesgos están incluidos. Debes recibirla en máximo <strong>5 días hábiles</strong> desde la contratación (Art. 519 Código de Comercio).\n\n<span class="tag">Exclusiones</span> Lo que NO cubre. Deben ser claras y específicas — las ambiguas se interpretan <strong>a tu favor</strong> (Art. 542).\n\n<span class="tag">Deducible</span> Monto que siempre pagas tú antes que la aseguradora cubra el resto.\n\n<span class="tag">Franquicia</span> Distinto al deducible: la aseguradora paga todo si el daño supera el umbral pactado.\n\n<span class="tag">Suma asegurada</span> Monto máximo a indemnizar.\n\n⚠️ Importante: ninguna cláusula puede ser menos favorable que lo que establece la ley (Art. 542 Código de Comercio).\n\n📋 ¿Tienes dudas sobre tu póliza? La revisamos:\n👉 <a href="https://exigetuseguro.cl/contacto" target="_blank">exigetuseguro.cl/contacto</a>`,
+    qr: ['Subir mis documentos','Rechazaron mi seguro','Hablar con un abogado']
+  },
+
+  /* ── FRAUDE ── */
+  {
+    keys: ['fraude','fraude seguro','simular siniestro','declaración falsa','ley 20667','art 470'],
+    answer: `El fraude al seguro es un <strong>delito penal en Chile</strong> desde 2013, tipificado en el Art. 470 N° 10 del Código Penal (incorporado por la Ley N° 20.667).\n\nSe considera fraude:\n• Simular un siniestro que no ocurrió.\n• Provocarlo intencionalmente.\n• Presentarlo con circunstancias falsas.\n• Ocultar el bien asegurado.\n• Exagerar fraudulentamente las pérdidas.\n\nLas penas varían según el monto defraudado (Art. 467 Código Penal).\n\n⚠️ El fraude no solo es ilegal — también encarece las primas para todos los asegurados honestos.\n\nSi sospechas de una práctica abusiva <strong>por parte de la aseguradora</strong>, eso es distinto y puedes reclamar ante la CMF.`,
+    qr: ['¿Qué es la CMF?','Hablar con un abogado','Subir mis documentos']
+  },
+
+  /* ── OBLIGACIONES DEL ASEGURADO ── */
+  {
+    keys: ['obligaciones','deber','deberes','qué debo hacer','qué tengo que hacer','requisito'],
+    answer: `Como asegurado en Chile, tienes estas obligaciones principales (Código de Comercio):\n\n<strong>Al contratar:</strong> Declarar verazmente el riesgo (Art. 524 N°1). Ocultar información relevante puede anular la póliza.\n\n<strong>Durante la vigencia:</strong> Pagar la prima a tiempo. Si no pagas, la póliza termina a los 15 días de la comunicación del asegurador (Art. 528).\n\n<strong>Al ocurrir el siniestro:</strong> Avisar a la aseguradora lo antes posible, minimizar los daños y colaborar con la investigación.\n\n<strong>Prohibido:</strong> Simular, exagerar daños o presentar documentos falsos — es fraude y delito penal (Ley N° 20.667).\n\n📋 ¿Tienes dudas sobre tu caso?\n👉 <a href="https://exigetuseguro.cl/contacto" target="_blank">exigetuseguro.cl/contacto</a>`,
+    qr: ['Rechazaron mi seguro','Hablar con un abogado','Subir mis documentos']
+  },
+
+  /* ── HONORARIOS / PRECIOS ── */
+  {
+    keys: ['honorario','precio','cuánto cuesta','cuanto cuesta','cuánto cobran','cuanto cobran','costo servicio','tarifa','pagar','cuota litis','informe análisis','informe analisis','análisis previo','35000','100000','150000','porcentaje','éxito','exito'],
+    answer: `Trabajamos con <strong>total transparencia</strong> en honorarios. Estas son nuestras modalidades:
+
+<strong>📄 Informe de análisis previo</strong>
+$35.000 — Análisis de tu cobertura, normativa aplicable y posibilidades de éxito. Entrega en menos de 5 días hábiles.
+
+<strong>⚖️ Impugnación (montos entre $1M y $20M)</strong>
+$100.000 + 10% de la indemnización obtenida.
+
+<strong>⚖️ Impugnación (montos sobre $20M)</strong>
+$150.000 + 10% de la indemnización obtenida.
+
+<strong>📊 Diferencia en indemnización (bajo $1M)</strong>
+$50.000 + 10% de la diferencia lograda.
+
+💡 <strong>Cuota litis:</strong> Si no obtenemos resultado favorable, <strong>no pagas honorarios</strong> por nuestra representación legal.
+
+🎉 La <strong>primera consulta es 100% gratuita</strong> y sin compromiso.
+
+📋 <a href="https://exigetuseguro.cl/honorarios" target="_blank">Ver guía completa de honorarios</a>
+👉 <a href="https://exigetuseguro.cl/contacto" target="_blank">exigetuseguro.cl/contacto</a>`,
+    qr: ['Subir mis documentos','Hablar con un abogado','Rechazaron mi seguro']
+  },
+
+  /* ── SUBIR DOCUMENTOS ── */
+  {
+    keys: ['subir','adjuntar','documentos','archivo','formulario','enviar caso','relato','carta rechazo','carta de rechazo','enviar póliza'],
+    answer: `Puedes enviarnos tu caso completo —<strong>póliza, carta de rechazo, fotos u otros documentos</strong>— a través de nuestro formulario:\n\n👉 <a href="https://exigetuseguro.cl/contacto" target="_blank"><strong>exigetuseguro.cl/contacto</strong></a>\n\nEn el formulario también puedes escribir el <strong>relato de los hechos</strong> para que nuestro equipo entienda tu situación desde el primer momento.\n\nEl análisis inicial es <strong>100% gratuito</strong> y sin compromiso. ✅`,
+    qr: ['Hablar con un abogado','Rechazaron mi seguro','¿Qué es la CMF?']
+  },
+
+  /* ── CONTACTO / ABOGADO ── */
+  {
+    keys: ['abogado','asesoría','asesoria','consulta','ayuda','contacto','whatsapp','llamar','precio','costo','honorario','gratis','primera consulta','agendar'],
+    answer: `Nuestra <strong>primera consulta es completamente gratuita</strong> y sin compromiso. 🎉\n\n📋 <a href="https://exigetuseguro.cl/contacto" target="_blank">Formulario · exigetuseguro.cl/contacto</a> — sube tu póliza o carta de rechazo\n📱 <a href="https://wa.me/56979939868" target="_blank">WhatsApp · +56 9 7993 9868</a>\n📧 <a href="mailto:contacto@exigetuseguro.cl">contacto@exigetuseguro.cl</a>\n\nAtendemos en todo Chile por videollamada, WhatsApp o email. Sin importar en qué región te encuentres.`,
+    qr: ['Subir mis documentos','Rechazaron mi seguro','SOAP 2026']
+  },
+
+  /* ── GRACIAS ── */
+  {
+    keys: ['gracias','muchas gracias','thanks','genial','perfecto','excelente','muy útil'],
     answer: `¡Con gusto! 😊 Recuerda que puedes enviarnos tus documentos cuando quieras:\n\n📋 <a href="https://exigetuseguro.cl/contacto" target="_blank">exigetuseguro.cl/contacto</a>\n📱 <a href="https://wa.me/56979939868" target="_blank">WhatsApp · +56 9 7993 9868</a>\n\nPrimera consulta <strong>100% gratuita</strong>.`,
     qr: ['Subir mis documentos','Hablar con un abogado']
-  },
-  {
-    keys: ['impugnar','impugnación','recurso','reclamar','reclamo','apelar','apelación'],
-    answer: `Impugnar un rechazo es tu derecho. El proceso tiene 3 vías:\n\n<strong>Vía 1 · Aseguradora directa</strong>\nEscrito formal citando el Código de Comercio. Tienen 30 días para responder.\n\n<strong>Vía 2 · CMF</strong>\nSi no hay respuesta satisfactoria, reclamo ante la Comisión para el Mercado Financiero.\n\n<strong>Vía 3 · Judicial</strong>\nDemanda civil. Montos menores a 10.000 UF → Juzgado de Policía Local.\n\n📋 Sube tu póliza o carta de rechazo para evaluar tu caso:\n👉 <a href="https://exigetuseguro.cl/contacto" target="_blank">exigetuseguro.cl/contacto</a>`,
-    qr: ['Subir mis documentos','Hablar con un abogado','¿Qué es la CMF?']
   }
 ];
 
