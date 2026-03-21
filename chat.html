@@ -3,7 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Asistente Legal · ExigeTuSeguro.cl</title>
+<title>Asistente Legal Seguros Chile | Consulta Gratis | ExigeTuSeguro.cl</title>
+<meta name="description" content="Asistente legal especializado en seguros Chile. Consulta gratis sobre rechazos de seguros, impugnaciones, plazos legales, SOAP 2026 e indisputabilidad. Abogados especialistas disponibles. ☎️ +56 9 7993 9868"/>
+<meta name="keywords" content="asistente legal seguros chile, consulta gratis seguro rechazado, abogado seguros chile, impugnar rechazo seguro, SOAP 2026 ley jacinta, indisputabilidad seguro vida, CMF reclamo seguro, exige tu seguro"/>
+<meta name="robots" content="index, follow"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://www.exigetuseguro.cl/asistente"/>
+<meta property="og:title" content="Asistente Legal Seguros Chile | Consulta Gratis"/>
+<meta property="og:description" content="¿Te rechazaron un seguro? Consulta gratis con nuestro asistente legal especializado en seguros Chile."/>
+<meta property="og:locale" content="es_CL"/>
+<link rel="canonical" href="https://www.exigetuseguro.cl/asistente"/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
@@ -15,7 +24,6 @@
   --sky:   #3695BF;
   --green: #34A853;
   --g2:    #2d9147;
-  --bg:    #eef2f7;
   --white: #ffffff;
   --gray:  #64748b;
 }
@@ -23,59 +31,193 @@
 * { margin:0; padding:0; box-sizing:border-box; }
 html, body { height:100%; }
 
-body {
-  font-family: 'DM Sans', sans-serif;
-  background: var(--bg);
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px 20px;
-}
-
 /* ── animated icon ── */
 .i-rot  { transform-origin:22px 22px; animation: iRot 8s linear infinite; }
 .i-puls { transform-origin:22px 22px; animation: iPuls 3s ease-in-out infinite; }
 .i-orb  { animation: iOrb 2s ease-in-out infinite; }
-
 @keyframes iRot  { to { transform:rotate(360deg); } }
 @keyframes iPuls { 0%,100%{transform:scale(1);opacity:1;} 50%{transform:scale(1.08);opacity:.8;} }
 @keyframes iOrb  { 0%,100%{opacity:1;} 50%{opacity:.25;} }
+@keyframes blink { 0%,100%{opacity:1;} 50%{opacity:.15;} }
+@keyframes bounce { 0%,80%,100%{transform:translateY(0);} 40%{transform:translateY(-7px);} }
+@keyframes popIn { from{opacity:0;transform:scale(.88) translateY(10px);} to{opacity:1;transform:scale(1) translateY(0);} }
 
-/* ── card ── */
-.chat-card {
+/* ══ PAGE ══ */
+body {
+  font-family: 'DM Sans', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: stretch;
+  background: linear-gradient(135deg, rgba(10,61,98,0.52) 0%, rgba(54,149,191,0.46) 100%),
+              url('https://images.pexels.com/photos/10155555/pexels-photo-10155555.jpeg') center/cover;
+}
+
+/* ══ TWO-COLUMN LAYOUT ══ */
+.page-grid {
+  display: grid;
+  grid-template-columns: 380px 1fr;
   width: 100%;
-  max-width: 700px;
-  height: min(800px, calc(100vh - 48px));
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 28px;
+  gap: 24px;
+  align-items: center;
+}
+
+/* ══ LEFT PANEL ══ */
+.left-panel {
+  height: min(820px, calc(100vh - 56px));
+}
+
+.left-card {
+  background: rgba(10,61,98,0.85);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 24px;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+/* action buttons */
+.lp-actions {
+  padding: 28px 28px 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lp-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 16px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: .9rem;
+  font-weight: 600;
+  transition: all .2s;
+  color: white;
+}
+.lp-btn .btn-icon {
+  width: 36px; height: 36px;
+  border-radius: 9px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+.lp-btn .btn-text { flex:1; }
+.lp-btn .btn-text small { display:block; font-size:.75rem; font-weight:400; opacity:.6; margin-top:1px; }
+.lp-btn .btn-arrow { font-size:.7rem; opacity:.5; }
+
+.lp-btn-form {
+  background: rgba(52,168,83,.18);
+  border: 1px solid rgba(52,168,83,.3);
+}
+.lp-btn-form .btn-icon { background: rgba(52,168,83,.25); color: #7ed99a; }
+.lp-btn-form:hover { background: rgba(52,168,83,.28); border-color: rgba(52,168,83,.5); transform: translateX(3px); }
+
+.lp-btn-wa {
+  background: rgba(37,211,102,.12);
+  border: 1px solid rgba(37,211,102,.22);
+}
+.lp-btn-wa .btn-icon { background: rgba(37,211,102,.2); color: #6fcf97; }
+.lp-btn-wa:hover { background: rgba(37,211,102,.22); transform: translateX(3px); }
+
+.lp-btn-cal {
+  background: rgba(54,149,191,.14);
+  border: 1px solid rgba(54,149,191,.25);
+}
+.lp-btn-cal .btn-icon { background: rgba(54,149,191,.2); color: #7ad4f5; }
+.lp-btn-cal:hover { background: rgba(54,149,191,.24); transform: translateX(3px); }
+
+.lp-btn-mail {
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.1);
+}
+.lp-btn-mail .btn-icon { background: rgba(255,255,255,.1); color: rgba(255,255,255,.7); }
+.lp-btn-mail:hover { background: rgba(255,255,255,.1); transform: translateX(3px); }
+
+/* info blocks */
+.lp-info {
+  padding: 20px 28px;
+  flex: 1;
+}
+.lp-info-label {
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.3);
+  margin-bottom: 12px;
+}
+.info-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.info-row:last-child { border-bottom: none; }
+.info-dot {
+  width: 7px; height: 7px;
+  background: var(--green);
+  border-radius: 50%;
+  flex-shrink: 0;
+  animation: blink 2s ease-in-out infinite;
+}
+.info-row p { font-size: .84rem; color: rgba(255,255,255,.6); line-height: 1.4; }
+
+/* bottom badge */
+.lp-footer {
+  padding: 16px 28px;
+  border-top: 1px solid rgba(255,255,255,.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lp-footer-badge {
+  display: flex; align-items: center; gap: 6px;
+  background: rgba(52,168,83,.15);
+  border: 1px solid rgba(52,168,83,.25);
+  color: #7ed99a;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: .7rem; font-weight: 700;
+  padding: 5px 12px; border-radius: 50px;
+  letter-spacing: .5px; text-transform: uppercase;
+}
+.lp-footer-badge .dot {
+  width: 6px; height: 6px; background: var(--green);
+  border-radius: 50%; animation: blink 1.4s ease-in-out infinite;
+}
+
+/* ══ CHAT CARD ══ */
+.chat-card {
+  height: min(820px, calc(100vh - 56px));
   background: var(--white);
   border-radius: 24px;
-  box-shadow: 0 20px 64px rgba(10,61,98,.15);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
   display: flex;
   flex-direction: column;
   overflow: hidden;
 }
 
-/* ── topbar ── */
+/* topbar */
 .topbar {
   padding: 18px 24px;
   background: linear-gradient(135deg, var(--navy) 0%, var(--sky) 100%);
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  flex-shrink: 0;
+  display: flex; align-items: center; gap: 14px; flex-shrink: 0;
 }
-
-/* animated SVG icon replacing the avatar */
 .topbar-icon { flex-shrink: 0; }
-
 .topbar-info { flex: 1; }
 .topbar-info h3 {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 1rem; font-weight: 600;
-  color: white; margin-bottom: 2px;
+  font-size: 1rem; font-weight: 600; color: white; margin-bottom: 2px;
 }
 .topbar-info p { font-size: .75rem; color: rgba(255,255,255,.6); }
-
 .topbar-badge {
   display: flex; align-items: center; gap: 6px;
   background: rgba(52,168,83,.2);
@@ -89,400 +231,368 @@ body {
 }
 .topbar-badge .dot {
   width: 6px; height: 6px; background: var(--green);
-  border-radius: 50%;
-  animation: blink 1.4s ease-in-out infinite;
+  border-radius: 50%; animation: blink 1.4s ease-in-out infinite;
 }
-@keyframes blink { 0%,100%{opacity:1;} 50%{opacity:.15;} }
 
-/* ── messages ── */
+/* messages */
 .chat-messages {
-  flex: 1;
-  overflow-y: auto;
-  padding: 28px 26px 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  scroll-behavior: smooth;
-  background: #f7f9fc;
+  flex: 1; overflow-y: auto;
+  padding: 24px 22px 16px;
+  display: flex; flex-direction: column; gap: 16px;
+  scroll-behavior: smooth; background: #f7f9fc;
 }
 .chat-messages::-webkit-scrollbar { width: 4px; }
 .chat-messages::-webkit-scrollbar-thumb { background: rgba(10,61,98,.12); border-radius: 4px; }
 
-/* ── bubbles ── */
-.bwrap { display:flex; align-items:flex-end; gap:10px; }
+/* bubbles */
+.bwrap { display:flex; align-items:flex-end; gap:9px; }
 .bwrap.user { flex-direction:row-reverse; }
-
 .bav {
-  width:30px; height:30px; border-radius:50%;
+  width:29px; height:29px; border-radius:50%;
   display:flex; align-items:center; justify-content:center;
-  font-size:.72rem; flex-shrink:0; margin-bottom:2px;
+  font-size:.7rem; flex-shrink:0; margin-bottom:2px;
 }
 .bav.bot  { background:linear-gradient(135deg,var(--navy),var(--sky)); color:white; }
 .bav.user { background:var(--green); color:white; }
 
 .bubble {
-  max-width: 73%;
-  padding: 13px 17px;
-  border-radius: 20px;
-  font-size: .93rem;
-  line-height: 1.65;
-  animation: pop .22s cubic-bezier(.34,1.56,.64,1);
+  max-width: 74%;
+  padding: 12px 16px;
+  border-radius: 18px;
+  font-size: .9rem; line-height: 1.62;
+  animation: popIn .22s cubic-bezier(.34,1.56,.64,1);
 }
-@keyframes pop {
-  from { opacity:0; transform:scale(.88) translateY(10px); }
-  to   { opacity:1; transform:scale(1) translateY(0); }
-}
-
 .bubble.bot {
-  background: var(--white);
-  color: #1e293b;
-  border-bottom-left-radius: 5px;
-  box-shadow: 0 2px 10px rgba(10,61,98,.08);
+  background: var(--white); color: #1e293b;
+  border-bottom-left-radius: 4px;
+  box-shadow: 0 2px 8px rgba(10,61,98,.08);
 }
 .bubble.user {
   background: linear-gradient(135deg,var(--navy),var(--sky));
-  color: white;
-  border-bottom-right-radius: 5px;
+  color: white; border-bottom-right-radius: 4px;
 }
 .bubble a { color:var(--green); text-decoration:underline; font-weight:600; }
 .bubble.user a { color:#a8ffca; }
 .bubble strong { font-weight:700; }
 .bubble .tag {
-  display:inline-block;
-  background:rgba(52,168,83,.12); color:var(--g2);
-  font-size:.73rem; font-weight:700;
-  padding:2px 9px; border-radius:8px; margin:3px 3px 0 0;
+  display:inline-block; background:rgba(52,168,83,.12); color:#2d9147;
+  font-size:.73rem; font-weight:700; padding:2px 8px; border-radius:7px; margin:3px 3px 0 0;
 }
 
 /* typing */
-.typing { display:flex; align-items:center; gap:5px; padding:12px 16px; }
+.typing { display:flex; align-items:center; gap:5px; padding:11px 14px; }
 .typing span {
   width:7px; height:7px; background:#cbd5e1;
   border-radius:50%; animation:bounce .9s infinite;
 }
-.typing span:nth-child(2) { animation-delay:.18s; }
-.typing span:nth-child(3) { animation-delay:.36s; }
-@keyframes bounce { 0%,80%,100%{transform:translateY(0);} 40%{transform:translateY(-7px);} }
+.typing span:nth-child(2){animation-delay:.18s;}
+.typing span:nth-child(3){animation-delay:.36s;}
 
-/* ── quick replies ── */
+/* quick replies */
 .quickreplies {
-  display:flex; flex-wrap:wrap; gap:8px;
-  padding:14px 26px 16px;
-  flex-shrink:0;
-  background:#f7f9fc;
+  display:flex; flex-wrap:wrap; gap:7px;
+  padding:12px 22px 14px;
+  flex-shrink:0; background:#f7f9fc;
   border-top:1px solid rgba(10,61,98,.05);
 }
-.quickreplies:empty { padding:0; border-top:none; }
-
+.quickreplies:empty{padding:0;border-top:none;}
 .qr-btn {
-  padding:8px 16px;
+  padding:7px 14px;
   background:var(--white);
   border:1.5px solid rgba(10,61,98,.13);
   border-radius:50px;
   font-family:'DM Sans',sans-serif;
-  font-size:.83rem; font-weight:500; color:var(--navy);
+  font-size:.81rem; font-weight:500; color:var(--navy);
   cursor:pointer; transition:all .18s; white-space:nowrap;
   box-shadow:0 1px 4px rgba(10,61,98,.06);
 }
 .qr-btn:hover {
   background:var(--navy); color:white;
-  border-color:var(--navy); transform:translateY(-2px);
-  box-shadow:0 5px 14px rgba(10,61,98,.18);
+  border-color:var(--navy); transform:translateY(-1px);
+  box-shadow:0 4px 12px rgba(10,61,98,.18);
 }
-.qr-btn:active { transform:translateY(0); }
 
-/* ── input bar ── */
+/* input */
 .inputbar {
-  padding:14px 20px;
+  padding:13px 18px;
   border-top:1px solid rgba(10,61,98,.07);
-  display:flex; gap:10px; align-items:center;
+  display:flex; gap:9px; align-items:center;
   flex-shrink:0; background:white;
 }
 .chat-input {
-  flex:1; padding:12px 20px;
+  flex:1; padding:11px 18px;
   border:1.5px solid rgba(10,61,98,.12);
   border-radius:50px;
   font-family:'DM Sans',sans-serif;
-  font-size:.93rem; color:#1e293b;
+  font-size:.9rem; color:#1e293b;
   outline:none; transition:all .2s; background:#f7f9fc;
 }
 .chat-input:focus {
   border-color:var(--sky); background:white;
   box-shadow:0 0 0 3px rgba(54,149,191,.1);
 }
-.chat-input::placeholder { color:#b0bec5; }
+.chat-input::placeholder{color:#b0bec5;}
 
 .send-btn {
-  width:46px; height:46px;
+  width:44px; height:44px;
   background:linear-gradient(135deg,var(--green),var(--g2));
-  border:none; border-radius:50%; color:white; font-size:1rem;
+  border:none; border-radius:50%; color:white; font-size:.95rem;
   cursor:pointer; transition:all .2s; flex-shrink:0;
   display:flex; align-items:center; justify-content:center;
-  box-shadow:0 4px 16px rgba(52,168,83,.35);
+  box-shadow:0 4px 14px rgba(52,168,83,.35);
 }
-.send-btn:hover { transform:scale(1.08); box-shadow:0 7px 22px rgba(52,168,83,.45); }
-.send-btn:active { transform:scale(.97); }
+.send-btn:hover{transform:scale(1.08); box-shadow:0 6px 20px rgba(52,168,83,.45);}
 
-/* ══════════════════
-   MOBILE ≤ 600px
-   ══════════════════ */
-@media (max-width:600px) {
-  body { padding:0; background:white; align-items:stretch; justify-content:flex-start; }
-
+/* ══ MOBILE ≤ 860px ══ */
+@media(max-width:860px){
+  body { background: white; display: block; }
+  .page-grid { display:block; padding:0; }
+  .left-panel { display:none; }
   .chat-card {
-    max-width:100%; border-radius:0; box-shadow:none;
-    height:100svh;
+    height:100svh; max-height:none;
+    border-radius:0; box-shadow:none;
   }
-
-  .topbar { padding:13px 16px; gap:10px; }
-  .topbar-info h3 { font-size:.9rem; }
-  .topbar-info p  { font-size:.71rem; }
-  .topbar-badge span:not(.dot) { display:none; }
-  .topbar-badge { padding:5px 9px; }
-
-  .chat-messages { padding:18px 14px 12px; gap:14px; }
-
-  .bubble { max-width:84%; font-size:.89rem; padding:11px 14px; }
-  .bav    { width:27px; height:27px; font-size:.67rem; }
-
-  .quickreplies {
+  .topbar{padding:13px 15px; gap:10px;}
+  .topbar-info h3{font-size:.9rem;}
+  .topbar-info p{font-size:.7rem;}
+  .topbar-badge span:not(.dot){display:none;}
+  .chat-messages{padding:18px 13px 12px; gap:13px;}
+  .bubble{max-width:84%; font-size:.87rem; padding:10px 13px;}
+  .quickreplies{
     flex-wrap:nowrap; overflow-x:auto;
     -webkit-overflow-scrolling:touch; scrollbar-width:none;
-    padding:10px 14px 12px; gap:7px;
+    padding:9px 13px 11px; gap:7px;
   }
-  .quickreplies::-webkit-scrollbar { display:none; }
-  .qr-btn { flex-shrink:0; font-size:.79rem; padding:7px 13px; }
-
-  .inputbar { padding:10px 12px; gap:8px; }
-  .chat-input { font-size:.88rem; padding:10px 16px; }
-  .send-btn   { width:42px; height:42px; }
+  .quickreplies::-webkit-scrollbar{display:none;}
+  .qr-btn{flex-shrink:0; font-size:.78rem; padding:6px 12px;}
+  .inputbar{padding:9px 11px; gap:8px;}
+  .chat-input{font-size:.87rem; padding:10px 15px;}
+  .send-btn{width:40px; height:40px;}
 }
 </style>
 </head>
 <body>
 
-<div class="chat-card">
+<div class="page-grid">
 
-  <!-- TOPBAR: animated icon + title + badge -->
-  <div class="topbar">
+  <!-- ══ LEFT PANEL ══ -->
+  <div class="left-panel">
+    <div class="left-card">
 
-    <!-- Animated logo icon (replaces balance scale) -->
-    <div class="topbar-icon">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" width="44" height="44">
-        <defs>
-          <linearGradient id="tgBg" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" style="stop-color:rgba(255,255,255,0.2)"/>
-            <stop offset="100%" style="stop-color:rgba(255,255,255,0.05)"/>
-          </linearGradient>
-          <filter id="tgGlow">
-            <feGaussianBlur stdDeviation="1" result="b"/>
-            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-          </filter>
-        </defs>
-        <!-- orbit -->
-        <g class="i-rot" style="transform-origin:22px 22px">
-          <circle cx="22" cy="22" r="19" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
-          <circle cx="22" cy="3"  r="1.4" fill="#34A853" class="i-orb"/>
-          <circle cx="41" cy="22" r="1.4" fill="#34A853" class="i-orb" style="animation-delay:.5s"/>
-          <circle cx="22" cy="41" r="1.4" fill="#34A853" class="i-orb" style="animation-delay:1s"/>
-          <circle cx="3"  cy="22" r="1.4" fill="#34A853" class="i-orb" style="animation-delay:1.5s"/>
-        </g>
-        <!-- hex -->
-        <g class="i-puls" style="transform-origin:22px 22px">
-          <path d="M22 9 L31 14.5 L31 25.5 L22 31 L13 25.5 L13 14.5 Z" fill="url(#tgBg)"/>
-          <path d="M22 9 L31 14.5 L31 25.5 L22 31 L13 25.5 L13 14.5 Z" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.4"/>
-        </g>
-        <!-- doc lines -->
-        <line x1="15" y1="16" x2="20" y2="16" stroke="rgba(255,255,255,0.7)" stroke-width="1.2" stroke-linecap="round"/>
-        <line x1="15" y1="20" x2="22" y2="20" stroke="rgba(255,255,255,0.7)" stroke-width="1.2" stroke-linecap="round"/>
-        <line x1="15" y1="24" x2="21" y2="24" stroke="rgba(255,255,255,0.7)" stroke-width="1.2" stroke-linecap="round"/>
-        <!-- scale -->
-        <line x1="26" y1="16" x2="26" y2="21" stroke="#34A853" stroke-width="1" stroke-linecap="round"/>
-        <rect x="24.5" y="20.5" width="3" height="1" rx=".4" fill="#34A853"/>
-        <line x1="23" y1="16" x2="29" y2="16" stroke="#34A853" stroke-width="1" stroke-linecap="round"/>
-        <line x1="24" y1="16" x2="24" y2="17.8" stroke="#34A853" stroke-width=".7"/>
-        <path d="M22.5 17.8 L22.5 19.2 L25.5 19.2 L25.5 17.8 Z" fill="none" stroke="#34A853" stroke-width=".6"/>
-        <line x1="28" y1="16" x2="28" y2="17.8" stroke="#34A853" stroke-width=".7"/>
-        <path d="M26.5 17.8 L26.5 19.2 L29.5 19.2 L29.5 17.8 Z" fill="none" stroke="#34A853" stroke-width=".6"/>
-        <circle cx="26" cy="16" r=".7" fill="#34A853" filter="url(#tgGlow)"/>
-      </svg>
-    </div>
+      <!-- CTA buttons — empieza directo sin logo -->
+      <div class="lp-actions">
+        <a href="https://exigetuseguro.cl/contacto" target="_blank" class="lp-btn lp-btn-form">
+          <div class="btn-icon"><i class="fas fa-file-alt"></i></div>
+          <div class="btn-text">
+            Enviar mi caso
+            <small>Sube tu póliza o carta de rechazo</small>
+          </div>
+          <i class="fas fa-chevron-right btn-arrow"></i>
+        </a>
+        <a href="https://wa.me/56979939868" target="_blank" class="lp-btn lp-btn-wa">
+          <div class="btn-icon"><i class="fab fa-whatsapp"></i></div>
+          <div class="btn-text">
+            WhatsApp · +56 9 7993 9868
+            <small>Respuesta directa con un abogado</small>
+          </div>
+          <i class="fas fa-chevron-right btn-arrow"></i>
+        </a>
+        <a href="https://exigetuseguro.cl/contacto#agenda" target="_blank" class="lp-btn lp-btn-cal">
+          <div class="btn-icon"><i class="fas fa-calendar-check"></i></div>
+          <div class="btn-text">
+            Agendar cita gratis
+            <small>Videollamada sin compromiso</small>
+          </div>
+          <i class="fas fa-chevron-right btn-arrow"></i>
+        </a>
+        <a href="mailto:contacto@exigetuseguro.cl" class="lp-btn lp-btn-mail">
+          <div class="btn-icon"><i class="fas fa-envelope"></i></div>
+          <div class="btn-text">
+            contacto@exigetuseguro.cl
+            <small>Escríbenos por correo</small>
+          </div>
+          <i class="fas fa-chevron-right btn-arrow"></i>
+        </a>
+      </div>
 
-    <div class="topbar-info">
-      <h3>Asistente Legal · Seguros Chile</h3>
-      <p>Responde consultas frecuentes sobre seguros</p>
-    </div>
+      <!-- Info bullets — versión resumida -->
+      <div class="lp-info">
+        <div class="lp-info-label">En el formulario puedes adjuntar</div>
+        <div class="info-row">
+          <div class="info-dot"></div>
+          <p>Póliza, carta de rechazo o fotos del siniestro</p>
+        </div>
+        <div class="info-row">
+          <div class="info-dot"></div>
+          <p>Informes médicos, parte policial u otros documentos</p>
+        </div>
+      </div>
 
-    <div class="topbar-badge">
-      <span class="dot"></span>
-      <span>En línea</span>
+      <!-- Footer badge -->
+      <div class="lp-footer">
+        <div class="lp-footer-badge">
+          <span class="dot"></span>
+          <span>Primera consulta 100% gratuita</span>
+        </div>
+      </div>
+
     </div>
   </div>
 
-  <!-- MESSAGES -->
-  <div class="chat-messages" id="chatMessages"></div>
+  <!-- ══ CHAT ══ -->
+  <div class="chat-card">
 
-  <!-- QUICK REPLIES -->
-  <div class="quickreplies" id="quickReplies">
-    <button class="qr-btn" onclick="sendQR(this)">Rechazaron mi seguro</button>
-    <button class="qr-btn" onclick="sendQR(this)">Subir mis documentos</button>
-    <button class="qr-btn" onclick="sendQR(this)">Plazos para reclamar</button>
-    <button class="qr-btn" onclick="sendQR(this)">SOAP 2026</button>
-    <button class="qr-btn" onclick="sendQR(this)">Hablar con un abogado</button>
-    <button class="qr-btn" onclick="sendQR(this)">Costos de los servicios legales</button>
-  </div>
+    <div class="topbar">
+      <div class="topbar-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" width="44" height="44">
+          <defs>
+            <linearGradient id="tgBg" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:rgba(255,255,255,0.2)"/>
+              <stop offset="100%" style="stop-color:rgba(255,255,255,0.05)"/>
+            </linearGradient>
+            <filter id="tgGlow">
+              <feGaussianBlur stdDeviation="1" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <g class="i-rot" style="transform-origin:22px 22px">
+            <circle cx="22" cy="22" r="19" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+            <circle cx="22" cy="3"  r="1.4" fill="#34A853" class="i-orb"/>
+            <circle cx="41" cy="22" r="1.4" fill="#34A853" class="i-orb" style="animation-delay:.5s"/>
+            <circle cx="22" cy="41" r="1.4" fill="#34A853" class="i-orb" style="animation-delay:1s"/>
+            <circle cx="3"  cy="22" r="1.4" fill="#34A853" class="i-orb" style="animation-delay:1.5s"/>
+          </g>
+          <g class="i-puls" style="transform-origin:22px 22px">
+            <path d="M22 9 L31 14.5 L31 25.5 L22 31 L13 25.5 L13 14.5 Z" fill="url(#tgBg)"/>
+            <path d="M22 9 L31 14.5 L31 25.5 L22 31 L13 25.5 L13 14.5 Z" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.4"/>
+          </g>
+          <line x1="15" y1="16" x2="20" y2="16" stroke="rgba(255,255,255,0.7)" stroke-width="1.2" stroke-linecap="round"/>
+          <line x1="15" y1="20" x2="22" y2="20" stroke="rgba(255,255,255,0.7)" stroke-width="1.2" stroke-linecap="round"/>
+          <line x1="15" y1="24" x2="21" y2="24" stroke="rgba(255,255,255,0.7)" stroke-width="1.2" stroke-linecap="round"/>
+          <line x1="26" y1="16" x2="26" y2="21" stroke="#34A853" stroke-width="1" stroke-linecap="round"/>
+          <rect x="24.5" y="20.5" width="3" height="1" rx=".4" fill="#34A853"/>
+          <line x1="23" y1="16" x2="29" y2="16" stroke="#34A853" stroke-width="1" stroke-linecap="round"/>
+          <line x1="24" y1="16" x2="24" y2="17.8" stroke="#34A853" stroke-width=".7"/>
+          <path d="M22.5 17.8 L22.5 19.2 L25.5 19.2 L25.5 17.8 Z" fill="none" stroke="#34A853" stroke-width=".6"/>
+          <line x1="28" y1="16" x2="28" y2="17.8" stroke="#34A853" stroke-width=".7"/>
+          <path d="M26.5 17.8 L26.5 19.2 L29.5 19.2 L29.5 17.8 Z" fill="none" stroke="#34A853" stroke-width=".6"/>
+          <circle cx="26" cy="16" r=".7" fill="#34A853" filter="url(#tgGlow)"/>
+        </svg>
+      </div>
+      <div class="topbar-info">
+        <h3>Asistente Legal · Seguros Chile</h3>
+        <p>Responde consultas frecuentes sobre seguros</p>
+      </div>
+      <div class="topbar-badge">
+        <span class="dot"></span>
+        <span>En línea</span>
+      </div>
+    </div>
 
-  <!-- INPUT -->
-  <div class="inputbar">
-    <input class="chat-input" id="chatInput" placeholder="Escribe tu consulta…" autocomplete="off">
-    <button class="send-btn" onclick="sendMessage()">
-      <i class="fas fa-paper-plane"></i>
-    </button>
-  </div>
+    <div class="chat-messages" id="chatMessages"></div>
 
-</div>
+    <div class="quickreplies" id="quickReplies">
+      <button class="qr-btn" onclick="sendQR(this)">Rechazaron mi seguro</button>
+      <button class="qr-btn" onclick="sendQR(this)">Subir mis documentos</button>
+      <button class="qr-btn" onclick="sendQR(this)">Plazos para reclamar</button>
+      <button class="qr-btn" onclick="sendQR(this)">SOAP 2026</button>
+      <button class="qr-btn" onclick="sendQR(this)">Hablar con un abogado</button>
+      <button class="qr-btn" onclick="sendQR(this)">Costos de los servicios legales</button>
+    </div>
+
+    <div class="inputbar">
+      <input class="chat-input" id="chatInput" placeholder="Escribe tu consulta…" autocomplete="off">
+      <button class="send-btn" onclick="sendMessage()">
+        <i class="fas fa-paper-plane"></i>
+      </button>
+    </div>
+
+  </div><!-- /chat-card -->
+
+</div><!-- /page-grid -->
 
 <script>
 const KB = [
-  /* ── SALUDO ── */
   {
     keys: ['hola','buenas','buenos días','buenas tardes','buenas noches','hey','saludos'],
     answer: `¡Hola! 👋 Soy el asistente virtual de <strong>ExigeTuSeguro.cl</strong>.\n\nEstoy aquí para orientarte sobre tus derechos como asegurado en Chile: rechazos, impugnaciones, plazos legales, SOAP y mucho más.\n\n¿En qué te puedo ayudar hoy?`,
     qr: ['Rechazaron mi seguro','Subir mis documentos','Hablar con un abogado']
   },
-
-  /* ── RECHAZO / NEGATIVA ── */
   {
     keys: ['rechaz','negaron','denegaron','no pagaron','no me pagan','siniestro rechaz','niegan','negativa'],
     answer: `Si tu aseguradora rechazó tu siniestro, tienes opciones legales concretas:\n\n<strong>Vía 1 · Reclamo ante la aseguradora</strong>\nEscrito formal citando el Código de Comercio. La aseguradora debe responder en los plazos establecidos.\n\n<strong>Vía 2 · CMF</strong>\nPuedes reclamar ante la Comisión para el Mercado Financiero (Ley N° 21.000) en <a href="https://www.cmfchile.cl" target="_blank">cmfchile.cl</a>.\n\n<strong>Vía 3 · Arbitraje o demanda judicial</strong>\nSegún el Art. 543 del Código de Comercio, las controversias de seguros se resuelven ante árbitro. Para montos menores a 10.000 UF puedes optar por tribunal ordinario.\n\nRecuerda: la ley presume que el siniestro está cubierto — <strong>es la aseguradora quien debe probar lo contrario</strong>.\n\n📋 Sube tu póliza o carta de rechazo para que nuestro equipo evalúe tu caso:\n👉 <a href="https://exigetuseguro.cl/contacto" target="_blank">exigetuseguro.cl/contacto</a>`,
-    qr: ['Impugnar liquidación','Subir mis documentos','¿Qué es la CMF?','Hablar con un abogado']
+    qr: ['Impugnar liquidación','Subir mis documentos','Hablar con un abogado']
   },
-
-  /* ── IMPUGNAR / LIQUIDACIÓN ── */
   {
     keys: ['impugnar','impugnación','liquidación','liquidacion','liquidador','informe liquidac','DS 1055','ds1055'],
     answer: `El proceso de impugnación de un informe de liquidación está regulado por el <strong>DS 1.055</strong>:\n\n<strong>Plazos para impugnar (desde que recibes el informe):</strong>\n• Pólizas normales → <strong>10 días hábiles</strong>\n• Pólizas con prima superior a 200 UF → <strong>20 días hábiles</strong>\n\n<strong>Respuesta del liquidador:</strong>\n• Pólizas normales → 6 días hábiles\n• Pólizas &gt;200 UF → 12 días hábiles\n\n<strong>Pago de la indemnización:</strong>\nUna vez resuelta la impugnación, la aseguradora tiene <strong>6 días hábiles</strong> para pagarte.\n\nEl informe debe contener opinión técnica fundada sobre cada cobertura rechazada. Si no es así, es impugnable.\n\n📋 <a href="https://exigetuseguro.cl/contacto" target="_blank">exigetuseguro.cl/contacto</a>`,
     qr: ['Subir mis documentos','Rechazaron mi seguro','Hablar con un abogado']
   },
-
-  /* ── PLAZOS ── */
   {
     keys: ['plazo','prescripci','cuánto tiempo','cuanto tiempo','fecha límite','vence','vencer','tiempo para reclamar'],
     answer: `Los plazos legales clave en seguros en Chile son:\n\n<strong>Prescripción general</strong> → <strong>4 años</strong> desde que la obligación se hizo exigible (Art. 541 Código de Comercio).\n\n<strong>Notificar el siniestro</strong> → Lo antes posible. Cada póliza puede fijar plazos internos breves (algunos de 3–5 días).\n\n<strong>Impugnar informe de liquidación</strong> → 10 días hábiles (o 20 si prima &gt;200 UF).\n\n<strong>Pago de indemnización</strong> → 6 días hábiles desde aprobada la liquidación.\n\n<strong>SOAP (fallecimiento)</strong> → 7 días hábiles para seguros desde el 9/02/2026; 10 días hábiles para pólizas anteriores.\n\n⏰ Mientras más rápido actúes, más fácil es reunir pruebas.\n\n📋 <a href="https://exigetuseguro.cl/contacto" target="_blank">exigetuseguro.cl/contacto</a>`,
     qr: ['Impugnar liquidación','Rechazaron mi seguro','Hablar con un abogado']
   },
-
-  /* ── CMF ── */
   {
     keys: ['cmf','comisión para el mercado','comision mercado financiero','regulador','supervisor seguros'],
-    answer: `La <strong>Comisión para el Mercado Financiero (CMF)</strong>, creada por la Ley N° 21.000, es el organismo que regula y supervisa a todas las compañías de seguros en Chile. Reemplazó a la antigua SVS.\n\nPuedes presentar un reclamo ante la CMF si:\n• Tu aseguradora rechaza tu siniestro injustamente.\n• No responde en los plazos legales.\n• Detectas prácticas abusivas.\n\n⚠️ <strong>Importante:</strong> La CMF fiscaliza y puede sancionar a las aseguradoras, pero no ordena pagos directamente. Para exigir el pago necesitas además la vía judicial o arbitral (Art. 543 Código de Comercio).\n\nAun así, un pronunciamiento favorable de la CMF es evidencia valiosa en cualquier litigio posterior.\n\nWeb oficial: <a href="https://www.cmfchile.cl" target="_blank">cmfchile.cl</a>`,
+    answer: `La <strong>Comisión para el Mercado Financiero (CMF)</strong>, creada por la Ley N° 21.000, es el organismo que regula y supervisa a todas las compañías de seguros en Chile. Reemplazó a la antigua SVS.\n\nPuedes presentar un reclamo ante la CMF si:\n• Tu aseguradora rechaza tu siniestro injustamente.\n• No responde en los plazos legales.\n• Detectas prácticas abusivas.\n\n⚠️ <strong>Importante:</strong> La CMF fiscaliza y puede sancionar a las aseguradoras, pero no ordena pagos directamente. Para exigir el pago necesitas además la vía judicial o arbitral (Art. 543 Código de Comercio).\n\nWeb oficial: <a href="https://www.cmfchile.cl" target="_blank">cmfchile.cl</a>`,
     qr: ['Subir mis documentos','Rechazaron mi seguro','Hablar con un abogado']
   },
-
-  /* ── INDISPUTABILIDAD ── */
   {
     keys: ['indisputabilidad','indisputable','dos años','2 años vigencia','art 592','artículo 592'],
-    answer: `La <strong>indisputabilidad</strong> es una protección clave en los seguros de vida, regulada por el <strong>Art. 592 del Código de Comercio</strong>.\n\n¿Qué significa? Una vez transcurridos <strong>2 años</strong> desde la contratación, la aseguradora <strong>no puede anular la póliza</strong> ni negarse a pagar alegando que omitiste información al contratar — ni siquiera si esa omisión fue involuntaria.\n\n<strong>Excepciones:</strong> Solo aplica si existe <strong>dolo comprobado</strong> (intención de engañar) o fraude.\n\nEjemplo práctico: si olvidaste declarar una condición médica y tu póliza tiene más de 2 años, la aseguradora no puede usar eso para rechazarte.\n\n📋 ¿Te rechazaron un seguro de vida? Cuéntanos:\n👉 <a href="https://exigetuseguro.cl/contacto" target="_blank">exigetuseguro.cl/contacto</a>`,
+    answer: `La <strong>indisputabilidad</strong> es una protección clave en los seguros de vida, regulada por el <strong>Art. 592 del Código de Comercio</strong>.\n\nUna vez transcurridos <strong>2 años</strong> desde la contratación, la aseguradora <strong>no puede anular la póliza</strong> ni negarse a pagar alegando que omitiste información al contratar.\n\n<strong>Excepción:</strong> Solo aplica si existe <strong>dolo comprobado</strong> (intención de engañar).\n\n📋 ¿Te rechazaron un seguro de vida?\n👉 <a href="https://exigetuseguro.cl/contacto" target="_blank">exigetuseguro.cl/contacto</a>`,
     qr: ['Seguro de vida','Subir mis documentos','Hablar con un abogado']
   },
-
-  /* ── SEGURO DE VIDA ── */
   {
     keys: ['vida','seguro de vida','fallecimiento','muerte','beneficiario','desgravamen','invalidez'],
-    answer: `Los seguros de vida tienen protecciones especiales en Chile:\n\n<span class="tag">Indisputabilidad</span> Después de 2 años, la aseguradora no puede anular la póliza por omisiones (salvo dolo). Art. 592 Código de Comercio.\n\n<span class="tag">Preexistencias</span> Solo se pueden rechazar si la condición fue <strong>diagnosticada Y conocida</strong> por el asegurado al contratar.\n\n<span class="tag">Carga de la prueba</span> Es la aseguradora quien debe demostrar que existe causa para denegar — no tú.\n\n<span class="tag">Beneficiarios</span> El orden legal de cobro es: cónyuge, hijos menores, hijos mayores, padres — y el conviviente civil solo si no existe ninguno de los anteriores.\n\n📋 Sube tu póliza o carta de rechazo:\n👉 <a href="https://exigetuseguro.cl/contacto" target="_blank">exigetuseguro.cl/contacto</a>`,
+    answer: `Los seguros de vida tienen protecciones especiales en Chile:\n\n<span class="tag">Indisputabilidad</span> Después de 2 años, la aseguradora no puede anular la póliza por omisiones (salvo dolo). Art. 592 Código de Comercio.\n\n<span class="tag">Preexistencias</span> Solo se pueden rechazar si la condición fue <strong>diagnosticada Y conocida</strong> por el asegurado al contratar.\n\n<span class="tag">Carga de la prueba</span> Es la aseguradora quien debe demostrar que existe causa para denegar — no tú.\n\n📋 Sube tu póliza o carta de rechazo:\n👉 <a href="https://exigetuseguro.cl/contacto" target="_blank">exigetuseguro.cl/contacto</a>`,
     qr: ['Indisputabilidad','Subir mis documentos','Hablar con un abogado']
   },
-
-  /* ── SALUD / ISAPRE ── */
   {
     keys: ['salud','isapre','médic','hospital','clínica','enfermedad','preexistencia'],
-    answer: `En seguros de salud, el motivo más frecuente de rechazo son las <strong>preexistencias</strong>.\n\nLo que dice la ley (Art. 590-592 Código de Comercio): una preexistencia solo es válida como causal de rechazo si la condición fue <strong>diagnosticada Y conocida por el asegurado</strong> al momento de contratar.\n\nSi te rechazan por una enfermedad que desconocías, es muy probable que sea impugnable.\n\nTambién aplica a coberturas complementarias de Isapres y seguros privados de salud.\n\n📋 Cuéntanos tu caso:\n👉 <a href="https://exigetuseguro.cl/contacto" target="_blank">exigetuseguro.cl/contacto</a>`,
+    answer: `En seguros de salud, el motivo más frecuente de rechazo son las <strong>preexistencias</strong>.\n\nLa ley exige que la preexistencia haya sido <strong>diagnosticada Y conocida por el asegurado</strong> al momento de contratar (Art. 590-592 Código de Comercio).\n\nSi te rechazan por una enfermedad que desconocías, es muy probable que sea impugnable.\n\n📋 Cuéntanos tu caso:\n👉 <a href="https://exigetuseguro.cl/contacto" target="_blank">exigetuseguro.cl/contacto</a>`,
     qr: ['Subir mis documentos','Rechazaron mi seguro','Hablar con un abogado']
   },
-
-  /* ── VEHICULAR ── */
   {
     keys: ['vehiculo','vehicular','auto','accidente','choque','robo auto','seguro auto','todo riesgo','terceros'],
-    answer: `Los seguros vehiculares tienen motivos de rechazo frecuentes — y muchos son impugnables:\n\n• <strong>Exclusión por "culpa grave"</strong> mal fundamentada.\n• Tasación del vehículo muy por debajo de su valor real.\n• Incumplimiento de plazos de notificación por causas ajenas al asegurado.\n• Cláusulas ambiguas (que la ley obliga a interpretar a tu favor).\n\nTipos de seguros en Chile:\n<span class="tag">SOAP</span> Obligatorio. Cubre lesiones a personas en accidentes.\n<span class="tag">Terceros</span> Cubre daños que causes a otros vehículos o personas.\n<span class="tag">Todo Riesgo</span> Cobertura amplia: daños propios, robos, terceros.\n\n📋 <a href="https://exigetuseguro.cl/contacto" target="_blank">exigetuseguro.cl/contacto</a>`,
+    answer: `Los seguros vehiculares tienen motivos de rechazo frecuentes — y muchos son impugnables:\n\n• <strong>Exclusión por "culpa grave"</strong> mal fundamentada.\n• Tasación del vehículo muy por debajo de su valor real.\n• Incumplimiento de plazos por causas ajenas al asegurado.\n• Cláusulas ambiguas (que la ley obliga a interpretar a tu favor).\n\nTipos de seguros:\n<span class="tag">SOAP</span> Obligatorio. Cubre lesiones a personas.\n<span class="tag">Terceros</span> Daños que causes a otros.\n<span class="tag">Todo Riesgo</span> Cobertura amplia.\n\n📋 <a href="https://exigetuseguro.cl/contacto" target="_blank">exigetuseguro.cl/contacto</a>`,
     qr: ['SOAP 2026','Subir mis documentos','Hablar con un abogado']
   },
-
-  /* ── SOAP 2026 ── */
   {
     keys: ['soap','seguro obligatorio','accidente tránsito','accidente de tránsito','ley jacinta','ley 21797','atropello'],
-    answer: `El <strong>SOAP (Seguro Obligatorio de Accidentes Personales)</strong> cubre a todas las víctimas de accidentes de tránsito — conductor, pasajeros, peatones y ciclistas — <strong>sin importar quién tuvo la culpa</strong>.\n\n📌 <strong>Nuevos montos SOAP desde el 9 de febrero de 2026</strong> (Ley Jacinta N° 21.797):\n\n<span class="tag">Muerte</span> Hasta 600 UF (antes 300 UF)\n<span class="tag">Invalidez total</span> Hasta 600 UF (antes 300 UF)\n<span class="tag">Invalidez parcial</span> Hasta 400 UF (antes 200 UF)\n<span class="tag">Gastos médicos</span> Hasta 600 UF (antes 300 UF)\n\n⚠️ Las pólizas contratadas <strong>antes del 9/02/2026</strong> mantienen los montos anteriores. Las nuevas coberturas aplican solo a pólizas contratadas desde esa fecha.\n\n<strong>Plazo de pago:</strong> 7 días hábiles por fallecimiento (pólizas nuevas) o 10 días hábiles (pólizas anteriores).\n\n📋 ¿Problemas con tu reclamo del SOAP?\n👉 <a href="https://exigetuseguro.cl/contacto" target="_blank">exigetuseguro.cl/contacto</a>`,
+    answer: `El <strong>SOAP</strong> cubre a todas las víctimas de accidentes de tránsito — conductor, pasajeros, peatones y ciclistas — <strong>sin importar quién tuvo la culpa</strong>.\n\n📌 <strong>Nuevos montos desde el 9/02/2026</strong> (Ley Jacinta N° 21.797):\n\n<span class="tag">Muerte</span> Hasta 600 UF (antes 300 UF)\n<span class="tag">Invalidez total</span> Hasta 600 UF (antes 300 UF)\n<span class="tag">Invalidez parcial</span> Hasta 400 UF (antes 200 UF)\n<span class="tag">Gastos médicos</span> Hasta 600 UF (antes 300 UF)\n\n⚠️ Pólizas anteriores al 9/02/2026 mantienen los montos anteriores.\n\n📋 <a href="https://exigetuseguro.cl/contacto" target="_blank">exigetuseguro.cl/contacto</a>`,
     qr: ['Hablar con un abogado','Subir mis documentos','Plazos para reclamar']
   },
-
-  /* ── INCENDIO / SISMO / HOGAR ── */
   {
     keys: ['incendio','sismo','terremoto','hogar','daño','inundación','robo hogar'],
-    answer: `Para siniestros de incendio, sismo o daños al hogar, actúa así:\n\n<strong>1.</strong> Notifica a tu aseguradora <strong>lo antes posible</strong>.\n<strong>2.</strong> <strong>No repares los daños</strong> antes de la inspección del liquidador.\n<strong>3.</strong> Documenta todo: fotos, videos con fecha, boletas de gastos.\n<strong>4.</strong> Guarda <strong>toda la correspondencia</strong> con la aseguradora.\n\nSi el monto de la tasación es muy inferior al daño real, tienes derecho a impugnar el informe de liquidación dentro de <strong>10 días hábiles</strong> (DS 1.055).\n\n📋 Sube tus documentos y relato del caso:\n👉 <a href="https://exigetuseguro.cl/contacto" target="_blank">exigetuseguro.cl/contacto</a>`,
+    answer: `Para siniestros de incendio, sismo o daños al hogar:\n\n<strong>1.</strong> Notifica a tu aseguradora <strong>lo antes posible</strong>.\n<strong>2.</strong> <strong>No repares los daños</strong> antes de la inspección del liquidador.\n<strong>3.</strong> Documenta todo con fotos, videos y boletas.\n<strong>4.</strong> Guarda toda la correspondencia con la aseguradora.\n\nSi la tasación es inferior al daño real, tienes <strong>10 días hábiles</strong> para impugnar el informe (DS 1.055).\n\n📋 <a href="https://exigetuseguro.cl/contacto" target="_blank">exigetuseguro.cl/contacto</a>`,
     qr: ['Impugnar liquidación','Subir mis documentos','Hablar con un abogado']
   },
-
-  /* ── PÓLIZA / COBERTURAS ── */
   {
     keys: ['poliza','póliza','contrato seguro','cobertura','que cubre','qué cubre','exclusion','exclusión','deducible','franquicia','suma asegurada'],
-    answer: `La póliza es el contrato que define tus derechos. Lo que debes saber:\n\n<span class="tag">Coberturas</span> Qué riesgos están incluidos. Debes recibirla en máximo <strong>5 días hábiles</strong> desde la contratación (Art. 519 Código de Comercio).\n\n<span class="tag">Exclusiones</span> Lo que NO cubre. Deben ser claras y específicas — las ambiguas se interpretan <strong>a tu favor</strong> (Art. 542).\n\n<span class="tag">Deducible</span> Monto que siempre pagas tú antes que la aseguradora cubra el resto.\n\n<span class="tag">Franquicia</span> Distinto al deducible: la aseguradora paga todo si el daño supera el umbral pactado.\n\n<span class="tag">Suma asegurada</span> Monto máximo a indemnizar.\n\n⚠️ Importante: ninguna cláusula puede ser menos favorable que lo que establece la ley (Art. 542 Código de Comercio).\n\n📋 ¿Tienes dudas sobre tu póliza? La revisamos:\n👉 <a href="https://exigetuseguro.cl/contacto" target="_blank">exigetuseguro.cl/contacto</a>`,
+    answer: `La póliza es el contrato que define tus derechos:\n\n<span class="tag">Coberturas</span> Debes recibirla en máximo <strong>5 días hábiles</strong> desde la contratación (Art. 519).\n\n<span class="tag">Exclusiones</span> Deben ser claras — las ambiguas se interpretan <strong>a tu favor</strong> (Art. 542).\n\n<span class="tag">Deducible</span> Monto que siempre pagas tú antes que cubra la aseguradora.\n\n<span class="tag">Suma asegurada</span> Monto máximo a indemnizar.\n\n⚠️ Ninguna cláusula puede ser menos favorable que la ley (Art. 542 Código de Comercio).\n\n📋 <a href="https://exigetuseguro.cl/contacto" target="_blank">exigetuseguro.cl/contacto</a>`,
     qr: ['Subir mis documentos','Rechazaron mi seguro','Hablar con un abogado']
   },
-
-  /* ── FRAUDE ── */
   {
     keys: ['fraude','fraude seguro','simular siniestro','declaración falsa','ley 20667','art 470'],
-    answer: `El fraude al seguro es un <strong>delito penal en Chile</strong> desde 2013, tipificado en el Art. 470 N° 10 del Código Penal (incorporado por la Ley N° 20.667).\n\nSe considera fraude:\n• Simular un siniestro que no ocurrió.\n• Provocarlo intencionalmente.\n• Presentarlo con circunstancias falsas.\n• Ocultar el bien asegurado.\n• Exagerar fraudulentamente las pérdidas.\n\nLas penas varían según el monto defraudado (Art. 467 Código Penal).\n\n⚠️ El fraude no solo es ilegal — también encarece las primas para todos los asegurados honestos.\n\nSi sospechas de una práctica abusiva <strong>por parte de la aseguradora</strong>, eso es distinto y puedes reclamar ante la CMF.`,
-    qr: ['¿Qué es la CMF?','Hablar con un abogado','Subir mis documentos']
+    answer: `El fraude al seguro es un <strong>delito penal en Chile</strong> desde 2013 (Art. 470 N° 10 del Código Penal, Ley N° 20.667).\n\nSe considera fraude: simular un siniestro, provocarlo intencionalmente, presentarlo con datos falsos, ocultar el bien asegurado o exagerar las pérdidas.\n\nSi sospechas de una práctica abusiva <strong>por parte de la aseguradora</strong>, puedes reclamar ante la CMF.`,
+    qr: ['Hablar con un abogado','Subir mis documentos']
   },
-
-  /* ── OBLIGACIONES DEL ASEGURADO ── */
   {
-    keys: ['obligaciones','deber','deberes','qué debo hacer','qué tengo que hacer','requisito'],
-    answer: `Como asegurado en Chile, tienes estas obligaciones principales (Código de Comercio):\n\n<strong>Al contratar:</strong> Declarar verazmente el riesgo (Art. 524 N°1). Ocultar información relevante puede anular la póliza.\n\n<strong>Durante la vigencia:</strong> Pagar la prima a tiempo. Si no pagas, la póliza termina a los 15 días de la comunicación del asegurador (Art. 528).\n\n<strong>Al ocurrir el siniestro:</strong> Avisar a la aseguradora lo antes posible, minimizar los daños y colaborar con la investigación.\n\n<strong>Prohibido:</strong> Simular, exagerar daños o presentar documentos falsos — es fraude y delito penal (Ley N° 20.667).\n\n📋 ¿Tienes dudas sobre tu caso?\n👉 <a href="https://exigetuseguro.cl/contacto" target="_blank">exigetuseguro.cl/contacto</a>`,
-    qr: ['Rechazaron mi seguro','Hablar con un abogado','Subir mis documentos']
-  },
-
-  /* ── HONORARIOS / PRECIOS ── */
-  {
-    keys: ['honorario','precio','cuánto cuesta','cuanto cuesta','cuánto cobran','cuanto cobran','costo servicio','tarifa','pagar','cuota litis','informe análisis','informe analisis','análisis previo','35000','100000','150000','porcentaje','éxito','exito'],
-    answer: `Trabajamos con <strong>total transparencia</strong> en honorarios. Estas son nuestras modalidades:
-
-<strong>📄 Informe de análisis previo</strong>
-$35.000 — Análisis de tu cobertura, normativa aplicable y posibilidades de éxito. Entrega en menos de 5 días hábiles.
-
-<strong>⚖️ Impugnación (montos entre $1M y $20M)</strong>
-$100.000 + 10% de la indemnización obtenida.
-
-<strong>⚖️ Impugnación (montos sobre $20M)</strong>
-$150.000 + 10% de la indemnización obtenida.
-
-<strong>📊 Diferencia en indemnización (bajo $1M)</strong>
-$50.000 + 10% de la diferencia lograda.
-
-💡 <strong>Cuota litis:</strong> Si no obtenemos resultado favorable, <strong>no pagas honorarios</strong> por nuestra representación legal.
-
-🎉 La <strong>primera consulta es 100% gratuita</strong> y sin compromiso.
-
-📋 <a href="https://exigetuseguro.cl/honorarios" target="_blank">Ver guía completa de honorarios</a>
-👉 <a href="https://exigetuseguro.cl/contacto" target="_blank">exigetuseguro.cl/contacto</a>`,
+    keys: ['honorario','precio','cuánto cuesta','cuanto cuesta','cuánto cobran','cuanto cobran','costo servicio','tarifa','cuota litis','análisis previo','35000','100000','150000','porcentaje','éxito','exito'],
+    answer: `Trabajamos con <strong>total transparencia</strong> en honorarios:\n\n<strong>📄 Informe de análisis previo</strong>\n$35.000 — Análisis de cobertura, normativa y posibilidades de éxito.\n\n<strong>⚖️ Impugnación (entre $1M y $20M)</strong>\n$100.000 + 10% de la indemnización obtenida.\n\n<strong>⚖️ Impugnación (sobre $20M)</strong>\n$150.000 + 10% de la indemnización obtenida.\n\n<strong>📊 Diferencia en indemnización (bajo $1M)</strong>\n$50.000 + 10% de la diferencia lograda.\n\n💡 <strong>Cuota litis:</strong> Si no hay resultado favorable, <strong>no pagas honorarios</strong> de representación.\n\n🎉 Primera consulta <strong>100% gratuita</strong>.\n\n📋 <a href="https://exigetuseguro.cl/honorarios" target="_blank">Ver guía completa de honorarios</a>`,
     qr: ['Subir mis documentos','Hablar con un abogado','Rechazaron mi seguro']
   },
-
-  /* ── SUBIR DOCUMENTOS ── */
   {
     keys: ['subir','adjuntar','documentos','archivo','formulario','enviar caso','relato','carta rechazo','carta de rechazo','enviar póliza'],
-    answer: `Puedes enviarnos tu caso completo —<strong>póliza, carta de rechazo, fotos u otros documentos</strong>— a través de nuestro formulario:\n\n👉 <a href="https://exigetuseguro.cl/contacto" target="_blank"><strong>exigetuseguro.cl/contacto</strong></a>\n\nEn el formulario también puedes escribir el <strong>relato de los hechos</strong> para que nuestro equipo entienda tu situación desde el primer momento.\n\nEl análisis inicial es <strong>100% gratuito</strong> y sin compromiso. ✅`,
-    qr: ['Hablar con un abogado','Rechazaron mi seguro','¿Qué es la CMF?']
+    answer: `Puedes enviarnos tu caso completo —<strong>póliza, carta de rechazo, fotos u otros documentos</strong>— a través de nuestro formulario:\n\n👉 <a href="https://exigetuseguro.cl/contacto" target="_blank"><strong>exigetuseguro.cl/contacto</strong></a>\n\nTambién puedes escribir el <strong>relato de los hechos</strong> para que nuestro equipo entienda tu situación desde el primer momento.\n\nEl análisis inicial es <strong>100% gratuito</strong> y sin compromiso. ✅`,
+    qr: ['Hablar con un abogado','Rechazaron mi seguro']
   },
-
-  /* ── CONTACTO / ABOGADO ── */
   {
     keys: ['abogado','asesoría','asesoria','consulta','ayuda','contacto','whatsapp','llamar','precio','costo','honorario','gratis','primera consulta','agendar'],
-    answer: `Nuestra <strong>primera consulta es completamente gratuita</strong> y sin compromiso. 🎉\n\n📋 <a href="https://exigetuseguro.cl/contacto" target="_blank">Formulario · exigetuseguro.cl/contacto</a> — sube tu póliza o carta de rechazo\n📱 <a href="https://wa.me/56979939868" target="_blank">WhatsApp · +56 9 7993 9868</a>\n📧 <a href="mailto:contacto@exigetuseguro.cl">contacto@exigetuseguro.cl</a>\n\nAtendemos en todo Chile por videollamada, WhatsApp o email. Sin importar en qué región te encuentres.`,
+    answer: `Nuestra <strong>primera consulta es completamente gratuita</strong> y sin compromiso. 🎉\n\n📋 <a href="https://exigetuseguro.cl/contacto" target="_blank">Formulario · exigetuseguro.cl/contacto</a>\n📱 <a href="https://wa.me/56979939868" target="_blank">WhatsApp · +56 9 7993 9868</a>\n📧 <a href="mailto:contacto@exigetuseguro.cl">contacto@exigetuseguro.cl</a>\n\nAtendemos en todo Chile por videollamada, WhatsApp o email.`,
     qr: ['Subir mis documentos','Rechazaron mi seguro','SOAP 2026']
   },
-
-  /* ── GRACIAS ── */
   {
     keys: ['gracias','muchas gracias','thanks','genial','perfecto','excelente','muy útil'],
     answer: `¡Con gusto! 😊 Recuerda que puedes enviarnos tus documentos cuando quieras:\n\n📋 <a href="https://exigetuseguro.cl/contacto" target="_blank">exigetuseguro.cl/contacto</a>\n📱 <a href="https://wa.me/56979939868" target="_blank">WhatsApp · +56 9 7993 9868</a>\n\nPrimera consulta <strong>100% gratuita</strong>.`,
