@@ -374,13 +374,10 @@ body{font-family:'DM Sans',sans-serif;min-height:100vh;display:flex;align-items:
 
     <div class="quickreplies" id="quickReplies">
       <button class="qr-btn" onclick="sendQR(this)">Tuve un accidente, ¿qué hago?</button>
-      <button class="qr-btn" onclick="sendQR(this)">Daños en los frenos</button>
-      <button class="qr-btn" onclick="sendQR(this)">Daños en el motor</button>
       <button class="qr-btn" onclick="sendQR(this)">¿Qué es "uso y desgaste"?</button>
       <button class="qr-btn" onclick="sendQR(this)">Pérdida total</button>
-      <button class="qr-btn" onclick="sendQR(this)">Tasación del vehículo</button>
-      <button class="qr-btn" onclick="sendQR(this)">La aseguradora no me manda al taller oficial</button>
-      <button class="qr-btn" onclick="sendQR(this)">Alzas de prima en la renovación</button>
+      <button class="qr-btn" onclick="sendQR(this)">Daños en los frenos</button>
+      <button class="qr-btn" onclick="sendQR(this)">Daños en el motor</button>
     </div>
 
     <div class="inputbar">
@@ -664,7 +661,7 @@ input.addEventListener('keydown', e => {
 
 setTimeout(() => {
   addBubble(`¡Hola! 🔧 Soy el asistente de <strong>mecánica automotriz</strong> de ExigeTuSeguro.cl.<br><br>Estoy aquí para orientarte sobre los sistemas de tu vehículo — cómo funcionan, qué puede fallar y cuáles son las causas técnicas de los daños.<br><br>Esta información es útil cuando una aseguradora rechaza un siniestro vehicular alegando "uso y desgaste". Entender la mecánica te ayuda a evaluar si ese argumento es técnicamente correcto.<br><br>¿Sobre qué sistema tienes dudas?`, 'bot');
-  setQR(['Sistema de frenos','Motor y refrigeración','Neumáticos','Suspensión','Sistema eléctrico','Aceite del motor']);
+  setQR(['Tuve un accidente, ¿qué hago?','¿Qué es "uso y desgaste"?','Pérdida total','Daños en los frenos','Daños en el motor']);
 }, 400);
 </script>
 </body>
