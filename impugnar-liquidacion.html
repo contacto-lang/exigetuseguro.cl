@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Generador de Carta de Impugnación | ExigeTuSeguro.cl</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script src="https://unpkg.com/docx@7.8.2/build/index.js"></script>
+<style>
+:root{--navy:#0A3D62;--sky:#3695BF;--green:#34A853;--g2:#2d9147;--white:#fff;--off:#f7f9fc;--gray:#64748b;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',sans-serif;background:linear-gradient(135deg,rgba(10,61,98,0.55) 0%,rgba(54,149,191,0.48) 100%),url('https://images.pexels.com/photos/10155555/pexels-photo-10155555.jpeg') center/cover fixed;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px 16px;}
+.card{width:100%;max-width:680px;background:white;border-radius:28px;overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,0.28);}
+.card-header{background:linear-gradient(135deg,var(--navy) 0%,var(--sky) 100%);padding:28px 36px 24px;position:relative;overflow:hidden;}
+.card-header::before{content:'';position:absolute;top:-50px;right:-50px;width:200px;height:200px;background:radial-gradient(circle,rgba(255,255,255,.07) 0%,transparent 70%);border-radius:50%;}
+.eyebrow{display:inline-flex;align-items:center;gap:6px;background:rgba(52,168,83,.2);border:1px solid rgba(52,168,83,.35);color:#a8ffca;font-size:.7rem;font-weight:700;padding:4px 12px;border-radius:50px;letter-spacing:.6px;text-transform:uppercase;margin-bottom:12px;}
+.eyebrow .dot{width:6px;height:6px;background:var(--green);border-radius:50%;animation:blink 1.4s infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:.2;}}
+.card-header h1{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;color:white;line-height:1.15;margin-bottom:6px;}
+.card-header h1 em{font-style:italic;color:#7ad4f5;}
+.card-header p{font-size:.84rem;color:rgba(255,255,255,.6);}
+.progress-wrap{display:flex;align-items:center;gap:12px;margin-top:18px;}
+.progress-bar{flex:1;height:4px;background:rgba(255,255,255,.15);border-radius:4px;overflow:hidden;}
+.progress-fill{height:100%;background:var(--green);border-radius:4px;transition:width .4s ease;}
+.progress-label{font-size:.72rem;color:rgba(255,255,255,.5);font-weight:600;white-space:nowrap;}
+.card-body{padding:28px 36px;}
+.step{display:none;animation:fadeUp .3s ease forwards;}
+.step.active{display:block;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+.step-title{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;color:var(--navy);margin-bottom:18px;}
+.fg{margin-bottom:14px;}
+.fg label{display:block;font-size:.73rem;font-weight:700;color:var(--gray);text-transform:uppercase;letter-spacing:.4px;margin-bottom:5px;}
+.fg label .req{color:var(--green);margin-left:2px;}
+.fi{width:100%;padding:.75rem 1rem;border:1.5px solid #e2e8f0;border-radius:10px;font-family:'DM Sans',sans-serif;font-size:.9rem;color:#1e293b;background:var(--off);outline:none;transition:border-color .2s,box-shadow .2s;}
+.fi:focus{border-color:var(--sky);background:white;box-shadow:0 0 0 3px rgba(54,149,191,.1);}
+.fi::placeholder{color:#b0bec5;}
+textarea.fi{resize:vertical;min-height:110px;line-height:1.6;}
+select.fi{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%238a9ab0' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right .875rem center;appearance:none;}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.tip{display:flex;gap:9px;padding:10px 12px;background:rgba(54,149,191,.07);border:1px solid rgba(54,149,191,.15);border-radius:10px;margin-bottom:14px;font-size:.82rem;color:#334155;line-height:1.55;}
+.tip i{color:var(--sky);margin-top:2px;flex-shrink:0;font-size:.85rem;}
+.nav{display:flex;justify-content:space-between;align-items:center;margin-top:20px;}
+.btn-back{display:flex;align-items:center;gap:5px;background:none;border:none;cursor:pointer;color:var(--gray);font-size:.87rem;font-weight:500;font-family:'DM Sans',sans-serif;padding:8px 0;transition:color .18s;}
+.btn-back:hover{color:var(--navy);}
+.btn-next{display:flex;align-items:center;gap:7px;padding:11px 22px;background:linear-gradient(135deg,var(--navy),var(--sky));color:white;border:none;border-radius:50px;font-family:'DM Sans',sans-serif;font-size:.9rem;font-weight:700;cursor:pointer;transition:all .2s;box-shadow:0 4px 14px rgba(10,61,98,.25);}
+.btn-next:hover{transform:translateY(-2px);}
+.btn-gen{display:flex;align-items:center;gap:8px;padding:13px 26px;background:linear-gradient(135deg,var(--green),var(--g2));color:white;border:none;border-radius:50px;font-family:'DM Sans',sans-serif;font-size:.95rem;font-weight:700;cursor:pointer;transition:all .2s;box-shadow:0 5px 18px rgba(52,168,83,.35);}
+.btn-gen:hover{transform:translateY(-2px);}
+.generating{display:none;text-align:center;padding:40px 20px;}
+.generating.active{display:block;}
+.gen-icon{font-size:2.5rem;color:var(--sky);margin-bottom:14px;animation:spin 1.2s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg);}}
+.gen-title{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;color:var(--navy);margin-bottom:6px;}
+.gen-sub{font-size:.85rem;color:var(--gray);}
+.result{display:none;}
+.result.active{display:block;animation:fadeUp .3s ease forwards;}
+.result-box{background:var(--off);border:1px solid #e2e8f0;border-radius:14px;padding:20px;margin-bottom:18px;}
+.result-box-header{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+.result-box-icon{width:38px;height:38px;background:rgba(52,168,83,.12);border-radius:9px;display:flex;align-items:center;justify-content:center;color:var(--green);font-size:1rem;}
+.result-box-title{font-family:'Syne',sans-serif;font-size:.95rem;font-weight:700;color:var(--navy);}
+.result-box p{font-size:.85rem;color:var(--gray);line-height:1.65;}
+.disclaimer{background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.2);border-radius:10px;padding:12px 14px;font-size:.8rem;color:#92400e;line-height:1.6;margin-bottom:18px;}
+.disclaimer i{color:#d97706;margin-right:4px;}
+.result-btns{display:flex;gap:10px;flex-wrap:wrap;}
+.btn-dl{display:flex;align-items:center;gap:8px;padding:12px 22px;border-radius:50px;font-family:'DM Sans',sans-serif;font-size:.9rem;font-weight:700;cursor:pointer;transition:all .2s;text-decoration:none;border:none;}
+.btn-dl-primary{background:linear-gradient(135deg,var(--navy),var(--sky));color:white;box-shadow:0 4px 14px rgba(10,61,98,.25);}
+.btn-dl-primary:hover{transform:translateY(-2px);}
+.btn-dl-wa{background:rgba(37,211,102,.12);border:1.5px solid rgba(37,211,102,.3);color:#1a7a42;font-weight:600;}
+.btn-dl-wa:hover{background:rgba(37,211,102,.2);}
+.btn-restart{background:none;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:.8rem;color:var(--gray);display:block;width:100%;text-align:center;margin-top:10px;padding:6px;transition:color .18s;}
+.btn-restart:hover{color:var(--navy);}
+.page-footer{margin-top:14px;text-align:center;font-size:.72rem;color:rgba(255,255,255,.5);}
+.page-footer a{color:rgba(255,255,255,.75);text-decoration:none;font-weight:600;}
+@media(max-width:500px){
+  body{padding:14px 10px;}
+  .card-header{padding:22px 20px 18px;}
+  .card-header h1{font-size:1.25rem;}
+  .card-body{padding:22px 18px;}
+  .frow{grid-template-columns:1fr;}
+  .result-btns{flex-direction:column;}
+  .btn-dl{justify-content:center;}
+}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="card-header">
+    <div class="eyebrow"><span class="dot"></span> Herramienta gratuita</div>
+    <h1>Genera tu carta de<br><em>impugnación</em> en segundos</h1>
+    <p>Rellena el formulario · IA redacta la carta · Descárgala en Word</p>
+    <div class="progress-wrap">
+      <div class="progress-bar"><div class="progress-fill" id="pFill" style="width:0%"></div></div>
+      <div class="progress-label" id="pLabel">Paso 1 de 4</div>
+    </div>
+  </div>
+  <div class="card-body">
+
+    <!-- STEP 1 -->
+    <div class="step active" id="s1">
+      <div class="step-title">Datos del asegurado y la póliza</div>
+      <div class="frow">
+        <div class="fg"><label>Nombre completo <span class="req">*</span></label><input class="fi" id="nombreAsegurado" placeholder="Ej: Juan Pérez González"></div>
+        <div class="fg"><label>RUT del asegurado</label><input class="fi" id="rutAsegurado" placeholder="Ej: 12.345.678-9"></div>
+      </div>
+      <div class="frow">
+        <div class="fg"><label>Compañía aseguradora <span class="req">*</span></label><input class="fi" id="aseguradora" placeholder="Ej: BCI Seguros Generales S.A."></div>
+        <div class="fg"><label>Liquidador (si aplica)</label><input class="fi" id="liquidador" placeholder="Ej: Juan García"></div>
+      </div>
+      <div class="frow">
+        <div class="fg"><label>N° de póliza <span class="req">*</span></label><input class="fi" id="numPoliza" placeholder="Ej: BP 8876574"></div>
+        <div class="fg"><label>N° de siniestro <span class="req">*</span></label><input class="fi" id="numSiniestro" placeholder="Ej: 10653711"></div>
+      </div>
+      <div class="frow">
+        <div class="fg"><label>Nombre de la póliza</label><input class="fi" id="nombrePoliza" placeholder="Ej: Auto BCI Full Trienal"></div>
+        <div class="fg"><label>Fecha del informe impugnado <span class="req">*</span></label><input class="fi" type="date" id="fechaInforme"></div>
+      </div>
+      <div class="fg">
+        <label>Tipo de seguro <span class="req">*</span></label>
+        <select class="fi" id="tipoSeguro" onchange="toggleVehiculo()">
+          <option value="">Selecciona</option>
+          <option value="vehicular">Seguro Vehicular</option>
+          <option value="vida">Seguro de Vida</option>
+          <option value="salud">Seguro de Salud</option>
+          <option value="hogar">Hogar / Incendio / Sismo</option>
+          <option value="otro">Otro</option>
+        </select>
+      </div>
+      <div class="fg" id="vehiculoGroup" style="display:none">
+        <label>Vehículo (marca, modelo, año, patente)</label>
+        <input class="fi" id="vehiculo" placeholder="Ej: Mercedes-Benz A45 AMG 2017, Patente JPKB64">
+      </div>
+      <div class="nav"><div></div><button class="btn-next" onclick="goTo(1,2)">Siguiente <i class="fas fa-arrow-right"></i></button></div>
+    </div>
+
+    <!-- STEP 2 -->
+    <div class="step" id="s2">
+      <div class="step-title">El siniestro y los hechos reales</div>
+      <div class="tip"><i class="fas fa-info-circle"></i> Describe los hechos como realmente ocurrieron. Esta información es la base de los argumentos legales.</div>
+      <div class="frow">
+        <div class="fg"><label>Fecha del siniestro <span class="req">*</span></label><input class="fi" type="date" id="fechaSiniestro"></div>
+        <div class="fg"><label>Lugar del siniestro <span class="req">*</span></label><input class="fi" id="lugarSiniestro" placeholder="Ej: Camino Melipilla, Maipú"></div>
+      </div>
+      <div class="fg"><label>Descripción de los hechos reales <span class="req">*</span></label><textarea class="fi" id="hechosReales" placeholder="Describe detalladamente qué ocurrió, las condiciones del lugar, la causa del daño y cómo actuaste después."></textarea></div>
+      <div class="fg"><label>¿Qué daños sufrió el bien asegurado? <span class="req">*</span></label><textarea class="fi" id="danosDetalle" style="min-height:80px" placeholder="Ej: Daños en sistema de frenos, sunroof, carrocería..."></textarea></div>
+      <div class="frow">
+        <div class="fg"><label>Monto del presupuesto / daño estimado</label><input class="fi" id="montoDano" placeholder="Ej: $13.373.915"></div>
+        <div class="fg"><label>Taller o perito que evaluó</label><input class="fi" id="taller" placeholder="Ej: Taller oficial Mercedes-Benz"></div>
+      </div>
+      <div class="nav">
+        <button class="btn-back" onclick="goTo(2,1)"><i class="fas fa-arrow-left"></i> Volver</button>
+        <button class="btn-next" onclick="goTo(2,3)">Siguiente <i class="fas fa-arrow-right"></i></button>
+      </div>
+    </div>
+
+    <!-- STEP 3 -->
+    <div class="step" id="s3">
+      <div class="step-title">El rechazo de la aseguradora</div>
+      <div class="tip"><i class="fas fa-info-circle"></i> Describe exactamente qué dijo la aseguradora. Los errores del informe son los argumentos más fuertes.</div>
+      <div class="fg"><label>Motivo del rechazo según el informe <span class="req">*</span></label><textarea class="fi" id="motivoRechazo" placeholder="Ej: El liquidador concluyó que el daño fue por uso y desgaste..."></textarea></div>
+      <div class="fg"><label>¿Por qué ese motivo es incorrecto o injusto? <span class="req">*</span></label><textarea class="fi" id="errorLiquidador" placeholder="Ej: El liquidador construyó su análisis sobre una premisa incorrecta..."></textarea></div>
+      <div class="fg"><label>Coberturas contratadas aplicables</label><input class="fi" id="coberturas" placeholder="Ej: CAD120160330 (Granizo), CAD120160329 (Riesgos de la Naturaleza)"></div>
+      <div class="nav">
+        <button class="btn-back" onclick="goTo(3,2)"><i class="fas fa-arrow-left"></i> Volver</button>
+        <button class="btn-next" onclick="goTo(3,4)">Siguiente <i class="fas fa-arrow-right"></i></button>
+      </div>
+    </div>
+
+    <!-- STEP 4 -->
+    <div class="step" id="s4">
+      <div class="step-title">Datos para la firma</div>
+      <div class="frow">
+        <div class="fg"><label>Ciudad de emisión</label><input class="fi" id="ciudad" value="Santiago" placeholder="Santiago"></div>
+        <div class="fg"><label>Fecha de la carta</label><input class="fi" id="fechaCarta" placeholder="Ej: 21 de marzo de 2026"></div>
+      </div>
+      <div class="fg">
+        <label>¿Quién firma la carta?</label>
+        <select class="fi" id="quienFirma" onchange="toggleAbogado()">
+          <option value="asegurado">El mismo asegurado</option>
+          <option value="abogado">Un abogado (Exige Tu Seguro)</option>
+        </select>
+      </div>
+      <div id="abogadoGroup" style="display:none">
+        <div class="frow">
+          <div class="fg"><label>Nombre del abogado</label><input class="fi" id="nombreAbogado" placeholder="Raúl Eduardo Santana"></div>
+          <div class="fg"><label>Teléfono</label><input class="fi" id="telefonoAbogado" placeholder="+56 9 7993 9868"></div>
+        </div>
+      </div>
+      <div class="tip" style="margin-top:8px"><i class="fas fa-magic"></i> La IA redactará la carta completa con argumentos legales basados en el DS 1.055 y el Código de Comercio.</div>
+      <div class="nav">
+        <button class="btn-back" onclick="goTo(4,3)"><i class="fas fa-arrow-left"></i> Volver</button>
+        <button class="btn-gen" onclick="generateLetter()"><i class="fas fa-file-word"></i> Generar carta</button>
+      </div>
+    </div>
+
+    <!-- GENERATING -->
+    <div class="generating" id="genState">
+      <div class="gen-icon"><i class="fas fa-circle-notch"></i></div>
+      <div class="gen-title">Redactando tu carta...</div>
+      <div class="gen-sub" id="genMsg">Analizando los argumentos legales aplicables</div>
+    </div>
+
+    <!-- RESULT -->
+    <div class="result" id="resultState">
+      <div class="result-box">
+        <div class="result-box-header">
+          <div class="result-box-icon"><i class="fas fa-check-circle"></i></div>
+          <div class="result-box-title">¡Tu carta está lista!</div>
+        </div>
+        <p id="resultSummary"></p>
+      </div>
+      <div class="disclaimer"><i class="fas fa-exclamation-triangle"></i><strong>Importante:</strong> Esta carta es un borrador orientativo. Antes de enviarla, te recomendamos que un abogado especialista la revise. La primera revisión en Exige Tu Seguro es gratuita y sin compromiso.</div>
+      <div class="result-btns">
+        <button class="btn-dl btn-dl-primary" onclick="downloadDocx()"><i class="fas fa-file-word"></i> Descargar en Word (.docx)</button>
+        <a href="https://wa.me/56979939868?text=Hola%2C+generé+una+carta+de+impugnación+y+quisiera+que+la+revisen" target="_blank" class="btn-dl btn-dl-wa"><i class="fab fa-whatsapp"></i> Pedir revisión gratis</a>
+      </div>
+      <button class="btn-restart" onclick="restart()">↩ Generar otra carta</button>
+    </div>
+
+  </div>
+</div>
+
+<div class="page-footer"><a href="https://exigetuseguro.cl" target="_blank">exigetuseguro.cl</a> · Abogados especialistas en seguros · Primera consulta gratis</div>
+
+<script>
+let letterContent = null;
+const fd = {};
+const val = id => (document.getElementById(id)||{}).value||'';
+
+function goTo(from, to){
+  if(to > from && !validateStep(from)) return;
+  document.getElementById('s'+from).classList.remove('active');
+  document.getElementById('s'+to).classList.add('active');
+  document.getElementById('pFill').style.width = ((to-1)/4*100)+'%';
+  document.getElementById('pLabel').textContent = 'Paso '+to+' de 4';
+}
+
+function validateStep(n){
+  const req = {
+    1:[['nombreAsegurado','Nombre del asegurado'],['aseguradora','Compañía aseguradora'],['numPoliza','N° de póliza'],['numSiniestro','N° de siniestro'],['fechaInforme','Fecha del informe'],['tipoSeguro','Tipo de seguro']],
+    2:[['fechaSiniestro','Fecha del siniestro'],['lugarSiniestro','Lugar del siniestro'],['hechosReales','Descripción de los hechos'],['danosDetalle','Daños sufridos']],
+    3:[['motivoRechazo','Motivo del rechazo'],['errorLiquidador','Por qué es incorrecto']],
+    4:[]
+  };
+  for(const [id, label] of (req[n]||[])){
+    if(!val(id).trim()){ alert('Por favor completa: '+label); document.getElementById(id).focus(); return false; }
+  }
+  return true;
+}
+
+function toggleVehiculo(){ document.getElementById('vehiculoGroup').style.display = val('tipoSeguro')==='vehicular'?'block':'none'; }
+function toggleAbogado(){ document.getElementById('abogadoGroup').style.display = val('quienFirma')==='abogado'?'block':'none'; }
+
+function fmtDate(d){
+  if(!d) return '_____ de _____ de 2026';
+  const [y,m,dd]=d.split('-');
+  const mn=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+  return `${parseInt(dd)} de ${mn[parseInt(m)-1]} de ${y}`;
+}
+
+async function generateLetter(){
+  if(!validateStep(4)) return;
+  Object.assign(fd,{
+    nombreAsegurado:val('nombreAsegurado'),rutAsegurado:val('rutAsegurado'),
+    aseguradora:val('aseguradora'),liquidador:val('liquidador'),
+    numPoliza:val('numPoliza'),numSiniestro:val('numSiniestro'),
+    nombrePoliza:val('nombrePoliza'),fechaInforme:fmtDate(val('fechaInforme')),
+    tipoSeguro:val('tipoSeguro'),vehiculo:val('vehiculo'),
+    fechaSiniestro:fmtDate(val('fechaSiniestro')),lugarSiniestro:val('lugarSiniestro'),
+    hechosReales:val('hechosReales'),danosDetalle:val('danosDetalle'),
+    montoDano:val('montoDano'),taller:val('taller'),
+    motivoRechazo:val('motivoRechazo'),errorLiquidador:val('errorLiquidador'),
+    coberturas:val('coberturas'),ciudad:val('ciudad')||'Santiago',
+    fechaCarta:val('fechaCarta')||fmtDate(new Date().toISOString().split('T')[0]),
+    quienFirma:val('quienFirma'),
+    nombreFirmante:val('quienFirma')==='abogado'?(val('nombreAbogado')||'Raúl Eduardo Santana'):val('nombreAsegurado'),
+    telefonoAbogado:val('telefonoAbogado'),
+  });
+
+  document.getElementById('s4').classList.remove('active');
+  document.getElementById('genState').classList.add('active');
+
+  const msgs=['Analizando los argumentos legales aplicables','Aplicando DS 1.055 y Código de Comercio','Redactando las secciones de impugnación','Finalizando la carta formal...'];
+  let mi=0;
+  const el=document.getElementById('genMsg');
+  const iv=setInterval(()=>{mi=(mi+1)%msgs.length;el.textContent=msgs[mi];},2200);
+
+  const prompt=`Eres un abogado especialista en seguros en Chile. Redacta una carta formal de impugnación basándote en estos datos:
+
+ASEGURADO: ${fd.nombreAsegurado}${fd.rutAsegurado?', RUT '+fd.rutAsegurado:''}
+ASEGURADORA: ${fd.aseguradora}
+PÓLIZA N°: ${fd.numPoliza}${fd.nombrePoliza?' - '+fd.nombrePoliza:''}
+SINIESTRO N°: ${fd.numSiniestro}
+TIPO: ${fd.tipoSeguro}
+${fd.vehiculo?'VEHÍCULO: '+fd.vehiculo:''}
+FECHA INFORME: ${fd.fechaInforme}
+FECHA SINIESTRO: ${fd.fechaSiniestro}
+LUGAR: ${fd.lugarSiniestro}
+
+HECHOS REALES: ${fd.hechosReales}
+
+DAÑOS: ${fd.danosDetalle}
+${fd.montoDano?'MONTO: '+fd.montoDano:''}
+${fd.taller?'EVALUADO POR: '+fd.taller:''}
+
+MOTIVO DEL RECHAZO: ${fd.motivoRechazo}
+
+POR QUÉ ES INCORRECTO: ${fd.errorLiquidador}
+${fd.coberturas?'COBERTURAS APLICABLES: '+fd.coberturas:''}
+
+Responde SOLO con este JSON sin markdown:
+{"intro":"párrafo intro formal citando Art.26 DS 1055","secciones":[{"titulo":"I. CORRECCIÓN ESENCIAL DE LOS HECHOS","contenido":"..."},{"titulo":"II. ERRORES DEL INFORME DE LIQUIDACIÓN","contenido":"..."},{"titulo":"III. COBERTURAS CONTRATADAS APLICABLES","contenido":"..."},{"titulo":"IV. FUNDAMENTOS LEGALES","contenido":"citar DS 1055 arts.13,19,28 y Código de Comercio art.524 y ss."}],"tituloSolicitud":"V. PETICIONES CONCRETAS","peticiones":["solicitud1","solicitud2","solicitud3","solicitud4"],"reserva":"párrafo reservando acciones ante CMF, SERNAC y tribunales"}`;
+
+  try{
+    const r=await fetch('https://api.anthropic.com/v1/messages',{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:2500,messages:[{role:'user',content:prompt}]})
+    });
+    const data=await r.json();
+    clearInterval(iv);
+    letterContent=JSON.parse(data.content[0].text.replace(/```json|```/g,'').trim());
+    document.getElementById('genState').classList.remove('active');
+    document.getElementById('resultState').classList.add('active');
+    document.getElementById('pFill').style.width='100%';
+    document.getElementById('pLabel').textContent='¡Listo!';
+    document.getElementById('resultSummary').textContent=`Carta de impugnación para ${fd.nombreAsegurado} — Siniestro N° ${fd.numSiniestro} — ${fd.aseguradora}.`;
+  }catch(e){
+    clearInterval(iv);
+    document.getElementById('genState').classList.remove('active');
+    document.getElementById('s4').classList.add('active');
+    alert('Error al generar la carta. Intenta de nuevo.');
+  }
+}
+
+async function downloadDocx(){
+  const {Document,Packer,Paragraph,TextRun,AlignmentType,LevelFormat}=docx;
+  const mk=(text,opts={})=>{
+    const runs=Array.isArray(text)?text.map(t=>typeof t==='string'?new TextRun({text:t,font:'Arial',size:22,bold:opts.bold||false}):new TextRun({text:t.text||'',font:'Arial',size:22,bold:t.bold||opts.bold||false,underline:t.underline?{}:undefined})):[new TextRun({text:text||'',font:'Arial',size:22,bold:opts.bold||false})];
+    return new Paragraph({alignment:opts.align||AlignmentType.JUSTIFIED,spacing:{before:opts.b||80,after:opts.a||80,line:276},children:runs});
+  };
+  const bl=()=>new Paragraph({spacing:{before:0,after:0},children:[new TextRun({text:'',font:'Arial',size:22})]});
+  const ch=[
+    mk(fd.ciudad+', '+fd.fechaCarta,{align:AlignmentType.LEFT}),bl(),
+    mk([{text:'Señores',bold:true}],{align:AlignmentType.LEFT,b:0,a:0}),
+    mk([{text:fd.aseguradora.toUpperCase(),bold:true}],{align:AlignmentType.LEFT,b:0,a:0}),
+    ...(fd.liquidador?[mk('Liquidador: '+fd.liquidador,{align:AlignmentType.LEFT,b:0,a:0})]:{}),
+    mk('Presente',{align:AlignmentType.LEFT}),bl(),
+    mk([{text:'Ref.: ',bold:true},{text:'Impugnación Informe de Liquidación - Siniestro N° '+fd.numSiniestro}],{align:AlignmentType.LEFT,b:0,a:0}),
+    mk([{text:'Póliza N°: ',bold:true},{text:fd.numPoliza+(fd.nombrePoliza?' - '+fd.nombrePoliza:'')}],{align:AlignmentType.LEFT,b:0,a:0}),
+    mk([{text:'Asegurado: ',bold:true},{text:fd.nombreAsegurado+(fd.rutAsegurado?', RUT '+fd.rutAsegurado:'')}],{align:AlignmentType.LEFT,b:0,a:0}),
+    ...(fd.vehiculo?[mk([{text:'Vehículo: ',bold:true},{text:fd.vehiculo}],{align:AlignmentType.LEFT,b:0,a:0})]:[]),
+    mk([{text:'Fecha informe impugnado: ',bold:true},{text:fd.fechaInforme}],{align:AlignmentType.LEFT,b:0,a:0}),
+    bl(),mk('De nuestra consideración:'),bl(),mk(letterContent.intro||''),bl(),
+  ];
+  (letterContent.secciones||[]).forEach(sec=>{
+    ch.push(new Paragraph({spacing:{before:280,after:120},children:[new TextRun({text:sec.titulo,font:'Arial',size:22,bold:true})]}));
+    (sec.contenido||'').split('\n\n').filter(t=>t.trim()).forEach(t=>{
+      const tr=t.trim();
+      if(tr.startsWith('- ')||tr.startsWith('• ')){
+        ch.push(new Paragraph({numbering:{reference:'bullets',level:0},spacing:{before:60,after:60,line:276},children:[new TextRun({text:tr.replace(/^[-•]\s+/,''),font:'Arial',size:22})]}));
+      } else { ch.push(mk(tr)); }
+    });
+    ch.push(bl());
+  });
+  ch.push(new Paragraph({spacing:{before:280,after:120},children:[new TextRun({text:letterContent.tituloSolicitud||'PETICIONES CONCRETAS',font:'Arial',size:22,bold:true})]}));
+  ch.push(mk('En mérito de lo expuesto, solicito:'));
+  (letterContent.peticiones||[]).forEach(pet=>{
+    ch.push(new Paragraph({numbering:{reference:'numbers',level:0},spacing:{before:60,after:60,line:276},children:[new TextRun({text:pet,font:'Arial',size:22})]}));
+  });
+  ch.push(bl(),mk(letterContent.reserva||''),bl(),bl(),mk('Saluda atentamente,'),bl(),bl());
+  ch.push(mk([{text:fd.nombreFirmante,bold:true}]));
+  if(fd.quienFirma==='abogado') ch.push(mk('Abogado'));
+  ch.push(mk('En representación de '+fd.nombreAsegurado));
+  if(fd.telefonoAbogado) ch.push(mk('Tel: '+fd.telefonoAbogado));
+
+  const doc=new Document({
+    numbering:{config:[
+      {reference:'bullets',levels:[{level:0,format:LevelFormat.BULLET,text:'•',alignment:AlignmentType.LEFT,style:{paragraph:{indent:{left:720,hanging:360}}}}]},
+      {reference:'numbers',levels:[{level:0,format:LevelFormat.DECIMAL,text:'%1.',alignment:AlignmentType.LEFT,style:{paragraph:{indent:{left:720,hanging:360}}}}]},
+    ]},
+    styles:{default:{document:{run:{font:'Arial',size:22}}}},
+    sections:[{properties:{page:{size:{width:11906,height:16838},margin:{top:1440,right:1440,bottom:1440,left:1800}}},children:ch}]
+  });
+  const blob=await Packer.toBlob(doc);
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  a.href=url; a.download=`Impugnacion_Siniestro_${fd.numSiniestro||'carta'}.docx`; a.click();
+  URL.revokeObjectURL(url);
+}
+
+function restart(){
+  letterContent=null;
+  document.querySelectorAll('.fi').forEach(el=>{if(el.tagName!=='SELECT') el.value='';});
+  document.getElementById('resultState').classList.remove('active');
+  document.getElementById('s1').classList.add('active');
+  document.getElementById('pFill').style.width='0%';
+  document.getElementById('pLabel').textContent='Paso 1 de 4';
+  document.getElementById('vehiculoGroup').style.display='none';
+  document.getElementById('abogadoGroup').style.display='none';
+}
+</script>
+</body>
+</html>
