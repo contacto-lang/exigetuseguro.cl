@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Asistente Legal · ExigeTuSeguro.cl</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+:root {
+  --navy:   #0A3D62;
+  --sky:    #3695BF;
+  --green:  #34A853;
+  --green2: #2d9147;
+  --bg:     #f0f4f8;
+  --white:  #ffffff;
+  --gray:   #64748b;
+  --light:  #e8f0fe;
+  --radius: 18px;
+  --shadow: 0 8px 32px rgba(10,61,98,0.10);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 16px;
+}
+
+/* ── LOGO animations ── */
+.f-rot  { transform-origin: 35px 35px; animation: fRot 8s linear infinite; }
+.f-puls { transform-origin: 35px 35px; animation: fPuls 3s ease-in-out infinite; }
+.f-orb  { animation: fOrb 2s ease-in-out infinite; }
+
+@keyframes fRot   { to { transform: rotate(360deg); } }
+@keyframes fPuls  { 0%,100%{ transform:scale(1); opacity:1; } 50%{ transform:scale(1.07); opacity:.8; } }
+@keyframes fOrb   { 0%,100%{ opacity:1; } 50%{ opacity:.3; } }
+
+/* ── HEADER ── */
+.header {
+  width: 100%;
+  max-width: 680px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding: 0 4px;
+}
+
+.header-logo svg { display: block; }
+
+.header-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(52,168,83,.12);
+  border: 1px solid rgba(52,168,83,.25);
+  color: var(--green2);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: .72rem;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 50px;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+}
+.header-badge .dot {
+  width: 6px; height: 6px;
+  background: var(--green);
+  border-radius: 50%;
+  animation: blink 1.4s ease-in-out infinite;
+}
+@keyframes blink { 0%,100%{opacity:1;} 50%{opacity:.2;} }
+
+/* ── CHAT CARD ── */
+.chat-card {
+  width: 100%;
+  max-width: 680px;
+  background: var(--white);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(10,61,98,.07);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: min(680px, calc(100vh - 180px));
+}
+
+/* top bar */
+.chat-topbar {
+  padding: 16px 20px;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--sky) 100%);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+.chat-topbar-avatar {
+  width: 38px; height: 38px;
+  background: rgba(255,255,255,.15);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: white; font-size: 1rem;
+  flex-shrink: 0;
+}
+.chat-topbar-info h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: .95rem; font-weight: 600; color: white; margin-bottom: 1px;
+}
+.chat-topbar-info p { font-size: .74rem; color: rgba(255,255,255,.65); }
+
+/* messages area */
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  scroll-behavior: smooth;
+}
+.chat-messages::-webkit-scrollbar { width: 4px; }
+.chat-messages::-webkit-scrollbar-thumb { background: rgba(10,61,98,.15); border-radius: 4px; }
+
+/* bubble */
+.bubble-wrap { display: flex; align-items: flex-end; gap: 8px; }
+.bubble-wrap.user { flex-direction: row-reverse; }
+
+.bubble-avatar {
+  width: 28px; height: 28px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: .72rem; flex-shrink: 0; margin-bottom: 2px;
+}
+.bubble-avatar.bot { background: linear-gradient(135deg,var(--navy),var(--sky)); color: white; }
+.bubble-avatar.user { background: var(--green); color: white; }
+
+.bubble {
+  max-width: 75%;
+  padding: 11px 15px;
+  border-radius: 18px;
+  font-size: .9rem;
+  line-height: 1.55;
+  animation: popIn .25s cubic-bezier(.34,1.56,.64,1);
+}
+@keyframes popIn {
+  from { opacity:0; transform:scale(.85) translateY(8px); }
+  to   { opacity:1; transform:scale(1)   translateY(0); }
+}
+
+.bubble.bot {
+  background: #f0f4f8;
+  color: #1e293b;
+  border-bottom-left-radius: 4px;
+}
+.bubble.user {
+  background: linear-gradient(135deg, var(--navy), var(--sky));
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+.bubble a { color: var(--green); text-decoration: underline; font-weight: 600; }
+.bubble.user a { color: #9effc0; }
+.bubble strong { font-weight: 700; }
+.bubble .tag {
+  display: inline-block; background: rgba(52,168,83,.15);
+  color: var(--green2); font-size:.75rem; font-weight:700;
+  padding: 2px 8px; border-radius: 8px; margin: 2px 2px 0 0;
+}
+
+/* typing indicator */
+.typing { display: flex; align-items: center; gap: 4px; padding: 10px 14px; }
+.typing span {
+  width: 7px; height: 7px; background: var(--gray);
+  border-radius: 50%; animation: bounce .9s infinite;
+}
+.typing span:nth-child(2) { animation-delay: .18s; }
+.typing span:nth-child(3) { animation-delay: .36s; }
+@keyframes bounce {
+  0%,80%,100%{ transform:translateY(0); }
+  40%{ transform:translateY(-6px); }
+}
+
+/* quick replies */
+.quickreplies {
+  display: flex; flex-wrap: wrap; gap: 7px;
+  padding: 0 20px 12px;
+  flex-shrink: 0;
+}
+.qr-btn {
+  padding: 7px 13px;
+  background: var(--white);
+  border: 1.5px solid rgba(10,61,98,.15);
+  border-radius: 50px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: .8rem; font-weight: 500;
+  color: var(--navy);
+  cursor: pointer;
+  transition: all .2s;
+  white-space: nowrap;
+}
+.qr-btn:hover {
+  background: var(--navy); color: white;
+  border-color: var(--navy); transform: translateY(-1px);
+}
+
+/* input bar */
+.chat-inputbar {
+  padding: 12px 16px;
+  border-top: 1px solid rgba(10,61,98,.07);
+  display: flex; gap: 10px; align-items: center;
+  flex-shrink: 0;
+  background: white;
+}
+.chat-input {
+  flex: 1; padding: 10px 14px;
+  border: 1.5px solid rgba(10,61,98,.13);
+  border-radius: 50px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: .9rem; color: #1e293b;
+  outline: none; transition: border-color .2s;
+  background: #f8fafc;
+}
+.chat-input:focus { border-color: var(--sky); background: white; }
+.chat-input::placeholder { color: #a0aec0; }
+
+.send-btn {
+  width: 40px; height: 40px;
+  background: linear-gradient(135deg, var(--green), var(--green2));
+  border: none; border-radius: 50%;
+  color: white; font-size: .95rem;
+  cursor: pointer; transition: all .2s;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; box-shadow: 0 4px 12px rgba(52,168,83,.3);
+}
+.send-btn:hover { transform: scale(1.08); box-shadow: 0 6px 18px rgba(52,168,83,.4); }
+
+/* ── FOOTER ── */
+.page-footer {
+  margin-top: 16px;
+  text-align: center;
+  font-size: .75rem;
+  color: var(--gray);
+}
+.page-footer a { color: var(--sky); text-decoration: none; font-weight: 600; }
+
+@media (max-width: 480px) {
+  body { padding: 12px 10px; }
+  .bubble { max-width: 85%; font-size: .87rem; }
+  .header-badge span { display: none; }
+  .chat-card { border-radius: 18px; height: calc(100vh - 140px); }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-logo">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 60" height="44" width="auto">
+      <defs>
+        <linearGradient id="hgBg" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#0A3D62;stop-opacity:1"/>
+          <stop offset="100%" style="stop-color:#3695BF;stop-opacity:1"/>
+        </linearGradient>
+        <filter id="hgGlow">
+          <feGaussianBlur stdDeviation="1.5" result="b"/>
+          <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+      </defs>
+      <g transform="translate(0,0)">
+        <g class="f-rot" style="transform-origin:28px 28px">
+          <circle cx="28" cy="28" r="24" fill="none" stroke="#0A3D62" stroke-width="1.2" opacity=".12"/>
+          <circle cx="28" cy="4"  r="1.5" fill="#34A853" class="f-orb"/>
+          <circle cx="52" cy="28" r="1.5" fill="#34A853" class="f-orb" style="animation-delay:.5s"/>
+          <circle cx="28" cy="52" r="1.5" fill="#34A853" class="f-orb" style="animation-delay:1s"/>
+          <circle cx="4"  cy="28" r="1.5" fill="#34A853" class="f-orb" style="animation-delay:1.5s"/>
+        </g>
+        <g class="f-puls" style="transform-origin:28px 28px">
+          <path d="M28 11 L39 18 L39 32 L28 39 L17 32 L17 18 Z" fill="url(#hgBg)" opacity=".14"/>
+          <path d="M28 11 L39 18 L39 32 L28 39 L17 32 L17 18 Z" fill="none" stroke="#0A3D62" stroke-width="1.8" opacity=".65"/>
+        </g>
+        <line x1="19" y1="20" x2="26" y2="20" stroke="#0A3D62" stroke-width="1.4" stroke-linecap="round" opacity=".6"/>
+        <line x1="19" y1="25" x2="28" y2="25" stroke="#0A3D62" stroke-width="1.4" stroke-linecap="round" opacity=".6"/>
+        <line x1="19" y1="30" x2="27" y2="30" stroke="#0A3D62" stroke-width="1.4" stroke-linecap="round" opacity=".6"/>
+        <line x1="33" y1="22" x2="33" y2="28" stroke="#34A853" stroke-width="1.1" stroke-linecap="round"/>
+        <rect x="31.5" y="27.5" width="3" height="1" rx=".4" fill="#34A853"/>
+        <line x1="30" y1="22" x2="36" y2="22" stroke="#34A853" stroke-width="1.1" stroke-linecap="round"/>
+        <line x1="31"  y1="22" x2="31"  y2="24" stroke="#34A853" stroke-width=".7"/>
+        <path d="M29.5 24 L29.5 25.5 L32.5 25.5 L32.5 24 Z" fill="none" stroke="#34A853" stroke-width=".7"/>
+        <line x1="35"  y1="22" x2="35"  y2="24" stroke="#34A853" stroke-width=".7"/>
+        <path d="M33.5 24 L33.5 25.5 L36.5 25.5 L36.5 24 Z" fill="none" stroke="#34A853" stroke-width=".7"/>
+        <circle cx="33" cy="22" r=".8" fill="#34A853" filter="url(#hgGlow)"/>
+      </g>
+      <text x="62" y="36" font-family="'Space Grotesk',-apple-system,sans-serif" font-size="20" font-weight="600" fill="#0A3D62" letter-spacing="-.5">exigetuseguro<tspan fill="#34A853">.cl</tspan></text>
+    </svg>
+  </div>
+  <div class="header-badge">
+    <span class="dot"></span>
+    <span>Asistente en línea</span>
+  </div>
+</div>
+
+<!-- CHAT CARD -->
+<div class="chat-card">
+
+  <!-- top bar -->
+  <div class="chat-topbar">
+    <div class="chat-topbar-avatar"><i class="fas fa-balance-scale"></i></div>
+    <div class="chat-topbar-info">
+      <h3>Asistente Legal · Seguros Chile</h3>
+      <p>Responde consultas frecuentes sobre seguros</p>
+    </div>
+  </div>
+
+  <!-- messages -->
+  <div class="chat-messages" id="chatMessages"></div>
+
+  <!-- quick replies -->
+  <div class="quickreplies" id="quickReplies">
+    <button class="qr-btn" onclick="sendQR(this)">¿Rechazaron mi seguro?</button>
+    <button class="qr-btn" onclick="sendQR(this)">Subir mis documentos</button>
+    <button class="qr-btn" onclick="sendQR(this)">Plazos para reclamar</button>
+    <button class="qr-btn" onclick="sendQR(this)">¿Qué es la CMF?</button>
+    <button class="qr-btn" onclick="sendQR(this)">Hablar con un abogado</button>
+  </div>
+
+  <!-- input -->
+  <div class="chat-inputbar">
+    <input class="chat-input" id="chatInput" placeholder="Escribe tu consulta…" autocomplete="off">
+    <button class="send-btn" id="sendBtn" onclick="sendMessage()">
+      <i class="fas fa-paper-plane"></i>
+    </button>
+  </div>
+</div>
+
+<div class="page-footer">
+  <a href="https://exigetuseguro.cl" target="_blank">exigetuseguro.cl</a> · Primera consulta gratis · +56 9 7993 9868
+</div>
+
+<script>
+// ── Knowledge base ──────────────────────────────────────────
+const KB = [
+  {
+    keys: ['rechaz','negaron','denegaron','no pagaron','no me pagan','siniestro rechaz'],
+    answer: `Si tu aseguradora rechazó tu siniestro, tienes derecho a impugnar esa decisión. Los pasos habituales son:\n\n<strong>1. Reclamo formal a la aseguradora</strong> — tienen 30 días para responder.\n<strong>2. Reclamo ante la CMF</strong> — si la respuesta es insatisfactoria.\n<strong>3. Demanda judicial</strong> — cuando las vías anteriores no resultan.\n\nRecuerda que la ley presume que el siniestro está cubierto; es la aseguradora quien debe probar lo contrario (Art. 530-531 Código de Comercio).\n\n📋 Para que nuestro equipo revise tu caso, puedes <strong>subir tu póliza o carta de rechazo</strong> directamente en:\n👉 <a href="https://exigetuseguro.cl/contacto" target="_blank">exigetuseguro.cl/contacto</a>`,
+    qr: ['Subir mis documentos','Hablar con un abogado','¿Qué es la CMF?']
+  },
+  {
+    keys: ['plazo','prescripci','cuánto tiempo','cuanto tiempo','fecha límite','vence','vencer'],
+    answer: `En Chile el plazo general para reclamar por un contrato de seguro es de <strong>4 años</strong> desde que la obligación se hizo exigible (Art. 541 Código de Comercio).\n\nSin embargo, cada póliza puede tener plazos internos más breves para <strong>notificar el siniestro</strong> (a veces 3–5 días). Revisa tu póliza o contáctanos para verificarlo.\n\n⏰ Lo más importante: mientras más rápido actúes, más fácil es reunir pruebas.\n\nSi quieres que revisemos tu situación concreta, cuéntanos tu caso en:\n👉 <a href="https://exigetuseguro.cl/contacto" target="_blank">exigetuseguro.cl/contacto</a>`,
+    qr: ['Subir mis documentos','¿Rechazaron mi seguro?','Hablar con un abogado']
+  },
+  {
+    keys: ['cmf','comisión para el mercado','comision mercado financiero','regulador','supervisor'],
+    answer: `La <strong>Comisión para el Mercado Financiero (CMF)</strong> es el organismo que regula y supervisa a todas las compañías de seguros en Chile.\n\nPuedes presentar un reclamo ante la CMF si:\n• Tu aseguradora no responde en los plazos legales.\n• Consideras que el rechazo fue injusto.\n• Detectas prácticas abusivas.\n\nLa CMF puede instar a la aseguradora a reconsiderar, pero no tiene poder de condena. Para eso existe la vía judicial. 💡\n\nWeb oficial: <a href="https://www.cmfchile.cl" target="_blank">cmfchile.cl</a>`,
+    qr: ['Subir mis documentos','¿Rechazaron mi seguro?','Hablar con un abogado']
+  },
+  {
+    keys: ['vida','seguro de vida','fallecimiento','muerte','beneficiario','desgravamen'],
+    answer: `Los seguros de vida tienen una protección especial en Chile: la <strong>indisputabilidad</strong>.\n\nSi tu póliza tiene más de <strong>2 años</strong> de vigencia, la aseguradora no puede anularla alegando omisiones en la declaración de salud (salvo dolo comprobado).\n\nSi te rechazaron un seguro de vida, los fundamentos más comunes de impugnación son:\n<span class="tag">Indisputabilidad</span> <span class="tag">Preexistencias</span> <span class="tag">Carga probatoria</span>\n\n📋 Sube tu póliza o carta de rechazo para que la revisemos:\n👉 <a href="https://exigetuseguro.cl/contacto" target="_blank">exigetuseguro.cl/contacto</a>`,
+    qr: ['Subir mis documentos','Hablar con un abogado','¿Rechazaron mi seguro?']
+  },
+  {
+    keys: ['salud','isapre','médic','hospital','clínica','enfermedad','preexistencia'],
+    answer: `En seguros de salud, las aseguradoras suelen rechazar por <strong>preexistencias</strong>. Sin embargo, la ley exige que la preexistencia haya sido <strong>diagnosticada Y conocida por el asegurado</strong> al momento de contratar.\n\nSi te rechazan por una condición que desconocías, es muy probable que sea impugnable.\n\nTambién aplica para coberturas complementarias de Isapres y seguros de salud privados.\n\n📋 Cuéntanos tu caso y adjunta los documentos relevantes en:\n👉 <a href="https://exigetuseguro.cl/contacto" target="_blank">exigetuseguro.cl/contacto</a>`,
+    qr: ['Subir mis documentos','¿Rechazaron mi seguro?','Hablar con un abogado']
+  },
+  {
+    keys: ['vehiculo','vehicular','auto','car','accidente','choque','robo auto','seguro auto'],
+    answer: `Los seguros vehiculares son de los más reclamados en Chile. Los motivos de rechazo más frecuentes —y más impugnables— son:\n\n• <strong>Exclusión por "culpa grave"</strong> mal fundamentada.\n• Tasación inferior al valor real del vehículo.\n• Incumplimiento de plazos de notificación por causas ajenas al asegurado.\n• Cláusulas de exclusión ambiguas o con letra chica.\n\nEn caso de duda, la ley ordena interpretar siempre a favor del asegurado.\n\n📋 Adjunta tu póliza o carta de rechazo para que la analicemos:\n👉 <a href="https://exigetuseguro.cl/contacto" target="_blank">exigetuseguro.cl/contacto</a>`,
+    qr: ['Subir mis documentos','¿Rechazaron mi seguro?','Hablar con un abogado']
+  },
+  {
+    keys: ['incendio','sismo','terremoto','hogar','daño','destrucción','inundación'],
+    answer: `Para siniestros de incendio, sismo o daños al hogar, lo más importante es:\n\n<strong>1.</strong> Notificar el siniestro a tu aseguradora lo antes posible.\n<strong>2.</strong> No reparar los daños antes de que el liquidador los inspeccione.\n<strong>3.</strong> Documentar todo con fotografías y videos con fecha.\n<strong>4.</strong> Guardar todas las boletas de gastos relacionados.\n\nSi la tasación del daño es muy inferior a lo esperado, también es impugnable.\n\n📋 Sube tus documentos y cuéntanos el relato de tu caso en:\n👉 <a href="https://exigetuseguro.cl/contacto" target="_blank">exigetuseguro.cl/contacto</a>`,
+    qr: ['Subir mis documentos','¿Rechazaron mi seguro?','Hablar con un abogado']
+  },
+  {
+    keys: ['poliza','póliza','contrato','cobertura','que cubre','qué cubre','exclusion','exclusión'],
+    answer: `La póliza es el contrato que define tus derechos. Puntos clave a revisar:\n\n<span class="tag">Coberturas</span> ¿Qué riesgos están incluidos?\n<span class="tag">Exclusiones</span> Deben ser claras y específicas; las ambiguas se interpretan a tu favor.\n<span class="tag">Suma asegurada</span> El monto máximo que te pueden pagar.\n<span class="tag">Deducible</span> Lo que tú absorbes antes de que pague el seguro.\n\n📋 ¿Tienes dudas sobre lo que cubre tu póliza? Súbela y la revisamos:\n👉 <a href="https://exigetuseguro.cl/contacto" target="_blank">exigetuseguro.cl/contacto</a>`,
+    qr: ['Subir mis documentos','Hablar con un abogado','¿Qué es la CMF?']
+  },
+  {
+    keys: ['subir','adjuntar','documentos','archivo','formulario','enviar caso','relato','carta rechazo','carta de rechazo'],
+    answer: `Puedes enviarnos tu caso completo —incluyendo <strong>póliza, carta de rechazo, fotos u otros documentos</strong>— a través de nuestro formulario en:\n\n👉 <a href="https://exigetuseguro.cl/contacto" target="_blank"><strong>exigetuseguro.cl/contacto</strong></a>\n\nEn el formulario también puedes escribir el <strong>relato de los hechos</strong> para que nuestro equipo entienda tu situación desde el primer momento.\n\nEl análisis inicial es <strong>100% gratuito</strong> y sin compromiso. ✅`,
+    qr: ['Hablar con un abogado','¿Rechazaron mi seguro?','¿Qué es la CMF?']
+  },
+  {
+    keys: ['abogado','asesoría','asesoria','consulta','ayuda','contacto','whatsapp','llamar','precio','costo','honorario','gratis','primera consulta'],
+    answer: `Nuestra <strong>primera consulta es completamente gratuita</strong> y sin compromiso. 🎉\n\nPuedes contactarnos por:\n\n📋 <a href="https://exigetuseguro.cl/contacto" target="_blank">Formulario · exigetuseguro.cl/contacto</a> — sube tu póliza o carta de rechazo\n📱 <a href="https://wa.me/56979939868" target="_blank">WhatsApp · +56 9 7993 9868</a>\n📧 <a href="mailto:contacto@exigetuseguro.cl">contacto@exigetuseguro.cl</a>\n\nAtendemos en todo Chile por videollamada, WhatsApp o email.`,
+    qr: ['Subir mis documentos','¿Rechazaron mi seguro?','¿Qué es la CMF?']
+  },
+  {
+    keys: ['hola','buenas','buenos días','buenas tardes','buenas noches','hey','saludos'],
+    answer: `¡Hola! 👋 Soy el asistente virtual de <strong>ExigeTuSeguro.cl</strong>.\n\nEstoy aquí para orientarte sobre tus derechos como asegurado en Chile. Puedo ayudarte con dudas sobre rechazos de seguros, plazos, coberturas y más.\n\n¿En qué te puedo ayudar hoy?`,
+    qr: ['¿Rechazaron mi seguro?','Subir mis documentos','Hablar con un abogado']
+  },
+  {
+    keys: ['gracias','muchas gracias','thanks','genial','perfecto','excelente'],
+    answer: `¡Con gusto! 😊 Si en algún momento quieres que revisemos tu caso en detalle, recuerda que puedes:\n\n📋 <a href="https://exigetuseguro.cl/contacto" target="_blank">Subir tus documentos en exigetuseguro.cl/contacto</a>\n📱 <a href="https://wa.me/56979939868" target="_blank">Escribirnos al WhatsApp</a>\n\nPrimera consulta <strong>100% gratuita</strong>.`,
+    qr: ['Subir mis documentos','Hablar con un abogado']
+  },
+  {
+    keys: ['impugnar','impugnación','recurso','reclamar','reclamo','apelar','apelación'],
+    answer: `Impugnar un rechazo es tu derecho. El proceso típico tiene 3 vías:\n\n<strong>Vía 1 · Aseguradora directa</strong>\nEnviar un escrito formal citando los artículos del Código de Comercio. Tienen 30 días para responder.\n\n<strong>Vía 2 · CMF</strong>\nSi la aseguradora no responde o la respuesta es negativa, presenta un reclamo ante la Comisión para el Mercado Financiero.\n\n<strong>Vía 3 · Judicial</strong>\nDemanda civil. Para montos menores a 10.000 UF puede ser en Juzgado de Policía Local.\n\n📋 Para que evaluemos cuál es la mejor estrategia para tu caso, <strong>sube tu póliza o carta de rechazo</strong>:\n👉 <a href="https://exigetuseguro.cl/contacto" target="_blank">exigetuseguro.cl/contacto</a>`,
+    qr: ['Subir mis documentos','Hablar con un abogado','¿Qué es la CMF?']
+  }
+];
+
+const FALLBACK = `Entiendo tu consulta. Para darte una orientación más precisa, te recomiendo hablar directamente con nuestro equipo.\n\n📱 <a href="https://wa.me/56979939868" target="_blank">WhatsApp · +56 9 7993 9868</a>\n📧 <a href="mailto:contacto@exigetuseguro.cl">contacto@exigetuseguro.cl</a>\n\nLa <strong>primera consulta es gratuita</strong> y sin compromiso.`;
+
+// ── Engine ──────────────────────────────────────────────────
+function findAnswer(text) {
+  const q = text.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+  let best = null, bestScore = 0;
+  for (const item of KB) {
+    let score = 0;
+    for (const k of item.keys) {
+      if (q.includes(k.normalize('NFD').replace(/[\u0300-\u036f]/g,''))) score++;
+    }
+    if (score > bestScore) { bestScore = score; best = item; }
+  }
+  return bestScore > 0 ? best : null;
+}
+
+// ── DOM helpers ─────────────────────────────────────────────
+const msgs   = document.getElementById('chatMessages');
+const qrArea = document.getElementById('quickReplies');
+const input  = document.getElementById('chatInput');
+
+function addBubble(html, type) {
+  const wrap = document.createElement('div');
+  wrap.className = `bubble-wrap ${type}`;
+
+  const av = document.createElement('div');
+  av.className = `bubble-avatar ${type}`;
+  av.innerHTML = type === 'bot' ? '<i class="fas fa-balance-scale"></i>' : '<i class="fas fa-user"></i>';
+
+  const bub = document.createElement('div');
+  bub.className = `bubble ${type}`;
+  bub.innerHTML = html;
+
+  wrap.appendChild(av);
+  wrap.appendChild(bub);
+  msgs.appendChild(wrap);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function showTyping() {
+  const wrap = document.createElement('div');
+  wrap.className = 'bubble-wrap bot';
+  wrap.id = 'typingWrap';
+
+  const av = document.createElement('div');
+  av.className = 'bubble-avatar bot';
+  av.innerHTML = '<i class="fas fa-balance-scale"></i>';
+
+  const bub = document.createElement('div');
+  bub.className = 'bubble bot typing';
+  bub.innerHTML = '<span></span><span></span><span></span>';
+
+  wrap.appendChild(av);
+  wrap.appendChild(bub);
+  msgs.appendChild(wrap);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function removeTyping() {
+  const t = document.getElementById('typingWrap');
+  if (t) t.remove();
+}
+
+function setQR(list) {
+  qrArea.innerHTML = '';
+  (list || []).forEach(label => {
+    const b = document.createElement('button');
+    b.className = 'qr-btn';
+    b.textContent = label;
+    b.onclick = () => sendQR(b);
+    qrArea.appendChild(b);
+  });
+}
+
+// ── Send flow ───────────────────────────────────────────────
+function respond(text) {
+  addBubble(escapeHtml(text), 'user');
+  setQR([]);
+
+  showTyping();
+  setTimeout(() => {
+    removeTyping();
+    const found = findAnswer(text);
+    if (found) {
+      addBubble(found.answer, 'bot');
+      setQR(found.qr);
+    } else {
+      addBubble(FALLBACK, 'bot');
+      setQR(['Hablar con un abogado','¿Rechazaron mi seguro?']);
+    }
+  }, 900 + Math.random() * 400);
+}
+
+function sendMessage() {
+  const text = input.value.trim();
+  if (!text) return;
+  input.value = '';
+  respond(text);
+}
+
+function sendQR(btn) {
+  respond(btn.textContent);
+}
+
+function escapeHtml(s) {
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+input.addEventListener('keydown', e => {
+  if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); }
+});
+
+// ── Welcome message ─────────────────────────────────────────
+setTimeout(() => {
+  addBubble(`¡Hola! 👋 Soy el asistente virtual de <strong>ExigeTuSeguro.cl</strong>.<br><br>Puedo orientarte sobre tus derechos como asegurado en Chile: rechazos, plazos, coberturas, impugnaciones y más.<br><br>¿En qué te puedo ayudar?`, 'bot');
+}, 400);
+</script>
+</body>
+</html>
