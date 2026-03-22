@@ -1,7 +1,6 @@
 # robots.txt — exigetuseguro.cl
-# Permitir acceso total a todos los bots, incluidos bots de IA
-
 User-agent: *
 Allow: /
+Disallow: /sitemap.xml
 
 Sitemap: https://www.exigetuseguro.cl/sitemap.xml
