@@ -1,6 +1,5 @@
 # robots.txt — exigetuseguro.cl
 User-agent: *
 Allow: /
-Disallow: /sitemap.xml
 
 Sitemap: https://www.exigetuseguro.cl/sitemap.xml
