@@ -483,7 +483,7 @@ header {
   position: absolute; top: 0; left: 0; width: 100%; height: 100%;
   background-image: url('https://images.pexels.com/photos/5668772/pexels-photo-5668772.jpeg');
   background-size: cover; background-position: center;
-  opacity: 0.25; z-index: 0; pointer-events: none;
+  opacity: 0.3; z-index: 0; pointer-events: none;
 }
 
 .section-container { max-width: 1400px; margin: 0 auto; position: relative; z-index: 1; }
@@ -497,17 +497,25 @@ header {
 }
 .section-header p { color: var(--color-gray-light); font-size: 1.05rem; max-width: 680px; margin: 0 auto; }
 
-.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+.services-grid { display: grid; grid-template-columns: 1fr; gap: 0; border: 1.5px solid rgba(10,61,98,0.1); border-radius: 16px; overflow: hidden; background: white; box-shadow: 0 4px 24px rgba(10,61,98,0.09); }
 
 .service-card {
-  background: white;
-  padding: 2.25rem;
-  border-radius: var(--radius);
-  border: 1.5px solid rgba(10,61,98,0.08);
-  transition: var(--transition);
-  cursor: pointer;
-  box-shadow: var(--shadow-sm);
+  border-radius: 0 !important;
+  border: none !important;
+  border-bottom: 1px solid rgba(10,61,98,0.07) !important;
+  box-shadow: none !important;
+  padding: 1rem 1.25rem !important;
+  display: flex !important;
+  align-items: center;
+  gap: 1rem;
+  background: white !important;
 }
+.service-card:last-child { border-bottom: none !important; }
+.service-card:hover { background: var(--color-bg-soft) !important; transform: none !important; border-color: transparent !important; }
+.service-card .service-icon { width: 40px !important; height: 40px !important; min-width: 40px; font-size: 0.95rem !important; margin-bottom: 0 !important; border-radius: 10px !important; flex-shrink: 0; }
+.service-card h3 { font-size: 0.93rem !important; margin-bottom: 0 !important; flex: 1; line-height: 1.3; color: var(--color-primary); }
+.service-card p { display: none !important; }
+
 .service-card:hover {
   border-color: var(--color-accent);
   transform: translateY(-4px);
@@ -1384,56 +1392,93 @@ footer {
      SERVICIOS
      ====================================================== -->
 <section class="services" id="servicios">
-  <div class="section-container">
-    <div class="section-header">
-      <h2>Servicios Legales Especializados en Seguros</h2>
-    </div>
+ <div class="section-container">
+  <div class="section-header">
+    <h2>Servicios Legales Especializados en Seguros</h2>
+  </div>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; max-width: 1200px; margin: 0 auto;">
+
+    <!-- IZQUIERDA: lista de servicios -->
     <div class="services-grid">
-
-      <article class="service-card">
-        <div class="service-icon"><i class="fas fa-file-alt"></i></div>
-        <h3>Formulario Web</h3>
-        <p>Cuéntanos lo que ocurrió y adjunta los documentos relevantes: póliza, carta de rechazo o cualquier comunicación con tu aseguradora.</p>
-
-      </article>
-
-      <article class="service-card">
+           <article class="service-card">
         <div class="service-icon"><i class="fas fa-file-contract"></i></div>
         <h3>Impugnación de Rechazos de Seguros</h3>
-        <p>Abogados especialistas en impugnar rechazos injustos. Defendemos tu derecho a una indemnización justa ante aseguradoras.</p>
-
+        <p>Abogados especialistas en impugnar rechazos injustos.</p>
       </article>
-
       <article class="service-card">
         <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
-        <h3>Abogado Seguros de Vida Chile</h3>
-        <p>Representación legal experta en disputas de seguros de vida. Conocemos todas las estrategias de las aseguradoras y cómo contrarrestarlas.</p>
-
+        <h3>Abogado Seguros de Vida  Salud Chile</h3>
+        <p>Representación legal experta en disputas de seguros de vida.</p>
       </article>
-
-      <article class="service-card">
-        <div class="service-icon"><i class="fas fa-heartbeat"></i></div>
-        <h3>Abogado Seguros de Salud</h3>
-        <p>Asesoría legal para obtener la cobertura médica que te corresponde. Reclamos ante Isapres y seguros complementarios.</p>
-
-      </article>
-
-      <article class="service-card">
+            <article class="service-card">
         <div class="service-icon"><i class="fas fa-fire"></i></div>
         <h3>Seguros de Incendio y Sismo</h3>
-        <p>Defensa legal especializada en siniestros por incendio, terremoto y coberturas adicionales de hogar. Recuperamos el valor real de tus pérdidas.</p>
-
+        <p>Defensa legal especializada en siniestros por incendio y terremoto.</p>
       </article>
-
       <article class="service-card">
         <div class="service-icon"><i class="fas fa-car"></i></div>
         <h3>Abogado Seguros Vehiculares</h3>
-        <p>Expertos en reclamaciones de seguros automotrices. Accidentes, robos, daños a terceros y todo riesgo. Recuperamos tu inversión.</p>
-
+        <p>Expertos en reclamaciones de seguros automotrices.</p>
       </article>
+    </div>
 
+    <!-- DERECHA: panel informativo -->
+    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+
+     
+      <!-- Bloque: botones de acción -->
+      <div style="background: white; border: 1.5px solid rgba(10,61,98,0.08); border-radius: 16px; padding: 1.5rem; box-shadow: 0 4px 20px rgba(10,61,98,0.07);">
+        
+        <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+          <a href="https://www.exigetuseguro.cl/conoce-tu-poliza"
+             style="display: flex; align-items: center; gap: 0.875rem; padding: 0.875rem 1rem; background: var(--color-bg-soft); border: 1px solid rgba(10,61,98,0.08); border-radius: 12px; text-decoration: none; transition: all 0.25s ease; color: var(--color-primary);"
+             onmouseover="this.style.background='rgba(52,168,83,0.07)';this.style.borderColor='rgba(52,168,83,0.3)'"
+             onmouseout="this.style.background='var(--color-bg-soft)';this.style.borderColor='rgba(10,61,98,0.08)'">
+            <div style="width: 36px; height: 36px; background: rgba(52,168,83,0.12); border-radius: 9px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <i class="fas fa-file-contract" style="color: var(--color-accent); font-size: 0.9rem;"></i>
+            </div>
+            <div>
+              <p style="font-size: 0.9rem; font-weight: 600; margin: 0 0 0.1rem; color: var(--color-primary);">Conoce tu Póliza</p>
+              <p style="font-size: 0.78rem; color: var(--color-gray-light); margin: 0;">Guía de coberturas y exclusiones</p>
+            </div>
+            <i class="fas fa-arrow-right" style="margin-left: auto; color: var(--color-gray-light); font-size: 0.78rem;"></i>
+          </a>
+
+          <a href="https://www.exigetuseguro.cl/contacto"
+             style="display: flex; align-items: center; gap: 0.875rem; padding: 0.875rem 1rem; background: var(--color-bg-soft); border: 1px solid rgba(10,61,98,0.08); border-radius: 12px; text-decoration: none; transition: all 0.25s ease;"
+             onmouseover="this.style.background='rgba(54,149,191,0.07)';this.style.borderColor='rgba(54,149,191,0.3)'"
+             onmouseout="this.style.background='var(--color-bg-soft)';this.style.borderColor='rgba(10,61,98,0.08)'">
+            <div style="width: 36px; height: 36px; background: rgba(54,149,191,0.12); border-radius: 9px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <i class="fas fa-file-alt" style="color: var(--color-secondary); font-size: 0.9rem;"></i>
+            </div>
+            <div>
+              <p style="font-size: 0.9rem; font-weight: 600; margin: 0 0 0.1rem; color: var(--color-primary);">Formulario</p>
+              <p style="font-size: 0.78rem; color: var(--color-gray-light); margin: 0;">Adjunta los documentos de tu caso y recibe orientación legal</p>
+            </div>
+            <i class="fas fa-arrow-right" style="margin-left: auto; color: var(--color-gray-light); font-size: 0.78rem;"></i>
+          </a>
+
+          <a href="https://www.exigetuseguro.cl/honorarios"
+             style="display: flex; align-items: center; gap: 0.875rem; padding: 0.875rem 1rem; background: var(--color-bg-soft); border: 1px solid rgba(10,61,98,0.08); border-radius: 12px; text-decoration: none; transition: all 0.25s ease;"
+             onmouseover="this.style.background='rgba(10,61,98,0.05)';this.style.borderColor='rgba(10,61,98,0.2)'"
+             onmouseout="this.style.background='var(--color-bg-soft)';this.style.borderColor='rgba(10,61,98,0.08)'">
+            <div style="width: 36px; height: 36px; background: rgba(10,61,98,0.08); border-radius: 9px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <i class="fas fa-file-invoice-dollar" style="color: var(--color-primary); font-size: 0.9rem;"></i>
+            </div>
+            <div>
+              <p style="font-size: 0.9rem; font-weight: 600; margin: 0 0 0.1rem; color: var(--color-primary);">Guía de Honorarios</p>
+              <p style="font-size: 0.78rem; color: var(--color-gray-light); margin: 0;">Transparencia total en costos</p>
+            </div>
+            <i class="fas fa-arrow-right" style="margin-left: auto; color: var(--color-gray-light); font-size: 0.78rem;"></i>
+          </a>
+        </div>
+      </div>
+
+      
     </div>
   </div>
+</div>
 </section>
 
 <!-- ======================================================
@@ -2050,6 +2095,13 @@ footer {
 @media (max-width: 968px) {
   .desktop-only { display: none !important; }
   .mobile-only  { display: block; }
+
+  #servicios .section-container > div[style] {
+    grid-template-columns: 1fr !important;
+  }
+  #servicios .section-container > div[style] > div:last-child {
+    display: none !important;
+  }
 }
 
 /* ── Mobile: white form card ── */
