@@ -1311,6 +1311,26 @@ footer {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+/* --- AJUSTE PARA TÍTULO EN MÓVIL --- */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    /* Forzamos un tamaño grande y legible en pantallas pequeñas */
+    font-size: 2.6rem !important; 
+    line-height: 1.1 !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem !important;
+    text-align: left;
+  }
+
+  .hero-content p {
+    /* Ajustamos el párrafo para que no se vea desproporcionado */
+    font-size: 0.8rem !important;
+    line-height: 1.5 !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+  }
+}
+
 </style>
 </head>
 <body>
