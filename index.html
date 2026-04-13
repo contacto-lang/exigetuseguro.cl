@@ -917,22 +917,47 @@ footer {
    ============================================================ */
 .whatsapp-sidebar {
   position: fixed;
-  right: 0; top: 75%;
+  right: 0; 
+  top: 75%;
   transform: translateY(-50%) translateZ(0);
   z-index: 9999;
-  display: none;
+  display: none; /* Mantengo el estado oculto inicial como estaba en tu código */
 }
+
 .whatsapp-sidebar a {
-  display: flex; align-items: center; justify-content: center;
-  background: #25D366; color: white;
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  
+  /* ESTILO GLASS APPLE (REEMPLAZA AL VERDE) */
+  background: rgba(255, 255, 255, 0.1); 
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  color: white; 
+  
   padding: 12px 14px;
   text-decoration: none;
-  border-radius: 10px 0 0 10px;
-  box-shadow: -2px 2px 12px rgba(0,0,0,0.2);
+  
+  /* Mantenemos tu forma de barra lateral exacta */
+  border-radius: 12px 0 0 12px; 
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-right: none;
+  
+  box-shadow: -4px 4px 16px rgba(0,0,0,0.15);
   transition: all 0.3s ease;
 }
-.whatsapp-sidebar a:hover { background: #128C7E; }
-.whatsapp-sidebar i { font-size: 26px; }
+
+/* Efecto hover refinado */
+.whatsapp-sidebar a:hover { 
+  background: rgba(255, 255, 255, 0.2); 
+  padding-right: 20px;
+}
+
+.whatsapp-sidebar i { 
+  font-size: 26px; 
+  /* Sombra para asegurar que el icono blanco sea legible sobre fondos claros */
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); 
+}
 
 /* ============================================================
    ANIMATIONS
