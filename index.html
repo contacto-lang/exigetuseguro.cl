@@ -1281,31 +1281,36 @@ footer {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  /* El azul suave con transparencia que te gustó */
+  
   background: rgba(255, 255, 255, 0.15); 
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: border: 1px solid rgba(255, 255, 255, 0.3);;
+  
+  /* BORDE: 1.2px es el grosor ideal para que se vea fino pero claro */
+  border: 1.2px solid rgba(255, 255, 255, 0.5); 
+  
   color: #ffffff;
   font-family: 'DM Sans', sans-serif;
   font-weight: 500;
-  padding: 10px 22px;
-  border-radius: 980px; /* Forma de cápsula */
+  
+  /* TAMAÑO EQUILIBRADO: Ni muy grande, ni muy pequeño */
+  padding: 11px 24px; 
+  font-size: 0.92rem; 
+  
+  border-radius: 980px; 
   text-decoration: none;
-  font-size: 0.85rem;
   transition: all 0.25s ease;
   cursor: pointer;
 }
 
 .btn-glass-nav:hover {
-  background: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.10);
-  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.22);
+  /* El borde se ilumina más al pasar el mouse */
+  border-color: rgba(255, 255, 255, 0.8);
+  transform: translateY(-1.5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.btn-glass-nav i {
-  color: #ffffff;
-}
 </style>
 </head>
 <body>
