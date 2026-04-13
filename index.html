@@ -55,7 +55,7 @@
 <link rel="dns-prefetch" href="https://images.pexels.com"/>
 
 <!-- Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
 
 <!-- Favicons -->
@@ -348,19 +348,27 @@ header {
 
 .cta-buttons { display: flex; gap: 0.75rem; align-items: center; flex-shrink: 0; }
 
+
 .btn-primary, .btn-secondary {
-  padding: 0.625rem 1.25rem;
-  border-radius: var(--radius-sm);
+  /* Padding original era 0.625rem 1.25rem, bajamos a 0.4rem 1rem */
+  padding: 0.4rem 1rem; 
+  
+  /* Redondez máxima */
+  border-radius: 50px; 
+  
+  /* Tamaño de letra un poco más pequeño (era 0.9rem) */
+  font-size: 0.85rem; 
+  
   font-weight: 600;
   text-decoration: none;
   transition: var(--transition);
-  font-size: 0.9rem;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   white-space: nowrap;
   border: 2px solid transparent;
 }
+
 .btn-primary { background: var(--gradient-accent); color: white; box-shadow: var(--shadow-md); }
 .btn-primary:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
 .btn-secondary { background: transparent; color: var(--color-primary); border-color: var(--color-primary); }
@@ -443,19 +451,33 @@ header {
   width: 100%;   /* ← agrega solo esta línea */
 }
 
-
 .hero-content h1 {
-  font-family: var(--font-heading);
-  font-size: 3.5rem;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-  line-height: 1.1;
+  font-family: 'DM Serif Display', serif;
+  font-size: 4rem;
+  font-weight: 400;
+  line-height: 1.05;
+  color: #FFFFFF;
+  letter-spacing: -0.01em;
+  /* Margen inferior para separar el título del párrafo */
+  margin-bottom: 2rem !important; 
 }
-.hero-content .highlight {
-  color: var(--color-accent);
-  text-shadow: 0 2px 8px rgba(0,0,0,0.4), 0 0 20px rgba(52,168,83,0.4);
+
+.hero-content p {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.7;
+  /* Margen inferior para separar el párrafo de los botones */
+  margin-bottom: 3rem !important; 
+  max-width: 550px; /* Evita que el texto sea demasiado largo hacia los lados */
 }
-.hero-content p { font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.95; line-height: 1.7; }
+
+/* Para asegurar que los botones tengan su propio espacio */
+.hero-btns {
+  display: flex;
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
 
 .hero-stats {
   display: grid;
@@ -1013,15 +1035,16 @@ footer {
     gap: 0.875rem;
     width: 100%;
   }
-  .hero-content .cta-buttons .btn-primary,
-  .hero-content .cta-buttons .btn-secondary {
-    width: 100%;
-    max-width: 300px;
+  
+
+.hero-content .btn-primary, 
+.hero-content .btn-secondary {
+    width: auto;              /* Para que no ocupen todo el ancho */
+    padding: 0.5rem 1rem;     /* Los hace más pequeños (alto y ancho) */
+    font-size: 0.8rem;        /* Achica la letra */
+    border-radius: 50px;      /* Los hace redondos */
     justify-content: center;
-    padding: 0.9rem 1.5rem;
-    font-size: 0.97rem;
-    border-radius: 12px;
-  }
+}
 
   /* ── SCROLL ARROW ── */
   .scroll-arrow {
@@ -1254,6 +1277,35 @@ footer {
   }
 }
 
+.btn-glass-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  /* El azul suave con transparencia que te gustó */
+  background: rgba(255, 255, 255, 0.15); 
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: border: 1px solid rgba(255, 255, 255, 0.3);;
+  color: #ffffff;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  padding: 10px 22px;
+  border-radius: 980px; /* Forma de cápsula */
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.btn-glass-nav:hover {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.10);
+  transform: translateY(-1px);
+}
+
+.btn-glass-nav i {
+  color: #ffffff;
+}
 </style>
 </head>
 <body>
@@ -1328,19 +1380,29 @@ footer {
 <section class="hero" id="hero">
   <div class="hero-container">
     <div class="hero-content">
-      <h1>Abogados Especialistas en <span class="highlight">Seguros</span></h1>
+      <h1>Abogados Especialistas en <em>Seguros</em></h1>
       <p>
         Representación legal experta. Sube tu
         <strong style="color:white; font-weight:700;">póliza o carta de rechazo</strong>
         y recibe una <strong style="color:white; font-weight:700;">orientación legal</strong>.
       </p>
       <div class="cta-buttons">
-        <a href="#" onclick="smartScroll('contacto-mobile','contacto');return false;" class="btn-primary">
-          <i class="fas fa-file-alt"></i> Enviar Consulta
-        </a>
-        <a href="#" onclick="smartScroll('agenda-mobile','agenda');return false;" class="btn-secondary" style="background:rgba(255,255,255,0.15); border-color:rgba(255,255,255,0.6); color:white;">
-          <i class="fas fa-calendar"></i> Agendar Cita
-        </a>
+        <a href="#" onclick="smartScroll('contacto-mobile','contacto');return false;" class="btn-glass-nav">
+  <svg width="16" height="16" viewBox="0 0 18 18" fill="none" style="margin-right: 2px;">
+    <path d="M3 9.5V14a1 1 0 001 1h10a1 1 0 001-1V9.5M9 1v10m0 0L6 8m3 3l3-3" 
+          stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+  Enviar Consulta
+</a>
+
+
+
+ <a href="#" onclick="smartScroll('agenda-mobile','agenda');return false;" class="btn-glass-nav">
+  
+  <i class="fas fa-calendar"></i> Agendar Cita
+</a>
+
+       
       </div>
     </div>
 
