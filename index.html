@@ -495,17 +495,16 @@ header {
 /* ============================================================
    SERVICES
    ============================================================ */
+
 .services {
   padding: 5rem 2rem;
-  background: white;
+  background: linear-gradient(135deg, rgba(0,0,0,0.6) 0%, rgba(10,61,98,0.4) 100%),
+              url('https://i.postimg.cc/G2k4nBFS/476531221-1063690762468539-6084965534244979362-n.jpg') center/cover;
   position: relative;
 }
+
 .services::before {
-  content: '';
-  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-  background-image: url('https://i.postimg.cc/G2k4nBFS/476531221-1063690762468539-6084965534244979362-n.jpg');
-  background-size: cover; background-position: center;
-  opacity: 0.3; z-index: 0; pointer-events: none;
+  display: none;
 }
 
 .section-container { max-width: 1400px; margin: 0 auto; position: relative; z-index: 1; }
@@ -1154,7 +1153,14 @@ footer {
   .scroll-arrow .arrow-rings i:nth-child(3) { opacity: 1; }
 
   /* ── SERVICIOS: lista elegante ── */
-  #servicios { padding: 3rem 1.25rem; background: white; }
+  #servicios { 
+  padding: 3rem 1.25rem; 
+  background: linear-gradient(135deg, rgba(0,0,0,0.6) 0%, rgba(10,61,98,0.4) 100%),
+              url('https://i.postimg.cc/G2k4nBFS/476531221-1063690762468539-6084965534244979362-n.jpg') center/cover !important;
+}
+#servicios .section-header h2 { color: #ffffff !important; }
+#servicios .service-card { background: rgba(255,255,255,0.08) !important; border-bottom: 1px solid rgba(255,255,255,0.1) !important; }
+#servicios .service-card h3 { color: #0A3D62 !important; }
   #servicios .section-header { margin-bottom: 1.5rem; }
   #servicios .section-header h2 { font-size: 1.5rem; }
   #servicios .section-header p { font-size: 0.9rem; }
@@ -1555,8 +1561,8 @@ footer {
 <section class="services" id="servicios">
  <div class="section-container">
   <div class="section-header">
-    <h2>Servicios Legales Especializados en Seguros</h2>
-  </div>
+  <h2 style="color: #ffffff;">Servicios Legales Especializados en Seguros</h2>
+</div>
 
   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; max-width: 1200px; margin: 0 auto;">
 
