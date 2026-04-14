@@ -613,87 +613,134 @@ header {
 }
 .agenda-feature-item p { color: var(--color-gray-light); font-size: 0.88rem; margin: 0; line-height: 1.5; }
 
-/* ============================================================
-   HONORARIOS — light, clean card
-   ============================================================ */
-#honorarios {
-  padding: 5rem 2rem;
-  background: white;
-  position: relative;
-  overflow: hidden;
+/* ── HONORARIOS ── */
+.hon-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: stretch;
 }
-#honorarios .section-header h2 { color: white; }
-#honorarios .section-header p  { color: rgba(255,255,255,0.85); }
-#honorarios::after {
-  content: '';
-  position: absolute; bottom: -60px; left: -60px;
-  width: 300px; height: 300px;
-  background: radial-gradient(circle, rgba(52,168,83,0.07) 0%, transparent 70%);
-  border-radius: 50%; pointer-events: none;
-}
-
-.honorarios-card {
-  max-width: 780px;
-  margin: 0 auto;
-  background: white;
-  border: 1.5px solid rgba(10,61,98,0.09);
+.hon-card {
+  border: 1px solid rgba(10,61,98,0.09);
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: var(--shadow-md);
-}
-.honorarios-card-header {
-  background: var(--gradient-primary);
-  padding: 2rem 2.5rem;
+  box-shadow: 0 4px 24px rgba(10,61,98,0.10);
   display: flex;
-  align-items: center;
-  gap: 1.25rem;
-  color: white;
+  flex-direction: column;
 }
-.honorarios-card-header .h-icon {
-  width: 56px; height: 56px;
-  background: rgba(255,255,255,0.15);
-  border-radius: 14px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.5rem; flex-shrink: 0;
+.hon-card-head {
+  background: #0A3D62;
+  padding: 2rem;
 }
-.honorarios-card-header h3 {
-  font-family: var(--font-heading); font-size: 1.35rem; margin: 0 0 0.2rem;
+.hon-card-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 0.5rem;
 }
-.honorarios-card-header p { font-size: 0.88rem; opacity: 0.8; margin: 0; }
-
-.honorarios-card-body { padding: 2.25rem 2.5rem; }
-
-.honorarios-points { list-style: none; margin-bottom: 2rem; }
-.honorarios-points li {
+.hon-card-title {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.25rem;
+}
+.hon-card-sub {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.5);
+}
+.hon-card-body {
+  padding: 1.75rem 2rem 2rem;
+  background: white;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+.hon-card-body--right {
+  justify-content: space-between;
+}
+.hon-item {
   display: flex;
   align-items: flex-start;
-  gap: 0.875rem;
-  padding: 0.875rem 0;
-  border-bottom: 1px solid rgba(10,61,98,0.06);
-  color: var(--color-gray-light);
-  font-size: 0.95rem;
-  line-height: 1.6;
+  gap: 1rem;
+  padding: 1.1rem 1.2rem;
+  border: 1px solid rgba(10,61,98,0.08);
+  border-radius: 12px;
+  background: #f8fafc;
 }
-.honorarios-points li:last-child { border-bottom: none; }
-.honorarios-points li .point-icon {
-  width: 28px; height: 28px;
-  background: rgba(52,168,83,0.12);
-  border-radius: 8px;
-  display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0; margin-top: 0.1rem;
-}
-.honorarios-points li .point-icon i { color: var(--color-accent); font-size: 0.8rem; }
-
-.alert-box {
-  background: var(--color-bg-soft);
-  border: 1px solid rgba(10,61,98,0.1);
-  border-left: 4px solid var(--color-secondary);
-  border-radius: 10px;
-  padding: 1.1rem 1.25rem;
-  margin-bottom: 1.75rem;
-  color: var(--color-gray-light);
+.hon-item p {
   font-size: 0.9rem;
+  color: #334155;
   line-height: 1.65;
+}
+.hon-num {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #34A853;
+  background: rgba(52,168,83,0.1);
+  border: 1px solid rgba(52,168,83,0.2);
+  border-radius: 8px;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.hon-note {
+  background: #f0f7ff;
+  border-left: 3px solid #3695BF;
+  border-radius: 0 10px 10px 0;
+  padding: 1rem 1.1rem;
+  color: #475569;
+  font-size: 0.86rem;
+  line-height: 1.65;
+}
+.hon-note strong { color: #0A3D62; }
+.hon-divider {
+  height: 1px;
+  background: rgba(10,61,98,0.07);
+  margin: 1.5rem 0;
+}
+.hon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  width: 100%;
+  padding: 0.9rem 1.5rem;
+  background: #0A3D62;
+  color: #fff;
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: 0.2px;
+}
+.hon-arrow {
+  width: 22px;
+  height: 22px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
+
+@media (max-width: 968px) {
+  #honorarios { padding: 3rem 1.25rem !important; }
+  .hon-sub { display: none; }
+  .hon-grid { grid-template-columns: 1fr !important; }
+  .hon-grid .hon-card:first-child { display: none; }
 }
 
 /* ============================================================
@@ -1930,48 +1977,61 @@ footer {
 <!-- ======================================================
      HONORARIOS
      ====================================================== -->
-<section id="honorarios" style="background: linear-gradient(135deg, rgba(10,61,98,0.92) 0%, rgba(54,149,191,0.92) 100%), url('https://images.pexels.com/photos/6863332/pexels-photo-6863332.jpeg?auto=compress&cs=tinysrgb&w=1920'); background-size:cover; background-position:center;">
+<section id="honorarios" style="background: linear-gradient(135deg, rgba(255,255,255,0.75) 0%, rgba(240,247,255,0.75) 100%), url('https://images.pexels.com/photos/6863332/pexels-photo-6863332.jpeg?auto=compress&cs=tinysrgb&w=1920'); background-size:cover; background-position:center; padding: 5rem 2rem;">
   <div class="section-container">
-    <div class="section-header">
-      <h2>Honorarios Abogados Seguros Chile</h2>
-      <p>Transparencia total en costos y compromisos desde el primer día</p>
-    </div>
 
-    <div class="honorarios-card">
-      <div class="honorarios-card-header">
-        <div class="h-icon"><i class="fas fa-file-invoice-dollar"></i></div>
-        <div>
-          <h3>¿Qué Ofrecemos?</h3>
-          
+    <span style="display:inline-block; font-size:0.72rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#34A853; margin-bottom:0.75rem;">Honorarios</span>
+    <h2 style="font-family:var(--font-heading); font-size:2.1rem; font-weight:700; color:#0A3D62; margin-bottom:0.5rem; letter-spacing:-0.5px;">Transparencia total desde el primer día</h2>
+    <p class="hon-sub" style="color:#334155; font-size:0.97rem; margin-bottom:3rem;">Conoce exactamente los costos antes de comprometerte con nuestros servicios.</p>
+
+    <div class="hon-grid">
+
+      <!-- Columna izquierda -->
+      <div class="hon-card">
+        <div class="hon-card-head">
+          <p class="hon-card-label">Lo que ofrecemos</p>
+          <p class="hon-card-title">Nuestro compromiso</p>
+          <p class="hon-card-sub">Con cada cliente desde el primer contacto</p>
+        </div>
+        <div class="hon-card-body">
+          <div class="hon-item">
+            <div class="hon-num">01</div>
+            <p>Primera consulta completamente gratuita y sin compromiso</p>
+          </div>
+          <div class="hon-item">
+            <div class="hon-num">02</div>
+            <p>Honorarios transparentes informados antes de comprometerse</p>
+          </div>
+          <div class="hon-item">
+            <div class="hon-num">03</div>
+            <p>Cada paso del proceso legal debidamente documentado</p>
+          </div>
         </div>
       </div>
-      <div class="honorarios-card-body">
-                <ul class="honorarios-points">
-          <li>
-            <span class="point-icon"><i class="fas fa-check"></i></span>
-            Primera consulta completamente gratuita y sin compromiso
-          </li>
-          <li>
-            <span class="point-icon"><i class="fas fa-check"></i></span>
-            Honorarios transparentes informados antes de comprometerse
-          </li>
-          <li>
-            <span class="point-icon"><i class="fas fa-check"></i></span>
-            Cada paso del proceso legal debidamente documentado
-          </li>
-                 </ul>
-        <div class="alert-box">
-          <strong style="color:var(--color-primary);">Nota importante:</strong> Es fundamental que evalúe la conveniencia de nuestros servicios
-          legales consciente del riesgo inherente de no obtener los resultados deseados.
+
+      <!-- Columna derecha -->
+      <div class="hon-card">
+        <div class="hon-card-head">
+          <p class="hon-card-label">Aviso importante</p>
+          <p class="hon-card-title">Guía de Honorarios</p>
+          <p class="hon-card-sub">Conoce todos los detalles</p>
         </div>
-        <a href="https://www.exigetuseguro.cl/honorarios" class="btn-primary" style="display:inline-flex;width:100%;justify-content:center;">
-          <i class="fas fa-download"></i> Guía de Honorarios y Servicios
-        </a>
+        <div class="hon-card-body hon-card-body--right">
+          <div class="hon-note">
+            <strong>Nota:</strong> Es fundamental que evalúe la conveniencia de nuestros servicios legales consciente del riesgo inherente de no obtener los resultados deseados.
+          </div>
+          <div class="hon-divider"></div>
+          <a href="https://www.exigetuseguro.cl/honorarios" class="hon-btn"
+             onmouseover="this.style.background='#0d4f7f'" onmouseout="this.style.background='#0A3D62'">
+            Ir a Guía de Honorarios
+            <span class="hon-arrow">→</span>
+          </a>
+        </div>
       </div>
+
     </div>
   </div>
 </section>
-
 <!-- ======================================================
      RECURSOS / BLOG
      ====================================================== -->
