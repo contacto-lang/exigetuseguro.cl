@@ -3,7 +3,6 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-
   <!-- Página principal -->
   <url>
     <loc>https://www.exigetuseguro.cl/</loc>
@@ -11,7 +10,6 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
   <!-- Página de Contacto -->
   <url>
     <loc>https://www.exigetuseguro.cl/contacto</loc>
@@ -19,7 +17,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <!-- Asistente Legal de Seguros (chatbot) -->
   <url>
     <loc>https://www.exigetuseguro.cl/asistente</loc>
@@ -27,7 +24,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <!-- Asistente de Mecánica Automotriz (chatbot) -->
   <url>
     <loc>https://www.exigetuseguro.cl/mecanica</loc>
@@ -35,7 +31,13 @@
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
-
+  <!-- ExigeRadar — Diagnóstico de Seguros y Pensiones -->
+  <url>
+    <loc>https://www.exigetuseguro.cl/radar</loc>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
   <!-- Conoce tu Póliza -->
   <url>
     <loc>https://www.exigetuseguro.cl/conoce-tu-poliza</loc>
@@ -43,7 +45,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <!-- Noticias SOAP -->
   <url>
     <loc>https://www.exigetuseguro.cl/noticias-soap</loc>
@@ -51,7 +52,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <!-- Blog -->
   <url>
     <loc>https://www.exigetuseguro.cl/blog</loc>
@@ -59,7 +59,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <!-- Honorarios -->
   <url>
     <loc>https://www.exigetuseguro.cl/honorarios</loc>
@@ -67,7 +66,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
   <!-- Política de Privacidad -->
   <url>
     <loc>https://www.exigetuseguro.cl/privacidad</loc>
@@ -75,7 +73,6 @@
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
-
   <!-- Términos y Condiciones -->
   <url>
     <loc>https://www.exigetuseguro.cl/terminos</loc>
@@ -83,5 +80,4 @@
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
-
 </urlset>
