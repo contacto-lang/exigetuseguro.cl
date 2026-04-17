@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="content-language" content="es-CL">
+
+  <!-- SEO -->
+  <title>ExigeRadar | Diagnóstico Gratuito de Seguros y Pensiones Chile | Exige Tu Seguro</title>
+  <meta name="description" content="Descubre en 2 minutos qué seguros, pensiones e indemnizaciones puedes reclamar tras el fallecimiento de un familiar en Chile. Diagnóstico gratuito y sin registro. SOAP, SIS AFP, desgravamen hipotecario y más.">
+  <meta name="keywords" content="diagnóstico seguros fallecimiento chile, que seguro puedo cobrar fallecido chile, buscar seguros fallecido chile, SICS CMF herederos, seguro desgravamen hipotecario fallecimiento, seguro SIS AFP fallecido, SOAP fallecimiento accidente tránsito chile, pensión sobrevivencia chile, seguros no cobrados chile, exigetuseguro radar, hoja de ruta seguros chile, abogados seguros chile">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow">
+  <meta name="rating" content="general">
+  <meta name="revisit-after" content="7 days">
+  <meta name="author" content="Exige Tu Seguro">
+
+  <!-- Geo -->
+  <meta name="geo.region" content="CL-RM">
+  <meta name="geo.placename" content="Santiago">
+  <meta name="geo.position" content="-33.4489;-70.6693">
+  <meta name="ICBM" content="-33.4489, -70.6693">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://www.exigetuseguro.cl/radar">
+
+  <!-- Alternate -->
+  <link rel="alternate" hreflang="es-cl" href="https://www.exigetuseguro.cl/radar">
+  <link rel="alternate" hreflang="es" href="https://www.exigetuseguro.cl/radar">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.exigetuseguro.cl/radar">
+  <meta property="og:title" content="ExigeRadar | Diagnóstico Gratuito de Seguros tras un Fallecimiento — Chile">
+  <meta property="og:description" content="Descubre en 2 minutos qué seguros y pensiones puedes reclamar. SOAP, SIS AFP, desgravamen hipotecario y más. Diagnóstico gratuito sin registro.">
+  <meta property="og:image" content="https://www.exigetuseguro.cl/og-radar.jpg">
+  <meta property="og:locale" content="es_CL">
+  <meta property="og:site_name" content="Exige Tu Seguro">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://www.exigetuseguro.cl/radar">
+  <meta name="twitter:title" content="ExigeRadar | Diagnóstico Gratuito de Seguros — Chile">
+  <meta name="twitter:description" content="Descubre qué seguros y pensiones puedes reclamar tras el fallecimiento de un familiar. Gratuito, sin registro, en 2 minutos.">
+  <meta name="twitter:image" content="https://www.exigetuseguro.cl/og-radar.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚖️</text></svg>">
+
+  <!-- Sitemap -->
+  <link rel="sitemap" type="application/xml" href="https://www.exigetuseguro.cl/sitemap.xml">
+
+  <!-- Schema.org WebPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "ExigeRadar — Diagnóstico Gratuito de Seguros y Pensiones",
+    "url": "https://www.exigetuseguro.cl/radar",
+    "description": "Herramienta gratuita para identificar seguros, pensiones e indemnizaciones que se pueden reclamar tras el fallecimiento de un familiar en Chile.",
+    "inLanguage": "es-CL",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Exige Tu Seguro",
+      "url": "https://www.exigetuseguro.cl"
+    },
+    "provider": {
+      "@type": "LegalService",
+      "name": "Exige Tu Seguro",
+      "url": "https://www.exigetuseguro.cl",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "url": "https://wa.me/56979939868",
+        "availableLanguage": "Spanish"
+      }
+    }
+  }
+  </script>
+
+  <!-- Schema.org BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.exigetuseguro.cl/" },
+      { "@type": "ListItem", "position": 2, "name": "ExigeRadar", "item": "https://www.exigetuseguro.cl/radar" }
+    ]
+  }
+  </script>
+
+  <!-- Schema.org HowTo -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Cómo identificar seguros y pensiones tras el fallecimiento de un familiar en Chile",
+    "description": "Pasos para detectar y reclamar seguros de vida, SOAP, desgravamen hipotecario y pensiones de sobrevivencia en Chile.",
+    "step": [
+      { "@type": "HowToStep", "position": 1, "name": "Consulta el SICS", "text": "Ingresa al portal conocetuseguro.cl de la CMF con tu Clave Única para buscar todos los seguros del fallecido.", "url": "https://www.conocetuseguro.cl" },
+      { "@type": "HowToStep", "position": 2, "name": "Revisa las deudas financieras", "text": "Descarga el informe de deudas en el portal CMF para detectar seguros de desgravamen asociados a créditos." },
+      { "@type": "HowToStep", "position": 3, "name": "Gestiona la AFP si era trabajador activo", "text": "Si el fallecido cotizaba en AFP, solicita el Seguro de Invalidez y Sobrevivencia (SIS) en la Superintendencia de Pensiones." },
+      { "@type": "HowToStep", "position": 4, "name": "Reclama el SOAP si fue accidente de tránsito", "text": "Identifica la póliza SOAP del vehículo involucrado usando la patente para cobrar hasta 300 UF." }
+    ]
+  }
+  </script>
+
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://images.pexels.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f1f5f9;
+      --surface: #ffffff;
+      --border: #e2e8f0;
+      --text: #0f172a;
+      --muted: #64748b;
+      --accent: #1d4ed8;
+      --accent-dark: #1e40af;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      min-height: 100vh;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      width: 100%;
+      min-height: 420px;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+    }
+    .hero-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+      filter: brightness(0.45);
+    }
+    .hero-overlay {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 2.5rem;
+    }
+    .hero-breadcrumb {
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 1rem;
+    }
+    .hero-breadcrumb a { color: rgba(255,255,255,0.55); text-decoration: none; }
+    .hero-breadcrumb a:hover { color: #fff; }
+    .logo-main {
+      font-family: 'DM Serif Display', serif;
+      font-size: 38px;
+      letter-spacing: -0.5px;
+      color: #fff;
+      line-height: 1;
+    }
+    .logo-main em { font-style: italic; color: #93c5fd; }
+    .logo-sub {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      color: rgba(255,255,255,0.5);
+      text-transform: uppercase;
+      margin-top: 6px;
+      margin-bottom: 1.5rem;
+    }
+    .hero-intro {
+      font-size: 15px;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.6;
+      max-width: 520px;
+      margin-bottom: 1.5rem;
+    }
+    .hero-intro strong { color: #fff; font-weight: 600; }
+    .hero-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .pill {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.8);
+      border: 0.5px solid rgba(255,255,255,0.2);
+      letter-spacing: 0.03em;
+    }
+
+    /* ── MAIN CONTENT ── */
+    .main {
+      max-width: 620px;
+      margin: 0 auto;
+      padding: 2rem 1rem 4rem;
+    }
+
+    /* CARDS */
+    .card {
+      background: var(--surface);
+      border: 0.5px solid var(--border);
+      border-radius: 16px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 12px;
+    }
+    .card-label {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    /* FORM ELEMENTS */
+    select {
+      width: 100%;
+      border: 0.5px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      color: var(--text);
+      background: #f8fafc;
+      outline: none;
+      cursor: pointer;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2394a3b8' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+    }
+    select:focus { border-color: var(--accent); background-color: #fff; }
+
+    .checks-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    .check-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 12px;
+      border: 0.5px solid var(--border);
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 13px;
+      transition: border-color 0.15s, background 0.15s;
+      background: #f8fafc;
+      user-select: none;
+    }
+    .check-label:hover { border-color: #93c5fd; background: #eff6ff; }
+    .check-label input { accent-color: var(--accent); width: 15px; height: 15px; flex-shrink: 0; }
+
+    .btn-primary {
+      width: 100%;
+      padding: 15px;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      transition: background 0.15s;
+      margin-top: 4px;
+    }
+    .btn-primary:hover { background: var(--accent-dark); }
+
+    /* RESULTS */
+    .results-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+    .results-title {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #475569;
+    }
+    .btn-reset {
+      font-size: 11px;
+      color: #94a3b8;
+      cursor: pointer;
+      text-decoration: underline;
+      border: none;
+      background: none;
+      font-family: 'DM Sans', sans-serif;
+    }
+    .btn-reset:hover { color: #475569; }
+
+    .step {
+      background: var(--surface);
+      border: 0.5px solid var(--border);
+      border-radius: 14px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 10px;
+      animation: fadeUp 0.4s ease forwards;
+      opacity: 0;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .step-tag {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 3px 8px;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+    .tag-general  { background: #f0f9ff; color: #0369a1; }
+    .tag-afp      { background: #f0fdf4; color: #166534; }
+    .tag-soap     { background: #fff7ed; color: #9a3412; }
+    .tag-hipoteca { background: #fdf4ff; color: #7e22ce; }
+    .tag-consumo  { background: #fefce8; color: #854d0e; }
+    .tag-deudas   { background: #f8fafc;  color: #334155; }
+
+    .step-title { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+    .step-desc  { font-size: 13px; color: var(--muted); line-height: 1.55; margin-bottom: 10px; }
+    .step-link  {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1.5px solid var(--accent);
+    }
+    .step-link:hover { color: var(--accent-dark); border-color: var(--accent-dark); }
+
+    /* CTA */
+    .cta {
+      background: var(--accent);
+      border-radius: 14px;
+      padding: 1.75rem 1.5rem;
+      text-align: center;
+      color: #fff;
+      margin-top: 1rem;
+      animation: fadeUp 0.4s ease 0.3s forwards;
+      opacity: 0;
+    }
+    .cta h4 { font-size: 16px; font-weight: 600; margin-bottom: 6px; }
+    .cta p  { font-size: 13px; opacity: 0.85; margin-bottom: 16px; line-height: 1.5; }
+    .cta a  {
+      display: inline-block;
+      padding: 11px 28px;
+      background: #fff;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 600;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: opacity 0.15s;
+    }
+    .cta a:hover { opacity: 0.9; }
+
+    /* FOOTER NOTE */
+    .footer-note {
+      text-align: center;
+      font-size: 11px;
+      color: #94a3b8;
+      margin-top: 2rem;
+      line-height: 1.6;
+    }
+    .footer-note a { color: #64748b; }
+
+    .hidden { display: none; }
+
+    @media (max-width: 480px) {
+      .hero-img { object-position: 60% 30%; }
+      .logo-main { font-size: 30px; }
+      .hero-intro { font-size: 14px; }
+      .checks-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO CON IMAGEN PEXELS -->
+  <header class="hero">
+    <img
+      class="hero-img"
+      src="https://images.pexels.com/photos/5668882/pexels-photo-5668882.jpeg?auto=compress&cs=tinysrgb&w=1400"
+      alt="Balanza de la justicia y mazo sobre escritorio de madera — símbolo legal"
+      loading="eager"
+      fetchpriority="high"
+    >
+    <div class="hero-overlay">
+      <nav class="hero-breadcrumb" aria-label="Ruta de navegación">
+        <a href="https://www.exigetuseguro.cl">Exige Tu Seguro</a>
+        &nbsp;/&nbsp; ExigeRadar
+      </nav>
+      <div class="logo-main">EXIGE<em>RADAR</em></div>
+      <div class="logo-sub">Diagnóstico Legal · Seguros &amp; Pensiones · Chile</div>
+      <p class="hero-intro">
+        Cuando fallece un familiar, existen <strong>múltiples seguros, pensiones e indemnizaciones</strong> a los que tienes derecho — y que las aseguradoras no te informarán por su cuenta. Esta herramienta gratuita te entrega en menos de 2 minutos una hoja de ruta personalizada con exactamente qué reclamar y cómo hacerlo.
+      </p>
+      <div class="hero-pills" aria-label="Coberturas detectables">
+        <span class="pill">SOAP (hasta 300 UF)</span>
+        <span class="pill">SIS AFP</span>
+        <span class="pill">Desgravamen hipotecario</span>
+        <span class="pill">Pensión de sobrevivencia</span>
+        <span class="pill">Seguros de consumo</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="main" id="diagnostico">
+
+    <!-- FORMULARIO -->
+    <div id="form-section">
+
+      <div class="card">
+        <div class="card-label">1. Situación laboral del fallecido</div>
+        <select id="q_laboral">
+          <option value="activo">Trabajador activo (cotizaba en AFP)</option>
+          <option value="jubilado">Pensionado / jubilado</option>
+          <option value="ninguno">No cotizaba actualmente</option>
+        </select>
+      </div>
+
+      <div class="card">
+        <div class="card-label">2. Causa del fallecimiento</div>
+        <select id="q_causa">
+          <option value="enfermedad">Enfermedad / causa natural</option>
+          <option value="accidente">Accidente de tránsito</option>
+          <option value="otro">Otro tipo de accidente</option>
+        </select>
+      </div>
+
+      <div class="card">
+        <div class="card-label">3. ¿Tenía deudas o productos financieros?</div>
+        <div class="checks-grid">
+          <label class="check-label"><input type="checkbox" id="q_hipoteca"> Crédito hipotecario</label>
+          <label class="check-label"><input type="checkbox" id="q_tarjetas"> Tarjetas / consumo</label>
+          <label class="check-label"><input type="checkbox" id="q_auto"> Crédito automotriz</label>
+          <label class="check-label"><input type="checkbox" id="q_retail"> Tarjeta de retail</label>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-label">4. Tu relación con el fallecido</div>
+        <select id="q_parentesco">
+          <option value="conyuge">Cónyuge / pareja</option>
+          <option value="hijo">Hijo/a</option>
+          <option value="padre">Padre / madre</option>
+          <option value="heredero">Otro heredero</option>
+        </select>
+      </div>
+
+      <button class="btn-primary" onclick="procesarDiagnostico()">
+        Generar mi hoja de ruta personalizada →
+      </button>
+
+    </div>
+
+    <!-- RESULTADOS -->
+    <div id="results-section" class="hidden">
+      <div class="results-header">
+        <span class="results-title">Hoja de ruta detectada</span>
+        <button class="btn-reset" onclick="reiniciar()">Volver a empezar</button>
+      </div>
+
+      <div id="lista-pasos"></div>
+
+      <div class="cta">
+        <h4>¿Necesitas que un abogado lo gestione por ti?</h4>
+        <p>Analizamos tu caso sin costo inicial.<br>Solo cobramos si tú recuperas el dinero.</p>
+        <a href="https://wa.me/56979939868" target="_blank" rel="noopener">Contactar por WhatsApp</a>
+      </div>
+    </div>
+
+    <p class="footer-note">
+      ExigeRadar es una herramienta informativa y no constituye asesoría legal. &nbsp;|&nbsp;
+      <a href="https://www.exigetuseguro.cl">exigetuseguro.cl</a> &nbsp;|&nbsp;
+      Imagen: <a href="https://www.pexels.com/photo/5668882/" target="_blank" rel="noopener">Sora Shimazaki / Pexels</a>
+    </p>
+
+  </main>
+
+  <script>
+    function crearPaso(tag, tagClass, titulo, desc, link, linkLabel, delay) {
+      const btn = link
+        ? `<a href="${link}" target="_blank" rel="noopener" class="step-link">${linkLabel}</a>`
+        : '';
+      return `
+        <div class="step" style="animation-delay:${delay}s">
+          <span class="step-tag ${tagClass}">${tag}</span>
+          <div class="step-title">${titulo}</div>
+          <div class="step-desc">${desc}</div>
+          ${btn}
+        </div>`;
+    }
+
+    function procesarDiagnostico() {
+      const laboral    = document.getElementById('q_laboral').value;
+      const causa      = document.getElementById('q_causa').value;
+      const parentesco = document.getElementById('q_parentesco').value;
+      const hipoteca   = document.getElementById('q_hipoteca').checked;
+      const tarjetas   = document.getElementById('q_tarjetas').checked;
+      const auto       = document.getElementById('q_auto').checked;
+      const retail     = document.getElementById('q_retail').checked;
+
+      const relacionTexto = {
+        conyuge: 'cónyuge o pareja',
+        hijo: 'hijo/a',
+        padre: 'padre o madre',
+        heredero: 'heredero'
+      }[parentesco];
+
+      document.getElementById('form-section').classList.add('hidden');
+      document.getElementById('results-section').classList.remove('hidden');
+
+      let html = '';
+      let d = 0;
+      const step = 0.08;
+
+      // SIEMPRE: SICS
+      html += crearPaso(
+        'Sistema SICS', 'tag-general',
+        'Consulta de seguros — Conoce tu Seguro (CMF)',
+        `El portal oficial de la CMF para buscar todos los seguros del fallecido. Como ${relacionTexto}, tienes interés legítimo para acceder con tu Clave Única. Este es siempre el primer paso.`,
+        'https://www.conocetuseguro.cl', 'Ir a conocetuseguro.cl →', d
+      ); d += step;
+
+      // SIEMPRE: Deudas
+      html += crearPaso(
+        'Informe deudas', 'tag-deudas',
+        'Informe de deudas financieras (CMF)',
+        'Verifica todas las deudas activas del fallecido. Muchos seguros de desgravamen no se conocen hasta revisar este informe.',
+        'https://www.cmfchile.cl/portal/principal/613/w3-propertyvalue-43331.html', 'Portal CMF →', d
+      ); d += step;
+
+      // AFP / SIS
+      if (laboral === 'activo') {
+        html += crearPaso(
+          'AFP / SIS', 'tag-afp',
+          'Seguro de Invalidez y Sobrevivencia (SIS)',
+          'Al ser trabajador activo cotizando, el Seguro SIS financia pensiones de sobrevivencia para sus cargas. Gestiona directamente en la AFP del fallecido.',
+          'https://www.spensiones.cl', 'Superintendencia de Pensiones →', d
+        ); d += step;
+      }
+
+      if (laboral === 'jubilado') {
+        html += crearPaso(
+          'Pensión', 'tag-afp',
+          'Pensión de sobrevivencia',
+          'Los beneficiarios de un pensionado pueden tener derecho a pensión de viudez u orfandad. Contacta la AFP o entidad que pagaba la pensión.',
+          'https://www.spensiones.cl', 'Superintendencia de Pensiones →', d
+        ); d += step;
+      }
+
+      // SOAP
+      if (causa === 'accidente') {
+        html += crearPaso(
+          'SOAP', 'tag-soap',
+          'Seguro SOAP — hasta 300 UF por fallecimiento',
+          'Tienes derecho a indemnización por muerte en accidente de tránsito. Identifica la póliza SOAP del vehículo involucrado usando su número de patente.',
+          'https://www.bcn.cl/leychile/navegar?idNorma=30593', 'Ver normativa SOAP →', d
+        ); d += step;
+      }
+
+      // Hipotecario
+      if (hipoteca) {
+        html += crearPaso(
+          'Hipotecario', 'tag-hipoteca',
+          'Desgravamen hipotecario',
+          'El seguro debe pagar el saldo total del crédito. Detén los pagos de dividendo de inmediato y notifica al banco. Este seguro es obligatorio en todos los créditos hipotecarios.',
+          null, null, d
+        ); d += step;
+      }
+
+      // Consumo / tarjetas
+      if (tarjetas || retail) {
+        html += crearPaso(
+          'Consumo / retail', 'tag-consumo',
+          'Seguros de desgravamen en créditos de consumo',
+          'Los créditos de consumo y tarjetas (bancarias y de retail) suelen incluir seguros que cubren el saldo adeudado. Solicita certificado de deuda a cada entidad y exige la cobertura.',
+          null, null, d
+        ); d += step;
+      }
+
+      // Automotriz
+      if (auto) {
+        html += crearPaso(
+          'Automotriz', 'tag-consumo',
+          'Desgravamen de crédito automotriz',
+          'Verifica si el crédito del vehículo tenía seguro de desgravamen. Contacta la entidad financiera y solicita copia de la póliza asociada al crédito.',
+          null, null, d
+        ); d += step;
+      }
+
+      document.getElementById('lista-pasos').innerHTML = html;
+      document.getElementById('diagnostico').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function reiniciar() {
+      document.getElementById('results-section').classList.add('hidden');
+      document.getElementById('form-section').classList.remove('hidden');
+      document.getElementById('lista-pasos').innerHTML = '';
+      document.getElementById('diagnostico').scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+
+</body>
+</html>
