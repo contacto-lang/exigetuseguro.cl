@@ -937,6 +937,23 @@ footer { background: #0a1a2e; padding: 4rem 2rem 2rem; }
   .btn-hero-primary, .btn-hero-ghost { text-align: center; justify-content: center; }
   .f-row { grid-template-columns: 1fr; }
 }
+@media (max-width: 768px) {
+  /* Quitamos el espacio extra que empuja el contenido hacia abajo */
+  .hero-inner {
+    padding-top: 0 !important; /* Elimina el relleno superior del contenedor de texto */
+  }
+
+  .hero-content {
+    margin-top: -10px !important; /* Esto "succiona" el contenido hacia arriba */
+  }
+
+  /* Si el texto todavía se ve lejos, es por el margen del título */
+  .hero-content h1 {
+    margin-top: 0 !important;
+    padding-top: 5px !important; 
+  }
+}
+
 </style>
 </head>
 <body>
