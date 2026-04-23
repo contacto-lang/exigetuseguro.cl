@@ -1776,11 +1776,39 @@ window.addEventListener('scroll', () => {
 }, { passive: true });
 
 /* ── Fade-in observer ── */
-window.addEventListener('load', () => {
+function initFadeIn() {
   const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
-  }, { threshold: 0.1 });
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+
   document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+
+  // Fallback de seguridad: si tras 2.5s aún hay elementos ocultos, los muestra
+  setTimeout(() => {
+    document.querySelectorAll('.fade-in:not(.visible)').forEach(el => {
+      el.classList.add('visible');
+    });
+  }, 2500);
+}
+
+// Inicializar tan pronto como el DOM esté listo (no esperar recursos externos)
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initFadeIn);
+} else {
+  initFadeIn(); // El DOM ya estaba listo
+}
+
+// Manejar el bfcache: cuando el usuario vuelve con el botón "atrás"
+window.addEventListener('pageshow', (e) => {
+  if (e.persisted) {
+    // La página viene del caché del browser, forzar visibilidad inmediata
+    document.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
+  }
 });
 
 /* ── GoFile upload ── */
