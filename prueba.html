@@ -211,8 +211,14 @@ nav.nav-links a:hover { color: var(--navy); background: rgba(11,37,69,0.05); }
 @media (max-width: 968px) {
   .hero {
     align-items: flex-start;
+    padding-top: 75px; /* opcional, ajusta según se vea */
+  }
+
+  .hero-inner {
+    min-height: auto; /* 👈 ESTE ES CLAVE */
   }
 }
+
 .hero-inner {
   max-width: 1300px; margin: 0 auto; width: 100%;
   padding: 4rem 2rem;
