@@ -848,7 +848,7 @@ footer { background: #0a1a2e; padding: 4rem 2rem 2rem; }
    WHATSAPP SIDEBAR
 ═══════════════════════════════════════════ */
 .wa-sidebar {
-  position: fixed; right: 0; bottom: 3rem;
+  position: fixed; right: 0; bottom: 6rem;
   z-index: 9999; display: none;
   will-change: transform;
   transform: translateZ(0);
@@ -859,10 +859,10 @@ footer { background: #0a1a2e; padding: 4rem 2rem 2rem; }
   border: 0.5px solid rgba(255,255,255,0.25); border-right: none;
   color: #ffffff; padding: 12px 13px;
   border-radius: 10px 0 0 10px; text-decoration: none;
-  transition: background 0.2s, padding 0.2s; font-size: 1.2rem;
+  transition: background 0.2s, padding 0.2s; font-size: 1.5rem;
   box-shadow: -2px 2px 12px rgba(0,0,0,0.18);
 }
-.wa-sidebar a:hover { background: rgba(11,37,69,0.95); padding-right: 10px; }
+.wa-sidebar a:hover { background: rgba(11,37,69,0.95); padding-right: 18px; }
 
 /* ═══════════════════════════════════════════
    ANIMACIONES
@@ -879,10 +879,13 @@ footer { background: #0a1a2e; padding: 4rem 2rem 2rem; }
 @media (max-width: 968px) {
   /* Nav mobile: ocultar links y ctas de desktop, mostrar hamburguesa */
   .nav-links, .nav-ctas { display: none !important; }
-  .hamburger { display: flex !important; align-items: flex-start; justify-content: center; }
+  .hamburger { display: flex !important; align-items: center; justify-content: center; }
+.wa-sidebar {
+    display: none !important;
+  }
 
   /* Hero */
-  .hero-inner { grid-template-columns: 1fr; padding: 0.5rem 1.5rem 3rem; min-height:calc(100vh - 65px); }
+  .hero-inner { grid-template-columns: 1fr; padding: 0.5rem 1.5rem 3rem; min-height: 100svh; }
   .hero-panel { display: none; }
   .scroll-arrow { display: flex; }
   .hero-title { font-size: clamp(34px, 8vw, 52px); }
