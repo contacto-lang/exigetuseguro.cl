@@ -883,8 +883,12 @@ footer { background: #0a1a2e; padding: 4rem 2rem 2rem; }
   .hamburger { display: flex !important; align-items: center; justify-content: center; }
 
   /* Hero */
+  
+  /* Servicios: ocultar columna derecha de acciones */
+  .servicios-layout { grid-template-columns: 1fr; }
+  .servicios-actions { display: none !important; }
 
-  .hero {
+.hero {
     align-items: flex-start;
     padding-top: 80px;
   }
@@ -928,12 +932,6 @@ footer { background: #0a1a2e; padding: 4rem 2rem 2rem; }
   }
 
 }
-
-
-
-  /* Servicios: ocultar columna derecha de acciones */
-  .servicios-layout { grid-template-columns: 1fr; }
-  .servicios-actions { display: none !important; }
 
   /* Contacto y formulario */
   #contacto .contacto-grid { grid-template-columns: 1fr; }
