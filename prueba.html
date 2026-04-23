@@ -208,16 +208,6 @@ nav.nav-links a:hover { color: var(--navy); background: rgba(11,37,69,0.05); }
   position: relative; overflow: hidden;
   padding-top: 65px;
 }
-@media (max-width: 968px) {
-  .hero {
-    align-items: flex-start;
-    
-  }
-
-  .hero-inner {
-    min-height: auto; /* 👈 ESTE ES CLAVE */
-  }
-}
 
 .hero-inner {
   max-width: 1300px; margin: 0 auto; width: 100%;
@@ -893,10 +883,53 @@ footer { background: #0a1a2e; padding: 4rem 2rem 2rem; }
   .hamburger { display: flex !important; align-items: center; justify-content: center; }
 
   /* Hero */
-  .hero-inner { grid-template-columns: 1fr; padding: 0.5rem 1.5rem 3rem; min-height: 100svh; }
-  .hero-panel { display: none; }
-  .scroll-arrow { display: flex; }
-  .hero-title { font-size: clamp(34px, 8vw, 52px); }
+
+  .hero {
+    align-items: flex-start;
+    padding-top: 80px;
+  }
+
+  .hero-inner {
+    min-height: auto;
+    padding: 1.5rem 1.5rem 2.5rem;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  .hero-body {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .hero-btns {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .btn-hero-primary {
+    width: 100%;
+    justify-content: center;
+    font-size: 11px;
+    padding: 14px;
+  }
+
+  .btn-hero-ghost {
+    width: 100%;
+    justify-content: center;
+  }
+
+}
+
+
 
   /* Servicios: ocultar columna derecha de acciones */
   .servicios-layout { grid-template-columns: 1fr; }
