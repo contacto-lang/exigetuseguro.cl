@@ -283,6 +283,7 @@ nav.nav-links a:hover { color: var(--navy); background: rgba(11,37,69,0.05); }
   transition: color 0.2s;
 }
 .hero-contact-link:hover { color: #ffffff; }
+
 @media (max-width: 968px) {
 
   .hero {
@@ -929,7 +930,8 @@ footer { background: #0a1a2e; padding: 4rem 2rem 2rem; }
   .hamburger { display: flex !important; align-items: center; justify-content: center; }
 
   /* Hero */
-  
+ .hero-panel { display: none; }
+.hero-title { font-size: clamp(34px, 8vw, 52px); }
   /* Servicios: ocultar columna derecha de acciones */
   .servicios-layout { grid-template-columns: 1fr; }
   .servicios-actions { display: none !important; }
