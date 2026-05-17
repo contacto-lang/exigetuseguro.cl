@@ -1880,20 +1880,22 @@ async function enviarFormulario(e) {
   }
 
   const payload = {
+access_key: 'a718fe28-53f0-4273-8518-febe7be8489a',
+  subject:    'Nueva consulta — exigetuseguro.cl',
+  from_name:  'exigetuseguro.cl',
     nombre, email,
     telefono: document.getElementById('telefono').value.trim() || '—',
     tipoSeguro: document.getElementById('tipoSeguro').value || '—',
     relato, archivos: links || 'Sin adjuntos',
-    _subject: 'Nueva consulta legal — exigetuseguro.cl',
-    _template: 'table', _captcha: 'false'
+   
   };
   try {
-    const res = await fetch('https://formsubmit.co/ajax/contacto@exigetuseguro.cl', {
+    const res = await fetch('https://api.web3forms.com/submit', {
       method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'},
       body: JSON.stringify(payload)
     });
     const d = await res.json();
-    if (d.success === 'true' || d.success === true) {
+    if (data.success === true) {
       show('rgba(11,37,69,0.15)','rgba(30,92,153,0.35)','#ffffff','<i class="fas fa-check-circle"></i> ¡Consulta enviada! Te contactaremos a la brevedad.');
       document.getElementById('consultaForm').reset();
       document.getElementById('listaArchivos').innerHTML = '';
@@ -1935,20 +1937,21 @@ async function mEnviarFormulario(e) {
   }
 
   const payload = {
+access_key: 'a718fe28-53f0-4273-8518-febe7be8489a',
+  subject:    'Nueva consulta — exigetuseguro.cl',
+  from_name:  'exigetuseguro.cl',
     nombre, email,
     telefono: document.getElementById('mTelefono').value.trim() || '—',
     tipoSeguro: document.getElementById('mTipoSeguro').value || '—',
     relato, archivos: links || 'Sin adjuntos',
-    _subject: 'Nueva consulta legal — exigetuseguro.cl',
-    _template: 'table', _captcha: 'false'
   };
   try {
-    const res = await fetch('https://formsubmit.co/ajax/contacto@exigetuseguro.cl', {
+    const res = await fetch('https://api.web3forms.com/submit', {
       method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'},
       body: JSON.stringify(payload)
     });
     const d = await res.json();
-    if (d.success === 'true' || d.success === true) {
+   if (data.success === true) {
       st.style.cssText='display:block;background:rgba(11,37,69,0.08);border:0.5px solid rgba(30,92,153,0.3);color:var(--navy);border-radius:8px;padding:0.7rem 1rem;font-size:12px;text-align:center;';
       st.innerHTML='<i class="fas fa-check-circle"></i> ¡Consulta enviada! Te contactaremos pronto.';
       document.getElementById('mConsultaForm').reset();
