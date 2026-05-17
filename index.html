@@ -1895,7 +1895,7 @@ access_key: 'a718fe28-53f0-4273-8518-febe7be8489a',
       body: JSON.stringify(payload)
     });
     const d = await res.json();
-    if (data.success === true) {
+    if (d.success === true) {
       show('rgba(11,37,69,0.15)','rgba(30,92,153,0.35)','#ffffff','<i class="fas fa-check-circle"></i> ¡Consulta enviada! Te contactaremos a la brevedad.');
       document.getElementById('consultaForm').reset();
       document.getElementById('listaArchivos').innerHTML = '';
@@ -1951,7 +1951,7 @@ access_key: 'a718fe28-53f0-4273-8518-febe7be8489a',
       body: JSON.stringify(payload)
     });
     const d = await res.json();
-   if (data.success === true) {
+   if (d.success === true) {
       st.style.cssText='display:block;background:rgba(11,37,69,0.08);border:0.5px solid rgba(30,92,153,0.3);color:var(--navy);border-radius:8px;padding:0.7rem 1rem;font-size:12px;text-align:center;';
       st.innerHTML='<i class="fas fa-check-circle"></i> ¡Consulta enviada! Te contactaremos pronto.';
       document.getElementById('mConsultaForm').reset();
