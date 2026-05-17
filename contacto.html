@@ -890,7 +890,7 @@ footer {
 
         <div class="left-top">
           
-          <h2>Analizamos tu caso y te <em>orientamos</em> gratis</h2>
+          <h2>Analizamos tu caso y te <em>orientamos</em></h2>
           <p>Completa el formulario y nuestro equipo revisará tu situación.</p>
         </div>
 
@@ -986,16 +986,10 @@ footer {
 
         <div class="form-body">
           <form id="consultaForm"
-                action="https://formsubmit.co/contacto@exigetuseguro.cl"
-                method="POST"
-                enctype="multipart/form-data"
+                
                 onsubmit="validarConsulta(event)">
 
-            <input type="hidden" name="_subject" value="Nueva consulta legal - exigetuseguro.cl">
-            <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="_next" value="https://www.exigetuseguro.cl/contacto">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="archivos_adjuntos" id="archivosUrl">
+           
 
             <!-- Nombre -->
             <div class="fg">
@@ -1178,11 +1172,13 @@ async function validarConsulta(e) {
   btn.disabled = true;
   btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
 
+  let gofileLinks = '';
+
   if (files.length > 0) {
     show('loading', `<i class="fas fa-spinner fa-spin"></i> Subiendo ${files.length} archivo(s)...`);
     try {
       const links = await Promise.all(Array.from(files).map(subirArchivo));
-      document.getElementById('archivosUrl').value = links.join(' | ');
+      gofileLinks = links.join(' | ');
     } catch {
       show('error', '<i class="fas fa-times-circle"></i> Error al subir archivos. Intenta de nuevo.');
       btn.disabled = false;
@@ -1192,14 +1188,22 @@ async function validarConsulta(e) {
   }
 
   try {
-    const formData = new FormData(document.getElementById('consultaForm'));
-    const res = await fetch('https://formsubmit.co/ajax/contacto@exigetuseguro.cl', {
+    const payload = {
+      access_key: 'a718fe28-53f0-4273-8518-febe7be8489a',
+      subject:    'Nueva consulta — exigetuseguro.cl',
+      from_name:  'exigetuseguro.cl/contacto',
+      nombre, email, relato,
+      telefono:   document.getElementById('telefono').value.trim() || '—',
+      tipoSeguro: document.getElementById('tipoSeguro').value || '—',
+      archivos:   gofileLinks || 'Sin adjuntos',
+    };
+    const res  = await fetch('https://api.web3forms.com/submit', {
       method: 'POST',
-      headers: { 'Accept': 'application/json' },
-      body: formData
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(payload)
     });
     const data = await res.json();
-    if (data.success === 'true' || data.success === true) {
+    if (data.success === true) {
       show('success', '<i class="fas fa-check-circle"></i> ¡Consulta enviada! Te contactaremos a la brevedad.');
       document.getElementById('consultaForm').reset();
       document.getElementById('listaArchivos').innerHTML = '';
