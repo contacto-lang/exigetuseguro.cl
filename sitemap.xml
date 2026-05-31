@@ -17,6 +17,13 @@
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+  <!-- Abogado de Seguros — Landing SEO principal -->
+  <url>
+    <loc>https://www.exigetuseguro.cl/abogado-de-seguros</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
   <!-- Asistente Legal de Seguros (chatbot) -->
   <url>
     <loc>https://www.exigetuseguro.cl/asistente</loc>
@@ -71,7 +78,7 @@
     <loc>https://www.exigetuseguro.cl/honorarios</loc>
     <lastmod>2026-02-12</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
   </url>
   <!-- Política de Privacidad -->
   <url>
