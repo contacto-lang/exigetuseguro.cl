@@ -250,9 +250,7 @@
 </script>
 
 <style>
-/* ═══════════════════════════════════════════
-   VARIABLES — sistema idéntico al index
-═══════════════════════════════════════════ */
+/* ═══ VARIABLES ═══ */
 :root {
   --cream:     #f8fafd;
   --cream-d:   #eef3fa;
@@ -267,691 +265,313 @@
   --white:     #ffffff;
   --border:    rgba(11,37,69,0.10);
   --border-n:  rgba(11,37,69,0.12);
-  --gold:      #e8f1fa;
   --shadow-sm: 0 2px 8px rgba(11,37,69,0.06);
   --shadow-md: 0 4px 24px rgba(11,37,69,0.10);
   --shadow-lg: 0 8px 40px rgba(11,37,69,0.15);
   --radius:    14px;
   --tr:        all 0.25s cubic-bezier(0.4,0,0.2,1);
 }
-
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-
-body {
-  font-family: 'Jost', sans-serif;
-  font-weight: 300;
-  background: var(--cream);
-  color: var(--charcoal);
-  line-height: 1.7;
-  overflow-x: hidden;
-}
+body { font-family: 'Jost', sans-serif; font-weight: 300; background: var(--cream); color: var(--charcoal); line-height: 1.7; overflow-x: hidden; }
 
 /* ═══ NAV ═══ */
-header {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 1000;
-  background: rgba(255,255,255,0.97);
-  backdrop-filter: blur(12px);
-  border-bottom: 0.5px solid rgba(11,37,69,0.08);
-  transition: box-shadow 0.3s;
-}
-.header-inner {
-  max-width: 1300px;
-  margin: 0 auto;
-  padding: 0 2rem;
-  height: 65px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-}
-.nav-logo {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 26px;
-  font-weight: 400;
-  letter-spacing: 0.02em;
-  color: var(--navy);
-  text-decoration: none;
-  line-height: 1;
-  flex-shrink: 0;
-}
+header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); border-bottom: 0.5px solid rgba(11,37,69,0.08); transition: box-shadow 0.3s; }
+.header-inner { max-width: 1300px; margin: 0 auto; padding: 0 2rem; height: 65px; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+.nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 400; letter-spacing: 0.02em; color: var(--navy); text-decoration: none; line-height: 1; flex-shrink: 0; }
 .nav-logo em { font-style: normal; color: var(--terra); }
-.nav-logo span {
-  display: block;
-  font-family: 'Jost', sans-serif;
-  font-size: 9px;
-  font-weight: 500;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-top: 2px;
-}
-
+.nav-logo span { display: block; font-family: 'Jost', sans-serif; font-size: 9px; font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase; color: var(--muted); margin-top: 2px; }
 .nav-links { display: flex; gap: 0.25rem; align-items: center; }
-.nav-links a {
-  font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
-  color: var(--muted); text-decoration: none;
-  padding: 0.5rem 0.9rem; border-radius: 4px; transition: var(--tr);
-}
+.nav-links a { font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); text-decoration: none; padding: 0.5rem 0.9rem; border-radius: 4px; transition: var(--tr); }
 .nav-links a:hover { color: var(--navy); background: rgba(11,37,69,0.05); }
-
 .nav-ctas { display: flex; gap: 0.75rem; align-items: center; flex-shrink: 0; }
-.btn-outline {
-  font-size: 10px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase;
-  color: var(--navy); text-decoration: none;
-  padding: 8px 18px; border: 1px solid rgba(11,37,69,0.25); border-radius: 3px;
-  transition: var(--tr); display: inline-flex; align-items: center; gap: 6px;
-}
+.btn-outline { font-size: 10px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--navy); text-decoration: none; padding: 8px 18px; border: 1px solid rgba(11,37,69,0.25); border-radius: 3px; transition: var(--tr); display: inline-flex; align-items: center; gap: 6px; }
 .btn-outline:hover { background: var(--navy); color: #fff; border-color: var(--navy); }
-.btn-solid {
-  font-size: 10px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase;
-  color: #fff; text-decoration: none;
-  padding: 8px 18px; background: var(--terra); border: 1px solid var(--terra); border-radius: 3px;
-  transition: var(--tr); display: inline-flex; align-items: center; gap: 6px;
-}
+.btn-solid { font-size: 10px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: #fff; text-decoration: none; padding: 8px 18px; background: var(--terra); border: 1px solid var(--terra); border-radius: 3px; transition: var(--tr); display: inline-flex; align-items: center; gap: 6px; }
 .btn-solid:hover { background: var(--terra-d); border-color: var(--terra-d); }
-
-.hamburger {
-  display: none; font-size: 1.2rem; color: var(--charcoal);
-  cursor: pointer; border: none; background: none;
-  padding: 0.4rem; width: 36px; height: 36px;
-  align-items: center; justify-content: center;
-  border-radius: 6px; transition: background 0.2s;
-}
+.hamburger { display: none; font-size: 1.2rem; color: var(--charcoal); cursor: pointer; border: none; background: none; width: 36px; height: 36px; align-items: center; justify-content: center; border-radius: 6px; transition: background 0.2s; }
 .hamburger:hover { background: var(--cream-d); }
-.mobile-nav {
-  display: none; position: fixed; top: 65px; left: 0; right: 0;
-  background: #fff; border-bottom: 1px solid rgba(11,37,69,0.1);
-  box-shadow: 0 8px 24px rgba(11,37,69,0.12); z-index: 998;
-  padding: 0.5rem 0.75rem 0.75rem;
-}
+.mobile-nav { display: none; position: fixed; top: 65px; left: 0; right: 0; background: #fff; border-bottom: 1px solid rgba(11,37,69,0.1); box-shadow: 0 8px 24px rgba(11,37,69,0.12); z-index: 998; padding: 0.5rem 0.75rem 0.75rem; }
 .mobile-nav.active { display: block; }
-.mobile-nav a {
-  display: flex; align-items: center; gap: 0.75rem;
-  padding: 0.85rem 1rem; color: var(--charcoal); text-decoration: none;
-  font-size: 13px; font-weight: 400; border-radius: 8px; margin-bottom: 2px;
-  transition: var(--tr);
-}
+.mobile-nav a { display: flex; align-items: center; gap: 0.75rem; padding: 0.85rem 1rem; color: var(--charcoal); text-decoration: none; font-size: 13px; font-weight: 400; border-radius: 8px; margin-bottom: 2px; transition: var(--tr); }
 .mobile-nav a:hover { background: var(--cream-d); color: var(--navy); }
-.m-icon {
-  width: 30px; height: 30px; border-radius: 7px;
-  background: var(--cream-d); display: flex; align-items: center; justify-content: center;
-  font-size: 0.75rem; color: var(--navy-l); flex-shrink: 0;
-}
+.m-icon { width: 30px; height: 30px; border-radius: 7px; background: var(--cream-d); display: flex; align-items: center; justify-content: center; font-size: 0.75rem; color: var(--navy-l); flex-shrink: 0; }
 
 /* ═══ HERO ═══ */
-.hero {
-  min-height: 42vh;
-  background:
-    linear-gradient(135deg, rgba(11,37,69,0.45) 0%, rgba(13,31,51,0.55) 100%),
-    url('https://images.unsplash.com/photo-1505664194779-8beaceb93744?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-  padding-top: 65px;
-}
-.hero-inner {
-  max-width: 860px;
-  margin: 0 auto;
-  width: 100%;
-  padding: 6.5rem 1.5rem 3.5rem;
-  text-align: center;
-}
-
-/* Breadcrumb */
-.breadcrumb {
-  display: flex; align-items: center; justify-content: center;
-  gap: 0.5rem; margin-bottom: 1.75rem;
-}
+.hero { min-height: 42vh; background: linear-gradient(135deg, rgba(11,37,69,0.45) 0%, rgba(13,31,51,0.55) 100%), url('https://images.unsplash.com/photo-1505664194779-8beaceb93744?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; padding-top: 65px; }
+.hero-inner { max-width: 860px; margin: 0 auto; width: 100%; padding: 6.5rem 1.5rem 3.5rem; text-align: center; }
+.breadcrumb { display: flex; align-items: center; justify-content: center; gap: 0.5rem; margin-bottom: 1.75rem; }
 .breadcrumb a { font-size: 11px; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
 .breadcrumb a:hover { color: rgba(255,255,255,0.85); }
 .breadcrumb sep { font-size: 10px; color: rgba(255,255,255,0.25); }
 .breadcrumb .cur { font-size: 11px; color: rgba(255,255,255,0.7); }
-
-.hero-eyebrow {
-  display: inline-flex; align-items: center; gap: 6px;
-  font-size: 9px; letter-spacing: 0.45em; text-transform: uppercase;
-  color: rgba(148,197,235,0.75); font-weight: 500;
-  border: 0.5px solid rgba(148,197,235,0.2);
-  background: rgba(148,197,235,0.06);
-  padding: 5px 14px; border-radius: 30px;
-  margin-bottom: 1.5rem;
-}
-.hero-eyebrow i { font-size: 0.75rem; }
-
-h1.hero-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 300;
-  font-size: clamp(38px, 6vw, 72px);
-  line-height: 1.04;
-  color: #ffffff;
-  letter-spacing: -0.01em;
-  margin-bottom: 1.25rem;
-}
-h1.hero-title em { font-style: italic; color: #ffffff; }
-
-.hero-sub {
-  font-size: 15px; font-weight: 300;
-  color: rgba(255,255,255,0.78);
-  line-height: 1.8; max-width: 580px; margin: 0 auto 2.5rem;
-}
+h1.hero-title { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(38px, 6vw, 72px); line-height: 1.04; color: #fff; letter-spacing: -0.01em; margin-bottom: 1.25rem; }
+h1.hero-title em { font-style: italic; }
+.hero-sub { font-size: 15px; font-weight: 300; color: rgba(255,255,255,0.78); line-height: 1.8; max-width: 580px; margin: 0 auto 2.5rem; }
 .hero-sub strong { color: #fff; font-weight: 500; }
-
-.hero-pills {
-  display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem;
-  margin-bottom: 2.5rem;
-}
-.pill {
-  display: inline-flex; align-items: center; gap: 5px;
-  font-size: 10px; font-weight: 500; letter-spacing: 0.08em;
-  color: rgba(255,255,255,0.82);
-  background: rgba(255,255,255,0.08);
-  border: 0.5px solid rgba(255,255,255,0.18);
-  padding: 5px 14px; border-radius: 30px;
-}
+.hero-pills { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; margin-bottom: 2.5rem; }
+.pill { display: inline-flex; align-items: center; gap: 5px; font-size: 10px; font-weight: 500; letter-spacing: 0.08em; color: rgba(255,255,255,0.82); background: rgba(255,255,255,0.08); border: 0.5px solid rgba(255,255,255,0.18); padding: 5px 14px; border-radius: 30px; }
 .pill i { font-size: 0.7rem; color: rgba(148,197,235,0.8); }
-
-.hero-btns {
-  display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
-}
-.btn-hero-primary {
-  display: inline-flex; align-items: center; gap: 8px;
-  font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase;
-  color: #fff; text-decoration: none;
-  padding: 14px 30px; background: var(--terra); border: 1px solid var(--terra); border-radius: 3px;
-  transition: var(--tr);
-}
-.btn-hero-primary:hover { background: var(--terra-d); border-color: var(--terra-d); }
-.btn-hero-ghost {
-  display: inline-flex; align-items: center; gap: 8px;
-  font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase;
-  color: rgba(255,255,255,0.85); text-decoration: none;
-  padding: 14px 30px; border: 1px solid rgba(255,255,255,0.3); border-radius: 3px;
-  transition: var(--tr);
-}
-.btn-hero-ghost:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.6); }
-
-/* Trust bar hero */
-.hero-trust {
-  display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem;
-  margin-top: 3rem;
-  padding-top: 2rem;
-  border-top: 0.5px solid rgba(255,255,255,0.08);
-}
-.htrust-item {
-  display: flex; align-items: center; gap: 6px;
-  font-size: 11px; color: rgba(255,255,255,0.6); font-weight: 300;
-}
+.hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+.btn-hero-primary { display: inline-flex; align-items: center; gap: 8px; font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: #fff; text-decoration: none; padding: 14px 30px; background: var(--terra); border: 1px solid var(--terra); border-radius: 3px; transition: var(--tr); }
+.btn-hero-primary:hover { background: var(--terra-d); }
+.btn-hero-ghost { display: inline-flex; align-items: center; gap: 8px; font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.85); text-decoration: none; padding: 14px 30px; border: 1px solid rgba(255,255,255,0.3); border-radius: 3px; transition: var(--tr); }
+.btn-hero-ghost:hover { background: rgba(255,255,255,0.08); }
+.hero-trust { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; margin-top: 3rem; padding-top: 2rem; border-top: 0.5px solid rgba(255,255,255,0.08); }
+.htrust-item { display: flex; align-items: center; gap: 6px; font-size: 11px; color: rgba(255,255,255,0.6); font-weight: 300; }
 .htrust-item strong { color: rgba(255,255,255,0.9); font-weight: 500; }
 
-/* ═══ SECCIONES GENÉRICAS ═══ */
+/* ═══ SECCIONES ═══ */
 section { padding: 5.5rem 2rem; }
 .sec-inner { max-width: 1100px; margin: 0 auto; }
-.sec-tag {
-  font-size: 9px; font-weight: 500; letter-spacing: 0.4em;
-  text-transform: uppercase; color: var(--terra); display: block; margin-bottom: 0.75rem;
-}
-.sec-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 300; font-size: clamp(28px, 4vw, 44px);
-  line-height: 1.1; letter-spacing: -0.01em;
-  color: var(--charcoal); margin-bottom: 1rem;
-}
+.sec-tag { font-size: 9px; font-weight: 500; letter-spacing: 0.4em; text-transform: uppercase; color: var(--terra); display: block; margin-bottom: 0.75rem; }
+.sec-title { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(28px, 4vw, 44px); line-height: 1.1; letter-spacing: -0.01em; color: var(--charcoal); margin-bottom: 1rem; }
 .sec-title em { font-style: italic; color: var(--terra); }
-.sec-title.light { color: #ffffff; }
+.sec-title.light { color: #fff; }
 .sec-lead { font-size: 14px; font-weight: 300; color: var(--muted); line-height: 1.8; max-width: 560px; }
 
-/* ═══ STATS ═══ */
-.stats-band {
-  background: var(--navy);
-  padding: 2.5rem 2rem;
-}
-.stats-inner {
-  max-width: 1100px; margin: 0 auto;
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem;
-}
-.stat-item { text-align: center; }
-.stat-num {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(32px, 5vw, 52px);
-  font-weight: 300; line-height: 1;
-  color: #ffffff; margin-bottom: 0.3rem;
-}
-.stat-num em { font-style: normal; color: rgba(148,197,235,0.7); font-size: 0.65em; vertical-align: super; }
-.stat-label { font-size: 11px; font-weight: 400; color: rgba(255,255,255,0.55); letter-spacing: 0.05em; }
-
-/* ═══ INTRODUCCIÓN ═══ */
+/* ═══ INTRO ═══ */
 #intro { background: var(--white); }
-.intro-grid {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 4rem; align-items: center;
-}
-.intro-text h2 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(26px, 3.5vw, 40px);
-  font-weight: 300; line-height: 1.1;
-  color: var(--navy); margin-bottom: 1.25rem;
-}
+.intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+.intro-text h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(26px, 3.5vw, 40px); font-weight: 300; line-height: 1.1; color: var(--navy); margin-bottom: 1.25rem; }
 .intro-text h2 em { font-style: italic; color: var(--terra); }
 .intro-text p { font-size: 13px; color: var(--muted); line-height: 1.85; margin-bottom: 1rem; }
 .intro-text p:last-child { margin-bottom: 0; }
 .intro-text strong { color: var(--charcoal); font-weight: 500; }
-
-.intro-card-grid {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;
-}
-.intro-card {
-  background: var(--cream-d);
-  border: 0.5px solid var(--border-n);
-  border-radius: 10px;
-  padding: 1.25rem;
-}
-.intro-card-icon {
-  width: 36px; height: 36px; border-radius: 8px;
-  background: rgba(46,125,82,0.1); border: 0.5px solid rgba(46,125,82,0.18);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 0.85rem; color: var(--terra);
-  margin-bottom: 0.75rem;
-}
+.intro-card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+.intro-card { background: var(--cream-d); border: 0.5px solid var(--border-n); border-radius: 10px; padding: 1.25rem; }
+.intro-card-icon { width: 36px; height: 36px; border-radius: 8px; background: rgba(46,125,82,0.1); border: 0.5px solid rgba(46,125,82,0.18); display: flex; align-items: center; justify-content: center; font-size: 0.85rem; color: var(--terra); margin-bottom: 0.75rem; }
 .intro-card h4 { font-size: 12px; font-weight: 500; color: var(--navy); margin-bottom: 3px; }
 .intro-card p { font-size: 11px; color: var(--muted); line-height: 1.55; }
 
-/* ═══ SERVICIOS / INSTANCIAS ═══ */
-#servicios {
-  background: linear-gradient(135deg, rgba(10,37,64,0.93) 0%, rgba(30,70,130,0.88) 100%),
-              url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1920&auto=format&fit=crop') center/cover;
-}
+/* ═══ SERVICIOS ═══ */
+#servicios { background: linear-gradient(135deg, rgba(10,37,64,0.93) 0%, rgba(30,70,130,0.88) 100%), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1920&auto=format&fit=crop') center/cover; }
 #servicios .sec-tag { color: rgba(148,197,235,0.7); }
-
-.instancias-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem;
-  margin-top: 3rem;
-}
-.instancia-card {
-  background: rgba(255,255,255,0.06);
-  border: 0.5px solid rgba(255,255,255,0.1);
-  border-radius: var(--radius);
-  padding: 1.75rem;
-  position: relative; overflow: hidden;
-  transition: var(--tr);
-}
-.instancia-card::before {
-  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
-  background: linear-gradient(90deg, var(--terra) 0%, var(--navy-l) 100%);
-}
-.instancia-card:hover {
-  background: rgba(255,255,255,0.1);
-  border-color: rgba(255,255,255,0.2);
-  transform: translateY(-3px);
-}
-.inst-badge {
-  display: inline-block;
-  font-size: 8px; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase;
-  color: rgba(148,197,235,0.65);
-  border: 0.5px solid rgba(148,197,235,0.2);
-  padding: 3px 10px; border-radius: 30px;
-  margin-bottom: 1rem;
-}
-.inst-icon {
-  width: 44px; height: 44px; border-radius: 10px;
-  background: rgba(46,125,82,0.15); border: 0.5px solid rgba(46,125,82,0.25);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1rem; color: #7ed99a;
-  margin-bottom: 1rem;
-}
-.instancia-card h3 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 20px; font-weight: 400;
-  color: #ffffff; line-height: 1.2; margin-bottom: 0.75rem;
-}
-.instancia-card p {
-  font-size: 12px; color: rgba(255,255,255,0.62); line-height: 1.7; margin-bottom: 1rem;
-}
+.instancias-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 3rem; }
+.instancia-card { background: rgba(255,255,255,0.06); border: 0.5px solid rgba(255,255,255,0.1); border-radius: var(--radius); padding: 1.75rem; position: relative; overflow: hidden; transition: var(--tr); }
+.instancia-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--terra) 0%, var(--navy-l) 100%); }
+.instancia-card:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); transform: translateY(-3px); }
+.inst-badge { display: inline-block; font-size: 8px; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(148,197,235,0.65); border: 0.5px solid rgba(148,197,235,0.2); padding: 3px 10px; border-radius: 30px; margin-bottom: 1rem; }
+.inst-icon { width: 44px; height: 44px; border-radius: 10px; background: rgba(46,125,82,0.15); border: 0.5px solid rgba(46,125,82,0.25); display: flex; align-items: center; justify-content: center; font-size: 1rem; color: #7ed99a; margin-bottom: 1rem; }
+.instancia-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 400; color: #fff; line-height: 1.2; margin-bottom: 0.75rem; }
+.instancia-card p { font-size: 12px; color: rgba(255,255,255,0.62); line-height: 1.7; margin-bottom: 1rem; }
 .inst-tags { display: flex; flex-wrap: wrap; gap: 4px; }
-.inst-tag {
-  display: inline-block;
-  font-size: 10px; color: rgba(255,255,255,0.55);
-  background: rgba(255,255,255,0.07);
-  border: 0.5px solid rgba(255,255,255,0.1);
-  padding: 2px 9px; border-radius: 20px;
-}
+.inst-tag { display: inline-block; font-size: 10px; color: rgba(255,255,255,0.55); background: rgba(255,255,255,0.07); border: 0.5px solid rgba(255,255,255,0.1); padding: 2px 9px; border-radius: 20px; }
 
-/* ═══ TIPOS DE SEGUROS ═══ */
+/* ═══ TIPOS ═══ */
 #tipos { background: var(--white); }
-.tipos-grid {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;
-  margin-top: 2.5rem;
-}
-.tipo-card {
-  background: var(--cream);
-  border: 0.5px solid var(--border-n);
-  border-radius: var(--radius);
-  padding: 1.5rem 1.25rem;
-  text-align: center;
-  transition: var(--tr);
-}
-.tipo-card:hover {
-  background: var(--white);
-  box-shadow: var(--shadow-md);
-  border-color: rgba(46,125,82,0.2);
-  transform: translateY(-2px);
-}
-.tipo-icon {
-  width: 52px; height: 52px; border-radius: 50%;
-  background: rgba(11,37,69,0.06); border: 0.5px solid var(--border-n);
-  display: flex; align-items: center; justify-content: center;
-  margin: 0 auto 1rem; font-size: 1.15rem; color: var(--navy-l);
-  transition: var(--tr);
-}
-.tipo-card:hover .tipo-icon {
-  background: rgba(46,125,82,0.1); border-color: rgba(46,125,82,0.2); color: var(--terra);
-}
-.tipo-card h3 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 17px; font-weight: 400; color: var(--navy); margin-bottom: 0.5rem;
-}
+.tipos-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 2.5rem; }
+.tipo-card { background: var(--cream); border: 0.5px solid var(--border-n); border-radius: var(--radius); padding: 1.5rem 1.25rem; text-align: center; transition: var(--tr); }
+.tipo-card:hover { background: var(--white); box-shadow: var(--shadow-md); border-color: rgba(46,125,82,0.2); transform: translateY(-2px); }
+.tipo-icon { width: 52px; height: 52px; border-radius: 50%; background: rgba(11,37,69,0.06); border: 0.5px solid var(--border-n); display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.15rem; color: var(--navy-l); transition: var(--tr); }
+.tipo-card:hover .tipo-icon { background: rgba(46,125,82,0.1); border-color: rgba(46,125,82,0.2); color: var(--terra); }
+.tipo-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 17px; font-weight: 400; color: var(--navy); margin-bottom: 0.5rem; }
 .tipo-card p { font-size: 11px; color: var(--muted); line-height: 1.6; }
 
 /* ═══ PROCESO ═══ */
 #proceso { background: var(--cream-d); }
-.proceso-steps {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 3rem;
-  position: relative;
-}
-.proceso-steps::before {
-  content: '';
-  position: absolute; top: 28px; left: 10%; right: 10%; height: 1px;
-  background: linear-gradient(90deg, transparent, var(--sand), transparent);
-  z-index: 0;
-}
+.proceso-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 3rem; position: relative; }
+.proceso-steps::before { content: ''; position: absolute; top: 28px; left: 10%; right: 10%; height: 1px; background: linear-gradient(90deg, transparent, var(--sand), transparent); z-index: 0; }
 .step-item { text-align: center; position: relative; z-index: 1; padding: 0 1rem; }
-.step-circle {
-  width: 56px; height: 56px; border-radius: 50%;
-  background: var(--navy);
-  border: 3px solid var(--cream-d);
-  display: flex; align-items: center; justify-content: center;
-  margin: 0 auto 1.25rem;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 22px; font-weight: 300; color: #fff;
-  box-shadow: var(--shadow-md);
-}
+.step-circle { width: 56px; height: 56px; border-radius: 50%; background: var(--navy); border: 3px solid var(--cream-d); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem; font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 300; color: #fff; box-shadow: var(--shadow-md); }
 .step-item h4 { font-size: 13px; font-weight: 500; color: var(--navy); margin-bottom: 0.5rem; }
 .step-item p { font-size: 11px; color: var(--muted); line-height: 1.55; }
 
 /* ═══ FAQ ═══ */
-#faq {
-  background: var(--white);
-}
-.faq-grid {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2.5rem;
-}
-.faq-item {
-  background: var(--cream);
-  border: 0.5px solid var(--border-n);
-  border-radius: var(--radius);
-  overflow: hidden;
-}
-.faq-btn {
-  width: 100%; padding: 1.1rem 1.25rem;
-  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
-  background: none; border: none; cursor: pointer;
-  font-family: 'Jost', sans-serif; text-align: left; transition: background 0.2s;
-}
+#faq { background: var(--white); }
+.faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2.5rem; }
+.faq-item { background: var(--cream); border: 0.5px solid var(--border-n); border-radius: var(--radius); overflow: hidden; }
+.faq-btn { width: 100%; padding: 1.1rem 1.25rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; background: none; border: none; cursor: pointer; font-family: 'Jost', sans-serif; text-align: left; transition: background 0.2s; }
 .faq-btn:hover { background: var(--cream-d); }
 .faq-q-text { font-size: 13px; font-weight: 500; color: var(--charcoal); }
 .faq-chev { color: var(--muted); font-size: 0.7rem; flex-shrink: 0; transition: transform 0.25s; }
 .faq-chev.open { transform: rotate(180deg); }
-.faq-body {
-  display: none; padding: 0 1.25rem 1.1rem;
-  border-top: 0.5px solid var(--border);
-}
+.faq-body { display: none; padding: 0 1.25rem 1.1rem; border-top: 0.5px solid var(--border); }
 .faq-body.open { display: block; }
-.faq-body p {
-  font-size: 12px; font-weight: 300; color: var(--muted);
-  line-height: 1.8; padding-top: 0.875rem;
-}
+.faq-body p { font-size: 12px; font-weight: 300; color: var(--muted); line-height: 1.8; padding-top: 0.875rem; }
 
 /* ═══ CONTACTO ═══ */
-#contacto {
-  background: var(--navy);
-  position: relative; overflow: hidden;
-}
-#contacto::before {
-  content: ''; position: absolute;
-  top: -120px; right: -120px; width: 500px; height: 500px;
-  background: radial-gradient(circle, rgba(46,125,82,0.08) 0%, transparent 65%);
-  border-radius: 50%; pointer-events: none;
-}
-#contacto::after {
-  content: ''; position: absolute;
-  bottom: -80px; left: -80px; width: 400px; height: 400px;
-  background: radial-gradient(circle, rgba(42,82,128,0.15) 0%, transparent 65%);
-  border-radius: 50%; pointer-events: none;
-}
-.contacto-grid {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 4rem; align-items: start;
-  position: relative; z-index: 1;
-}
-.contacto-left {}
-.contacto-left h2 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(28px, 3.5vw, 44px); font-weight: 300;
-  color: #ffffff; line-height: 1.1; margin-bottom: 1.25rem;
-}
+#contacto { background: var(--navy); position: relative; overflow: hidden; }
+#contacto::before { content: ''; position: absolute; top: -120px; right: -120px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(46,125,82,0.08) 0%, transparent 65%); border-radius: 50%; pointer-events: none; }
+#contacto::after { content: ''; position: absolute; bottom: -80px; left: -80px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(42,82,128,0.15) 0%, transparent 65%); border-radius: 50%; pointer-events: none; }
+.contacto-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; position: relative; z-index: 1; }
+.contacto-left h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 3.5vw, 44px); font-weight: 300; color: #fff; line-height: 1.1; margin-bottom: 1.25rem; }
 .contacto-left h2 em { font-style: italic; }
 .contacto-left > p { font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.8; margin-bottom: 2rem; }
-
-/* Contacto directo */
-.contacto-direct-label {
-  font-size: 9px; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase;
-  color: rgba(148,197,235,0.45); margin-bottom: 0.875rem;
-}
+.contacto-direct-label { font-size: 9px; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(148,197,235,0.45); margin-bottom: 0.875rem; }
 .direct-links { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 2rem; }
-.direct-link {
-  display: inline-flex; align-items: center; gap: 8px;
-  font-size: 12px; font-weight: 500;
-  color: rgba(245,239,228,0.8); text-decoration: none;
-  padding: 0.65rem 1rem; border-radius: 30px; transition: var(--tr); width: fit-content;
-}
+.direct-link { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 500; color: rgba(245,239,228,0.8); text-decoration: none; padding: 0.65rem 1rem; border-radius: 30px; transition: var(--tr); width: fit-content; }
 .direct-link.wa { background: rgba(37,211,102,0.1); border: 0.5px solid rgba(37,211,102,0.2); }
-.direct-link.em { background: rgba(42,82,128,0.2);  border: 0.5px solid rgba(93,150,191,0.2); }
+.direct-link.em { background: rgba(42,82,128,0.2); border: 0.5px solid rgba(93,150,191,0.2); }
 .direct-link.wa:hover { background: rgba(37,211,102,0.18); }
 .direct-link.em:hover { background: rgba(42,82,128,0.3); }
-
-/* Trust items contacto */
 .trust-items { display: flex; flex-direction: column; gap: 0.875rem; }
-.trust-row {
-  display: flex; align-items: flex-start; gap: 0.875rem;
-  padding: 0.875rem 1rem;
-  background: rgba(255,255,255,0.04); border: 0.5px solid rgba(255,255,255,0.07);
-  border-radius: 10px;
-}
-.trust-icon {
-  width: 32px; height: 32px; border-radius: 7px;
-  background: rgba(46,125,82,0.15); border: 0.5px solid rgba(46,125,82,0.25);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 0.75rem; color: #7ed99a; flex-shrink: 0;
-}
+.trust-row { display: flex; align-items: flex-start; gap: 0.875rem; padding: 0.875rem 1rem; background: rgba(255,255,255,0.04); border: 0.5px solid rgba(255,255,255,0.07); border-radius: 10px; }
+.trust-icon { width: 32px; height: 32px; border-radius: 7px; background: rgba(46,125,82,0.15); border: 0.5px solid rgba(46,125,82,0.25); display: flex; align-items: center; justify-content: center; font-size: 0.75rem; color: #7ed99a; flex-shrink: 0; }
 .trust-row p { font-size: 12px; font-weight: 500; color: rgba(245,239,228,0.8); margin-bottom: 1px; }
 .trust-row small { font-size: 11px; color: rgba(255,255,255,0.4); line-height: 1.4; }
 
-/* Form */
-.form-card {
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(20px);
-  border: 0.5px solid rgba(255,255,255,0.1);
-  border-radius: var(--radius); padding: 2.25rem;
-  position: relative; overflow: hidden;
-}
-.form-card::before {
-  content: ''; position: absolute;
-  top: 0; left: 0; right: 0; height: 3px;
-  background: linear-gradient(90deg, var(--terra) 0%, var(--navy-l) 100%);
-}
+/* ═══ FORM ═══ */
+.form-card { background: rgba(255,255,255,0.05); backdrop-filter: blur(20px); border: 0.5px solid rgba(255,255,255,0.1); border-radius: var(--radius); padding: 2.25rem; position: relative; overflow: hidden; }
+.form-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--terra) 0%, var(--navy-l) 100%); }
 .form-hdr { display: flex; align-items: center; gap: 0.875rem; margin-bottom: 1.75rem; }
-.form-hdr-icon {
-  width: 40px; height: 40px; border-radius: 9px;
-  background: rgba(255,255,255,0.12); display: flex; align-items: center;
-  justify-content: center; color: #fff; font-size: 1rem; flex-shrink: 0;
-}
+.form-hdr-icon { width: 40px; height: 40px; border-radius: 9px; background: rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1rem; flex-shrink: 0; }
 .form-hdr h3 { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 400; color: #fff; }
 .form-hdr p { font-size: 11px; color: rgba(255,255,255,0.5); margin-top: 1px; }
-
 .fg { margin-bottom: 1rem; }
-.fg label {
-  display: block; font-size: 9px; font-weight: 600;
-  letter-spacing: 0.2em; text-transform: uppercase;
-  color: rgba(148,197,235,0.6); margin-bottom: 5px;
-}
-.fi {
-  width: 100%; padding: 0.75rem 1rem;
-  border-radius: 8px; border: 0.5px solid rgba(255,255,255,0.12);
-  background: rgba(255,255,255,0.07); color: #fff;
-  font-family: 'Jost', sans-serif; font-size: 13px; font-weight: 300;
-  outline: none; transition: border-color 0.2s, background 0.2s;
-}
+.fg label { display: block; font-size: 9px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(148,197,235,0.6); margin-bottom: 5px; }
+.fi { width: 100%; padding: 0.75rem 1rem; border-radius: 8px; border: 0.5px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.07); color: #fff; font-family: 'Jost', sans-serif; font-size: 13px; font-weight: 300; outline: none; transition: border-color 0.2s, background 0.2s; }
 .fi::placeholder { color: rgba(245,239,228,0.25); }
 .fi:focus { border-color: rgba(148,197,235,0.5); background: rgba(255,255,255,0.09); }
-select.fi {
-  cursor: pointer; appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2393c5fd' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
-  background-repeat: no-repeat; background-position: right 12px center;
-  background-color: rgba(10,20,40,0.6);
-}
+select.fi { cursor: pointer; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2393c5fd' d='M6 8L1 3h10z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; background-color: rgba(10,20,40,0.6); }
 select.fi option { background: #0a2540; }
 textarea.fi { resize: vertical; min-height: 110px; line-height: 1.6; }
 .frow { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
-
-/* Drop zone */
-.drop-zone {
-  border: 1.5px dashed rgba(255,255,255,0.2);
-  border-radius: 9px; padding: 1.25rem; text-align: center;
-  cursor: pointer; transition: var(--tr); background: rgba(255,255,255,0.03);
-}
-.drop-zone:hover { border-color: rgba(148,197,235,0.45); background: rgba(148,197,235,0.04); }
+.drop-zone { border: 1.5px dashed rgba(255,255,255,0.2); border-radius: 9px; padding: 1.25rem; text-align: center; cursor: pointer; transition: var(--tr); background: rgba(255,255,255,0.03); }
+.drop-zone:hover { border-color: rgba(148,197,235,0.45); }
 .drop-zone i { font-size: 1.3rem; color: var(--terra); display: block; margin-bottom: 0.4rem; }
 .drop-zone p { font-size: 12px; color: rgba(255,255,255,0.78); font-weight: 500; margin-bottom: 2px; }
-.drop-zone p span { color: rgba(255,255,255,0.9); text-decoration: underline; }
+.drop-zone p span { text-decoration: underline; }
 .drop-zone small { font-size: 10px; color: rgba(245,239,228,0.3); }
 #listaArchivos { margin-top: 0.5rem; display: flex; flex-wrap: wrap; gap: 4px; }
-.ftag {
-  display: inline-flex; align-items: center; gap: 4px;
-  background: rgba(255,255,255,0.12); border: 0.5px solid rgba(255,255,255,0.25);
-  color: #fff; padding: 3px 10px; border-radius: 20px; font-size: 11px;
-}
-
-.trust-bar {
-  display: flex; align-items: center; justify-content: center; gap: 1.25rem;
-  flex-wrap: wrap; margin: 1rem 0;
-  padding: 0.75rem; background: rgba(255,255,255,0.06);
-  border: 0.5px solid rgba(148,197,235,0.15); border-radius: 8px;
-}
+.ftag { display: inline-flex; align-items: center; gap: 4px; background: rgba(255,255,255,0.12); border: 0.5px solid rgba(255,255,255,0.25); color: #fff; padding: 3px 10px; border-radius: 20px; font-size: 11px; }
+.trust-bar { display: flex; align-items: center; justify-content: center; gap: 1.25rem; flex-wrap: wrap; margin: 1rem 0; padding: 0.75rem; background: rgba(255,255,255,0.06); border: 0.5px solid rgba(148,197,235,0.15); border-radius: 8px; }
 .tbar-item { display: flex; align-items: center; gap: 5px; font-size: 11px; color: rgba(255,255,255,0.75); }
-
-.btn-submit {
-  width: 100%; padding: 14px;
-  background: var(--terra); color: #fff;
-  border: none; border-radius: 8px;
-  font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 500;
-  letter-spacing: 0.2em; text-transform: uppercase;
-  cursor: pointer; transition: background 0.2s;
-  display: flex; align-items: center; justify-content: center; gap: 8px;
-}
+.btn-submit { width: 100%; padding: 14px; background: var(--terra); color: #fff; border: none; border-radius: 8px; font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer; transition: background 0.2s; display: flex; align-items: center; justify-content: center; gap: 8px; }
 .btn-submit:hover { background: var(--terra-d); }
 .btn-submit:disabled { opacity: 0.5; cursor: not-allowed; }
-#formStatus {
-  display: none; margin-top: 0.75rem; padding: 0.75rem 1rem;
-  border-radius: 8px; font-size: 12px; text-align: center;
-}
+#formStatus { display: none; margin-top: 0.75rem; padding: 0.75rem 1rem; border-radius: 8px; font-size: 12px; text-align: center; }
 
 /* ═══ FOOTER ═══ */
 footer { background: #0a1a2e; padding: 3rem 2rem 2rem; }
-.footer-inner {
-  max-width: 1100px; margin: 0 auto;
-  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 2.5rem;
-}
-.footer-logo {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 22px; font-weight: 400;
-  color: rgba(255,255,255,0.82); letter-spacing: 0.03em; margin-bottom: 0.4rem;
-}
+.footer-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 2.5rem; }
+.footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 400; color: rgba(255,255,255,0.82); margin-bottom: 0.4rem; }
 .footer-logo em { font-style: normal; color: #93c5fd; }
 .footer-sub { font-size: 9px; font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 0.875rem; }
 .footer-desc { font-size: 12px; color: rgba(255,255,255,0.5); line-height: 1.7; margin-bottom: 1.25rem; }
 .social-links { display: flex; gap: 0.6rem; }
-.social-links a {
-  width: 34px; height: 34px; border-radius: 8px;
-  background: rgba(255,255,255,0.06); border: 0.5px solid rgba(255,255,255,0.08);
-  display: flex; align-items: center; justify-content: center;
-  color: rgba(255,255,255,0.6); font-size: 0.85rem;
-  transition: var(--tr); text-decoration: none;
-}
+.social-links a { width: 34px; height: 34px; border-radius: 8px; background: rgba(255,255,255,0.06); border: 0.5px solid rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.6); font-size: 0.85rem; transition: var(--tr); text-decoration: none; }
 .social-links a:hover { background: var(--terra); color: #fff; border-color: var(--terra); }
-.footer-col h4 {
-  font-size: 9px; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase;
-  color: rgba(255,255,255,0.6); margin-bottom: 0.875rem;
-}
+.footer-col h4 { font-size: 9px; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 0.875rem; }
 .footer-col ul { list-style: none; }
 .footer-col ul li { margin-bottom: 0.5rem; }
-.footer-col ul li a {
-  font-size: 12px; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s;
-}
+.footer-col ul li a { font-size: 12px; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
 .footer-col ul li a:hover { color: rgba(255,255,255,0.9); }
-.footer-bottom {
-  max-width: 1100px; margin: 0 auto;
-  padding-top: 1.5rem; border-top: 0.5px solid rgba(255,255,255,0.06);
-  text-align: center; font-size: 11px; color: rgba(245,239,228,0.2);
-}
+.footer-bottom { max-width: 1100px; margin: 0 auto; padding-top: 1.5rem; border-top: 0.5px solid rgba(255,255,255,0.06); text-align: center; font-size: 11px; color: rgba(245,239,228,0.2); }
 
-/* WA sidebar — solo mobile */
-.wa-sidebar {
-  position: fixed; right: 0; bottom: 4rem; z-index: 9999;
-  display: none;
-}
-.wa-sidebar a {
-  display: flex; align-items: center; justify-content: center;
-  background: rgba(11,37,69,0.85);
-  border: 0.5px solid rgba(255,255,255,0.25); border-right: none;
-  color: #fff; padding: 12px 13px;
-  border-radius: 10px 0 0 10px; text-decoration: none;
-  transition: var(--tr); font-size: 1.2rem;
-  box-shadow: -2px 2px 12px rgba(0,0,0,0.18);
-}
-.wa-sidebar a:hover { background: rgba(11,37,69,0.97); }
+/* WA flotante — solo mobile */
+.wa-sidebar { position: fixed; right: 0; bottom: 4rem; z-index: 9999; display: none; }
+.wa-sidebar a { display: flex; align-items: center; justify-content: center; background: rgba(11,37,69,0.85); border: 0.5px solid rgba(255,255,255,0.25); border-right: none; color: #fff; padding: 12px 13px; border-radius: 10px 0 0 10px; text-decoration: none; transition: var(--tr); font-size: 1.2rem; box-shadow: -2px 2px 12px rgba(0,0,0,0.18); }
 
 /* Fade-in */
 .fade-in { opacity: 0; transform: translateY(16px); transition: opacity 0.6s ease, transform 0.6s ease; }
 .fade-in.visible { opacity: 1; transform: translateY(0); }
 
-/* ═══ MOBILE NAV ═══ */
+
+/* ══════════════════════════════════════════
+   MOBILE — ≤ 968px
+   Filosofía: 1 columna, menos padding,
+   contenido esencial visible de inmediato
+══════════════════════════════════════════ */
 @media (max-width: 968px) {
-  .nav-links, .nav-ctas { display: none !important; }
+
+  /* Nav: ocultar links y botones, mostrar hamburguesa */
+  .nav-links,
+  .nav-ctas { display: none !important; }
   .hamburger { display: flex !important; }
-  .stats-inner { grid-template-columns: repeat(2, 1fr); }
-  .intro-grid { grid-template-columns: 1fr; }
-  .intro-card-grid { grid-template-columns: 1fr 1fr; }
-  .instancias-grid { grid-template-columns: 1fr; }
-  .tipos-grid { grid-template-columns: repeat(2, 1fr); }
-  .proceso-steps { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+  .header-inner { padding: 0 1.25rem; }
+
+  /* Hero: más compacto */
+  .hero-inner { padding: 5rem 1.25rem 2.5rem; }
+  h1.hero-title { font-size: clamp(32px, 9vw, 50px); }
+  .hero-sub { font-size: 13px; margin-bottom: 1.75rem; }
+
+  /* Pills: ocultar en mobile para no saturar */
+  .hero-pills { display: none; }
+
+  /* Botones hero: full width apilados */
+  .hero-btns { flex-direction: column; align-items: stretch; gap: 0.75rem; }
+  .btn-hero-primary,
+  .btn-hero-ghost { justify-content: center; padding: 13px 20px; }
+
+  /* Trust bar hero: simplificada */
+  .hero-trust { gap: 1rem; margin-top: 2rem; padding-top: 1.5rem; }
+  .htrust-item { font-size: 10px; }
+
+  /* Secciones: padding reducido */
+  section { padding: 3rem 1.25rem; }
+
+  /* Intro: 1 columna, texto primero */
+  .intro-grid { grid-template-columns: 1fr; gap: 2rem; }
+
+  /* Texto intro: ocultar párrafos 2 y 3, dejar solo el primero */
+  .intro-text p:nth-child(n+3) { display: none; }
+
+  /* Cards intro: 2 columnas en mobile */
+  .intro-card-grid { grid-template-columns: 1fr 1fr; gap: 0.625rem; }
+  .intro-card { padding: 1rem; }
+  .intro-card-icon { width: 30px; height: 30px; margin-bottom: 0.5rem; font-size: 0.75rem; }
+  .intro-card h4 { font-size: 11px; }
+  .intro-card p { display: none; } /* solo iconos + título en mobile */
+
+  /* Servicios: 1 columna, tarjetas compactas */
+  .instancias-grid { grid-template-columns: 1fr; gap: 0.875rem; margin-top: 2rem; }
+  .instancia-card { padding: 1.25rem; }
+  .instancia-card h3 { font-size: 17px; }
+  .instancia-card p { font-size: 12px; line-height: 1.6;
+    /* truncar a 3 líneas */
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+  }
+  .inst-tags { display: none; } /* quitar tags en mobile */
+
+  /* Tipos: 2 columnas */
+  .tipos-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; margin-top: 1.75rem; }
+  .tipo-card { padding: 1.25rem 1rem; }
+  .tipo-icon { width: 42px; height: 42px; font-size: 1rem; margin-bottom: 0.75rem; }
+  .tipo-card h3 { font-size: 15px; margin-bottom: 0; }
+  .tipo-card p { display: none; } /* solo título en mobile */
+
+  /* Proceso: 2 columnas */
+  .proceso-steps { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 2rem; }
   .proceso-steps::before { display: none; }
-  .faq-grid { grid-template-columns: 1fr; }
-  .contacto-grid { grid-template-columns: 1fr; }
-  .footer-inner { grid-template-columns: 1fr; gap: 0; }
-  section { padding: 3.5rem 1.25rem; }
-  .hero-inner { padding: 2.5rem 1.25rem 3rem; }
-  .hero-btns { flex-direction: column; align-items: center; }
+  .step-circle { width: 46px; height: 46px; font-size: 18px; margin-bottom: 0.875rem; }
+  .step-item h4 { font-size: 12px; }
+  .step-item p { font-size: 11px; }
+
+  /* FAQ: 1 columna */
+  .faq-grid { grid-template-columns: 1fr; gap: 0.625rem; margin-top: 1.75rem; }
+  .faq-q-text { font-size: 12px; }
+
+  /* Contacto: 1 columna, left primero */
+  .contacto-grid { grid-template-columns: 1fr; gap: 2rem; }
+
+  /* Contacto izquierda: versión simplificada */
+  .contacto-left > p { display: none; }
+  .trust-items { gap: 0.625rem; }
+  .trust-row { padding: 0.75rem; }
+  .trust-row small { display: none; }
+
+  /* Form: ajustes menores */
+  .form-card { padding: 1.5rem; }
   .frow { grid-template-columns: 1fr; }
+
+  /* WA flotante: mostrar */
   .wa-sidebar { display: block; }
+
+  /* Footer: 1 columna, columnas de links ocultas */
+  .footer-inner { grid-template-columns: 1fr; gap: 0; }
+  .footer-col { display: none; } /* ocultar columnas secundarias */
+  .footer-inner > div:first-child { padding-bottom: 1.5rem; }
+  footer { padding: 2rem 1.25rem 1.5rem; }
+  .footer-desc { max-width: 100%; }
 }
-@media (max-width: 600px) {
-  .stats-inner { grid-template-columns: repeat(2, 1fr); }
-  .intro-card-grid { grid-template-columns: 1fr; }
+
+/* Extra small: ≤ 480px */
+@media (max-width: 480px) {
+  h1.hero-title { font-size: clamp(28px, 10vw, 40px); }
+  .intro-card-grid { grid-template-columns: 1fr 1fr; }
   .tipos-grid { grid-template-columns: repeat(2, 1fr); }
+  .proceso-steps { grid-template-columns: repeat(2, 1fr); }
 }
 </style>
 </head>
@@ -962,7 +582,6 @@ footer { background: #0a1a2e; padding: 3rem 2rem 2rem; }
   <div class="header-inner">
     <a href="https://www.exigetuseguro.cl/" class="nav-logo">
       exigetuseguro<em>.cl</em>
-    
     </a>
     <nav class="nav-links">
       <a href="#servicios">Servicios</a>
@@ -970,12 +589,8 @@ footer { background: #0a1a2e; padding: 3rem 2rem 2rem; }
       <a href="#contacto">Contacto</a>
     </nav>
     <div class="nav-ctas">
-      <a href="#contacto" class="btn-outline">
-        <i class="fas fa-paper-plane"></i> Formulario
-      </a>
-      <a href="https://wa.me/56979939868" class="btn-solid" target="_blank" rel="noopener">
-        <i class="fab fa-whatsapp"></i> WhatsApp
-      </a>
+      <a href="#contacto" class="btn-outline"><i class="fas fa-paper-plane"></i> Formulario</a>
+      <a href="https://wa.me/56979939868" class="btn-solid" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp</a>
     </div>
     <button class="hamburger" onclick="toggleNav()" aria-label="Menú">
       <i class="fas fa-bars" id="hamIcon"></i>
@@ -997,20 +612,13 @@ footer { background: #0a1a2e; padding: 3rem 2rem 2rem; }
 <!-- ═══ HERO ═══ -->
 <section class="hero" id="inicio">
   <div class="hero-inner">
-    <!-- Breadcrumb estructurado -->
     <nav class="breadcrumb" aria-label="Breadcrumb">
       <a href="https://www.exigetuseguro.cl/">Inicio</a>
       <sep aria-hidden="true"><i class="fas fa-chevron-right" style="font-size:8px;"></i></sep>
       <span class="cur" aria-current="page">Abogado de Seguros</span>
     </nav>
 
-   
-
-    <!-- H1 con keyword exacta al inicio -->
-    <h1 class="hero-title">
-      Abogado de Seguros<br>
-      <em>en Chile</em>
-    </h1>
+    <h1 class="hero-title">Abogado de Seguros<br><em>en Chile</em></h1>
 
     <p class="hero-sub">
       Tu aseguradora tiene obligaciones legales. Si rechazó tu siniestro o pagó menos de lo que corresponde,
@@ -1018,7 +626,6 @@ footer { background: #0a1a2e; padding: 3rem 2rem 2rem; }
       CMF, SERNAC y tribunales de todo Chile.
     </p>
 
-    <!-- Pills SEO -->
     <div class="hero-pills" aria-hidden="true">
       <span class="pill"><i class="fas fa-check"></i> Impugnación ante aseguradora</span>
       <span class="pill"><i class="fas fa-check"></i> Representación ante la CMF</span>
@@ -1028,28 +635,20 @@ footer { background: #0a1a2e; padding: 3rem 2rem 2rem; }
     </div>
 
     <div class="hero-btns">
-      <a href="#contacto" class="btn-hero-primary">
-        <i class="fas fa-paper-plane"></i> Enviar Consulta
-      </a>
-      <a href="https://www.exigetuseguro.cl/honorarios" class="btn-hero-ghost">
-        <i class="fas fa-file-invoice-dollar"></i> Ver honorarios
-      </a>
+      <a href="#contacto" class="btn-hero-primary"><i class="fas fa-paper-plane"></i> Enviar Consulta</a>
+      <a href="https://www.exigetuseguro.cl/honorarios" class="btn-hero-ghost"><i class="fas fa-file-invoice-dollar"></i> Ver honorarios</a>
     </div>
 
     <div class="hero-trust">
       <div class="htrust-item">contacto@exigetuseguro.cl</div>
-      
       <div class="htrust-item" aria-hidden="true">·</div>
-      <div class="htrust-item"><strong>Todo Chile</strong>&nbsp;atención online</div>
-      <div class="htrust-item" aria-hidden="true">·</div>
-      
+      <div class="htrust-item"><strong>Todo Chile</strong>&nbsp;online</div>
+     
     </div>
   </div>
 </section>
 
-<!-- ═══ STATS ═══ -->
-
-<!-- ═══ INTRODUCCIÓN ═══ -->
+<!-- ═══ INTRO ═══ -->
 <section id="intro">
   <div class="sec-inner">
     <div class="intro-grid">
@@ -1060,10 +659,10 @@ footer { background: #0a1a2e; padding: 3rem 2rem 2rem; }
           Un <strong>abogado de seguros en Chile</strong> actúa cuando una compañía de seguros rechaza, reduce o demora injustamente el pago de una indemnización. Conocemos en profundidad la <strong>Ley 20.668 del Contrato de Seguros</strong>, el Código de Comercio y la normativa de la CMF para construir la defensa más sólida para tu caso.
         </p>
         <p>
-          Ya sea que enfrentes un rechazo de siniestro, un pago insuficiente, o una liquidación que no refleja el valor real de tu pérdida, nuestra representación cubre todas las instancias legales disponibles en Chile: desde la impugnación directa ante la aseguradora hasta el juicio civil ordinario.
+          Ya sea que enfrentes un rechazo de siniestro, un pago insuficiente, o una liquidación que no refleja el valor real de tu pérdida, nuestra representación cubre todas las instancias legales disponibles en Chile: desde la impugnación directa hasta el juicio civil ordinario.
         </p>
         <p>
-          Atendemos en <strong>todo Chile</strong> por videoconferencia, WhatsApp y email, sin necesidad de desplazamientos. La primera consulta es completamente gratuita.
+          Atendemos en <strong>todo Chile</strong> por videoconferencia, WhatsApp y email.
         </p>
       </div>
       <div class="intro-card-grid fade-in">
@@ -1080,17 +679,17 @@ footer { background: #0a1a2e; padding: 3rem 2rem 2rem; }
         <div class="intro-card">
           <div class="intro-card-icon"><i class="fas fa-balance-scale"></i></div>
           <h4>Representación legal</h4>
-          <p>Te representamos en todas las instancias: CMF, SERNAC, tribunales y arbitraje.</p>
+          <p>Te representamos en CMF, SERNAC, tribunales y arbitraje.</p>
         </div>
         <div class="intro-card">
           <div class="intro-card-icon"><i class="fas fa-hand-holding-usd"></i></div>
-          <h4>Honorarios transparentes</h4>
-          <p>Sin sorpresas. Conoces los costos antes de comprometerte con nuestros servicios.</p>
+          <h4>Honorarios claros</h4>
+          <p>Sin sorpresas. Conoces los costos antes de comprometerte.</p>
         </div>
         <div class="intro-card">
           <div class="intro-card-icon"><i class="fas fa-comments"></i></div>
-          <h4>Atención personalizada</h4>
-          <p>Respuesta promedio en 24 horas. Siempre hablas con el abogado a cargo.</p>
+          <h4>Atención directa</h4>
+          <p>Siempre hablas con el abogado a cargo. Respuesta en 24 horas.</p>
         </div>
         <div class="intro-card">
           <div class="intro-card-icon"><i class="fas fa-map-marked-alt"></i></div>
@@ -1102,114 +701,81 @@ footer { background: #0a1a2e; padding: 3rem 2rem 2rem; }
   </div>
 </section>
 
-<!-- ═══ SERVICIOS / INSTANCIAS ═══ -->
+<!-- ═══ SERVICIOS ═══ -->
 <section id="servicios">
   <div class="sec-inner">
     <span class="sec-tag" style="color:rgba(148,197,235,0.7);">Instancias legales</span>
     <h2 class="sec-title light fade-in">¿Dónde podemos<br><em>representarte?</em></h2>
     <p class="sec-lead fade-in" style="color:rgba(255,255,255,0.65);">
-      Como abogados especializados en seguros, actuamos en todas las instancias disponibles según la ley chilena, buscando siempre la vía más eficiente para tu caso.
+      Actuamos en todas las instancias disponibles según la ley chilena, buscando siempre la vía más eficiente para tu caso.
     </p>
-
     <div class="instancias-grid">
-
-      <!-- 1. Aseguradora -->
       <article class="instancia-card fade-in">
         <div class="inst-badge">Instancia 1 · Extrajudicial</div>
         <div class="inst-icon"><i class="fas fa-building"></i></div>
         <h3>Impugnación ante la Aseguradora</h3>
-        <p>
-          La primera línea de defensa. Presentamos un escrito formal de impugnación ante la compañía dentro del plazo legal de <strong style="color:rgba(255,255,255,0.85);">10 días hábiles</strong>, argumentando las razones jurídicas y contractuales que amparan tu derecho a la indemnización. En muchos casos, este paso resuelve el conflicto sin necesidad de juicio.
-        </p>
+        <p>La primera línea de defensa. Presentamos un escrito formal de impugnación dentro del plazo legal de <strong style="color:rgba(255,255,255,0.85);">10 días hábiles</strong>, argumentando las razones jurídicas que amparan tu derecho. En muchos casos, este paso resuelve el conflicto sin necesidad de juicio.</p>
         <div class="inst-tags">
           <span class="inst-tag">Impugnación liquidación</span>
           <span class="inst-tag">Rechazo siniestro</span>
           <span class="inst-tag">Pago insuficiente</span>
-          <span class="inst-tag">Negociación</span>
         </div>
       </article>
-
-      <!-- 2. CMF -->
       <article class="instancia-card fade-in">
         <div class="inst-badge">Instancia 2 · Administrativa</div>
         <div class="inst-icon"><i class="fas fa-landmark"></i></div>
         <h3>Representación ante la CMF</h3>
-        <p>
-          La Comisión para el Mercado Financiero es el organismo regulador de las aseguradoras en Chile. Presentamos reclamos formales ante la CMF cuando la aseguradora actúa de forma abusiva, no responde en los plazos legales o incumple normativas. La CMF puede exigir a la aseguradora reconsiderar su decisión.
-        </p>
+        <p>La Comisión para el Mercado Financiero regula a las aseguradoras. Presentamos reclamos formales cuando la aseguradora actúa de forma abusiva o no responde en los plazos legales. La CMF puede exigir reconsiderar la decisión.</p>
         <div class="inst-tags">
           <span class="inst-tag">Reclamo formal CMF</span>
           <span class="inst-tag">Infracciones normativas</span>
-          <span class="inst-tag">Medidas supervisoras</span>
         </div>
       </article>
-
-      <!-- 3. SERNAC -->
       <article class="instancia-card fade-in">
         <div class="inst-badge">Instancia 3 · Consumidor</div>
         <div class="inst-icon"><i class="fas fa-user-shield"></i></div>
         <h3>Reclamos ante el SERNAC</h3>
-        <p>
-          Como los contratos de seguros son contratos de adhesión, la <strong style="color:rgba(255,255,255,0.85);">Ley N°19.496 de Protección al Consumidor</strong> puede aplicarse. El SERNAC puede mediar entre el asegurado y la aseguradora, y sus gestiones son gratuitas y rápidas. Es una instancia complementaria muy eficaz en ciertos casos.
-        </p>
+        <p>La <strong style="color:rgba(255,255,255,0.85);">Ley N°19.496 de Protección al Consumidor</strong> puede aplicarse a los contratos de seguros. El SERNAC puede mediar de forma gratuita y rápida, complementando otras instancias.</p>
         <div class="inst-tags">
           <span class="inst-tag">Ley del Consumidor</span>
           <span class="inst-tag">Mediación gratuita</span>
-          <span class="inst-tag">Cláusulas abusivas</span>
         </div>
       </article>
-
-      <!-- 4. Policía Local -->
       <article class="instancia-card fade-in">
         <div class="inst-badge">Instancia 4 · Judicial</div>
         <div class="inst-icon"><i class="fas fa-gavel"></i></div>
         <h3>Juzgado de Policía Local</h3>
-        <p>
-          Para conflictos enmarcados en la Ley del Consumidor, el Juzgado de Policía Local tiene competencia. Es un procedimiento más rápido y accesible que el juicio civil ordinario. La Corte de Apelaciones de Santiago ha reconocido expresamente la aplicación de la Ley del Consumidor sobre contratos de seguros.
-        </p>
+        <p>Para conflictos enmarcados en la Ley del Consumidor, es un procedimiento más rápido y accesible que el juicio civil ordinario. La Corte de Apelaciones de Santiago reconoció su aplicación sobre contratos de seguros.</p>
         <div class="inst-tags">
           <span class="inst-tag">Procedimiento rápido</span>
           <span class="inst-tag">Ley 19.496</span>
-          <span class="inst-tag">Multas a aseguradora</span>
         </div>
       </article>
-
-      <!-- 5. Arbitraje -->
       <article class="instancia-card fade-in">
         <div class="inst-badge">Instancia 5 · Alternativa</div>
         <div class="inst-icon"><i class="fas fa-handshake"></i></div>
         <h3>Arbitraje de Seguros</h3>
-        <p>
-          Muchas pólizas contemplan una cláusula de arbitraje para resolver controversias. Representamos al asegurado ante el árbitro designado, sea de común acuerdo o por la CMF. Es una vía confidencial y técnica, donde la profundidad jurídica del argumento marca la diferencia.
-        </p>
+        <p>Cuando la póliza contempla cláusula de arbitraje. Representamos al asegurado ante el árbitro designado. Es confidencial y técnica — la profundidad jurídica marca la diferencia.</p>
         <div class="inst-tags">
           <span class="inst-tag">Árbitro arbitrador</span>
-          <span class="inst-tag">CMF árbitro</span>
           <span class="inst-tag">Confidencialidad</span>
         </div>
       </article>
-
-      <!-- 6. Juicio Civil -->
       <article class="instancia-card fade-in">
         <div class="inst-badge">Instancia 6 · Judicial plena</div>
         <div class="inst-icon"><i class="fas fa-university"></i></div>
         <h3>Juicio Civil Ordinario</h3>
-        <p>
-          Cuando las demás instancias no resuelven el conflicto, o cuando el monto disputado lo justifica, iniciamos una demanda en el tribunal civil competente por <strong style="color:rgba(255,255,255,0.85);">incumplimiento de contrato de seguro</strong>. Disponemos de la experiencia y estrategia probatoria para litigar con éxito ante los tribunales.
-        </p>
+        <p>Cuando las demás instancias no resuelven, o cuando el monto lo justifica. Iniciamos demanda civil por <strong style="color:rgba(255,255,255,0.85);">incumplimiento de contrato de seguro</strong>, incluyendo daño moral y lucro cesante.</p>
         <div class="inst-tags">
           <span class="inst-tag">Demanda civil</span>
-          <span class="inst-tag">Incumplimiento contrato</span>
           <span class="inst-tag">Daño moral</span>
-          <span class="inst-tag">Lucro cesante</span>
         </div>
       </article>
-
     </div>
   </div>
 </section>
 
-<!-- ═══ TIPOS DE SEGUROS ═══ -->
+<!-- ═══ TIPOS ═══ -->
 <section id="tipos">
   <div class="sec-inner">
     <span class="sec-tag fade-in">Tipos de seguros</span>
@@ -1243,12 +809,12 @@ footer { background: #0a1a2e; padding: 3rem 2rem 2rem; }
       </article>
       <article class="tipo-card fade-in">
         <div class="tipo-icon"><i class="fas fa-file-invoice-dollar"></i></div>
-        <h3>Desgravamen Hipotecario</h3>
+        <h3>Desgravamen</h3>
         <p>Coberturas asociadas a créditos hipotecarios, invalidez y fallecimiento.</p>
       </article>
       <article class="tipo-card fade-in">
         <div class="tipo-icon"><i class="fas fa-briefcase"></i></div>
-        <h3>Responsabilidad Civil</h3>
+        <h3>Resp. Civil</h3>
         <p>Pólizas D&O, RC profesional y responsabilidad civil general.</p>
       </article>
       <article class="tipo-card fade-in">
@@ -1265,7 +831,7 @@ footer { background: #0a1a2e; padding: 3rem 2rem 2rem; }
   <div class="sec-inner">
     <span class="sec-tag fade-in">¿Cómo trabajamos?</span>
     <h2 class="sec-title fade-in">Tu caso en<br><em>4 pasos</em></h2>
-    <p class="sec-lead fade-in">Un proceso claro, sin tecnicismos innecesarios y con comunicación constante.</p>
+    <p class="sec-lead fade-in">Un proceso claro, sin tecnicismos y con comunicación constante.</p>
     <div class="proceso-steps">
       <div class="step-item fade-in">
         <div class="step-circle">1</div>
@@ -1274,18 +840,18 @@ footer { background: #0a1a2e; padding: 3rem 2rem 2rem; }
       </div>
       <div class="step-item fade-in">
         <div class="step-circle">2</div>
-        <h4>Análisis de tu caso</h4>
+        <h4>Análisis</h4>
         <p>Revisamos tu póliza, carta de rechazo y documentos. Evaluamos viabilidad y estrategia.</p>
       </div>
       <div class="step-item fade-in">
         <div class="step-circle">3</div>
         <h4>Acción legal</h4>
-        <p>Actuamos en la instancia más adecuada: impugnación, CMF, SERNAC, policía local o juicio.</p>
+        <p>Actuamos en la instancia más adecuada: impugnación, CMF, SERNAC o juicio.</p>
       </div>
       <div class="step-item fade-in">
         <div class="step-circle">4</div>
         <h4>Resultado</h4>
-        <p>Seguimiento hasta obtener la indemnización que te corresponde por ley y contrato.</p>
+        <p>Seguimiento hasta obtener la indemnización que te corresponde.</p>
       </div>
     </div>
   </div>
@@ -1297,69 +863,60 @@ footer { background: #0a1a2e; padding: 3rem 2rem 2rem; }
     <span class="sec-tag fade-in">Preguntas frecuentes</span>
     <h2 class="sec-title fade-in">Lo que más<br><em>nos preguntan</em></h2>
     <div class="faq-grid">
-
-      
-
       <div class="faq-item fade-in">
         <button class="faq-btn" onclick="toggleFaq(this)">
           <span class="faq-q-text">¿Qué es la impugnación de un siniestro?</span>
           <i class="fas fa-chevron-down faq-chev"></i>
         </button>
         <div class="faq-body">
-          <p>Es el recurso formal mediante el cual objetas la resolución de la aseguradora o el informe del liquidador. Tienes 10 días hábiles desde la recepción del informe para impugnar. Un abogado prepara el escrito legal con argumentos jurídicos y contractuales.</p>
+          <p>Es el recurso formal mediante el cual objetas la resolución de la aseguradora. Tienes 10 días hábiles desde la recepción del informe. Un abogado prepara el escrito con argumentos jurídicos y contractuales sólidos.</p>
         </div>
       </div>
-
       <div class="faq-item fade-in">
         <button class="faq-btn" onclick="toggleFaq(this)">
           <span class="faq-q-text">¿Qué es la indisputabilidad en seguros de vida?</span>
           <i class="fas fa-chevron-down faq-chev"></i>
         </button>
         <div class="faq-body">
-          <p>Transcurridos 2 años desde la contratación del seguro de vida, la aseguradora pierde el derecho a rechazar un siniestro alegando omisiones en la declaración de salud, salvo dolo o fraude comprobado. Es uno de los argumentos más poderosos en casos de rechazo.</p>
+          <p>Transcurridos 2 años desde la contratación, la aseguradora pierde el derecho a rechazar alegando omisiones en la declaración de salud, salvo dolo o fraude comprobado. Uno de los argumentos más poderosos en casos de rechazo.</p>
         </div>
       </div>
-
       <div class="faq-item fade-in">
         <button class="faq-btn" onclick="toggleFaq(this)">
-          <span class="faq-q-text">¿Puedo demandar a una aseguradora por la Ley del Consumidor?</span>
+          <span class="faq-q-text">¿Puedo demandar por la Ley del Consumidor?</span>
           <i class="fas fa-chevron-down faq-chev"></i>
         </button>
         <div class="faq-body">
-          <p>Sí. La Corte de Apelaciones de Santiago reconoció en fallo del año 2019 (Rol 1722-2018) la aplicación de la Ley N°19.496 sobre contratos de seguro. Esto permite accionar ante el Juzgado de Policía Local, un procedimiento más rápido y accesible.</p>
+          <p>Sí. La Corte de Apelaciones de Santiago reconoció en fallo del año 2019 (Rol 1722-2018) la aplicación de la Ley N°19.496 sobre contratos de seguro, permitiendo accionar ante el Juzgado de Policía Local.</p>
         </div>
       </div>
-
       <div class="faq-item fade-in">
         <button class="faq-btn" onclick="toggleFaq(this)">
-          <span class="faq-q-text">¿Cuánto tiempo tengo para reclamar un seguro rechazado?</span>
+          <span class="faq-q-text">¿Cuánto tiempo tengo para reclamar?</span>
           <i class="fas fa-chevron-down faq-chev"></i>
         </button>
         <div class="faq-body">
-          <p>El plazo general de prescripción es de 4 años desde que la obligación se hizo exigible. Sin embargo, los plazos para impugnar son mucho más cortos (10 días hábiles). Es fundamental actuar rápido para no perder derechos ni evidencias clave.</p>
+          <p>El plazo general es 4 años desde que la obligación se hizo exigible. Sin embargo, para impugnar tienes solo 10 días hábiles. Actúa rápido para no perder derechos ni evidencias clave.</p>
         </div>
       </div>
-
       <div class="faq-item fade-in">
         <button class="faq-btn" onclick="toggleFaq(this)">
           <span class="faq-q-text">¿Cuánto cuesta contratar un abogado de seguros?</span>
           <i class="fas fa-chevron-down faq-chev"></i>
         </button>
         <div class="faq-body">
-          <p>La primera consulta es completamente gratuita. Trabajamos bajo honorarios fijos, cuota litis (porcentaje sobre lo recuperado) o una combinación de ambos. Antes de comprometerte conocerás exactamente los costos. Consulta nuestra guía de honorarios en exigetuseguro.cl/honorarios.</p>
+          <p>Trabajamos bajo honorarios fijos, cuota litis (porcentaje sobre lo recuperado) o combinación. Conoces los costos antes de comprometerte. Consulta exigetuseguro.cl/honorarios.</p>
         </div>
       </div>
-
       <div class="faq-item fade-in">
         <button class="faq-btn" onclick="toggleFaq(this)">
           <span class="faq-q-text">¿Atienden en todo Chile o solo en Santiago?</span>
           <i class="fas fa-chevron-down faq-chev"></i>
         </button>
         <div class="faq-body">
-          <p>Atendemos en todo Chile. Las consultas y asesorías se realizan por videoconferencia, WhatsApp o email, sin importar tu región. Contáctanos al +56 9 7993 9868 o escríbenos a contacto@exigetuseguro.cl.</p>
+          <p>Atendemos en todo Chile por videoconferencia, WhatsApp o email. Contáctanos al +56 9 7993 9868 o a contacto@exigetuseguro.cl, sin importar tu región.</p>
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -1368,56 +925,35 @@ footer { background: #0a1a2e; padding: 3rem 2rem 2rem; }
 <section id="contacto">
   <div class="sec-inner">
     <div class="contacto-grid">
-
-      <!-- Columna izquierda -->
       <div class="contacto-left fade-in">
-        <span class="sec-tag" style="color:rgba(148,197,235,0.6);">Consulta gratuita</span>
+       
         <h2>Cuéntanos<br>tu <em>caso</em></h2>
-        <p>Adjunta tu póliza o carta de rechazo y recibe orientación legal precisa. Analizamos tu situación y te indicamos los mejores pasos a seguir — sin compromiso.</p>
-
+        <p>Adjunta tu póliza o carta de rechazo y recibe orientación legal precisa. Sin compromiso.</p>
         <div class="contacto-direct-label">Contacto directo</div>
         <div class="direct-links">
-          <a href="https://wa.me/56979939868" class="direct-link wa" target="_blank" rel="noopener">
-            <i class="fab fa-whatsapp" style="color:#4abe6a;"></i> +56 9 7993 9868
-          </a>
-          <a href="mailto:contacto@exigetuseguro.cl" class="direct-link em">
-            <i class="fas fa-envelope" style="color:#93c5fd;"></i> contacto@exigetuseguro.cl
-          </a>
+          <a href="https://wa.me/56979939868" class="direct-link wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp" style="color:#4abe6a;"></i> +56 9 7993 9868</a>
+          <a href="mailto:contacto@exigetuseguro.cl" class="direct-link em"><i class="fas fa-envelope" style="color:#93c5fd;"></i> contacto@exigetuseguro.cl</a>
         </div>
-
         <div class="trust-items">
           <div class="trust-row">
             <div class="trust-icon"><i class="fas fa-lock"></i></div>
-            <div>
-              <p>Datos protegidos</p>
-              <small>Toda la información que nos envíes es estrictamente confidencial.</small>
-            </div>
+            <div><p>Datos protegidos</p><small>Información estrictamente confidencial.</small></div>
           </div>
           <div class="trust-row">
             <div class="trust-icon"><i class="fas fa-clock"></i></div>
-            <div>
-              <p>Respuesta en menos de 24 horas</p>
-              <small>Tiempo de respuesta promedio durante días hábiles.</small>
-            </div>
+            <div><p>Respuesta en menos de 24 horas</p><small>Tiempo promedio en días hábiles.</small></div>
           </div>
           <div class="trust-row">
             <div class="trust-icon"><i class="fas fa-check-circle"></i></div>
-            <div>
-              <p>Sin compromiso</p>
-              <small>La evaluación inicial no implica contratación ni obligación de ningún tipo.</small>
-            </div>
+            <div><p>Sin compromiso</p><small>La evaluación no implica contratación.</small></div>
           </div>
           <div class="trust-row">
             <div class="trust-icon"><i class="fas fa-map-marked-alt"></i></div>
-            <div>
-              <p>Atención en todo Chile</p>
-              <small>Videoconferencia, WhatsApp o email desde cualquier región del país.</small>
-            </div>
+            <div><p>Atención en todo Chile</p><small>Videoconferencia, WhatsApp o email.</small></div>
           </div>
         </div>
       </div>
 
-      <!-- Formulario -->
       <div class="fade-in">
         <div class="form-card">
           <div class="form-hdr">
@@ -1428,19 +964,10 @@ footer { background: #0a1a2e; padding: 3rem 2rem 2rem; }
             </div>
           </div>
           <form id="consultaForm" onsubmit="return enviarFormulario(event)">
-            <div class="fg">
-              <label>Nombre completo *</label>
-              <input type="text" id="nombre" class="fi" placeholder="Ej: Juan Pérez" required>
-            </div>
+            <div class="fg"><label>Nombre completo *</label><input type="text" id="nombre" class="fi" placeholder="Ej: Juan Pérez" required></div>
             <div class="frow">
-              <div class="fg">
-                <label>Email *</label>
-                <input type="email" id="email" class="fi" placeholder="correo@ejemplo.cl" required>
-              </div>
-              <div class="fg">
-                <label>Teléfono</label>
-                <input type="tel" id="telefono" class="fi" placeholder="+56 9 XXXX XXXX">
-              </div>
+              <div class="fg"><label>Email *</label><input type="email" id="email" class="fi" placeholder="correo@ejemplo.cl" required></div>
+              <div class="fg"><label>Teléfono</label><input type="tel" id="telefono" class="fi" placeholder="+56 9 XXXX XXXX"></div>
             </div>
             <div class="fg">
               <label>Tipo de seguro</label>
@@ -1469,10 +996,7 @@ footer { background: #0a1a2e; padding: 3rem 2rem 2rem; }
                 <option value="noSe">No sé, necesito orientación</option>
               </select>
             </div>
-            <div class="fg">
-              <label>Relato de los hechos *</label>
-              <textarea id="relato" class="fi" rows="4" placeholder="Describe brevemente: ¿Qué ocurrió? ¿Cuándo fue el siniestro? ¿Qué respondió la aseguradora?" required></textarea>
-            </div>
+            <div class="fg"><label>Relato de los hechos *</label><textarea id="relato" class="fi" rows="4" placeholder="¿Qué ocurrió? ¿Cuándo fue el siniestro? ¿Qué respondió la aseguradora?" required></textarea></div>
             <div class="fg">
               <label>Adjuntar documentos <span style="color:rgba(245,239,228,0.3);font-weight:300;text-transform:none;">(opcional)</span></label>
               <div class="drop-zone" onclick="document.getElementById('archivos').click()"
@@ -1481,7 +1005,7 @@ footer { background: #0a1a2e; padding: 3rem 2rem 2rem; }
                 ondrop="handleDrop(event)">
                 <i class="fas fa-cloud-upload-alt"></i>
                 <p>Arrastra o <span>selecciona archivos</span></p>
-                <small>Póliza · Carta de rechazo · Fotos · PDF, JPG, PNG, DOCX — Máx. 10 MB</small>
+                <small>Póliza · Carta de rechazo · PDF, JPG, PNG — Máx. 10 MB</small>
               </div>
               <input type="file" id="archivos" multiple accept=".pdf,.jpg,.jpeg,.png,.docx" style="display:none;" onchange="mostrarArchivos(this.files)">
               <div id="listaArchivos"></div>
@@ -1489,16 +1013,13 @@ footer { background: #0a1a2e; padding: 3rem 2rem 2rem; }
             <div class="trust-bar">
               <div class="tbar-item"><i class="fas fa-lock"></i> Datos protegidos</div>
               <div class="tbar-item"><i class="fas fa-check-circle"></i> Sin compromiso</div>
-              <div class="tbar-item"><i class="fas fa-clock"></i> Respuesta en menos de 24 horas</div>
+              <div class="tbar-item"><i class="fas fa-clock"></i> Respuesta en 24 h</div>
             </div>
-            <button type="submit" class="btn-submit" id="btnEnviar">
-              <i class="fas fa-paper-plane"></i> Enviar consulta
-            </button>
+            <button type="submit" class="btn-submit" id="btnEnviar"><i class="fas fa-paper-plane"></i> Enviar consulta</button>
             <div id="formStatus"></div>
           </form>
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -1550,25 +1071,20 @@ footer { background: #0a1a2e; padding: 3rem 2rem 2rem; }
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2026 Exige Tu Seguro — Abogados Especialistas en Seguros Chile. Todos los derechos reservados. · <a href="https://www.exigetuseguro.cl/terminos" style="color:inherit;">Términos</a> · <a href="https://www.exigetuseguro.cl/privacidad" style="color:inherit;">Privacidad</a></p>
+    <p>© 2026 Exige Tu Seguro — Abogados Especialistas en Seguros Chile. · <a href="https://www.exigetuseguro.cl/terminos" style="color:inherit;">Términos</a> · <a href="https://www.exigetuseguro.cl/privacidad" style="color:inherit;">Privacidad</a></p>
   </div>
 </footer>
 
-<!-- WA sidebar -->
+<!-- WA flotante -->
 <div class="wa-sidebar">
-  <a href="https://wa.me/56979939868?text=Hola,%20necesito%20asesor%C3%ADa%20sobre%20un%20seguro%20rechazado" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+  <a href="https://wa.me/56979939868?text=Hola,%20necesito%20asesor%C3%ADa%20sobre%20un%20seguro%20rechazado" target="_blank" rel="noopener" aria-label="WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
 </div>
 
-<!-- Imagen oculta para Google (SEO imagen) -->
-<img src="https://www.exigetuseguro.cl/og-image.jpg"
-     alt="Abogado de seguros Chile — Exige Tu Seguro. Impugnación de rechazos, CMF, SERNAC y juicios a aseguradoras."
-     width="1200" height="630" loading="lazy" style="display:none;"
-     itemprop="image">
+<img src="https://www.exigetuseguro.cl/og-image.jpg" alt="Abogado de seguros Chile — Exige Tu Seguro." width="1200" height="630" loading="lazy" style="display:none;" itemprop="image">
 
 <script>
-/* ── Nav ── */
 function toggleNav() {
   const nav = document.getElementById('mobileNav');
   const ico = document.getElementById('hamIcon');
@@ -1580,22 +1096,15 @@ function closeNav() {
   document.getElementById('mobileNav').classList.remove('active');
   document.getElementById('hamIcon').className = 'fas fa-bars';
 }
-
-/* ── Header scroll shadow ── */
 window.addEventListener('scroll', () => {
-  document.getElementById('hdr').style.boxShadow =
-    window.scrollY > 40 ? '0 2px 20px rgba(10,37,64,0.1)' : 'none';
+  document.getElementById('hdr').style.boxShadow = window.scrollY > 40 ? '0 2px 20px rgba(10,37,64,0.1)' : 'none';
 }, { passive: true });
-
-/* ── FAQ accordion ── */
 function toggleFaq(btn) {
   const body = btn.nextElementSibling;
   const chev = btn.querySelector('.faq-chev');
   const open = body.classList.toggle('open');
   chev.classList.toggle('open', open);
 }
-
-/* ── Fade-in ── */
 function initFadeIn() {
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
@@ -1605,16 +1114,12 @@ function initFadeIn() {
 }
 if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', initFadeIn); } else { initFadeIn(); }
 window.addEventListener('pageshow', e => { if (e.persisted) document.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible')); });
-
-/* ── Smooth scroll ── */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
     const t = document.querySelector(a.getAttribute('href'));
     if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); closeNav(); }
   });
 });
-
-/* ── GoFile upload ── */
 async function subirArchivo(file) {
   const sr = await fetch('https://api.gofile.io/servers');
   const sd = await sr.json();
@@ -1625,8 +1130,6 @@ async function subirArchivo(file) {
   if (d.status !== 'ok') throw new Error('Error subiendo ' + file.name);
   return `${file.name}: ${d.data.downloadPage}`;
 }
-
-/* ── Files ── */
 function mostrarArchivos(files) {
   const l = document.getElementById('listaArchivos'); l.innerHTML = '';
   Array.from(files).forEach(f => {
@@ -1639,8 +1142,6 @@ function handleDrop(e) {
   document.getElementById('archivos').files = e.dataTransfer.files;
   mostrarArchivos(e.dataTransfer.files);
 }
-
-/* ── Form submit ── */
 async function enviarFormulario(e) {
   e.preventDefault();
   const nombre = document.getElementById('nombre').value.trim();
@@ -1649,7 +1150,6 @@ async function enviarFormulario(e) {
   const btn    = document.getElementById('btnEnviar');
   const st     = document.getElementById('formStatus');
   const files  = document.getElementById('archivos').files;
-
   const show = (bg, border, color, html) => {
     st.style.cssText = `display:block;background:${bg};border:0.5px solid ${border};color:${color};border-radius:8px;padding:0.7rem 1rem;margin-top:0.75rem;`;
     st.innerHTML = html;
@@ -1659,29 +1159,26 @@ async function enviarFormulario(e) {
     return false;
   }
   btn.disabled = true; btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando…';
-
   let links = '';
   if (files.length > 0) {
     show('rgba(10,37,64,0.2)','rgba(42,82,128,0.3)','rgba(245,239,228,0.7)',`<i class="fas fa-spinner fa-spin"></i> Subiendo ${files.length} archivo(s)…`);
     try { links = (await Promise.all(Array.from(files).map(subirArchivo))).join(' | '); }
     catch {
-      show('rgba(180,30,30,0.1)','rgba(180,30,30,0.3)','#c0392b','<i class="fas fa-times-circle"></i> Error al subir archivos. Intenta de nuevo.');
-      btn.disabled = false; btn.innerHTML = '<i class="fas fa-paper-plane"></i> Enviar consulta gratuita';
+      show('rgba(180,30,30,0.1)','rgba(180,30,30,0.3)','#c0392b','<i class="fas fa-times-circle"></i> Error al subir archivos.');
+      btn.disabled = false; btn.innerHTML = '<i class="fas fa-paper-plane"></i> Enviar consulta';
       return false;
     }
   }
-
   const payload = {
     access_key: 'a718fe28-53f0-4273-8518-febe7be8489a',
-    subject:    '⚖️ Consulta Abogado de Seguros — exigetuseguro.cl/abogado-de-seguros',
-    from_name:  'exigetuseguro.cl — Abogado de Seguros',
+    subject: '⚖️ Consulta Abogado de Seguros — exigetuseguro.cl/abogado-de-seguros',
+    from_name: 'exigetuseguro.cl — Abogado de Seguros',
     nombre, email,
-    telefono:   document.getElementById('telefono').value.trim() || '—',
+    telefono: document.getElementById('telefono').value.trim() || '—',
     tipoSeguro: document.getElementById('tipoSeguro').value || '—',
-    instancia:  document.getElementById('instancia').value || '—',
+    instancia: document.getElementById('instancia').value || '—',
     relato, archivos: links || 'Sin adjuntos',
   };
-
   try {
     const res = await fetch('https://api.web3forms.com/submit', {
       method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
@@ -1696,7 +1193,7 @@ async function enviarFormulario(e) {
   } catch {
     show('rgba(180,30,30,0.1)','rgba(180,30,30,0.3)','#c0392b','<i class="fas fa-times-circle"></i> Error al enviar. Escríbenos a contacto@exigetuseguro.cl');
   }
-  btn.disabled = false; btn.innerHTML = '<i class="fas fa-paper-plane"></i> Enviar consulta gratuita';
+  btn.disabled = false; btn.innerHTML = '<i class="fas fa-paper-plane"></i> Enviar consulta';
   return false;
 }
 </script>
