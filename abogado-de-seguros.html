@@ -1,30 +1,20 @@
 <!DOCTYPE html>
 <html lang="es-CL">
+
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <meta http-equiv="content-language" content="es-CL"/>
 
-<!-- ═══════════════════════════════════════════════════════════
-     TITLE: keyword exact-match al inicio, marca al final
-═══════════════════════════════════════════════════════════ -->
-<title>Abogado de Seguros en Chile | Impugnación, CMF, SERNAC y Juicios | Exige Tu Seguro</title>
+<title>Abogado de Seguros en Chile | Impugna Rechazos, CMF y Tribunales | Exige Tu Seguro</title>
 
-<!-- ═══════════════════════════════════════════════════════════
-     META DESCRIPTION: CTA + keywords + teléfono
-═══════════════════════════════════════════════════════════ -->
-<meta name="description" content="Abogado de seguros especialista en Chile. Impugnamos rechazos ante aseguradoras, CMF, SERNAC y Juzgado de Policía Local. Seguros de vida, salud, vehículo e incendio. Primera consulta gratis. ☎️ +56 9 7993 9868"/>
-
-<!-- ═══════════════════════════════════════════════════════════
-     KEYWORDS (secundarios, sem. ayuda mínima)
-═══════════════════════════════════════════════════════════ -->
-<meta name="keywords" content="abogado de seguros, abogado seguros chile, abogado seguros santiago, impugnar rechazo seguro, reclamar seguro rechazado chile, abogado CMF seguros, abogado SERNAC seguros, abogado seguros vida, abogado seguros salud, abogado seguros vehicular, abogado seguros incendio, impugnación liquidación siniestro, demanda aseguradora chile, reclamo aseguradora chile, abogado seguros gratis consulta, exige tu seguro"/>
+<meta name="description" content="¿Tu aseguradora rechazó el siniestro o pagó menos de lo que corresponde? Abogados especialistas en seguros en Chile: impugnamos rechazos bajo la Ley 20.667, el Código de Comercio y la Ley del Consumidor. Actuamos ante aseguradoras, CMF, SERNAC y tribunales. Cuota litis disponible. Primera consulta gratis. +56 9 7993 9868"/>
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type"        content="website"/>
 <meta property="og:url"         content="https://www.exigetuseguro.cl/abogado-de-seguros"/>
-<meta property="og:title"       content="Abogado de Seguros en Chile | Exige Tu Seguro"/>
-<meta property="og:description" content="¿Tu aseguradora rechazó tu siniestro? Abogados especializados en seguros: impugnación ante aseguradoras, CMF, SERNAC y Juzgado de Policía Local. Primera consulta gratis."/>
+<meta property="og:title"       content="Abogado de Seguros Chile | Impugna Rechazos y Recupera tu Indemnización | Exige Tu Seguro"/>
+<meta property="og:description" content="Abogados especialistas en incumplimiento de contrato de seguro. Impugnamos ante aseguradoras, CMF, SERNAC y Juzgado de Policía Local bajo la Ley 20.667 y Ley 19.496. Primera consulta gratis."/>
 <meta property="og:image"       content="https://www.exigetuseguro.cl/og-image.jpg"/>
 <meta property="og:locale"      content="es_CL"/>
 <meta property="og:site_name"   content="Exige Tu Seguro"/>
@@ -33,7 +23,7 @@
 <meta name="twitter:card"        content="summary_large_image"/>
 <meta name="twitter:url"         content="https://www.exigetuseguro.cl/abogado-de-seguros"/>
 <meta name="twitter:title"       content="Abogado de Seguros Chile | Exige Tu Seguro"/>
-<meta name="twitter:description" content="Impugnamos rechazos ante aseguradoras, CMF, SERNAC y Juzgado de Policía Local. Consulta gratis. ☎ +56 9 7993 9868"/>
+<meta name="twitter:description" content="Rechazaron tu siniestro. Nosotros lo impugnamos. CMF, SERNAC y tribunales. Ley 20.667 y Ley del Consumidor. Consulta gratis. +56 9 7993 9868"/>
 <meta name="twitter:image"       content="https://www.exigetuseguro.cl/og-image.jpg"/>
 
 <!-- Geolocalización -->
@@ -47,7 +37,6 @@
 <meta name="author"        content="Santana — Exige Tu Seguro"/>
 <meta name="rating"        content="general"/>
 <meta name="revisit-after" content="7 days"/>
-<meta name="contact"       content="https://wa.me/56979939868"/>
 <meta name="theme-color"   content="#0b2545"/>
 
 <!-- Canonical -->
@@ -64,7 +53,7 @@
 <link rel="preconnect" href="https://cdnjs.cloudflare.com"/>
 <link rel="dns-prefetch" href="https://images.unsplash.com"/>
 
-<!-- Fonts — mismo sistema que index -->
+<!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
 
@@ -72,22 +61,40 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚖️</text></svg>">
 
 <!-- ═══════════════════════════════════════════════════════════
-     SCHEMA.ORG — LegalService + LocalBusiness + FAQ + Breadcrumb
+     SCHEMA 1 — WebSite (nodo raíz)
+═══════════════════════════════════════════════════════════ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://www.exigetuseguro.cl/#website",
+  "name": "Exige Tu Seguro",
+  "url": "https://www.exigetuseguro.cl",
+  "description": "Estudio jurídico especializado en litigios y representación de asegurados en Chile. Impugnación de rechazos, reclamos ante CMF y SERNAC, y demandas civiles contra aseguradoras.",
+  "inLanguage": "es-CL",
+  "publisher": {
+    "@id": "https://www.exigetuseguro.cl/#organization"
+  }
+}
+</script>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SCHEMA 2 — LegalService + LocalBusiness
 ═══════════════════════════════════════════════════════════ -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": ["LegalService", "LocalBusiness"],
+  "@id": "https://www.exigetuseguro.cl/#organization",
   "name": "Exige Tu Seguro — Abogado de Seguros Chile",
   "alternateName": ["Abogado de Seguros Chile", "exigetuseguro.cl"],
-  "description": "Estudio jurídico especializado en abogados de seguros en Chile. Impugnación de rechazos ante aseguradoras, CMF, SERNAC y Juzgado de Policía Local. Seguros de vida, salud, vehicular e incendio. Primera consulta gratuita.",
-  "@id": "https://www.exigetuseguro.cl/abogado-de-seguros",
+  "description": "Estudio jurídico especializado en abogados de seguros en Chile. Representamos asegurados en impugnación de rechazos, reclamos ante CMF y SERNAC, y juicios civiles por incumplimiento de contrato de seguro bajo la Ley 20.667 y la Ley 19.496.",
   "url": "https://www.exigetuseguro.cl/abogado-de-seguros",
   "telephone": "+56979939868",
   "email": "contacto@exigetuseguro.cl",
   "priceRange": "$$",
   "currenciesAccepted": "CLP",
-  "paymentAccepted": "Transferencia bancaria",
+  "paymentAccepted": "Transferencia bancaria, cuota litis",
   "image": "https://www.exigetuseguro.cl/og-image.jpg",
   "address": {
     "@type": "PostalAddress",
@@ -104,31 +111,55 @@
     { "@type": "Country", "name": "Chile" },
     { "@type": "State",   "name": "Región Metropolitana" }
   ],
+  "knowsAbout": [
+    "Ley 20.667 Contrato de Seguros Chile",
+    "Código de Comercio artículos 512 a 601 seguros",
+    "Ley 19.496 Protección al Consumidor Chile",
+    "Comisión para el Mercado Financiero CMF seguros",
+    "SERNAC reclamos seguros consumidores Chile",
+    "Impugnación liquidación siniestro 10 días hábiles",
+    "Indisputabilidad seguros de vida Ley 20.667",
+    "Prescripción contrato de seguro 4 años Código de Comercio artículo 541",
+    "Juzgado de Policía Local Ley del Consumidor seguros Rol 1722-2018",
+    "Arbitraje seguros árbitro arbitrador Chile",
+    "Incumplimiento contrato de seguro daño emergente lucro cesante daño moral",
+    "Derecho de seguros Chile defensa asegurados",
+    "Rechazo siniestro seguro vehicular pérdida total Chile",
+    "Rechazo siniestro seguro vida invalidez preexistencias Chile",
+    "Rechazo siniestro seguro salud oncológico hospitalización Chile"
+  ],
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "Servicios legales en seguros",
     "itemListElement": [
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Impugnación de rechazos ante aseguradoras" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Representación ante la CMF" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Reclamos ante SERNAC por seguros" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Demanda en Juzgado de Policía Local" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Arbitraje de seguros" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Juicio civil ordinario contra aseguradora" } }
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Impugnación de rechazos ante aseguradoras", "description": "Escrito legal de impugnación dentro del plazo de 10 días hábiles bajo la Ley 20.667." } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Representación ante la CMF", "description": "Reclamos formales ante la Comisión para el Mercado Financiero por infracciones de aseguradoras." } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Reclamos ante SERNAC por seguros", "description": "Acciones bajo la Ley 19.496 de Protección al Consumidor aplicada a contratos de seguro." } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Demanda en Juzgado de Policía Local", "description": "Procedimiento rápido bajo Ley 19.496 reconocido por la Corte de Apelaciones de Santiago (Rol 1722-2018)." } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Arbitraje de seguros", "description": "Representación ante árbitro arbitrador cuando la póliza contempla cláusula de arbitraje." } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Juicio civil ordinario contra aseguradora", "description": "Demanda por incumplimiento de contrato de seguro incluyendo daño emergente, daño moral y lucro cesante." } }
     ]
   },
   "founder": {
     "@type": "Person",
+    "@id": "https://www.exigetuseguro.cl/#founder",
     "name": "Santana",
-    "jobTitle": "Abogado especialista en seguros",
+    "jobTitle": "Abogado especialista en derecho de seguros",
     "alumniOf": [
       { "@type": "CollegeOrUniversity", "name": "Universidad Andrés Bello" },
       { "@type": "CollegeOrUniversity", "name": "Universidad de los Andes" }
     ],
     "hasCredential": {
       "@type": "EducationalOccupationalCredential",
-      "name": "Diplomado en Derecho de Seguros",
+      "name": "Diplomado en Derecho de Seguros — Universidad de los Andes y Escuela de Seguros de Chile",
       "credentialCategory": "diploma"
-    }
+    },
+    "knowsAbout": [
+      "Derecho de seguros Chile",
+      "Litigios contra aseguradoras",
+      "Ley 20.667",
+      "Ley 19.496 Protección al Consumidor"
+    ]
   },
   "contactPoint": [
     {
@@ -136,7 +167,13 @@
       "telephone": "+56979939868",
       "contactType": "customer service",
       "availableLanguage": "Spanish",
-      "areaServed": "CL"
+      "areaServed": "CL",
+      "hoursAvailable": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      }
     },
     {
       "@type": "ContactPoint",
@@ -154,28 +191,46 @@
 }
 </script>
 
+<!-- ═══════════════════════════════════════════════════════════
+     SCHEMA 3 — WebPage (conectado a #website y #organization)
+═══════════════════════════════════════════════════════════ -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Inicio",               "item": "https://www.exigetuseguro.cl/" },
-    { "@type": "ListItem", "position": 2, "name": "Abogado de Seguros",   "item": "https://www.exigetuseguro.cl/abogado-de-seguros" }
-  ]
+  "@type": "WebPage",
+  "@id": "https://www.exigetuseguro.cl/abogado-de-seguros#webpage",
+  "url": "https://www.exigetuseguro.cl/abogado-de-seguros",
+  "name": "Abogado de Seguros en Chile | Impugna Rechazos, CMF y Tribunales | Exige Tu Seguro",
+  "description": "Abogados especialistas en seguros en Chile. Impugnación de rechazos bajo la Ley 20.667, reclamos ante CMF y SERNAC, y juicio civil por incumplimiento de contrato de seguro.",
+  "inLanguage": "es-CL",
+  "isPartOf": { "@id": "https://www.exigetuseguro.cl/#website" },
+  "about": { "@id": "https://www.exigetuseguro.cl/#organization" },
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.exigetuseguro.cl/" },
+      { "@type": "ListItem", "position": 2, "name": "Abogado de Seguros", "item": "https://www.exigetuseguro.cl/abogado-de-seguros" }
+    ]
+  }
 }
 </script>
 
+<!-- ═══════════════════════════════════════════════════════════
+     SCHEMA 4 — FAQPage (conectada al WebPage)
+═══════════════════════════════════════════════════════════ -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "@id": "https://www.exigetuseguro.cl/abogado-de-seguros#faq",
+  "isPartOf": { "@id": "https://www.exigetuseguro.cl/abogado-de-seguros#webpage" },
   "mainEntity": [
     {
       "@type": "Question",
       "name": "¿Qué hace un abogado de seguros en Chile?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Un abogado de seguros en Chile defiende los derechos del asegurado cuando una compañía de seguros rechaza, reduce o demora injustamente el pago de una indemnización. Puede actuar impugnando la decisión directamente ante la aseguradora, presentando reclamos ante la CMF o el SERNAC, o iniciando acciones judiciales en el Juzgado de Policía Local o Tribunal Civil."
+        "text": "Un abogado de seguros en Chile defiende los derechos del asegurado cuando una compañía de seguros rechaza, reduce o demora injustamente el pago de una indemnización. Puede actuar impugnando la decisión directamente ante la aseguradora dentro del plazo de 10 días hábiles bajo la Ley 20.667, presentando reclamos ante la CMF o el SERNAC bajo la Ley 19.496, o iniciando acciones judiciales en el Juzgado de Policía Local o Tribunal Civil por incumplimiento de contrato de seguro."
       }
     },
     {
@@ -183,7 +238,7 @@
       "name": "¿Cuándo necesito un abogado para reclamar un seguro?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Necesitas un abogado de seguros cuando tu aseguradora rechaza el siniestro sin fundamento válido, cuando el monto ofrecido es inferior al que corresponde según tu póliza, cuando la compañía no responde dentro de los plazos legales, o cuando existen cláusulas que consideras abusivas. También es recomendable contar con asesoría legal antes de firmar cualquier acuerdo de liquidación."
+        "text": "Necesitas un abogado de seguros cuando tu aseguradora rechaza el siniestro sin fundamento válido, cuando el monto ofrecido es inferior al que corresponde según tu póliza, cuando la compañía no responde dentro de los plazos legales, o cuando existen cláusulas que consideras abusivas. También es indispensable contar con representación legal antes de firmar cualquier acuerdo de liquidación o finiquito, ya que una vez firmado la aseguradora considera el caso cerrado."
       }
     },
     {
@@ -191,7 +246,15 @@
       "name": "¿Qué es la impugnación de un siniestro de seguro?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "La impugnación es el recurso formal mediante el cual el asegurado objeta la resolución de la aseguradora o el informe del liquidador. En Chile, tienes 10 días hábiles desde la recepción del informe de liquidación para impugnar. Un abogado especialista prepara el escrito legal argumentando las razones jurídicas y contractuales que amparan tu derecho a la indemnización."
+        "text": "La impugnación es el recurso formal mediante el cual el asegurado objeta la resolución de la aseguradora o el informe del liquidador. En Chile, tienes 10 días hábiles desde la recepción del informe de liquidación para impugnar bajo la Ley 20.667. Un abogado especialista prepara el escrito legal argumentando las razones jurídicas y contractuales que amparan tu derecho a la indemnización completa."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué es la indisputabilidad en los seguros de vida?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La indisputabilidad es un principio establecido en la Ley 20.667 por el cual, transcurridos 2 años desde la contratación del seguro de vida, la aseguradora pierde el derecho a rechazar alegando omisiones o inexactitudes en la declaración de salud, salvo que se acredite dolo o fraude del asegurado. Es uno de los argumentos jurídicos más poderosos para revertir rechazos en seguros de vida en Chile."
       }
     },
     {
@@ -199,7 +262,7 @@
       "name": "¿Cómo reclamo ante la CMF por un seguro rechazado?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Puedes presentar un reclamo ante la Comisión para el Mercado Financiero (CMF) si tu aseguradora rechaza injustamente tu siniestro, no responde en los plazos legales (20 días hábiles) o actúa de forma abusiva. La CMF puede mediar y exigir a la aseguradora reconsiderar su decisión. Es recomendable contar con asesoría legal para preparar el reclamo correctamente."
+        "text": "Puedes presentar un reclamo ante la Comisión para el Mercado Financiero (CMF) si tu aseguradora rechaza injustamente tu siniestro, no responde en los plazos legales o actúa de forma abusiva. La CMF puede mediar y exigir a la aseguradora reconsiderar su decisión. Es recomendable contar con asesoría legal para preparar el reclamo correctamente y maximizar las posibilidades de éxito."
       }
     },
     {
@@ -207,7 +270,7 @@
       "name": "¿Puedo demandar a una aseguradora invocando la Ley del Consumidor?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sí. En Chile, la Corte de Apelaciones de Santiago ha reconocido la aplicación de la Ley N°19.496 de Protección al Consumidor sobre los contratos de seguro, cuando la aseguradora incumple los términos pactados. Esto permite accionar ante el Juzgado de Policía Local, lo que puede ser más rápido y accesible que un juicio civil ordinario."
+        "text": "Sí. En Chile, la Corte de Apelaciones de Santiago reconoció en fallo Rol 1722-2018 la aplicación de la Ley 19.496 de Protección al Consumidor sobre los contratos de seguro cuando la aseguradora incumple los términos pactados. Esto permite accionar ante el Juzgado de Policía Local, lo que es generalmente más rápido y accesible que un juicio civil ordinario."
       }
     },
     {
@@ -215,7 +278,7 @@
       "name": "¿Cuánto tiempo tengo para reclamar un seguro rechazado en Chile?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "El plazo general de prescripción para acciones derivadas de un contrato de seguro es de 4 años desde que la obligación se hizo exigible, según el Código de Comercio. Sin embargo, los plazos procesales para impugnaciones son mucho más cortos (10 días hábiles). Es fundamental actuar con rapidez para no perder derechos y evidencias."
+        "text": "El plazo general de prescripción para acciones derivadas de un contrato de seguro es de 4 años desde la ocurrencia del siniestro, según el artículo 541 del Código de Comercio. Sin embargo, el plazo para impugnar ante la aseguradora es de solo 10 días hábiles. Es fundamental actuar con rapidez para no perder derechos ni evidencias clave."
       }
     },
     {
@@ -227,25 +290,6 @@
       }
     }
   ]
-}
-</script>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Abogado de Seguros en Chile | Exige Tu Seguro",
-  "url": "https://www.exigetuseguro.cl/abogado-de-seguros",
-  "description": "Abogados especializados en seguros en Chile. Impugnación ante aseguradoras, CMF, SERNAC y Juzgado de Policía Local. Seguros de vida, salud, vehicular e incendio.",
-  "inLanguage": "es-CL",
-  "isPartOf": { "@type": "WebSite", "name": "Exige Tu Seguro", "url": "https://www.exigetuseguro.cl" },
-  "breadcrumb": {
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.exigetuseguro.cl/" },
-      { "@type": "ListItem", "position": 2, "name": "Abogado de Seguros", "item": "https://www.exigetuseguro.cl/abogado-de-seguros" }
-    ]
-  }
 }
 </script>
 
