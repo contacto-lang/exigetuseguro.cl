@@ -550,46 +550,46 @@ nav.nav-links a:hover { color: var(--navy); background: rgba(11,37,69,0.05); }
 .hero-form-card {
   background: #ffffff;
   border-radius: var(--radius);
-  padding: 1.85rem 2rem;
+  padding: 1.25rem 1.5rem;
   box-shadow: 0 20px 60px rgba(0,0,0,0.30);
 }
-.hero-form-head { margin-bottom: 1.1rem; }
+.hero-form-head { margin-bottom: 0.7rem; }
 .hero-form-head h3 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 22px; font-weight: 500; color: var(--navy); margin-bottom: 3px;
+  font-size: 19px; font-weight: 500; color: var(--navy); margin-bottom: 2px;
 }
-.hero-form-head p { font-size: 12px; color: var(--muted); }
-.hf-group { margin-bottom: 0.75rem; }
-.hf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin-bottom: 0.75rem; }
+.hero-form-head p { font-size: 11px; color: var(--muted); }
+.hf-group { margin-bottom: 0.5rem; }
+.hf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-bottom: 0.5rem; }
 .hf-input {
-  width: 100%; padding: 0.65rem 0.85rem;
+  width: 100%; padding: 0.5rem 0.8rem;
   border: 1px solid rgba(11,37,69,0.16); border-radius: 6px;
   font-family: 'Jost', sans-serif; font-size: 13px; font-weight: 300; color: var(--charcoal);
   background: #fff; outline: none; transition: border-color 0.2s;
 }
 .hf-input::placeholder { color: var(--sand); }
 .hf-input:focus { border-color: var(--terra); }
-textarea.hf-input { resize: vertical; min-height: 70px; line-height: 1.5; }
+textarea.hf-input { resize: vertical; min-height: 44px; line-height: 1.4; }
 select.hf-input { cursor: pointer; }
 .hf-dropzone {
   border: 1.5px dashed rgba(46,125,82,0.35);
-  border-radius: 9px; padding: 1rem; text-align: center;
+  border-radius: 9px; padding: 0.65rem; text-align: center;
   cursor: pointer; transition: var(--transition);
-  background: rgba(46,125,82,0.04); margin-bottom: 0.9rem;
+  background: rgba(46,125,82,0.04); margin-bottom: 0.6rem;
 }
 .hf-dropzone:hover { border-color: var(--terra); background: rgba(46,125,82,0.07); }
-.hf-dropzone i { font-size: 1.3rem; color: var(--terra); display: block; margin-bottom: 0.4rem; }
+.hf-dropzone i { font-size: 1.1rem; color: var(--terra); display: block; margin-bottom: 0.2rem; }
 .hf-dropzone p { font-size: 12px; color: var(--charcoal); font-weight: 500; margin-bottom: 2px; }
 .hf-dropzone p span { color: var(--terra); text-decoration: underline; }
 .hf-dropzone small { font-size: 10px; color: var(--muted); }
-.hero-form-card #listaArchivos { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 0.5rem; }
+.hero-form-card #listaArchivos { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 0.4rem; }
 .hero-form-card .ftag {
   display: inline-flex; align-items: center; gap: 4px;
   background: rgba(46,125,82,0.08); border: 0.5px solid rgba(46,125,82,0.2);
   color: var(--terra); padding: 3px 10px; border-radius: 20px; font-size: 11px;
 }
 .hf-submit {
-  width: 100%; padding: 0.85rem;
+  width: 100%; padding: 0.65rem;
   background: var(--terra); color: var(--white); border: none; border-radius: 6px;
   font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 500;
   letter-spacing: 0.18em; text-transform: uppercase;
@@ -599,7 +599,7 @@ select.hf-input { cursor: pointer; }
 .hf-submit:hover { background: var(--terra-d); }
 .hf-submit:disabled { opacity: 0.5; cursor: not-allowed; }
 .hero-form-card #formStatus {
-  display: none; margin-top: 0.75rem; padding: 0.65rem 0.9rem;
+  display: none; margin-top: 0.6rem; padding: 0.55rem 0.8rem;
   border-radius: 6px; font-size: 12px; text-align: center;
 }
 
@@ -1423,7 +1423,7 @@ footer { background: #0a1a2e; padding: 4rem 2rem 2rem; }
           </select>
         </div>
         <div class="hf-group">
-          <textarea id="relato" class="hf-input" rows="3" placeholder="Cuéntanos brevemente qué ocurrió *" required></textarea>
+         <textarea id="relato" class="hf-input" rows="2" placeholder="Cuéntanos brevemente qué ocurrió *" required></textarea>
         </div>
         <div class="hf-dropzone" onclick="document.getElementById('archivos').click()"
           ondragover="event.preventDefault();this.style.borderColor='var(--terra)'"
