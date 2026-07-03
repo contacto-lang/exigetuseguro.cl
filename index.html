@@ -1431,7 +1431,7 @@ footer { background: #0a1a2e; padding: 4rem 2rem 2rem; }
           ondrop="handleDrop(event)">
           <i class="fas fa-cloud-upload-alt"></i>
           <p>Arrastra o <span>selecciona archivos</span></p>
-          <small>Póliza, carta de rechazo, fotos — PDF, JPG, PNG, DOCX</small>
+          <small>Póliza, carta de rechazo, fotos — PDF, JPG, PNG, DOCX (máx. 15 MB c/u)</small>
         </div>
         <input type="file" id="archivos" multiple accept=".pdf,.jpg,.jpeg,.png,.docx" style="display:none;" onchange="mostrarArchivos(this.files)">
         <div id="listaArchivos"></div>
@@ -1536,7 +1536,7 @@ footer { background: #0a1a2e; padding: 4rem 2rem 2rem; }
             ondrop="mHandleDrop(event)">
             <div class="m-dz-icon"><i class="fas fa-cloud-upload-alt"></i></div>
             <p>Arrastra o <span>selecciona archivos</span></p>
-            <small>PDF, JPG, PNG, DOCX — Máx. 10 MB</small>
+            <small>PDF, JPG, PNG, DOCX — Máx. 15 MB</small>
           </div>
           <input type="file" id="mArchivos" multiple accept=".pdf,.jpg,.jpeg,.png,.docx" style="display:none;" onchange="mMostrarArchivos(this.files)">
           <div id="m-listaArchivos"></div>
@@ -1928,16 +1928,57 @@ window.addEventListener('pageshow', (e) => {
   }
 });
 
-/* ── GoFile upload ── */
-async function subirArchivo(file) {
-  const sr = await fetch('https://api.gofile.io/servers');
-  const sd = await sr.json();
-  const server = sd.data.servers[0].name;
-  const fd = new FormData(); fd.append('file', file);
-  const r = await fetch(`https://${server}.gofile.io/uploadFile`, { method: 'POST', body: fd });
-  const d = await r.json();
-  if (d.status !== 'ok') throw new Error('Error subiendo ' + file.name);
-  return `${file.name}: ${d.data.downloadPage}`;
+/* ── GoFile upload (mejorado: secuencial, con reintento y límite de tamaño) ── */
+const MAX_FILE_MB = 15; // ajusta según lo que permita tu plan de GoFile
+
+async function subirArchivoConReintento(file, intentos = 2) {
+  for (let i = 1; i <= intentos; i++) {
+    try {
+      const sr = await fetch('https://api.gofile.io/servers');
+      if (!sr.ok) throw new Error('No se pudo conectar al servidor de subida');
+      const sd = await sr.json();
+      const server = sd.data.servers[0].name;
+
+      const fd = new FormData();
+      fd.append('file', file);
+
+      const r = await fetch(`https://${server}.gofile.io/uploadFile`, {
+        method: 'POST',
+        body: fd
+      });
+      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+
+      const d = await r.json();
+      if (d.status !== 'ok') throw new Error('Respuesta inválida del servidor');
+
+      return `${file.name}: ${d.data.downloadPage}`;
+    } catch (err) {
+      if (i === intentos) {
+        throw new Error(`No se pudo subir "${file.name}" (${err.message})`);
+      }
+      // pequeña espera antes de reintentar
+      await new Promise(res => setTimeout(res, 800));
+    }
+  }
+}
+
+async function subirArchivosSecuencial(files, onProgress) {
+  const links = [];
+  const fileArray = Array.from(files);
+
+  // Validar tamaño antes de empezar
+  const pesados = fileArray.filter(f => f.size > MAX_FILE_MB * 1024 * 1024);
+  if (pesados.length > 0) {
+    const nombres = pesados.map(f => f.name).join(', ');
+    throw new Error(`Archivo(s) demasiado pesado(s) (máx ${MAX_FILE_MB}MB): ${nombres}`);
+  }
+
+  for (let i = 0; i < fileArray.length; i++) {
+    if (onProgress) onProgress(i + 1, fileArray.length, fileArray[i].name);
+    const link = await subirArchivoConReintento(fileArray[i]);
+    links.push(link);
+  }
+  return links;
 }
 
 /* ── Hero form (desktop) ── */
@@ -1976,11 +2017,21 @@ async function enviarFormulario(e) {
   }
   btn.disabled = true; btn.textContent = 'Enviando…';
 
-  let links = '';
+let links = '';
   if (files.length > 0) {
-    show('rgba(46,125,82,0.08)','rgba(46,125,82,0.2)','var(--terra)',`<i class="fas fa-spinner fa-spin"></i> Subiendo ${files.length} archivo(s)…`);
-    try { links = (await Promise.all(Array.from(files).map(subirArchivo))).join(' | '); }
-    catch { show('rgba(180,30,30,0.1)','rgba(180,30,30,0.3)','#c0392b','<i class="fas fa-times-circle"></i> Error al subir archivos. Intenta de nuevo.'); btn.disabled=false; btn.innerHTML='<i class="fas fa-paper-plane"></i> Enviar mi consulta gratis'; return false; }
+    try {
+      const linksArr = await subirArchivosSecuencial(files, (actual, total, nombre) => {
+        show('rgba(46,125,82,0.08)','rgba(46,125,82,0.2)','var(--terra)',
+          `<i class="fas fa-spinner fa-spin"></i> Subiendo archivo ${actual} de ${total}: ${nombre}`);
+      });
+      links = linksArr.join(' | ');
+    } catch (err) {
+      show('rgba(180,30,30,0.1)','rgba(180,30,30,0.3)','#c0392b',
+        `<i class="fas fa-times-circle"></i> ${err.message}`);
+      btn.disabled = false;
+      btn.innerHTML = '<i class="fas fa-paper-plane"></i> Enviar mi consulta gratis';
+      return false;
+    }
   }
 
   const payload = {
@@ -2033,11 +2084,19 @@ async function mEnviarFormulario(e) {
   if (!nombre || !email || !relato) { show('error','<i class="fas fa-exclamation-circle"></i> Completa los campos obligatorios (*)'); return false; }
   btn.disabled=true; btn.innerHTML='<i class="fas fa-spinner fa-spin"></i> Enviando…';
 
-  let links = '';
+ let links = '';
   if (files.length > 0) {
-    show('loading',`<i class="fas fa-spinner fa-spin"></i> Subiendo ${files.length} archivo(s)…`);
-    try { links = (await Promise.all(Array.from(files).map(subirArchivo))).join(' | '); }
-    catch { show('error','<i class="fas fa-times-circle"></i> Error al subir archivos. Intenta de nuevo.'); btn.disabled=false; btn.innerHTML='<i class="fas fa-paper-plane"></i> Enviar mi consulta gratis'; return false; }
+    try {
+      const linksArr = await subirArchivosSecuencial(files, (actual, total, nombre) => {
+        show('loading', `<i class="fas fa-spinner fa-spin"></i> Subiendo archivo ${actual} de ${total}: ${nombre}`);
+      });
+      links = linksArr.join(' | ');
+    } catch (err) {
+      show('error', `<i class="fas fa-times-circle"></i> ${err.message}`);
+      btn.disabled = false;
+      btn.innerHTML = '<i class="fas fa-paper-plane"></i> Enviar mi consulta gratis';
+      return false;
+    }
   }
 
   const payload = {
