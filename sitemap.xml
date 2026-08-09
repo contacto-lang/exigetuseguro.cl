@@ -10,6 +10,13 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+  <!-- Abogado de Seguros — Landing SEO principal -->
+  <url>
+    <loc>https://www.exigetuseguro.cl/abogado-de-seguros</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
   <!-- Página de Contacto -->
   <url>
     <loc>https://www.exigetuseguro.cl/contacto</loc>
@@ -17,81 +24,74 @@
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-  <!-- Abogado de Seguros — Landing SEO principal -->
+  <!-- Honorarios -->
   <url>
-    <loc>https://www.exigetuseguro.cl/abogado-de-seguros</loc>
-    <lastmod>2026-05-31</lastmod>
+    <loc>https://www.exigetuseguro.cl/honorarios</loc>
+    <lastmod>2026-02-12</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.95</priority>
-  </url>
-  <!-- Asistente Legal de Seguros (chatbot) -->
-  <url>
-    <loc>https://www.exigetuseguro.cl/asistente</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <!-- Asistente de Mecánica Automotriz (chatbot) -->
-  <url>
-    <loc>https://www.exigetuseguro.cl/mecanica</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <!-- ExigeRadar — Diagnóstico de Seguros y Pensiones -->
-  <url>
-    <loc>https://www.exigetuseguro.cl/radar</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <!-- Conductores de Uber, InDrive y Cabify — Seguros vehiculares -->
-  <url>
-    <loc>https://www.exigetuseguro.cl/uber-seguros</loc>
-    <lastmod>2026-05-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <!-- Conoce tu Póliza -->
   <url>
     <loc>https://www.exigetuseguro.cl/conoce-tu-poliza</loc>
     <lastmod>2026-02-12</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
-  <!-- Noticias SOAP -->
+  <!-- ExigeRadar — Diagnóstico de Seguros y Pensiones -->
   <url>
-    <loc>https://www.exigetuseguro.cl/noticias-soap</loc>
-    <lastmod>2026-02-12</lastmod>
+    <loc>https://www.exigetuseguro.cl/radar</loc>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
+  </url>
+  <!-- Asistente Legal de Seguros (chatbot) -->
+  <url>
+    <loc>https://www.exigetuseguro.cl/asistente</loc>
+    <lastmod>2026-03-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- Asistente de Mecánica Automotriz (chatbot) -->
+  <url>
+    <loc>https://www.exigetuseguro.cl/mecanica</loc>
+    <lastmod>2026-03-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- Conductores de Uber, InDrive y Cabify — Seguros vehiculares -->
+  <url>
+    <loc>https://www.exigetuseguro.cl/uber-seguros</loc>
+    <lastmod>2026-05-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <!-- Blog -->
   <url>
     <loc>https://www.exigetuseguro.cl/blog</loc>
     <lastmod>2026-02-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.6</priority>
   </url>
-  <!-- Honorarios -->
+  <!-- Noticias SOAP -->
   <url>
-    <loc>https://www.exigetuseguro.cl/honorarios</loc>
+    <loc>https://www.exigetuseguro.cl/noticias-soap</loc>
     <lastmod>2026-02-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
   <!-- Política de Privacidad -->
   <url>
     <loc>https://www.exigetuseguro.cl/privacidad</loc>
     <lastmod>2026-02-12</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
+    <priority>0.3</priority>
   </url>
   <!-- Términos y Condiciones -->
   <url>
     <loc>https://www.exigetuseguro.cl/terminos</loc>
     <lastmod>2026-02-12</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
+    <priority>0.3</priority>
   </url>
 </urlset>
