@@ -6,7 +6,7 @@ Impugna rechazos injustos de aseguradoras y representa a asegurados en seguros d
 
 ## Áreas destacadas
 - **Seguro de sismo/terremoto**: rechazos o subvaloraciones de siniestros por daños estructurales tras eventos sísmicos, viviendas y edificios.
-- **Seguros de garantía**: ejecución indebida de garantías, disputas entre garantizado/beneficiario/asegurador, incumplimiento contractual, garantías de construcción y de fiel cumplimiento.
+- **Seguros de garantía**: ejecución indebida de garantías, rechazos de pago al beneficiario, cobro de contragarantías al tomador, disputas entre garantizado/beneficiario/asegurador, incumplimiento contractual, garantías de construcción y de fiel cumplimiento. Guía legal completa en /seguro-de-garantia.
 - **Seguros de vida y salud (incluye Isapres)**, **vehiculares**, **incendio y hogar**, **desgravamen hipotecario** y **accidentes personales (SOAP)**.
 
 ## Zona de cobertura
@@ -27,6 +27,7 @@ Primera consulta gratuita y sin compromiso. Honorarios informados con transparen
 ## Páginas
 - [Inicio](https://www.exigetuseguro.cl/): resumen de servicios, formulario de consulta y agenda.
 - [Abogado de Seguros](https://www.exigetuseguro.cl/abogado-de-seguros): landing principal del servicio de impugnación de rechazos, incluye seguros de sismo y garantía.
+- [Seguro de Garantía](https://www.exigetuseguro.cl/seguro-de-garantia): guía legal completa sobre el seguro de garantía o caución en Chile: naturaleza jurídica, diferencias con la fianza, pago a primer requerimiento (arts. 582-583 Cco.), contragarantías y jurisprudencia. Cubre ambos escenarios: rechazo de pago al beneficiario y cobro de la contragarantía al tomador.
 - [Asistente Legal de Seguros](https://www.exigetuseguro.cl/asistente): chatbot de orientación legal sobre seguros.
 - [Asistente de Mecánica Automotriz](https://www.exigetuseguro.cl/mecanica): chatbot de orientación sobre seguros vehiculares/siniestros.
 - [ExigeRadar](https://www.exigetuseguro.cl/radar): diagnóstico de seguros y pensiones tras el fallecimiento de un familiar.
