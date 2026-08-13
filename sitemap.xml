@@ -45,6 +45,13 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <!-- Seguro de Responsabilidad Civil — Guía legal completa -->
+  <url>
+    <loc>https://www.exigetuseguro.cl/responsabilidad-civil</loc>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <!-- ExigeRadar — Diagnóstico de Seguros y Pensiones -->
   <url>
     <loc>https://www.exigetuseguro.cl/radar</loc>
