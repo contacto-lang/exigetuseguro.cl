@@ -101,6 +101,22 @@
         "@type": "Answer",
         "text": "El seguro de responsabilidad civil general normalmente exige daño material o corporal y opera por ocurrencia. El ciberseguro típicamente excluye el daño material o corporal, opera bajo la modalidad claims made, y cubre categorías de costo que la responsabilidad civil general no contempla, como notificación a afectados, monitoreo de crédito o extorsión cibernética."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "¿El ciberseguro cubre el fraude del CEO o las transferencias hechas tras una llamada telefónica falsa?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Depende del condicionado. Algunas pólizas cubren fondos desviados por un ataque cibernético, pero excluyen expresamente las pérdidas facilitadas por phishing o por instrucciones dadas telefónicamente o de viva voz, aunque el resultado económico sea el mismo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué pasa si no cumplí con los estándares mínimos de seguridad que exige mi póliza?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "En algunas pólizas existe una válvula de escape: puede igual cobrar si demuestra que el incumplimiento no fue por dolo ni negligencia grave, o que el incidente no fue causado ni agravado por ese incumplimiento. En otras pólizas, especialmente las de mayor envergadura, esa válvula no existe."
+      }
     }
   ]
 }
@@ -447,11 +463,21 @@ footer {
       <li><strong>Costos de monitoreo de crédito:</strong> para las personas afectadas, generalmente por 12 meses.</li>
     </ul>
 
-    <h3>Claims made: la misma lógica que en D&O</h3>
+    <h3>Claims made: la misma lógica que en D&O, con un matiz adicional</h3>
     <p>Como la mayoría de los seguros de responsabilidad civil moderna, el ciberseguro típicamente opera bajo la modalidad <strong>claims made</strong>: lo que activa la cobertura no es que el incidente haya ocurrido durante la vigencia de la póliza, sino que el reclamo se presente durante esa vigencia. La fecha de retroactividad y el período de descubrimiento son, igual que en una póliza D&amp;O, los puntos que más vale la pena revisar al contratar o cambiar de aseguradora.</p>
+    <p>En la práctica del mercado, el gatillo suele ser más específico que un simple "reclamo durante la vigencia": para las coberturas de daño propio, exige que el evento <strong>ocurra y sea descubierto</strong> por el asegurado dentro de la vigencia (o que haya ocurrido sin conocimiento previo y se descubra durante ella); para las coberturas frente a terceros, exige además que el reclamo se presente por primera vez dentro de ese mismo período.</p>
 
-    <div class="source-box">En Chile no existe una norma imperativa que exija que estos seguros operen "por ocurrencia", por lo que la cláusula claims made es en principio válida, salvo que genere un vacío de cobertura injustificado (art. 16 Ley de Protección de los Derechos del Consumidor).
+    <div class="source-box">
+      En Chile no existe una norma imperativa que exija que estos seguros operen "por ocurrencia", por lo que la cláusula claims made es en principio válida, salvo que genere un vacío de cobertura injustificado (art. 16 Ley de Protección de los Derechos del Consumidor).
     </div>
+
+    <div class="callout warn">
+      <i class="fas fa-triangle-exclamation"></i><strong>La trampa de la "serie de eventos":</strong> cuando varios incidentes derivan de la misma causa, se tratan como un solo evento a efectos de deducibles y límites —hasta ahí es razonable. Pero si el <em>primer</em> hecho de esa serie fue descubierto <strong>antes</strong> de que empezara la póliza vigente, toda la serie puede quedar excluida, incluidos los hechos posteriores ya ocurridos durante la vigencia actual. Vale la pena revisarlo especialmente al cambiar de aseguradora, cuando existe la sospecha de un problema de seguridad no resuelto del todo.
+    </div>
+
+    <h3>La ciberhigiene básica como condición de cobertura, no solo recomendación</h3>
+    <p>Es habitual que la póliza exija, como condición para que opere la cobertura, estándares mínimos de seguridad: antivirus activo y actualizado, aplicación oportuna de parches de seguridad, firewalls correctamente configurados, y respaldos periódicos de los datos. El incumplimiento de estos estándares suele estar, además, expresamente listado como una exclusión aparte —una especie de doble cerrojo sobre el mismo punto.</p>
+    <p>No todas las pólizas tratan este incumplimiento de la misma manera. En algunas, existe una <strong>válvula de escape</strong>: el asegurado puede igual cobrar si demuestra que el incumplimiento no fue por dolo ni por negligencia grave, o que el incidente concreto no fue causado ni agravado por ese incumplimiento. En otras —más frecuente en pólizas de mayor envergadura— esa válvula no existe, y el estándar exigido es más técnico y objetivo: parches aplicados dentro de un plazo pactado para vulnerabilidades formalmente publicadas y calificadas por su severidad, y respaldos con una frecuencia mínima determinada. Este es, en la práctica, uno de los puntos donde más vale la pena comparar el condicionado exacto antes de contratar.</p>
 
     <h3>Exclusiones habituales</h3>
     <ul>
@@ -459,14 +485,25 @@ footer {
       <li>Actos intencionales, criminales o fraudulentos cometidos o aprobados por un jefe superior, socio o director de la empresa.</li>
       <li>Fallas de terceros fuera del control de la empresa, como cortes de electricidad o de telecomunicaciones externas.</li>
       <li>Costos de actualizar o mejorar aplicaciones, sistemas o redes.</li>
-      <li>Transferencia electrónica de fondos propios de la empresa —corresponde a una póliza de fidelidad o crimen.</li>
+      <li>Transferencia electrónica de fondos propios de la empresa —corresponde a una póliza de fidelidad o crimen, aunque algunas pólizas de ciberseguro sí ofrecen esta cobertura como extensión (ver más abajo).</li>
+      <li>Ataques atribuibles a un estado soberano en el contexto de un conflicto bélico o de una "operación cibernética" —con mecanismos de atribución cada vez más precisos (ver más abajo).</li>
     </ul>
+
+    <h3>Fraude del gerente ("fondos desviados"): una cobertura con una exclusión que sorprende</h3>
+    <p>Algunas pólizas incluyen, como extensión opcional, cobertura por fondos transferidos fraudulentamente desde las cuentas de la empresa como consecuencia de un ataque cibernético —el clásico "fraude del CEO" o compromiso de correo corporativo. Pero conviene leer la letra chica: es habitual que esta cobertura <strong>excluya expresamente</strong> las pérdidas facilitadas por phishing o por instrucciones dadas telefónicamente o de viva voz. En otras palabras: si el fraude se concretó porque alguien llamó por teléfono haciéndose pasar por un gerente, puede quedar fuera de esta cobertura específica, aunque el resultado —la pérdida del dinero— sea idéntico a un caso que sí calificaría. Es un matiz que vale la pena revisar antes de asumir que esta extensión cubre cualquier fraude de este tipo.</p>
+
+    <h3>La exclusión de guerra cibernética: cómo se prueba, y su conexión con la Ley 21.663</h3>
+    <p>Las pólizas más sofisticadas excluyen los ataques atribuibles a un estado soberano en el marco de un conflicto, pero no dejan la atribución a la libre apreciación de la aseguradora: exigen que la pruebe dentro de un plazo acotado —en la práctica del mercado, del orden de tres meses desde que se notifica el hecho—, citando fuentes objetivas como el gobierno del país presuntamente afectado, un equipo oficial de respuesta a incidentes, o agencias de ciberseguridad reconocidas —entre las que ya se menciona expresamente a la <strong>Agencia Nacional de Ciberseguridad (ANCI)</strong>, creada por la Ley 21.663—. Si la aseguradora no logra esa prueba dentro del plazo, la exclusión pierde fuerza en la práctica. Es un ejemplo concreto de cómo la Ley 21.663 ya se está incorporando al lenguaje contractual del mercado asegurador chileno.</p>
 
     <h2>Por qué esto importa ahora: la Ley 21.719</h2>
     <p>Chile publicó en diciembre de 2024 la Ley 21.719, que moderniza por completo la protección de datos personales y <strong>entra en plena vigencia el 1 de diciembre de 2026</strong>. Crea la <strong>Agencia de Protección de Datos Personales</strong>, con facultades para fiscalizar de oficio, investigar denuncias y sancionar directamente —a diferencia del régimen actual, que dependía de que el propio afectado demandara ante tribunales.</p>
 
     <div class="callout myth">
-      <i class="fas fa-circle-exclamation"></i><strong>El mito de las 72 horas:</strong> es habitual encontrar contenido que asegura que la ley exige reportar una filtración "dentro de 72 horas", copiando el estándar del reglamento europeo (GDPR). Eso no es lo que dice el texto chileno. La Ley 21.719 exige reportar a la Agencia "por los medios más expeditos posibles y sin dilaciones indebidas" —un estándar de razonabilidad, no un número fijo de horas. En la práctica, esto no lo hace más liviano: sin un plazo numérico, la "dilación indebida" se evalúa después del hecho, comparando contra lo que habría hecho una empresa comparable. Tener un protocolo de respuesta ya diseñado es, en la práctica, la única forma de defenderse de ese cargo.
+      <i class="fas fa-circle-exclamation"></i>Es habitual encontrar contenido que asegura que la ley exige reportar una filtración "dentro de 72 horas", copiando el estándar del reglamento europeo (GDPR). Eso no es lo que dice el texto chileno. La Ley 21.719 exige reportar a la Agencia "por los medios más expeditos posibles y sin dilaciones indebidas" —un estándar de razonabilidad, no un número fijo de horas. En la práctica, esto no lo hace más liviano: sin un plazo numérico, la "dilación indebida" se evalúa después del hecho, comparando contra lo que habría hecho una empresa comparable. Tener un protocolo de respuesta ya diseñado es, en la práctica, la única forma de defenderse de ese cargo.
+    </div>
+
+    <div class="source-box">
+      <strong>Entonces, ¿de dónde sale el número "72 horas" si no es de la ley?</strong> De las propias pólizas —pero con un significado distinto. Es habitual que el condicionado defina "Gastos de Emergencia" como aquellos incurridos en las primeras 72 horas desde que se notifica el incidente a la aseguradora, para financiar la respuesta inmediata (forense, legal, relaciones públicas). Es una ventana de cobertura contractual, pensada para que la aseguradora pague la reacción urgente sin mayor trámite —no tiene relación alguna con el plazo legal de notificación a la Agencia. Confundir ambas cosas es fácil, y vale la pena no hacerlo: cumplir el plazo contractual de 72 horas no lo exime del estándar legal de "sin dilaciones indebidas", que puede exigir actuar incluso más rápido según el caso.
     </div>
 
     <p>Si la vulneración afecta datos sensibles, datos de niños menores de 14 años, o datos económicos, financieros o comerciales, la empresa además debe notificar directamente a cada titular afectado, o por un medio de alcance nacional si eso no es posible. Las infracciones se clasifican en leves, graves y gravísimas, con multas que —en los tramos revisados en ejemplos aplicados de la ley— van de alrededor de 5.000 a 10.000 UTM para las graves, con un tramo superior para las gravísimas.</p>
@@ -480,16 +517,39 @@ footer {
     </ul>
     <p>Hasta ahora, muchas empresas chilenas gestionaban el riesgo de una brecha de datos como un problema exclusivamente técnico. Con la Ley 21.719, se convierte además en un riesgo legal y financiero de dos pisos —sanción administrativa primero, exposición civil después— que un ciberseguro está diseñado específicamente para transferir. La propia regulación conecta, además, el deber de seguridad de esta ley con los estándares técnicos de la Ley 21.663, Marco de Ciberseguridad.</p>
 
+    <div class="source-box">
+      <strong>Si su empresa está en un proceso de fusión o adquisición:</strong> es habitual que estas pólizas contemplen un mecanismo de "cambio de control" muy similar al de una póliza D&amp;O —que ya explicamos en nuestra <a href="https://www.exigetuseguro.cl/seguro-do" style="color:var(--terra);">guía de seguro D&amp;O</a>—. La cobertura de la empresa adquirida o fusionada suele quedar congelada para hechos anteriores al cambio, y la incorporación de nuevas filiales al mismo límite de póliza normalmente solo opera en automático si están por debajo de ciertos umbrales de tamaño; por encima de ellos, requiere el consentimiento expreso de la aseguradora y el pago de una prima adicional.
+    </div>
+
     <h2>Cómo opera el seguro en la práctica ante un incidente</h2>
     <p>Una característica central de este tipo de póliza es que está pensada para activarse desde el momento mismo en que ocurre el incidente, no solo al final del proceso:</p>
     <ol>
       <li>La empresa asegurada activa un <strong>sistema de gestión de crisis</strong> apenas toma conocimiento de un evento cubierto.</li>
-      <li>Entra en acción un <strong>gestor de crisis</strong> que coordina las medidas inmediatas —contención, investigación forense, notificación— y activa los equipos necesarios para ejecutar las coberturas de remediación.</li>
-      <li>En paralelo, se realiza la <strong>liquidación del siniestro</strong> para determinar la cobertura y el monto de la pérdida, conforme a las reglas generales vigentes en Chile.</li>
+      <li>Entra en acción un <strong>gestor o coordinador de incidencias</strong> —un rol que en las pólizas más sofisticadas incluye un panel de expertos forenses, legales y de relaciones públicas ya pre-acordados con la aseguradora— que coordina las medidas inmediatas y activa los equipos necesarios para ejecutar las coberturas de remediación. Usar ese panel suele evitar el trámite de pedir autorización previa para cada gasto; elegir asesores propios, en cambio, normalmente sí la requiere.</li>
+      <li>En paralelo, se realiza la <strong>liquidación del siniestro</strong> para determinar la cobertura y el monto de la pérdida, conforme a las reglas generales vigentes en Chile —incluido el plazo de pago del Decreto Supremo N° 1.055 una vez acordada la indemnización.</li>
     </ol>
     <p>En un incidente de ransomware o de filtración masiva, las primeras horas son las que determinan el costo final. Esa es la diferencia entre un ciberseguro bien contratado y simplemente "tener un seguro más".</p>
 
-    
+    <div class="callout warn">
+      <i class="fas fa-user-shield"></i><strong>Reportar un incidente falso o exagerado tiene el mismo costo que en cualquier otro seguro.</strong> Si la aseguradora acredita que la notificación fue, en todo o en parte, falsa o fraudulenta, no solo se excluye esa pérdida: puede excluirse todo el evento relacionado, y lo ya pagado debe devolverse de inmediato. Es, en esencia, la misma lógica del artículo 539 del Código de Comercio que explicamos en la guía de <a href="https://www.exigetuseguro.cl/reticencia-declaracion-riesgo" style="color:var(--terra);">reticencia y declaración del riesgo</a>, aplicada al momento del siniestro cibernético.
+    </div>
+
+    <h3>Casos que han hecho noticia en Chile</h3>
+    <p>Chile no ha sido ajeno a incidentes de gran escala: el ataque de ransomware que en 2020 obligó a BancoEstado a cerrar sucursales, o los ciberataques masivos como WannaCry, que en su momento afectaron a empresas y servicios en decenas de países incluido Chile, muestran que el riesgo no es hipotético. Directorios de empresas chilenas han identificado públicamente los ciberataques como uno de los mayores riesgos que enfrentan sus compañías.</p>
+
+    <h2>Preguntas frecuentes</h2>
+    <h3>¿Mi empresa necesita un ciberseguro si no es una empresa tecnológica?</h3>
+    <p>Sí. La Ley 21.719 aplica a toda organización que trate datos personales, sin importar su tamaño o rubro, lo que incluye datos de trabajadores, clientes, proveedores y postulantes a empleo.</p>
+    <h3>¿El ciberseguro cubre el pago de un rescate de ransomware?</h3>
+    <p>Puede cubrir los costos de extorsión cibernética como parte de los costos de remediación, típicamente sujeto a que la empresa obtenga el consentimiento previo de la aseguradora antes de pagar.</p>
+    <h3>¿La Ley 21.719 exige reportar una filtración de datos dentro de 72 horas?</h3>
+    <p>No. A diferencia del reglamento europeo (GDPR), la Ley 21.719 no fija un plazo fijo en horas. Exige reportar a la Agencia por los medios más expeditos posibles y sin dilaciones indebidas, un estándar de razonabilidad evaluado caso a caso.</p>
+    <h3>¿Qué diferencia hay entre un seguro de responsabilidad civil general y un ciberseguro?</h3>
+    <p>La responsabilidad civil general normalmente exige daño material o corporal y opera por ocurrencia. El ciberseguro típicamente excluye el daño material o corporal, opera bajo la modalidad claims made, y cubre categorías de costo que la responsabilidad civil general no contempla.</p>
+    <h3>¿El ciberseguro cubre el fraude del CEO o transferencias hechas tras una llamada telefónica falsa?</h3>
+    <p>Depende del condicionado. Algunas pólizas cubren fondos desviados por un ataque cibernético, pero excluyen expresamente las pérdidas facilitadas por phishing o por instrucciones dadas telefónicamente o de viva voz, aunque el resultado económico sea el mismo.</p>
+    <h3>¿Qué pasa si no cumplí con los estándares mínimos de seguridad que exige mi póliza?</h3>
+    <p>En algunas pólizas existe una válvula de escape: puede igual cobrar si demuestra que el incumplimiento no fue por dolo ni negligencia grave, o que el incidente no fue causado ni agravado por ese incumplimiento. En otras, especialmente las de mayor envergadura, esa válvula no existe.</p>
 
     <div class="callout">
       <i class="fas fa-scale-balanced"></i><strong>Este contenido es informativo</strong> y no constituye asesoría legal para un caso concreto. La forma en que se aplican estas reglas depende del condicionado específico de cada póliza y de los hechos del incidente —por lo que cualquier decisión relevante debe evaluarse con un abogado.
@@ -510,6 +570,7 @@ footer {
 
   <div class="related">
     <h4>Contenido relacionado</h4>
+    <a href="https://www.exigetuseguro.cl/ciberseguro-personal">Ciberseguro Personal</a>
     <a href="https://www.exigetuseguro.cl/seguro-do">Seguro D&amp;O</a>
     <a href="https://www.exigetuseguro.cl/responsabilidad-civil">Responsabilidad Civil</a>
     <a href="https://www.exigetuseguro.cl/conoce-tu-poliza">Conoce tu Póliza</a>
