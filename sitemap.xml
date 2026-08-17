@@ -52,6 +52,48 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <!-- Seguro de Vida — Guía legal completa -->
+  <url>
+    <loc>https://www.exigetuseguro.cl/seguro-de-vida</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Seguro D&O — Guía legal completa -->
+  <url>
+    <loc>https://www.exigetuseguro.cl/seguro-do</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Ciberseguro — Guía legal completa -->
+  <url>
+    <loc>https://www.exigetuseguro.cl/ciberseguro</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Ley 21.719 — Protección de Datos Personales -->
+  <url>
+    <loc>https://www.exigetuseguro.cl/ley-21719-proteccion-datos-personales</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Reticencia y Declaración del Riesgo — Guía legal -->
+  <url>
+    <loc>https://www.exigetuseguro.cl/reticencia-declaracion-riesgo</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- Regla Proporcional e Infraseguro — Guía legal -->
+  <url>
+    <loc>https://www.exigetuseguro.cl/regla-proporcional-infraseguro</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
   <!-- ExigeRadar — Diagnóstico de Seguros y Pensiones -->
   <url>
     <loc>https://www.exigetuseguro.cl/radar</loc>
