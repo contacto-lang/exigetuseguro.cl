@@ -80,6 +80,13 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <!-- Ley 21.663 — Marco de Ciberseguridad -->
+  <url>
+    <loc>https://www.exigetuseguro.cl/ley-21663-marco-ciberseguridad</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <!-- Reticencia y Declaración del Riesgo — Guía legal -->
   <url>
     <loc>https://www.exigetuseguro.cl/reticencia-declaracion-riesgo</loc>
