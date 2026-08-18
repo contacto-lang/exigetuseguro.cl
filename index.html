@@ -474,7 +474,7 @@ nav.nav-links a:hover { color: var(--navy); background: rgba(11,37,69,0.05); }
 .hero {
   min-height: 100vh;
   background: linear-gradient(135deg, rgba(0,0,0,0.62) 0%, rgba(10,37,64,0.38) 100%),
-              url('https://images.pexels.com/photos/8112203/pexels-photo-8112203.jpeg') center/cover;
+              url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=870&auto=format&fit=crop') center/cover;
   display: flex; align-items: center;
   position: relative; overflow: hidden;
   padding-top: 65px;
@@ -1302,6 +1302,7 @@ footer { background: #0a1a2e; padding: 4rem 2rem 2rem; }
     line-height: 1.4;
   }
 }
+
 .hero-bg{ display: none; }
 
 /* MOBILE — otra foto de portada, solo bajo 968px */
@@ -1350,7 +1351,7 @@ footer { background: #0a1a2e; padding: 4rem 2rem 2rem; }
 
   /* estatua — a sangre, con zoom lento y bordes disueltos */
   .hb-statue{
-    position: absolute; left:8%; top:-18%; width:84%; height:136%;
+    position: absolute; left:19%; top:-18%; width:62%; height:136%;
     object-fit: cover; object-position: 50% 72%; transform-origin: 50% 72%;
     filter: contrast(1.04) saturate(1) brightness(1.03);
     -webkit-mask-image: radial-gradient(58% 88% at 50% 66%, #000 30%,
@@ -1408,8 +1409,8 @@ footer { background: #0a1a2e; padding: 4rem 2rem 2rem; }
     50%{transform:translate3d(-6%,-6%,0) scale(1.28) rotate(6deg);opacity:.6} }
   @keyframes hb-breathe{ 0%,100%{opacity:.32;transform:scale(1)}
     50%{opacity:.62;transform:scale(1.05)} }
-  @keyframes hb-ken{ 0%{transform:scale(1.02) translate3d(0,0,0)}
-    100%{transform:scale(1.26) translate3d(-3%,-4%,0)} }
+  @keyframes hb-ken{ 0%{transform:scale(1) translate3d(0,0,0)}
+    100%{transform:scale(1.12) translate3d(-2%,-3%,0)} }
   @keyframes hb-rise{ 0%{transform:translate3d(0,0,0);opacity:0} 20%{opacity:1}
     80%{opacity:.7} 100%{transform:translate3d(-30px,-340px,0);opacity:0} }
   @keyframes hb-haze{ 0%,100%{transform:scale(1);opacity:.8}
@@ -1482,7 +1483,6 @@ footer { background: #0a1a2e; padding: 4rem 2rem 2rem; }
 
 <!-- HERO -->
 <section class="hero" id="hero">
-
 <div class="hero-bg" aria-hidden="true">
   <span class="hb-fog hb-f1"></span>
   <span class="hb-fog hb-f2"></span>
@@ -1501,6 +1501,7 @@ footer { background: #0a1a2e; padding: 4rem 2rem 2rem; }
   <span class="hb-scrim-r"></span>
   <span class="hb-vig"></span>
 </div>
+
   <div class="hero-inner">
     <div class="hero-content">
     
