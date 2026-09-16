@@ -1230,6 +1230,69 @@ footer { background: #0a1a2e; padding: 4rem 2rem 2rem; }
 .fade-in.visible { opacity: 1; transform: translateY(0); }
 
 /* ═══════════════════════════════════════════
+   FAQ
+═══════════════════════════════════════════ */
+
+
+#faq { background: var(--cream); }
+ 
+#faq .sec-inner { max-width: 820px; }
+ 
+.faq-list {
+  margin-top: 2.5rem;
+  border-top: 0.5px solid var(--border-n);
+}
+ 
+.faq-item {
+  border-bottom: 0.5px solid var(--border-n);
+}
+ 
+.faq-item summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  padding: 1.15rem 0.25rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--charcoal);
+  line-height: 1.35;
+  transition: color 0.2s;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary:hover { color: var(--terra); }
+ 
+/* Signo + que rota a × al abrir */
+.faq-item summary::after {
+  content: '+';
+  font-family: 'Jost', sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  color: var(--terra);
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+  line-height: 1;
+}
+.faq-item[open] summary::after { transform: rotate(45deg); }
+.faq-item[open] summary { color: var(--terra); }
+ 
+.faq-item .faq-a {
+  font-size: 13.5px;
+  font-weight: 300;
+  color: var(--muted);
+  line-height: 1.85;
+  padding: 0 2.5rem 1.4rem 0.25rem;
+}
+ 
+@media (max-width: 968px) {
+  .faq-item summary { font-size: 16.5px; padding: 1rem 0.25rem; }
+  .faq-item .faq-a { font-size: 13px; padding-right: 1.5rem; }
+}
+
+/* ═══════════════════════════════════════════
    RESPONSIVE
 ═══════════════════════════════════════════ */
 @media (max-width: 968px) {
@@ -1643,6 +1706,65 @@ footer { background: #0a1a2e; padding: 4rem 2rem 2rem; }
     </div>
   </div>
 </section>
+
+<!-- PREGUNTAS FRECUENTES -->
+<section id="faq">
+  <div class="sec-inner">
+    <span class="sec-tag fade-in">Preguntas frecuentes</span>
+    <h2 class="sec-title fade-in">Dudas <em>comunes</em></h2>
+    <p class="sec-lead fade-in">Lo que más nos preguntan antes de iniciar un caso.</p>
+ 
+    <div class="faq-list fade-in">
+ 
+      <details class="faq-item">
+        <summary>¿Qué hacer si mi aseguradora rechaza mi reclamo en Chile?</summary>
+        <p class="faq-a">Tienes varias alternativas legales: impugnar el rechazo directamente ante la aseguradora con un escrito formal, presentar un reclamo ante la Comisión para el Mercado Financiero (CMF), iniciar un arbitraje o una demanda judicial. Analizamos tu caso gratuitamente y te orientamos sobre la mejor estrategia.</p>
+      </details>
+ 
+      <details class="faq-item">
+        <summary>¿Cuánto cuesta contratar un abogado de seguros en Chile?</summary>
+        <p class="faq-a">La primera consulta es completamente gratuita y sin compromiso. Los honorarios por representación legal dependen del tipo de caso, la complejidad y el monto involucrado. Antes de comprometerse, el cliente conoce exactamente los costos y condiciones.</p>
+      </details>
+ 
+      <details class="faq-item">
+        <summary>¿Qué es la indisputabilidad en seguros y cómo me protege?</summary>
+        <p class="faq-a">Es un principio del derecho de seguros chileno establecido en el Código de Comercio. Transcurridos 2 años desde la contratación del seguro de vida, la aseguradora pierde el derecho a anular la póliza alegando omisiones o inexactitudes en la declaración de salud, salvo que exista dolo o fraude comprobado.</p>
+      </details>
+ 
+      <details class="faq-item">
+        <summary>¿Puedo subir mi póliza de seguro para que la analicen?</summary>
+        <p class="faq-a">Sí. Puedes enviarnos tu póliza, carta de rechazo o cualquier documento relacionado con tu siniestro a través de nuestro formulario web. Analizamos tus documentos e identificamos coberturas que te corresponden, cláusulas abusivas y las mejores opciones legales. El análisis inicial es gratuito.</p>
+      </details>
+ 
+      <details class="faq-item">
+        <summary>¿Qué documentos necesito para impugnar un rechazo?</summary>
+        <p class="faq-a">La póliza vigente o su certificado de cobertura, la carta de rechazo emitida por la aseguradora, los documentos que acrediten el siniestro (informes médicos, parte policial, peritajes, fotografías, facturas) y toda comunicación escrita con la aseguradora.</p>
+      </details>
+ 
+      <details class="faq-item">
+        <summary>¿Qué es la CMF y cómo puede ayudarme con mi seguro?</summary>
+        <p class="faq-a">La Comisión para el Mercado Financiero es el organismo regulador y supervisor de las compañías de seguros en Chile. Puedes presentar un reclamo formal si tu aseguradora rechaza injustamente tu siniestro, no responde en los plazos legales o actúa de forma abusiva. Es recomendable contar con asesoría legal especializada durante el proceso.</p>
+      </details>
+ 
+      <details class="faq-item">
+        <summary>¿Cuánto tiempo tengo para reclamar un seguro rechazado?</summary>
+        <p class="faq-a">El plazo general de prescripción para acciones derivadas de un contrato de seguro es de 4 años desde que la obligación se hizo exigible, según el Código de Comercio. Puede variar según el tipo de seguro y las condiciones de la póliza. Mientras más tiempo pase, más difícil es reunir pruebas y construir una defensa sólida.</p>
+      </details>
+ 
+      <details class="faq-item">
+        <summary>¿Atienden casos en todo Chile o solo en Santiago?</summary>
+        <p class="faq-a">Atendemos casos en todo Chile. No contamos con oficina de atención presencial: las consultas y asesorías se realizan por videoconferencia, WhatsApp o email, por lo que no importa en qué región te encuentres.</p>
+      </details>
+ 
+      <details class="faq-item">
+        <summary>¿Qué tipos de seguros defienden?</summary>
+        <p class="faq-a">Seguros de vida, de salud y coberturas complementarias de Isapres, vehiculares (todo riesgo y terceros), de incendio y sismo, de hogar, de desgravamen hipotecario y de accidentes personales. Si tu aseguradora rechazó tu reclamo en cualquiera de estas categorías, podemos ayudarte.</p>
+      </details>
+ 
+    </div>
+  </div>
+</section>
+ 
 
 <!-- NOSOTROS -->
 <section id="nosotros">
