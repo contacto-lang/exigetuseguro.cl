@@ -2107,6 +2107,13 @@ async function subirArchivosSecuencial(files, onProgress) {
   }
   return links;
 }
+  /* ── Código único para el asunto del correo ── */
+function generarCodigoConsulta() {
+  const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'; // sin 0/O/1/I para evitar confusiones
+  const arr = new Uint8Array(5);
+  crypto.getRandomValues(arr);
+  return Array.from(arr, n => chars[n % chars.length]).join('');
+}
 
 /* ── Hero form (desktop) ── */
 function mostrarArchivos(files) {
@@ -2163,7 +2170,7 @@ let links = '';
 
   const payload = {
 access_key: 'a718fe28-53f0-4273-8518-febe7be8489a',
-  subject:    '💼 Consulta — exigetuseguro.cl',
+  subject: `💼 Consulta #${generarCodigoConsulta()} — exigetuseguro.cl`,
   from_name:  'exigetuseguro.cl',
     nombre, email,
     telefono: document.getElementById('telefono').value.trim() || '—',
@@ -2228,7 +2235,7 @@ async function mEnviarFormulario(e) {
 
   const payload = {
 access_key: 'a718fe28-53f0-4273-8518-febe7be8489a',
-  subject:    '💼 Consulta — exigetuseguro.cl',
+  subject: `💼 Consulta #${generarCodigoConsulta()} — exigetuseguro.cl`,
   from_name:  'exigetuseguro.cl',
     nombre, email,
     telefono: document.getElementById('mTelefono').value.trim() || '—',
