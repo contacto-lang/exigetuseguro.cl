@@ -1,0 +1,7 @@
+# Archivos del repositorio que Cloudflare no debe publicar en el sitio
+.github
+herramientas
+README.md
+wrangler.jsonc
+.gitignore
+.assetsignore
