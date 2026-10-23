@@ -1,0 +1,100 @@
+# Actualiza el buscador de sentencias (exigetuseguro.cl/sentencias/) todos los días.
+#
+# 1. Revisa el listado de la CMF y descarga solo los documentos nuevos (OCR si vienen escaneados).
+# 2. Guarda los textos originales en el repositorio PRIVADO contacto-lang/sentencias-datos.
+# 3. Clasifica, vincula instancias, oculta los datos personales y regenera sentencias/datos/.
+# 4. Abre (o actualiza) un Pull Request con los cambios para revisarlos antes de publicar.
+#
+# Requisitos (una sola vez):
+#   - Repositorio privado contacto-lang/sentencias-datos con la semilla de datos.
+#   - Secreto DATOS_TOKEN: token de GitHub con permiso de lectura y escritura sobre ese repositorio.
+#   - Settings > Actions > General > "Allow GitHub Actions to create and approve pull requests".
+name: Sentencias CMF
+
+on:
+  schedule:
+    - cron: "17 12 * * *"   # todos los días, 09:17 hora de Chile (UTC-3)
+  workflow_dispatch:
+    inputs:
+      reocr:
+        description: "Documentos a los que repetir el OCR, separados por espacio (ej. 22_3_1 45_3_1)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: sentencias-cmf
+  cancel-in-progress: false
+
+jobs:
+  actualizar:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    steps:
+      - name: Código del sitio
+        uses: actions/checkout@v4.2.2
+
+      - name: Datos privados
+        uses: actions/checkout@v4.2.2
+        with:
+          repository: contacto-lang/sentencias-datos
+          token: ${{ secrets.DATOS_TOKEN }}
+          path: datos-privados
+
+      - uses: actions/setup-python@v5.3.0
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: herramientas/sentencias/requirements.txt
+
+      - name: Instalar OCR (Tesseract en español)
+        run: sudo apt-get update -q && sudo apt-get install -y -q tesseract-ocr tesseract-ocr-spa poppler-utils
+
+      - name: Instalar dependencias
+        run: pip install -r herramientas/sentencias/requirements.txt
+
+      - name: Revisar la CMF y descargar sentencias nuevas
+        env:
+          REOCR: ${{ github.event.inputs.reocr }}
+        run: |
+          if [ -n "$REOCR" ]; then
+            python herramientas/sentencias/cmf.py --datos datos-privados --reocr $REOCR
+          else
+            python herramientas/sentencias/cmf.py --datos datos-privados
+          fi
+
+      - name: Guardar datos privados
+        working-directory: datos-privados
+        run: |
+          git config user.name "exigetuseguro-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Sin cambios en los datos privados."
+          else
+            git commit -m "Sentencias CMF: actualización $(date -u +%Y-%m-%d)"
+            git push
+          fi
+
+      - name: Procesar, anonimizar y generar los datos públicos
+        run: python herramientas/sentencias/ejecutar.py --datos datos-privados --salida sentencias/datos
+
+      - name: Abrir Pull Request con la actualización
+        uses: peter-evans/create-pull-request@v7.0.5
+        with:
+          branch: sentencias/actualizacion-diaria
+          delete-branch: true
+          add-paths: sentencias/datos
+          commit-message: "Sentencias: actualización automática desde la CMF"
+          title: "Sentencias: actualización automática desde la CMF"
+          body: |
+            Actualización automática del buscador de sentencias.
+
+            Revisa los cambios y aprueba para publicar en exigetuseguro.cl/sentencias/.
+            Los textos ya vienen con los datos personales ocultos (el flujo se detiene si queda algún RUT visible).
+
+            Detalle de la corrida: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          labels: sentencias

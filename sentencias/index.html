@@ -1,0 +1,626 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Jurisprudencia de Seguros en Chile | Buscador de Sentencias | Exige Tu Seguro</title>
+<meta name="description" content="Buscador gratuito de sentencias sobre seguros en Chile: más de 800 fallos de juzgados civiles, policía local, árbitros, Cortes de Apelaciones y Corte Suprema, con su trayectoria entre instancias, temas, normas citadas y resultado.">
+<link rel="canonical" href="https://www.exigetuseguro.cl/sentencias/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Jurisprudencia de Seguros en Chile | Exige Tu Seguro">
+<meta property="og:description" content="Sentencias sobre seguros en Chile, ordenadas por expediente, ramo, tema jurídico y resultado.">
+<meta property="og:url" content="https://www.exigetuseguro.cl/sentencias/">
+<meta property="og:locale" content="es_CL">
+<meta property="og:site_name" content="Exige Tu Seguro">
+<meta name="theme-color" content="#0b2545">
+<link rel="icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@400;500;600&family=Literata:opsz,wght@7..72,400;7..72,600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: barra superior con pestañas; en "Sentencias" tres columnas (filtros · resultados · lector), que se apilan en pantallas angostas. */
+:root{
+  --bg:#f8fafd; --surface:#ffffff; --surface-2:#eef3fa; --ink:#152030; --ink-2:#465266; --muted:#6f7a8c; --line:#dbe0e8;
+  --accent:#1e5c99; --accent-ink:#ffffff; --accent-soft:#e8f1fa; --navy:#0b2545; --navy-ink:#ffffff; --mark:#fbe38a; --mark-ink:#152030;
+  --pos:#1c5cab; --mid:#86b6ef; --neg:#eb6834; --neu:#b9c0cb;
+  --f-display:"Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --f-read:"Literata", Georgia, "Times New Roman", serif;
+  --f-ui:"Jost", "Segoe UI", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+  --r:6px;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#0f141b; --surface:#161e28; --surface-2:#1c2632; --ink:#e7ebf1; --ink-2:#b2bccb; --muted:#8792a3; --line:#2a3544;
+  --accent:#8fb2e6; --accent-ink:#0f141b; --accent-soft:#1f2d42; --mark:#7a6218; --mark-ink:#fff6d6;
+  --pos:#5598e7; --mid:#256abf; --neg:#d95926; --neu:#4a5566; color-scheme:dark }}
+:root[data-theme="dark"]{
+  --bg:#0f141b; --surface:#161e28; --surface-2:#1c2632; --ink:#e7ebf1; --ink-2:#b2bccb; --muted:#8792a3; --line:#2a3544;
+  --accent:#8fb2e6; --accent-ink:#0f141b; --accent-soft:#1f2d42; --mark:#7a6218; --mark-ink:#fff6d6;
+  --pos:#5598e7; --mid:#256abf; --neg:#d95926; --neu:#4a5566; color-scheme:dark }
+*{box-sizing:border-box}
+html,body{height:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-ui);font-size:14px;line-height:1.45}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--navy)}
+html,body{margin:0}
+.site{display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:13px}
+.site a{color:var(--navy-ink);text-decoration:none;opacity:.85}
+.site a:hover{opacity:1;text-decoration:underline}
+.site .logo{font-family:var(--f-display);font-size:18px;font-weight:700;opacity:1;letter-spacing:.01em}
+.site nav{display:flex;gap:14px;flex-wrap:wrap}
+footer.pie{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:24px 40px;border-top:1px solid var(--line);color:var(--muted);font-size:12.5px;line-height:1.6}
+footer.pie a{color:var(--accent)}
+button,input,select{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.mono{font-family:var(--f-mono);font-size:.92em}
+/* top bar */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--navy);color:var(--navy-ink);border-bottom:1px solid var(--navy);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:10px 0}
+.brand{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.brand h1{font-family:var(--f-display);font-weight:700;font-size:27px;margin:4px 0 0;letter-spacing:.005em}
+.brand .sub{color:var(--navy-ink);opacity:.75;font-size:13px}
+nav.tabs{display:flex;gap:4px;margin-top:6px;overflow-x:auto}
+nav.tabs button{background:none;border:0;border-bottom:2px solid transparent;padding:8px 10px;color:var(--navy-ink);opacity:.75;font-weight:500;white-space:nowrap}
+nav.tabs button[aria-selected="true"]{opacity:1;border-bottom-color:#8fb8e6}
+main{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:14px 40px}
+/* search row */
+.searchrow{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:12px}
+.searchbox{flex:1 1 320px;min-width:0;display:flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:0 10px}
+.searchbox input{flex:1;min-width:0;border:0;background:transparent;padding:10px 0;outline:none;font-size:15px}
+.searchbox:focus-within{border-color:var(--accent)}
+.chk{display:flex;align-items:center;gap:6px;color:var(--ink-2);font-size:13px;white-space:nowrap}
+.btn{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:8px 12px;font-weight:600;color:var(--ink-2)}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.loadnote{font-size:12px;color:var(--muted)}
+/* explorer grid */
+.explore{display:grid;grid-template-columns:250px minmax(0,1fr) minmax(0,1.35fr);gap:14px;align-items:start}
+aside.filters{position:sticky;top:calc(env(safe-area-inset-top,0px) + 96px);max-height:calc(100vh - 110px);overflow:auto;padding-right:4px}
+.fgroup{border-top:1px solid var(--line);padding:10px 0}
+.fgroup h3{margin:0 0 6px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700;display:flex;justify-content:space-between;align-items:center}
+.fgroup h3 button{background:none;border:0;color:var(--accent);font-size:11px;letter-spacing:0;text-transform:none;padding:0}
+.fopt{display:flex;align-items:flex-start;gap:7px;padding:3px 0;font-size:13px;color:var(--ink);cursor:pointer}
+.fopt input{margin-top:2px;accent-color:var(--accent)}
+.fopt span.l{flex:1;min-width:0}
+.fopt span.n{color:var(--muted);font-variant-numeric:tabular-nums;font-size:12px}
+.fopt.zero{color:var(--muted)}
+.more{background:none;border:0;color:var(--accent);padding:2px 0;font-size:12px}
+.yr{display:flex;gap:6px;align-items:center}
+.yr select{flex:1;min-width:0;padding:5px;border:1px solid var(--line);border-radius:4px;background:var(--surface)}
+.activef{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+.af{display:inline-flex;align-items:center;gap:6px;background:var(--accent-soft);color:var(--ink);border-radius:999px;padding:3px 6px 3px 10px;font-size:12px;border:0}
+.af b{font-weight:600}
+.af span.x{font-size:14px;line-height:1;color:var(--muted)}
+/* results */
+.reshead{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+.reshead .count{font-weight:600}
+.reshead .count small{color:var(--muted);font-weight:400}
+.reshead select{padding:5px;border:1px solid var(--line);border-radius:4px;background:var(--surface)}
+.list{display:flex;flex-direction:column;gap:8px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:11px 12px;cursor:pointer;text-align:left;width:100%;display:block}
+.card:hover{border-color:color-mix(in srgb,var(--accent) 50%,var(--line))}
+.card[aria-current="true"]{border-color:var(--accent);box-shadow:inset 3px 0 0 var(--accent)}
+.card .row1{display:flex;justify-content:space-between;gap:8px;font-size:12px;color:var(--muted)}
+.card .trib{font-weight:600;color:var(--ink);font-size:14px;margin:3px 0 2px}
+.card .mat{color:var(--ink-2);font-size:13px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card .snip{font-family:var(--f-read);font-size:13px;color:var(--ink-2);margin-top:6px;border-left:2px solid var(--line);padding-left:8px}
+.chips{display:flex;flex-wrap:wrap;gap:5px;margin-top:7px}
+.chip{font-size:11.5px;border:1px solid var(--line);border-radius:999px;padding:1px 8px;color:var(--ink-2);background:var(--surface)}
+button.chip:hover{border-color:var(--accent);color:var(--accent)}
+.chip.ramo{background:var(--surface-2);border-color:transparent;color:var(--ink)}
+.pill{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:600;padding:1px 8px 1px 6px;border-radius:999px;border:1px solid var(--line);white-space:nowrap;color:var(--ink)}
+.pill i{width:8px;height:8px;border-radius:2px;display:inline-block;background:var(--neu)}
+.pill.pos i{background:var(--pos)} .pill.mid i{background:var(--mid)} .pill.neg i{background:var(--neg)}
+mark{background:var(--mark);color:var(--mark-ink);border-radius:2px;padding:0 1px}
+/* reader */
+section.reader{position:sticky;top:calc(env(safe-area-inset-top,0px) + 96px);max-height:calc(100vh - 110px);overflow:auto;background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+.rhead{padding:16px 20px 12px;border-bottom:1px solid var(--line)}
+.eyebrow{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.rhead h2{font-family:var(--f-display);font-weight:650;font-size:22px;line-height:1.2;margin:4px 0 4px;text-wrap:balance}
+.rhead .line{color:var(--ink-2);font-size:13px;display:flex;flex-wrap:wrap;gap:4px 12px}
+.ractions{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.closer{display:none}
+.rbody{padding:4px 20px 30px}
+.rsec{padding:14px 0;border-bottom:1px solid var(--line)}
+.rsec:last-child{border-bottom:0}
+.rsec > h3{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 8px;font-weight:700}
+dl.meta{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:6px 14px;margin:0;font-size:13px}
+dl.meta dt{color:var(--muted)}
+dl.meta dd{margin:0;min-width:0}
+.traj{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:0}
+.traj li{display:grid;grid-template-columns:18px minmax(0,1fr);gap:8px;position:relative}
+.traj li .dot{width:10px;height:10px;border-radius:50%;border:2px solid var(--accent);background:var(--surface);margin:5px 0 0 3px;z-index:1}
+.traj li:not(:last-child)::before{content:"";position:absolute;left:8px;top:16px;bottom:-4px;width:2px;background:var(--line)}
+.traj li.cur .dot{background:var(--accent)}
+.traj li.miss .dot{border-style:dashed;border-color:var(--muted)}
+.traj li.miss .tt{color:var(--ink-2)}
+.traj li.dupi .tt{color:var(--muted)}
+.traj button{background:none;border:0;padding:2px 0 10px;text-align:left;width:100%}
+.traj button:hover .tt{color:var(--accent)}
+.traj .tt{font-weight:600;font-size:13px}
+.traj .ts{font-size:12px;color:var(--muted)}
+blockquote.resol{margin:0;font-family:var(--f-read);font-size:15px;line-height:1.6;background:var(--surface-2);border-radius:var(--r);padding:12px 14px}
+.fulltext{font-family:var(--f-read);font-size:16px;line-height:1.72;max-width:68ch;color:var(--ink)}
+.fulltext p{margin:0 0 .85em}
+.fulltext h4{font-family:var(--f-ui);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin:1.6em 0 .6em}
+.fulltext .num{font-weight:650}
+.fulltext .docsep{font-family:var(--f-ui);font-size:12px;color:var(--muted);border-top:1px dashed var(--line);padding-top:8px;margin:1.6em 0 1em}
+.warn{font-size:12.5px;background:color-mix(in srgb,var(--neg) 12%,var(--surface));border-radius:var(--r);padding:8px 10px;margin-bottom:10px;color:var(--ink)}
+.empty{color:var(--muted);padding:40px 20px;text-align:center}
+.hitnav{display:flex;gap:6px;align-items:center;font-size:12px;color:var(--muted)}
+/* panorama */
+.pano{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 18px;min-width:0}
+.panel.wide{grid-column:1/-1}
+.panel h2{font-family:var(--f-display);font-size:17px;margin:0 0 2px;font-weight:650}
+.panel .cap{color:var(--muted);font-size:12.5px;margin:0 0 12px}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.kpi .v{font-family:var(--f-display);font-size:30px;font-weight:650;font-variant-numeric:tabular-nums;line-height:1.1}
+.kpi .k{color:var(--muted);font-size:12.5px}
+.hbar{display:grid;grid-template-columns:minmax(0,210px) minmax(0,1fr) 44px;gap:8px;align-items:center;padding:3px 0;font-size:12.5px;background:none;border:0;width:100%;text-align:left;border-radius:4px}
+button.hbar:hover{background:var(--surface-2)}
+.hbar .lab{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.hbar .val{text-align:right;font-variant-numeric:tabular-nums;color:var(--ink-2)}
+.track{display:flex;height:14px;gap:2px}
+.seg{height:100%;min-width:0}
+.seg:first-child{border-radius:4px 0 0 4px}.seg:last-child{border-radius:0 4px 4px 0}.seg:only-child{border-radius:0 4px 4px 0}
+.seg.one{background:var(--accent);border-radius:0 4px 4px 0}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--ink-2);margin-bottom:10px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{width:10px;height:10px;border-radius:2px;display:inline-block}
+.vbars{display:flex;align-items:flex-end;gap:4px;height:170px;border-bottom:1px solid var(--line);padding-top:16px}
+.vb{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%;min-width:0;position:relative}
+.vb .b{width:100%;max-width:34px;background:var(--accent);border-radius:4px 4px 0 0}
+.vb .n{font-size:10.5px;color:var(--muted);font-variant-numeric:tabular-nums;margin-bottom:2px}
+.vlabels{display:flex;gap:4px;font-size:10.5px;color:var(--muted);margin-top:4px}
+.vlabels span{flex:1;text-align:center;min-width:0;overflow:hidden}
+.tip{position:fixed;pointer-events:none;background:var(--ink);color:var(--bg);font-size:12px;padding:6px 8px;border-radius:4px;z-index:50;max-width:280px}
+/* normas */
+.ntable{width:100%;border-collapse:collapse;font-size:13px}
+.ntable th{text-align:left;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:6px 8px;border-bottom:1px solid var(--line)}
+.ntable td{padding:6px 8px;border-bottom:1px solid var(--line);vertical-align:middle}
+.ntable td.num{text-align:right;font-variant-numeric:tabular-nums}
+.ntable tr:hover td{background:var(--surface-2)}
+.ntable .minibar{height:8px;background:var(--accent);border-radius:0 3px 3px 0}
+.tablewrap{overflow-x:auto}
+.seg-ctl{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:12px}
+.seg-ctl button{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:4px 11px;font-size:12.5px;color:var(--ink-2)}
+.seg-ctl button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+/* método */
+.prose{max-width:72ch;font-family:var(--f-read);font-size:15.5px;line-height:1.7}
+.prose h2{font-family:var(--f-display);font-size:20px;margin:1.4em 0 .4em}
+.prose table{font-family:var(--f-ui);font-size:13px;border-collapse:collapse;width:100%}
+.prose td,.prose th{border-bottom:1px solid var(--line);padding:5px 8px;text-align:left;vertical-align:top}
+.toast{position:fixed;bottom:calc(16px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:8px 14px;border-radius:var(--r);font-size:13px;z-index:60}
+.mobfilters{display:none}
+@media (max-width:1180px){
+  .explore{grid-template-columns:220px minmax(0,1fr)}
+  section.reader{position:fixed;inset:0;max-height:none;border-radius:0;z-index:40;border:0;padding-top:env(safe-area-inset-top,0px);
+     padding-bottom:env(safe-area-inset-bottom,0px);padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
+  .closer{display:inline-flex}
+}
+@media (max-width:760px){
+  .explore{grid-template-columns:minmax(0,1fr)}
+  aside.filters{position:static;max-height:none;display:none}
+  aside.filters.open{display:block}
+  .mobfilters{display:inline-flex}
+  .pano{grid-template-columns:minmax(0,1fr)}
+  .kpis{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .hbar{grid-template-columns:minmax(0,120px) minmax(0,1fr) 38px}
+  .rhead,.rbody{padding-left:16px;padding-right:16px}
+}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+[hidden]{display:none!important}
+img{max-width:100%}
+</style>
+</head>
+
+<body>
+<header class="top">
+  <div class="site"><a class="logo" href="/">Exige Tu Seguro</a><nav aria-label="Sitio"><a href="/">Inicio</a><a href="/asistente">Asistente</a><a href="/blog">Blog</a><a href="/contacto">Contacto</a></nav></div>
+  <div class="brand"><h1>Jurisprudencia de seguros en Chile</h1><span class="sub" id="subt"></span></div>
+  <nav class="tabs" role="tablist">
+    <button role="tab" id="tab-explorar" aria-selected="true" data-v="explorar">Sentencias</button>
+    <button role="tab" id="tab-panorama" aria-selected="false" data-v="panorama">Panorama</button>
+    <button role="tab" id="tab-normas" aria-selected="false" data-v="normas">Normas citadas</button>
+    <button role="tab" id="tab-metodo" aria-selected="false" data-v="metodo">Método</button>
+  </nav>
+</header>
+
+<main>
+  <div class="searchrow">
+    <label class="searchbox" for="q"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="q" type="search" placeholder='Buscar: reticencia, "declaración de salud", C-20449-2023, Reale…' autocomplete="off"></label>
+    <label class="chk" for="ft"><input type="checkbox" id="ft" checked> Buscar en el texto completo</label>
+    <span class="loadnote" id="loadnote"></span>
+    <button class="btn mobfilters" id="btnf">Filtros</button>
+  </div>
+  <div class="activef" id="activef"></div>
+
+  <div id="v-explorar">
+    <div class="explore">
+      <aside class="filters" id="filters"></aside>
+      <div style="min-width:0">
+        <div class="reshead"><div class="count" id="count"></div>
+          <div style="display:flex;gap:6px;align-items:center">
+            <select id="sort" aria-label="Ordenar"><option value="fd">Más recientes</option><option value="fa">Más antiguas</option><option value="causa">Por expediente</option><option value="rel">Más coincidencias</option></select>
+            <button class="btn" id="copytsv" title="Copia la lista filtrada para pegarla en una planilla">Copiar lista</button>
+          </div></div>
+        <div class="list" id="list"></div>
+      </div>
+      <section class="reader" id="reader" aria-live="polite"></section>
+    </div>
+  </div>
+  <div id="v-panorama" hidden></div>
+  <div id="v-normas" hidden></div>
+  <div id="v-metodo" hidden></div>
+</main>
+<footer class="pie">Las sentencias provienen del registro público de la Comisión para el Mercado Financiero (CMF). Las clasificaciones (ramo, temas, instancia, lo resuelto) son automáticas y pueden contener errores: verifica cada fallo en su texto y en el PDF original antes de citarlo. Esta herramienta tiene fines informativos y no reemplaza la asesoría legal. <a href="/privacidad">Privacidad</a> · <a href="/terminos">Términos</a> · <a href="/contacto">¿Necesitas ayuda con tu caso?</a></footer>
+<div class="tip" id="tip" hidden></div>
+
+<script src="datos/indice.js"></script>
+<script>
+const D = window.SENT_DATA || [];
+const NCHUNK = (window.SENT_META && window.SENT_META.nb) || 64;
+const BYID = new Map(D.map(x=>[x.i,x]));
+const BYCAUSA = new Map(), BYEXP = new Map();
+D.forEach(x=>{ if(!BYCAUSA.has(x.c)) BYCAUSA.set(x.c,[]); BYCAUSA.get(x.c).push(x); if(!BYEXP.has(x.x)) BYEXP.set(x.x,[]); BYEXP.get(x.x).push(x); });
+const INSORD = {'Primera instancia':1,'Protección (Corte de Apelaciones)':2,'Segunda instancia':2,'Corte Suprema':3,'No determinada':4};
+const LVL = {JC:1,JPL:1,ARB:1,CA:2,CS:3,ND:0};
+BYCAUSA.forEach(a=>a.sort((p,q)=>(INSORD[p.ins]-INSORD[q.ins])||(p.f||p.fn).localeCompare(q.f||q.fn)||p.q-q.q));
+BYEXP.forEach(a=>a.sort((p,q)=>(LVL[p.o]-LVL[q.o])||(p.f||p.fn).localeCompare(q.f||q.fn)||p.i.localeCompare(q.i)));
+// resultado final de la causa (CMF) = el informado en su última sentencia
+const CAUSA_RC = { get:(c)=>'' };
+
+const NORMA_DESC = {'CCom art. 512':'Concepto del contrato de seguro','CCom art. 513':'Definiciones','CCom art. 524':'Obligaciones del asegurado','CCom art. 525':'Declaración sobre el estado del riesgo','CCom art. 526':'Agravación del riesgo','CCom art. 528':'Pago de la prima; terminación por no pago','CCom art. 529':'Obligaciones del asegurador','CCom art. 534':'Subrogación del asegurador','CCom art. 539':'Presunción de siniestro cubierto','CCom art. 541':'Prescripción','CCom art. 542':'Carácter imperativo de las normas','CCom art. 543':'Solución de conflictos (arbitraje)',
+ 'CC art. 1545':'Ley del contrato','CC art. 1546':'Ejecución de buena fe','CC art. 1698':'Carga de la prueba','CC art. 1556':'Daño emergente y lucro cesante','CC art. 1560':'Intención de los contratantes','CC art. 1566':'Interpretación contra el redactor','CC art. 1489':'Condición resolutoria tácita','CC art. 1547':'Grados de culpa contractual',
+ 'Ley 19.496 art. 3':'Derechos básicos del consumidor','Ley 19.496 art. 12':'Respeto de los términos convenidos','Ley 19.496 art. 23':'Negligencia del proveedor','Ley 19.496 art. 50':'Acciones del consumidor','CPR art. 19':'Garantías constitucionales','CPR art. 20':'Recurso de protección','DFL 251 art. 57':'Corredores de seguros'};
+const CUERPO = {CCom:'Código de Comercio',CC:'Código Civil',CPC:'Código de Procedimiento Civil','Ley 19.496':'Ley 19.496 (Consumidor)','DFL 251':'DFL 251 (Ley de Seguros)','Ley 18.287':'Ley 18.287 (Procedimiento JPL)','Ley 15.231':'Ley 15.231 (JPL)',CPR:'Constitución Política','DS 1055':'DS 1.055 (Reglamento auxiliares)'};
+
+// ---------- utilidades
+const esc = s => String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const FOLD = new Map();
+function fold(s){ return s.replace(/[^\x00-\x7f]/g, c=>{ let r=FOLD.get(c); if(r===undefined){ r=c.normalize('NFD')[0].toLowerCase(); if(r.length!==1) r=c; FOLD.set(c,r);} return r; }).toLowerCase(); }
+const MESES=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+const fmtF = f => f? `${+f.slice(8,10)} de ${MESES[+f.slice(5,7)-1]} de ${f.slice(0,4)}` : 'fecha no identificada';
+const fmtS = f => f? `${f.slice(8,10)}-${f.slice(5,7)}-${f.slice(0,4)}` : '—';
+function tone(d){ if(/^Demanda acogida$|Protección acogida|Casación \/ recurso acogido|Acoge totalmente/.test(d)) return 'pos';
+  if(/parcial/i.test(d)) return 'mid'; if(/rechaz|Rechaza|inadmisible|Incompetencia/.test(d)) return 'neg'; return ''; }
+function pill(d, title){ return `<span class="pill ${tone(d)}" title="${esc(title||'')}"><i></i>${esc(d)}</span>`; }
+function toast(t){ const el=document.createElement('div'); el.className='toast'; el.textContent=t; document.body.appendChild(el); setTimeout(()=>el.remove(),1800); }
+async function copy(text){ try{ await navigator.clipboard.writeText(text); toast('Copiado'); }catch(e){ const ta=document.createElement('textarea'); ta.value=text; document.body.appendChild(ta); ta.select(); try{document.execCommand('copy'); toast('Copiado');}catch(_){toast('Selecciona y copia manualmente');} ta.remove(); } }
+
+// ---------- textos completos (carga diferida)
+const TEXT = new Map(); const TEXTF = new Map(); let loaded = 0; let loadingAll = null;
+async function loadChunk(k){ const r = await fetch(`datos/t/${String(k).padStart(2,'0')}.json`); const j = await r.json(); for(const [i,t] of Object.entries(j)){ TEXT.set(i,t); } return j; }
+const chunkP = new Map();
+function ensureChunk(k){ if(!chunkP.has(k)) chunkP.set(k, loadChunk(k).then(j=>{ loaded++; updLoad(); return j; })); return chunkP.get(k); }
+function maybeLoadAll(){ if(st.ft && parseQ(st.q).length) loadAll(); }
+function updLoad(){ const el=document.getElementById('loadnote'); el.textContent = loaded<NCHUNK ? `Cargando textos completos… ${loaded}/${NCHUNK}` : ''; }
+function loadAll(){ if(!loadingAll){ loadingAll = (async()=>{ for(let k=0;k<NCHUNK;k++){ await ensureChunk(k); } for(const [i,t] of TEXT) TEXTF.set(i, fold(t)); render(); })(); } return loadingAll; }
+
+// ---------- estado y filtros
+const FACETS = [
+  {k:'r', label:'Ramo del seguro', get:x=>[x.r]},
+  {k:'t', label:'Tema jurídico', get:x=>x.t},
+  {k:'ins', label:'Instancia', get:x=>[x.ins]},
+  {k:'o', label:'Tribunal', get:x=>[ORG[x.o]]},
+  {k:'pr', label:'Procedimiento', get:x=>[x.pr]},
+  {k:'d', label:'Lo resuelto en esta sentencia', get:x=>[x.d]},
+  {k:'rc', label:'Resultado final del expediente (CMF)', get:x=>[x.rc]},
+  {k:'g', label:'Compañía', get:x=>[x.g]},
+  {k:'ts', label:'Tipo de seguro', get:x=>[x.ts]},
+  {k:'cob', label:'Instancias', get:x=>[x.cob].concat(x.ni.length?['Menciona instancias no incluidas']:[], x.al&&x.al.startsWith('Esta')?['Posiblemente modificada arriba']:[], x.dup?['Registro duplicado']:[])},
+  {k:'e', label:'Estado', get:x=>[x.e]},
+  {k:'n', label:'Norma citada', get:x=>x.n, hidden:true},
+  {k:'c', label:'Expediente', get:x=>[String(x.x)], hidden:true},
+];
+const ORG = {CS:'Corte Suprema',CA:'Corte de Apelaciones',JC:'Juzgado Civil / de Letras',JPL:'Juzgado de Policía Local',ARB:'Tribunal arbitral',ND:'No determinado'};
+const YEARS = [...new Set(D.map(x=>x.a).filter(Boolean))].sort();
+const st = {sel:{}, q:'', ft:true, y0:YEARS[0], y1:YEARS[YEARS.length-1], sort:'fd', view:'explorar', cur:null, limit:60, expanded:{}, ncuerpo:'CCom'};
+FACETS.forEach(f=>st.sel[f.k]=new Set());
+try{ const s=JSON.parse(localStorage.getItem('jseg-prefs')||'{}'); if(s.sort) st.sort=s.sort; if(typeof s.ft==='boolean') st.ft=s.ft; }catch(e){}
+function savePrefs(){ try{ localStorage.setItem('jseg-prefs', JSON.stringify({sort:st.sort, ft:st.ft})); }catch(e){} }
+
+function parseQ(q){ const out=[]; q=fold(q.trim()); const re=/"([^"]+)"|(\S+)/g; let m; while((m=re.exec(q))) out.push((m[1]||m[2]).trim()); return out.filter(Boolean); }
+const META_F = new Map(D.map(x=>[x.i, fold([x.m,x.car,x.rol,x.tr,x.tri,x.cia,x.g,x.r,x.t.join(' '),x.pr,x.d,x.res,x.i,'causa '+x.c,'expediente '+x.x].join(' | '))]));
+function matchQ(x, terms){
+  if(!terms.length) return {ok:true, hits:0};
+  const mf = META_F.get(x.i); const tf = st.ft ? TEXTF.get(x.i) : null; let hits=0;
+  for(const t of terms){ let h=0; if(mf.includes(t)) h+=1; if(tf){ let p=tf.indexOf(t); while(p>=0 && h<200){ h++; p=tf.indexOf(t,p+t.length);} } if(!h) return {ok:false}; hits+=h; }
+  return {ok:true, hits};
+}
+function passFacets(x, skip){
+  for(const f of FACETS){ if(f.k===skip) continue; const s=st.sel[f.k]; if(!s.size) continue; const v=f.get(x); if(!v.some(z=>s.has(z))) return false; }
+  if(skip!=='y' && x.a && (x.a<st.y0 || x.a>st.y1)) return false;
+  return true;
+}
+let HITS = new Map();
+function filtered(){
+  const terms=parseQ(st.q); HITS=new Map(); const out=[];
+  for(const x of D){ if(!passFacets(x)) continue; const m=matchQ(x,terms); if(!m.ok) continue; HITS.set(x.i,m.hits); out.push(x); }
+  return out;
+}
+function facetCounts(f, terms){
+  const c=new Map();
+  for(const x of D){ if(!passFacets(x, f.k)) continue; if(terms.length && !matchQ(x,terms).ok) continue; for(const v of new Set(f.get(x))) c.set(v,(c.get(v)||0)+1); }
+  return c;
+}
+
+// ---------- render: filtros
+function renderFilters(){
+  const terms=parseQ(st.q); const box=document.getElementById('filters'); let h='';
+  for(const f of FACETS){ if(f.hidden) continue;
+    const c=facetCounts(f,terms); const all=new Set([...c.keys(), ...st.sel[f.k]]);
+    let opts=[...all].sort((a,b)=>(c.get(b)||0)-(c.get(a)||0)||String(a).localeCompare(String(b)));
+    const lim = st.expanded[f.k]?999:7; const extra=opts.length-lim;
+    h+=`<div class="fgroup"><h3>${f.label}${st.sel[f.k].size?`<button data-clear="${f.k}">Limpiar</button>`:''}</h3>`;
+    opts.slice(0,lim).forEach((v,j)=>{ const n=c.get(v)||0; const id=`f-${f.k}-${j}`;
+      h+=`<label class="fopt ${n?'':'zero'}" for="${id}"><input type="checkbox" id="${id}" data-f="${f.k}" data-v="${esc(v)}" ${st.sel[f.k].has(v)?'checked':''}><span class="l">${esc(v)}</span><span class="n">${n}</span></label>`; });
+    if(extra>0) h+=`<button class="more" data-more="${f.k}">Ver ${extra} más</button>`; else if(st.expanded[f.k]) h+=`<button class="more" data-more="${f.k}">Ver menos</button>`;
+    h+='</div>';
+  }
+  h+=`<div class="fgroup"><h3>Año de la sentencia</h3><div class="yr"><select id="y0" aria-label="Desde">${YEARS.map(y=>`<option ${y==st.y0?'selected':''}>${y}</option>`).join('')}</select><span>a</span><select id="y1" aria-label="Hasta">${YEARS.map(y=>`<option ${y==st.y1?'selected':''}>${y}</option>`).join('')}</select></div></div>`;
+  box.innerHTML=h;
+}
+function renderActive(){
+  let h=''; for(const f of FACETS) for(const v of st.sel[f.k]) h+=`<button class="af" data-rm="${f.k}" data-v="${esc(v)}">${esc(f.label)}: <b>${esc(f.k==='c'?'N° '+v:v)}</b><span class="x" aria-hidden="true">×</span></button>`;
+  if(st.y0!==YEARS[0]||st.y1!==YEARS[YEARS.length-1]) h+=`<button class="af" data-rm="y">Años: <b>${st.y0}–${st.y1}</b><span class="x">×</span></button>`;
+  if(h) h+=`<button class="af" data-rm="all" style="background:none;color:var(--accent)">Quitar todos</button>`;
+  document.getElementById('activef').innerHTML=h;
+}
+
+// ---------- render: lista
+let CUR_LIST=[];
+function snippet(x, terms){
+  if(!terms.length) return '';
+  const tf=TEXTF.get(x.i); const t=TEXT.get(x.i); if(!tf) return '';
+  let p=-1, term=''; for(const tt of terms){ p=tf.indexOf(tt); if(p>=0){term=tt;break;} } if(p<0) return '';
+  const a=Math.max(0,p-110), b=Math.min(t.length,p+term.length+150);
+  return '…'+hl(t.slice(a,b).replace(/\s+/g,' '), terms)+'…';
+}
+function hl(s, terms){
+  let out=esc(s); if(!terms.length) return out;
+  const pat = terms.map(t=>t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&').replace(/a/g,'[aáàä]').replace(/e/g,'[eéèë]').replace(/i/g,'[iíìï]').replace(/o/g,'[oóòö]').replace(/u/g,'[uúùü]').replace(/n/g,'[nñ]')).join('|');
+  try{ const re=new RegExp('('+pat+')','gi'); out=out.replace(/(<[^>]*>)|([^<]+)/g,(m,tag,txt)=>tag?tag:txt.replace(re,'<mark>$1</mark>')); }catch(e){}
+  return out;
+}
+function render(){
+  if(st.view==='explorar') renderExplore(); else if(st.view==='panorama') renderPano(); else if(st.view==='normas') renderNormas();
+  renderActive(); renderFilters();
+  document.getElementById('subt').textContent = `${D.length} sentencias · ${BYEXP.size} expedientes · ${YEARS[0]}–${YEARS[YEARS.length-1]}`;
+}
+function renderExplore(){
+  const terms=parseQ(st.q); let L=filtered();
+  const k = x=>(x.f||x.fn||'');
+  if(st.sort==='fd') L.sort((a,b)=>k(b).localeCompare(k(a)));
+  else if(st.sort==='fa') L.sort((a,b)=>k(a).localeCompare(k(b)));
+  else if(st.sort==='causa') L.sort((a,b)=>String(a.x).localeCompare(String(b.x),undefined,{numeric:true})||(LVL[a.o]-LVL[b.o])||(a.f||a.fn).localeCompare(b.f||b.fn));
+  else L.sort((a,b)=>(HITS.get(b.i)||0)-(HITS.get(a.i)||0));
+  CUR_LIST=L;
+  const nc=new Set(L.map(x=>x.x)).size;
+  document.getElementById('count').innerHTML=`${L.length} sentencias <small>de ${nc} expedientes</small>`;
+  const box=document.getElementById('list');
+  if(!L.length){ box.innerHTML=`<div class="empty">No hay sentencias con estos criterios.<br>Prueba quitando un filtro o usando menos palabras.</div>`; return; }
+  box.innerHTML = L.slice(0,st.limit).map(x=>`<button class="card" data-id="${x.i}" ${st.cur===x.i?'aria-current="true"':''}>
+    <div class="row1"><span>${esc(x.ins)} · ${fmtS(x.f||x.fn)}</span><span class="mono">${esc(x.rol)}</span></div>
+    <div class="trib">${esc(x.tr)}</div>
+    <div class="mat">${hl(x.m||x.car||'', terms)}</div>
+    ${st.ft&&terms.length?`<div class="snip">${snippet(x,terms)}</div>`:''}
+    <div class="chips">${pill(x.d,'Lo resuelto en esta sentencia')}<span class="chip ramo">${esc(x.r)}</span><span class="chip">${esc(x.g)}</span>${x.t.slice(0,2).map(t=>`<span class="chip">${esc(t)}</span>`).join('')}</div>
+  </button>`).join('') + (L.length>st.limit?`<button class="btn" id="morelist" style="align-self:center">Mostrar ${Math.min(60,L.length-st.limit)} más</button>`:'');
+  if(!st.cur && L.length && window.innerWidth>1180) openReader(L[0].i, false);
+}
+
+// ---------- trayectoria por expediente
+function trajHTML(x){
+  const ex=BYEXP.get(x.x); const vmap=new Map(); ex.forEach(y=>y.v.forEach(v=>vmap.set(v.id+'|'+y.i, v)));
+  const items=ex.map(y=>({lvl:LVL[y.o], y}));
+  const seen=new Set(ex.map(y=>y.o));
+  const miss=[]; ex.forEach(y=>y.ni.forEach(m=>{ const k=m.nivel+'|'+(m.rol||m.tribunal); if(!miss.some(z=>z.k===k)) miss.push({k, m, lvl:{'Primera instancia':1,'Corte de Apelaciones':2,'Corte Suprema':3}[m.nivel]}); }));
+  miss.forEach(z=>items.push({lvl:z.lvl, miss:z.m}));
+  items.sort((a,b)=>a.lvl-b.lvl || (a.miss?1:0)-(b.miss?1:0));
+  const li=items.map(it=>{
+    if(it.miss){ const m=it.miss; return `<li class="miss"><span class="dot"></span><div style="padding:2px 0 10px"><div class="tt">${esc(m.nivel)} · ${esc(m.tribunal)}</div><div class="ts">${m.rol?'Rol '+esc(m.rol)+' · ':''}${m.fecha?esc(m.fecha)+' · ':''}<b>No está en la colección</b> (${esc(m.fuente)})</div></div></li>`; }
+    const y=it.y; let note='';
+    if(y.c!==x.c){ const v=x.v.find(v=>v.id===y.i)||(ex.flatMap(z=>z.v).find(v=>v.id===y.i)); note=` · ID CMF distinto (${y.c})${v?` · vínculo: ${v.via}`:''}`; }
+    if(y.dup) note+=` · registro duplicado de ${y.dup}`;
+    return `<li class="${y.i===x.i?'cur':''}${y.dup?' dupi':''}"><span class="dot"></span><button data-id="${y.i}"><div class="tt">${esc(y.ins)} · ${esc(y.tr)}</div><div class="ts">${fmtS(y.f||y.fn)} · ${esc(y.d)}${esc(note)}</div></button></li>`; }).join('');
+  const one = ex.filter(y=>!y.dup).length===1 && !miss.length;
+  const het = x.het ? `<p class="ts" style="color:var(--muted);font-size:12px;margin:4px 0 0">La CMF registró esta sentencia bajo un mismo ID con otras de partes distintas; aquí se separaron.</p>` : '';
+  return het+`<ol class="traj">${li}</ol>${one?`<p class="ts" style="color:var(--muted);font-size:12px;margin:4px 0 0">La colección solo tiene esta resolución del caso y el texto no menciona otras instancias.</p>`:''}`;
+}
+// ---------- lector
+function cita(x){ const parts=[x.tr, fmtF(x.f||x.fn)]; if(x.rol) parts.push(`Rol N° ${x.rol}`); let s=parts.join(', '); if(x.car) s+=` («${x.car}»)`; return s+'.'; }
+function fmtText(t, terms){
+  const paras=t.split(/\n\n+/); let h='';
+  const HEAD=/^(VISTOS?( Y TENIENDO PRESENTE)?|CONSIDERANDO|Y CONSIDERANDO|TENIENDO PRESENTE|SE RESUELVE|RESUELVO|SE DECLARA|EN CUANTO A[^\n]{0,70}|EN CUANTO AL FONDO|PARTE (EXPOSITIVA|CONSIDERATIVA|RESOLUTIVA)|I{1,3}\.?-?\s*[A-ZÁÉÍÓÚ][^\n]{0,60})\s*[:.\-]*$/i;
+  const NUM=/^((PRIMERO|SEGUNDO|TERCERO|CUARTO|QUINTO|SEXTO|S[EÉ]PTIMO|OCTAVO|NOVENO|D[EÉ]CIMO|UND[EÉ]CIMO|DUOD[EÉ]CIMO|VIG[EÉ]SIMO|TRIG[EÉ]SIMO)[A-ZÁÉÍÓÚ ]{0,20}\s*[:.\-]+|\d{1,3}\s*[°ºo]?\s*[.\-)]{1,3}|\d{1,3}\s*[°º]\s*[:.\-)]?|[a-z]\)|[IVX]{1,5}\.-?)\s*/;
+  for(const p of paras){
+    if(p.length<80 && HEAD.test(p.trim())){ h+=`<h4>${esc(p.replace(/[:.\-\s]+$/,''))}</h4>`; continue; }
+    const m=p.match(NUM);
+    if(m && m[0].length<40){ h+=`<p><span class="num">${hl(m[0],terms)}</span>${hl(p.slice(m[0].length),terms)}</p>`; }
+    else h+=`<p>${hl(p,terms)}</p>`;
+  }
+  return h;
+}
+async function openReader(id, scroll=true){
+  const x=BYID.get(id); if(!x) return; st.cur=id;
+  document.querySelectorAll('.card').forEach(c=>c.setAttribute('aria-current', c.dataset.id===id?'true':'false'));
+  try{ history.replaceState(null,'','#s'+id); }catch(e){}
+  const terms=parseQ(st.q); const R=document.getElementById('reader'); R.hidden=false;
+  const _t=0;
+  const ql = x.ql!=='Buena' ? `<div class="warn">Calidad del texto: <b>${esc(x.ql)}</b>. El documento original es un escaneo o PDF con codificación defectuosa; consulta el archivo ${esc(x.docs.join(', '))} para la lectura fiel.</div>`:'';
+  R.innerHTML=`<div class="rhead">
+    <div class="eyebrow">${esc(x.ins)} · ${esc(x.pr)}</div>
+    <h2>${esc(x.tr)}</h2>
+    <div class="line"><span>${fmtF(x.f||x.fn)}</span>${x.rol?`<span class="mono">Rol ${esc(x.rol)}</span>`:''}<span>Expediente ${esc(x.x)}</span><span style="color:var(--muted)">ID CMF ${x.c}-${x.q}</span></div>
+    <div class="chips" style="margin-top:8px">${pill(x.d,'Lo resuelto en esta sentencia (clasificación automática)')}<span class="pill ${tone(x.re)}" title="Resultado final del expediente, informado a la CMF por la compañía"><i></i>Expediente: ${esc(x.re)}</span><span class="chip">${esc(x.e)}</span></div>
+    <div class="ractions"><button class="btn closer" id="rclose">← Volver a la lista</button><button class="btn" id="rcite">Copiar cita</button><button class="btn" id="rlink">Copiar enlace</button><button class="btn" id="rcausa">Ver todo el expediente</button></div>
+  </div>
+  <div class="rbody">
+    <div class="rsec"><h3>Ficha</h3><dl class="meta">
+      ${x.car?`<dt>Carátula</dt><dd>${esc(x.car)}</dd>`:''}
+      <dt>Compañía</dt><dd>${esc(x.cia)}</dd>
+      <dt>Tipo de seguro</dt><dd>${esc(x.ts)}</dd>
+      <dt>Ramo</dt><dd><button class="chip ramo" data-add="r" data-v="${esc(x.r)}">${esc(x.r)}</button>${x.r2.map(r=>` <button class="chip" data-add="r" data-v="${esc(r)}">${esc(r)}</button>`).join('')}</dd>
+      <dt>Temas</dt><dd><div class="chips" style="margin:0">${x.t.length?x.t.map(t=>`<button class="chip" data-add="t" data-v="${esc(t)}">${esc(t)}</button>`).join(''):'<span style="color:var(--muted)">Sin temas detectados</span>'}</div></dd>
+      <dt>Materia (CMF)</dt><dd>${esc(x.m)}</dd>
+      <dt>Normas citadas</dt><dd><div class="chips" style="margin:0">${x.n.slice(0,14).map(n=>`<button class="chip mono" data-add="n" data-v="${esc(n)}" title="${esc(NORMA_DESC[n]||'')}">${esc(n)}</button>`).join('')||'<span style="color:var(--muted)">—</span>'}${x.n.length>14?`<span class="chip">+${x.n.length-14}</span>`:''}</div></dd>
+      <dt>Original</dt><dd>${(x.pdf||[]).map((u,j)=>`<a href="${esc(u)}" target="_blank" rel="noopener">PDF en la CMF${x.pdf.length>1?' ('+(j+1)+')':''}</a>`).join(' · ')}</dd>
+    </dl></div>
+    <div class="rsec"><h3>Trayectoria del caso</h3>${x.al?`<div class="warn">${esc(x.al)}</div>`:''}${trajHTML(x)}</div>
+    ${x.pc.length?`<div class="rsec"><h3>Jurisprudencia citada en esta sentencia</h3><ul style="margin:0;padding-left:18px;font-size:13px">${x.pc.map(p=>`<li>${esc(p.t)}, Rol ${esc(p.r)}${p.id&&BYID.get(p.id)&&BYID.get(p.id).c!==x.c?` · <button class="chip" data-id-open="${p.id}">Está en la colección (${esc(p.id)})</button>`:''}</li>`).join('')}</ul></div>`:''}
+    ${x.res?`<div class="rsec"><h3>Parte resolutiva</h3><blockquote class="resol">${hl(x.res,terms)}</blockquote></div>`:''}
+    <div class="rsec"><h3 style="display:flex;justify-content:space-between;gap:8px"><span>Texto íntegro</span><span class="hitnav" id="hitnav"></span></h3>${ql}<div class="fulltext" id="fulltext"><p style="color:var(--muted)">Cargando texto…</p></div></div>
+  </div>`;
+  if(window.innerWidth<=1180){ document.body.style.overflow='hidden'; R.scrollTop=0; } else R.scrollTop=0;
+  await ensureChunk(x.k);
+  if(st.cur!==id) return;
+  const t=TEXT.get(id)||'';
+  document.getElementById('fulltext').innerHTML = t? fmtText(t,terms) : '<p style="color:var(--muted)">Este registro no tiene texto.</p>';
+  const marks=[...document.querySelectorAll('#fulltext mark')];
+  if(marks.length){ let k=-1; const nav=document.getElementById('hitnav');
+    const go=d=>{ k=(k+d+marks.length)%marks.length; marks.forEach(m=>m.style.outline=''); marks[k].style.outline='2px solid var(--accent)'; marks[k].scrollIntoView({block:'center'}); nav.querySelector('span').textContent=`${k+1}/${marks.length}`; };
+    nav.innerHTML=`<span>${marks.length} coincidencias</span><button class="btn" style="padding:2px 8px" data-h="-1" aria-label="Anterior">↑</button><button class="btn" style="padding:2px 8px" data-h="1" aria-label="Siguiente">↓</button>`;
+    nav.onclick=e=>{ const b=e.target.closest('[data-h]'); if(b) go(+b.dataset.h); };
+  }
+}
+function closeReader(){ document.getElementById('reader').hidden = window.innerWidth<=1180; document.body.style.overflow=''; }
+
+// ---------- panorama
+const RC3 = ['Acoge totalmente demanda','Acoge parcialmente demanda','Rechaza demanda'];
+const RCCLS = {'Acoge totalmente demanda':'var(--pos)','Acoge parcialmente demanda':'var(--mid)','Rechaza demanda':'var(--neg)'};
+function causasOf(L){ const m=new Map(); for(const x of L){ if(!m.has(x.x)) m.set(x.x,{c:x.x, r:x.r, g:x.g, rc:x.re, t:new Set()}); x.t.forEach(t=>m.get(x.x).t.add(t)); } return [...m.values()]; }
+function stackRows(groups, onKey){
+  return groups.map(([lab,arr])=>{ const n=arr.length; const segs=RC3.map(r=>{ const k=arr.filter(c=>c.rc===r).length; return k?`<div class="seg" style="width:${k/n*100}%;background:${RCCLS[r]}" data-tip="${esc(lab)} — ${esc(r)}${''}: ${k} de ${n} expedientes (${Math.round(k/n*100)}%)"></div>`:''; }).join('');
+    const fav = arr.filter(c=>c.rc!=='Rechaza demanda').length;
+    return `<button class="hbar" data-add="${onKey}" data-v="${esc(lab)}" title="Filtrar por ${esc(lab)}"><span class="lab">${esc(lab)}</span><span class="track">${segs}</span><span class="val">${n}</span></button>`; }).join('');
+}
+function legend(){ return `<div class="legend">${RC3.map(r=>`<span><i style="background:${RCCLS[r]}"></i>${r}</span>`).join('')}</div>`; }
+function renderPano(){
+  const L=filtered(); const C=causasOf(L); const box=document.getElementById('v-panorama');
+  const fav=C.filter(c=>c.rc!=='Rechaza demanda').length;
+  const by = (arr,key)=>{ const m=new Map(); arr.forEach(c=>{ const k=key(c); if(!m.has(k)) m.set(k,[]); m.get(k).push(c); }); return [...m.entries()].sort((a,b)=>b[1].length-a[1].length); };
+  const ramos=by(C,c=>c.r);
+  const cias=by(C,c=>c.g).filter(([,a])=>a.length>=5).slice(0,16);
+  const temas=new Map(); C.forEach(c=>c.t.forEach(t=>{ if(!temas.has(t)) temas.set(t,[]); temas.get(t).push(c); }));
+  const temasS=[...temas.entries()].sort((a,b)=>b[1].length-a[1].length);
+  const yrs=new Map(); L.forEach(x=>{ if(x.a) yrs.set(x.a,(yrs.get(x.a)||0)+1); }); const ys=[...yrs.keys()].sort(); const ymax=Math.max(1,...yrs.values());
+  const ins=by(L.map(x=>({k:x.ins})),c=>c.k); const imax=Math.max(1,...ins.map(i=>i[1].length));
+  const pct = n=> C.length? Math.round(n/C.length*100)+'%':'—';
+  box.innerHTML=`<p class="cap" style="color:var(--muted);margin:0 0 12px">Calculado sobre la selección actual (${L.length} sentencias). El resultado por expediente es el informado a la CMF; los filtros y la búsqueda de arriba también se aplican aquí.</p>
+  <div class="pano">
+    <div class="panel wide"><div class="kpis">
+      <div class="kpi"><div class="v">${C.length}</div><div class="k">expedientes</div></div>
+      <div class="kpi"><div class="v">${L.length}</div><div class="k">sentencias</div></div>
+      <div class="kpi"><div class="v">${pct(fav)}</div><div class="k">expedientes con demanda acogida total o parcialmente</div></div>
+      <div class="kpi"><div class="v">${pct(C.length-fav)}</div><div class="k">expedientes con demanda rechazada</div></div>
+    </div></div>
+    <div class="panel wide"><h2>Resultado según ramo</h2><p class="cap">Proporción de expedientes por resultado final. Haz clic en un ramo para filtrar.</p>${legend()}${stackRows(ramos.map(([k,a])=>[k,a]),'r')}</div>
+    <div class="panel"><h2>Sentencias por año</h2><p class="cap">Año de dictación (o de notificación cuando no se identificó en el texto).</p>
+      <div class="vbars">${ys.map(y=>`<div class="vb" data-tip="${y}: ${yrs.get(y)} sentencias"><span class="n">${yrs.get(y)}</span><div class="b" style="height:${yrs.get(y)/ymax*100}%"></div></div>`).join('')}</div>
+      <div class="vlabels">${ys.map(y=>`<span>${ys.length>12?String(y).slice(2):y}</span>`).join('')}</div></div>
+    <div class="panel"><h2>Sentencias por instancia</h2><p class="cap">Órgano que dicta, detectado desde el texto.</p>
+      ${ins.map(([k,a])=>`<button class="hbar" data-add="ins" data-v="${esc(k)}"><span class="lab">${esc(k)}</span><span class="track"><div class="seg one" style="width:${a.length/imax*100}%" data-tip="${esc(k)}: ${a.length}"></div></span><span class="val">${a.length}</span></button>`).join('')}</div>
+    <div class="panel wide"><h2>Temas jurídicos</h2><p class="cap">Expedientes en que aparece cada tema y su resultado final. Un expediente puede tener varios temas.</p>${legend()}${stackRows(temasS,'t')}</div>
+    <div class="panel wide"><h2>Resultado según compañía</h2><p class="cap">Compañías con 5 o más expedientes en la selección, agrupadas por grupo asegurador.</p>${legend()}${stackRows(cias,'g')}</div>
+  </div>`;
+}
+
+// ---------- normas
+function renderNormas(){
+  const L=filtered(); const box=document.getElementById('v-normas');
+  const cnt=new Map(), cc=new Map(); L.forEach(x=>x.n.forEach(n=>{ cnt.set(n,(cnt.get(n)||0)+1); if(!cc.has(n)) cc.set(n,new Set()); cc.get(n).add(x.c); }));
+  const cuerpos=[...new Set([...cnt.keys()].map(n=>n.split(' art. ')[0]))];
+  const order=['CCom','CC','Ley 19.496','CPR','DFL 251','CPC','Ley 18.287','Ley 15.231','DS 1055'].filter(c=>cuerpos.includes(c));
+  if(!order.includes(st.ncuerpo)) st.ncuerpo=order[0]||'CCom';
+  const rows=[...cnt.entries()].filter(([n])=>n.startsWith(st.ncuerpo+' art.')).sort((a,b)=>b[1]-a[1]).filter(([,v])=>v>=2).slice(0,80);
+  const mx=Math.max(1,...rows.map(r=>r[1]));
+  box.innerHTML=`<div class="panel"><h2>Normas citadas</h2><p class="cap">Artículos mencionados en las sentencias de la selección actual (${L.length}). Haz clic en una fila para ver las sentencias que la citan.</p>
+   <div class="seg-ctl">${order.map(c=>`<button aria-pressed="${c===st.ncuerpo}" data-cuerpo="${esc(c)}">${esc(CUERPO[c]||c)}</button>`).join('')}</div>
+   <div class="tablewrap"><table class="ntable"><thead><tr><th>Artículo</th><th>Contenido</th><th style="text-align:right">Sentencias</th><th style="text-align:right">Causas</th><th style="width:30%"></th></tr></thead><tbody>
+   ${rows.map(([n,v])=>`<tr data-add="n" data-v="${esc(n)}" style="cursor:pointer"><td class="mono">${esc(n.split(' art. ')[1])}</td><td>${esc(NORMA_DESC[n]||'')}</td><td class="num">${v}</td><td class="num">${cc.get(n).size}</td><td><div class="minibar" style="width:${v/mx*100}%"></div></td></tr>`).join('')}
+   </tbody></table></div></div>`;
+}
+
+// ---------- método
+function renderMetodo(){
+  const q=c=>D.filter(x=>x.ql===c).length;
+  document.getElementById('v-metodo').innerHTML=`<div class="panel"><div class="prose">
+  <h2 style="margin-top:0">Qué contiene</h2>
+  <p>Sentencias sobre contratos de seguro que las compañías aseguradoras informan a la Comisión para el Mercado Financiero (CMF) y que la CMF publica en su sitio. Se actualiza automáticamente cuando la CMF publica sentencias nuevas. La colección no es exhaustiva: solo incluye lo que las compañías informan.</p>
+  <h2>Datos personales</h2>
+  <p>Para proteger a las personas, se ocultan los nombres de las partes, asegurados, abogados y representantes (se muestran sus iniciales), y también RUT, domicilios, patentes, teléfonos, correos y números de operaciones. Se mantienen visibles las compañías, los tribunales y las autoridades que dictan los fallos. El criterio sigue la línea del protocolo de anonimización del Poder Judicial (Acta 44-2022). El ocultamiento es automático: si encuentras un dato personal visible, escríbenos a través de <a href="/contacto">contacto</a> y lo corregimos. El texto original sin ocultar está en el PDF publicado por la CMF.</p>
+  <p>Hay ${D.reduce((s,x)=>s+x.docs.length,0)} documentos PDF convertidos a texto. Varios documentos pueden ser partes de una misma resolución, así que se agruparon en <b>${D.length} sentencias</b>, y luego en <b>${BYEXP.size} expedientes</b>. Cada sentencia muestra la trayectoria de su expediente: primera instancia, apelación o protección, y Corte Suprema.</p>
+  <h2>Cómo se vinculan las instancias</h2>
+  <p>Además del identificador de causa de la CMF, se cruzaron los roles: cuando una sentencia cita el rol de otra resolución que está en la colección (por ejemplo, una Corte que confirma "la sentencia apelada dictada por el 21° Juzgado Civil, Rol C-…"), ambas se unen en un mismo <b>expediente</b>. Solo se aceptan vínculos coherentes con el procedimiento: misma compañía, y no se unen dos Cortes de Apelaciones distintas ni dos juzgados distintos. Cada vínculo indica su confianza (alta o media). También se detectó que el ID de "causa" de la CMF a veces agrupa juicios distintos (por ejemplo, el ID 86 reúne tres litigios con partes diferentes). Por eso los <b>expedientes</b> se reconstruyeron con evidencia: rol citado o compartido, mismas partes y compañía, y la agrupación de la CMF solo cuando es coherente (instancias distintas, orden cronológico, sin partes en conflicto). Resultado: ${BYEXP.size} expedientes, ${[...BYEXP.values()].filter(a=>a.length>1).length} con más de una resolución, y ${D.filter(x=>x.dup).length} registros duplicados marcados.</p>
+  <p>Cuando el texto menciona una instancia que <b>no está en la colección</b> (la sentencia apelada, la Corte de Apelaciones de origen), aparece en la trayectoria con borde punteado. Si una sentencia de primera instancia contradice el resultado final informado a la CMF, se advierte que probablemente fue modificada en una instancia superior no incluida. Los roles citados como precedente ("así lo ha resuelto la Corte… Rol…") se muestran aparte, como jurisprudencia citada.</p>
+  <h2>Qué se normalizó</h2>
+  <table><tr><th>Campo</th><th>Cómo se obtuvo</th></tr>
+  <tr><td>Tribunal e instancia</td><td>Detectados desde el texto (firma electrónica “Pronunciado por…”, encabezado, firmas de ministros, juez árbitro o JPL). El campo tribunal informado a la CMF tiene cientos de variantes escritas a mano y a veces no coincide con quien dictó el fallo.</td></tr>
+  <tr><td>Fecha</td><td>Leída en palabras desde el encabezado (“Santiago, veintidós de mayo de dos mil veintiséis”). Si no se pudo leer, se usa la fecha de notificación de la base.</td></tr>
+  <tr><td>Rol y carátula</td><td>Extraídos del texto; si no aparece, se usa el rol informado.</td></tr>
+  <tr><td>Compañía</td><td>Agrupada por grupo asegurador (por ejemplo, Zurich reúne Zurich Santander Vida, Generales y Zurich Chile).</td></tr></table>
+  <h2>Qué se clasificó automáticamente</h2>
+  <p><b>Ramo</b>: por palabras clave en la materia y el texto de todas las sentencias del expediente, ponderando la materia y coherente con el tipo de seguro de la CMF. <b>Temas jurídicos</b>: 26 temas detectados por expresiones características y citas de artículos (por ejemplo, el art. 525 del Código de Comercio para la reticencia), con umbrales de frecuencia para no marcar menciones de paso. <b>Normas citadas</b>: artículos asociados a cada cuerpo legal en el texto. <b>Lo resuelto</b>: leído de la parte resolutiva (confirma, revoca, acoge, rechaza, inadmisible, incompetencia).</p>
+  <p>Estas clasificaciones son ayudas de búsqueda, no calificaciones jurídicas. Una muestra revisada mostró aciertos altos en tribunal, instancia y resultado, pero conviene verificar cada sentencia antes de citarla. El <b>resultado final del expediente</b> es el informado a la CMF y es el dato oficial; “lo resuelto en esta sentencia” describe solo esa resolución. Quedan ${D.filter(x=>/Otro|No identificado/.test(x.d)).length} sentencias sin clasificar en este campo y ${D.filter(x=>x.r.startsWith('Otros')).length} con ramo no determinado.</p>
+  <h2>Calidad de los textos</h2>
+  <p>${q('Buena')} textos legibles, ${q('OCR deficiente')} con OCR deficiente, ${q('Ilegible (codificación PDF)')} ilegibles por codificación del PDF y ${q('Sin texto')} sin texto. En esos casos el lector lo advierte y remite al archivo original.</p>
+  <h2>Cómo buscar</h2>
+  <p>Escribe varias palabras para exigir todas; usa comillas para frases exactas (“declaración de salud”). La búsqueda no distingue tildes ni mayúsculas. Cada sentencia tiene un enlace propio (botón “Copiar enlace”) para citarla en tus notas.</p>
+  </div></div>`;
+}
+
+// ---------- eventos
+function setView(v){ st.view=v; ['explorar','panorama','normas','metodo'].forEach(k=>{ document.getElementById('v-'+k).hidden=(k!==v); document.getElementById('tab-'+k).setAttribute('aria-selected',k===v); });
+  document.querySelector('.explore aside').style.display='';
+  if(v==='metodo') renderMetodo(); render(); window.scrollTo(0,0); }
+document.querySelector('nav.tabs').addEventListener('click',e=>{ const b=e.target.closest('button[data-v]'); if(b) setView(b.dataset.v); });
+let qt; document.getElementById('q').addEventListener('input',e=>{ clearTimeout(qt); qt=setTimeout(()=>{ st.q=e.target.value; st.limit=60; maybeLoadAll(); if(st.q&&st.sort==='fd'&&parseQ(st.q).length){} render(); if(st.cur) openReader(st.cur,false); },220); });
+document.getElementById('ft').checked=st.ft;
+document.getElementById('ft').addEventListener('change',e=>{ st.ft=e.target.checked; savePrefs(); maybeLoadAll(); render(); });
+document.getElementById('sort').value=st.sort;
+document.getElementById('sort').addEventListener('change',e=>{ st.sort=e.target.value; savePrefs(); render(); });
+document.getElementById('btnf').addEventListener('click',()=>document.getElementById('filters').classList.toggle('open'));
+document.getElementById('filters').addEventListener('change',e=>{
+  const i=e.target; if(i.id==='y0'||i.id==='y1'){ st[i.id]=+i.value; if(st.y0>st.y1){ const t=st.y0; st.y0=st.y1; st.y1=t; } render(); return; }
+  if(i.dataset.f){ const s=st.sel[i.dataset.f]; i.checked?s.add(i.dataset.v):s.delete(i.dataset.v); st.limit=60; render(); } });
+document.getElementById('filters').addEventListener('click',e=>{ const m=e.target.closest('[data-more]'); if(m){ st.expanded[m.dataset.more]=!st.expanded[m.dataset.more]; renderFilters(); }
+  const c=e.target.closest('[data-clear]'); if(c){ st.sel[c.dataset.clear].clear(); render(); } });
+document.getElementById('activef').addEventListener('click',e=>{ const b=e.target.closest('[data-rm]'); if(!b) return; const k=b.dataset.rm;
+  if(k==='all'){ FACETS.forEach(f=>st.sel[f.k].clear()); st.y0=YEARS[0]; st.y1=YEARS[YEARS.length-1]; st.q=''; document.getElementById('q').value=''; }
+  else if(k==='y'){ st.y0=YEARS[0]; st.y1=YEARS[YEARS.length-1]; } else st.sel[k].delete(b.dataset.v); render(); });
+document.getElementById('list').addEventListener('click',e=>{ if(e.target.id==='morelist'){ st.limit+=60; renderExplore(); return; } const c=e.target.closest('.card'); if(c) openReader(c.dataset.id); });
+function addFilter(k,v){ st.sel[k].add(v); st.limit=60; st.cur=null; setView('explorar'); }
+document.body.addEventListener('click',e=>{
+  const a=e.target.closest('[data-add]'); if(a){ addFilter(a.dataset.add,a.dataset.v); return; }
+  const cu=e.target.closest('[data-cuerpo]'); if(cu){ st.ncuerpo=cu.dataset.cuerpo; renderNormas(); return; }
+  const tj=e.target.closest('.traj button'); if(tj){ openReader(tj.dataset.id); return; }
+  const po=e.target.closest('[data-id-open]'); if(po){ openReader(po.dataset.idOpen); return; }
+  if(e.target.id==='rclose') closeReader();
+  if(e.target.id==='rcite'){ copy(cita(BYID.get(st.cur))); }
+  if(e.target.id==='rlink'){ copy(location.href.split('#')[0]+'#s'+st.cur); }
+  if(e.target.id==='rcausa'){ const x=BYID.get(st.cur); FACETS.forEach(f=>st.sel[f.k].clear()); st.sel.c.add(String(x.x)); st.sort='causa'; document.getElementById('sort').value='causa'; setView('explorar'); openReader(x.i,false); }
+});
+document.getElementById('copytsv').addEventListener('click',()=>{
+  const H=['ID','Expediente','Instancia','Tribunal','Rol','Fecha','Compañía','Ramo','Temas','Lo resuelto','Resultado expediente (CMF)','Materia'];
+  const rows=CUR_LIST.map(x=>[x.i,x.x,x.ins,x.tr,x.rol,x.f||x.fn,x.g,x.r,x.t.join('; '),x.d,x.re,x.m].map(v=>String(v??'').replace(/[\t\n]+/g,' ')).join('\t'));
+  copy([H.join('\t'),...rows].join('\n')); });
+const tip=document.getElementById('tip');
+document.addEventListener('mousemove',e=>{ const t=e.target.closest('[data-tip]'); if(t){ tip.hidden=false; tip.textContent=t.dataset.tip; tip.style.left=Math.min(e.clientX+12, innerWidth-290)+'px'; tip.style.top=(e.clientY+14)+'px'; } else tip.hidden=true; });
+document.addEventListener('keydown',e=>{ if(e.key==='Escape' && window.innerWidth<=1180) closeReader(); });
+
+window.addEventListener('resize',()=>{ const R=document.getElementById('reader'); if(window.innerWidth>1180){ R.hidden=false; document.body.style.overflow=''; } else if(document.body.style.overflow!=='hidden'){ R.hidden=true; } });
+// ---------- inicio
+if(window.innerWidth<=1180) document.getElementById('reader').hidden=true;
+const h=location.hash.match(/^#s(\d+-\d+)$/); const startHash=location.hash;
+if(h && BYID.has(h[1])) st.cur=h[1];
+render();
+if(h && BYID.has(h[1])) openReader(h[1]);
+else if(['#panorama','#normas','#metodo'].includes(startHash)) setView(startHash.slice(1));
+
+</script>
+</body>
+</html>
