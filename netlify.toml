@@ -1,0 +1,13 @@
+# Solo reglas de acceso: no cambia la configuración de compilación de Netlify.
+# Las carpetas internas del repositorio no se publican en el sitio.
+[[redirects]]
+  from = "/herramientas/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/.github/*"
+  to = "/404.html"
+  status = 404
+  force = true
