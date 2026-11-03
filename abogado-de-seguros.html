@@ -1100,7 +1100,7 @@ async function enviarFormulario(e) {
   }
   const payload = {
     access_key: 'a718fe28-53f0-4273-8518-febe7be8489a',
-    subject: '⚖️ Consulta Abogado de Seguros — exigetuseguro.cl/abogado-de-seguros',
+    subject: `⚖️ Consulta #${Array.from(crypto.getRandomValues(new Uint8Array(5)), n => 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'[n % 32]).join('')} — Abogado de Seguros — exigetuseguro.cl`,
     from_name: 'exigetuseguro.cl — Abogado de Seguros',
     nombre, email,
     telefono: document.getElementById('telefono').value.trim() || '—',
