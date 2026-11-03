@@ -471,6 +471,11 @@ footer {
   .bg-photo-wrap { height: 620px; }
   .page-wrapper { margin-top: -20px; }
 }
+
+/* Consentimiento de privacidad */
+.consent-x { display: flex; align-items: flex-start; gap: 8px; margin: 0.7rem 0 0.8rem; font-size: 12px; line-height: 1.5; color: #5a7490; text-align: left; cursor: pointer; }
+.consent-x input { margin-top: 2px; width: 15px; height: 15px; flex-shrink: 0; accent-color: #2e7d52; cursor: pointer; }
+.consent-x a { color: #1f5c3a; text-decoration: underline; }
 </style>
 
 </head>
@@ -571,6 +576,7 @@ footer {
           <div class="tb-item"><i class="fas fa-check-circle"></i> Sin compromiso</div>
         </div>
 
+        <label class="consent-x" for="consentimiento"><input type="checkbox" id="consentimiento" name="consentimiento" required> Acepto la <a href="https://www.exigetuseguro.cl/privacidad" target="_blank" rel="noopener">política de privacidad</a> y autorizo el tratamiento de mis datos, incluidos los de salud, para analizar mi caso.</label>
         <button type="submit" id="btnEnviar" class="btn-send">
           <i class="fas fa-paper-plane"></i> Enviar mi consulta
         </button>
