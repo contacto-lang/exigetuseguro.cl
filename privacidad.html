@@ -48,7 +48,9 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -219,25 +221,91 @@
       .page-head { background: none; padding: 1rem 0; }
       .summary { grid-template-columns: repeat(2, 1fr); }
     }
+  
+    /* Cabecera igual a la del index */
+    :root { --nav-h: 59px !important; }
+    .site-top { position: sticky; top: 0; z-index: 1000; }
+    .xtopbar { background: var(--navy); color: rgba(255,255,255,.75); font-size: 11.5px; font-weight: 300; }
+    .xtopbar-inner { max-width: 1300px; margin: 0 auto; padding: .55rem 2rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .xtopbar-left { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .xtopbar-left a, .xtopbar-left span { color: rgba(255,255,255,.75); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: color .2s; }
+    .xtopbar-left a:hover { color: #fff; }
+    .xtopbar-social { display: flex; gap: .9rem; }
+    .xtopbar-social a { color: rgba(255,255,255,.6); text-decoration: none; font-size: 12px; transition: color .2s; }
+    .xtopbar-social a:hover { color: #93c5fd; }
+    .site-header { background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); border-bottom: 0.5px solid rgba(11,37,69,0.08); }
+    .xnav-links { display: flex; gap: 0.25rem; align-items: center; }
+    .xnav-links a { font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); text-decoration: none; padding: 0.5rem 0.9rem; border-radius: 4px; transition: all .2s; }
+    .xnav-links a:hover { color: var(--navy); background: rgba(11,37,69,0.05); }
+    .xnav-ctas { display: flex; gap: 0.75rem; align-items: center; flex-shrink: 0; }
+    .xbtn-outline, .xbtn-solid { font-size: 10px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; padding: 8px 18px; border-radius: 3px; transition: all .2s; display: inline-flex; align-items: center; gap: 6px; }
+    .xbtn-outline { color: var(--navy); border: 1px solid rgba(11,37,69,0.25); }
+    .xbtn-outline:hover { background: var(--navy); color: #fff; border-color: var(--navy); }
+    .xbtn-solid { color: #fff; background: var(--celeste); border: 1px solid var(--celeste); }
+    .xbtn-solid:hover { background: var(--celeste-d); border-color: var(--celeste-d); }
+    .header-inner { max-width: 1300px; margin: 0 auto; padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+    .site-logo { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 400; letter-spacing: 0.02em; color: var(--navy); text-decoration: none; line-height: 1; flex-shrink: 0; }
+    .site-logo em { font-style: normal; color: var(--celeste); }
+    .hamburger { display: none; align-items: center; justify-content: center; font-size: 1.3rem; color: var(--ink); cursor: pointer; border: none; background: none; padding: 0.4rem; line-height: 1; width: 36px; height: 36px; border-radius: 6px; transition: background 0.2s; }
+    .hamburger:hover { background: var(--pale-d); }
+    .mobile-nav { display: none; position: fixed; top: 59px; left: 0; right: 0; background: #fff; border-bottom: 1px solid rgba(11,37,69,0.1); box-shadow: 0 8px 24px rgba(11,37,69,0.12); z-index: 998; padding: 0.5rem 0.75rem 0.75rem; max-height: calc(100vh - 59px); overflow-y: auto; }
+    .mobile-nav.active { display: block; }
+    .mobile-nav a { display: flex; align-items: center; gap: 0.75rem; padding: 0.85rem 1rem; color: var(--ink); text-decoration: none; font-size: 13px; font-weight: 400; border-radius: 8px; margin-bottom: 2px; transition: background .2s, color .2s; }
+    .mobile-nav a:hover { background: var(--pale-d); color: var(--navy); }
+    .mobile-nav a.m-wa { color: var(--celeste); font-weight: 500; }
+    .m-nav-icon { width: 30px; height: 30px; border-radius: 7px; background: var(--pale-d); display: flex; align-items: center; justify-content: center; font-size: 0.75rem; color: #1e5c99; flex-shrink: 0; }
+    .m-wa .m-nav-icon { background: rgba(37,211,102,0.12); color: #25D366; }
+    footer .nav-logo { font-weight: 400; font-size: 26px; }
+    @media (min-width: 969px) { :root { --nav-h: 104px !important; } }
+    @media (max-width: 968px) {
+      .xtopbar, .xnav-links, .xnav-ctas { display: none !important; }
+      .hamburger { display: flex !important; }
+    }
   </style>
 </head>
 <body>
 
-  <div class="topbar">
-    <div class="wrap">
-      <span class="topbar-left">Abogados especialistas en seguros · Atención remota en todo Chile</span>
-      <span>
-        <a href="mailto:contacto@exigetuseguro.cl">contacto@exigetuseguro.cl</a>
-        <a href="https://wa.me/56979939868" target="_blank" rel="noopener">WhatsApp +56 9 7993 9868</a>
-      </span>
+  <div class="site-top">
+  <div class="xtopbar">
+    <div class="xtopbar-inner">
+      <div class="xtopbar-left">
+        <a href="mailto:contacto@exigetuseguro.cl"><i class="fas fa-envelope"></i> contacto@exigetuseguro.cl</a>
+        <span><i class="fas fa-map-marker-alt"></i> Atención en todo Chile</span>
+      </div>
+      <div class="xtopbar-social">
+        <a href="mailto:contacto@exigetuseguro.cl" aria-label="Correo"><i class="fas fa-envelope"></i></a>
+        <a href="https://www.instagram.com/exigetuseguro.cl/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
     </div>
   </div>
-
-  <nav class="main">
-    <div class="wrap">
-      <a href="https://www.exigetuseguro.cl/" class="nav-logo">exigetuseguro<em>.cl</em><span>Abogados de seguros</span></a>
-      <a href="https://www.exigetuseguro.cl/" class="nav-back">← Volver al inicio</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="https://www.exigetuseguro.cl/" class="site-logo">exigetuseguro<em>.cl</em></a>
+      <nav class="xnav-links" aria-label="Principal">
+        <a href="https://www.exigetuseguro.cl/#servicios">Servicios</a>
+        <a href="https://www.exigetuseguro.cl/#honorarios">Honorarios</a>
+        <a href="https://www.exigetuseguro.cl/#nosotros">Nosotros</a>
+        <a href="https://www.exigetuseguro.cl/#contacto">Contacto</a>
+      </nav>
+      <div class="xnav-ctas">
+        <a href="https://www.exigetuseguro.cl/contacto" class="xbtn-outline"><i class="fas fa-file-alt"></i> Formulario</a>
+        <a href="https://wa.me/56979939868" target="_blank" rel="noopener" class="xbtn-solid"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      </div>
+      <button class="hamburger" type="button" onclick="toggleNav()" aria-label="Menú" aria-expanded="false">
+        <i class="fas fa-bars" id="hamIcon"></i>
+      </button>
     </div>
+  </header>
+  </div>
+
+  <nav class="mobile-nav" id="mobileNav" aria-label="Menú">
+    <a href="https://www.exigetuseguro.cl/#servicios"><span class="m-nav-icon"><i class="fas fa-shield-alt"></i></span>Servicios</a>
+    <a href="https://www.exigetuseguro.cl/contacto"><span class="m-nav-icon"><i class="fas fa-calendar"></i></span>Agendar Cita</a>
+    <a href="https://www.exigetuseguro.cl/#honorarios"><span class="m-nav-icon"><i class="fas fa-file-invoice-dollar"></i></span>Honorarios</a>
+    <a href="https://www.exigetuseguro.cl/#nosotros"><span class="m-nav-icon"><i class="fas fa-users"></i></span>Nosotros</a>
+    <a href="https://www.exigetuseguro.cl/contacto"><span class="m-nav-icon"><i class="fas fa-file-alt"></i></span>Formulario</a>
+    <a href="https://www.exigetuseguro.cl/#contacto"><span class="m-nav-icon"><i class="fas fa-address-book"></i></span>Contacto</a>
+    <a href="https://wa.me/56979939868" target="_blank" rel="noopener" class="m-wa"><span class="m-nav-icon"><i class="fab fa-whatsapp"></i></span>WhatsApp</a>
   </nav>
   <header class="page-head">
     <div class="wrap">
@@ -514,7 +582,7 @@
     <div class="wrap">
       <div class="footer-inner">
         <div class="footer-brand">
-          <a href="https://www.exigetuseguro.cl/" class="nav-logo">exigetuseguro<em>.cl</em><span>Abogados de seguros</span></a>
+          <a href="https://www.exigetuseguro.cl/" class="nav-logo">exigetuseguro<em>.cl</em></a>
           <p>Abogados especialistas en seguros, con atención remota en todo Chile. Un sitio de Santana y Cía. SpA.</p>
         </div>
         <div>
@@ -570,5 +638,18 @@
     document.querySelectorAll('.toc-m a').forEach(a => a.addEventListener('click', () => a.closest('details').removeAttribute('open')));
   </script>
 
+  <script>
+    function toggleNav() {
+      const nav = document.getElementById('mobileNav');
+      const open = nav.classList.toggle('active');
+      document.getElementById('hamIcon').className = open ? 'fas fa-times' : 'fas fa-bars';
+      document.querySelector('.hamburger').setAttribute('aria-expanded', open);
+      nav.style.top = document.querySelector('.site-top').getBoundingClientRect().bottom + 'px';
+    }
+    document.querySelectorAll('#mobileNav a').forEach(a => a.addEventListener('click', () => {
+      document.getElementById('mobileNav').classList.remove('active');
+      document.getElementById('hamIcon').className = 'fas fa-bars';
+    }));
+  </script>
 </body>
 </html>
