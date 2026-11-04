@@ -1098,11 +1098,11 @@ textarea.m-fi { resize: vertical; min-height: 100px; line-height: 1.6; }
   gap: 3.5rem;
   align-items: center;
 }
-.contacto-btns { display: flex; flex-direction: column; gap: 0.8rem; margin-top: 1.8rem; max-width: 520px; }
+.contacto-btns { display: flex; flex-direction: column; gap: 0.6rem; margin-top: 1rem; max-width: 460px; }
 .contacto-btn {
   display: flex; align-items: center; justify-content: center; gap: 10px;
-  padding: 16px 22px; border-radius: 6px;
-  font-size: 11.5px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase;
+  padding: 12px 20px; border-radius: 5px;
+  font-size: 10.5px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase;
   text-decoration: none; transition: var(--transition);
 }
 .contacto-btn.primary { background: #ffffff; color: var(--navy); border: 1px solid #ffffff; }
@@ -1111,11 +1111,13 @@ textarea.m-fi { resize: vertical; min-height: 100px; line-height: 1.6; }
 .contacto-btn.secondary:hover { background: rgba(255,255,255,0.08); border-color: #ffffff; }
 .contacto-info { border-left: 1px solid rgba(255,255,255,0.14); padding-left: 3rem; }
 .contacto-info ul { list-style: none; }
-.contacto-info li { display: flex; align-items: center; gap: 12px; font-size: 15px; font-weight: 300; color: rgba(255,255,255,0.82); padding: 0.4rem 0; }
+.contacto-info li { display: flex; align-items: center; gap: 12px; font-size: 14.5px; font-weight: 300; color: rgba(255,255,255,0.82); padding: 0.56rem 0; }
 .contacto-info li i { width: 18px; text-align: center; color: #a9c6e6; font-size: 0.9rem; }
 .contacto-info a { color: #ffffff; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.35); transition: border-color .2s; }
 .contacto-info a:hover { border-color: #ffffff; }
 .contacto-note { margin-top: 1rem; font-size: 12.5px; color: rgba(255,255,255,0.5); }
+#contacto .contacto-wrap .sec-title { font-size: clamp(28px, 3.4vw, 38px); margin-bottom: 0.6rem; }
+#contacto .contacto-wrap .sec-lead { line-height: 1.6; }
 
 @media (max-width: 968px) {
   .contacto-wrap { grid-template-columns: 1fr; gap: 2rem; }
@@ -1804,14 +1806,14 @@ footer { background: #0a1a2e; padding: 4rem 2rem 2rem; }
       <p class="sec-lead fade-in" style="color:rgba(255,255,255,0.65);">Cuéntanos tu caso. Te orientamos sin compromiso.</p>
       <div class="contacto-btns fade-in">
         <a href="https://wa.me/56979939868?text=Hola,%20necesito%20asesoría%20legal%20sobre%20seguros" target="_blank" rel="noopener" class="contacto-btn primary"><i class="fab fa-whatsapp"></i> Escribir por WhatsApp</a>
-        <a href="#" onclick="smartScroll('m-agenda','agenda');return false;" class="contacto-btn secondary"><i class="fas fa-calendar-check"></i> Agendar videollamada gratis</a>
+        <a href="https://www.exigetuseguro.cl/contacto" class="contacto-btn secondary"><i class="fas fa-file-alt"></i> Enviar caso y documentos</a>
       </div>
     </div>
     <div class="contacto-info fade-in">
       <ul>
         <li><i class="fas fa-envelope"></i><a href="mailto:contacto@exigetuseguro.cl">contacto@exigetuseguro.cl</a></li>
         <li><i class="fab fa-whatsapp"></i>+56 9 7993 9868</li>
-        <li><i class="fas fa-file-alt"></i><a href="https://www.exigetuseguro.cl/contacto">Enviar caso con documentos</a></li>
+        <li><i class="fas fa-calendar-check"></i><a href="#" onclick="smartScroll('m-agenda','agenda');return false;">Agendar videollamada gratis</a></li>
         <li><i class="fas fa-map-marker-alt"></i>Atención remota en todo Chile</li>
       </ul>
       <p class="contacto-note">Respuesta en un máximo de 24 horas hábiles.</p>
