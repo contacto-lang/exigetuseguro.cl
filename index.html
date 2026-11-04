@@ -1092,67 +1092,36 @@ textarea.m-fi { resize: vertical; min-height: 100px; line-height: 1.6; }
               url('https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=1920') center/cover;
 }
 #contacto .sec-tag { color: rgba(148,197,235,0.7); }
-.contacto-grid {
+.contacto-wrap {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.25rem;
-  margin-top: 2.5rem;
-}
-.contacto-card {
-  display: flex;
-  flex-direction: column;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
   align-items: center;
-  text-align: center;
-  background: rgba(255,255,255,0.07);
-  border: 0.5px solid rgba(255,255,255,0.14);
-  border-radius: var(--radius);
-  padding: 2rem 1.5rem;
-  text-decoration: none;
-  transition: var(--transition);
 }
-.contacto-card:hover {
-  background: rgba(255,255,255,0.13);
-  border-color: rgba(255,255,255,0.28);
-  transform: translateY(-4px);
+.contacto-btns { display: flex; flex-direction: column; gap: 0.8rem; margin-top: 1.8rem; max-width: 520px; }
+.contacto-btn {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  padding: 16px 22px; border-radius: 6px;
+  font-size: 11.5px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase;
+  text-decoration: none; transition: var(--transition);
 }
-.contacto-icon {
-  width: 52px; height: 52px; border-radius: 12px;
-  background: rgba(255,255,255,0.12);
-  border: 0.5px solid rgba(255,255,255,0.2);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.15rem; color: #ffffff;
-  margin-bottom: 1.1rem;
-}
-.contacto-card h4 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 19px; font-weight: 400;
-  color: #ffffff; margin-bottom: 0.4rem;
-}
-.contacto-card p {
-  font-size: 11.5px; color: rgba(255,255,255,0.55); line-height: 1.55;
-}
+.contacto-btn.primary { background: #ffffff; color: var(--navy); border: 1px solid #ffffff; }
+.contacto-btn.primary:hover { background: #eef3fa; border-color: #eef3fa; }
+.contacto-btn.secondary { color: #ffffff; border: 1px solid rgba(255,255,255,0.45); }
+.contacto-btn.secondary:hover { background: rgba(255,255,255,0.08); border-color: #ffffff; }
+.contacto-info { border-left: 1px solid rgba(255,255,255,0.14); padding-left: 3rem; }
+.contacto-info ul { list-style: none; }
+.contacto-info li { display: flex; align-items: center; gap: 12px; font-size: 15px; font-weight: 300; color: rgba(255,255,255,0.82); padding: 0.4rem 0; }
+.contacto-info li i { width: 18px; text-align: center; color: #a9c6e6; font-size: 0.9rem; }
+.contacto-info a { color: #ffffff; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.35); transition: border-color .2s; }
+.contacto-info a:hover { border-color: #ffffff; }
+.contacto-note { margin-top: 1rem; font-size: 12.5px; color: rgba(255,255,255,0.5); }
 
 @media (max-width: 968px) {
-  .contacto-grid {
-    grid-template-columns: 1fr;
-    gap: 0.6rem;
-  }
-  .contacto-card {
-    flex-direction: row;
-    align-items: center;
-    text-align: left;
-    padding: 0.9rem 1.1rem;
-    gap: 0.9rem;
-  }
-  .contacto-icon {
-    width: 36px; height: 36px;
-    border-radius: 9px;
-    font-size: 0.85rem;
-    margin-bottom: 0;
-    flex-shrink: 0;
-  }
-  .contacto-card h4 { font-size: 14px; margin-bottom: 1px; }
-  .contacto-card p { font-size: 11px; }
+  .contacto-wrap { grid-template-columns: 1fr; gap: 2rem; }
+  .contacto-btns { max-width: none; }
+  .contacto-info { border-left: none; border-top: 1px solid rgba(255,255,255,0.14); padding: 1.6rem 0 0; }
+  .contacto-info li { font-size: 14px; }
 }
 
 /* ═══════════════════════════════════════════
@@ -1828,32 +1797,24 @@ footer { background: #0a1a2e; padding: 4rem 2rem 2rem; }
 
 <!-- CONTACTO -->
 <section id="contacto">
-  <div class="sec-inner">
-    <span class="sec-tag">Hablemos</span>
-    <h2 class="sec-title light fade-in">Ponte en <em>Contacto</em></h2>
-    <p class="sec-lead fade-in" style="color:rgba(255,255,255,0.65);">Elige la vía que prefieras. Estamos disponibles para orientarte sin compromiso.</p>
-
-    <div class="contacto-grid fade-in">
-      <a href="mailto:contacto@exigetuseguro.cl" class="contacto-card">
-        <div class="contacto-icon"><i class="fas fa-envelope"></i></div>
-        <h4>Correo</h4>
-        <p>contacto@exigetuseguro.cl</p>
-      </a>
-      <a href="https://wa.me/56979939868?text=Hola,%20necesito%20asesoría%20legal%20sobre%20seguros" target="_blank" rel="noopener" class="contacto-card">
-        <div class="contacto-icon"><i class="fab fa-whatsapp"></i></div>
-        <h4>WhatsApp</h4>
-        <p>+56 9 7993 9868</p>
-      </a>
-      <a href="#" onclick="smartScroll('m-agenda','agenda');return false;" class="contacto-card">
-        <div class="contacto-icon"><i class="fas fa-calendar-check"></i></div>
-        <h4>Agendar Cita</h4>
-        <p>Videollamada gratuita</p>
-      </a>
-      <a href="https://www.exigetuseguro.cl/contacto" class="contacto-card">
-        <div class="contacto-icon"><i class="fas fa-file-alt"></i></div>
-        <h4>Formulario</h4>
-        <p>Envía tu caso y documentos</p>
-      </a>
+  <div class="sec-inner contacto-wrap">
+    <div>
+      <span class="sec-tag">Hablemos</span>
+      <h2 class="sec-title light fade-in">Ponte en <em>Contacto</em></h2>
+      <p class="sec-lead fade-in" style="color:rgba(255,255,255,0.65);">Cuéntanos tu caso. Te orientamos sin compromiso.</p>
+      <div class="contacto-btns fade-in">
+        <a href="https://wa.me/56979939868?text=Hola,%20necesito%20asesoría%20legal%20sobre%20seguros" target="_blank" rel="noopener" class="contacto-btn primary"><i class="fab fa-whatsapp"></i> Escribir por WhatsApp</a>
+        <a href="#" onclick="smartScroll('m-agenda','agenda');return false;" class="contacto-btn secondary"><i class="fas fa-calendar-check"></i> Agendar videollamada gratis</a>
+      </div>
+    </div>
+    <div class="contacto-info fade-in">
+      <ul>
+        <li><i class="fas fa-envelope"></i><a href="mailto:contacto@exigetuseguro.cl">contacto@exigetuseguro.cl</a></li>
+        <li><i class="fab fa-whatsapp"></i>+56 9 7993 9868</li>
+        <li><i class="fas fa-file-alt"></i><a href="https://www.exigetuseguro.cl/contacto">Enviar caso con documentos</a></li>
+        <li><i class="fas fa-map-marker-alt"></i>Atención remota en todo Chile</li>
+      </ul>
+      <p class="contacto-note">Respuesta en un máximo de 24 horas hábiles.</p>
     </div>
   </div>
 </section>
