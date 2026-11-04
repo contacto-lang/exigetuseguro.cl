@@ -1098,11 +1098,11 @@ textarea.m-fi { resize: vertical; min-height: 100px; line-height: 1.6; }
   gap: 3.5rem;
   align-items: center;
 }
-.contacto-btns { display: flex; flex-direction: column; gap: 0.8rem; margin-top: 1.8rem; max-width: 520px; }
+.contacto-btns { display: flex; flex-direction: column; gap: 0.6rem; margin-top: 1rem; max-width: 460px; }
 .contacto-btn {
   display: flex; align-items: center; justify-content: center; gap: 10px;
-  padding: 16px 22px; border-radius: 6px;
-  font-size: 11.5px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase;
+  padding: 12px 20px; border-radius: 5px;
+  font-size: 10.5px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase;
   text-decoration: none; transition: var(--transition);
 }
 .contacto-btn.primary { background: #ffffff; color: var(--navy); border: 1px solid #ffffff; }
@@ -1111,11 +1111,13 @@ textarea.m-fi { resize: vertical; min-height: 100px; line-height: 1.6; }
 .contacto-btn.secondary:hover { background: rgba(255,255,255,0.08); border-color: #ffffff; }
 .contacto-info { border-left: 1px solid rgba(255,255,255,0.14); padding-left: 3rem; }
 .contacto-info ul { list-style: none; }
-.contacto-info li { display: flex; align-items: center; gap: 12px; font-size: 15px; font-weight: 300; color: rgba(255,255,255,0.82); padding: 0.4rem 0; }
+.contacto-info li { display: flex; align-items: center; gap: 12px; font-size: 14.5px; font-weight: 300; color: rgba(255,255,255,0.82); padding: 0.56rem 0; }
 .contacto-info li i { width: 18px; text-align: center; color: #a9c6e6; font-size: 0.9rem; }
 .contacto-info a { color: #ffffff; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.35); transition: border-color .2s; }
 .contacto-info a:hover { border-color: #ffffff; }
 .contacto-note { margin-top: 1rem; font-size: 12.5px; color: rgba(255,255,255,0.5); }
+#contacto .contacto-wrap .sec-title { font-size: clamp(28px, 3.4vw, 38px); margin-bottom: 0.6rem; }
+#contacto .contacto-wrap .sec-lead { line-height: 1.6; }
 
 @media (max-width: 968px) {
   .contacto-wrap { grid-template-columns: 1fr; gap: 2rem; }
