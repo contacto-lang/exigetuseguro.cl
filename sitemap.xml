@@ -143,6 +143,13 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
+  <!-- Formas de pago -->
+  <url>
+    <loc>https://www.exigetuseguro.cl/formas-de-pago</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <!-- Política de Privacidad -->
   <url>
     <loc>https://www.exigetuseguro.cl/privacidad</loc>

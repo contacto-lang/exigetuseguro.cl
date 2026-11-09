@@ -1,7 +1,21 @@
 {
+  // wrangler.jsonc — Exige Tu Seguro
+  // Cloudflare Workers + Assets — https://www.exigetuseguro.cl
+
   "name": "exigetuseguro",
   "compatibility_date": "2026-02-05",
+
+  // Worker: portal de pagos con Flow (/api/*). Todo lo demás son archivos estáticos.
+  "main": "worker.js",
+  "observability": { "enabled": true },
+
+  // Sirve los archivos estáticos desde la carpeta raíz (excluidos los de .assetsignore)
   "assets": {
-    "directory": "./"
+    "directory": "./",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*"]
   }
+
+  // Claves: se cargan como secretos en Cloudflare, nunca en este archivo
+  // (FLOW_API_KEY, FLOW_SECRET_KEY y ADMIN_KEY). FLOW_API_URL es opcional (sandbox para pruebas).
 }
