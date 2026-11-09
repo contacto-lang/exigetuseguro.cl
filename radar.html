@@ -46,374 +46,561 @@
   <link rel="manifest" href="/site.webmanifest">
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebSite",
-        "@id": "https://www.exigetuseguro.cl/#website",
-        "name": "Exige Tu Seguro",
-        "alternateName": ["ExigeRadar", "Exige Tu Seguro Chile"],
-        "url": "https://www.exigetuseguro.cl",
-        "description": "Estudio jurídico especializado en seguros en Chile. Diagnóstico gratuito de coberturas reclamables, impugnación de rechazos y defensa legal con honorarios de éxito.",
-        "inLanguage": "es-CL",
-        "publisher": { "@id": "https://www.exigetuseguro.cl/#organization" },
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": { "@type": "EntryPoint", "urlTemplate": "https://www.exigetuseguro.cl/?s={search_term_string}" },
-          "query-input": "required name=search_term_string"
-        }
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://www.exigetuseguro.cl/#website",
+      "name": "Exige Tu Seguro",
+      "alternateName": [
+        "ExigeRadar",
+        "Exige Tu Seguro Chile"
+      ],
+      "url": "https://www.exigetuseguro.cl",
+      "description": "Estudio jurídico especializado en seguros en Chile. Diagnóstico gratuito de coberturas reclamables, impugnación de rechazos y defensa legal con honorarios de éxito.",
+      "inLanguage": "es-CL",
+      "publisher": {
+        "@id": "https://www.exigetuseguro.cl/#organization"
       },
-      {
-        "@type": "LegalService",
-        "@id": "https://www.exigetuseguro.cl/#organization",
-        "name": "Exige Tu Seguro",
-        "alternateName": ["ExigeRadar", "Exige Tu Seguro Abogados"],
-        "url": "https://www.exigetuseguro.cl",
-        "logo": {
-          "@type": "ImageObject",
-          "@id": "https://www.exigetuseguro.cl/#logo",
-          "url": "https://www.exigetuseguro.cl/logo.jpg",
-          "caption": "Exige Tu Seguro — Abogados especialistas en seguros Chile"
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://www.exigetuseguro.cl/?s={search_term_string}"
         },
-        "image": "https://www.exigetuseguro.cl/og-radar.jpg",
-        "description": "Estudio jurídico chileno especializado en seguros: impugnación de rechazos, cobro de pólizas no reclamadas, desgravamen hipotecario, SOAP y pensiones de sobrevivencia. Honorarios de éxito.",
-        "email": "contacto@exigetuseguro.cl",
-        "contactPoint": [
-          {
-            "@type": "ContactPoint",
-            "contactType": "customer service",
-            "url": "https://wa.me/56979939868",
-            "telephone": "+56979939868",
-            "contactOption": ["http://schema.org/TollFree"],
-            "availableLanguage": { "@type": "Language", "name": "Spanish" },
-            "areaServed": { "@type": "Country", "name": "Chile" }
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "LegalService",
+      "@id": "https://www.exigetuseguro.cl/#organization",
+      "name": "Exige Tu Seguro",
+      "alternateName": [
+        "ExigeRadar",
+        "Exige Tu Seguro Abogados"
+      ],
+      "url": "https://www.exigetuseguro.cl",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://www.exigetuseguro.cl/#logo",
+        "url": "https://www.exigetuseguro.cl/logo.jpg",
+        "caption": "Exige Tu Seguro — Abogados especialistas en seguros Chile"
+      },
+      "image": "https://www.exigetuseguro.cl/og-radar.jpg",
+      "description": "Estudio jurídico chileno especializado en seguros: impugnación de rechazos, cobro de pólizas no reclamadas, desgravamen hipotecario, SOAP y pensiones de sobrevivencia. Honorarios de éxito.",
+      "email": "contacto@exigetuseguro.cl",
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "url": "https://wa.me/56979939868",
+          "telephone": "+56979939868",
+          "contactOption": [
+            "http://schema.org/TollFree"
+          ],
+          "availableLanguage": {
+            "@type": "Language",
+            "name": "Spanish"
+          },
+          "areaServed": {
+            "@type": "Country",
+            "name": "Chile"
           }
-        ],
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Santiago",
-          "addressRegion": "Región Metropolitana",
-          "addressCountry": "CL"
-        },
-        "geo": { "@type": "GeoCoordinates", "latitude": -33.4489, "longitude": -70.6693 },
-        "areaServed": { "@type": "Country", "name": "Chile" },
-        "priceRange": "Honorarios de éxito",
-        "knowsAbout": [
-          "Seguro SOAP Chile",
-          "Seguro de Invalidez y Sobrevivencia SIS AFP",
-          "Seguro de desgravamen hipotecario Chile",
-          "Pensión de sobrevivencia Chile",
-          "Seguros de vida no cobrados SICS CMF",
-          "Impugnación de rechazo de seguro Chile",
-          "Derecho del consumidor financiero Chile"
-        ],
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "Servicios Legales en Seguros",
-          "itemListElement": [
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Diagnóstico gratuito de seguros reclamables",
-                "description": "Identificación gratuita de seguros, pensiones e indemnizaciones tras fallecimiento de familiar en Chile.",
-                "offers": { "@type": "Offer", "price": "0", "priceCurrency": "CLP" }
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Impugnación de rechazo de seguro",
-                "description": "Representación legal ante aseguradoras que rechazan siniestros de vida, desgravamen o SOAP. Honorarios de éxito."
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Cobro de seguro SOAP",
-                "description": "Gestión de indemnización SOAP de hasta 300 UF por fallecimiento en accidente de tránsito en Chile."
+        }
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Santiago",
+        "addressRegion": "Región Metropolitana",
+        "addressCountry": "CL"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -33.4489,
+        "longitude": -70.6693
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Chile"
+      },
+      "priceRange": "Honorarios de éxito",
+      "knowsAbout": [
+        "Seguro SOAP Chile",
+        "Seguro de Invalidez y Sobrevivencia SIS AFP",
+        "Seguro de desgravamen hipotecario Chile",
+        "Pensión de sobrevivencia Chile",
+        "Seguros de vida no cobrados SICS CMF",
+        "Impugnación de rechazo de seguro Chile",
+        "Derecho del consumidor financiero Chile"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Servicios Legales en Seguros",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Diagnóstico gratuito de seguros reclamables",
+              "description": "Identificación gratuita de seguros, pensiones e indemnizaciones tras fallecimiento de familiar en Chile.",
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "CLP"
               }
             }
-          ]
-        },
-        "sameAs": [
-          "https://www.facebook.com/exigetuseguro.cl",
-          "https://www.instagram.com/exigetuseguro.cl/",
-          "https://www.linkedin.com/company/exige-tu-seguro/",
-          "https://wa.me/56979939868"
-        ]
-      },
-      {
-        "@type": "WebPage",
-        "@id": "https://www.exigetuseguro.cl/radar#webpage",
-        "name": "ExigeRadar — Diagnóstico Gratuito de Seguros y Pensiones tras Fallecimiento en Chile",
-        "url": "https://www.exigetuseguro.cl/radar",
-        "description": "Herramienta gratuita que identifica en 2 minutos qué seguros, pensiones e indemnizaciones pueden reclamar los herederos tras el fallecimiento de un familiar en Chile.",
-        "inLanguage": "es-CL",
-        "datePublished": "2026-04-17",
-        "dateModified": "2026-04-24",
-        "keywords": "seguros fallecimiento chile, SOAP, SIS AFP, desgravamen, pensión sobrevivencia, CMF SICS, herederos seguros no cobrados",
-        "isPartOf": { "@id": "https://www.exigetuseguro.cl/#website" },
-        "about": { "@id": "https://www.exigetuseguro.cl/radar#tool" },
-        "mainEntity": { "@id": "https://www.exigetuseguro.cl/radar#tool" },
-        "provider": { "@id": "https://www.exigetuseguro.cl/#organization" },
-        "audience": {
-          "@type": "Audience",
-          "audienceType": "Herederos, cónyuge, hijos y familiares de personas fallecidas en Chile que desconocen qué seguros y pensiones pueden reclamar"
-        },
-        "speakable": {
-          "@type": "SpeakableSpecification",
-          "cssSelector": [".hero-intro", ".logo-main", ".logo-sub"]
-        },
-        "significantLink": [
-          "https://www.conocetuseguro.cl",
-          "https://www.cmfchile.cl",
-          "https://www.spensiones.cl"
-        ],
-        "breadcrumb": { "@id": "https://www.exigetuseguro.cl/radar#breadcrumb" }
-      },
-      {
-        "@type": "SoftwareApplication",
-        "@id": "https://www.exigetuseguro.cl/radar#tool",
-        "name": "ExigeRadar",
-        "alternateName": "Exige Radar Diagnóstico Seguros Chile",
-        "url": "https://www.exigetuseguro.cl/radar",
-        "applicationCategory": "LegalApplication",
-        "applicationSubCategory": "InsuranceTool",
-        "operatingSystem": "Web",
-        "browserRequirements": "Requires JavaScript. Compatible with all modern browsers.",
-        "description": "Herramienta de diagnóstico legal gratuita que identifica seguros, pensiones e indemnizaciones reclamables tras el fallecimiento de un familiar en Chile. Sin registro. Resultado en menos de 2 minutos.",
-        "abstract": "ExigeRadar analiza la situación laboral del fallecido, la causa del deceso, sus deudas activas y el parentesco del reclamante para generar una hoja de ruta personalizada con todos los seguros y pensiones a los que tiene derecho como heredero en Chile.",
-        "featureList": [
-          "Detecta seguros de vida no cobrados vía SICS CMF (conocetuseguro.cl)",
-          "Identifica derecho a indemnización SOAP de hasta 300 UF por accidente de tránsito",
-          "Verifica elegibilidad para Seguro SIS AFP en trabajadores activos",
-          "Detecta desgravamen hipotecario, automotriz y de consumo",
-          "Orienta sobre pensiones de viudez, orfandad y sobrevivencia",
-          "Diagnóstico personalizado según parentesco y situación laboral",
-          "Enlaza a portales oficiales CMF y Superintendencia de Pensiones",
-          "Resultado en menos de 2 minutos sin registro"
-        ],
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "CLP",
-          "availability": "https://schema.org/InStock",
-          "description": "Diagnóstico gratuito y sin registro"
-        },
-        "accessMode": ["textual", "visual"],
-        "accessibilityFeature": ["structuredNavigation", "readingOrder", "alternativeText"],
-        "inLanguage": "es-CL",
-        "author": { "@id": "https://www.exigetuseguro.cl/#organization" },
-        "publisher": { "@id": "https://www.exigetuseguro.cl/#organization" },
-        "datePublished": "2026-04-17",
-        "dateModified": "2026-04-24",
-        "isPartOf": { "@id": "https://www.exigetuseguro.cl/#website" },
-        "mentions": [
-          { "@id": "https://www.exigetuseguro.cl/radar#entity-sics" },
-          { "@id": "https://www.exigetuseguro.cl/radar#entity-soap" },
-          { "@id": "https://www.exigetuseguro.cl/radar#entity-sis" },
-          { "@id": "https://www.exigetuseguro.cl/radar#entity-desgravamen" },
-          { "@id": "https://www.exigetuseguro.cl/radar#entity-cmf" },
-          { "@id": "https://www.exigetuseguro.cl/radar#entity-spensiones" }
-        ]
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://www.exigetuseguro.cl/radar#breadcrumb",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.exigetuseguro.cl/" },
-          { "@type": "ListItem", "position": 2, "name": "ExigeRadar — Diagnóstico de Seguros", "item": "https://www.exigetuseguro.cl/radar" }
-        ]
-      },
-      {
-        "@type": "HowTo",
-        "@id": "https://www.exigetuseguro.cl/radar#howto",
-        "name": "Cómo identificar y reclamar seguros, pensiones e indemnizaciones tras el fallecimiento de un familiar en Chile",
-        "description": "Guía paso a paso para detectar y reclamar seguros de vida (SICS CMF), SOAP (hasta 300 UF), desgravamen hipotecario, SIS AFP y pensiones de sobrevivencia en Chile.",
-        "inLanguage": "es-CL",
-        "isPartOf": { "@id": "https://www.exigetuseguro.cl/radar#webpage" },
-        "totalTime": "PT10M",
-        "estimatedCost": { "@type": "MonetaryAmount", "currency": "CLP", "value": "0" },
-        "supply": [
-          { "@type": "HowToSupply", "name": "Clave Única del Registro Civil" },
-          { "@type": "HowToSupply", "name": "RUT del fallecido" },
-          { "@type": "HowToSupply", "name": "Certificado de defunción" },
-          { "@type": "HowToSupply", "name": "Número de patente del vehículo (solo en accidente de tránsito)" }
-        ],
-        "tool": [
-          { "@type": "HowToTool", "name": "Portal conocetuseguro.cl (CMF)", "url": "https://www.conocetuseguro.cl" },
-          { "@type": "HowToTool", "name": "Portal CMF de deudas financieras", "url": "https://www.cmfchile.cl/portal/principal/613/w3-propertyvalue-43331.html" }
-        ],
-        "step": [
-          {
-            "@type": "HowToStep", "position": 1,
-            "name": "Consultar el SICS en conocetuseguro.cl",
-            "text": "Accede al portal oficial de la CMF con tu Clave Única. Como familiar con interés legítimo tienes derecho a consultar todas las pólizas vigentes y no vigentes del fallecido.",
-            "url": "https://www.conocetuseguro.cl"
           },
           {
-            "@type": "HowToStep", "position": 2,
-            "name": "Verificar deudas financieras en el portal CMF",
-            "text": "Revisa el informe de deudas del fallecido en la CMF para detectar seguros de desgravamen vinculados a créditos hipotecarios, automotrices, de consumo y tarjetas.",
-            "url": "https://www.cmfchile.cl/portal/principal/613/w3-propertyvalue-43331.html"
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Impugnación de rechazo de seguro",
+              "description": "Representación legal ante aseguradoras que rechazan siniestros de vida, desgravamen o SOAP. Honorarios de éxito."
+            }
           },
           {
-            "@type": "HowToStep", "position": 3,
-            "name": "Gestionar el SIS AFP si era trabajador activo",
-            "text": "Si el fallecido cotizaba en una AFP, el SIS financia pensiones de sobrevivencia para su cónyuge, conviviente civil e hijos. Trámite en la AFP o en la Superintendencia de Pensiones.",
-            "url": "https://www.spensiones.cl"
-          },
-          {
-            "@type": "HowToStep", "position": 4,
-            "name": "Reclamar el SOAP si fue accidente de tránsito",
-            "text": "El SOAP paga hasta 300 UF por fallecimiento en accidente de tránsito. Identifica la póliza usando el número de patente del vehículo involucrado.",
-            "url": "https://www.bcn.cl/leychile/navegar?idNorma=30593"
-          },
-          {
-            "@type": "HowToStep", "position": 5,
-            "name": "Exigir el desgravamen hipotecario",
-            "text": "Notifica al banco, acredita el fallecimiento y suspende el pago de dividendos. El seguro es obligatorio y debe cancelar el saldo total del crédito.",
-            "url": "https://www.exigetuseguro.cl/radar"
-          },
-          {
-            "@type": "HowToStep", "position": 6,
-            "name": "Consultar a un abogado si hay rechazo — vía WhatsApp",
-            "text": "El plazo de prescripción es de 4 años. Exige Tu Seguro ofrece primera consulta gratuita con honorarios de éxito. Contáctanos directamente por WhatsApp.",
-            "url": "https://wa.me/56979939868"
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Cobro de seguro SOAP",
+              "description": "Gestión de indemnización SOAP de hasta 300 UF por fallecimiento en accidente de tránsito en Chile."
+            }
           }
         ]
       },
-      {
-        "@type": "FAQPage",
-        "@id": "https://www.exigetuseguro.cl/radar#faq",
-        "isPartOf": { "@id": "https://www.exigetuseguro.cl/radar#webpage" },
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "¿Qué seguros se pueden cobrar cuando fallece un familiar en Chile?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Cuando fallece un familiar en Chile, los herederos pueden tener derecho a: (1) Seguro de vida privado — consultable en conocetuseguro.cl (SICS CMF); (2) Seguro SOAP — hasta 300 UF si fue accidente de tránsito; (3) Seguro SIS AFP — si era trabajador activo cotizando; (4) Pensión de viudez u orfandad — si era jubilado o pensionado; (5) Desgravamen hipotecario — cancela el saldo del crédito de vivienda; (6) Desgravamen en créditos de consumo y tarjetas bancarias. El primer paso es siempre consultar el SICS en conocetuseguro.cl." }
-          },
-          {
-            "@type": "Question",
-            "name": "¿Cómo buscar los seguros de un fallecido en Chile con el SICS?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Ingresa al portal conocetuseguro.cl de la CMF con tu Clave Única del Registro Civil. Como familiar con interés legítimo (cónyuge, hijo, padre u otro heredero), puedes consultar todas las pólizas. El SICS reemplazó al antiguo sistema SISA y es el buscador oficial vigente en Chile." }
-          },
-          {
-            "@type": "Question",
-            "name": "¿Cuánto paga el SOAP por fallecimiento en Chile?",
-            "acceptedAnswer": { "@type": "Answer", "text": "El SOAP paga hasta 300 UF de indemnización por fallecimiento causado por un accidente de tránsito en Chile, equivalente a aproximadamente $12 millones de pesos. Para cobrarlo se debe identificar la póliza mediante la patente del vehículo involucrado. El plazo de prescripción es de 4 años." }
-          },
-          {
-            "@type": "Question",
-            "name": "¿Qué es el Seguro SIS AFP y quién puede cobrarlo?",
-            "acceptedAnswer": { "@type": "Answer", "text": "El SIS (Seguro de Invalidez y Sobrevivencia) financia pensiones de sobrevivencia para los beneficiarios de trabajadores activos fallecidos que cotizaban en una AFP. Pueden cobrarlo el cónyuge o conviviente civil, los hijos con derecho a pensión y los padres en ausencia de los anteriores." }
-          },
-          {
-            "@type": "Question",
-            "name": "¿El desgravamen hipotecario cancela el crédito si muere el titular?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Sí. El seguro de desgravamen hipotecario es obligatorio en Chile y debe cancelar el saldo total del crédito al fallecer el titular. Los herederos deben notificar al banco de inmediato y suspender el pago de dividendos mientras se tramita." }
-          },
-          {
-            "@type": "Question",
-            "name": "¿Cuánto tiempo tengo para reclamar seguros de un fallecido en Chile?",
-            "acceptedAnswer": { "@type": "Answer", "text": "El plazo general de prescripción para seguros en Chile es de 4 años desde que la obligación fue exigible (Código de Comercio, artículo 543)." }
-          },
-          {
-            "@type": "Question",
-            "name": "¿Qué es el SICS y en qué se diferencia del SISA?",
-            "acceptedAnswer": { "@type": "Answer", "text": "El SICS (Sistema de Consulta de Seguros) es la plataforma oficial de la CMF en conocetuseguro.cl. Reemplazó al antiguo SISA y permite consultar pólizas vigentes y no vigentes con obligaciones pendientes, incluyendo acceso para familiares con interés legítimo mediante Clave Única." }
-          },
-          {
-            "@type": "Question",
-            "name": "¿Cómo contactar a Exige Tu Seguro por WhatsApp?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Puedes escribirnos directamente por WhatsApp al +56 9 7993 9868 o haciendo clic en https://wa.me/56979939868. Ofrecemos primera consulta gratuita y honorarios de éxito: solo cobramos si tú recuperas el dinero." }
-          },
-          {
-            "@type": "Question",
-            "name": "¿ExigeRadar es gratuito?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Sí. ExigeRadar es completamente gratuito, sin registro y entrega resultados en menos de 2 minutos. Está diseñado para herederos, cónyuge, hijos, padres y cualquier familiar que quiera saber qué seguros y pensiones puede reclamar en Chile tras un fallecimiento." }
-          }
+      "sameAs": [
+        "https://www.facebook.com/exigetuseguro.cl",
+        "https://www.instagram.com/exigetuseguro.cl/",
+        "https://www.linkedin.com/company/exige-tu-seguro/",
+        "https://wa.me/56979939868"
+      ],
+      "paymentAccepted": "Tarjeta de crédito, Tarjeta de débito, Tarjeta prepago, Webpay, Billeteras digitales, Transferencia bancaria",
+      "currenciesAccepted": "CLP"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.exigetuseguro.cl/radar#webpage",
+      "name": "ExigeRadar — Diagnóstico Gratuito de Seguros y Pensiones tras Fallecimiento en Chile",
+      "url": "https://www.exigetuseguro.cl/radar",
+      "description": "Herramienta gratuita que identifica en 2 minutos qué seguros, pensiones e indemnizaciones pueden reclamar los herederos tras el fallecimiento de un familiar en Chile.",
+      "inLanguage": "es-CL",
+      "datePublished": "2026-04-17",
+      "dateModified": "2026-04-24",
+      "keywords": "seguros fallecimiento chile, SOAP, SIS AFP, desgravamen, pensión sobrevivencia, CMF SICS, herederos seguros no cobrados",
+      "isPartOf": {
+        "@id": "https://www.exigetuseguro.cl/#website"
+      },
+      "about": {
+        "@id": "https://www.exigetuseguro.cl/radar#tool"
+      },
+      "mainEntity": {
+        "@id": "https://www.exigetuseguro.cl/radar#tool"
+      },
+      "provider": {
+        "@id": "https://www.exigetuseguro.cl/#organization"
+      },
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Herederos, cónyuge, hijos y familiares de personas fallecidas en Chile que desconocen qué seguros y pensiones pueden reclamar"
+      },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          ".hero-intro",
+          ".logo-main",
+          ".logo-sub"
         ]
       },
-      {
-        "@type": "ItemList",
-        "@id": "https://www.exigetuseguro.cl/radar#coberturas",
-        "name": "Coberturas detectables con ExigeRadar",
-        "isPartOf": { "@id": "https://www.exigetuseguro.cl/radar#webpage" },
-        "numberOfItems": 7,
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Seguro de vida privado — SICS CMF (conocetuseguro.cl)", "url": "https://www.conocetuseguro.cl" },
-          { "@type": "ListItem", "position": 2, "name": "Seguro SOAP — hasta 300 UF por fallecimiento en accidente de tránsito" },
-          { "@type": "ListItem", "position": 3, "name": "Seguro SIS AFP — pensión de sobrevivencia para cargas del trabajador activo" },
-          { "@type": "ListItem", "position": 4, "name": "Pensión de viudez y orfandad para beneficiarios de jubilados y pensionados" },
-          { "@type": "ListItem", "position": 5, "name": "Desgravamen hipotecario — cancelación del saldo total del crédito de vivienda" },
-          { "@type": "ListItem", "position": 6, "name": "Desgravamen en créditos de consumo, tarjetas bancarias y tarjetas de retail" },
-          { "@type": "ListItem", "position": 7, "name": "Desgravamen en crédito automotriz" }
-        ]
-      },
-      {
-        "@type": "DefinedTermSet",
-        "@id": "https://www.exigetuseguro.cl/radar#glosario",
-        "name": "Glosario de seguros y pensiones por fallecimiento en Chile",
-        "inLanguage": "es-CL",
-        "isPartOf": { "@id": "https://www.exigetuseguro.cl/radar#webpage" },
-        "hasDefinedTerm": [
-          {
-            "@type": "DefinedTerm",
-            "@id": "https://www.exigetuseguro.cl/radar#entity-sics",
-            "name": "SICS — Sistema de Consulta de Seguros",
-            "description": "Plataforma de la CMF en conocetuseguro.cl que permite consultar todos los seguros vigentes y no vigentes de cualquier RUT en Chile. Reemplazó al SISA.",
-            "url": "https://www.conocetuseguro.cl",
-            "inDefinedTermSet": { "@id": "https://www.exigetuseguro.cl/radar#glosario" }
-          },
-          {
-            "@type": "DefinedTerm",
-            "@id": "https://www.exigetuseguro.cl/radar#entity-soap",
-            "name": "SOAP — Seguro Obligatorio de Accidentes Personales",
-            "description": "Seguro obligatorio para vehículos motorizados en Chile que paga hasta 300 UF a los herederos por fallecimiento en accidente de tránsito.",
-            "url": "https://www.bcn.cl/leychile/navegar?idNorma=30593",
-            "inDefinedTermSet": { "@id": "https://www.exigetuseguro.cl/radar#glosario" }
-          },
-          {
-            "@type": "DefinedTerm",
-            "@id": "https://www.exigetuseguro.cl/radar#entity-sis",
-            "name": "SIS — Seguro de Invalidez y Sobrevivencia AFP",
-            "description": "Seguro previsional que financia pensiones de sobrevivencia para cónyuge e hijos de trabajadores activos fallecidos que cotizaban en AFP.",
-            "url": "https://www.spensiones.cl",
-            "inDefinedTermSet": { "@id": "https://www.exigetuseguro.cl/radar#glosario" }
-          },
-          {
-            "@type": "DefinedTerm",
-            "@id": "https://www.exigetuseguro.cl/radar#entity-desgravamen",
-            "name": "Seguro de Desgravamen",
-            "description": "Seguro vinculado a un crédito que cancela el saldo total de la deuda en caso de fallecimiento del titular. Obligatorio en créditos hipotecarios en Chile.",
-            "inDefinedTermSet": { "@id": "https://www.exigetuseguro.cl/radar#glosario" }
-          },
-          {
-            "@type": "DefinedTerm",
-            "@id": "https://www.exigetuseguro.cl/radar#entity-cmf",
-            "name": "CMF — Comisión para el Mercado Financiero",
-            "description": "Organismo regulador del mercado financiero y asegurador en Chile. Administra el SICS (conocetuseguro.cl) y supervisa a todas las compañías de seguros.",
-            "url": "https://www.cmfchile.cl",
-            "inDefinedTermSet": { "@id": "https://www.exigetuseguro.cl/radar#glosario" }
-          },
-          {
-            "@type": "DefinedTerm",
-            "@id": "https://www.exigetuseguro.cl/radar#entity-spensiones",
-            "name": "Superintendencia de Pensiones",
-            "description": "Organismo regulador del sistema previsional chileno. Supervisa AFP, SIS y beneficios de sobrevivencia.",
-            "url": "https://www.spensiones.cl",
-            "inDefinedTermSet": { "@id": "https://www.exigetuseguro.cl/radar#glosario" }
-          }
-        ]
+      "significantLink": [
+        "https://www.conocetuseguro.cl",
+        "https://www.cmfchile.cl",
+        "https://www.spensiones.cl"
+      ],
+      "breadcrumb": {
+        "@id": "https://www.exigetuseguro.cl/radar#breadcrumb"
       }
-    ]
-  }
-  </script>
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://www.exigetuseguro.cl/radar#tool",
+      "name": "ExigeRadar",
+      "alternateName": "Exige Radar Diagnóstico Seguros Chile",
+      "url": "https://www.exigetuseguro.cl/radar",
+      "applicationCategory": "LegalApplication",
+      "applicationSubCategory": "InsuranceTool",
+      "operatingSystem": "Web",
+      "browserRequirements": "Requires JavaScript. Compatible with all modern browsers.",
+      "description": "Herramienta de diagnóstico legal gratuita que identifica seguros, pensiones e indemnizaciones reclamables tras el fallecimiento de un familiar en Chile. Sin registro. Resultado en menos de 2 minutos.",
+      "abstract": "ExigeRadar analiza la situación laboral del fallecido, la causa del deceso, sus deudas activas y el parentesco del reclamante para generar una hoja de ruta personalizada con todos los seguros y pensiones a los que tiene derecho como heredero en Chile.",
+      "featureList": [
+        "Detecta seguros de vida no cobrados vía SICS CMF (conocetuseguro.cl)",
+        "Identifica derecho a indemnización SOAP de hasta 300 UF por accidente de tránsito",
+        "Verifica elegibilidad para Seguro SIS AFP en trabajadores activos",
+        "Detecta desgravamen hipotecario, automotriz y de consumo",
+        "Orienta sobre pensiones de viudez, orfandad y sobrevivencia",
+        "Diagnóstico personalizado según parentesco y situación laboral",
+        "Enlaza a portales oficiales CMF y Superintendencia de Pensiones",
+        "Resultado en menos de 2 minutos sin registro"
+      ],
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "CLP",
+        "availability": "https://schema.org/InStock",
+        "description": "Diagnóstico gratuito y sin registro"
+      },
+      "accessMode": [
+        "textual",
+        "visual"
+      ],
+      "accessibilityFeature": [
+        "structuredNavigation",
+        "readingOrder",
+        "alternativeText"
+      ],
+      "inLanguage": "es-CL",
+      "author": {
+        "@id": "https://www.exigetuseguro.cl/#organization"
+      },
+      "publisher": {
+        "@id": "https://www.exigetuseguro.cl/#organization"
+      },
+      "datePublished": "2026-04-17",
+      "dateModified": "2026-04-24",
+      "isPartOf": {
+        "@id": "https://www.exigetuseguro.cl/#website"
+      },
+      "mentions": [
+        {
+          "@id": "https://www.exigetuseguro.cl/radar#entity-sics"
+        },
+        {
+          "@id": "https://www.exigetuseguro.cl/radar#entity-soap"
+        },
+        {
+          "@id": "https://www.exigetuseguro.cl/radar#entity-sis"
+        },
+        {
+          "@id": "https://www.exigetuseguro.cl/radar#entity-desgravamen"
+        },
+        {
+          "@id": "https://www.exigetuseguro.cl/radar#entity-cmf"
+        },
+        {
+          "@id": "https://www.exigetuseguro.cl/radar#entity-spensiones"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.exigetuseguro.cl/radar#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://www.exigetuseguro.cl/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "ExigeRadar — Diagnóstico de Seguros",
+          "item": "https://www.exigetuseguro.cl/radar"
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://www.exigetuseguro.cl/radar#howto",
+      "name": "Cómo identificar y reclamar seguros, pensiones e indemnizaciones tras el fallecimiento de un familiar en Chile",
+      "description": "Guía paso a paso para detectar y reclamar seguros de vida (SICS CMF), SOAP (hasta 300 UF), desgravamen hipotecario, SIS AFP y pensiones de sobrevivencia en Chile.",
+      "inLanguage": "es-CL",
+      "isPartOf": {
+        "@id": "https://www.exigetuseguro.cl/radar#webpage"
+      },
+      "totalTime": "PT10M",
+      "estimatedCost": {
+        "@type": "MonetaryAmount",
+        "currency": "CLP",
+        "value": "0"
+      },
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "Clave Única del Registro Civil"
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "RUT del fallecido"
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "Certificado de defunción"
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "Número de patente del vehículo (solo en accidente de tránsito)"
+        }
+      ],
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "Portal conocetuseguro.cl (CMF)",
+          "url": "https://www.conocetuseguro.cl"
+        },
+        {
+          "@type": "HowToTool",
+          "name": "Portal CMF de deudas financieras",
+          "url": "https://www.cmfchile.cl/portal/principal/613/w3-propertyvalue-43331.html"
+        }
+      ],
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Consultar el SICS en conocetuseguro.cl",
+          "text": "Accede al portal oficial de la CMF con tu Clave Única. Como familiar con interés legítimo tienes derecho a consultar todas las pólizas vigentes y no vigentes del fallecido.",
+          "url": "https://www.conocetuseguro.cl"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Verificar deudas financieras en el portal CMF",
+          "text": "Revisa el informe de deudas del fallecido en la CMF para detectar seguros de desgravamen vinculados a créditos hipotecarios, automotrices, de consumo y tarjetas.",
+          "url": "https://www.cmfchile.cl/portal/principal/613/w3-propertyvalue-43331.html"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Gestionar el SIS AFP si era trabajador activo",
+          "text": "Si el fallecido cotizaba en una AFP, el SIS financia pensiones de sobrevivencia para su cónyuge, conviviente civil e hijos. Trámite en la AFP o en la Superintendencia de Pensiones.",
+          "url": "https://www.spensiones.cl"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Reclamar el SOAP si fue accidente de tránsito",
+          "text": "El SOAP paga hasta 300 UF por fallecimiento en accidente de tránsito. Identifica la póliza usando el número de patente del vehículo involucrado.",
+          "url": "https://www.bcn.cl/leychile/navegar?idNorma=30593"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 5,
+          "name": "Exigir el desgravamen hipotecario",
+          "text": "Notifica al banco, acredita el fallecimiento y suspende el pago de dividendos. El seguro es obligatorio y debe cancelar el saldo total del crédito.",
+          "url": "https://www.exigetuseguro.cl/radar"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 6,
+          "name": "Consultar a un abogado si hay rechazo — vía WhatsApp",
+          "text": "El plazo de prescripción es de 4 años. Exige Tu Seguro ofrece primera consulta gratuita con honorarios de éxito. Contáctanos directamente por WhatsApp.",
+          "url": "https://wa.me/56979939868"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.exigetuseguro.cl/radar#faq",
+      "isPartOf": {
+        "@id": "https://www.exigetuseguro.cl/radar#webpage"
+      },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Qué seguros se pueden cobrar cuando fallece un familiar en Chile?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cuando fallece un familiar en Chile, los herederos pueden tener derecho a: (1) Seguro de vida privado — consultable en conocetuseguro.cl (SICS CMF); (2) Seguro SOAP — hasta 300 UF si fue accidente de tránsito; (3) Seguro SIS AFP — si era trabajador activo cotizando; (4) Pensión de viudez u orfandad — si era jubilado o pensionado; (5) Desgravamen hipotecario — cancela el saldo del crédito de vivienda; (6) Desgravamen en créditos de consumo y tarjetas bancarias. El primer paso es siempre consultar el SICS en conocetuseguro.cl."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo buscar los seguros de un fallecido en Chile con el SICS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ingresa al portal conocetuseguro.cl de la CMF con tu Clave Única del Registro Civil. Como familiar con interés legítimo (cónyuge, hijo, padre u otro heredero), puedes consultar todas las pólizas. El SICS reemplazó al antiguo sistema SISA y es el buscador oficial vigente en Chile."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto paga el SOAP por fallecimiento en Chile?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El SOAP paga hasta 300 UF de indemnización por fallecimiento causado por un accidente de tránsito en Chile, equivalente a aproximadamente $12 millones de pesos. Para cobrarlo se debe identificar la póliza mediante la patente del vehículo involucrado. El plazo de prescripción es de 4 años."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué es el Seguro SIS AFP y quién puede cobrarlo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El SIS (Seguro de Invalidez y Sobrevivencia) financia pensiones de sobrevivencia para los beneficiarios de trabajadores activos fallecidos que cotizaban en una AFP. Pueden cobrarlo el cónyuge o conviviente civil, los hijos con derecho a pensión y los padres en ausencia de los anteriores."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿El desgravamen hipotecario cancela el crédito si muere el titular?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. El seguro de desgravamen hipotecario es obligatorio en Chile y debe cancelar el saldo total del crédito al fallecer el titular. Los herederos deben notificar al banco de inmediato y suspender el pago de dividendos mientras se tramita."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto tiempo tengo para reclamar seguros de un fallecido en Chile?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El plazo general de prescripción para seguros en Chile es de 4 años desde que la obligación fue exigible (Código de Comercio, artículo 543)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué es el SICS y en qué se diferencia del SISA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El SICS (Sistema de Consulta de Seguros) es la plataforma oficial de la CMF en conocetuseguro.cl. Reemplazó al antiguo SISA y permite consultar pólizas vigentes y no vigentes con obligaciones pendientes, incluyendo acceso para familiares con interés legítimo mediante Clave Única."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo contactar a Exige Tu Seguro por WhatsApp?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Puedes escribirnos directamente por WhatsApp al +56 9 7993 9868 o haciendo clic en https://wa.me/56979939868. Ofrecemos primera consulta gratuita y honorarios de éxito: solo cobramos si tú recuperas el dinero."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿ExigeRadar es gratuito?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. ExigeRadar es completamente gratuito, sin registro y entrega resultados en menos de 2 minutos. Está diseñado para herederos, cónyuge, hijos, padres y cualquier familiar que quiera saber qué seguros y pensiones puede reclamar en Chile tras un fallecimiento."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.exigetuseguro.cl/radar#coberturas",
+      "name": "Coberturas detectables con ExigeRadar",
+      "isPartOf": {
+        "@id": "https://www.exigetuseguro.cl/radar#webpage"
+      },
+      "numberOfItems": 7,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Seguro de vida privado — SICS CMF (conocetuseguro.cl)",
+          "url": "https://www.conocetuseguro.cl"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Seguro SOAP — hasta 300 UF por fallecimiento en accidente de tránsito"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Seguro SIS AFP — pensión de sobrevivencia para cargas del trabajador activo"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Pensión de viudez y orfandad para beneficiarios de jubilados y pensionados"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Desgravamen hipotecario — cancelación del saldo total del crédito de vivienda"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Desgravamen en créditos de consumo, tarjetas bancarias y tarjetas de retail"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "Desgravamen en crédito automotriz"
+        }
+      ]
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://www.exigetuseguro.cl/radar#glosario",
+      "name": "Glosario de seguros y pensiones por fallecimiento en Chile",
+      "inLanguage": "es-CL",
+      "isPartOf": {
+        "@id": "https://www.exigetuseguro.cl/radar#webpage"
+      },
+      "hasDefinedTerm": [
+        {
+          "@type": "DefinedTerm",
+          "@id": "https://www.exigetuseguro.cl/radar#entity-sics",
+          "name": "SICS — Sistema de Consulta de Seguros",
+          "description": "Plataforma de la CMF en conocetuseguro.cl que permite consultar todos los seguros vigentes y no vigentes de cualquier RUT en Chile. Reemplazó al SISA.",
+          "url": "https://www.conocetuseguro.cl",
+          "inDefinedTermSet": {
+            "@id": "https://www.exigetuseguro.cl/radar#glosario"
+          }
+        },
+        {
+          "@type": "DefinedTerm",
+          "@id": "https://www.exigetuseguro.cl/radar#entity-soap",
+          "name": "SOAP — Seguro Obligatorio de Accidentes Personales",
+          "description": "Seguro obligatorio para vehículos motorizados en Chile que paga hasta 300 UF a los herederos por fallecimiento en accidente de tránsito.",
+          "url": "https://www.bcn.cl/leychile/navegar?idNorma=30593",
+          "inDefinedTermSet": {
+            "@id": "https://www.exigetuseguro.cl/radar#glosario"
+          }
+        },
+        {
+          "@type": "DefinedTerm",
+          "@id": "https://www.exigetuseguro.cl/radar#entity-sis",
+          "name": "SIS — Seguro de Invalidez y Sobrevivencia AFP",
+          "description": "Seguro previsional que financia pensiones de sobrevivencia para cónyuge e hijos de trabajadores activos fallecidos que cotizaban en AFP.",
+          "url": "https://www.spensiones.cl",
+          "inDefinedTermSet": {
+            "@id": "https://www.exigetuseguro.cl/radar#glosario"
+          }
+        },
+        {
+          "@type": "DefinedTerm",
+          "@id": "https://www.exigetuseguro.cl/radar#entity-desgravamen",
+          "name": "Seguro de Desgravamen",
+          "description": "Seguro vinculado a un crédito que cancela el saldo total de la deuda en caso de fallecimiento del titular. Obligatorio en créditos hipotecarios en Chile.",
+          "inDefinedTermSet": {
+            "@id": "https://www.exigetuseguro.cl/radar#glosario"
+          }
+        },
+        {
+          "@type": "DefinedTerm",
+          "@id": "https://www.exigetuseguro.cl/radar#entity-cmf",
+          "name": "CMF — Comisión para el Mercado Financiero",
+          "description": "Organismo regulador del mercado financiero y asegurador en Chile. Administra el SICS (conocetuseguro.cl) y supervisa a todas las compañías de seguros.",
+          "url": "https://www.cmfchile.cl",
+          "inDefinedTermSet": {
+            "@id": "https://www.exigetuseguro.cl/radar#glosario"
+          }
+        },
+        {
+          "@type": "DefinedTerm",
+          "@id": "https://www.exigetuseguro.cl/radar#entity-spensiones",
+          "name": "Superintendencia de Pensiones",
+          "description": "Organismo regulador del sistema previsional chileno. Supervisa AFP, SIS y beneficios de sobrevivencia.",
+          "url": "https://www.spensiones.cl",
+          "inDefinedTermSet": {
+            "@id": "https://www.exigetuseguro.cl/radar#glosario"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

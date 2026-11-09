@@ -20,10 +20,14 @@ Impugna rechazos injustos de aseguradoras y representa a asegurados en seguros d
 ## Zona de cobertura
 Todo Chile. No hay oficina física; toda la asesoría se realiza de forma remota.
 
+## Formas de pago
+Exige Tu Seguro acepta pagos con tarjeta de crédito, débito y prepago (Visa, Mastercard, American Express, Redcompra) a través de Webpay de Transbank, procesados por Flow, en hasta 12 cuotas sin interés y sin recargo. También billeteras digitales (MACH), transferencia en línea (Khipu, Etpay) y cuotas sin tarjeta (banca.me). En la modalidad de cuota litis, el porcentaje acordado también puede pagarse con tarjeta. Factura electrónica disponible para empresas. Detalle en https://www.exigetuseguro.cl/formas-de-pago
+
 ## Contacto
 - WhatsApp: +56 9 7993 9868 (https://wa.me/56979939868)
 - Email: contacto@exigetuseguro.cl
 - Formulario: https://www.exigetuseguro.cl/contacto
+- Formas de pago: https://www.exigetuseguro.cl/formas-de-pago
 - Asistente legal (chat): https://www.exigetuseguro.cl/asistente
 
 ## Fundador

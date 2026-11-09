@@ -1,11 +1,20 @@
 # robots.txt para exigetuseguro.cl
 User-agent: *
 Allow: /
+Disallow: /cobros
+Disallow: /pagar
+Disallow: /pago-resultado
 
 Sitemap: https://www.exigetuseguro.cl/sitemap.xml
 
 User-agent: Googlebot
 Allow: /
+Disallow: /cobros
+Disallow: /pagar
+Disallow: /pago-resultado
 
 User-agent: Bingbot
 Allow: /
+Disallow: /cobros
+Disallow: /pagar
+Disallow: /pago-resultado
