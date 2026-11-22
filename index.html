@@ -656,6 +656,23 @@ select.hf-input { cursor: pointer; }
   /* En móvil, el inicio muestra solo "Enviar consulta" */
   .hero-btns .btn-hero-ghost { display: none; }
 
+  /* Botón principal del inicio en móvil: píldora blanca con ícono animado */
+  .hero-btns .hb-pill { display: flex; align-items: center; justify-content: space-between; width: 100%; padding: 6px 6px 6px 22px; background: #ffffff; border-radius: 40px; text-decoration: none; color: var(--navy); font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; box-shadow: 0 14px 30px -16px rgba(0,0,0,.7); transition: transform .2s; }
+  .hero-btns .hb-pill:active { transform: scale(.98); }
+  .hb-pill-go { position: relative; width: 44px; height: 44px; border-radius: 50%; background: var(--terra); color: #fff; display: grid; place-items: center; flex-shrink: 0; }
+  .hb-pill-go::after { content: ''; position: absolute; inset: 0; border-radius: 50%; border: 2px solid var(--terra); opacity: 0; animation: hbAnillo 3.2s ease-out infinite; }
+  .hb-pill-go svg { width: 20px; height: 20px; animation: hbSalto 3.2s ease-in-out infinite; transform-origin: 50% 90%; }
+  .hb-flecha { animation: hbFlecha 3.2s ease-in-out infinite; }
+  @keyframes hbSalto {
+    0%, 55%, 100% { transform: translateY(0) scale(1, 1); }
+    62% { transform: translateY(1px) scale(1.12, .86); }
+    72% { transform: translateY(-7px) scale(.94, 1.08) rotate(-6deg); }
+    82% { transform: translateY(0) scale(1.08, .92); }
+    90% { transform: translateY(0) scale(1, 1); }
+  }
+  @keyframes hbFlecha { 0%, 62%, 100% { transform: translateY(0); } 72% { transform: translateY(-2px); } }
+  @keyframes hbAnillo { 0%, 78% { opacity: 0; transform: scale(1); } 82% { opacity: .55; } 100% { opacity: 0; transform: scale(1.45); } }
+
   /* Más aire entre la barra de navegación y el título */
   .hero-inner { padding-top: 3.25rem; }
 
@@ -869,7 +886,7 @@ textarea.m-fi { resize: vertical; min-height: 100px; line-height: 1.6; }
 .agenda-ilus { width: 64px; height: 62px; display: block; margin: 0 auto 0.7rem; animation: flota 4.5s ease-in-out infinite; }
 .agenda-feat:nth-child(2) .agenda-ilus { animation-delay: -1.5s; } .agenda-feat:nth-child(3) .agenda-ilus { animation-delay: -3s; }
 .agenda-feat { transition: background .25s, transform .25s; } .agenda-feat:hover { background: rgba(255,255,255,0.14); transform: translateY(-3px); }
-@media (prefers-reduced-motion: reduce) { .agenda-ilus { animation: none; } }
+@media (prefers-reduced-motion: reduce) { .agenda-ilus { animation: none; } .hb-pill-go svg, .hb-flecha, .hb-pill-go::after { animation: none; } }
 /* Contacto ilustrado */
 .cto-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.1rem; margin-top: 2.2rem; }
 .cto-card { display: flex; flex-direction: column; background: rgba(255,255,255,0.07); border: 0.5px solid rgba(255,255,255,0.14); border-radius: var(--radius); padding: 1.6rem 1.5rem 1.4rem; text-decoration: none; transition: background .25s, transform .25s, border-color .25s; }
@@ -1544,8 +1561,8 @@ footer { background: #0a1a2e; padding: 4rem 2rem 2rem; }
       <h1 class="hero-title">Abogados Especialistas<br>en <em>Seguros</em></h1>
       <p class="hero-body">Representación legal experta. Sube tu <strong>póliza o carta de rechazo</strong> y recibe una <strong>orientación legal</strong> precisa sobre tus derechos como asegurado.</p>
       <div class="hero-btns">
-        <a href="#" onclick="smartScroll('m-contacto','hero-contacto');return false;" class="btn-hero-primary hero-btn-mobile-only">
-          <i class="fas fa-cloud-upload-alt"></i> Enviar consulta
+        <a href="#" onclick="smartScroll('m-contacto','hero-contacto');return false;" class="hero-btn-mobile-only hb-pill">
+          <span>Enviar consulta</span><span class="hb-pill-go"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5 a1.5 1.5 0 0 1 1.5 -1.5 h4.5 l2 2 h8.5 a1.5 1.5 0 0 1 1.5 1.5 v8 a1.5 1.5 0 0 1 -1.5 1.5 h-15 a1.5 1.5 0 0 1 -1.5 -1.5z"/><path class="hb-flecha" d="M12 16.5 v-5 m-2.3 2.3 l2.3 -2.3 l2.3 2.3"/></svg></span>
         </a>
         <a href="#" onclick="smartScroll('m-agenda','agenda');return false;" class="btn-hero-ghost">
           <i class="fas fa-calendar"></i> Agendar cita
