@@ -102,26 +102,8 @@
     <priority>0.6</priority>
   </url>
   <!-- ExigeRadar — Diagnóstico de Seguros y Pensiones -->
-  <url>
-    <loc>https://www.exigetuseguro.cl/radar</loc>
-    <lastmod>2026-04-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
   <!-- Asistente Legal de Seguros (chatbot) -->
-  <url>
-    <loc>https://www.exigetuseguro.cl/asistente</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
   <!-- Asistente de Mecánica Automotriz (chatbot) -->
-  <url>
-    <loc>https://www.exigetuseguro.cl/mecanica</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
   <!-- Conductores de Uber, InDrive y Cabify — Seguros vehiculares -->
   <url>
     <loc>https://www.exigetuseguro.cl/uber-seguros</loc>
