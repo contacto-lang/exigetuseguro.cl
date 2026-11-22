@@ -53,13 +53,12 @@
 <!-- Preconnect para Performance -->
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link rel="preconnect" href="https://cdnjs.cloudflare.com"/>
 <link rel="preconnect" href="https://images.unsplash.com" crossorigin/>
 <link rel="dns-prefetch" href="https://images.pexels.com"/>
 
 <!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+
 
 <!-- Favicons -->
 <link rel="icon" href="/favicon.ico" sizes="48x48">
@@ -865,6 +864,61 @@ textarea.m-fi { resize: vertical; min-height: 100px; line-height: 1.6; }
 .agenda-feat:nth-child(2) .agenda-ilus { animation-delay: -1.5s; } .agenda-feat:nth-child(3) .agenda-ilus { animation-delay: -3s; }
 .agenda-feat { transition: background .25s, transform .25s; } .agenda-feat:hover { background: rgba(255,255,255,0.14); transform: translateY(-3px); }
 @media (prefers-reduced-motion: reduce) { .agenda-ilus { animation: none; } }
+/* Contacto ilustrado */
+.cto-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.1rem; margin-top: 2.2rem; }
+.cto-card { display: flex; flex-direction: column; background: rgba(255,255,255,0.07); border: 0.5px solid rgba(255,255,255,0.14); border-radius: var(--radius); padding: 1.6rem 1.5rem 1.4rem; text-decoration: none; transition: background .25s, transform .25s, border-color .25s; }
+.cto-card:hover { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.28); transform: translateY(-3px); }
+.cto-ilus { width: 70px; height: 62px; display: block; margin-bottom: 1rem; animation: flota 4.5s ease-in-out infinite; }
+.cto-card:nth-child(2) .cto-ilus { animation-delay: -1.5s; } .cto-card:nth-child(3) .cto-ilus { animation-delay: -3s; }
+.cto-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 21px; font-weight: 400; color: #ffffff; line-height: 1.2; margin-bottom: 0.45rem; }
+.cto-card p { font-size: 13px; font-weight: 300; line-height: 1.65; color: rgba(255,255,255,0.65); margin-bottom: 1.1rem; }
+.cto-cta { margin-top: auto; font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: #a9d8bd; }
+.cto-go { display: inline-block; transition: transform .25s; }
+.cto-card:hover .cto-go { transform: translateX(4px); }
+.cto-burb { animation: ctoBurb 3.6s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+.cto-burb-2 { animation-delay: -1.8s; }
+@keyframes ctoBurb { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-2px); } }
+.cto-hoja { transition: transform .35s; transform-box: fill-box; }
+.cto-card:hover .cto-hoja { transform: translateY(-3px); }
+.cto-card:hover .cto-hoja-2 { transform: translateY(-5px) rotate(3deg); }
+.cto-rec { animation: ctoRec 1.8s ease-in-out infinite; }
+@keyframes ctoRec { 0%,100% { opacity: 1; } 50% { opacity: .25; } }
+.cto-spark { animation: ctoRec 2.6s ease-in-out infinite; }
+.cto-line { margin-top: 1.6rem; font-size: 12.5px; font-weight: 300; color: rgba(255,255,255,0.6); display: flex; flex-wrap: wrap; gap: 0.35rem 0.7rem; align-items: center; }
+.cto-line span { color: rgba(255,255,255,0.3); }
+.cto-line a { color: #ffffff; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.35); }
+.cto-line a:hover { border-color: #ffffff; }
+/* Formulario */
+.dz-ilus { width: 40px; height: 30px; display: block; margin: 0 auto 0.25rem; }
+.dz-ilus-m { width: 52px; height: 39px; margin-bottom: 0.5rem; }
+.dz-hoja { transition: transform .35s; }
+.hf-dropzone:hover .dz-hoja, .m-dz:hover .dz-hoja { transform: translateY(5px); }
+.hf-trust { margin-top: 0.5rem; text-align: center; font-size: 10.5px; color: var(--muted); letter-spacing: 0.02em; }
+.ok-anim { display: inline-block; width: 22px; height: 22px; vertical-align: -6px; margin-right: 6px; }
+.ok-anim svg { width: 100%; height: 100%; overflow: visible; }
+.ok-anim circle:first-child { transform-box: fill-box; transform-origin: center; animation: okPop .45s cubic-bezier(.3,1.6,.6,1) both; }
+.ok-check { stroke-dasharray: 26; stroke-dashoffset: 26; animation: okDraw .45s .3s ease-out forwards; }
+.ok-dot { opacity: 0; transform-box: fill-box; transform-origin: center; animation: okDot .9s .45s ease-out both; }
+.ok-dot-2 { animation-delay: .55s; } .ok-dot-3 { animation-delay: .65s; }
+@keyframes okPop { from { transform: scale(0); } to { transform: scale(1); } }
+@keyframes okDraw { to { stroke-dashoffset: 0; } }
+@keyframes okDot { 0% { opacity: 0; transform: scale(0); } 40% { opacity: 1; transform: scale(1.2); } 100% { opacity: 0; transform: scale(.6) translateY(-4px); } }
+/* Footer */
+.footer-pay { display: inline-flex; align-items: center; gap: 7px; margin: -0.4rem 0 1.25rem; font-size: 11.5px; color: rgba(255,255,255,0.7); text-decoration: none; border: 0.5px solid rgba(255,255,255,0.14); border-radius: 20px; padding: 5px 12px; transition: border-color .2s, color .2s; }
+.footer-pay:hover { color: #ffffff; border-color: rgba(255,255,255,0.35); }
+.footer-pay .fas { color: #93c5fd; }
+@media (max-width: 900px) {
+  .cto-cards { grid-template-columns: 1fr; gap: 0.8rem; }
+  .cto-card { display: grid; grid-template-columns: auto 1fr; column-gap: 1rem; padding: 1.2rem; }
+  .cto-ilus { grid-row: span 3; width: 56px; height: 50px; margin: 0; }
+  .cto-card p { margin-bottom: 0.6rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cto-ilus, .cto-burb, .cto-rec, .cto-spark { animation: none; }
+  .ok-anim *, .ok-check { animation: none !important; stroke-dashoffset: 0; opacity: 1; }
+  .ok-dot { display: none; }
+}
+
 /* Nosotros ilustrado */
 .nos-val-card .nos-ilus { width: 66px; height: 62px; display: block; margin: 0 auto 1.1rem; animation: flota 4.5s ease-in-out infinite; transition: transform .3s; }
 .nos-val-card:nth-child(2) .nos-ilus { animation-delay: -1.5s; }
@@ -1149,32 +1203,11 @@ textarea.m-fi { resize: vertical; min-height: 100px; line-height: 1.6; }
   gap: 3.5rem;
   align-items: center;
 }
-.contacto-btns { display: flex; flex-direction: column; gap: 0.6rem; margin-top: 1rem; max-width: 460px; }
-.contacto-btn {
-  display: flex; align-items: center; justify-content: center; gap: 10px;
-  padding: 12px 20px; border-radius: 5px;
-  font-size: 10.5px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase;
-  text-decoration: none; transition: var(--transition);
-}
-.contacto-btn.primary { background: #ffffff; color: var(--navy); border: 1px solid #ffffff; }
-.contacto-btn.primary:hover { background: #eef3fa; border-color: #eef3fa; }
-.contacto-btn.secondary { color: #ffffff; border: 1px solid rgba(255,255,255,0.45); }
-.contacto-btn.secondary:hover { background: rgba(255,255,255,0.08); border-color: #ffffff; }
-.contacto-info { border-left: 1px solid rgba(255,255,255,0.14); padding-left: 3rem; }
-.contacto-info ul { list-style: none; }
-.contacto-info li { display: flex; align-items: center; gap: 12px; font-size: 14.5px; font-weight: 300; color: rgba(255,255,255,0.82); padding: 0.56rem 0; }
-.contacto-info li i { width: 18px; text-align: center; color: #a9c6e6; font-size: 0.9rem; }
-.contacto-info a { color: #ffffff; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.35); transition: border-color .2s; }
-.contacto-info a:hover { border-color: #ffffff; }
-.contacto-note { margin-top: 1rem; font-size: 12.5px; color: rgba(255,255,255,0.5); }
 #contacto .contacto-wrap .sec-title { font-size: clamp(28px, 3.4vw, 38px); margin-bottom: 0.6rem; }
 #contacto .contacto-wrap .sec-lead { line-height: 1.6; }
 
 @media (max-width: 968px) {
   .contacto-wrap { grid-template-columns: 1fr; gap: 2rem; }
-  .contacto-btns { max-width: none; }
-  .contacto-info { border-left: none; border-top: 1px solid rgba(255,255,255,0.14); padding: 1.6rem 0 0; }
-  .contacto-info li { font-size: 14px; }
 }
 
 /* ═══════════════════════════════════════════
@@ -1396,6 +1429,35 @@ footer { background: #0a1a2e; padding: 4rem 2rem 2rem; }
 .consent-x input { margin: 0; width: 14px; height: 14px; flex-shrink: 0; accent-color: #2e7d52; cursor: pointer; }
 .consent-x span { flex: 1; min-width: 0; }
 .consent-x a { color: #1f5c3a; text-decoration: underline; text-underline-offset: 2px; }
+/* Íconos: Lucide (lucide.dev, licencia ISC), en reemplazo de Font Awesome */
+:where(.fas, .fab, .far) { display: inline-block; width: 1em; height: 1em; vertical-align: -0.14em; background-color: currentColor; -webkit-mask: var(--ic) center / contain no-repeat; mask: var(--ic) center / contain no-repeat; font-style: normal; flex: none; }
+.fa-spin { animation: fa-spin 1s linear infinite; } @keyframes fa-spin { to { transform: rotate(360deg); } }
+.fa-address-book { --ic: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' %3E%3Cpath d='M15 13a3 3 0 1 0-6 0' /%3E%3Cpath d='M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20' /%3E%3Ccircle cx='12' cy='8' r='2' /%3E%3C/svg%3E"); }
+.fa-arrow-right { --ic: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' %3E%3Cpath d='M5 12h14' /%3E%3Cpath d='m12 5 7 7-7 7' /%3E%3C/svg%3E"); }
+.fa-bars { --ic: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' %3E%3Cline x1='4' x2='20' y1='12' y2='12' /%3E%3Cline x1='4' x2='20' y1='6' y2='6' /%3E%3Cline x1='4' x2='20' y1='18' y2='18' /%3E%3C/svg%3E"); }
+.fa-calendar { --ic: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' %3E%3Cpath d='M8 2v4' /%3E%3Cpath d='M16 2v4' /%3E%3Crect width='18' height='18' x='3' y='4' rx='2' /%3E%3Cpath d='M3 10h18' /%3E%3C/svg%3E"); }
+.fa-calendar-check { --ic: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' %3E%3Cpath d='M8 2v4' /%3E%3Cpath d='M16 2v4' /%3E%3Crect width='18' height='18' x='3' y='4' rx='2' /%3E%3Cpath d='M3 10h18' /%3E%3Cpath d='m9 16 2 2 4-4' /%3E%3C/svg%3E"); }
+.fa-check-circle { --ic: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' %3E%3Ccircle cx='12' cy='12' r='10' /%3E%3Cpath d='m9 12 2 2 4-4' /%3E%3C/svg%3E"); }
+.fa-chevron-down { --ic: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' %3E%3Cpath d='m6 9 6 6 6-6' /%3E%3C/svg%3E"); }
+.fa-cloud-upload-alt { --ic: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' %3E%3Cpath d='M12 13v8' /%3E%3Cpath d='M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242' /%3E%3Cpath d='m8 17 4-4 4 4' /%3E%3C/svg%3E"); }
+.fa-credit-card { --ic: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' %3E%3Crect width='20' height='14' x='2' y='5' rx='2' /%3E%3Cline x1='2' x2='22' y1='10' y2='10' /%3E%3C/svg%3E"); }
+.fa-envelope { --ic: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' %3E%3Crect width='20' height='16' x='2' y='4' rx='2' /%3E%3Cpath d='m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7' /%3E%3C/svg%3E"); }
+.fa-exclamation-circle { --ic: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' %3E%3Ccircle cx='12' cy='12' r='10' /%3E%3Cline x1='12' x2='12' y1='8' y2='12' /%3E%3Cline x1='12' x2='12.01' y1='16' y2='16' /%3E%3C/svg%3E"); }
+.fa-facebook { --ic: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' %3E%3Cpath d='M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z' /%3E%3C/svg%3E"); }
+.fa-file { --ic: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' %3E%3Cpath d='M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z' /%3E%3Cpath d='M14 2v4a2 2 0 0 0 2 2h4' /%3E%3C/svg%3E"); }
+.fa-file-alt { --ic: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' %3E%3Cpath d='M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z' /%3E%3Cpath d='M14 2v4a2 2 0 0 0 2 2h4' /%3E%3Cpath d='M10 9H8' /%3E%3Cpath d='M16 13H8' /%3E%3Cpath d='M16 17H8' /%3E%3C/svg%3E"); }
+.fa-file-invoice-dollar { --ic: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' %3E%3Cpath d='M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z' /%3E%3Cpath d='M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8' /%3E%3Cpath d='M12 17.5v-11' /%3E%3C/svg%3E"); }
+.fa-instagram { --ic: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' %3E%3Crect width='20' height='20' x='2' y='2' rx='5' ry='5' /%3E%3Cpath d='M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z' /%3E%3Cline x1='17.5' x2='17.51' y1='6.5' y2='6.5' /%3E%3C/svg%3E"); }
+.fa-lightbulb { --ic: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' %3E%3Cpath d='M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5' /%3E%3Cpath d='M9 18h6' /%3E%3Cpath d='M10 22h4' /%3E%3C/svg%3E"); }
+.fa-lock { --ic: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' %3E%3Crect width='18' height='11' x='3' y='11' rx='2' ry='2' /%3E%3Cpath d='M7 11V7a5 5 0 0 1 10 0v4' /%3E%3C/svg%3E"); }
+.fa-map-marker-alt { --ic: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' %3E%3Cpath d='M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0' /%3E%3Ccircle cx='12' cy='10' r='3' /%3E%3C/svg%3E"); }
+.fa-paper-plane { --ic: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' %3E%3Cpath d='M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z' /%3E%3Cpath d='m21.854 2.147-10.94 10.939' /%3E%3C/svg%3E"); }
+.fa-shield-alt { --ic: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' %3E%3Cpath d='M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z' /%3E%3C/svg%3E"); }
+.fa-spinner { --ic: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' %3E%3Cpath d='M21 12a9 9 0 1 1-6.219-8.56' /%3E%3C/svg%3E"); }
+.fa-times { --ic: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' %3E%3Cpath d='M18 6 6 18' /%3E%3Cpath d='m6 6 12 12' /%3E%3C/svg%3E"); }
+.fa-times-circle { --ic: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' %3E%3Ccircle cx='12' cy='12' r='10' /%3E%3Cpath d='m15 9-6 6' /%3E%3Cpath d='m9 9 6 6' /%3E%3C/svg%3E"); }
+.fa-users { --ic: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' %3E%3Cpath d='M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2' /%3E%3Ccircle cx='9' cy='7' r='4' /%3E%3Cpath d='M22 21v-2a4 4 0 0 0-3-3.87' /%3E%3Cpath d='M16 3.13a4 4 0 0 1 0 7.75' /%3E%3C/svg%3E"); }
+.fa-whatsapp { --ic: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 2.9 2.9 0 0 0-.9 2.2 5 5 0 0 0 1 2.7 11.5 11.5 0 0 0 4.4 3.9c1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z'/%3E%3C/svg%3E"); }
 </style>
 </head>
 <body>
@@ -1502,7 +1564,7 @@ footer { background: #0a1a2e; padding: 4rem 2rem 2rem; }
           ondragover="event.preventDefault();this.style.borderColor='var(--terra)'"
           ondragleave="this.style.borderColor='rgba(46,125,82,0.35)'"
           ondrop="handleDrop(event)">
-          <i class="fas fa-cloud-upload-alt"></i>
+          <svg class="dz-ilus" viewBox="0 0 48 36" aria-hidden="true"><path d="M4 10 a2.5 2.5 0 0 1 2.5 -2.5 h10 l3 3 h22 a2.5 2.5 0 0 1 2.5 2.5 v18 a2.5 2.5 0 0 1 -2.5 2.5 h-35 a2.5 2.5 0 0 1 -2.5 -2.5z" fill="#2e7d52" opacity=".85"/><g class="dz-hoja"><rect x="15" y="1" width="16" height="20" rx="2" fill="#ffffff" stroke="#cfe0f2" stroke-width="1"/><rect x="18" y="5.5" width="10" height="1.8" rx=".9" fill="#1e5c99"/><rect x="18" y="9.5" width="8" height="1.6" rx=".8" fill="#1e5c99" opacity=".4"/><rect x="18" y="13" width="9" height="1.6" rx=".8" fill="#1e5c99" opacity=".4"/></g><path d="M4 15 h40 v15 a2.5 2.5 0 0 1 -2.5 2.5 h-35 a2.5 2.5 0 0 1 -2.5 -2.5z" fill="#3a9465"/><path d="M24 29 v-8 m-3.5 3.5 l3.5 -3.5 l3.5 3.5" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
           <p>Arrastra o <span>selecciona archivos</span></p>
           <small>Póliza, carta de rechazo, fotos — PDF, JPG, PNG, DOCX (máx. 15 MB c/u)</small>
         </div>
@@ -1512,6 +1574,7 @@ footer { background: #0a1a2e; padding: 4rem 2rem 2rem; }
         <button type="submit" class="hf-submit" id="btnEnviar">
           <i class="fas fa-paper-plane"></i> Enviar mi consulta
         </button>
+        <p class="hf-trust">Respuesta en 24 h hábiles · Tus datos son confidenciales</p>
         <div id="formStatus"></div>
       </form>
     </div>
@@ -1608,7 +1671,7 @@ footer { background: #0a1a2e; padding: 4rem 2rem 2rem; }
             ondragover="event.preventDefault();this.style.borderColor='var(--terra)'"
             ondragleave="this.style.borderColor='rgba(11,37,69,0.2)'"
             ondrop="mHandleDrop(event)">
-            <div class="m-dz-icon"><i class="fas fa-cloud-upload-alt"></i></div>
+            <svg class="dz-ilus dz-ilus-m" viewBox="0 0 48 36" aria-hidden="true"><path d="M4 10 a2.5 2.5 0 0 1 2.5 -2.5 h10 l3 3 h22 a2.5 2.5 0 0 1 2.5 2.5 v18 a2.5 2.5 0 0 1 -2.5 2.5 h-35 a2.5 2.5 0 0 1 -2.5 -2.5z" fill="#2e7d52" opacity=".85"/><g class="dz-hoja"><rect x="15" y="1" width="16" height="20" rx="2" fill="#ffffff" stroke="#cfe0f2" stroke-width="1"/><rect x="18" y="5.5" width="10" height="1.8" rx=".9" fill="#1e5c99"/><rect x="18" y="9.5" width="8" height="1.6" rx=".8" fill="#1e5c99" opacity=".4"/><rect x="18" y="13" width="9" height="1.6" rx=".8" fill="#1e5c99" opacity=".4"/></g><path d="M4 15 h40 v15 a2.5 2.5 0 0 1 -2.5 2.5 h-35 a2.5 2.5 0 0 1 -2.5 -2.5z" fill="#3a9465"/><path d="M24 29 v-8 m-3.5 3.5 l3.5 -3.5 l3.5 3.5" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
             <p>Arrastra o <span>selecciona archivos</span></p>
             <small>PDF, JPG, PNG, DOCX — Máx. 15 MB</small>
           </div>
@@ -1855,25 +1918,31 @@ footer { background: #0a1a2e; padding: 4rem 2rem 2rem; }
 
 <!-- CONTACTO -->
 <section id="contacto">
-  <div class="sec-inner contacto-wrap">
-    <div>
-      <span class="sec-tag">Hablemos</span>
-      <h2 class="sec-title light fade-in">Ponte en <em>Contacto</em></h2>
-      <p class="sec-lead fade-in" style="color:rgba(255,255,255,0.65);">Cuéntanos tu caso. Te orientamos sin compromiso.</p>
-      <div class="contacto-btns fade-in">
-        <a href="https://wa.me/56979939868?text=Hola,%20necesito%20asesoría%20legal%20sobre%20seguros" target="_blank" rel="noopener" class="contacto-btn primary"><i class="fab fa-whatsapp"></i> Escribir por WhatsApp</a>
-        <a href="https://www.exigetuseguro.cl/contacto" class="contacto-btn secondary"><i class="fas fa-file-alt"></i> Enviar caso y documentos</a>
-      </div>
+  <div class="sec-inner">
+    <span class="sec-tag">Hablemos</span>
+    <h2 class="sec-title light fade-in">Ponte en <em>Contacto</em></h2>
+    <p class="sec-lead fade-in" style="color:rgba(255,255,255,0.65);">Cuéntanos tu caso. Te orientamos sin compromiso.</p>
+    <div class="cto-cards fade-in">
+      <a class="cto-card" href="https://wa.me/56979939868?text=Hola,%20necesito%20asesoría%20legal%20sobre%20seguros" target="_blank" rel="noopener">
+        <svg class="cto-ilus" viewBox="0 0 64 56" aria-hidden="true"><rect x="20" y="3" width="24" height="46" rx="5" fill="#cfe0f2"/><rect x="23" y="9" width="18" height="33" rx="2" fill="#1e5c99"/><rect x="29" y="45" width="6" height="1.8" rx=".9" fill="#1e5c99" opacity=".5"/><g class="cto-burb"><rect x="6" y="14" width="24" height="12" rx="6" fill="#3a9465"/><path d="M11 26 l-3 5 l8 -5z" fill="#3a9465"/><rect x="11" y="18.5" width="14" height="2.2" rx="1.1" fill="#fff"/></g><g class="cto-burb cto-burb-2"><rect x="34" y="27" width="24" height="12" rx="6" fill="#ffffff"/><path d="M52 39 l4 5 l-9 -5z" fill="#ffffff"/><g fill="#1e5c99"><circle cx="41" cy="33" r="1.6"/><circle cx="46" cy="33" r="1.6"/><circle cx="51" cy="33" r="1.6"/></g></g></svg>
+        <h3>Escribir por WhatsApp</h3>
+        <p>La forma más rápida. Cuéntanos qué pasó con tu seguro por chat.</p>
+        <span class="cto-cta">+56 9 7993 9868 <span class="cto-go" aria-hidden="true">→</span></span>
+      </a>
+      <a class="cto-card" href="https://www.exigetuseguro.cl/contacto">
+        <svg class="cto-ilus" viewBox="0 0 64 56" aria-hidden="true"><path d="M6 16 a3 3 0 0 1 3 -3 h14 l4 4 h28 a3 3 0 0 1 3 3 v28 a3 3 0 0 1 -3 3 h-46 a3 3 0 0 1 -3 -3z" fill="#1e5c99"/><g class="cto-hoja"><rect x="18" y="5" width="22" height="28" rx="2.5" fill="#ffffff"/><rect x="22" y="11" width="14" height="2.2" rx="1.1" fill="#1e5c99"/><rect x="22" y="16" width="11" height="2" rx="1" fill="#1e5c99" opacity=".4"/><rect x="22" y="20.5" width="12" height="2" rx="1" fill="#1e5c99" opacity=".4"/></g><g class="cto-hoja cto-hoja-2"><rect x="30" y="9" width="20" height="25" rx="2.5" fill="#cfe0f2"/><path d="M35 22 l3 3 l6 -6" stroke="#3a9465" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g><path d="M6 25 h52 v23 a3 3 0 0 1 -3 3 h-46 a3 3 0 0 1 -3 -3z" fill="#2c6fb3"/><path d="M32 46 v-11 m-5 5 l5 -5 l5 5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h3>Enviar caso y documentos</h3>
+        <p>Sube tu póliza y la carta de rechazo para que revisemos tu caso.</p>
+        <span class="cto-cta">Ir al formulario <span class="cto-go" aria-hidden="true">→</span></span>
+      </a>
+      <a class="cto-card" href="#agenda" onclick="smartScroll('m-agenda','agenda');return false;">
+        <svg class="cto-ilus" viewBox="0 0 64 56" aria-hidden="true"><rect x="9" y="6" width="46" height="32" rx="3.5" fill="#cfe0f2"/><rect x="13" y="10" width="38" height="24" rx="2" fill="#1e5c99"/><circle cx="32" cy="18.5" r="4.6" fill="#f3d3b5"/><path d="M23.5 34 a8.5 7.5 0 0 1 17 0z" fill="#3a9465"/><rect x="41" y="13" width="7" height="5" rx="1.2" fill="#cfe0f2" opacity=".55"/><circle cx="45.5" cy="28.5" r="2" fill="#e0574f" class="cto-rec"/><path d="M3 41 h58 l-4 6 h-50z" fill="#cfe0f2"/><circle cx="54" cy="6" r="2.4" fill="#f2c14e" class="cto-spark"/></svg>
+        <h3>Agendar videollamada gratis</h3>
+        <p>Conversa con un abogado por videollamada, sin costo y sin compromiso.</p>
+        <span class="cto-cta">Elegir horario <span class="cto-go" aria-hidden="true">→</span></span>
+      </a>
     </div>
-    <div class="contacto-info fade-in">
-      <ul>
-        <li><i class="fas fa-envelope"></i><a href="mailto:contacto@exigetuseguro.cl">contacto@exigetuseguro.cl</a></li>
-        <li><i class="fab fa-whatsapp"></i>+56 9 7993 9868</li>
-        <li><i class="fas fa-calendar-check"></i><a href="#" onclick="smartScroll('m-agenda','agenda');return false;">Agendar videollamada gratis</a></li>
-        <li><i class="fas fa-map-marker-alt"></i>Atención remota en todo Chile</li>
-      </ul>
-      <p class="contacto-note">Respuesta en un máximo de 24 horas hábiles.</p>
-    </div>
+    <p class="cto-line fade-in"><a href="mailto:contacto@exigetuseguro.cl">contacto@exigetuseguro.cl</a><span>·</span>Atención remota en todo Chile<span>·</span>Respuesta en un máximo de 24 horas hábiles</p>
   </div>
 </section>
 
@@ -1883,7 +1952,8 @@ footer { background: #0a1a2e; padding: 4rem 2rem 2rem; }
     <div class="footer-brand">
       <div class="footer-brand-logo">exigetuseguro<em>.cl</em></div>
       <div class="footer-brand-sub">Abogados Especialistas · Chile</div>
-      <p>Legaltech especializada en seguros. Tecnología e innovación al servicio de tus derechos como asegurado en Chile.</p>
+      <p>Estudio jurídico especializado en seguros. Defendemos tus derechos como asegurado en todo Chile.</p>
+      <a class="footer-pay" href="https://www.exigetuseguro.cl/formas-de-pago"><span class="fas fa-credit-card"></span> Paga en cuotas: Visa · Mastercard · Redcompra →</a>
       <div class="social-links">
         <a href="https://www.facebook.com/exigetuseguro.cl" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
         <a href="https://www.instagram.com/exigetuseguro.cl/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -2214,7 +2284,7 @@ access_key: 'a718fe28-53f0-4273-8518-febe7be8489a',
     });
     const d = await res.json();
     if (d.success === true) {
-      show('rgba(46,125,82,0.1)','rgba(46,125,82,0.3)','var(--terra-d)','<i class="fas fa-check-circle"></i> ¡Consulta enviada! Te contactaremos a la brevedad.');
+      show('rgba(46,125,82,0.1)','rgba(46,125,82,0.3)','var(--terra-d)','<span class="ok-anim" aria-hidden="true"><svg viewBox="0 0 36 36"><circle cx="18" cy="18" r="15" fill="#2e7d52"/><path class="ok-check" d="M11 18.5 l4.8 4.8 l9.4 -10" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle class="ok-dot" cx="4" cy="6" r="1.8" fill="#f2c14e"/><circle class="ok-dot ok-dot-2" cx="33" cy="4" r="1.5" fill="#3a9465"/><circle class="ok-dot ok-dot-3" cx="34" cy="31" r="1.6" fill="#f2c14e"/></svg></span><b>¡Recibido!</b> Te contactaremos a la brevedad.');
       document.getElementById('consultaForm').reset();
       document.getElementById('listaArchivos').innerHTML = '';
     } else throw new Error();
@@ -2279,7 +2349,7 @@ access_key: 'a718fe28-53f0-4273-8518-febe7be8489a',
     const d = await res.json();
    if (d.success === true) {
       st.style.cssText='display:block;background:rgba(11,37,69,0.08);border:0.5px solid rgba(30,92,153,0.3);color:var(--navy);border-radius:8px;padding:0.7rem 1rem;font-size:12px;text-align:center;';
-      st.innerHTML='<i class="fas fa-check-circle"></i> ¡Consulta enviada! Te contactaremos pronto.';
+      st.innerHTML='<span class="ok-anim" aria-hidden="true"><svg viewBox="0 0 36 36"><circle cx="18" cy="18" r="15" fill="#2e7d52"/><path class="ok-check" d="M11 18.5 l4.8 4.8 l9.4 -10" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle class="ok-dot" cx="4" cy="6" r="1.8" fill="#f2c14e"/><circle class="ok-dot ok-dot-2" cx="33" cy="4" r="1.5" fill="#3a9465"/><circle class="ok-dot ok-dot-3" cx="34" cy="31" r="1.6" fill="#f2c14e"/></svg></span><b>¡Recibido!</b> Te contactaremos pronto.';
       document.getElementById('mConsultaForm').reset();
       document.getElementById('m-listaArchivos').innerHTML='';
     } else throw new Error();
