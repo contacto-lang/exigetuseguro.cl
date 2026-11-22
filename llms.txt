@@ -28,7 +28,6 @@ Exige Tu Seguro acepta pagos con tarjeta de crédito, débito y prepago (Visa, M
 - Email: contacto@exigetuseguro.cl
 - Formulario: https://www.exigetuseguro.cl/contacto
 - Formas de pago: https://www.exigetuseguro.cl/formas-de-pago
-- Asistente legal (chat): https://www.exigetuseguro.cl/asistente
 
 ## Fundador
 Santana, abogado, Licenciado en Ciencias Jurídicas y Sociales (Universidad Andrés Bello), Diplomado en Derecho de Seguros (Universidad de los Andes / Escuela de Seguros de Chile).
@@ -47,9 +46,6 @@ Primera consulta gratuita y sin compromiso. Honorarios informados con transparen
 - [Ley 21.719 — Protección de Datos Personales](https://www.exigetuseguro.cl/ley-21719-proteccion-datos-personales): guía legal completa sobre la nueva ley de protección de datos personales, vigente en plenitud desde el 1 de diciembre de 2026: principios, derechos de los titulares, procedimiento de reclamo, responsabilidad civil (art. 47) y obligaciones de las empresas.
 - [Reticencia y Declaración del Riesgo](https://www.exigetuseguro.cl/reticencia-declaracion-riesgo): guía legal sobre el deber de declarar el riesgo al contratar un seguro, la diferencia entre una omisión de buena fe y una reticencia dolosa, y la nulidad relativa del artículo 539 del Código de Comercio.
 - [Regla Proporcional e Infraseguro](https://www.exigetuseguro.cl/regla-proporcional-infraseguro): guía legal sobre por qué una indemnización puede reducirse proporcionalmente cuando un bien está asegurado por menos de su valor real (art. 553 Cco.), y cómo evitarlo.
-- [Asistente Legal de Seguros](https://www.exigetuseguro.cl/asistente): chatbot de orientación legal sobre seguros.
-- [Asistente de Mecánica Automotriz](https://www.exigetuseguro.cl/mecanica): chatbot de orientación sobre seguros vehiculares/siniestros.
-- [ExigeRadar](https://www.exigetuseguro.cl/radar): diagnóstico de seguros y pensiones tras el fallecimiento de un familiar.
 - [Uber, InDrive y Cabify — Seguros](https://www.exigetuseguro.cl/uber-seguros): seguros vehiculares para conductores de apps.
 - [Conoce tu Póliza](https://www.exigetuseguro.cl/conoce-tu-poliza): guía de coberturas y exclusiones, incluye pólizas de sismo y garantía.
 - [Noticias SOAP](https://www.exigetuseguro.cl/noticias-soap): novedades sobre el Seguro Obligatorio de Accidentes Personales.
