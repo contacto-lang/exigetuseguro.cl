@@ -694,8 +694,7 @@ section { padding: 5.5rem 2rem; }
    SERVICIOS
 ═══════════════════════════════════════════ */
 #servicios {
-  background: linear-gradient(135deg, rgba(10,37,64,0.9) 0%, rgba(42,82,128,0.85) 100%),
-              url('https://i.postimg.cc/G2k4nBFS/476531221-1063690762468539-6084965534244979362-n.jpg') center/cover;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 220' preserveAspectRatio='none'%3E%3Cpath d='M0 150 L120 80 L210 120 L330 40 L440 110 L560 20 L690 100 L800 50 L930 120 L1060 40 L1180 100 L1300 60 L1440 110 V220 H0Z' fill='%23ffffff' fill-opacity='.05'/%3E%3Cpath d='M0 190 L160 130 L300 170 L460 110 L620 165 L780 120 L940 175 L1100 125 L1260 165 L1440 135 V220 H0Z' fill='%23ffffff' fill-opacity='.05'/%3E%3C/svg%3E") center bottom / 100% 220px no-repeat, url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cg fill='%23cfe0f2' fill-opacity='.35'%3E%3Ccircle cx='20' cy='30' r='1.2'/%3E%3Ccircle cx='130' cy='14' r='1'/%3E%3Ccircle cx='200' cy='80' r='1.5'/%3E%3Ccircle cx='70' cy='120' r='1'/%3E%3Ccircle cx='170' cy='170' r='1.2'/%3E%3Ccircle cx='40' cy='210' r='1.4'/%3E%3Ccircle cx='110' cy='70' r='.8'/%3E%3C/g%3E%3C/svg%3E") 0 0 / 240px 240px, radial-gradient(circle at 85% 10%, #1e5c99 0%, #123a66 45%, #0b2545 100%);
 }
 #servicios .sec-tag { color: rgba(148,197,235,0.7); }
 #servicios .sec-title { color: #ffffff; }
@@ -726,6 +725,9 @@ section { padding: 5.5rem 2rem; }
   font-size: 0.85rem; color: var(--terra); flex-shrink: 0;
 }
 .svc-item h3 { font-size: 13px; font-weight: 500; color: var(--charcoal); line-height: 1.3; }
+.svc-ilus, .action-ilus { width: 46px; height: 46px; border-radius: 12px; background: #f2f7fb; border: 0.5px solid rgba(11,37,69,0.08); }
+.svc-ilus svg, .action-ilus svg { width: 32px; height: 32px; transition: transform .25s; }
+.svc-item:hover .svc-ilus svg, .action-card:hover .action-ilus svg { transform: scale(1.12) rotate(-3deg); }
 
 .servicios-actions { display: flex; flex-direction: column; gap: 0.75rem; }
 .action-card {
@@ -842,8 +844,7 @@ textarea.m-fi { resize: vertical; min-height: 100px; line-height: 1.6; }
    AGENDA
 ═══════════════════════════════════════════ */
 #agenda {
-  background: linear-gradient(135deg, rgba(10,37,64,0.92) 0%, rgba(30,70,130,0.86) 100%),
-              url('https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=1920') center/cover;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 220' preserveAspectRatio='none'%3E%3Cpath d='M0 150 L120 80 L210 120 L330 40 L440 110 L560 20 L690 100 L800 50 L930 120 L1060 40 L1180 100 L1300 60 L1440 110 V220 H0Z' fill='%23ffffff' fill-opacity='.05'/%3E%3Cpath d='M0 190 L160 130 L300 170 L460 110 L620 165 L780 120 L940 175 L1100 125 L1260 165 L1440 135 V220 H0Z' fill='%23ffffff' fill-opacity='.05'/%3E%3C/svg%3E") center bottom / 100% 220px no-repeat, url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cg fill='%23cfe0f2' fill-opacity='.35'%3E%3Ccircle cx='20' cy='30' r='1.2'/%3E%3Ccircle cx='130' cy='14' r='1'/%3E%3Ccircle cx='200' cy='80' r='1.5'/%3E%3Ccircle cx='70' cy='120' r='1'/%3E%3Ccircle cx='170' cy='170' r='1.2'/%3E%3Ccircle cx='40' cy='210' r='1.4'/%3E%3Ccircle cx='110' cy='70' r='.8'/%3E%3C/g%3E%3C/svg%3E") 0 0 / 240px 240px, radial-gradient(circle at 85% 10%, #1e5c99 0%, #123a66 45%, #0b2545 100%);
 }
 #agenda .sec-tag { color: rgba(148,197,235,0.7); }
 #agenda .sec-title { color: #ffffff; }
@@ -858,6 +859,10 @@ textarea.m-fi { resize: vertical; min-height: 100px; line-height: 1.6; }
   text-align: center;
 }
 .agenda-feat i { font-size: 1.4rem; color: #ffffff; display: block; margin-bottom: 0.6rem; }
+.agenda-ilus { width: 64px; height: 62px; display: block; margin: 0 auto 0.7rem; animation: flota 4.5s ease-in-out infinite; }
+.agenda-feat:nth-child(2) .agenda-ilus { animation-delay: -1.5s; } .agenda-feat:nth-child(3) .agenda-ilus { animation-delay: -3s; }
+.agenda-feat { transition: background .25s, transform .25s; } .agenda-feat:hover { background: rgba(255,255,255,0.14); transform: translateY(-3px); }
+@media (prefers-reduced-motion: reduce) { .agenda-ilus { animation: none; } }
 .agenda-feat p { font-size: 12px; color: rgba(255,255,255,0.7); line-height: 1.5; }
 .calendly-wrap {
   border-radius: var(--radius); overflow: hidden;
@@ -1505,31 +1510,31 @@ footer { background: #0a1a2e; padding: 4rem 2rem 2rem; }
 
     <div class="servicios-layout">
       <div class="servicios-list fade-in">
-        <div class="svc-item"><div class="svc-icon"><i class="fas fa-file-contract"></i></div><h3>Impugnación de Rechazos de Seguros</h3></div>
-        <div class="svc-item"><div class="svc-icon"><i class="fas fa-heartbeat"></i></div><h3>Abogado Seguros de Salud</h3></div>
-        <div class="svc-item"><div class="svc-icon"><i class="fas fa-shield-alt"></i></div><h3>Abogado Seguros de Vida Chile</h3></div>
-        <div class="svc-item"><div class="svc-icon"><i class="fas fa-fire"></i></div><h3>Seguros de Incendio y Sismo</h3></div>
-        <div class="svc-item"><div class="svc-icon"><i class="fas fa-car"></i></div><h3>Abogado Seguros Vehiculares</h3></div>
+        <div class="svc-item"><div class="svc-icon svc-ilus"><svg viewBox="0 0 38 38" aria-hidden="true"><rect x="7" y="4" width="22" height="30" rx="3" fill="#fff" stroke="#cfdde8" stroke-width="1.5"/><g fill="#cfdde8"><rect x="11" y="10" width="14" height="2.5" rx="1.2"/><rect x="11" y="15" width="11" height="2.5" rx="1.2"/></g><rect x="9" y="21" width="17" height="8" rx="2" fill="none" stroke="#e05a4f" stroke-width="1.8" transform="rotate(-10 17 25)"/><circle cx="30" cy="30" r="8" fill="#2e7d52"/><path d="M26.5 30 l2.5 2.5 l5 -5" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Impugnación de Rechazos de Seguros</h3></div>
+        <div class="svc-item"><div class="svc-icon svc-ilus"><svg viewBox="0 0 38 38" aria-hidden="true"><rect x="5" y="12" width="28" height="24" rx="2.5" fill="#fff" stroke="#cfdde8" stroke-width="1.5"/><rect x="13" y="4" width="12" height="11" rx="2" fill="#fff" stroke="#cfdde8" stroke-width="1.5"/><path d="M19 6.5 v6 M16 9.5 h6" stroke="#e05a4f" stroke-width="2.2" stroke-linecap="round"/><g fill="#9cc3de"><rect x="9" y="18" width="5" height="5" rx="1"/><rect x="16.5" y="18" width="5" height="5" rx="1"/><rect x="24" y="18" width="5" height="5" rx="1"/></g><rect x="16" y="27" width="6" height="9" fill="#1e5c99"/></svg></div><h3>Abogado Seguros de Salud</h3></div>
+        <div class="svc-item"><div class="svc-icon svc-ilus"><svg viewBox="0 0 38 38" aria-hidden="true"><path d="M19 34 C8 26 4 20 4 15 a7.5 7.5 0 0 1 15 -2.5 a7.5 7.5 0 0 1 15 2.5 c0 5 -4 11 -15 19z" fill="#e05a4f"/><path d="M8 19.5 h6.5 l2.5 -5 l3.5 8.5 l2.5 -3.5 h7" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Abogado Seguros de Vida Chile</h3></div>
+        <div class="svc-item"><div class="svc-icon svc-ilus"><svg viewBox="0 0 38 38" aria-hidden="true"><path d="M5 20 L19 8 L33 20 V35 H5Z" fill="#f6efe2"/><path d="M2.5 21.5 L19 7 L35.5 21.5" stroke="#0b2545" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 35 c-5.5 0 -8 -3.5 -7.3 -7 c.6 -3 3 -4.2 3 -7.2 c2.4 1.8 3 3.6 3 5.4 c1.2 -1.2 1.8 -3 1.2 -4.8 c3.6 2.4 6 5.4 6 7.8 c0 3.6 -2.4 5.8 -5.9 5.8z" fill="#e05a4f"/><path d="M19 35 c-2.4 0 -3.6 -1.8 -3 -3.6 c.6 -1.8 1.8 -2.4 1.8 -3.6 c1.8 1.2 3.6 3 3.6 4.8 c0 1.2 -1.2 2.4 -2.4 2.4z" fill="#f2c14e"/></svg></div><h3>Seguros de Incendio y Sismo</h3></div>
+        <div class="svc-item"><div class="svc-icon svc-ilus"><svg viewBox="0 0 38 38" aria-hidden="true"><path d="M3 26 V20.5 q0 -2.5 2.5 -3 l4.3 -.6 l5 -6.2 q1.2 -1.2 3 -1.2 h8 q1.8 0 3 1.2 l5 6.2 l1.8 .6 q1.8 .6 1.8 3 v5.5z" fill="#e05a4f"/><path d="M14.5 16.8 l3.7 -5 h4.3 v5z M24.3 11.8 h3 l3.7 5 h-6.7z" fill="#cfe9f6"/><circle cx="10.5" cy="27" r="4.3" fill="#0b2545"/><circle cx="29" cy="27" r="4.3" fill="#0b2545"/></svg></div><h3>Abogado Seguros Vehiculares</h3></div>
       </div>
 
       <div class="servicios-actions fade-in">
         <a href="https://www.exigetuseguro.cl/conoce-tu-poliza" class="action-card">
-          <div class="action-icon terra"><i class="fas fa-file-contract"></i></div>
+          <div class="action-icon action-ilus"><svg viewBox="0 0 38 38" aria-hidden="true"><rect x="6" y="4" width="20" height="27" rx="3" fill="#fff" stroke="#cfdde8" stroke-width="1.5"/><rect x="10" y="9" width="9" height="2.5" rx="1.2" fill="#0b2545"/><g fill="#cfdde8"><rect x="10" y="14" width="12" height="2" rx="1"/><rect x="10" y="18" width="10" height="2" rx="1"/></g><circle cx="24" cy="24" r="6.5" fill="#fff" fill-opacity=".9" stroke="#0b2545" stroke-width="2.6"/><line x1="29" y1="29" x2="34" y2="34" stroke="#f2c14e" stroke-width="3.5" stroke-linecap="round"/></svg></div>
           <div class="action-card-text"><p>Conoce tu Póliza</p><p>Guía de coberturas y exclusiones</p></div>
           <i class="fas fa-arrow-right action-arrow"></i>
         </a>
         <a href="#" onclick="smartScroll('m-contacto','hero-contacto');return false;" class="action-card">
-          <div class="action-icon navy"><i class="fas fa-file-alt"></i></div>
+          <div class="action-icon action-ilus"><svg viewBox="0 0 38 38" aria-hidden="true"><rect x="7" y="4" width="22" height="29" rx="3" fill="#fff" stroke="#cfdde8" stroke-width="1.5"/><g fill="#cfdde8"><rect x="11" y="10" width="14" height="3" rx="1.5"/><rect x="11" y="16" width="14" height="3" rx="1.5"/></g><rect x="11" y="23" width="14" height="5" rx="2.5" fill="#2e7d52"/><path d="M27 6 l6 6 l-10 10 l-7 2 l2 -7z" fill="#f2c14e"/><path d="M27 6 l6 6" stroke="#0b2545" stroke-width="1.6"/></svg></div>
           <div class="action-card-text"><p>Formulario de Consulta</p><p>Adjunta tus documentos y recibe orientación legal</p></div>
           <i class="fas fa-arrow-right action-arrow"></i>
         </a>
         <a href="https://www.exigetuseguro.cl/blog" class="action-card">
-          <div class="action-icon navy"><i class="fas fa-newspaper"></i></div>
+          <div class="action-icon action-ilus"><svg viewBox="0 0 38 38" aria-hidden="true"><rect x="5" y="9" width="7" height="25" rx="1.5" fill="#2e7d52"/><rect x="13" y="5" width="6" height="29" rx="1.5" fill="#f6efe2" stroke="#e3d9c6"/><rect x="20" y="11" width="7" height="23" rx="1.5" fill="#1e5c99"/><rect x="27" y="9" width="6" height="25" rx="1.5" fill="#e05a4f" transform="rotate(-12 30 34)"/></svg></div>
           <div class="action-card-text"><p>Guías Legales</p><p>Vida, hogar, vehículos y empresas</p></div>
           <i class="fas fa-arrow-right action-arrow"></i>
         </a>
         <a href="https://www.exigetuseguro.cl/honorarios" class="action-card">
-          <div class="action-icon terra"><i class="fas fa-file-invoice-dollar"></i></div>
+          <div class="action-icon action-ilus"><svg viewBox="0 0 38 38" aria-hidden="true"><rect x="9" y="4" width="20" height="27" rx="2.5" fill="#f6efe2" stroke="#e3d9c6"/><circle cx="19" cy="15" r="6" fill="#f2c14e"/><text x="19" y="18.5" text-anchor="middle" font-family="Jost,sans-serif" font-weight="700" font-size="9" fill="#0b2545">$</text><rect x="4" y="23" width="20" height="13" rx="2.5" fill="#2e7d52"/><rect x="4" y="26" width="20" height="3" fill="#1f5c3a"/><rect x="7" y="31" width="6" height="2.4" rx="1" fill="#f2c14e"/></svg></div>
           <div class="action-card-text"><p>Guía de Honorarios</p><p>Transparencia total en costos</p></div>
           <i class="fas fa-arrow-right action-arrow"></i>
         </a>
@@ -1610,9 +1615,9 @@ footer { background: #0a1a2e; padding: 4rem 2rem 2rem; }
     <h2 class="sec-title fade-in">Agenda tu Cita con un<br>Abogado Especialista</h2>
     <p class="sec-lead fade-in">Primera consulta sin costo ni compromiso.</p>
     <div class="agenda-features fade-in">
-      <div class="agenda-feat"><i class="fas fa-comments"></i><p>Explica tu situación sin presiones</p></div>
-      <div class="agenda-feat"><i class="fas fa-lightbulb"></i><p>Recibe orientación legal experta</p></div>
-      <div class="agenda-feat"><i class="fas fa-route"></i><p>Define los pasos legales a seguir</p></div>
+      <div class="agenda-feat"><svg class="agenda-ilus" viewBox="0 0 58 56" aria-hidden="true"><rect x="4" y="8" width="34" height="24" rx="8" fill="#cfe0f2"/><path d="M12 32 l-4 8 l12 -8z" fill="#cfe0f2"/><g fill="#1e5c99"><circle cx="13" cy="20" r="2.6"/><circle cx="21" cy="20" r="2.6"/><circle cx="29" cy="20" r="2.6"/></g><rect x="24" y="26" width="30" height="20" rx="7" fill="#3a9465"/><path d="M46 46 l4 7 l-11 -7z" fill="#3a9465"/><rect x="30" y="33" width="18" height="3" rx="1.5" fill="#fff"/><rect x="30" y="39" width="12" height="3" rx="1.5" fill="#fff"/></svg><p>Explica tu situación sin presiones</p></div>
+      <div class="agenda-feat"><svg class="agenda-ilus" viewBox="0 0 58 56" aria-hidden="true"><circle cx="29" cy="24" r="16" fill="#f2c14e" opacity=".25" class="halo"/><path d="M29 10 a13 13 0 0 1 8 23 v6 h-16 v-6 a13 13 0 0 1 8 -23z" fill="#f2c14e"/><rect x="22" y="40" width="14" height="4" rx="2" fill="#cfe0f2"/><rect x="24" y="46" width="10" height="4" rx="2" fill="#cfe0f2"/><path d="M25 24 l4 6 l4 -6" stroke="#e0a92e" stroke-width="2" fill="none"/></svg><p>Recibe orientación legal experta</p></div>
+      <div class="agenda-feat"><svg class="agenda-ilus" viewBox="0 0 58 56" aria-hidden="true"><path d="M12 46 q0 -14 16 -14 h6 q12 0 12 -12" stroke="#cfe0f2" stroke-width="3" stroke-dasharray="4 4" fill="none"/><circle cx="12" cy="46" r="5" fill="#cfe0f2"/><path d="M46 4 a8 8 0 0 1 8 8 c0 6 -8 12 -8 12 s-8 -6 -8 -12 a8 8 0 0 1 8 -8z" fill="#3a9465"/><circle cx="46" cy="12" r="3" fill="#fff"/></svg><p>Define los pasos legales a seguir</p></div>
     </div>
     <div class="calendly-wrap fade-in">
       <div class="calendly-inline-widget" data-url="https://calendly.com/exigetuseguro/nueva-reunion?hide_event_type_details=1&hide_gdpr_banner=1" style="min-width:320px;height:700px;"></div>
