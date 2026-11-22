@@ -865,6 +865,25 @@ textarea.m-fi { resize: vertical; min-height: 100px; line-height: 1.6; }
 .agenda-feat:nth-child(2) .agenda-ilus { animation-delay: -1.5s; } .agenda-feat:nth-child(3) .agenda-ilus { animation-delay: -3s; }
 .agenda-feat { transition: background .25s, transform .25s; } .agenda-feat:hover { background: rgba(255,255,255,0.14); transform: translateY(-3px); }
 @media (prefers-reduced-motion: reduce) { .agenda-ilus { animation: none; } }
+/* Nosotros ilustrado */
+.nos-val-card .nos-ilus { width: 66px; height: 62px; display: block; margin: 0 auto 1.1rem; animation: flota 4.5s ease-in-out infinite; transition: transform .3s; }
+.nos-val-card:nth-child(2) .nos-ilus { animation-delay: -1.5s; }
+.nos-val-card:nth-child(3) .nos-ilus { animation-delay: -3s; }
+.nos-beam { transform-box: view-box; transform-origin: 32px 16px; animation: nosBeam 6s ease-in-out infinite; }
+@keyframes nosBeam { 0%,100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg); } }
+.nos-spark { animation: nosSpark 3s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+.nos-spark-2 { animation-delay: -1.5s; }
+@keyframes nosSpark { 0%,100% { opacity: .35; transform: scale(.7); } 50% { opacity: 1; transform: scale(1); } }
+.nos-lupa { transform-box: view-box; transition: transform .35s; }
+.nos-val-card:hover .nos-lupa { transform: translate(-3px,-2px); }
+.nos-val-card:hover .nos-ilus { transform: scale(1.06); }
+@media (max-width: 768px) {
+  .nos-val-card .nos-ilus { width: 58px; height: 54px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nos-val-card .nos-ilus, .nos-beam, .nos-spark { animation: none; }
+}
+
 .agenda-feat p { font-size: 12px; color: rgba(255,255,255,0.7); line-height: 1.5; }
 .calendly-wrap {
   border-radius: var(--radius); overflow: hidden;
@@ -1798,17 +1817,17 @@ footer { background: #0a1a2e; padding: 4rem 2rem 2rem; }
     <!-- Valores — 3 columnas centradas -->
     <div class="nos-vals-grid fade-in">
       <div class="nos-val-card">
-        <div class="nos-val-icon"><i class="fas fa-balance-scale"></i></div>
+        <svg class="nos-ilus" viewBox="0 0 64 60" aria-hidden="true"><rect x="30.5" y="12" width="3" height="38" rx="1.5" fill="#cfe0f2"/><rect x="20" y="50" width="24" height="5" rx="2.5" fill="#cfe0f2"/><circle cx="32" cy="10" r="4" fill="#f2c14e"/><g class="nos-beam"><rect x="9" y="15" width="46" height="3" rx="1.5" fill="#cfe0f2"/><path d="M13 18 L6 34 M13 18 L20 34 M51 18 L44 34 M51 18 L58 34" stroke="#cfe0f2" stroke-width="1.4"/><path d="M4 34 h18 a9 6 0 0 1 -18 0z" fill="#1e5c99"/><path d="M42 34 h18 a9 6 0 0 1 -18 0z" fill="#1e5c99"/><rect x="7.5" y="24" width="11" height="12" rx="1.5" fill="#3a9465" transform="rotate(-6 13 30)"/><rect x="9.5" y="27" width="7" height="1.6" rx=".8" fill="#fff" transform="rotate(-6 13 30)"/><rect x="9.5" y="30.5" width="5" height="1.6" rx=".8" fill="#fff" transform="rotate(-6 13 30)"/></g></svg>
         <h4>Justicia</h4>
         <p>Luchamos por tus derechos con integridad profesional</p>
       </div>
       <div class="nos-val-card">
-        <div class="nos-val-icon"><i class="fas fa-handshake"></i></div>
+        <svg class="nos-ilus" viewBox="0 0 64 60" aria-hidden="true"><rect x="15" y="30" width="34" height="27" rx="3" fill="#cfe0f2"/><rect x="20" y="38" width="20" height="2.4" rx="1.2" fill="#1e5c99" opacity=".45"/><rect x="20" y="43" width="14" height="2.4" rx="1.2" fill="#1e5c99" opacity=".45"/><path d="M33 51 q3 -4 5 0 t5 -1" stroke="#3a9465" stroke-width="1.8" fill="none" stroke-linecap="round"/><rect x="1" y="8" width="17" height="16" rx="3" fill="#1e5c99"/><rect x="15.5" y="8" width="3.5" height="16" rx="1" fill="#e9f1f9"/><rect x="46" y="8" width="17" height="16" rx="3" fill="#3a9465"/><rect x="45" y="8" width="3.5" height="16" rx="1" fill="#e9f1f9"/><rect x="18" y="9" width="28" height="14" rx="7" fill="#f3d3b5"/><path d="M27.5 12.5 v7.5 M32 12 v8.5 M36.5 12.5 v7.5" stroke="#d9a983" stroke-width="1.3" stroke-linecap="round"/><path d="M21 13 q5 -4.5 10 -1.5" stroke="#d9a983" stroke-width="1.3" fill="none" stroke-linecap="round"/><circle cx="54" cy="3.5" r="2.2" fill="#f2c14e" class="nos-spark"/><circle cx="9" cy="3.5" r="1.6" fill="#f2c14e" class="nos-spark nos-spark-2"/></svg>
         <h4>Compromiso</h4>
         <p>Dedicados a obtener los mejores resultados para ti</p>
       </div>
       <div class="nos-val-card">
-        <div class="nos-val-icon"><i class="fas fa-chart-line"></i></div>
+        <svg class="nos-ilus" viewBox="0 0 64 60" aria-hidden="true"><rect x="8" y="6" width="34" height="44" rx="3.5" fill="#cfe0f2"/><rect x="14" y="14" width="22" height="2.6" rx="1.3" fill="#1e5c99"/><rect x="14" y="21" width="18" height="2.4" rx="1.2" fill="#1e5c99" opacity=".45"/><rect x="14" y="27" width="20" height="2.4" rx="1.2" fill="#1e5c99" opacity=".45"/><rect x="14" y="33" width="13" height="2.4" rx="1.2" fill="#1e5c99" opacity=".45"/><g class="nos-lupa"><circle cx="40" cy="34" r="12" fill="#ffffff" fill-opacity=".22" stroke="#ffffff" stroke-width="3"/><path d="M35 34 l3.4 3.4 l6.4 -7" stroke="#3a9465" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="49" y="42" width="6" height="15" rx="3" fill="#f2c14e" transform="rotate(-45 52 49.5)"/></g></svg>
         <h4>Transparencia</h4>
         <p>Comunicación clara y honesta en todo momento</p>
       </div>
