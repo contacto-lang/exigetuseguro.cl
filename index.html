@@ -497,11 +497,8 @@ nav.nav-links a:hover { color: var(--navy); background: rgba(11,37,69,0.05); }
 ═══════════════════════════════════════════ */
 .hero {
   min-height: 100vh;
-  background:
-    radial-gradient(ellipse 55% 60% at 88% 12%, rgba(58,130,200,0.45) 0%, rgba(58,130,200,0) 70%),
-    radial-gradient(ellipse 50% 55% at 8% 100%, rgba(46,125,82,0.42) 0%, rgba(46,125,82,0) 70%),
-    radial-gradient(ellipse 40% 40% at 55% 55%, rgba(30,92,153,0.30) 0%, rgba(30,92,153,0) 70%),
-    linear-gradient(160deg, #0a1f3c 0%, #0d2b52 45%, #0a2240 100%);
+  background: linear-gradient(90deg, rgba(10,22,40,0.70) 0%, rgba(10,22,40,0.42) 45%, rgba(10,22,40,0.05) 100%),
+              url('/hero-biblioteca.svg') center/cover, #16304e;
   display: flex; align-items: center;
   position: relative; overflow: hidden;
   padding-top: 65px;
@@ -675,6 +672,9 @@ select.hf-input { cursor: pointer; }
   }
   @keyframes hbFlecha { 0%, 62%, 100% { transform: translateY(0); } 72% { transform: translateY(-2px); } }
   @keyframes hbAnillo { 0%, 78% { opacity: 0; transform: scale(1); } 82% { opacity: .55; } 100% { opacity: 0; transform: scale(1.45); } }
+
+  /* Fondo del hero en móvil: lámparas y estantería, sin la ventana detrás del texto */
+  .hero { background-position: center, 22% center; }
 
   /* Más aire entre la barra de navegación y el título */
   .hero-inner { padding-top: 3.25rem; }
@@ -891,31 +891,6 @@ textarea.m-fi { resize: vertical; min-height: 100px; line-height: 1.6; }
 .agenda-feat { transition: background .25s, transform .25s; } .agenda-feat:hover { background: rgba(255,255,255,0.14); transform: translateY(-3px); }
 @media (prefers-reduced-motion: reduce) { .agenda-ilus { animation: none; } .hb-pill-go svg, .hb-flecha, .hb-pill-go::after { animation: none; } }
 
-/* Hero fintech: elementos flotantes */
-.hero-inner { position: relative; z-index: 1; }
-.hero-fx { position: absolute; inset: 0; z-index: 0; pointer-events: none; --px: 0; --py: 0; }
-.fx-ondas { position: absolute; inset: 0; width: 100%; height: 100%; }
-.fx { position: absolute; transform: translate(calc(var(--px) * var(--d) * 14px), calc(var(--py) * var(--d) * 10px)); transition: transform .6s cubic-bezier(.2,.7,.3,1); }
-.fx > svg { display: block; width: 100%; height: auto; transform: rotate(var(--r)); animation: fxFlota var(--t) ease-in-out infinite; filter: drop-shadow(0 18px 28px rgba(0,0,0,.28)); }
-.fx-chat > svg { animation-delay: -1s; } .fx-escudo > svg { animation-delay: -2s; } .fx-tarjeta > svg { animation-delay: -3.5s; }
-.fx-balanza > svg { animation-delay: -1.8s; } .fx-moneda > svg { animation-delay: -2.6s; } .fx-graf > svg { animation-delay: -4s; } .fx-timbre > svg { animation-name: fxGira; }
-@keyframes fxFlota { 0%,100% { transform: rotate(var(--r)) translateY(0); } 50% { transform: rotate(calc(var(--r) + 2deg)) translateY(-12px); } }
-@keyframes fxGira { 0%,100% { transform: rotate(var(--r)) scale(1); } 50% { transform: rotate(calc(var(--r) + 10deg)) scale(1.05); } }
-.fx-dot { animation: fxDot 1.4s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
-.fx-dot2 { animation-delay: .2s; } .fx-dot3 { animation-delay: .4s; }
-@keyframes fxDot { 0%,60%,100% { transform: translateY(0); opacity: .55; } 30% { transform: translateY(-6px); opacity: 1; } }
-.fx-timbre { opacity: .8; } .fx-graf { opacity: .92; }
-@media (max-width: 968px) {
-  .fx-poliza, .fx-tarjeta, .fx-graf, .fx-balanza { display: none; }
-  .fx-escudo { left: auto !important; right: 5%; top: 78px !important; width: 60px !important; }
-  .fx-chat { left: auto !important; right: 26%; top: 82px !important; width: 66px !important; opacity: .9; }
-  .fx-moneda { left: 80% !important; top: 70% !important; width: 40px !important; }
-  .fx-timbre { left: 4% !important; top: 88% !important; width: 70px !important; opacity: .55; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .fx > svg, .fx-dot { animation: none; }
-  .fx { transition: none; transform: none; }
-}
 /* Contacto ilustrado */
 .cto-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.1rem; margin-top: 2.2rem; }
 .cto-card { display: flex; flex-direction: column; background: rgba(255,255,255,0.07); border: 0.5px solid rgba(255,255,255,0.14); border-radius: var(--radius); padding: 1.6rem 1.5rem 1.4rem; text-decoration: none; transition: background .25s, transform .25s, border-color .25s; }
@@ -1584,24 +1559,6 @@ footer { background: #0a1a2e; padding: 4rem 2rem 2rem; }
 
 <!-- HERO -->
 <section class="hero" id="hero">
-  <div class="hero-fx" aria-hidden="true"><svg class="fx-ondas" viewBox="0 0 1440 860" preserveAspectRatio="none"><path d="M0 610 C260 540 420 700 720 640 C1000 585 1180 520 1440 560 V860 H0Z" fill="#ffffff" opacity=".035"/>
-<path d="M0 700 C300 650 520 770 820 720 C1100 675 1260 640 1440 670 V860 H0Z" fill="#ffffff" opacity=".035"/>
-<path d="M0 220 C320 140 560 260 860 190 C1120 130 1300 160 1440 120" stroke="#9fc8ee" stroke-opacity=".10" stroke-width="2" fill="none"/>
-<path d="M0 280 C340 200 600 320 900 250 C1150 195 1310 220 1440 185" stroke="#9fc8ee" stroke-opacity=".07" stroke-width="2" fill="none"/>
-<circle cx="1150" cy="150" r="220" fill="none" stroke="#9fc8ee" stroke-opacity=".07" stroke-width="2"/><circle cx="1150" cy="150" r="320" fill="none" stroke="#9fc8ee" stroke-opacity=".05" stroke-width="2"/></svg><div class="fx fx-poliza" style="left:52.5%;top:15%;width:132px;--r:-9deg;--d:1.4;--t:7.5s"><svg viewBox="0 0 150 190"><rect x="0" y="0" width="150" height="190" rx="12" fill="#ffffff"/><rect x="0" y="0" width="150" height="36" rx="12" fill="#2e7d52"/><rect x="0" y="24" width="150" height="12" fill="#2e7d52"/>
-<path d="M22 12 l8 3 v6 c0 5 -4 8 -8 9 c-4 -1 -8 -4 -8 -9 v-6z" fill="#ffffff" opacity=".9"/><rect x="40" y="14" width="56" height="5" rx="2.5" fill="#ffffff" opacity=".8"/><rect x="40" y="23" width="36" height="4" rx="2" fill="#ffffff" opacity=".55"/>
-<rect x="20" y="56" width="110" height="6" rx="3" fill="#0b2545" opacity=".75"/><rect x="20" y="72" width="94" height="5" rx="2.5" fill="#9fb3c8"/><rect x="20" y="85" width="104" height="5" rx="2.5" fill="#9fb3c8"/><rect x="20" y="98" width="80" height="5" rx="2.5" fill="#9fb3c8"/>
-<rect x="20" y="116" width="50" height="22" rx="6" fill="#e8f3ec"/><rect x="28" y="124" width="34" height="6" rx="3" fill="#2e7d52"/><rect x="80" y="116" width="50" height="22" rx="6" fill="#eef3f9"/><rect x="88" y="124" width="26" height="6" rx="3" fill="#1e5c99"/>
-<path d="M22 166 q8 -14 16 0 t16 -2 t14 2" stroke="#1e5c99" stroke-width="2.4" fill="none" stroke-linecap="round"/><rect x="20" y="172" width="60" height="2" fill="#cfd9e4"/></svg></div><div class="fx fx-escudo" style="left:89%;top:16%;width:104px;--r:8deg;--d:2.0;--t:6.5s"><svg viewBox="0 0 120 130"><path d="M60 6 C76 14 92 18 108 19 C109 58 104 92 60 124 C16 92 11 58 12 19 C28 18 44 14 60 6Z" fill="#3a9465"/><path d="M60 6 C44 14 28 18 12 19 C11 58 16 92 60 124Z" fill="#2e7d52"/>
-<path d="M38 66 l15 15 l30 -32" stroke="#ffffff" stroke-width="9" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="fx fx-tarjeta" style="left:44%;top:76%;width:190px;--r:10deg;--d:1.7;--t:8.5s"><svg viewBox="0 0 200 126"><defs><linearGradient id="fxc" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2b6cb0"/><stop offset="1" stop-color="#173f6e"/></linearGradient></defs>
-<rect width="200" height="126" rx="14" fill="url(#fxc)"/><circle cx="168" cy="18" r="70" fill="#ffffff" opacity=".06"/><rect x="18" y="36" width="34" height="26" rx="5" fill="#e6c76a"/><path d="M18 49 h34 M35 36 v26" stroke="#c9a94a" stroke-width="1.4"/>
-<rect x="18" y="78" width="120" height="7" rx="3.5" fill="#ffffff" opacity=".85"/><rect x="18" y="96" width="60" height="6" rx="3" fill="#ffffff" opacity=".5"/>
-<circle cx="160" cy="100" r="12" fill="#3a9465"/><circle cx="174" cy="100" r="12" fill="#7fd1a1" opacity=".85"/></svg></div><div class="fx fx-balanza" style="left:92.5%;top:74%;width:92px;--r:0deg;--d:1.2;--t:7s"><svg viewBox="0 0 110 110"><circle cx="55" cy="55" r="55" fill="#ffffff"/><g fill="none" stroke="#0b2545" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
-<path d="M55 26 v54 M40 80 h30 M28 36 q27 -6 54 0"/><path d="M28 36 l-10 22 M28 36 l10 22 M82 36 l-10 22 M82 36 l10 22"/></g>
-<path d="M16 58 h24 a12 7 0 0 1 -24 0z M70 58 h24 a12 7 0 0 1 -24 0z" fill="#3a9465"/><circle cx="55" cy="25" r="4" fill="#0b2545"/></svg></div><div class="fx fx-chat" style="left:33%;top:17%;width:118px;--r:-4deg;--d:0.9;--t:6s"><svg viewBox="0 0 140 84"><path d="M14 4 h112 a12 12 0 0 1 12 12 v38 a12 12 0 0 1 -12 12 h-80 l-18 14 v-14 h-14 a12 12 0 0 1 -12 -12 v-38 a12 12 0 0 1 12 -12z" fill="#ffffff"/>
-<circle class="fx-dot" cx="48" cy="35" r="7" fill="#3a9465"/><circle class="fx-dot fx-dot2" cx="70" cy="35" r="7" fill="#3a9465"/><circle class="fx-dot fx-dot3" cx="92" cy="35" r="7" fill="#3a9465"/></svg></div><div class="fx fx-timbre" style="left:3%;top:78%;width:96px;--r:-14deg;--d:0.6;--t:9s"><svg viewBox="0 0 110 110"><circle cx="55" cy="55" r="48" fill="none" stroke="#7fd1a1" stroke-width="5"/><circle cx="55" cy="55" r="38" fill="none" stroke="#7fd1a1" stroke-width="2" stroke-dasharray="4 5"/>
-<path d="M36 56 l13 13 l25 -27" stroke="#7fd1a1" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="fx fx-moneda" style="left:61%;top:85%;width:52px;--r:0deg;--d:2.3;--t:5.5s"><svg viewBox="0 0 60 60"><circle cx="30" cy="30" r="28" fill="#f2c14e"/><circle cx="30" cy="30" r="21" fill="none" stroke="#d9a62e" stroke-width="3"/><path d="M36 22 c-3 -4 -13 -4 -14 2 c-1 6 14 4 13 11 c-1 6 -11 6 -14 2 M29 17 v26" stroke="#b9861e" stroke-width="3" fill="none" stroke-linecap="round"/></svg></div><div class="fx fx-graf" style="left:75%;top:88%;width:140px;--r:-5deg;--d:0.8;--t:8s"><svg viewBox="0 0 150 100"><rect width="150" height="100" rx="12" fill="#ffffff"/><rect x="18" y="58" width="16" height="26" rx="3" fill="#cfe0f2"/><rect x="42" y="44" width="16" height="40" rx="3" fill="#9fc0e2"/><rect x="66" y="50" width="16" height="34" rx="3" fill="#cfe0f2"/><rect x="90" y="30" width="16" height="54" rx="3" fill="#3a9465"/><rect x="114" y="18" width="16" height="66" rx="3" fill="#2e7d52"/>
-<path d="M18 40 L50 30 L74 36 L98 18 L126 10" stroke="#1e5c99" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
   <div class="hero-inner">
     <div class="hero-content">
     
@@ -2440,20 +2397,5 @@ access_key: 'a718fe28-53f0-4273-8518-febe7be8489a',
 }
 </script>
 
-<script>
-// Hero: profundidad suave con el mouse (solo escritorio)
-(function () {
-  var fx = document.querySelector('.hero-fx');
-  if (!fx || !window.matchMedia || !window.matchMedia('(hover: hover) and (min-width: 969px)').matches) return;
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  var hero = document.getElementById('hero'), raf = 0, x = 0, y = 0;
-  hero.addEventListener('mousemove', function (e) {
-    var r = hero.getBoundingClientRect();
-    x = (e.clientX - r.left) / r.width - 0.5; y = (e.clientY - r.top) / r.height - 0.5;
-    if (!raf) raf = requestAnimationFrame(function () { raf = 0; fx.style.setProperty('--px', (-x).toFixed(3)); fx.style.setProperty('--py', (-y).toFixed(3)); });
-  });
-  hero.addEventListener('mouseleave', function () { fx.style.setProperty('--px', 0); fx.style.setProperty('--py', 0); });
-})();
-</script>
 </body>
 </html>
