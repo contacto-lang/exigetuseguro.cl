@@ -497,8 +497,9 @@ nav.nav-links a:hover { color: var(--navy); background: rgba(11,37,69,0.05); }
 ═══════════════════════════════════════════ */
 .hero {
   min-height: 100vh;
-  background: linear-gradient(90deg, rgba(8,24,46,0.45) 0%, rgba(8,24,46,0.10) 45%, rgba(8,24,46,0) 60%),
-              url('/hero-ciudad.svg') center/cover, #0b2545;
+  background: radial-gradient(ellipse 44% 54% at 30% 52%, rgba(8,24,46,0.55) 0%, rgba(8,24,46,0) 100%),
+              linear-gradient(90deg, rgba(8,24,46,0.30) 0%, rgba(8,24,46,0) 55%),
+              url('/hero-ciudad.svg') center bottom/cover no-repeat, #0b2545;
   display: flex; align-items: center;
   position: relative; overflow: hidden;
   padding-top: 65px;
@@ -674,7 +675,7 @@ select.hf-input { cursor: pointer; }
   @keyframes hbAnillo { 0%, 78% { opacity: 0; transform: scale(1); } 82% { opacity: .55; } 100% { opacity: 0; transform: scale(1.45); } }
 
   /* Fondo del hero en móvil: se ve el tribunal y la torre, con un velo para el texto */
-  .hero { background: linear-gradient(180deg, rgba(8,24,46,0.55) 0%, rgba(8,24,46,0.78) 100%), url('/hero-ciudad.svg') 72% center/cover, #0b2545; }
+  .hero { background: linear-gradient(180deg, rgba(8,24,46,0.28) 0%, rgba(8,24,46,0.34) 14%, rgba(8,24,46,0.80) 26%, rgba(8,24,46,0.82) 80%, rgba(8,24,46,0.55) 100%), url('/hero-ciudad.svg') 82% bottom/cover no-repeat, #0b2545; }
 
   /* Más aire entre la barra de navegación y el título */
   .hero-inner { padding-top: 3.25rem; }
