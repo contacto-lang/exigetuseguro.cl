@@ -1544,8 +1544,10 @@ img.hs-bg[data-slide="3"] { object-position: 70% 50%; filter: brightness(.62) sa
   .hero-content.hs { display: block; }
   .hs-slide[data-slide="0"] { display: flex; flex-direction: column; gap: 1rem; }
   .hs-slide[data-slide="0"] { width: min-content; justify-self: start; }
-  .hs-slide:not([data-slide="0"]) { width: calc(100vw - 3rem); max-width: 100%; justify-self: start; }
-  .hs-title { font-size: clamp(35px, 10.2vw, 44px) !important; line-height: 1.06; margin-bottom: 0.9rem; }
+  .hero-inner { grid-template-columns: minmax(0, 1fr); }
+  .hs-slide:not([data-slide="0"]) { width: 100%; }
+  .hs-slide:not([data-slide="0"]) .hero-body { font-size: 15px !important; line-height: 1.7 !important; margin-bottom: 1.3rem; }
+  .hs-title { font-size: clamp(38px, 11.4vw, 48px) !important; line-height: 1.04; margin-bottom: 0.9rem; }
   .hs-slide .hero-body { margin-bottom: 1rem; }
   .hs-mail { font-size: 22px; margin: -0.2rem 0 0.9rem; }
   .hs-chips { gap: 0.35rem; }
