@@ -1459,6 +1459,116 @@ footer { background: #0a1a2e; padding: 4rem 2rem 2rem; }
   }
 }
 
+
+/* ═══════════════════════════════════════════
+   HERO: collage de fotos en rotación
+═══════════════════════════════════════════ */
+.hs-bgs { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.hero-inner { position: relative; z-index: 1; }
+.hs-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1.4s ease; }
+.hs-bg.is-on { opacity: 1; }
+img.hs-bg.is-on { animation: hsZoom 9s ease-out both; }
+img.hs-bg[data-slide="1"] { object-position: center 40%; }
+img.hs-bg[data-slide="2"] { object-position: center 55%; }
+img.hs-bg[data-slide="3"] { object-position: 70% 50%; filter: brightness(.62) saturate(.85); }
+.hs-tint { position: absolute; inset: 0; background: linear-gradient(120deg, rgba(5,16,30,0.72) 0%, rgba(11,37,69,0.42) 55%, rgba(11,37,69,0.55) 100%); opacity: 0; transition: opacity 1.4s ease; }
+.hero.hs-photo .hs-tint { opacity: 1; }
+@keyframes hsZoom { from { transform: scale(1.06); } to { transform: scale(1); } }
+
+.hs-track { display: grid; }
+.hs-slide { grid-area: 1 / 1; align-self: center; opacity: 0; visibility: hidden; transform: translateY(12px);
+  transition: opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1), visibility 0s .8s; }
+.hs-slide.is-on { opacity: 1; visibility: visible; transform: none; transition-delay: .25s, .25s, 0s; }
+.hs-eyebrow { font-size: 9px; letter-spacing: 0.45em; text-transform: uppercase; color: rgba(148,197,235,0.75); font-weight: 500; margin-bottom: 1.25rem; }
+.hs-slide .hero-body a { white-space: nowrap; color: #fff; text-decoration: underline; text-decoration-color: rgba(148,197,235,0.6); text-underline-offset: 3px; }
+.hs-slide .hero-body { margin-bottom: 1.4rem; }
+.hs-trust { display: flex; gap: 1.3rem; flex-wrap: wrap; }
+.hs-trust span { font-size: 11px; color: rgba(255,255,255,0.7); display: flex; align-items: center; gap: 7px; }
+.hs-trust span::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: #94c5eb; }
+.hs-mail { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: clamp(26px, 3.1vw, 40px); line-height: 1.1; margin: -0.6rem 0 1.4rem; overflow-wrap: anywhere; }
+.hs-mail a { color: #fff; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.35); transition: border-color .25s; }
+.hs-mail a:hover { border-color: #fff; }
+.hs-chips { display: flex; flex-wrap: wrap; gap: 0.45rem; max-width: 540px; }
+.hs-chips a { font-size: 11.5px; color: rgba(255,255,255,0.85); text-decoration: none; border: 1px solid rgba(255,255,255,0.22); border-radius: 30px; padding: 6px 13px; transition: border-color .25s, background .25s; }
+.hs-chips a:hover { border-color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.08); }
+
+/* Tarjetas (como en Formas de pago) */
+.hs-cards { position: relative; width: 250px; height: 132px; margin-bottom: 1.6rem; }
+.hs-cc { position: absolute; width: 190px; aspect-ratio: 1.586; border-radius: 11px; transition: transform .9s cubic-bezier(.2,.7,.2,1), opacity .9s ease; }
+.hs-cc.back { right: 0; top: 0; overflow: hidden; background: linear-gradient(150deg, #3aa673 0%, #2e7d52 55%, #1f5c3a 100%); border: 1px solid rgba(255,255,255,0.18); transform: rotate(7deg); }
+.hs-stripe { position: absolute; left: 0; right: 0; top: 13%; height: 19%; background: #0b1a2a; }
+.hs-sign { position: absolute; left: 8%; top: 42%; width: 58%; height: 15%; border-radius: 2px; background: repeating-linear-gradient(-45deg, #f3f7fb 0 5px, #e1eaf3 5px 10px); }
+.hs-holo { position: absolute; right: 8%; bottom: 13%; width: 16%; aspect-ratio: 1.3; border-radius: 3px; background: linear-gradient(135deg, #d6e8f7, #a9d1ef 35%, #e8dcf5 60%, #b5e3df); opacity: .85; }
+.hs-cc.front { left: 0; bottom: 0; padding: 13px 15px; display: flex; flex-direction: column; justify-content: space-between; background: linear-gradient(140deg, #1e5c99 0%, #163e6e 55%, #0b2545 100%); border: 1px solid rgba(255,255,255,0.16); box-shadow: 0 22px 40px -20px rgba(0,0,0,0.6); transform: rotate(-4deg); }
+.hs-cc .row { display: flex; justify-content: space-between; align-items: center; gap: 6px; }
+.hs-chip { width: 25px; height: 19px; border-radius: 4px; background: linear-gradient(135deg, #d9e4ee, #a9bccd); }
+.hs-mono { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 16px; color: #fff; line-height: 1; }
+.hs-mono i { font-style: normal; color: #6fcf97; }
+.hs-num { font-size: 10.5px; font-weight: 500; letter-spacing: .14em; color: rgba(255,255,255,.88); }
+.hs-cc small { white-space: nowrap; font-size: 6.5px; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.55); }
+.hs-cc b { font-size: 8px; letter-spacing: .12em; color: #fff; }
+.hs-slide:not(.is-on) .hs-cc.back { transform: rotate(0) translate(-18px, 18px); opacity: 0; }
+.hs-slide:not(.is-on) .hs-cc.front { transform: rotate(0) translate(18px, 24px); opacity: 0; }
+.hs-slide.is-on .hs-cc.back { transition-delay: .35s; }
+.hs-slide.is-on .hs-cc.front { transition-delay: .5s; }
+.hs-slide.is-on .hs-cards { animation: hsFloat 7s ease-in-out 1.4s infinite; }
+@keyframes hsFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+
+/* Controles: barras de progreso + pausa casi imperceptible */
+.hs-ctrl { display: flex; align-items: center; gap: 0.9rem; margin-top: 2rem; }
+.hs-dots { display: flex; gap: 0.4rem; }
+.hs-dot { width: 38px; height: 24px; padding: 0; border: 0; background: none; cursor: pointer; display: grid; align-items: center; }
+.hs-dot i { display: block; height: 2px; border-radius: 2px; background: rgba(255,255,255,0.25); position: relative; overflow: hidden; }
+.hs-dot i::after { content: ''; position: absolute; inset: 0; background: #fff; transform: scaleX(0); transform-origin: left; }
+.hs-dot.is-done i::after { transform: scaleX(1); }
+.hs-dot.is-on i::after { animation: hsBar var(--hs-ms, 7000ms) linear forwards; }
+.hs.is-paused .hs-dot.is-on i::after { animation-play-state: paused; }
+.hs-dot:focus-visible, .hs-pause:focus-visible { outline: 2px solid #94c5eb; outline-offset: 3px; border-radius: 3px; }
+@keyframes hsBar { to { transform: scaleX(1); } }
+.hs-pause { width: 24px; height: 24px; border: 0; padding: 0; background: none; cursor: pointer; position: relative; opacity: .35; transition: opacity .3s ease; }
+.hs-pause:hover, .hs-pause:focus-visible { opacity: .85; }
+.hs-pause::before, .hs-pause::after { content: ''; position: absolute; top: 8.5px; width: 1.5px; height: 7px; border-radius: 1px; background: #fff; }
+.hs-pause::before { left: 9.5px; } .hs-pause::after { left: 13px; }
+.hs-pause[aria-pressed="true"]::before { left: 10px; top: 8px; width: 0; height: 0; border-radius: 0; background: none; border-left: 6px solid #fff; border-top: 4px solid transparent; border-bottom: 4px solid transparent; }
+.hs-pause[aria-pressed="true"]::after { display: none; }
+
+@media (max-width: 968px) {
+  .hs-cards, .hs-eyebrow { display: none; }
+  .hero-content.hs { display: block; }
+  .hs-slide[data-slide="0"] { display: flex; flex-direction: column; gap: 1rem; }
+  .hs-title { font-size: clamp(30px, 8.6vw, 38px) !important; line-height: 1.1; margin-bottom: 0.9rem; }
+  .hs-slide .hero-body { margin-bottom: 1rem; }
+  .hs-mail { font-size: 22px; margin: -0.2rem 0 0.9rem; }
+  .hs-chips { gap: 0.35rem; }
+  .hs-chips a { font-size: 10.5px; padding: 4px 10px; }
+  .hs-trust span { font-size: 10px; }
+  .hs-link { width: auto !important; }
+  .hs-ctrl { margin-top: 1.4rem; gap: 0.7rem; }
+  .hs-dot { width: 28px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  img.hs-bg.is-on, .hs-slide.is-on .hs-cards { animation: none !important; }
+  .hs-dot.is-on i::after { animation: none; transform: scaleX(1); }
+  .hs-slide, .hs-bg, .hs-cc, .hs-tint { transition-duration: .01ms !important; }
+}
+
+
+/* Escritorio: todo el hero visible sin scroll en cualquier alto de pantalla */
+@media (min-width: 969px) {
+  .hero { box-sizing: border-box; min-height: 100vh; min-height: 100svh; padding-bottom: 0; }
+  .hero-inner { padding-top: clamp(1rem, 4vh, 4rem); padding-bottom: clamp(1rem, 4vh, 4rem); }
+  .hs-cards { height: clamp(92px, 14vh, 132px); width: clamp(185px, 28vh, 250px); margin-bottom: clamp(0.7rem, 2.2vh, 1.6rem); }
+  .hs-cc { width: clamp(138px, 21vh, 190px); }
+  .hs-slide .hero-title { margin-bottom: clamp(0.8rem, 2.4vh, 1.5rem); }
+  .hs-ctrl { margin-top: clamp(0.9rem, 2.8vh, 2rem); }
+}
+@media (min-width: 969px) and (max-height: 720px) {
+  .hs-cc.front { padding: 9px 11px; }
+  .hs-num { font-size: 9px; } .hs-mono { font-size: 13px; } .hs-chip { width: 20px; height: 15px; }
+  .hs-slide .hero-body { margin-bottom: 1rem; }
+}
+@media (max-width: 968px) { .hs-slide[data-slide="2"] .hs-title br { display: none; } }
+
 /* Consentimiento de privacidad */
 .consent-x { display: flex; align-items: center; gap: 7px; margin: 0.6rem 0 0.75rem; font-size: 11.5px; line-height: 1.4; color: #5a7490; text-align: left; cursor: pointer; }
 .consent-x input { margin: 0; width: 14px; height: 14px; flex-shrink: 0; accent-color: #2e7d52; cursor: pointer; }
@@ -1555,9 +1665,17 @@ footer { background: #0a1a2e; padding: 4rem 2rem 2rem; }
 
 <!-- HERO -->
 <section class="hero" id="hero">
+  <div class="hs-bgs" aria-hidden="true">
+    <div class="hs-bg is-on" data-slide="0"></div>
+    <img class="hs-bg" data-slide="1" src="/hero-sur-de-chile.webp" alt="" loading="lazy" decoding="async" fetchpriority="low" width="1680" height="1120">
+    <img class="hs-bg" data-slide="2" src="/hero-santiago.webp" alt="" loading="lazy" decoding="async" fetchpriority="low" width="1680" height="1116">
+    <img class="hs-bg" data-slide="3" src="/hero-medios-de-pago.webp" alt="" loading="lazy" decoding="async" fetchpriority="low" width="1680" height="1120">
+    <div class="hs-tint"></div>
+  </div>
   <div class="hero-inner">
-    <div class="hero-content">
-    
+    <div class="hero-content hs" id="hero-slides" role="region" aria-roledescription="carrusel" aria-label="Presentación">
+      <div class="hs-track">
+      <div class="hs-slide is-on" data-slide="0" role="group" aria-roledescription="diapositiva" aria-label="1 de 4">
       <h1 class="hero-title">Abogados Especialistas<br>en <em>Seguros</em></h1>
       <p class="hero-body">Representación legal experta. Sube tu <strong>póliza o carta de rechazo</strong> y recibe una <strong>orientación legal</strong> precisa sobre tus derechos como asegurado.</p>
       <div class="hero-btns">
@@ -1567,6 +1685,53 @@ footer { background: #0a1a2e; padding: 4rem 2rem 2rem; }
         <a href="#" onclick="smartScroll('m-agenda','agenda');return false;" class="btn-hero-ghost">
           <i class="fas fa-calendar"></i> Agendar cita
         </a>
+      </div>
+      </div>
+
+      <div class="hs-slide" data-slide="1" role="group" aria-roledescription="diapositiva" aria-label="2 de 4" aria-hidden="true" inert>
+        <div class="hs-eyebrow">De Arica a Magallanes</div>
+        <div class="hero-title hs-title">Atención en<br><em>todo Chile</em></div>
+        <p class="hero-body">Escríbenos por WhatsApp al <a href="https://wa.me/56979939868" target="_blank" rel="noopener">+56 9 7993 9868</a> o al correo <a href="mailto:contacto@exigetuseguro.cl">contacto@exigetuseguro.cl</a>. Te atendemos estés donde estés.</p>
+        <div class="hs-trust"><span>WhatsApp</span><span>Correo</span><span>Videollamada</span></div>
+      </div>
+
+      <div class="hs-slide" data-slide="2" role="group" aria-roledescription="diapositiva" aria-label="3 de 4" aria-hidden="true" inert>
+        <div class="hs-eyebrow">Escríbenos</div>
+        <div class="hero-title hs-title">También nos puedes<br> escribir al correo:</div>
+        <div class="hs-mail"><a href="mailto:contacto@exigetuseguro.cl">contacto@exigetuseguro.cl</a></div>
+        <div class="hs-chips">
+          <a href="#servicios">Rechazos de seguros</a>
+          <a href="https://www.exigetuseguro.cl/seguro-de-vida">Seguros de vida</a>
+          <a href="#servicios">Seguros de salud</a>
+          <a href="#servicios">Incendio y sismo</a>
+          <a href="#servicios">Seguros vehiculares</a>
+          <a href="https://www.exigetuseguro.cl/responsabilidad-civil">Responsabilidad civil</a>
+        </div>
+      </div>
+
+      <div class="hs-slide" data-slide="3" role="group" aria-roledescription="diapositiva" aria-label="4 de 4" aria-hidden="true" inert>
+        <div class="hs-cards" aria-hidden="true">
+          <div class="hs-cc back"><span class="hs-stripe"></span><span class="hs-sign"></span><span class="hs-holo"></span></div>
+          <div class="hs-cc front">
+            <div class="row"><span class="hs-chip"></span><span class="hs-mono">exige<i>.cl</i></span></div>
+            <div class="hs-num">•••• •••• •••• 4817</div>
+            <div class="row"><small>Exige Tu Seguro</small><b>WEBPAY</b></div>
+          </div>
+        </div>
+        <div class="hero-title hs-title">Flexibilidad de<br><em>medios de pago</em></div>
+        <p class="hero-body">Hasta 12 cuotas sin interés con tarjeta de crédito, cuotas sin tarjeta, débito, billeteras digitales o transferencia. Sin recargo.</p>
+        <a class="btn-hero-primary hs-link" href="https://www.exigetuseguro.cl/formas-de-pago">Ver formas de pago →</a>
+      </div>
+      </div>
+
+      <div class="hs-ctrl">
+        <div class="hs-dots" aria-label="Elegir diapositiva">
+          <button type="button" class="hs-dot is-on" data-go="0" aria-label="Diapositiva 1" aria-current="true"><i></i></button>
+          <button type="button" class="hs-dot" data-go="1" aria-label="Diapositiva 2"><i></i></button>
+          <button type="button" class="hs-dot" data-go="2" aria-label="Diapositiva 3"><i></i></button>
+          <button type="button" class="hs-dot" data-go="3" aria-label="Diapositiva 4"><i></i></button>
+        </div>
+        <button type="button" class="hs-pause" aria-label="Pausar presentación" aria-pressed="false"></button>
       </div>
     </div>
     <div class="hero-form-card" id="hero-contacto">
@@ -2047,6 +2212,64 @@ footer { background: #0a1a2e; padding: 4rem 2rem 2rem; }
 </div>
 
 <script>
+
+/* ── HERO: rotación de diapositivas ── */
+(function(){
+  var root = document.getElementById('hero-slides');
+  if (!root) return;
+  var hero = document.getElementById('hero');
+  var slides = root.querySelectorAll('.hs-slide');
+  var bgs = hero.querySelectorAll('.hs-bg');
+  var dots = root.querySelectorAll('.hs-dot');
+  var pauseBtn = root.querySelector('.hs-pause');
+  var MS = 7000, cur = 0, timer = null;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var userPaused = reduce, hoverPaused = false;
+  root.style.setProperty('--hs-ms', MS + 'ms');
+  function show(n){
+    cur = (n + slides.length) % slides.length;
+    slides.forEach(function(el, i){
+      var on = i === cur;
+      el.classList.toggle('is-on', on);
+      if (on) { el.removeAttribute('aria-hidden'); el.removeAttribute('inert'); }
+      else { el.setAttribute('aria-hidden', 'true'); el.setAttribute('inert', ''); }
+    });
+    bgs.forEach(function(el){ el.classList.toggle('is-on', +el.dataset.slide === cur); });
+    hero.classList.toggle('hs-photo', cur !== 0);
+    dots.forEach(function(d, i){
+      d.classList.remove('is-on');
+      d.classList.toggle('is-done', i < cur);
+      if (i === cur) { d.setAttribute('aria-current', 'true'); } else { d.removeAttribute('aria-current'); }
+    });
+    void dots[cur].offsetWidth;
+    dots[cur].classList.add('is-on');
+    schedule();
+  }
+  function schedule(){
+    clearTimeout(timer);
+    if (userPaused || hoverPaused || document.hidden) return;
+    timer = setTimeout(function(){ show(cur + 1); }, MS);
+  }
+  function setPaused(){
+    root.classList.toggle('is-paused', userPaused || hoverPaused);
+    if (userPaused || hoverPaused) { clearTimeout(timer); } else { show(cur); }
+  }
+  dots.forEach(function(d){ d.addEventListener('click', function(){ show(+d.dataset.go); }); });
+  pauseBtn.addEventListener('click', function(){
+    userPaused = !userPaused;
+    pauseBtn.setAttribute('aria-pressed', String(userPaused));
+    pauseBtn.setAttribute('aria-label', userPaused ? 'Reanudar presentación' : 'Pausar presentación');
+    setPaused();
+  });
+  if (reduce) { pauseBtn.setAttribute('aria-pressed', 'true'); pauseBtn.setAttribute('aria-label', 'Reanudar presentación'); root.classList.add('is-paused'); }
+  root.addEventListener('mouseenter', function(){ hoverPaused = true; setPaused(); });
+  root.addEventListener('mouseleave', function(){ hoverPaused = false; setPaused(); });
+  root.addEventListener('focusin', function(){ hoverPaused = true; setPaused(); });
+  root.addEventListener('focusout', function(e){ if (!root.contains(e.relatedTarget)) { hoverPaused = false; setPaused(); } });
+  document.addEventListener('visibilitychange', schedule);
+  window.addEventListener('load', function(){ bgs.forEach(function(el){ if (el.tagName === 'IMG') el.loading = 'eager'; }); });
+  schedule();
+})();
 /* ── Lazy load Calendly: solo se descarga cuando realmente se necesita ── */
 let calendlyLoaded = false;
 function loadCalendly() {
