@@ -1582,6 +1582,13 @@ img.hs-bg[data-slide="3"] { object-position: 70% 50%; filter: brightness(.62) sa
 }
 @media (max-width: 968px) { .hs-slide[data-slide="2"] .hs-title br { display: none; } }
 
+/* Diapositiva "Atención en todo Chile" (solo celular): título y subtítulo con más presencia */
+@media (max-width: 968px) {
+  .hs-slide[data-slide="1"] { margin-bottom: 2rem; }
+  .hs-slide[data-slide="1"] .hs-title { font-size: clamp(40px, 12.2vw, 52px) !important; }
+  .hs-slide[data-slide="1"] .hero-body { font-size: 16px !important; line-height: 1.85 !important; }
+}
+
 /* Consentimiento de privacidad */
 .consent-x { display: flex; align-items: center; gap: 7px; margin: 0.6rem 0 0.75rem; font-size: 11.5px; line-height: 1.4; color: #5a7490; text-align: left; cursor: pointer; }
 .consent-x input { margin: 0; width: 14px; height: 14px; flex-shrink: 0; accent-color: #2e7d52; cursor: pointer; }
